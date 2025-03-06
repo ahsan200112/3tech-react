@@ -1,0 +1,81 @@
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import Frame41Img from "../assets/images/Frame 41.png";
+
+const ExpertiseYouCanTrust = () => {
+    const { t, i18n } = useTranslation();
+    const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
+    return (
+        <div className="v-section" style={{ marginTop: "-16px" }}>
+            <section className="while-valu">
+                <div className="container mt-3">
+                    <button className="btn btn-sm u-easy mt-5" style={{ width: "160px", color: "#3B9BE9", height: "40px" }}>Expertise you can Trust</button>
+                    <h4 className="mt-3 o-b">Turning Ideas into Impactful Digital Journeys</h4>
+                    <p className="o-c">Transform your business with a seamless digital journey.</p>
+                    <img src={Frame41Img} alt="Company Logo" className="img-fluid" style={{ maxWidth: "100%", height: "auto" }} />
+                </div>
+                <div className="container py-5">
+                    <div className="row">
+                        <div className="col-md-8">
+                            <div className="mb-5">
+                                <p className="l-k">
+                                    3Tech was born from a desire to bridge creativity and technology. We’ve built a team of experts who don’t just develop apps or design stores—they craft experiences that inspire, connect, and drive results. Every line of code, every design choice, and every campaign is created with your success in mind.
+                                </p>
+                                <button className="contact-btn">Contact Us</button>
+                            </div>
+                            <div className="stats row">
+                                <div className="col-md-4 stat-item"
+                                    /*style={{ borderRight: "1px solid", color: "#CFCECE" }} */
+                                    style={{
+                                        borderRight: document.dir === "ltr" ? "1px solid #CFCECE" : "none",
+                                        borderLeft: document.dir === "rtl" ? "1px solid #CFCECE" : "none",
+                                    }}>
+                                    <h2 className="u-how">10+</h2>
+                                    <p className="u-all">Years in Business</p>
+                                </div>
+                                <div className="col-md-4 stat-item"
+                                    /*style={{ borderRight: "1px solid", color: "#CFCECE" }} */
+                                    style={{
+                                        borderRight: document.dir === "ltr" ? "1px solid #CFCECE" : "none",
+                                        borderLeft: document.dir === "rtl" ? "1px solid #CFCECE" : "none",
+                                    }}>
+                                    <h2 className="u-how">200+</h2>
+                                    <p className="u-all">Successful Projects</p>
+                                </div>
+                                <div className="col-md-4 stat-item">
+                                    <h2 className="u-how">99%</h2>
+                                    <p class="u-all">Happy Clients</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-4">
+                            <div className="d-flex flex-column">
+                                <div className="col-md-6">
+                                    <div className="mission-vision">
+                                        <div className="d-flex justify-content-between align-items-center">
+                                            <h5 className="v-c">01. Our Mission</h5>
+                                            <i className="bi bi-arrow-up-right"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-md-6 mt-3">
+                                    <div className="mission-vision">
+                                        <div className="d-flex justify-content-between">
+                                            <h5 className="v-x">02. Our Vision</h5>
+                                            <i className="bi bi-x"></i>
+                                        </div>
+                                        <p className="v-n">Shaping the Future, One Idea at a Time</p>
+                                        <p className="v-d">We envision a world where businesses of every size thrive in the digital era. Our mission is to empower brands with the tools, strategies, and creativity they need to leave a mark on their industry.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    );
+};
+
+export default ExpertiseYouCanTrust;
+

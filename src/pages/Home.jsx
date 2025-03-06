@@ -1,14 +1,24 @@
 import React from 'react';
 import HeroSection from '../components/HeroSection';
-import ServicesSection from '../components/ServicesSection';
-import ProjectsSection from '../components/ProjectsSection';
+import WhoWeAre from '../components/WhoWeAre';
+import OurServices from '../components/OurServices';
+import YourSuccessOurPriority from '../components/YourSuccessOurPriority';
+import OurProjects from '../components/OurProjects';
+import OurTrustedPartners from '../components/OurTrustedPartners';
+import OurClientsSay from '../components/OurClientsSay';
+import OurPackages from '../components/OurPackages';
 
 function Home() {
   return (
     <>
       <HeroSection />
-      <ServicesSection />
-      <ProjectsSection />
+      <WhoWeAre/>
+      <OurServices/>
+      <YourSuccessOurPriority/>
+      <OurProjects/>
+      <OurTrustedPartners/>
+      <OurClientsSay/>
+      <OurPackages/>
     </>
   );
 }

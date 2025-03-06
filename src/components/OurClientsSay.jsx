@@ -1,0 +1,125 @@
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { useTranslation } from "react-i18next";
+import InkImg from "../assets/images/ink.png";
+import Girl2Img from "../assets/images/girl2.png";
+
+// Testimonials Array
+const testimonials = [
+  {
+    id: 1,
+    text: "Working with 3Tech has been a game-changer for our business. They transformed our online store with a beautiful, user-friendly design and seamless functionality.",
+    name: "Sarah L.",
+    position: "Founder of Luxe Appeal",
+    image: Girl2Img,
+  },
+  {
+    id: 2,
+    text: "3Tech exceeded our expectations. Their expertise in web development and design gave us a professional online presence that attracts more customers.",
+    name: "David M.",
+    position: "CEO of Tech Solutions",
+    image: Girl2Img,
+  },
+  {
+    id: 3,
+    text: "What sets 3Tech apart is their commitment to understanding our business goals and aligning their solutions accordingly.",
+    name: "Emily R.",
+    position: "Marketing Manager at Digital World",
+    image: Girl2Img,
+  },
+  {
+    id: 4,
+    text: "Their team is highly skilled and delivers projects on time. The support and communication have been outstanding throughout the process.",
+    name: "John D.",
+    position: "Founder of InnovateX",
+    image: Girl2Img,
+  },
+  {
+    id: 5,
+    text: "They helped us create a beautiful brand identity, and our customer retention has significantly improved.",
+    name: "Linda K.",
+    position: "COO of FutureWave",
+    image: Girl2Img,
+  },
+];
+
+const OurClientsSay = () => {
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === "ar"; // Check if language is Arabic
+
+  return (
+    <section className="client-testimonials py-5" style={{ direction: isRTL ? "rtl" : "ltr" }} >
+      <div className="container">
+        <div className="mb-4">
+          <button className="btn btn-sm v-hi" style={{ width: "170px", color: "#3B9BE9" }}>
+            {t("Real Stories, Real Impact")}
+          </button>
+          <h2 className="v-hence">{t("What Our Clients Say About Us")}</h2>
+        </div>
+
+        {/* Swiper Component */}
+        <Swiper
+          modules={[Pagination, Navigation]}
+          spaceBetween={20}
+          slidesPerView={3} // Default to 3 slides
+          navigation
+          pagination={{ clickable: true }}
+          centeredSlides={false}
+          rtl={isRTL} // Enable RTL mode
+          breakpoints={{
+            320: { slidesPerView: 1 }, // Mobile: 1 slide
+            768: { slidesPerView: 2 }, // Tablet: 2 slides
+            1024: { slidesPerView: 3 }, // Desktop: 3 slides
+            1440: { slidesPerView: 4 }, // Large screens: 4 slides
+          }}
+          className="swiper-container"
+        >
+          {/* Map through Testimonials */}
+          {testimonials.map((testimonial) => (
+            <SwiperSlide key={testimonial.id}>
+              <div className="card p-3 shadow text-white"
+                style={{
+                  backgroundColor: "#212121",
+                  borderRadius: "20px",
+                  textAlign: isRTL ? "right" : "left",
+                }}
+              >
+                <img src={InkImg} alt="Brand Logo" className="img-fluid mt-2"
+                  style={{ width: "44px", height: "30px" }} />
+                <p className="v-clean mt-2">{t(testimonial.text)}</p>
+
+                {/* Image + Text Alignment */}
+                <div className="d-flex align-items-center"
+                  style={{ flexDirection: "row" }}>
+                  {/* Image */}
+                  <img src={testimonial.image} alt={testimonial.name}
+                    className="img-fluid"
+                    style={{
+                      width: "47px",
+                      height: "47px",
+                      borderRadius: "50%",
+                      marginLeft: "7px",
+                      marginRight: "7px" ,
+                    }}
+                  />
+                  {/* Text */}
+                  <div>
+                    <p className="mb-0 g-value">{t(testimonial.name)}</p>
+                    <p className="mb-0 g-value">{t(testimonial.position)}</p>
+                  </div>
+                </div>
+
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
+  );
+};
+
+export default OurClientsSay;

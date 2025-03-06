@@ -1,5 +1,16 @@
 import React from 'react';
+import ContactFirstComponent from '../components/ContactFirstComponent';
+import GetInTouch from '../components/GetInTouch';
+import GetContactNow2 from '../components/GetContactNow2';
+
 function ContactUs() {
-  return <div>Contact Us Page Content</div>;
+  return (
+    <>
+      <ContactFirstComponent />
+      <GetInTouch />
+      <GetContactNow2 />
+    </>
+  );
 }
+
 export default ContactUs;

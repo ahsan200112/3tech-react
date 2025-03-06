@@ -1,5 +1,14 @@
 import React from 'react';
+import BlogsFirstComponent from '../components/BlogsFirstComponent';
+import BlogsSection from '../components/BlogsSection';
+
 function Blogs() {
-  return <div>Blogs Page Content</div>;
+  return (
+    <>
+     <BlogsFirstComponent/>
+     <BlogsSection/>
+    </>
+  );
 }
+
 export default Blogs;

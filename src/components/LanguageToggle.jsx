@@ -17,7 +17,6 @@ const LanguageToggle = () => {
       <button
         className="btn dropdown-toggle v-vise"
         id="languageDropdown"
-        role="button"
         onClick={() => setDropdownOpen(!dropdownOpen)}
         aria-expanded={dropdownOpen}
       >

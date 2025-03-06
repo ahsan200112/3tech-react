@@ -1,6 +1,16 @@
 import React from 'react';
-import ProjectsSection from '../components/ProjectsSection';
+import ProjectsFirstComponent from '../components/ProjectsFirstComponent';
+import GetContactNow from '../components/GetContactNow';
+import OurProjectsDetail from '../components/OurProjectsDetail';
+
 function Projects() {
-  return <ProjectsSection />;
+  return (
+    <>
+    <ProjectsFirstComponent/>
+    <OurProjectsDetail/>
+    <GetContactNow/>
+    </>
+  );
 }
+
 export default Projects;
