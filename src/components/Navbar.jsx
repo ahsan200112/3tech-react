@@ -12,8 +12,8 @@ const Navbar = () => {
   
   return (
     <>
-      <section className="hero-well">
-        <ThemeSwitcher />
+      <section style={{ backgroundColor: " #090909" }}>
+       {/* <ThemeSwitcher /> */}
 
         <div className="container">
           <div className="row align-items-center">
@@ -36,7 +36,7 @@ const Navbar = () => {
       </section>
 
       <section className="hero-value">
-        <nav className="navbar navbar-expand-lg" style={{ padding: "15px", borderRadius: "30px" }}>
+        <nav className="navbar navbar-expand-lg" style={{ /*background: "linear-gradient(90deg, #0D0D0D, #1C1C1C)"*/ padding: "15px 30px", borderRadius: "30px" }}>
           <div className="container d-flex align-items-center justify-content-between">
             
             {/* Left: Logo */}

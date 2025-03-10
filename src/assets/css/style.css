@@ -1788,6 +1788,11 @@ border: 1px solid  #1B1264; */
   border-right: 0px;
 }
 
+.custom-placeholder::placeholder {
+  color: #CFCECE !important;
+  opacity: 1;
+}
+
 .b-f {
   font-family: Reddit Sans;
   font-size: 16px;
@@ -2263,6 +2268,13 @@ h2 {
 .v-g {
   font-family: Reddit Sans;
   font-size: 12px;
+  letter-spacing: 0px;
+  line-height: 150%;
+  color: #CFCECE;
+}
+.v-p {
+  font-family: Cairo;
+  font-size: 14px;
   letter-spacing: 0px;
   line-height: 150%;
   color: #CFCECE;

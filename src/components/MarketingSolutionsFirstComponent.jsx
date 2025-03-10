@@ -3,22 +3,21 @@ import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 import BlackImg from "../assets/images/Black.png";
 
-const ContactFirstComponent = () => {
+const MarketingSolutionsFirstComponent = () => {
     const { t } = useTranslation();
-   // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     return (
         <div style={{ backgroundColor: " #090909" }}>
             <section className="while-valu ">
                 <div className="container pt-5">
                     <div className="d-flex justify-content-between align-items-center">
                         <div>
-                            <h2 className="o-hlo" style={{ borderBottom: "2px solid" }}>{t("Contact Us")}</h2>
+                            <h2 className="o-hlo" style={{ borderBottom: "2px solid" }}>Marketing Solutions</h2>
                             {/* <h4 className="o-a">
                                 <i className="bi bi-house-door"></i> Home / About Us
                             </h4> */}
                             <h4 className="o-a d-flex align-items-center" style={{ gap: "8px" }}>
                                 <i className="bi bi-house-door"></i>
-                                <Link to="/" style={{ textDecoration: "none", color: "inherit" }}> {t("Home")} </Link> / {t("Contact Us")}
+                                <Link to="/" style={{ textDecoration: "none", color: "inherit" }}> Home </Link> / Marketing Solutions
                             </h4>
                         </div>
                         <div className="text-end">
@@ -32,5 +31,5 @@ const ContactFirstComponent = () => {
     );
 };
 
-export default ContactFirstComponent;
+export default MarketingSolutionsFirstComponent;
 

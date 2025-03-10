@@ -13,7 +13,7 @@ const ProjectsFirstComponent = () => {
                     <div className="d-flex justify-content-between align-items-center">
                         <div>
                             <h2 className="o-hlo" style={{ borderBottom: "2px solid" }}>Projects</h2>
-                            <h4 className="o-a">
+                            <h4 className="o-a d-flex align-items-center" style={{ gap: "8px" }}>
                                 <i className="bi bi-house-door"></i>
                                 <Link to="/" style={{ textDecoration: "none", color: "inherit" }}> Home </Link> / Projects
                             </h4>
