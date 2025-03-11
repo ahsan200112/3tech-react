@@ -57,10 +57,10 @@ const Footer = () => {
             <p className="v-left pb-2" style={{ borderBottom: "1px solid " }}>{t("Phone no")}: <a href="tel:966557122917+"
               className="v-coke text-decoration-none">966557122917+</a></p>
             <div className="d-flex mt-3">
-              <a href="#" className="text-light me-4"><i className="bi bi-linkedin"></i></a>
-              <a href="#" className="text-light me-4"><i className="bi bi-facebook"></i></a>
-              <a href="#" className="text-light me-4"><i className="bi bi-whatsapp"></i></a>
-              <a href="#" className="text-light me-4"><i className="bi bi-instagram"></i></a>
+              <a href="/" className="text-light me-4"><i className="bi bi-linkedin"></i></a>
+              <a href="/" className="text-light me-4"><i className="bi bi-facebook"></i></a>
+              <a href="/" className="text-light me-4"><i className="bi bi-whatsapp"></i></a>
+              <a href="/" className="text-light me-4"><i className="bi bi-instagram"></i></a>
             </div>
           </div>
         </div>
@@ -68,9 +68,9 @@ const Footer = () => {
           <div className="col d-flex justify-content-between">
             <p className="mb-0">{t("Copyright © 2024 3Tech")}</p>
             <p className="mb-0">
-              <a href="#" className="text-light text-decoration-none">{t("Term of use")}</a> |
-              <a href="#" className="text-light text-decoration-none"> {t("Privacy Policy")}</a> |
-              <a href="#" className="text-light text-decoration-none"> {t("Cookie Policy")}</a>
+              <a href="/" className="text-light text-decoration-none">{t("Term of use")}</a> |
+              <a href="/" className="text-light text-decoration-none"> {t("Privacy Policy")}</a> |
+              <a href="/" className="text-light text-decoration-none"> {t("Cookie Policy")}</a>
             </p>
           </div>
         </div>
