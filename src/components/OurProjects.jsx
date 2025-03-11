@@ -15,10 +15,10 @@ const OurProjects = () => {
                 <div className="py-5">
                     <button className="btn btn-sm  v-viral" style={{ width: "100px", color: "#3B9BE9" }}>{t("Our Projects")}</button>
                     <div className="d-flex justify-content-between align-items-center">
-                        <h2 className="text-start v-visit">{t("Our Work Speaks For Itself")}</h2>
+                        <h2 className="v-visit">{t("Our Work Speaks For Itself")}</h2>
                         <button className="btn-view text-end">{t("View More")}</button>
                     </div>
-                    <p className="v-info">{t("Explore our success stories in e-commerce, app development, and creative marketing.See how we've")} <br />{t("helped businesses like yours thrive.")}</p>
+                    <p className="v-info" style={{maxWidth: "800px", wordBreak: "break-word"}}>{t("Explore our success stories in e-commerce, app development, and creative marketing. See how we've helped businesses like yours thrive.")}</p>
                     <div className="d-flex justify-content-end">
                     </div>
                     <div className="row mt-4">

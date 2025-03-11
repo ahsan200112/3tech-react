@@ -73,7 +73,7 @@ const OurServices = () => {
                                         <img src={JUImg} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
                                         <h5 className="card-title u-well mt-3">{t("Creative Design")}</h5>
                                         <p className="card-text u-space">
-                                            {t("Elevate your brand with unique visual identities, stunning graphics, and innovative designs")}.
+                                            {t("Elevate your brand with unique visual identities, stunning graphics, and innovative designs.")}
                                         </p>
                                         <p class="u-help">{t("Explore Service")}</p>
                                     </div>

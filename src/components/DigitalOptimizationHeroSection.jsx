@@ -18,20 +18,20 @@ function DigitalOptimizationHeroSection() {
                             <h2 className="z-x">{t('Here’s What We Provide')}</h2>
                         </div>
                         <div className="col-md-4">
-                            <div style={{ display: "flex", flexWrap: "wrap" }}>
+                            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", textAlign: "center" }}>
                                 <p
                                     className="z-c"
                                     style={{
-                                        marginRight: "20px",
-                                        borderRight: "1px solid",
+                                        marginInlineEnd: "20px", // Adjusts automatically for RTL
+                                        borderInlineEnd: "1px solid", // Works for both LTR & RTL
                                         color: "#CFCECE",
-                                        paddingRight: "10px",
+                                        paddingInlineEnd: "10px", // Maintains spacing on the correct side
                                     }}
                                 >
-                                    {t('Development')}<br />{t('WordPress')}<br />{t('Cloud Migration')}
+                                    {t("Development")}<br />{t("WordPress")}<br />{t("Cloud Migration")}
                                 </p>
                                 <p className="z-c">
-                                    {t('Front End Development')}<br />{t('JavaScript')}<br />{t('Flutter Framework')}
+                                    {t("Front End Development")}<br />{t("JavaScript")}<br />{t("Flutter Framework")}
                                 </p>
                             </div>
                         </div>

@@ -55,7 +55,7 @@ const Footer = () => {
             <p className="v-left ">{t("Email")}: <a href="mailto:info@3tech.sa"
               className="v-coke text-decoration-none">info@3tech.sa</a></p>
             <p className="v-left pb-2" style={{ borderBottom: "1px solid " }}>{t("Phone no")}: <a href="tel:966557122917+"
-              className="v-coke text-decoration-none">+966557122917</a></p>
+              className="v-coke text-decoration-none">966557122917+</a></p>
             <div className="d-flex mt-3">
               <a href="#" className="text-light me-4"><i className="bi bi-linkedin"></i></a>
               <a href="#" className="text-light me-4"><i className="bi bi-facebook"></i></a>

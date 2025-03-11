@@ -13,7 +13,7 @@ const CustomPackageOpinion = () => {
             <div className="container py-5">
                 <div className="mb-4">
                     <button className="btn btn-sm o-e" style={{ color: "#3B9BE9", border: "1px solid var(--Colors-Border-Border03, #1B1264)" }}>{t('Custom Package Option')}</button>
-                    <h2 className="v-r mt-3">{t('Didn’t Find What You Need? Let’s Build A')} <br/> {t('Custom Package Just For You!')}</h2>
+                    <h2 className="v-r mt-3" style={{maxWidth: "800px", wordBreak: "break-word"}}>{t('Didn’t Find What You Need? Let’s Build A Custom Package Just For You!')}</h2>
                 </div>
                 <div className="row">
                     <div className="col-md-4">

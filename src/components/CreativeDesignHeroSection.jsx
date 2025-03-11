@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 import Group1Img from '../assets/images/Group (1).png';
 import PresentationDesignImg from '../assets/images/presentation-design.png';
-import AnimationImg from '../assets/images/animation.png'; 
+import AnimationImg from '../assets/images/animation.png';
 import PinImg from '../assets/images/pin.png';
 
 function CreativeDesignHeroSection() {
@@ -18,14 +18,14 @@ function CreativeDesignHeroSection() {
                             <h2 className="z-x">{t("Here’s What We Provide")}</h2>
                         </div>
                         <div className="col-md-4">
-                            <div style={{ display: "flex", flexWrap: "wrap" }}>
+                            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", textAlign: "center" }}>
                                 <p
                                     className="z-c"
                                     style={{
-                                        marginRight: "20px",
-                                        borderRight: "1px solid",
+                                        marginInlineEnd: "20px", // Adjusts automatically for RTL
+                                        borderInlineEnd: "1px solid", // Works for both LTR & RTL
                                         color: "#CFCECE",
-                                        paddingRight: "10px",
+                                        paddingInlineEnd: "10px", // Maintains spacing on the correct side
                                     }}
                                 >
                                     {t("Development")}<br />{t("WordPress")}<br />{t("Cloud Migration")}
@@ -60,13 +60,13 @@ function CreativeDesignHeroSection() {
                                     <div key={index} className="col-md-4">
                                         <div
                                             className="card bg-dark text-white h-100"
-                                            style={{ padding: "25px"}}
+                                            style={{ padding: "25px" }}
                                         >
                                             <div className="card-body">
                                                 <img
                                                     src={card.img}
                                                     alt={card.title}
-                                                   // style={{ height: "60px", width: "60px" }}
+                                                // style={{ height: "60px", width: "60px" }}
                                                 />
                                                 <h5 className="card-title ul-b mt-3">{card.title}</h5>
                                                 <p className="card-text ul-c">{card.text}</p>
@@ -138,8 +138,8 @@ function CreativeDesignHeroSection() {
                             <div key={index} className="col-md-4 mb-4">
                                 <div className="step">
                                     <div className="custom-row">
-                                    <button className="text-start btn btn-sm n-j text-white" style={{ border: "1px solid #989898", borderRadius: "15px" }}>{item.step}</button>
-                                    <img src={PinImg} alt="Company Logo" className="img-fluid" />
+                                        <button className="text-start btn btn-sm n-j text-white" style={{ border: "1px solid #989898", borderRadius: "15px" }}>{item.step}</button>
+                                        <img src={PinImg} alt="Company Logo" className="img-fluid" />
                                     </div>
                                     <h5 className="h-klm">{item.title}</h5>
                                     <p className="h-ul">{item.desc}</p>

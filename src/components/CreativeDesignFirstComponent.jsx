@@ -18,7 +18,7 @@ const CreativeDesignFirstComponent = () => {
                             </h4> */}
                             <h4 className="o-a d-flex align-items-center" style={{ gap: "8px" }}>
                                 <i className="bi bi-house-door"></i>
-                                <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>{t("Home")} </Link> / C{t("reative Design")}
+                                <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>{t("Home")} </Link> / {t("Creative Design")}
                             </h4>
                         </div>
                         <div className="text-end">

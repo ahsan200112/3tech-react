@@ -13,8 +13,8 @@ const OurProjectsDetail = () => {
             <div className="container my-5 py-4">
                 <button className="btn btn-sm o-e mt-5" style={{ color: "#3B9BE9", width: "110px", border: "1px solid var(--Colors-Border-Border03, #1B1264)" }}>{t("Our Projects")}</button>
                 <h2 className="n-w ">{t("Showcasing Excellence Across Industries")}</h2>
-                <p className="n-e ">
-                    {t("At 3Tech, every project is a reflection of our commitment to innovation, quality, and client success. Explore how we’ve")}<br /> {t("helped businesses grow and thrive in the digital world.")}
+                <p className="n-e" style={{maxWidth: "800px", wordBreak: "break-word"}}>
+                    {t("At 3Tech, every project is a reflection of our commitment to innovation, quality, and client success. Explore how we’ve helped businesses grow and thrive in the digital world.")}
                 </p>
                 <div className="row">
                     <div className="d-flex justify-content-around align-items-center flex-wrap">
@@ -43,7 +43,7 @@ const OurProjectsDetail = () => {
                                     <h5 className="card-title n-r mb-0 text-white">{t("Web Design & Development")}</h5>
                                     <i className="bi bi-arrow-up-right text-white"></i>
                                 </div>
-                                <p className="card-text n-t">{t("Explore modern, responsive websites crafted for")}<br /> {t("diverse industries")}.</p>
+                                <p className="card-text n-t" style={{maxWidth: "600px", wordBreak: "break-word"}}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
                                 <div className="tags n-y">
                                     <span>{t("UI & UX Design")}</span>
                                     <span>{t("Web Design")}</span>
@@ -61,7 +61,7 @@ const OurProjectsDetail = () => {
                                     <h5 className="card-title n-r mb-0 text-white">{t("Web Design & Development")}</h5>
                                     <i className="bi bi-arrow-up-right text-white"></i>
                                 </div>
-                                <p className="card-text n-t">{t("Explore modern, responsive websites crafted for")}<br /> {t("diverse industries")}.</p>
+                                <p className="card-text n-t" style={{maxWidth: "600px", wordBreak: "break-word"}}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
                                 <div className="tags n-y">
                                     <span>{t("UI & UX Design")}</span>
                                     <span>{t("Web Design")}</span>
@@ -83,7 +83,7 @@ const OurProjectsDetail = () => {
                                     <h5 className="card-title n-r mb-0 text-white">{t("Web Design & Development")}</h5>
                                     <i className="bi bi-arrow-up-right text-white"></i>
                                 </div>
-                                <p className="card-text n-t">{t("Explore modern, responsive websites crafted for")}<br /> {t("diverse industries")}.</p>
+                                <p className="card-text n-t" style={{maxWidth: "600px", wordBreak: "break-word"}}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
                                 <div className="tags n-y">
                                     <span>{t("UI & UX Design")}</span>
                                     <span>{t("Web Design")}</span>
@@ -101,7 +101,7 @@ const OurProjectsDetail = () => {
                                     <h5 className="card-title n-r mb-0 text-white">{t("Web Design & Development")}</h5>
                                     <i className="bi bi-arrow-up-right text-white"></i>
                                 </div>
-                                <p className="card-text n-t">{t("Explore modern, responsive websites crafted for")}<br /> {t("diverse industries")}.</p>
+                                <p className="card-text n-t" style={{maxWidth: "600px", wordBreak: "break-word"}}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
                                 <div className="tags n-y">
                                     <span>{t("UI & UX Design")}</span>
                                     <span>{t("Web Design")}</span>
@@ -123,7 +123,7 @@ const OurProjectsDetail = () => {
                                     <h5 className="card-title n-r mb-0 text-white">{t("Web Design & Development")}</h5>
                                     <i className="bi bi-arrow-up-right text-white"></i>
                                 </div>
-                                <p className="card-text n-t">{t("Explore modern, responsive websites crafted for")}<br /> {t("diverse industries")}.</p>
+                                <p className="card-text n-t" style={{maxWidth: "600px", wordBreak: "break-word"}}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
                                 <div className="tags n-y">
                                     <span>{t("UI & UX Design")}</span>
                                     <span>{t("Web Design")}</span>
@@ -141,7 +141,7 @@ const OurProjectsDetail = () => {
                                     <h5 className="card-title n-r mb-0 text-white">{t("Web Design & Development")}</h5>
                                     <i className="bi bi-arrow-up-right text-white"></i>
                                 </div>
-                                <p className="card-text n-t">{t("Explore modern, responsive websites crafted for")}<br /> {t("diverse industries")}.</p>
+                                <p className="card-text n-t" style={{maxWidth: "600px", wordBreak: "break-word"}}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
                                 <div className="tags n-y">
                                     <span>{t("UI & UX Design")}</span>
                                     <span>{t("Web Design")}</span>

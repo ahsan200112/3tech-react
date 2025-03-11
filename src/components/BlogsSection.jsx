@@ -19,9 +19,8 @@ const BlogsSection = () => {
                 <button className="btn btn-sm o-e" style={{ color: "#3B9BE9", border: "1px solid var(--Colors-Border-Border03, #1B1264)" }}>{t("Insights, Tips, and Trends")}</button>
                 <div className="mt-3">
                     <h2 className="v-u">{t("Explore The Latest In Digital Solutions")}</h2>
-                    <p style={{ color: " #CFCECE" }}>{t("Stay updated with expert insights, actionable tips, and industry trends that help you grow your")} <br /> {t("business in the ever-evolving digital world.")}</p>
+                    <p style={{ color: " #CFCECE",maxWidth: "670px", wordBreak: "break-word" }}>{t("Stay updated with expert insights, actionable tips, and industry trends that help you grow your business in the ever-evolving digital world.")}</p>
                 </div>
-
                 <div className="row">
                     <div className="col-lg-8 mb-4">
                         <div className="card custom-card">
@@ -79,7 +78,7 @@ const BlogsSection = () => {
                             <img src={Container2Img} alt="Post Image" style={{ width: "70", height: "71" }} />
                             <div className="ms-3 me-3">
                                 <small className="v-g">March 21, 2024</small>
-                                <p className="mb-0 v-p">{t("Creating for an")}  <br />{t("On-the-Go Audience")}</p>
+                                <p className="mb-0 v-p" style={{maxWidth: "120px", wordBreak: "break-word"}}>{t("Creating for an On-the-Go Audience")}</p>
                             </div>
                         </div>
 
@@ -87,7 +86,7 @@ const BlogsSection = () => {
                             <img src={Container3Img} alt="Post Image" style={{ width: "70", height: "71" }} />
                             <div className="ms-3 me-3">
                                 <small className="v-g">March 21, 2024</small>
-                                <p className="mb-0 v-p">{t("Your Path to Audience")} <br /> {t("Engagement")}</p>
+                                <p className="mb-0 v-p" style={{maxWidth: "190px", wordBreak: "break-word"}}>{t("Your Path to Audience Engagement")}</p>
                             </div>
                         </div>
                     </div>

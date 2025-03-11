@@ -12,7 +12,7 @@ const GetContactNow = () => {
         <section style={{ backgroundColor: "#181818" }}>
             <div className="container py-5">
                 <div className="mb-4">
-                    <button className="btn btn-sm o-e" style={{ color: "#3B9BE9", border: "1px solid var(--Colors-Border-Border03, #1B1264)" }}>Get Contact Now</button>
+                    <button className="btn btn-sm o-e" style={{ color: "#3B9BE9", border: "1px solid var(--Colors-Border-Border03, #1B1264)" }}>{t("Get Contact Now")}</button>
                     <h2 className="v-r mt-3">{t("Let’s Create Something Remarkable Together.")}</h2>
                 </div>
                 <div className="row">

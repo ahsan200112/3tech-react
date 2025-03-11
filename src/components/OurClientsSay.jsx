@@ -29,7 +29,7 @@ const OurClientsSay = () => {
     },
     {
       id: 3,
-      text: t("What sets 3Tech apart is their commitment to understanding our business goals and aligning their solutions accordingly."),
+      text: t("What sets 3Tech apart is their commitment to understanding our business goals and aligning their solutions accordingly. I am working as Marketing Manager"),
       name: "Emily R",
       position: t("Marketing Manager at Digital World"),
       image: Girl2Img,
@@ -43,9 +43,9 @@ const OurClientsSay = () => {
     },
     {
       id: 5,
-      text: "They helped us create a beautiful brand identity, and our customer retention has significantly improved.",
+      text: t("They helped us create a beautiful brand identity, and our customer retention has significantly improved. I am COO of FutureWave."),
       name: "Linda K",
-      position: "COO of FutureWave",
+      position: t("COO of FutureWave"),
       image: Girl2Img,
     },
   ];
@@ -54,7 +54,7 @@ const OurClientsSay = () => {
     <section className="client-testimonials py-5" style={{ direction: isRTL ? "rtl" : "ltr" }} >
       <div className="container">
         <div className="mb-4">
-          <button className="btn btn-sm v-hi" style={{ width: "170px", color: "#3B9BE9" }}>
+          <button className="btn btn-sm v-hi" style={{ color: "#3B9BE9" }}>
             {t("Real Stories, Real Impact")}
           </button>
           <h2 className="v-hence">{t("What Our Clients Say About Us")}</h2>

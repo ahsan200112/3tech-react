@@ -45,7 +45,7 @@ const OurPackages = () => {
                                         <span>{t("Email Marketing")}</span>
                                     </li>
                                 </ul>
-                                <p className="i-world">{t("Support:Email Support")}</p>
+                                <p className="i-world">{t("Support : Email Support")}</p>
                                 <button className="btn-get">{t("Get a Free Consultation")}</button>
                             </div>
                         </div>
