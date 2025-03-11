@@ -14,8 +14,8 @@ function EcommerceSolutionsHeroSection() {
              <section className="u-section">
                 <div className="container py-5">
                     <div className="row">
-                        <div className="col-md-8">
-                            <h2 className="z-x">Here’s What We Provide</h2>
+                    <div className="col-md-8">
+                            <h2 className="z-x">{t('Here’s What We Provide')}</h2>
                         </div>
                         <div className="col-md-4">
                             <div style={{ display: "flex", flexWrap: "wrap" }}>
@@ -28,10 +28,10 @@ function EcommerceSolutionsHeroSection() {
                                         paddingRight: "10px",
                                     }}
                                 >
-                                    Development<br />WordPress<br />Cloud Migration
+                                    {t('Development')}<br />{t('WordPress')}<br />{t('Cloud Migration')}
                                 </p>
                                 <p className="z-c">
-                                    Front End Development<br />JavaScript<br />Flutter Framework
+                                    {t('Front End Development')}<br />{t('JavaScript')}<br />{t('Flutter Framework')}
                                 </p>
                             </div>
                         </div>
@@ -43,18 +43,18 @@ function EcommerceSolutionsHeroSection() {
                                 {[
                                     {
                                         img: ToImg,
-                                        title: "Online Store Development",
-                                        text: "We build modern, feature-rich online stores designed for a seamless shopping experience, helping you sell smarter and scale faster.",
+                                        title: t("Online Store Development"),
+                                        text: t("We build modern, feature-rich online stores designed for a seamless shopping experience, helping you sell smarter and scale faster."),
                                     },
                                     {
                                         img: TiImg,
-                                        title: "Payment Integration (3Pay)",
-                                        text: "Simplify transactions with secure and efficient payment gateway integration tailored for your online store.",
+                                        title: t("Payment Integration (3Pay)"),
+                                        text: t("Simplify transactions with secure and efficient payment gateway integration tailored for your online store."),
                                     },
                                     {
                                         img: ShippingImg,
-                                        title: "Shipping Services",
-                                        text: "Streamline your logistics with integrated shipping solutions that save time and enhance customer satisfaction.",
+                                        title: t("Shipping Services"),
+                                        text: t("Streamline your logistics with integrated shipping solutions that save time and enhance customer satisfaction."),
                                     },
                                 ].map((card, index) => (
                                     <div key={index} className="col-md-4">
@@ -70,7 +70,7 @@ function EcommerceSolutionsHeroSection() {
                                                 />
                                                 <h5 className="card-title ul-b mt-3">{card.title}</h5>
                                                 <p className="card-text ul-c">{card.text}</p>
-                                                <p className="u-help">Explore Service</p>
+                                                <p className="u-help">{t("Explore Service")}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -82,7 +82,7 @@ function EcommerceSolutionsHeroSection() {
 
 
                 <div className="container mt-5">
-                    <h2 className="f-g">Why 3Tech is Your Perfect E-Commerce Partner ?</h2>
+                    <h2 className="f-g">{t("Why 3Tech is Your Perfect E-Commerce Partner ?")}</h2>
                     <div
                         className="card-body mt-3"
                         style={{
@@ -95,11 +95,11 @@ function EcommerceSolutionsHeroSection() {
                             <div className="row">
                                 <div className="col-md-6 mt-3">
                                     <p className="f-k mb-0">(001)</p>
-                                    <h2 className="f-h">Tailored Store Development</h2>
+                                    <h2 className="f-h">{t("Tailored Store Development")}</h2>
                                 </div>
                                 <div className="col-md-6 mt-3">
                                     <p className="f-l">
-                                    We don’t just build stores; we craft experiences uniquely designed to meet your business needs.
+                                    {t("We don’t just build stores; we craft experiences uniquely designed to meet your business needs.")}
                                     </p>
                                 </div>
                             </div>
@@ -108,10 +108,10 @@ function EcommerceSolutionsHeroSection() {
                 </div>
 
                 {[
-                    { num: "002", title: "End-to-End Integration" },
-                    { num: "003", title: "Cutting-Edge Technology" },
-                    { num: "004", title: "Ownership with No Hidden Fees" },
-                    { num: "005", title: "Dedicated Support" },
+                    { num: "002", title: t("End-to-End Integration") },
+                    { num: "003", title: t("Cutting-Edge Technology") },
+                    { num: "004", title: t("Ownership with No Hidden Fees") },
+                    { num: "005", title: t("Dedicated Support") },
                 ].map((item, index) => (
                     <div key={index} className="container mt-5">
                         <div className="row" style={{ borderBottom: "1px solid #FFFFFF" }}>
@@ -129,15 +129,15 @@ function EcommerceSolutionsHeroSection() {
                 ))}
 
                 <div className="container mt-5 pt-5">
-                    <h2 className="text-start g-r mt-2">Our Path to E-Commerce Success</h2>
+                    <h2 className="text-start g-r mt-2">{t("Our Path to E-Commerce Success")}</h2>
                     <div className="row text-center">
                         {[
-                            { step: "Step 1", title: "Consultation & Strategy", desc: "We start by understanding your business goals, target audience, and product offerings to create a tailored e-commerce strategy." },
-                            { step: "Step 2", title: "Design & Prototype", desc: "Our team designs a visually appealing and user-friendly interface that reflects your brand and ensures smooth navigation." },
-                            { step: "Step 3", title: "Development & Integration", desc: "We build your store using the latest technology and integrate essential features like payment gateways, shipping modules, and inventory management." },
-                            { step: "Step 4", title: "Testing & Optimization", desc: "Every aspect of your store is rigorously tested to ensure flawless performance and a seamless shopping experience." },
-                            { step: "Step 5", title: "Launch & Training", desc: "Once ready, we launch your store and provide training so you can manage it confidently." },
-                            { step: "Step 6", title: "Ongoing Support", desc: "Our team remains available for maintenance, updates, and any additional features you may need." }, 
+                            { step: t("Step 1"), title: t("Consultation & Strategy"), desc: t("We start by understanding your business goals, target audience, and product offerings to create a tailored e-commerce strategy.") },
+                            { step: t("Step 2"), title: t("Design & Prototype"), desc: t("Our team designs a visually appealing and user-friendly interface that reflects your brand and ensures smooth navigation.") },
+                            { step: t("Step 3"), title: t("Development & Integration"), desc: t("We build your store using the latest technology and integrate essential features like payment gateways, shipping modules, and inventory management.") },
+                            { step: t("Step 4"), title: t("Testing & Optimization"), desc: t("Every aspect of your store is rigorously tested to ensure flawless performance and a seamless shopping experience.") },
+                            { step: t("Step 5"), title: t("Launch & Training"), desc: t("Once ready, we launch your store and provide training so you can manage it confidently.") },
+                            { step: t("Step 6"), title: t("Ongoing Support"), desc: t("Our team remains available for maintenance, updates, and any additional features you may need.") }, 
                         ].map((item, index) => (
                             <div key={index} className="col-md-4 mb-4">
                                 <div className="step">

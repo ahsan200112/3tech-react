@@ -10,17 +10,15 @@ import F7mg from "../assets/images/7f.png";
 import F8Img from "../assets/images/8f.png";
 
 const OurTrustedPartners = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
   return (
     <section className="trusted-partners py-5">
       <div className="container">
-        <button className="btn btn-sm v-were" style={{ width: "160px", color: "#3B9BE9" }}>Be Part of Our Journey</button>
-        <h2 className="v-value">Our Trusted Partners</h2>
+        <button className="btn btn-sm v-were" style={{ width: "160px", color: "#3B9BE9" }}>{t("Be Part of Our Journey")}</button>
+        <h2 className="v-value">{t("Our Trusted Partners")}</h2>
         <p className="v-auto">
-          We collaborate with exceptional partners who help us deliver luxury and unforgettable experiences.
-          Together, we craft excellence, from premium services to world-class hospitality, ensuring every visit
-          is extraordinary.
+          {t("We collaborate with exceptional partners who help us deliver luxury and unforgettable experiences. Together, we craft excellence, from premium services to world-class hospitality, ensuring every visit is extraordinary.")}
         </p>
       </div>
       <div className="container">

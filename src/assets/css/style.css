@@ -2437,3 +2437,19 @@ h2 {
   /* width: 600px; */
   height: 300px;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: -50px; /* Arrows ko upar le jaane ke liye adjust karein */
+  color: #3B9BE9; /* Arrows ka color */
+  z-index: 10; /* Ensure arrows are visible above other elements */
+}
+
+.swiper-button-prev {
+  left: 40%; /* Adjust as needed */
+}
+
+.swiper-button-next {
+  right: 40%; /* Adjust as needed */
+}

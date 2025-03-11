@@ -10,11 +10,11 @@ function MobileApplicationsHeroSection() {
     const textAlignmentArrow = i18n.dir() === "ltr" ? "text-end" : "text-start"; // Check language direction
     return (
         <>
-             <section className="u-section">
+            <section className="u-section">
                 <div className="container py-5">
                     <div className="row">
                         <div className="col-md-8">
-                            <h2 className="z-x">Here’s What We Provide</h2>
+                            <h2 className="z-x">{t("Here’s What We Provide")}</h2>
                         </div>
                         <div className="col-md-4">
                             <div style={{ display: "flex", flexWrap: "wrap" }}>
@@ -27,10 +27,10 @@ function MobileApplicationsHeroSection() {
                                         paddingRight: "10px",
                                     }}
                                 >
-                                    Development<br />WordPress<br />Cloud Migration
+                                    {t("Development")}<br />{t("WordPress")}<br />{t("Cloud Migration")}
                                 </p>
                                 <p className="z-c">
-                                    Front End Development<br />JavaScript<br />Flutter Framework
+                                    {t("Front End Development")}<br />{t("JavaScript")}<br />{t("Flutter Framework")}
                                 </p>
                             </div>
                         </div>
@@ -42,29 +42,29 @@ function MobileApplicationsHeroSection() {
                                 {[
                                     {
                                         img: MobileDevelopmentImg,
-                                        title: "Custom App Development",
-                                        text: " Create innovative, user-friendly mobile applications designed to meet your business needs and engage your audience.",
+                                        title: t("Custom App Development"),
+                                        text: t("Create innovative, user-friendly mobile applications designed to meet your business needs and engage your audience."),
                                     },
                                     {
                                         img: Maintenance1Img,
-                                        title: "App Maintenance & Updates",
-                                        text: "Ensure your app stays functional, secure, and up-to-date with regular maintenance and enhancements.",
+                                        title: t("App Maintenance & Updates"),
+                                        text: t("Ensure your app stays functional, secure, and up-to-date with regular maintenance and enhancements."),
                                     },
                                 ].map((card, index) => (
                                     <div key={index} className=" col-12 col-md-6">
                                         <div
                                             className="card bg-dark text-white h-100"
-                                            style={{ padding: "25px"}}
+                                            style={{ padding: "25px" }}
                                         >
                                             <div className="card-body">
                                                 <img
                                                     src={card.img}
                                                     alt={card.title}
-                                                   // style={{ height: "60px", width: "60px" }}
+                                                // style={{ height: "60px", width: "60px" }}
                                                 />
                                                 <h5 className="card-title ul-b mt-3">{card.title}</h5>
                                                 <p className="card-text ul-c">{card.text}</p>
-                                                <p className="u-help">Explore Service</p>
+                                                <p className="u-help">{t("Explore Service")}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -76,7 +76,7 @@ function MobileApplicationsHeroSection() {
 
 
                 <div className="container mt-5">
-                    <h2 className="f-g">Why Choose Us for Mobile App Development?</h2>
+                    <h2 className="f-g">{t("Why Choose Us for Mobile App Development?")}</h2>
                     <div
                         className="card-body mt-3"
                         style={{
@@ -89,11 +89,11 @@ function MobileApplicationsHeroSection() {
                             <div className="row">
                                 <div className="col-md-6 mt-3">
                                     <p className="f-k mb-0">(001)</p>
-                                    <h2 className="f-h">Tailored App Development</h2>
+                                    <h2 className="f-h">{t("Tailored App Development")}</h2>
                                 </div>
                                 <div className="col-md-6 mt-3">
                                     <p className="f-l">
-                                    We create mobile apps designed to meet your business needs, user preferences, and goals.
+                                        {t("We create mobile apps designed to meet your business needs, user preferences, and goals.")}
                                     </p>
                                 </div>
                             </div>
@@ -101,9 +101,9 @@ function MobileApplicationsHeroSection() {
                     </div>
                 </div>
                 {[
-                    { num: "002", title: "Cross-Platform Compatibility" },
-                    { num: "003", title: "User-Centric Design" },
-                    { num: "004", title: "Ongoing Updates & Support" },
+                    { num: "002", title: t("Cross-Platform Compatibility") },
+                    { num: "003", title: t("User-Centric Design") },
+                    { num: "004", title: t("Ongoing Updates & Support") },
                 ].map((item, index) => (
                     <div key={index} className="container mt-5">
                         <div className="row" style={{ borderBottom: "1px solid #FFFFFF" }}>
@@ -121,21 +121,21 @@ function MobileApplicationsHeroSection() {
                 ))}
 
                 <div className="container mt-5 pt-5">
-                    <h2 className="text-start g-r mt-2">Crafting Seamless Mobile Experiences</h2>
+                    <h2 className="text-start g-r mt-2">{t("Crafting Seamless Mobile Experiences")}</h2>
                     <div className="row text-center">
                         {[
-                            { step: "Step 1", title: "Consultation & Planning", desc:"We define your app's objectives and features with a clear understanding of your target users." },
-                            { step: "Step 2", title: "UI/UX Design", desc: "Create intuitive and aesthetically pleasing designs that enhance the user experience." },
-                            { step: "Step 3", title: "App Development", desc: "Build the app, ensuring it’s scalable, secure, and functional." },
-                            { step: "Step 4", title: "Testing & Feedback", desc: "Conduct extensive testing across devices and gather user feedback for improvements." },
-                            { step: "Step 5", title: "Launch & Monitoring", desc: "We launch the app and monitor its performance closely." },
-                            { step: "Step 6", title: "Ongoing Support & Maintenance", desc: "Regular updates and bug fixes to ensure your app remains fresh and functional." },
+                            { step: t("Step 1"), title: t("Consultation & Planning"), desc: t("We define your app's objectives and features with a clear understanding of your target users.")},
+                            { step: t("Step 2"), title: t("UI/UX Design"), desc: t("Create intuitive and aesthetically pleasing designs that enhance the user experience.") },
+                            { step: t("Step 3"), title: t("App Development"), desc: t("Build the app, ensuring it’s scalable, secure, and functional.") },
+                            { step: t("Step 4"), title: t("Testing & Feedback"), desc: t("Conduct extensive testing across devices and gather user feedback for improvements.") },
+                            { step: t("Step 5"), title: t("Launch & Monitoring"), desc: t("We launch the app and monitor its performance closely.") },
+                            { step: t("Step 6"), title: t("Ongoing Support & Maintenance"), desc: t("Regular updates and bug fixes to ensure your app remains fresh and functional.") },
                         ].map((item, index) => (
                             <div key={index} className="col-md-4 mb-4">
                                 <div className="step">
                                     <div className="custom-row">
-                                    <button className="text-start btn btn-sm n-j text-white" style={{ border: "1px solid #989898", borderRadius: "15px" }}>{item.step}</button>
-                                    <img src={PinImg} alt="Company Logo" className="img-fluid" />
+                                        <button className="text-start btn btn-sm n-j text-white" style={{ border: "1px solid #989898", borderRadius: "15px" }}>{item.step}</button>
+                                        <img src={PinImg} alt="Company Logo" className="img-fluid" />
                                     </div>
                                     <h5 className="h-klm">{item.title}</h5>
                                     <p className="h-ul">{item.desc}</p>

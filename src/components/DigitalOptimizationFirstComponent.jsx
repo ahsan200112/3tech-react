@@ -11,13 +11,13 @@ const DigitalOptimizationFirstComponent = () => {
                 <div className="container pt-5">
                     <div className="d-flex justify-content-between align-items-center">
                         <div>
-                            <h2 className="o-hlo" style={{ borderBottom: "2px solid" }}>Digital Optimization</h2>
+                            <h2 className="o-hlo" style={{ borderBottom: "2px solid" }}>{t("Digital Optimization")}</h2>
                             {/* <h4 className="o-a">
                                 <i className="bi bi-house-door"></i> Home / About Us
                             </h4> */}
                             <h4 className="o-a d-flex align-items-center" style={{ gap: "8px" }}>
                                 <i className="bi bi-house-door"></i>
-                                <Link to="/" style={{ textDecoration: "none", color: "inherit" }}> Home </Link> / Digital Optimization
+                                <Link to="/" style={{ textDecoration: "none", color: "inherit" }}> {t("Home")} </Link> / {t("Digital Optimization")}
                             </h4>
                         </div>
                         <div className="text-end">

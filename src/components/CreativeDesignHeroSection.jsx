@@ -15,7 +15,7 @@ function CreativeDesignHeroSection() {
                 <div className="container py-5">
                     <div className="row">
                         <div className="col-md-8">
-                            <h2 className="z-x">Here’s What We Provide</h2>
+                            <h2 className="z-x">{t("Here’s What We Provide")}</h2>
                         </div>
                         <div className="col-md-4">
                             <div style={{ display: "flex", flexWrap: "wrap" }}>
@@ -28,10 +28,10 @@ function CreativeDesignHeroSection() {
                                         paddingRight: "10px",
                                     }}
                                 >
-                                    Development<br />WordPress<br />Cloud Migration
+                                    {t("Development")}<br />{t("WordPress")}<br />{t("Cloud Migration")}
                                 </p>
                                 <p className="z-c">
-                                    Front End Development<br />JavaScript<br />Flutter Framework
+                                    {t("Front End Development")}<br />{t("JavaScript")}<br />{t("Flutter Framework")}
                                 </p>
                             </div>
                         </div>
@@ -43,18 +43,18 @@ function CreativeDesignHeroSection() {
                                 {[
                                     {
                                         img: Group1Img,
-                                        title: "Visual Identity Design",
-                                        text: "Build a unique, cohesive visual identity that sets your brand apart and leaves a lasting impression.",
+                                        title: t("Visual Identity Design"),
+                                        text: t("Build a unique, cohesive visual identity that sets your brand apart and leaves a lasting impression."),
                                     },
                                     {
                                         img: PresentationDesignImg,
-                                        title: "Visual Content Design",
-                                        text: "Develop winning marketing strategies with expert guidance to achieve your business goals.",
+                                        title: t("Visual Content Design"),
+                                        text: t("Develop winning marketing strategies with expert guidance to achieve your business goals."),
                                     },
                                     {
                                         img: AnimationImg,
-                                        title: "Motion Graphics & Video Editing",
-                                        text: "Bring your ideas to life with dynamic motion graphics and professionally edited videos.",
+                                        title: t("Motion Graphics & Video Editing"),
+                                        text: t("Bring your ideas to life with dynamic motion graphics and professionally edited videos."),
                                     },
                                 ].map((card, index) => (
                                     <div key={index} className="col-md-4">
@@ -70,7 +70,7 @@ function CreativeDesignHeroSection() {
                                                 />
                                                 <h5 className="card-title ul-b mt-3">{card.title}</h5>
                                                 <p className="card-text ul-c">{card.text}</p>
-                                                <p className="u-help">Explore Service</p>
+                                                <p className="u-help">{t("Explore Service")}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -79,10 +79,8 @@ function CreativeDesignHeroSection() {
                         </div>
                     </div>
                 </div>
-
-
                 <div className="container mt-5">
-                    <h2 className="f-g">Why Choose Us for Creative Design?</h2>
+                    <h2 className="f-g">{t("Why Choose Us for Creative Design?")}</h2>
                     <div
                         className="card-body mt-3"
                         style={{
@@ -95,12 +93,11 @@ function CreativeDesignHeroSection() {
                             <div className="row">
                                 <div className="col-md-6 mt-3">
                                     <p className="f-k mb-0">(001)</p>
-                                    <h2 className="f-h">Tailored Designs</h2>
+                                    <h2 className="f-h">{t("Tailored Designs")}</h2>
                                 </div>
                                 <div className="col-md-6 mt-3">
                                     <p className="f-l">
-                                        We create custom visuals that reflect your brand’s personality
-                                        and message.
+                                        {t("We create custom visuals that reflect your brand’s personality and message.")}
                                     </p>
                                 </div>
                             </div>
@@ -109,9 +106,9 @@ function CreativeDesignHeroSection() {
                 </div>
 
                 {[
-                    { num: "002", title: "Innovative Solutions" },
-                    { num: "003", title: "Consistency Across Channels" },
-                    { num: "004", title: "Fast Turnaround Time" },
+                    { num: "002", title: t("Innovative Solutions") },
+                    { num: "003", title: t("Consistency Across Channels") },
+                    { num: "004", title: t("Fast Turnaround Time") },
                 ].map((item, index) => (
                     <div key={index} className="container mt-5">
                         <div className="row" style={{ borderBottom: "1px solid #FFFFFF" }}>
@@ -129,14 +126,14 @@ function CreativeDesignHeroSection() {
                 ))}
 
                 <div className="container mt-5 pt-5">
-                    <h2 className="text-start g-r mt-2">Designing with Purpose</h2>
+                    <h2 className="text-start g-r mt-2">{t("Designing with Purpose")}</h2>
                     <div className="row text-center">
                         {[
-                            { step: "Step 1", title: "Initial Consultation", desc: "Understand your brand, values, and design requirements." },
-                            { step: "Step 2", title: "Concept Development", desc: "Create initial design concepts that align with your vision." },
-                            { step: "Step 3", title: "Design Refinement", desc: "Refine the design based on your feedback to ensure perfection." },
-                            { step: "Step 4", title: "Final Delivery", desc: "Deliver high-quality, scalable design assets for use across all channels." },
-                            { step: "Step 5", title: "Brand Implementation", desc: "Assist in implementing the designs across various platforms." },
+                            { step: t("Step 1"), title: t("Initial Consultation"), desc: t("Understand your brand, values, and design requirements.") },
+                            { step: t("Step 2"), title: t("Concept Development"), desc: t("Create initial design concepts that align with your vision.") },
+                            { step: t("Step 3"), title: t("Design Refinement"), desc: t("Refine the design based on your feedback to ensure perfection.") },
+                            { step: t("Step 4"), title: t("Final Delivery"), desc: t("Deliver high-quality, scalable design assets for use across all channels.") },
+                            { step: t("Step 5"), title: t("Brand Implementation"), desc: t("Assist in implementing the designs across various platforms.") },
                         ].map((item, index) => (
                             <div key={index} className="col-md-4 mb-4">
                                 <div className="step">

@@ -7,19 +7,18 @@ import Laptop3Img from "../assets/images/laptop3.png";
 
 
 const OurProjects = () => {
-    const { t, i18n } = useTranslation();
-    const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
+    const { t } = useTranslation();
+   // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     return (
         <section className="v-section">
             <div className="container py-5">
                 <div className="py-5">
-                    <button className="btn btn-sm  v-viral" style={{ width: "100px", color: "#3B9BE9" }}>Our Projects</button>
+                    <button className="btn btn-sm  v-viral" style={{ width: "100px", color: "#3B9BE9" }}>{t("Our Projects")}</button>
                     <div className="d-flex justify-content-between align-items-center">
-                        <h2 className="text-start v-visit">Our Work Speaks For Itself</h2>
-                        <button className="btn-view text-end">View More</button>
+                        <h2 className="text-start v-visit">{t("Our Work Speaks For Itself")}</h2>
+                        <button className="btn-view text-end">{t("View More")}</button>
                     </div>
-                    <p className="v-info">Explore our success stories in e-commerce, app development, and creative marketing.
-                        See how we've <br />helped businesses like yours thrive.</p>
+                    <p className="v-info">{t("Explore our success stories in e-commerce, app development, and creative marketing.See how we've")} <br />{t("helped businesses like yours thrive.")}</p>
                     <div className="d-flex justify-content-end">
                     </div>
                     <div className="row mt-4">
@@ -28,10 +27,10 @@ const OurProjects = () => {
                                 <div className="image-overlay-container">
                                     <img src={Laptop1Img} className="card-img-top" alt="Web Design" />
                                     <div class="overlay-text">
-                                        <div className="v-help ">Web Design & Development</div>
+                                        <div className="v-help ">{t("Web Design & Development")}</div>
                                         <div className="v-live d-flex justify-content-between">
                                             <div className="v-live">
-                                                Explore modern, responsive websites crafted for diverse industries.
+                                                {t("Explore modern, responsive websites crafted for diverse industries.")}
                                             </div>
                                             <div>
                                                 <img src={CenterImg} alt="Example" style={{ width: "19px", height: "17", color: "#FFFFFF" }} />

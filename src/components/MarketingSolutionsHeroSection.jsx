@@ -15,7 +15,7 @@ function MarketingSolutionsHeroSection() {
                 <div className="container py-5">
                     <div className="row">
                         <div className="col-md-8">
-                            <h2 className="z-x">Here’s What We Provide</h2>
+                            <h2 className="z-x">{t("Here’s What We Provide")}</h2>
                         </div>
                         <div className="col-md-4">
                             <div style={{ display: "flex", flexWrap: "wrap" }}>
@@ -28,10 +28,10 @@ function MarketingSolutionsHeroSection() {
                                         paddingRight: "10px",
                                     }}
                                 >
-                                    Development<br />WordPress<br />Cloud Migration
+                                    {t("Development")}<br />{t("WordPress")}<br />{t("Cloud Migration")}
                                 </p>
                                 <p className="z-c">
-                                    Front End Development<br />JavaScript<br />Flutter Framework
+                                    {t("Front End Development")}<br />{t("JavaScript")}<br />{t("Flutter Framework")}
                                 </p>
                             </div>
                         </div>
@@ -43,18 +43,18 @@ function MarketingSolutionsHeroSection() {
                                 {[
                                     {
                                         img: Vector5Img,
-                                        title: "Advertising Campaign Management",
-                                        text: "Maximize your reach with expertly managed ad campaigns across platforms like Google, Facebook, and Instagram.",
+                                        title: t("Advertising Campaign Management"),
+                                        text: t("Maximize your reach with expertly managed ad campaigns across platforms like Google, Facebook, and Instagram."),
                                     },
                                     {
                                         img: TaskImg,
-                                        title: "Marketing Consultancy & Strategic Planning",
-                                        text: "Develop winning marketing strategies with expert guidance to achieve your business goals.",
+                                        title: t("Marketing Consultancy & Strategic Planning"),
+                                        text: t("Develop winning marketing strategies with expert guidance to achieve your business goals."),
                                     },
                                     {
                                         img: CopyWritingImg,
-                                        title: "Content Writing",
-                                        text: "Engage your audience with persuasive, high-quality content that reflects your brand’s voice.",
+                                        title: t("Content Writing"),
+                                        text: t("Engage your audience with persuasive, high-quality content that reflects your brand’s voice."),
                                     },
                                 ].map((card, index) => (
                                     <div key={index} className="col-md-4">
@@ -70,7 +70,7 @@ function MarketingSolutionsHeroSection() {
                                                 />
                                                 <h5 className="card-title ul-b mt-3">{card.title}</h5>
                                                 <p className="card-text ul-c">{card.text}</p>
-                                                <p className="u-help">Explore Service</p>
+                                                <p className="u-help">{t("Explore Service")}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -82,7 +82,7 @@ function MarketingSolutionsHeroSection() {
 
 
                 <div className="container mt-5">
-                    <h2 className="f-g">Why Choose Us for Marketing Solutions?</h2>
+                    <h2 className="f-g">{t("Why Choose Us for Marketing Solutions?")}</h2>
                     <div
                         className="card-body mt-3"
                         style={{
@@ -95,11 +95,11 @@ function MarketingSolutionsHeroSection() {
                             <div className="row">
                                 <div className="col-md-6 mt-3">
                                     <p className="f-k mb-0">(001)</p>
-                                    <h2 className="f-h">Targeted Campaigns</h2>
+                                    <h2 className="f-h">{t("Targeted Campaigns")}</h2>
                                 </div>
                                 <div className="col-md-6 mt-3">
                                     <p className="f-l">
-                                    We create tailored campaigns that reach your specific audience and achieve your goals.
+                                    {t("We create tailored campaigns that reach your specific audience and achieve your goals.")}
                                     </p>
                                 </div>
                             </div>
@@ -107,9 +107,9 @@ function MarketingSolutionsHeroSection() {
                     </div>
                 </div>
                 {[
-                    { num: "002", title: "Data-Driven Results" },
-                    { num: "003", title: "Creative Content" },
-                    { num: "004", title: "Multi-Channel Expertise" },
+                    { num: "002", title: t("Data-Driven Results") },
+                    { num: "003", title: t("Creative Content") },
+                    { num: "004", title: t("Multi-Channel Expertise") },
                 ].map((item, index) => (
                     <div key={index} className="container mt-5">
                         <div className="row" style={{ borderBottom: "1px solid #FFFFFF" }}>
@@ -127,15 +127,15 @@ function MarketingSolutionsHeroSection() {
                 ))}
 
                 <div className="container mt-5 pt-5">
-                    <h2 className="text-start g-r mt-2">Our Path to E-Commerce Success</h2>
+                    <h2 className="text-start g-r mt-2">{t("Our Path to E-Commerce Success")}</h2>
                     <div className="row text-center">
                         {[
-                            { step: "Step 1", title: "Goal Setting", desc:"Understand your business objectives and define clear marketing goals." },
-                            { step: "Step 2", title: "Research & Targeting", desc: "Identify your ideal customer and develop a targeted marketing strategy." },
-                            { step: "Step 3", title: "Compaign Development", desc: "Create compelling ads, content, and marketing materials." },
-                            { step: "Step 4", title: "Execution & Monitoring", desc: "Launch campaigns and monitor their performance to optimize results." },
-                            { step: "Step 5", title: "Reporting & Analysis", desc: "Provide detailed reports to track the success of campaigns." },
-                            { step: "Step 6", title: "Continuous Optimization", desc: "Use data insights to refine and improve campaigns over time." },
+                            { step: t("Step 1"), title: t("Goal Setting"), desc:t("Understand your business objectives and define clear marketing goals.") },
+                            { step: t("Step 2"), title: t("Research & Targeting"), desc: t("Identify your ideal customer and develop a targeted marketing strategy.") },
+                            { step: t("Step 3"), title: t("Compaign Development"), desc: t("Create compelling ads, content, and marketing materials.") },
+                            { step: t("Step 4"), title: t("Execution & Monitoring"), desc: t("Launch campaigns and monitor their performance to optimize results.") },
+                            { step: t("Step 5"), title: t("Reporting & Analysis"), desc: t("Provide detailed reports to track the success of campaigns.") },
+                            { step: t("Step 6"), title: t("Continuous Optimization"), desc: t("Use data insights to refine and improve campaigns over time.") },
                         ].map((item, index) => (
                             <div key={index} className="col-md-4 mb-4">
                                 <div className="step">
