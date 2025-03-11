@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import MobileDevelopmentImg from '../assets/images/mobile-development.png';
 import Maintenance1Img from '../assets/images/maintenance (1).png';
 import PinImg from '../assets/images/pin.png';

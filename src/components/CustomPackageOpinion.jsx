@@ -5,7 +5,7 @@ import LocationImg from "../assets/images/Location.svg";
 import EmailImg from "../assets/images/Email.png";
 
 const CustomPackageOpinion = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const isRTL = document.dir === "rtl"; // Ya kisi global state se lein
     
     return (

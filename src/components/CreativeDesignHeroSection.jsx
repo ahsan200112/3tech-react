@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import Group1Img from '../assets/images/Group (1).png';
 import PresentationDesignImg from '../assets/images/presentation-design.png';
 import AnimationImg from '../assets/images/animation.png';

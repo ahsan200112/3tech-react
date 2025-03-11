@@ -8,7 +8,7 @@ import JUImg from "../assets/images/ju.png";
 import Group3Img from "../assets/images/Group (3).png";
 
 const OurServices = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
    // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     return (
         <section className="u-section">

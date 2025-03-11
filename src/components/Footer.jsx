@@ -43,11 +43,11 @@ const Footer = () => {
           <div className="col-md-3">
             <h5 className="v-house margin-right-40">{t("Services")}</h5>
             <ul className="list-unstyled">
-              <li><a href="/ecommerce solution" className="text-start v-inner  text-decoration-none">{t("E-Commerce Solutions")}</a></li>
-              <li><a href="/mobile application" className="text-start v-inner text-decoration-none">{t("Mobile Applications")}</a></li>
-              <li><a href="/marketing solutions" className="text-start v-inner text-decoration-none">{t("Marketing Solutions")}</a></li>
-              <li><a href="/creative design" className="text-start v-inner text-decoration-none">{t("Creative Design")}</a></li>
-              <li><a href="/digital optimization" className="text-start v-inner text-decoration-none">{t("Digital Optimization")}</a></li>
+              <li><a href="/ecommercesolutions" className="text-start v-inner  text-decoration-none">{t("E-Commerce Solutions")}</a></li>
+              <li><a href="/mobileapplications" className="text-start v-inner text-decoration-none">{t("Mobile Applications")}</a></li>
+              <li><a href="/marketingsolutions" className="text-start v-inner text-decoration-none">{t("Marketing Solutions")}</a></li>
+              <li><a href="/creativedesign" className="text-start v-inner text-decoration-none">{t("Creative Design")}</a></li>
+              <li><a href="/digitaloptimization" className="text-start v-inner text-decoration-none">{t("Digital Optimization")}</a></li>
             </ul>
           </div>
           <div className="col-md-3">

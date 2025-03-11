@@ -48,7 +48,7 @@ const BlogsSection = () => {
                     <div className="col-lg-4">
                         <div className="mb-4 input-style">
                             <div style={{ display: "flex", alignItems: "center" }}>
-                                <img src={Search1Img} alt="Post Image" style={{ width: "15px", height: "15px" }} />
+                                <img src={Search1Img} alt="Post" style={{ width: "15px", height: "15px" }} />
                                 <input type="text" className="form-control bg-transparent text-white border-0 custom-placeholder" placeholder="Search"
                                     style={{
                                         flex: "1",
@@ -59,15 +59,15 @@ const BlogsSection = () => {
                         </div>
                         <h5 className="v-s">{t("Category List")}</h5>
                         <ul className="category-list ps-0 pe-0">
-                            <li><a href="#" className="text-decoration-none v-d">{t("E-Commerce Solutions (3)")}</a></li>
-                            <li><a href="#" className="text-decoration-none v-d">{t("Mobile Applications (4)")}</a></li>
-                            <li><a href="#" className="text-decoration-none v-d">{t("Marketing Solutions (4)")}</a></li>
-                            <li><a href="#" className="text-decoration-none v-d">{t("Creative Design (4)")}</a></li>
-                            <li><a href="#" className="text-decoration-none v-d">{t("Digital Optimization (4)")}</a></li>
+                            <li><a href="ecommercesolutions" className="text-decoration-none v-d">{t("E-Commerce Solutions (3)")}</a></li>
+                            <li><a href="mobileapplications" className="text-decoration-none v-d">{t("Mobile Applications (4)")}</a></li>
+                            <li><a href="marketingsolutions" className="text-decoration-none v-d">{t("Marketing Solutions (4)")}</a></li>
+                            <li><a href="creativedesign" className="text-decoration-none v-d">{t("Creative Design (4)")}</a></li>
+                            <li><a href="digitaloptimization" className="text-decoration-none v-d">{t("Digital Optimization (4)")}</a></li>
                         </ul>
                         <h5 className="mt-4 v-f">{t("Recent Post")}</h5>
                         <div className="d-flex align-items-center recent-post mb-3 mt-3">
-                            <img src={Container1Img} alt="Post Image" style={{ width: "70", height: "71" }} />
+                            <img src={Container1Img} alt="Post" style={{ width: "70", height: "71" }} />
                             <div className="ms-3 me-3">
                                 <small className="v-g">March 21, 2024</small>
                                 <p className="mb-0 v-p">{t("Connecting with Key")} <br /> {t("Online Voices")}</p>
@@ -75,7 +75,7 @@ const BlogsSection = () => {
                         </div>
 
                         <div className="d-flex align-items-center recent-post mb-3">
-                            <img src={Container2Img} alt="Post Image" style={{ width: "70", height: "71" }} />
+                            <img src={Container2Img} alt="Post" style={{ width: "70", height: "71" }} />
                             <div className="ms-3 me-3">
                                 <small className="v-g">March 21, 2024</small>
                                 <p className="mb-0 v-p" style={{maxWidth: "120px", wordBreak: "break-word"}}>{t("Creating for an On-the-Go Audience")}</p>
@@ -83,7 +83,7 @@ const BlogsSection = () => {
                         </div>
 
                         <div className="d-flex align-items-center recent-post">
-                            <img src={Container3Img} alt="Post Image" style={{ width: "70", height: "71" }} />
+                            <img src={Container3Img} alt="Post" style={{ width: "70", height: "71" }} />
                             <div className="ms-3 me-3">
                                 <small className="v-g">March 21, 2024</small>
                                 <p className="mb-0 v-p" style={{maxWidth: "190px", wordBreak: "break-word"}}>{t("Your Path to Audience Engagement")}</p>

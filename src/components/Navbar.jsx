@@ -5,7 +5,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { useTranslation } from 'react-i18next';
 import RectangleImg from '../assets/images/Rectangle.png';
 import LanguageToggle from './LanguageToggle';
-import ThemeSwitcher from './ThemeSwitcher';
+//import ThemeSwitcher from './ThemeSwitcher';
 
 const Navbar = () => {
   const { t } = useTranslation();

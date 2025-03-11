@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import Vector5Img from '../assets/images/Vector (5).png';
 import TaskImg from '../assets/images/task.png';
 import CopyWritingImg from '../assets/images/copy-writing.png';

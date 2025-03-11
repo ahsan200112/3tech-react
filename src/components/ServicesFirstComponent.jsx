@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import BlackImg from "../assets/images/Black.png";
 
 const ServicesFirstComponent = () => {
-    const { t, i18n } = useTranslation();
-    const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
+    const { t } = useTranslation();
+   // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     return (
         <div style={{ backgroundColor: " #090909" }}>
             <section className="while-valu ">

@@ -37,7 +37,7 @@ const OurProjectsDetail = () => {
                     <div className="col-md-6">
                         <div className="card project-card position-relative" style={{ backgroundColor: "#181818" }}>
                             <div className="tag">{t("E-Commerce Solutions")}</div>
-                            <img src={TopImg} class="card-img-top" alt="Project Image" style={{ width: "588px", height: "350px" }} />
+                            <img src={TopImg} class="card-img-top" alt="Project" style={{ width: "588px", height: "350px" }} />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title n-r mb-0 text-white">{t("Web Design & Development")}</h5>
@@ -55,7 +55,7 @@ const OurProjectsDetail = () => {
                     <div className="col-md-6">
                         <div className="card project-card position-relative" style={{ backgroundColor: "#181818" }}>
                             <div className="tag">{t("Creative Design")}</div>
-                            <img src={LapImg} className="card-img-top" alt="Project Image" style={{ width: "588px", height: "350px" }} />
+                            <img src={LapImg} className="card-img-top" alt="Project" style={{ width: "588px", height: "350px" }} />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title n-r mb-0 text-white">{t("Web Design & Development")}</h5>
@@ -77,7 +77,7 @@ const OurProjectsDetail = () => {
                     <div className="col-md-6">
                         <div className="card project-card position-relative" style={{ backgroundColor: "#181818" }}>
                             <div className="tag">{t("Mobile Applications")}</div>
-                            <img src={LapImg} className="card-img-top" alt="Project Image" style={{ width: "588px", height: "350px" }} />
+                            <img src={LapImg} className="card-img-top" alt="Project" style={{ width: "588px", height: "350px" }} />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title n-r mb-0 text-white">{t("Web Design & Development")}</h5>
@@ -95,7 +95,7 @@ const OurProjectsDetail = () => {
                     <div className="col-md-6">
                         <div className="card project-card position-relative" style={{ backgroundColor: "#181818" }}>
                             <div className="tag">{t("Creative Design")}</div>
-                            <img src={ParImg} className="card-img-top" alt="Project Image" style={{ width: "588px", height: "350px" }} />
+                            <img src={ParImg} className="card-img-top" alt="Project" style={{ width: "588px", height: "350px" }} />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title n-r mb-0 text-white">{t("Web Design & Development")}</h5>
@@ -117,7 +117,7 @@ const OurProjectsDetail = () => {
                     <div className="col-md-6">
                         <div className="card project-card position-relative" style={{ backgroundColor: "#181818" }}>
                             <div className="tag">{t("Creative Design")}</div>
-                            <img src={TopImg} className="card-img-top" alt="Project Image" style={{ width: "588px", height: "350px" }} />
+                            <img src={TopImg} className="card-img-top" alt="Project" style={{ width: "588px", height: "350px" }} />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title n-r mb-0 text-white">{t("Web Design & Development")}</h5>
@@ -135,7 +135,7 @@ const OurProjectsDetail = () => {
                     <div className="col-md-6">
                         <div className="card project-card position-relative" style={{ backgroundColor: "#181818" }}>
                             <div className="tag">{t("Mobile Application")}</div>
-                            <img src={ParImg} className="card-img-top" alt="Project Image" style={{ width: "588px", height: "350px" }} />
+                            <img src={ParImg} className="card-img-top" alt="Project" style={{ width: "588px", height: "350px" }} />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title n-r mb-0 text-white">{t("Web Design & Development")}</h5>
