@@ -7,8 +7,8 @@ const PackagesFirstComponent = () => {
     const { t } = useTranslation();
    // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     return (
-        <div style={{ backgroundColor: " #090909" }}>
-            <section className="while-valu ">
+        <div className="while-valu">
+            <section >
                 <div className="container pt-5">
                     <div className="d-flex justify-content-between align-items-center">
                         <div>

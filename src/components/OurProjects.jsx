@@ -13,7 +13,7 @@ const OurProjects = () => {
         <section className="v-section">
             <div className="container py-5">
                 <div className="py-5">
-                    <button className="btn btn-sm  v-viral" style={{ width: "100px", color: "#3B9BE9" }}>{t("Our Projects")}</button>
+                    <button className="btn-sm v-viral" style={{width: "125px"}}>{t("Our Projects")}</button>
                     <div className="d-flex justify-content-between align-items-center">
                         <h2 className="v-visit">{t("Our Work Speaks For Itself")}</h2>
                         <button className="btn-view text-end">{t("View More")}</button>
@@ -28,7 +28,7 @@ const OurProjects = () => {
                                     <img src={Laptop1Img} className="card-img-top" alt="Web Design" />
                                     <div class="overlay-text">
                                         <div className="v-help ">{t("Web Design & Development")}</div>
-                                        <div className="v-live d-flex justify-content-between">
+                                        <div className="d-flex justify-content-between">
                                             <div className="v-live">
                                                 {t("Explore modern, responsive websites crafted for diverse industries.")}
                                             </div>

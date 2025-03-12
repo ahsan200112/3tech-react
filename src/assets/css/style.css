@@ -9,70 +9,38 @@ html[dir="ltr"] {
   direction: ltr;
   text-align: left;
 }
-
 :root {
-  --base-color: white;
-  --base-variant: #e8e9ed;
-  --text-color: #FFFFFF;
-  --secondary-text: #232738;
-  --primary-color: #3a435d;
-  --accent-color: #0071ff;
+  --bg-primary: #181818;  /* Dark Gray */
+  --bg-secondary: #212121; /* Slightly Lighter Gray */
+  --bg-firstcomponent:#090909;
+  --text-primary: #ffffff; /* White */
+  --text-secondary:#CFCECE; 
+  --navbar-bg: #14191f;
+  --button-bg: #181818;
+  --button-border: #ffffff;
+  --button-text: #ffffff;
 }
 
-.darkmode {
-  --base-color: #181818;
-  --base-variant: #101425;
-  --text-color: #FFFFFF;
-  --secondary-text: #a4a5b8;
-  --primary-color: #3a435d;
-  --accent-color: #0071ff;
-}
-
-body {
- /* background-color: var(--base-color);
-  color: var(--text-color); */
-  background-color: #181818;
-  color: #FFFFFF;
-}
-
-#theme-switch {
-  height: 40px;
-  width: 40px;
-  padding: 0;
-  border-radius: 50%;
-  background-color: var(--base-variant);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 10px;
-  right: 20px;
-  cursor: pointer;
-}
-
-#theme-switch svg {
-  fill: var(--primary-color);
-}
-
-#theme-switch svg:last-child {
-  display: none;
-}
-
-.darkmode #theme-switch svg:first-child {
-  display: none;
-}
-
-.darkmode #theme-switch svg:last-child {
-  display: block;
+/* Light Mode */
+[data-theme="light"] {
+  --bg-primary: #ffffff;  /* White */
+  --bg-secondary: #f8f9fa; /* Light Gray */
+  --bg-firstcomponent: #FBFBFB;
+  --text-primary: #000000; /* Black */
+  --text-secondary: #636363;
+  --navbar-bg: #fcfdfe;
+  --button-bg: #ffffff;
+  --button-border: #181818;
+  --button-text: #181818;
 }
 
 * {
   margin: 0;
 }
-
+/* Apply background and text colors */
 body {
-  background: #181818;
-  color: #fff;
+  background: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 [dir="rtl"] .navbar-brand {
@@ -84,18 +52,19 @@ body {
   margin-right: 0 !important;
   margin-left: 1rem !important;
 }
-
+.while-valu{
+  background-color: var(--bg-firstcomponent);
+}
 .hero-section {
   padding: 80px 0;
   text-align: center;
   position: relative;
-  background-color: #181818;
-  /* background-image: url(./images/back.png); */
+  background-color: var(--bg-primary);
   background-repeat: no-repeat;
 }
 
 .hero-section p {
-  color: #d9d9d9;
+  color: var(--text-primary);
 }
 
 .btn-primary {
@@ -104,7 +73,7 @@ body {
 }
 
 .btn-outline-light {
-  border-color: #ffffff;
+  border-color: var(--text-primary);
 }
 
 .mockup-image img {
@@ -114,13 +83,7 @@ body {
 [dir="rtl"] .margin-right-40 {
  margin-right: 40px;
 }
-[dir="rtl"] .right-align-rtl {
- text-align: right;
-}
-/* .user{
-    background-image: url('back.jpg'); /* Replace with your image URL 
-}
-    */
+
 .hlo {
 
   font-family: Reddit Sans;
@@ -128,7 +91,7 @@ body {
   font-weight: 400;
   line-height: 27px;
   text-align: center;
-  color: #E84EAB;
+  color: #E84EAB !important;
 }
 
 .u-vie {
@@ -138,118 +101,55 @@ body {
   font-weight: 700;
   line-height: 67.2px;
   text-align: left;
-  color: #FFFFFF;
+  color: var(--text-primary);
 
 }
 
 .u-whi {
-
   font-family: Reddit Sans;
   font-size: 14px;
   font-weight: 400;
   line-height: 27px;
   text-align: left;
-  color: #CFCECE;
+  color: var(--text-primary);
 }
 
-/*.btn-under{
-    width: 208px;
-height: 46px;
-padding: 12px 20px 12px 20px;
-gap: 10px;
-border-radius: 30px 0px 0px 0px;
-opacity: 0px;
-background-color:  #3B9BE9;
-
-font-family: Reddit Sans;
-font-size: 16px;
-font-weight: 700;
-line-height: 22.4px;
-text-align: left;
-color:  #FFFFFF;
-}*/
 .btn-under {
   width: 208px;
-  /* Button width */
-  /*height: 46px;  Button height */
-  padding: 15px 15px 15px 15px;
-  /* Padding inside the button */
+  padding: 15px;
   gap: 10px;
-  /* Space between child elements (if applicable) */
-  border-radius: 30px 30px 30px 30px;
-  /* Rounded top-left corner */
+  border-radius: 30px;
   background-color: #3B9BE9;
-  /* Button background color */
-  font-family: 'Reddit Sans', sans-serif;
-  /* Font family */
+  font-family: 'Reddit Sans';
   font-size: 16px;
-  /* Font size */
   font-weight: 700;
-  /* Bold font */
-  /*line-height: 22.4px;  Line height for the text */
   text-align: center;
-  /* Align text to the left */
   color: #FFFFFF;
-  /* Text color */
+  border: 1px solid var(--text-primary);
   opacity: 1;
-  /* Ensures the button is visible */
 }
 
-/*.btn-while{
-    width: 214px;
-height: 46px;
-padding: 12px 20px 12px 20px;
-gap: 10px;
-border-radius: 30px 0px 0px 0px;
-border: 1px 0px 0px 0px;
-opacity: 0px;
-border: 1px solid;
-background-color:  #CFCECE;
-
-font-family: Reddit Sans;
-font-size: 16px;
-font-weight: 700;
-line-height: 22.4px;
-text-align: left;
-color:  #CFCECE;
-
-} */
 .btn-while {
   width: 214px;
-  /* Button width */
-  /*height: 46px;  Button height */
-  padding: 15px 15px 15px 15px;
-  /* Padding inside the button */
+  padding: 15px;
   gap: 10px;
-  /* Gap between child elements (if applicable) */
-  border-radius: 30px 30px 30px 30px;
-  /* Rounded top-left corner */
-  border: 1px solid #CFCECE;
-  /* Border with a specific color */
-  background-color: #181818;
-  /* Button background color */
-  font-family: 'Reddit Sans', sans-serif;
-  /* Font family */
+  border-radius: 30px;
+  border: 1px solid var(--button-border);
+  background-color: var(--button-bg);
+  font-family: 'Reddit Sans';
   font-size: 16px;
-  /* Font size */
   font-weight: 700;
-  /* Bold font */
   line-height: 22.4px;
-  /* Line height for text */
   text-align: center;
-  /* Aligns text to the left */
-  color: #CFCECE;
-  /* Text color */
+  color: var(--button-text);
   opacity: 1;
-  /* Ensures the button is visible */
 }
 
 .u-section {
-  background-color: #181818;
+  background-color: var(--bg-primary);
 }
 
 .u-vise {
-
   font-family: Reddit Sans;
   font-size: 16px;
   font-weight: 700;
@@ -257,19 +157,30 @@ color:  #CFCECE;
   text-align: center;
   color: #3B9BE9;
   border: 1px solid #1B1264;
-  width: 133px;
+  background-color: var(--bg-primary);
   height: 40px;
-  padding: 9px 20px 9px 20px;
+  padding: 9px 15px;
   gap: 10px;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
-  /*font-family: Reddit Sans;
-  font-size: 16px ;
-  letter-spacing: 0px;
-  line-height: 140%;
+}
+
+.f-vise{
+  font-family: Reddit Sans;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22.4px;
+  text-align: center;
   color: #3B9BE9;
-  border: 1px solid #3B9BE9;*/
+  border: 1px solid #1B1264;
+  background-color: var(--bg-secondary);
+  height: 40px;
+  padding: 9px 15px;
+  gap: 10px;
+  border-radius: 10px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
 }
 
 .u-visit {
@@ -279,7 +190,7 @@ color:  #CFCECE;
   font-weight: 700;
   line-height: 50.4px;
   text-align: left;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .f-hj {
@@ -287,13 +198,12 @@ color:  #CFCECE;
 }
 
 .u-were {
-
   font-family: Reddit Sans;
   font-size: 38px;
   font-weight: 700;
   line-height: 49.36px;
   text-align: left;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .u-here {
@@ -302,12 +212,7 @@ color:  #CFCECE;
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
-
-  color: #CFCECE;
-}
-
-.u-world {
-  /* background-image: url(./images/order.png); */
+  color: var(--text-secondary);
 }
 
 .u-how {
@@ -316,40 +221,33 @@ color:  #CFCECE;
   font-weight: 700 !important;
   line-height: 67.2px;
   text-align: center;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .u-all {
-
   font-family: Reddit Sans;
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
   text-align: center;
-  color: #CFCECE;
-
-
+  color: var(--text-secondary);
 }
 
 .u-value {
-
-
   font-size: 56px;
   font-weight: 700;
   line-height: 67.2px;
   text-align: center;
   color: #3B9BE9;
-
 }
 
 .u-home {
-
   font-family: Reddit Sans;
   font-size: 56px;
   font-weight: 700;
   line-height: 67.2px;
   text-align: center;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .u-well {
@@ -357,17 +255,15 @@ color:  #CFCECE;
   font-size: 24px;
   font-weight: 700;
   line-height: 33.6px;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .u-vell {
-
   font-family: Reddit Sans;
   font-size: 24px;
   font-weight: 700;
   line-height: 33.6px;
-  color: #FFFFFF;
-
+  color: var(--text-primary);
 }
 
 .u-space {
@@ -375,7 +271,7 @@ color:  #CFCECE;
   font-size: 14px;
   font-weight: 400;
   line-height: 16.8px;
-  color: #CFCECE;
+  color: var(--text-secondary);
 }
 
 .u-help {
@@ -383,123 +279,60 @@ color:  #CFCECE;
   font-size: 18px;
   font-weight: 700;
   line-height: 27px;
-  color: #FFFFFF;
-}
-
-.u-drive {
-
-  font-family: Reddit Sans;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 22.4px;
-  text-align: center;
-  color: #3B9BE9;
-  width: 133px;
-  height: 40ppx;
-  padding: 9px 20px 9px 20px;
-  gap: 10px;
-  border-radius: 8px 8px 8px 8px;
-  border: 1px 1px 1px 1px;
-  opacity: 0px;
-  border: 1px solid #1B1264;
-
-
-
+  color: var(--text-primary);
 }
 
 .u-item {
-
   font-family: Reddit Sans;
   font-size: 35px;
   font-weight: 700;
   line-height: 50.4px;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
-/* .btn-next{
-
-font-family: Reddit Sans;
-font-size: 16px;
-font-weight: 700;
-line-height: 22.4px;
-text-align: left;
-color:  #CFCECE;
-width: Hug (166px)px;
-height: Hug (52px)px;
-padding: 15px 20px 15px 20px;
-gap: 10px;
-border-radius: 30px 0px 0px 0px;
-border: 1px 0px 0px 0px;
-opacity: 0px;
-border: 1px solid;
-Color: #CFCECE;
-
-  } */
 .btn-next {
   font-family: 'Reddit Sans', sans-serif;
-  /* Font family */
   font-size: 16px;
-  /* Font size */
   font-weight: 700;
-  /* Bold text */
   line-height: 22.4px;
-  /* Line height */
   text-align: center;
-  /* Text aligned to the left */
-  color: #CFCECE;
-  /* Text color */
+  color: var(--text-secondary);
   width: 166px;
-  /* Fixed width */
   height: 52px;
-  /* Fixed height */
-  padding: 15px 15px 15px 15px;
-  /* Padding inside the button */
+  padding: 15px;
   gap: 10px;
-  /* Gap between elements (if needed) */
-  border-radius: 30px 30px 30px 30px;
-  /* Rounded top-left corner */
-  border: 1px solid #CFCECE;
-  /* Solid border with the same color as text */
+  border-radius: 30px;
+  border: 1px solid var(--text-secondary);
   opacity: 1;
-  /* Fully visible button */
   background-color: transparent;
-  /* Make the background transparent */
   cursor: pointer;
-  /* Pointer cursor on hover */
   transition: all 0.3s ease;
-  /* Smooth transitions on hover */
 }
 
 .btn-next:hover {
   background-color: #3B9BE9;
-  /* Change background color on hover */
   color: #FFFFFF;
-  /* Change text color to white on hover */
 }
 
 .btn-our {
-  width: 350px;
-
-  padding: 15px 20px 15px 20px;
+  padding: 15px 20px;
   gap: 10px;
-  border-radius: 30px 30px 30px 30px;
+  border-radius: 30px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
   border: 1px solid;
-  background-color: #181818;
+  background-color: var(--bg-primary);
   align-items: center;
   font-family: Reddit Sans;
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
   text-align: center;
-
-  color: #CFCECE;
-
+  color: var(--text-secondary);
 }
 
 .v-section {
-  background-color: #181818;
+  background-color: var(--bg-primary);
 }
 .border-line {
   position: absolute;
@@ -507,7 +340,7 @@ Color: #CFCECE;
   transform: translateY(-50%);
   width: 1px;
   height: 60%;
-  background-color: white;
+  background-color: var(--text-secondary);
 }
 
 /* LTR ke liye right side pe border */
@@ -522,33 +355,10 @@ Color: #CFCECE;
 
 
 .u-easy {
-
-  /*font-family: Reddit Sans;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 22.4px;
-    text-align: center;
-    color:  #3B9BE9;
-    font-family: Reddit Sans;*/
-  /* font-size: 16px;
-font-weight: 700;
-line-height: 22.4px;
-text-align: center;
-color:  #3B9BE9;
-width: 133px;
-height: 40px;
-padding: 9px 20px 9px 20px;
-gap: 10px;
-border-radius: 8px 8px 8px 8px;
-border: 1px 1px 1px 1px;
-opacity: 0px;
-border: 1px solid  #1B1264; */
-  /*----------------*/
-  width: 231px;
-  height: 50px;
-  padding: 19px 20px 19px 20px;
+  height: 40px;
+  padding: 9px 15px;
   gap: 10px;
-  border-radius: 8px 0px 0px 0px;
+  border-radius: 8px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
   border: 1px solid #1B1264;
@@ -557,12 +367,8 @@ border: 1px solid  #1B1264; */
   font-weight: 700;
   line-height: 22.4px;
   text-align: center;
-  width: 191px;
-  height: 22px;
-  gap: 0px;
-  opacity: 0px;
+  background-color: var(--bg-primary);
   color: #3B9BE9;
-
 }
 
 .u-well {
@@ -570,47 +376,27 @@ border: 1px solid  #1B1264; */
   font-size: 42px;
   font-weight: 700;
   line-height: 50.4px;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .v-wel {
-
   font-family: Reddit Sans;
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
-  color: #CFCECE;
+  color: var(--text-secondary);
 
 }
 
 .custom-list-item {
-
   font-family: Reddit Sans;
   font-size: 16px;
   font-weight: 400;
   line-height: 22.4px;
   text-align: left;
-  color: #FFFFFF;
-
-
+  color: var(--text-primary);
 }
 
-/*.btn-contact{
-    width: 278px;
-   height: 46px;
-padding: 12px 100px 12px 100px;
-gap: 10px;
-border-radius: 30px 30px 30px 30px;
-opacity: 0px;
-background-color:  #3B9BE9;
-
-font-family: Reddit Sans;
-font-size: 16px;
-font-weight: 700;
-line-height: 22.4px;
-text-align: center;
-color:  #FFFFFF;
-  }*/
 .btn-contact {
   width: 300px;
   height: 46px;
@@ -619,17 +405,14 @@ color:  #FFFFFF;
   background-color: #3B9BE9;
   opacity: 1;
   border: none;
-
-  /* Font Styles */
   font-family: 'Reddit Sans', sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
   text-align: center;
-  /* color: #FFFFFF;*/
   cursor: pointer;
   transition: background-color 0.3s ease, opacity 0.3s ease;
-  color: #FFFFFF
+  color: white;
 }
 
 /* Hover Effect */
@@ -639,151 +422,96 @@ color:  #FFFFFF;
 }
 
 .v-well {
-
   font-family: Reddit Sans;
   font-size: 20px;
   font-weight: 700;
   line-height: 28px;
-  color: #FFFFFF;
-
-
+  color: var(--text-primary);
 }
 
 .highlighted-number {
-
   font-family: Reddit Sans;
   font-size: 42px;
   font-weight: 700;
   line-height: 50.4px;
   text-align: center;
-  color: #FFFFFF;
-
-
+  color: var(--text-primary);
 }
 
 .regular-text {
-
   font-family: Reddit Sans;
   font-size: 14px;
   font-weight: 400;
   line-height: 16.8px;
   text-align: left;
-  color: #CFCECE;
-
+  color: var(--text-secondary);
 }
 
 .v-fill {
-
   font-family: Reddit Sans;
   font-size: 20px;
   font-weight: 700;
   line-height: 28px;
   text-align: left;
-  color: #FFFFFF;
-
-
+  color: var(--text-primary);
 }
 
 .v-viral {
-
-  /* font-family: Reddit Sans;
-font-size: 16px;
-font-weight: 700;
-line-height: 22.4px;
-text-align: center;
-color:  #3B9BE9; */
   font-family: Reddit Sans;
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
   text-align: center;
   color: #3B9BE9;
-  width: 133px;
-  height: 40ppx;
-  padding: 9px 20px 9px 20px;
+  background-color: var(--bg-primary);
+  height: 40px;
+  padding: 9px 15px;
   gap: 10px;
-  border-radius: 8px 8px 8px 8px;
+  border-radius: 8px;
   border: 1px 1px 1px 1px;
   opacity: 0px;
   border: 1px solid #1B1264;
 }
 
 .v-visit {
-
   font-family: Reddit Sans;
   font-size: 42px;
   font-weight: 700;
   line-height: 54.55px;
   text-align: left;
-  color: #FFFFFF;
-
+  color: var(--text-primary);
 }
 
 .v-info {
-
   font-family: Reddit Sans;
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
-  color: #CFCECE;
+  color: var(--text-secondary);
 }
 
-/* .btn-view{
-    width: 159px;
-height: 52px;
-padding: 15px 40px 15px 40px;
-gap: 10px;
-border-radius: 30px 0px 0px 0px;
-border: 1px 0px 0px 0px;
-opacity: 0px;
-border: 1px solid;
- Color: #CFCECE;
-
-font-family: Reddit Sans;
-font-size: 16px;
-font-weight: 700;
-line-height: 22.4px;
-text-align: center;
-
-background-color:  #CFCECE;
-
-  } */
 .btn-view {
-  /* width: 120px;*/
   height: 52px;
   padding: 15px 15px 15px 15px;
-  /* Simplified padding */
   gap: 10px;
-  /* Only useful for flexbox/grid children */
   border-radius: 30px 30px 30px 30px;
-  /* Corrected shorthand */
-  border: 1px solid #CFCECE;
-  /* Added proper border color */
+  border: 1px solid var(--text-secondary);
   opacity: 1;
-  /* Changed to visible (0 makes it invisible) */
-  color: #000000;
-  /* Changed from `Color` to `color` and set visible text color */
+  color: var(--text-secondary);
   font-family: 'Reddit Sans', sans-serif;
-  /* Fallback added */
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
   text-align: left;
-  background-color: #181818;
+  background-color: var(--bg-primary);
   cursor: pointer;
-  /* Makes the button clickable */
   transition: all 0.3s ease;
-  /* Smooth hover effect */
-  color: #CFCECE;
 }
 
 .btn-view:hover {
   background-color: #bcbcbc;
-  /* Slightly darker background on hover */
   color: #ffffff;
-  /* Change text color on hover */
   opacity: 0.9;
-  /* Add a subtle fade effect */
 }
 
 .image-overlay-container {
@@ -796,7 +524,6 @@ background-color:  #CFCECE;
   height: 100%;
   width: 100%;
   object-fit: cover;
-  /* Ensures the image covers the container */
   display: block;
 }
 
@@ -805,40 +532,32 @@ background-color:  #CFCECE;
   top: 86%;
   left: 37%;
   transform: translate(-50%, -50%);
-  color: white;
-  /* Text color */
+  color: var(--text-primary);
   font-size: 24px;
-  /* Adjust text size */
   font-weight: bold;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-  /* Add a shadow for better visibility */
 }
 [dir="rtl"] .overlay-text{
   transform: translate(-12%, -50%);
 }
 .v-help {
-
   font-family: Reddit Sans;
   font-size: 17px;
   font-weight: 700;
   line-height: 28px;
-  color: #FFFFFF;
-
-
+  color: #ffffff;
 }
 
 .v-live {
-
   font-family: Reddit Sans;
   font-size: 12px;
   font-weight: 400;
   line-height: 22.4px;
-  color: #FFFFFF;
-
+  color: #ffffff;
 }
 
 .trusted-partners {
-  background-color: #181818;
+  background-color: var(--bg-primary);
 }
 
 .trusted-partners img {
@@ -853,64 +572,36 @@ background-color:  #CFCECE;
 }
 
 .v-were {
-  /*   
-font-family: Reddit Sans;
-font-size: 16px;
-font-weight: 700;
-line-height: 22.4px;
-text-align: center;
-
-color:  #3B9BE9; */
-  /* font-family: Reddit Sans;
-font-size: 16px;
-font-weight: 700;
-line-height: 22.4px;
-text-align: center;
-color:  #3B9BE9;
-width: 133px;
-height: 40ppx;
-padding: 9px 20px 9px 20px;
-gap: 10px;
-border-radius: 8px 8px 8px 8px;
-border: 1px 1px 1px 1px;
-opacity: 0px;
-border: 1px solid  #1B1264; */
-  width: 211px;
   height: 40px;
-  padding: 9px 20px 9px 20px;
+  padding: 9px 15px;
   gap: 10px;
-  border-radius: 10px 0px 0px 0px;
+  border-radius: 10px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
+  color: #3B9BE9;
   border: 1px solid #1B1264;
   font-family: Reddit Sans;
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
   text-align: center;
-  background: #3B9BE9;
+  background: var(--bg-primary);
 }
 
 .v-value {
-
   font-family: Reddit Sans;
   font-size: 42px;
   font-weight: 700;
   line-height: 54.55px;
-  color: #FFFFFF;
-
-
+  color: var(--text-primary);
 }
 
 .v-auto {
-
   font-family: Reddit Sans;
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
-  color: #CFCECE;
-
-
+  color: var(--text-secondary);
 }
 
 .v-space {
@@ -920,82 +611,46 @@ border: 1px solid  #1B1264; */
   gap: 0px;
   border-radius: 16px 16px 16px 16px;
   opacity: 0px;
-  background-color: #212121;
+  background-color: var(--bg-secondary);
   text-align: center;
-
 }
 
 .v-noise {
-
   font-family: Reddit Sans;
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
   text-align: center;
   color: #3B9BE9;
-
 }
 
 .v-hence {
-
   font-family: Reddit Sans;
   font-size: 42px;
   font-weight: 700;
   line-height: 54.55px;
-  color: #FFFFFF;
-
+  color: var(--text-primary);
 }
 
 .client-testimonials {
- /* background-color: #181818; */
- background-color: var(--Colors-Text-Base-Black, #212121);
-}
-
-.client-testimonials .card {
-  border: none;
-  border-radius: 10px;
-  background-color: #f8f9fa;
+ background-color: var(--bg-secondary);
 }
 
 .v-hi {
-  /* color: #3B9BE9;
-  font-family: Reddit Sans;
-  font-size: 16px;
-  text-align: left; */
-  /* font-family: Reddit Sans;
-font-size: 16px;
-font-weight: 700;
-line-height: 22.4px;
-text-align: start;
-color:  #3B9BE9;
-width: 133px;
-height: 40ppx;
-padding: 9px 20px 9px 20px;
-gap: 10px;
-border-radius: 8px 8px 8px 8px;
-border: 1px 1px 1px 1px;
-opacity: 0px;
-border: 1px solid  #1B1264; */
-  width: 221px;
   height: 40px;
-  padding: 9px 20px 9px 20px;
+  padding: 9px 15px;
   gap: 10px;
-  border-radius: 8px 8px 8px 8px;
+  border-radius: 10px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
   border: 1px solid #1B1264;
   font-family: Reddit Sans;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 22.4px;
   text-align: left;
-  width: 181px;
-  height: 32px;
-  top: 9px;
-  left: 20px;
-  gap: 0px;
-  opacity: 0px;
   color: #3B9BE9;
+  background-color: var(--bg-secondary);
 }
 
 
@@ -1003,25 +658,28 @@ border: 1px solid  #1B1264; */
   font-family: Reddit Sans;
   font-size: 16px;
   letter-spacing: 0px;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .g-value {
   font-family: Reddit Sans;
-  font-size: 16px;
-
+  font-size: 14px;
   letter-spacing: 0px;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .card {
+  background-color: var(--bg-primary) !important;
   border-radius: 15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.card-body{
+  color: var(--text-primary) !important;
+}
+
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .card ul {
@@ -1039,11 +697,11 @@ border: 1px solid  #1B1264; */
   font-weight: 700;
   line-height: 22.4px;
   color: #3B9BE9;
-  width: 133px;
-  height: 40ppx;
-  padding: 9px 20px 9px 20px;
+  background-color: var(--bg-primary);
+  height: 40px;
+  padding: 9px 15px;
   gap: 10px;
-  border-radius: 8px 8px 8px 8px;
+  border-radius: 10px;
   border: 1px 1px 1px 1px;
   opacity: 0px;
   border: 1px solid #1B1264;
@@ -1062,7 +720,7 @@ border: 1px solid  #1B1264; */
   font-size: 42px;
   letter-spacing: 0px;
   line-height: auto;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .i-were {
@@ -1070,21 +728,21 @@ border: 1px solid  #1B1264; */
   font-size: 18px;
   letter-spacing: 0px;
   line-height: 150%;
-  color: #CFCECE;
+  color: var(--text-secondary);
 }
 
 .btn-all {
   width: 185px;
-  padding: 15px 15px 15px 15px;
+  padding: 15px;
   gap: 10px;
-  border-radius: 30px 30px 30px 30px;
-  background-color: #181818;
-  font-family: 'Reddit Sans', sans-serif;
+  border-radius: 30px;
+  background-color: var(--bg-primary);
+  font-family: 'Reddit Sans';
   font-size: 16px;
   font-weight: 700;
-  /*line-height: 22.4px;  Line height for the text */
   text-align: center;
-  color: #FFFFFF;
+  color: var(--text-secondary);
+  border: 1px solid var(--text-secondary);
   opacity: 1;
 }
 
@@ -1093,7 +751,7 @@ border: 1px solid  #1B1264; */
   font-size: 20px;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #CFCECE;
+  color: var(--text-primary);
 }
 
 .i-value {
@@ -1101,7 +759,7 @@ border: 1px solid  #1B1264; */
   font-size: 32px;
   letter-spacing: 0px;
   line-height: 130%;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .i-when {
@@ -1109,33 +767,22 @@ border: 1px solid  #1B1264; */
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #CFCECE;
+  color: var(--text-secondary);
 }
 
 .btn-get {
   width: 300px;
-  /* Button width */
-  /*height: 46px;  Button height */
-  padding: 15px 15px 15px 15px;
-  /* Padding inside the button */
+  padding: 15px;
   gap: 10px;
-  /* Space between child elements (if applicable) */
-  border-radius: 30px 30px 30px 30px;
-  /* Rounded top-left corner */
+  border-radius: 30px;
   background-color: #3B9BE9;
-  /* Button background color */
   font-family: 'Reddit Sans', sans-serif;
-  /* Font family */
   font-size: 16px;
-  /* Font size */
   font-weight: 700;
-  /* Bold font */
-  /*line-height: 22.4px;  Line height for the text */
   text-align: center;
-  /* Align text to the left */
   color: #FFFFFF;
-  /* Text color */
   opacity: 1;
+  border: 1px solid #1B1264;
 }
 
 .i-world {
@@ -1147,7 +794,11 @@ border: 1px solid  #1B1264; */
 }
 
 .review-value {
-  background-color: #181818;
+  background-color: var(--bg-primary);
+}
+
+[data-theme="light"] .form-control {
+  border: 1px solid #555;
 }
 
 .v-use {
@@ -1155,40 +806,24 @@ border: 1px solid  #1B1264; */
   font-size: 56px;
   letter-spacing: 0px;
   line-height: 120%;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .btn-free {
-
   width: 214px;
-  /* Button width */
   height: 50px;
-  padding: 15px 15px 15px 15px;
-  /* Padding inside the button */
+  padding: 15px;
   gap: 10px;
-  /* Gap between child elements (if applicable) */
-  border-radius: 30px 30px 30px 30px;
-  /* Rounded top-left corner */
+  border-radius: 30px;
   border: 1px solid #181818;
-  /* Border with a specific color */
-  background-color: #181818;
-  /* Button background color */
   font-family: 'Reddit Sans', sans-serif;
-  /* Font family */
   font-size: 16px;
-  /* Font size */
   font-weight: 700;
-  /* Bold font */
   line-height: 22.4px;
-  /* Line height for text */
   text-align: center;
-  /* Aligns text to the left */
   color: #FFFFFF;
-  /* Text color */
   opacity: 1;
-  /* Ensures the button is visible */
   background-color: #3B9BE9;
-
 }
 
 .v-house {
@@ -1196,7 +831,7 @@ border: 1px solid  #1B1264; */
   font-size: 20px;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .v-inner {
@@ -1204,7 +839,7 @@ border: 1px solid  #1B1264; */
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #FFFFFF
+  color: var(--text-primary);
 }
 
 .v-left {
@@ -1212,7 +847,7 @@ border: 1px solid  #1B1264; */
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #FFFFFF
+  color: var(--text-primary);
 }
 
 .v-coke {
@@ -1228,37 +863,24 @@ border: 1px solid  #1B1264; */
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .btn-well {
   width: 214px;
-  /* Button width */
   height: 50px;
-  padding: 15px 15px 15px 15px;
-  /* Padding inside the button */
+  padding: 15px;
   gap: 10px;
-  /* Gap between child elements (if applicable) */
-  border-radius: 30px 30px 30px 30px;
-  /* Rounded top-left corner */
+  border-radius: 30px;
   border: 1px solid #181818;
-  /* Border with a specific color */
   background-color: #3B9BE9;
-  /* Button background color */
   font-family: 'Reddit Sans', sans-serif;
-  /* Font family */
   font-size: 16px;
-  /* Font size */
   font-weight: 700;
-  /* Bold font */
   line-height: 22.4px;
-  /* Line height for text */
   text-align: center;
-  /* Aligns text to the left */
   color: #FFFFFF;
-  /* Text color */
   opacity: 1;
-  /* Ensures the button is visible */
 }
 
 .v-vise {
@@ -1266,15 +888,12 @@ border: 1px solid  #1B1264; */
   font-size: 16px !important;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #FFFFFF !important;
+  color: var(--text-primary) !important;
 }
 
-/* Global styles (applied to all devices) */
-/* body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-} */
+.text-primary-color {
+  color: var(--text-primary) !important;
+}
 
 /* Desktop (Large screens: ≥1200px) */
 @media (min-width: 1200px) {}
@@ -1657,30 +1276,17 @@ border: 1px solid  #1B1264; */
   }
 }
 
-/*------------------*/
-.hero-value {
-  background-color: #1d1723;
-}
-
-/*1 page*/
-.while-value {
-  background-color: #181818;
+.navbar-bg-color {
+  background-color: var(--navbar-bg);
 }
 
 .o-hlo {
   font-family: Reddit Sans;
   font-size: 56px;
+  font-weight: 700;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #FFFFFF;
-}
-
-.k-hlo {
-  font-family: Reddit Sans;
-  font-size: 56px;
-  letter-spacing: 0px;
-  line-height: 140%;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .o-a {
@@ -1688,7 +1294,7 @@ border: 1px solid  #1B1264; */
   font-size: 14px;
   letter-spacing: 0px;
   line-height: 120%;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .o-b {
@@ -1696,7 +1302,7 @@ border: 1px solid  #1B1264; */
   font-size: 42px;
   letter-spacing: 0px;
   line-height: auto;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .o-c {
@@ -1704,27 +1310,7 @@ border: 1px solid  #1B1264; */
   font-size: 18px;
   letter-spacing: 0px;
   line-height: 150%;
-  color: #FFFFFF;
-}
-
-.o-e {
-  font-family: Reddit Sans;
-  font-size: 16px;
-  letter-spacing: 0px;
-  line-height: 140%;
-  color: #3B9BE9;
-  border: 1px solid #3B9BE9;
-
-}
-
-.z-j {
-  font-family: Reddit Sans;
-  font-size: 16px;
-  letter-spacing: 0px;
-  line-height: 140%;
-  color: #3B9BE9;
-  border: 1px solid #3B9BE9;
-
+  color: var(--text-primary);
 }
 
 .n-j {
@@ -1732,21 +1318,23 @@ border: 1px solid  #1B1264; */
   font-size: 12px;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #3B9BE9;
-  border: 1px solid #3B9BE9;
-
-  border-radius: 30px 30px 30px 30px;
-
+  padding: 9px 20px;
+  color: var(--text-primary);
+  border: 1px solid var(--text-primary);
+  background-color: var(--bg-primary);
+  border-radius: 30px;
 }
 
-/*----------------------*/
-.b-a {
+.s-j {
   font-family: Reddit Sans;
-  font-size: 16px;
+  font-size: 12px;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #3B9BE9;
-  border: 1px solid #3B9BE9;
+  padding: 9px 12px;
+  color: var(--text-primary);
+  border: 1px solid var(--text-primary);
+  background-color: var(--bg-primary);
+  border-radius: 30px;
 }
 
 .b-b {
@@ -1754,7 +1342,7 @@ border: 1px solid  #1B1264; */
   font-size: 42px;
   letter-spacing: 0px;
   line-height: auto;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .b-c {
@@ -1762,7 +1350,7 @@ border: 1px solid  #1B1264; */
   font-size: 18px;
   letter-spacing: 0px;
   line-height: 150%;
-  color: #CFCECE;
+  color: var(--text-secondary);
 }
 
 .b-e {
@@ -1778,30 +1366,12 @@ border: 1px solid  #1B1264; */
   font-size: 20px;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #CFCECE;
-}
-
-.input-style {
-  border-bottom: 1px solid #fff;
-  border-top: 0px;
-  border-left: 0px;
-  border-right: 0px;
+  color: var(--text-secondary);
 }
 
 .custom-placeholder::placeholder {
-  color: #CFCECE !important;
+  color: var(--text-secondary) !important;
   opacity: 1;
-}
-
-.b-f {
-  font-family: Reddit Sans;
-  font-size: 16px;
-  letter-spacing: 0px;
-  line-height: 140%;
-  color: #CFCECE;
-  border: 1px solid #CFCECE;
-  padding: 15px 15px 15px 15px;
-  border-radius: 30px 30px 30px 30px;
 }
 
 .stats {
@@ -1818,118 +1388,32 @@ border: 1px solid  #1B1264; */
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 20px;
   margin: 10px 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--bg-primary);
   border-radius: 10px;
-  color: #fff;
+  color: var(--text-primary);
   width: 300px;
 
 }
 
-body {
-  background-color: #121212;
-  color: #fff;
-}
-
 .v-section .contact-btn {
   margin-top: 20px;
-  color: #FFFFFF;
-  background: #181818;
-  border: 1px solid #fff;
-  padding: 15px 15px 15px 15px;
-  border-radius: 30px 30px 30px 30px;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  border: 1px solid var(--text-primary);
+  padding: 15px;
+  border-radius: 30px;
   width: 142px;
-  height: 53px;
+  height: 55px;
 }
 
 .v-section .contact-btn:hover {
-  background-color: #ffffff;
-  /* Hover background color */
-  color: #181818;
-  /* Hover text color */
-}
-
-/* .huge-btn{
-  width: 278px;
-height: 46px;
-padding: 12px 100px 12px 100px;
-gap: 10px;
-border-radius: 30px 0px 0px 0px;
-opacity: 0px;
-background:  #3B9BE9;
-width: 80px;
-height: 22px;
-gap: 0px;
-opacity: 0px;
-font-family: Reddit Sans;
-font-size: 16px;
-font-weight: 700;
-line-height: 22.4px;
-text-align: left;
-color:  #FFFFFF;
-
-} */
-.huge-btn {
-  width: 278px;
-  /* Set button width */
-  height: 46px;
-  /* Set button height */
-  padding: 15px 15px 15px 15px;
-  /* Adjust padding for spacing */
-  gap: 10px;
-  /* Space between elements inside the button if needed */
-  border-radius: 30px 30px 30px 30px;
-  /* Rounded corners */
-  background: #3B9BE9;
-  /* Button background color */
-  font-family: "Reddit Sans", sans-serif;
-  /* Font family */
-  font-size: 16px;
-  /* Font size */
-  font-weight: 700;
-  /* Bold text */
-  line-height: 22.4px;
-  /* Line height */
-  text-align: center;
-  /* Text alignment */
-  color: #FFFFFF;
-  /* Text color */
-  border: none;
-  /* Remove default border */
-  cursor: pointer;
-  /* Pointer cursor for hover */
-  transition: background-color 0.3s ease, color 0.3s ease;
-  /* Smooth transitions */
-}
-
-/* Hover effect */
-.huge-btn:hover {
-  background: #FFFFFF;
-  /* Change background color */
-  color: #3B9BE9;
-  /* Change text color */
-}
-
-/*-------------------------------*/
-body {
-
-  font-family: Reddit Sans;
-  font-size: 16px;
-  letter-spacing: 0px;
-  line-height: 140%;
-  color: #3B9BE9;
-  border: 1px solid #3B9BE9;
-}
-
-.process-title {
-  color: #75AADB;
-  /* Custom color for title */
-  margin-bottom: 20px;
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
 }
 
 .step {
-  /*background: #181818; */
-  padding: 30px 30px 30px 30px;
-  border-radius: 15px 15px 15px 15px;
+  padding: 30px;
+  border-radius: 15px;
   margin-bottom: 20px;
   position: relative;
   text-align: start;
@@ -1948,37 +1432,8 @@ body {
 .custom-row {
   display: flex;
   align-items: center;
-  /* Vertically center the items */
   gap: 0px;
-  /* Add spacing between button and image */
   justify-content: space-between;
-
-}
-
-/*.step-number {
-  background-color: #3B82F6;
-  color: white;
-  border-radius: 50%;
-  width: 100px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-}*/
-
-.line {
-  width: 2px;
-  height: 40px;
-  background-color: #75AADB;
-  position: absolute;
-  left: 50%;
-  top: 40px;
-  transform: translateX(-50%);
 }
 
 .g-r {
@@ -1986,7 +1441,7 @@ body {
   font-size: 42px;
   letter-spacing: 0px;
   line-height: auto;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .h-w {
@@ -1994,15 +1449,7 @@ body {
   font-size: 24px;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #FFFFFF;
-}
-
-.h-kl {
-  font-family: Reddit Sans;
-  font-size: 23px;
-  letter-spacing: 0px;
-  line-height: 140%;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .h-klm {
@@ -2010,7 +1457,7 @@ body {
   font-size: 19px;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .h-u {
@@ -2018,7 +1465,7 @@ body {
   font-size: 14px;
   letter-spacing: 0px;
   line-height: 120%;
-  color: #CFCECE;
+  color: var(--text-secondary);
 }
 
 .h-ul {
@@ -2026,17 +1473,7 @@ body {
   font-size: 14px !important;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #CFCECE;
-}
-
-body {
-  background-color: #181818;
-  color: white;
-}
-
-h2 {
-  color: #fefefe;
-  /*margin-bottom: 30px;*/
+  color: var(--text-secondary);
 }
 
 .contact-info {
@@ -2054,14 +1491,8 @@ h2 {
   margin: 0;
 }
 
-.form-control {
-  background-color: transparent;
-  border: 1px solid #555;
-  color: white;
-}
-
 .form-control::placeholder {
-  color: #aaa;
+  color: var(--text-primary);
 }
 
 .btn-send {
@@ -2081,7 +1512,7 @@ h2 {
   font-size: 42px;
   letter-spacing: 0px;
   line-height: auto;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .h-o {
@@ -2089,7 +1520,7 @@ h2 {
   font-size: 24px !important;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .h-k {
@@ -2097,7 +1528,7 @@ h2 {
   font-size: 20px !important;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #CFCECE;
+  color: var(--text-secondary);
 }
 
 .n-w {
@@ -2105,7 +1536,7 @@ h2 {
   font-size: 42px;
   letter-spacing: 0px;
   line-height: auto;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .n-e {
@@ -2113,7 +1544,7 @@ h2 {
   font-size: 18px;
   letter-spacing: 0px;
   line-height: 150%;
-  color: #CFCECE;
+  color: var(--text-secondary);
 }
 
 .n-r {
@@ -2122,7 +1553,7 @@ h2 {
   font-weight: bold;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #FFFFFF;
+  color: var(--text-primary) !important;
 }
 
 .n-t {
@@ -2130,7 +1561,7 @@ h2 {
   font-size: 18px;
   letter-spacing: 0px;
   line-height: 150%;
-  color: #CFCECE;
+  color: var(--text-secondary);
 }
 
 .n-y {
@@ -2138,7 +1569,7 @@ h2 {
   font-size: 14px;
   letter-spacing: 0px;
   line-height: 120%;
-  color: #CFCECE;
+  color: var(--text-secondary);
 }
 
 .project-card {
@@ -2153,8 +1584,8 @@ h2 {
   left: 10px;
   background-color: #007bff;
   color: #fff;
-  border-radius: 30px 30px 30px 30px;
-  padding: 10px 10px 10px 10px;
+  border-radius: 30px;
+  padding: 10px;
   font-size: 0.9rem;
 }
 
@@ -2163,15 +1594,15 @@ h2 {
 }
 
 .tags span {
-  margin-right: 5px;
-  border: 1px solid #ccc;
-  padding: 3px 8px;
+  margin-right: 7px;
+  border: 1px solid var(--text-secondary);
+  padding: 6px 10px;
   border-radius: 15px;
   font-family: Reddit Sans;
   font-size: 14px;
   letter-spacing: 0px;
   line-height: 120%;
-  color: #CFCECE;
+  color: var(--text-secondary);
 
 }
 
@@ -2205,7 +1636,7 @@ h2 {
   font-weight: bold;
   letter-spacing: 0px;
   line-height: auto;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .v-i {
@@ -2222,7 +1653,7 @@ h2 {
   font-weight: bold;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .v-p {
@@ -2230,7 +1661,7 @@ h2 {
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #CFCECE;
+  color: var(--text-secondary);
 }
 
 .v-a {
@@ -2246,15 +1677,14 @@ h2 {
   font-size: 20px;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .v-d {
   font-family: Reddit Sans;
   font-size: 16px;
   letter-spacing: 0px;
-  line-height: 25%;
-  color: #CFCECE;
+  color: var(--text-secondary);
 }
 
 .v-f {
@@ -2262,7 +1692,7 @@ h2 {
   font-size: 24px;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .v-g {
@@ -2270,22 +1700,7 @@ h2 {
   font-size: 12px;
   letter-spacing: 0px;
   line-height: 150%;
-  color: #CFCECE;
-}
-.v-p {
-  font-family: Cairo;
-  font-size: 14px;
-  letter-spacing: 0px;
-  line-height: 150%;
-  color: #CFCECE;
-}
-
-.v-h {
-  font-family: Reddit Sans;
-  font-size: 30px;
-  letter-spacing: 0px;
-  line-height: 26%;
-  color: #FFFFFF;
+  color: var(--text-secondary);
 }
 
 .z-x {
@@ -2293,7 +1708,7 @@ h2 {
   font-size: 42px;
   letter-spacing: 0px;
   line-height: Auto;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .z-c {
@@ -2301,7 +1716,7 @@ h2 {
   font-size: 18px;
   letter-spacing: 0px;
   line-height: 150%;
-  color: #CFCECE;
+  color: var(--text-secondary);
 
 
 }
@@ -2311,7 +1726,7 @@ h2 {
   font-size: 22px;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .ul-c {
@@ -2319,7 +1734,7 @@ h2 {
   font-size: 13px;
   letter-spacing: 0px;
   line-height: 120%;
-  color: #CFCECE;
+  color: var(--text-secondary);
 }
 
 .f-g {
@@ -2328,7 +1743,7 @@ h2 {
   font-weight: bold;
   letter-spacing: 0px;
   line-height: Auto;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .f-h {
@@ -2337,7 +1752,7 @@ h2 {
   font-weight: bold;
   letter-spacing: 0px;
   line-height: 130%;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .f-k {
@@ -2345,7 +1760,7 @@ h2 {
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 140%;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .f-l {
@@ -2353,7 +1768,7 @@ h2 {
   font-size: 18px;
   letter-spacing: 0px;
   line-height: 150%;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .f-z {
@@ -2361,7 +1776,7 @@ h2 {
   font-size: 24px;
   letter-spacing: 0px;
   line-height: 130%;
-  color: #CFCECE;
+  color: var(--text-secondary);
 }
 
 .l-k {
@@ -2369,7 +1784,7 @@ h2 {
   font-size: 17px;
   letter-spacing: 0px;
   line-height: 150%;
-  color: #CFCECE;
+  color: var(--text-secondary);
 }
 
 .v-c {
@@ -2379,7 +1794,7 @@ h2 {
   letter-spacing: 0px;
   font-weight: bold;
   line-height: 140%;
-  color: #989898;
+  color: var(--text-secondary);
 }
 
 .v-x {
@@ -2389,7 +1804,7 @@ h2 {
   letter-spacing: 0px;
   font-weight: bold;
   line-height: 140%;
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 .v-n {
@@ -2399,27 +1814,7 @@ h2 {
   letter-spacing: 0px;
   font-weight: bold;
   line-height: 120%;
-  color: #FFFFFF;
-}
-
-.v-d {
-  font-family: Reddit Sans;
-  font-size: 14px;
-  text-align: start;
-  letter-spacing: 0px;
-  font-weight: bold;
-  line-height: 120%;
-  color: #CFCECE;
-}
-
-.c-n {
-
-  font-family: Cairo;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 25px;
-  color: #FFFFFF;
-
+  color: var(--text-primary);
 }
 
 .c-m {
@@ -2428,8 +1823,7 @@ h2 {
   font-weight: 500;
   line-height: 25px;
   text-align: left;
-  color: #989898;
-  /*border-right: 1px solid #fff;*/
+  color: var(--text-secondary);
   padding: 10px;
 }
 

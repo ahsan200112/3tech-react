@@ -5,16 +5,14 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { useTranslation } from 'react-i18next';
 import RectangleImg from '../assets/images/Rectangle.png';
 import LanguageToggle from './LanguageToggle';
-//import ThemeSwitcher from './ThemeSwitcher';
+import ThemeSwitcher from './ThemeSwitcher';
 
 const Navbar = () => {
   const { t } = useTranslation();
   
   return (
     <>
-      <section style={{ backgroundColor: " #090909" }}>
-       {/* <ThemeSwitcher /> */}
-
+      <section style={{ backgroundColor: "var(--bg-primary)" }}>
         <div className="container">
           <div className="row align-items-center">
             <div className="col d-flex justify-content-start mt-3 mb-3">
@@ -26,17 +24,18 @@ const Navbar = () => {
               </a>
             </div>
             <div className="col d-flex justify-content-end mt-3 mb-3">
-              <a href="/" className="me-3"><i className="bi bi-linkedin" style={{ color: "#FFF" }}></i></a>
-              <a href="/" className="me-3"><i className="bi bi-facebook" style={{ color: "#FFF" }}></i></a>
-              <a href="/" className="me-3"><i className="bi bi-whatsapp" style={{ color: "#FFF" }}></i></a>
-              <a href="/" className="me-3"><i className="bi bi-instagram" style={{ color: "#FFF" }}></i></a>
+              <a href="/" className="me-3 d-flex align-items-center"><i className="bi bi-linkedin text-primary-color"></i></a>
+              <a href="/" className="me-3 d-flex align-items-center"><i className="bi bi-facebook text-primary-color"></i></a>
+              <a href="/" className="me-3 d-flex align-items-center"><i className="bi bi-whatsapp text-primary-color"></i></a>
+              <a href="/" className="me-3 d-flex align-items-center"><i className="bi bi-instagram text-primary-color"></i></a>
+              <ThemeSwitcher /> 
             </div>
           </div>
         </div>
       </section>
 
-      <section className="hero-value">
-        <nav className="navbar navbar-expand-lg" style={{ /*background: "linear-gradient(90deg, #0D0D0D, #1C1C1C)"*/ padding: "15px 30px", borderRadius: "30px" }}>
+      <section className="navbar-bg-color">
+        <nav className="navbar navbar-expand-lg" style={{ padding: "15px 30px", borderRadius: "30px" }}>
           <div className="container d-flex align-items-center justify-content-between">
             
             {/* Left: Logo */}

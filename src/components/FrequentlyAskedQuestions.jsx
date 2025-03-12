@@ -31,11 +31,11 @@ const FrequentlyAskedQuestions = () => {
     ];
 
     return (
-        <section id="faq" className="py-5 text-white" style={{ backgroundColor: "#181818" }}>
+        <section id="faq" className="py-5 u-section">
             <div className="container">
-                <span className="badge text-primary border border-primary px-3 py-1 mb-2">{t("(FAQs)")}</span>
-                <h2 className="fw-bold">{t("Frequently Asked Questions (FAQs)")}</h2>
-                <p className="mb-4">
+                <button className="u-easy btm-sm mb-2">{t("(FAQs)")}</button>
+                <h2 className="v-value">{t("Frequently Asked Questions (FAQs)")}</h2>
+                <p className="mb-4 v-auto">
                     {t("Got a question? We've probably heard it before—and we've got the answers to prove it! Dive into our FAQs to solve your mysteries, big or small.")}
                 </p>
                 <div className="accordion border-0" id="faqAccordion">
@@ -46,11 +46,11 @@ const FrequentlyAskedQuestions = () => {
                                 onClick={() => toggleFAQ(index)}
                                 style={{ cursor: "pointer" }}
                             >
-                                <span className="fw-bold">{faq.question}</span>
+                                <span className="v-clean">{faq.question}</span>
                                 {openIndex === index ? <FaAngleUp size={20} /> : <FaAngleDown size={20} />}
                             </div>
                             {openIndex === index && (
-                                <div className="px-3 py-2 border border-secondary rounded mt-2" style={{ color: "#CFCECE" }}>
+                                <div className="px-3 py-2 border border-secondary rounded mt-2" style={{ color: "var(--text-secondary)" }}>
                                     {faq.answer}
                                 </div>
                             )}

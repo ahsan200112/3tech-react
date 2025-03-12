@@ -24,7 +24,6 @@ function MarketingSolutionsHeroSection() {
                                     style={{
                                         marginInlineEnd: "20px", // Adjusts automatically for RTL
                                         borderInlineEnd: "1px solid", // Works for both LTR & RTL
-                                        color: "#CFCECE",
                                         paddingInlineEnd: "10px", // Maintains spacing on the correct side
                                     }}
                                 >
@@ -59,7 +58,7 @@ function MarketingSolutionsHeroSection() {
                                 ].map((card, index) => (
                                     <div key={index} className="col-md-4">
                                         <div
-                                            className="card bg-dark text-white h-100"
+                                            className="card h-100"
                                             style={{ padding: "25px"}}
                                         >
                                             <div className="card-body">
@@ -86,7 +85,7 @@ function MarketingSolutionsHeroSection() {
                     <div
                         className="card-body mt-3"
                         style={{
-                            border: "1px solid white",
+                            border: "1px solid var(--text-primary)",
                             borderRadius: "30px",
                             padding: "15px",
                         }}
@@ -112,7 +111,7 @@ function MarketingSolutionsHeroSection() {
                     { num: "004", title: t("Multi-Channel Expertise") },
                 ].map((item, index) => (
                     <div key={index} className="container mt-5">
-                        <div className="row" style={{ borderBottom: "1px solid #FFFFFF" }}>
+                        <div className="row" style={{ borderBottom: "1px solid var(--text-primary)" }}>
                             <div className="col-4 f-z">
                                 <p>{item.num}</p>
                             </div>
@@ -140,7 +139,7 @@ function MarketingSolutionsHeroSection() {
                             <div key={index} className="col-md-4 mb-4">
                                 <div className="step">
                                     <div className="custom-row">
-                                    <button className="text-start btn btn-sm n-j text-white" style={{ border: "1px solid #989898", borderRadius: "15px" }}>{item.step}</button>
+                                    <button className="text-start btn-sm n-j">{item.step}</button>
                                     <img src={PinImg} alt="Company Logo" className="img-fluid" />
                                     </div>
                                     <h5 className="h-klm">{item.title}</h5>

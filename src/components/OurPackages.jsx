@@ -6,10 +6,10 @@ const OurPackages = () => {
     const { t } = useTranslation();
    // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     return (
-        <section className="packages py-5" style={{ backgroundColor: "#181818" }}>
+        <section className="packages py-5 u-section">
             <div className="container py-5">
                 <div className="mb-5">
-                    <button className="btn btn-sm  i-idea" style={{ color: "#3B9BE9", width: "110px", border: "1px solid var(--Colors-Border-Border03, #1B1264)" }}>{t("Our Packages")}</button>
+                    <button className="btn-sm i-idea mb-2" style={{ width: "140px"}}>{t("Our Packages")}</button>
                     <div className="d-flex justify-content-between align-items-center">
                         <h2 className="i-visit mb-0">{t("Flexible Packages For Every Need")}</h2>
                         <button className="btn-all">{t("View All Packages")}</button>
@@ -20,28 +20,28 @@ const OurPackages = () => {
                 </div>
                 <div className="row g-4">
                     <div className="col-md-4">
-                        <div className="card text-light shadow border-0" style={{ backgroundColor: "#181818" }}>
+                        <div className="card shadow border-0">
                             <div className="card-body">
-                                <h5 className="card-title i-has">{t("Business Branding Package")}</h5>
+                                <h5 className="i-has">{t("Business Branding Package")}</h5>
                                 <h3 className="i-value">{t("600 SAR")}</h3>
                                 <p className="card-text i-when">
                                     {t("Build a strong, cohesive brand identity with a package designed to make your business unforgettable.")}
                                 </p>
                                 <ul className="list-unstyled">
                                     <li className="custom-list-item d-flex align-items-center text-start mt-3">
-                                        <img src={YTImg} alt="Icon" className="me-2" style={{ width: "20px", height: "20px" }} />
+                                        <img src={YTImg} alt="Icon" className="me-2 ms-2" style={{ width: "20px", height: "20px" }} />
                                         <span>{t("SEO Basics")}</span>
                                     </li>
                                     <li className="custom-list-item d-flex align-items-center text-start mt-3">
-                                        <img src={YTImg} alt="Icon" className="me-2" style={{ width: "20px", height: "20px" }} />
+                                        <img src={YTImg} alt="Icon" className="me-2 ms-2" style={{ width: "20px", height: "20px" }} />
                                         <span>{t("Social Media Management")}</span>
                                     </li>
                                     <li className="custom-list-item d-flex align-items-center text-start mt-3">
-                                        <img src={YTImg} alt="Icon" className="me-2" style={{ width: "20px", height: "20px" }} />
+                                        <img src={YTImg} alt="Icon" className="me-2 ms-2" style={{ width: "20px", height: "20px" }} />
                                         <span>{t("Monthly Performance Reports")}</span>
                                     </li>
                                     <li class="custom-list-item d-flex align-items-center text-start mt-3">
-                                        <img src={YTImg} alt="Icon" className="me-2" style={{ width: "20px", height: "20px" }} />
+                                        <img src={YTImg} alt="Icon" className="me-2 ms-2" style={{ width: "20px", height: "20px" }} />
                                         <span>{t("Email Marketing")}</span>
                                     </li>
                                 </ul>
@@ -51,63 +51,63 @@ const OurPackages = () => {
                         </div>
                     </div>
                     <div className="col-md-4">
-                        <div className="card text-light shadow border-0" style={{ background: "linear-gradient(106.11deg, rgba(193, 64, 193, 0.1) 7.4%, rgba(127, 148, 230, 0.1) 100%)" }}>
+                        <div className="card shadow border-0">
                             <div className="card-body">
-                                <h5 className="card-title i-has">{t("Business Branding Package")}</h5>
+                                <h5 className="i-has">{t("Business Branding Package")}</h5>
                                 <h3 className="i-value">{t("600 SAR")}</h3>
                                 <p className="card-text i-when">
                                     {t("Build a strong, cohesive brand identity with a package designed to make your business unforgettable.")}
                                 </p>
                                 <ul className="list-unstyled">
                                     <li clasNames="custom-list-item d-flex align-items-center text-start mt-3">
-                                        <img src={YTImg} alt="Icon" className="me-2" style={{ width: "20px", height: "20px" }} />
+                                        <img src={YTImg} alt="Icon" className="me-2 ms-2" style={{ width: "20px", height: "20px" }} />
                                         <span>{t("SEO Basics")}</span>
                                     </li>
                                     <li className="custom-list-item d-flex align-items-center text-start mt-3">
-                                        <img src={YTImg} alt="Icon" className="me-2" style={{ width: "20px", height: "20px" }} />
+                                        <img src={YTImg} alt="Icon" className="me-2 ms-2" style={{ width: "20px", height: "20px" }} />
                                         <span>{t("Social Media Management")}</span>
                                     </li>
                                     <li className="custom-list-item d-flex align-items-center text-start mt-3">
-                                        <img src={YTImg} alt="Icon" className="me-2" style={{ width: "20px", height: "20px" }} />
+                                        <img src={YTImg} alt="Icon" className="me-2 ms-2" style={{ width: "20px", height: "20px" }} />
                                         <span>{t("Monthly Performance Reports")}</span>
                                     </li>
                                     <li className="custom-list-item d-flex align-items-center text-start mt-3">
-                                        <img src={YTImg} alt="Icon" className="me-2" style={{ width: "20px", height: "20px" }} />
+                                        <img src={YTImg} alt="Icon" className="me-2 ms-2" style={{ width: "20px", height: "20px" }} />
                                         <span>{t("Email Marketing")}</span>
                                     </li>
                                 </ul>
-                                <p className="i-world">{t("Support:Email Support")}</p>
+                                <p className="i-world">{t("Support : Email Support")}</p>
                                 <button className="btn-get">{t("Get a Free Consultation")}</button>
                             </div>
                         </div>
                     </div>
                     <div className="col-md-4">
-                        <div className="card text-light shadow border-0" style={{ backgroundColor: "#181818" }}>
+                        <div className="card shadow border-0">
                             <div className="card-body">
-                                <h5 className="card-title i-has">{t("Business Branding Package")}</h5>
+                                <h5 className="i-has">{t("Business Branding Package")}</h5>
                                 <h3 className="i-value">600 SAR</h3>
                                 <p className="card-text i-when">
                                     {t("Build a strong, cohesive brand identity with a package designed to make your business unforgettable.")}
                                 </p>
                                 <ul className="list-unstyled">
                                     <li className="custom-list-item d-flex align-items-center text-start mt-3">
-                                        <img src={YTImg} alt="Icon" className="me-2" style={{ width: "20px", height: "20px" }} />
+                                        <img src={YTImg} alt="Icon" className="me-2 ms-2" style={{ width: "20px", height: "20px" }} />
                                         <span>{t("SEO Basics")}</span>
                                     </li>
                                     <li className="custom-list-item d-flex align-items-center text-start mt-3">
-                                        <img src={YTImg} alt="Icon" className="me-2" style={{ width: "20px", height: "20px" }} />
+                                        <img src={YTImg} alt="Icon" className="me-2 ms-2" style={{ width: "20px", height: "20px" }} />
                                         <span>{t("Social Media Management")}</span>
                                     </li>
                                     <li className="custom-list-item d-flex align-items-center text-start mt-3">
-                                        <img src={YTImg} alt="Icon" className="me-2" style={{ width: "20px", height: "20px" }} />
+                                        <img src={YTImg} alt="Icon" className="me-2 ms-2" style={{ width: "20px", height: "20px" }} />
                                         <span>{t("Monthly Performance Reports")}</span>
                                     </li>
                                     <li className="custom-list-item d-flex align-items-center text-start mt-3">
-                                        <img src={YTImg} alt="Icon" className="me-2" style={{ width: "20px", height: "20px" }} />
+                                        <img src={YTImg} alt="Icon" className="me-2 ms-2" style={{ width: "20px", height: "20px" }} />
                                         <span>{t("Email Marketing")}</span>
                                     </li>
                                 </ul>
-                                <p className="i-world">{t("Support:Email Support")}</p>
+                                <p className="i-world">{t("Support : Email Support")}</p>
                                 <button className="btn-get">{t("Get a Free Consultation")}</button>
                             </div>
                         </div>

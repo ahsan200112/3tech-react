@@ -7,9 +7,9 @@ const ExpertiseYouCanTrust = () => {
    // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     return (
         <div className="v-section" style={{ marginTop: "-16px" }}>
-            <section className="while-valu">
+            <section>
                 <div className="container mt-3">
-                    <button className="btn btn-sm u-easy mt-5" style={{ width: "160px", color: "#3B9BE9", height: "40px" }}>{t("Expertise you can Trust")}</button>
+                    <button className="btn-sm u-easy mt-5" style={{ width: "210px"}}>{t("Expertise you can Trust")}</button>
                     <h4 className="mt-3 o-b">{t("Turning Ideas into Impactful Digital Journeys")}</h4>
                     <p className="o-c">{t("Transform your business with a seamless digital journey.")}</p>
                     <img src={Frame41Img} alt="Company Logo" className="img-fluid" style={{ maxWidth: "100%", height: "auto" }} />
@@ -25,10 +25,9 @@ const ExpertiseYouCanTrust = () => {
                             </div>
                             <div className="stats row">
                                 <div className="col-md-4 stat-item"
-                                    /*style={{ borderRight: "1px solid", color: "#CFCECE" }} */
                                     style={{
-                                        borderRight: document.dir === "ltr" ? "1px solid #CFCECE" : "none",
-                                        borderLeft: document.dir === "rtl" ? "1px solid #CFCECE" : "none",
+                                        borderRight: document.dir === "ltr" ? "1px solid var(--text-secondary)" : "none",
+                                        borderLeft: document.dir === "rtl" ? "1px solid var(--text-secondary)" : "none",
                                     }}>
                                     <h2 className="u-how">10+</h2>
                                     <p className="u-all">{t("Years in Business")}</p>

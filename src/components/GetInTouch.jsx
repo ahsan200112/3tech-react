@@ -9,7 +9,7 @@ const GetInTouch = () => {
         <section className="v-section py-4">
             <div className="container py-5">
                 <div>
-                    <button className="btn btn-sm b-a" style={{ color: "#3B9BE9", border: "1px solid var(--Colors-Border-Border03, #1B1264)" }}>{t("Get in Touch")}</button>
+                    <button className="btn-sm u-vise mb-2">{t("Get in Touch")}</button>
                     <h2 className="b-b">{t("Need Further Assistance?")}</h2>
                     <p className="b-c">{t("Have a question, feedback, or just want to say hello? We’d love to hear from you!")}</p>
                     <img src={FraImg} alt="Company Logo" className="img-fluid" style={{ maxWidth: "100%", height: "auto" }} />

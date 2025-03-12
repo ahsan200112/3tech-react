@@ -8,14 +8,14 @@ const OurWorkingProcess = () => {
     return (
         <section style={{ backgroundColor: "var(--Colors-Text-Base-Black, #212121)" }}>
             <div className="container py-5">
-                <button className="btn btn-sm o-e" style={{ color: "#3B9BE9", border: "1px solid var(--Colors-Border-Border03, #1B1264)" }}>{t("Our Working Process")}</button>
+                <button className="btn-sm f-vise" style={{ width: "190px" }}>{t("Our Working Process")}</button>
                 <h2 className="g-r mt-2">{t("Our Process: Turning Ideas Into Digital Reality")}</h2>
 
                 <div className="row text-center">
                     <div className="col-md-3 mb-4">
-                        <div className="step ">
+                        <div className="step">
                             <div className="custom-row">
-                                <button className="btn btn-sm n-j text-white" style={{ border: "1px solid #989898", borderRadius: "15px" }}>{t("Step 1")}</button>
+                                <button className="btn-sm s-j">{t("Step 1")}</button>
                                 <img src={PinImg} alt="Company Logo" className="img-fluid" />
                             </div>
                             <h5 className="h-w">{t("Discovery & Strategy")}</h5>
@@ -25,7 +25,7 @@ const OurWorkingProcess = () => {
                     <div className="col-md-3 mb-4">
                         <div className="step ">
                             <div className="custom-row">
-                                <button className="btn btn-sm n-j text-white" style={{ border: "1px solid #989898", borderRadius: "15px" }}>{t("Step 2")}</button>
+                                <button className="btn-sm s-j">{t("Step 2")}</button>
                                 <img src={PinImg} alt="Company Logo" className="img-fluid" />
                             </div>
                             <h5 className="h-w">{t("Creative Brief")}</h5>
@@ -35,7 +35,7 @@ const OurWorkingProcess = () => {
                     <div className="col-md-3 mb-4">
                         <div className="step">
                             <div className="custom-row">
-                                <button className="btn btn-sm n-j text-white" style={{ border: "1px solid #989898", borderRadius: "15px" }}>{t("Step 3")}</button>
+                                <button className="btn-sm s-j">{t("Step 3")}</button>
                                 <img src={PinImg} alt="Company Logo" className="img-fluid" />
                             </div>
                             <h5 className="h-w">{t("Conceptual Design")}</h5>
@@ -45,7 +45,7 @@ const OurWorkingProcess = () => {
                     <div className="col-md-3 mb-4">
                         <div className="step">
                             <div className="custom-row">
-                                <button className="btn btn-sm n-j text-white" style={{ border: "1px solid #989898", borderRadius: "15px" }}>{t("Step 4")}</button>
+                                <button className="btn-sm s-j">{t("Step 4")}</button>
                                 <img src={PinImg} alt="Company Logo" className="img-fluid" />
                             </div>
                             <h5 className="h-w">{t("Design Refinement")}</h5>
@@ -57,7 +57,7 @@ const OurWorkingProcess = () => {
                     <div className="col-md-3 mb-4">
                         <div className="step">
                             <div className="custom-row">
-                                <button className="step-start btn btn-sm n-j text-white" style={{ border: "1px solid #989898", borderRadius: "15px" }}>{t("Step 5")}</button>
+                                <button className="step-start btn-sm s-j">{t("Step 5")}</button>
                                 <img src={PinImg} alt="Company Logo" className="img-fluid" />
                             </div>
                             <h5 className="h-w">{t("Development & Build")}</h5>
@@ -67,7 +67,7 @@ const OurWorkingProcess = () => {
                     <div className="col-md-3 mb-4">
                         <div className="step">
                             <div className="custom-row">
-                                <button class="step-number btn btn-sm n-j text-white" style={{ border: "1px solid #989898", borderRadius: "15px" }}>{t("Step 6")}</button>
+                                <button class="step-number btn-sm s-j">{t("Step 6")}</button>
                                 <img src={PinImg} alt="Company Logo" className="img-fluid" />
                             </div>
                             <h5 className="h-w">{t("Testing & Optimization")}</h5>
@@ -77,7 +77,7 @@ const OurWorkingProcess = () => {
                     <div className="col-md-3 mb-4">
                         <div className="step">
                             <div className="custom-row">
-                                <button className="step-number btn btn-sm n-j text-white" style={{ border: "1px solid #989898", borderRadius: "15px" }}>{t("Step 7")}</button>
+                                <button className="step-number btn-sm s-j">{t("Step 7")}</button>
                                 <img src={PinImg} alt="Company Logo" className="img-fluid" />
                             </div>
                             <h5 className="h-w">{t("Launch & Monitor")}</h5>
@@ -87,7 +87,7 @@ const OurWorkingProcess = () => {
                     <div className="col-md-3 mb-4">
                         <div className="step">
                             <div className="custom-row">
-                                <button className="btn btn-sm n-j text-white" style={{ border: "1px solid #989898", borderRadius: "15px" }}>{t("Step 8")}</button>
+                                <button className="btn-sm s-j">{t("Step 8")}</button>
                                 <img src={PinImg} alt="Company Logo" className="img-fluid" />
                             </div>
                             <h5 className="h-w">{t("Ongoing Support & Growth")}</h5>

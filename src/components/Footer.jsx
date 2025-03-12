@@ -8,15 +8,15 @@ const Footer = () => {
 
   return (
     <>
-    <section className="review-value py-5" style={{backgroundColor: "#181818"}}>
+    <section className="review-value py-5">
     <div className="container">
       <div className="d-flex justify-content-between align-items-center">
-        <h1 className="mb-0 me-2 text-light v-use">{t("Let’s Start to Work")}</h1>
+        <h1 className="mb-0 me-2 text-primary-color">{t("Let’s Start to Work")}</h1>
         <img src={ArrowImg} alt="Icon" className="img-fluid" style={{width: "60px", height: "60px"}}/>
       </div>
     </div>
   </section>
-    <footer className="text-light py-5" style={{ backgroundColor: "#181818" }}>
+    <footer className="text-light py-5 review-value">
       <div className="container">
         <div className="row">
           <div className="col-md-4">
@@ -29,19 +29,18 @@ const Footer = () => {
             <button className="btn-free">{t("Request Free Audit")}</button>
           </div>
           <div className="col-md-2">
-            <h5 className="v-house margin-right-40">{t("Quick Links")}</h5>
+            <h5 className="v-house margin-right-40" style={{fontWeight:"700"}}>{t("Quick Links")}</h5>
             <ul className="list-unstyled">
               <li><a href="/" className="text-start v-inner text-decoration-none">{t("Home")}</a></li>
               <li><a href="/about" className="text-start  v-inner text-decoration-none">{t("About Us")}</a></li>
               <li><a href="/services" className="text-start v-inner text-decoration-none">{t("Services")}</a></li>
-             {/* <li><a href="/portfolio" className="text-start v-inner text-decoration-none">{t("Portfolio")}</a></li> */}
               <li><a href="/packages" className="text-start v-inner text-decoration-none">{t("Packages")}</a></li>
               <li><a href="/blogs" className="text-start v-inner text-decoration-none">{t("Blogs")}</a></li>
               <li><a href="/contact" className="text-start v-inner text-decoration-none">{t("Contact Us")}</a></li>
             </ul>
           </div>
           <div className="col-md-3">
-            <h5 className="v-house margin-right-40">{t("Services")}</h5>
+            <h5 className="v-house margin-right-40" style={{fontWeight:"700"}}>{t("Services")}</h5>
             <ul className="list-unstyled">
               <li><a href="/ecommercesolutions" className="text-start v-inner  text-decoration-none">{t("E-Commerce Solutions")}</a></li>
               <li><a href="/mobileapplications" className="text-start v-inner text-decoration-none">{t("Mobile Applications")}</a></li>
@@ -51,26 +50,26 @@ const Footer = () => {
             </ul>
           </div>
           <div className="col-md-3">
-            <h5 className="v-house">{t("Have Questions?")}</h5>
-            <p className="v-left ">{t("Email")}: <a href="mailto:info@3tech.sa"
+            <h5 className="v-house" style={{fontWeight:"700"}}>{t("Have Questions?")}</h5>
+            <p className="v-left">{t("Email")}: <a href="mailto:info@3tech.sa"
               className="v-coke text-decoration-none">info@3tech.sa</a></p>
             <p className="v-left pb-2" style={{ borderBottom: "1px solid " }}>{t("Phone no")}: <a href="tel:966557122917+"
               className="v-coke text-decoration-none">966557122917+</a></p>
             <div className="d-flex mt-3">
-              <a href="/" className="text-light me-4"><i className="bi bi-linkedin"></i></a>
-              <a href="/" className="text-light me-4"><i className="bi bi-facebook"></i></a>
-              <a href="/" className="text-light me-4"><i className="bi bi-whatsapp"></i></a>
-              <a href="/" className="text-light me-4"><i className="bi bi-instagram"></i></a>
+              <a href="/" className="me-4"><i className="bi bi-linkedin text-primary-color"></i></a>
+              <a href="/" className="me-4"><i className="bi bi-facebook text-primary-color"></i></a>
+              <a href="/" className="me-4"><i className="bi bi-whatsapp text-primary-color"></i></a>
+              <a href="/" className="me-4"><i className="bi bi-instagram text-primary-color"></i></a>
             </div>
           </div>
         </div>
         <div className="row mt-4 pt-3" style={{ borderTop: " 1px solid #1B1264" }}>
-          <div className="col d-flex justify-content-between">
+          <div className="col d-flex justify-content-between text-primary-color">
             <p className="mb-0">{t("Copyright © 2024 3Tech")}</p>
             <p className="mb-0">
-              <a href="/" className="text-light text-decoration-none">{t("Term of use")}</a> |
-              <a href="/" className="text-light text-decoration-none"> {t("Privacy Policy")}</a> |
-              <a href="/" className="text-light text-decoration-none"> {t("Cookie Policy")}</a>
+              <a href="/" className="text-decoration-none text-primary-color">{t("Term of use")}</a> |
+              <a href="/" className="text-decoration-none text-primary-color"> {t("Privacy Policy")}</a> |
+              <a href="/" className="text-decoration-none text-primary-color"> {t("Cookie Policy")}</a>
             </p>
           </div>
         </div>

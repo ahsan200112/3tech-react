@@ -17,16 +17,16 @@ const OurServices = () => {
                     <div className="container">
                         <div className="row g-3 mt-5">
                             <div className="col-md-4">
-                                <div className="card f-hj text-white h-100">
+                                <div className="card h-100">
                                     <div className="card-body">
-                                        <button className="btn btn-sm u-drive" style={{ width: "95px", color: "#3B9BE9", border: "1px solid var(--Colors-Border-Border03, #1B1264)"}}>{t("Our Services")}</button>
+                                        <button className="btn-sm u-vise">{t("Our Services")}</button>
                                         <h5 className="card-title u-item mt-3">{t("Solutions That Redefine Excellence")}</h5>
                                         <button className="btn-next">{t("View All Services")}</button>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-md-4">
-                                <div className="card text-white h-100" style={{ background: "linear-gradient(106.11deg, rgba(193, 64, 193, 0.1) 7.4%, rgba(127, 148, 230, 0.1) 100%)" }}>
+                                <div className="card h-100" style={{ background: "linear-gradient(106.11deg, rgba(193, 64, 193, 0.1) 7.4%, rgba(127, 148, 230, 0.1) 100%)" }}>
                                     <div className="card-body" style={{ padding: "30px 30px" }}>
                                         <img src={Group2Img} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
                                         <h5 className="card-title u-well mt-3">{t("E-Commerce Solutions")}</h5>
@@ -38,7 +38,7 @@ const OurServices = () => {
                                 </div>
                             </div>
                             <div className="col-md-4">
-                                <div className="card f-hj text-white h-100">
+                                <div className="card h-100">
                                     <img src={Ellipse2Img} alt="Mobile preview" style={{ height: "15px", width: "350px" }} />
                                     <div className="card-body" style={{ padding: "30px 30px" }}>
                                         <img src={YGPImg} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
@@ -53,7 +53,7 @@ const OurServices = () => {
                         </div>
                         <div className="row g-3 mt-3">
                             <div className="col-md-4 ">
-                                <div className="card f-hj text-white h-100">
+                                <div className="card h-100">
                                     <img src={Ellipse2Img} alt="Mobile preview" style={{ height: "15px", width: "350px" }} />
                                     <div className="card-body" style={{ padding: "30px 30px" }}>
 
@@ -67,7 +67,7 @@ const OurServices = () => {
                                 </div>
                             </div>
                             <div className="col-md-4 ">
-                                <div className="card f-hj text-white h-100">
+                                <div className="card h-100">
                                     <img src={Ellipse2Img} alt="Mobile preview" style={{ height: "15px", width: "350px" }} />
                                     <div className="card-body" style={{ padding: "30px 30px" }}>
                                         <img src={JUImg} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
@@ -80,7 +80,7 @@ const OurServices = () => {
                                 </div>
                             </div>
                             <div className="col-md-4 ">
-                                <div className="card f-hj text-white h-100">
+                                <div className="card h-100">
                                     <img src={Ellipse2Img} alt="Mobile preview" style={{ height: "15px", width: "350px" }} />
                                     <div className="card-body" style={{ padding: "30px 30px" }}>
                                         <img src={Group3Img} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />

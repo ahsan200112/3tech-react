@@ -16,16 +16,16 @@ const BlogsSection = () => {
     return (
         <section className="v-section">
             <div className="container py-5">
-                <button className="btn btn-sm o-e" style={{ color: "#3B9BE9", border: "1px solid var(--Colors-Border-Border03, #1B1264)" }}>{t("Insights, Tips, and Trends")}</button>
+                <button className="btn-sm u-vise">{t("Insights, Tips, and Trends")}</button>
                 <div className="mt-3">
                     <h2 className="v-u">{t("Explore The Latest In Digital Solutions")}</h2>
-                    <p style={{ color: " #CFCECE",maxWidth: "670px", wordBreak: "break-word" }}>{t("Stay updated with expert insights, actionable tips, and industry trends that help you grow your business in the ever-evolving digital world.")}</p>
+                    <p className="v-p" style={{ maxWidth: "670px", wordBreak: "break-word" }}>{t("Stay updated with expert insights, actionable tips, and industry trends that help you grow your business in the ever-evolving digital world.")}</p>
                 </div>
                 <div className="row">
                     <div className="col-lg-8 mb-4">
                         <div className="card custom-card">
                             <img src={WinImg} alt="Digital Trends" className="card-img img-fluid responsive-image" />
-                            <div className="card-body" style={{ backgroundColor: "#181818" }}>
+                            <div className="card-body">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <div className="d-flex align-items-center">
                                         <img src={Calender1Img} alt="Calendar Icon" style={{
@@ -34,7 +34,7 @@ const BlogsSection = () => {
                                         }} />
                                         <small className="v-i mb-0">July 28, 2023</small>
                                     </div>
-                                    <i className="bi bi-arrow-up-right text-white"></i>
+                                    <i className="bi bi-arrow-up-right text-primary-color"></i>
                                 </div>
 
                                 <h5 className="v-o mt-3">{t("Best SEO Techniques For Ecommerce")}</h5>
@@ -46,16 +46,15 @@ const BlogsSection = () => {
                         </div>
                     </div>
                     <div className="col-lg-4">
-                        <div className="mb-4 input-style">
+                        <div className="mb-4 ">
                             <div style={{ display: "flex", alignItems: "center" }}>
                                 <img src={Search1Img} alt="Post" style={{ width: "15px", height: "15px" }} />
-                                <input type="text" className="form-control bg-transparent text-white border-0 custom-placeholder" placeholder="Search"
+                                <input type="text" className="form-control bg-transparent border-0 custom-placeholder" placeholder="Search"
                                     style={{
                                         flex: "1",
-                                        color: "#CFCECE",
+                                        color: "var(--text-secondary)",
                                     }} />
                             </div>
-
                         </div>
                         <h5 className="v-s">{t("Category List")}</h5>
                         <ul className="category-list ps-0 pe-0">
@@ -97,13 +96,13 @@ const BlogsSection = () => {
                     <div className="col-lg-8 mb-4">
                         <div className="card custom-card">
                             <img src={HtmlImg} alt="Digital Trends" className="card-img img-fluid responsive-img" />
-                            <div className="card-body" style={{ backgroundColor: "#181818" }}>
+                            <div className="card-body">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <div className="d-flex align-items-center">
                                         <img src={Calender1Img} alt="Calendar Icon" style={{ height: "20px", width: "20px", marginRight: "5px" }} />
                                         <small className="v-i mb-0">July 28, 2023</small>
                                     </div>
-                                    <i className="bi bi-arrow-up-right text-white"></i>
+                                    <i className="bi bi-arrow-up-right text-primary-color"></i>
                                 </div>
                                 <h5 className="v-o mt-3">{t("Best SEO Techniques For Ecommerce")}</h5>
                                 <p className="card-text v-p">
@@ -118,13 +117,13 @@ const BlogsSection = () => {
                             <div className="col-lg-8 mb-4">
                                 <div className="card custom-card">
                                     <img src={ErImg} alt="Digital Trends" className="card-img img-fluid" />
-                                    <div className="card-body" style={{ backgroundColor: "#181818" }}>
+                                    <div className="card-body">
                                         <div className="d-flex justify-content-between align-items-center">
                                             <div className="d-flex align-items-center">
                                                 <img src={Calender1Img} alt="Calendar Icon" style={{ height: "20px", width: "20px", marginRight: "5px" }} />
                                                 <small className="v-i mb-0">July 28, 2023</small>
                                             </div>
-                                            <i className="bi bi-arrow-up-right text-white"></i>
+                                            <i className="bi bi-arrow-up-right text-primary-color"></i>
                                         </div>
 
                                         <h5 className="v-o mt-3">{t("Best SEO Techniques For Ecommerce")}</h5>
@@ -141,13 +140,13 @@ const BlogsSection = () => {
                                     <div className="col-lg-8 mb-4">
                                         <div className="card custom-card">
                                             <img src={BnImg} alt="Digital Trends" className="card-img img-fluid" />
-                                            <div className="card-body" style={{ backgroundColor: "#181818" }}>
+                                            <div className="card-body">
                                                 <div className="d-flex justify-content-between align-items-center">
                                                     <div className="d-flex align-items-center">
                                                         <img src={Calender1Img} alt="Calendar Icon" style={{ height: "20px", width: "20px", marginRight: "5px" }} />
                                                         <small className="v-i mb-0">July 28, 2023</small>
                                                     </div>
-                                                    <i className="bi bi-arrow-up-right text-white"></i>
+                                                    <i className="bi bi-arrow-up-right text-primary-color"></i>
                                                 </div>
                                                 <h5 className="v-o mt-3">{t("Best SEO Techniques For Ecommerce")}</h5>
                                                 <p className="card-text v-p">

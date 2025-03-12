@@ -1,10 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import BackgroundImg from "../assets/images/backgroundImgInWhoWeAre.png";
-import Clip1Img from "../assets/images/1clip.png";
-import Clip2Img from "../assets/images/2clip.png";
-import Clip3Img from "../assets/images/3clip.png";
-import Clip4Img from "../assets/images/4clip.png";
+import WhoWeAreImg from '../assets/images/WhoWeAre.png';
 
 const WhoWeAre = () => {
     const { t, i18n } = useTranslation();
@@ -13,25 +9,23 @@ const WhoWeAre = () => {
         <section className="u-section">
             <div className="container py-5">
                 <div className="row align-items-center">
-                    <button className="btn btn-sm u-vise " style={{ width: "120px", color: "#3B9BE9" }}>{t("Who We Are")}</button>
+                    <button className="btn-sm u-vise mb-3" style={{ width: "130px"}}>{t("Who We Are")}</button>
                     <h1 className={`u-visit ${textAlignment}`}>{t("Connecting Your Business With The World!")}</h1>
                     <div className="col-md-6 ">
                         <h1 className={`u-were ${textAlignment}`}>{t("About Us")}</h1>
                         <p className={`u-here ${textAlignment}`}>
-                            {t("In a world where creativity meets technology, 3Tech delivers exceptional experiences in building online stores, apps, and digital marketing. We're here to tell your story and connect you with your audience through unique and impactful approaches.")}
+                            {t("In a world where creativity meets technology, 3Tech delivers exceptional experiences in building online stores, apps, and digital marketing. We’re here to tell your story and connect you with your audience through unique and impactful approaches. Every project with us becomes a memorable journey to success.")}
                         </p>
-                        <button className="btn-our">{t("Discover Our Story")}</button>
-                        <div className="row  text-white mt-3">
+                        <button className="btn-our w-100">{t("Discover Our Story")}</button>
+                        <div className="row text-white mt-3">
                             <div className="col-md-4" style={{
                                 [document.dir === "rtl" ? "borderLeft" : "borderRight"]: "1px solid",
-                                color: "#CFCECE",
                             }}>
                                 <h2 className="u-how">7+</h2>
                                 <p className="u-all">{t("Years in Business")}</p>
                             </div>
                             <div className="col-md-4" style={{
                                 [document.dir === "rtl" ? "borderLeft" : "borderRight"]: "1px solid",
-                                color: "#CFCECE",
                             }}>
                                 <h2 className="u-value">+150</h2>
                                 <p className="u-all">{t("Successful Projects")}</p>
@@ -42,18 +36,8 @@ const WhoWeAre = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-6 u-worldtext-end d-flex align-items-center gap-2"
-                        style={{
-                            backgroundImage: `url(${BackgroundImg})`, // Replace BackgroundImg with your image import
-                            backgroundSize: "cover", // Cover full div
-                            backgroundPosition: "center", // Center the image
-                            backgroundRepeat: "no-repeat", // No repeat
-                        }}
-                    >
-                        <img src={Clip1Img} alt="Phone Mockup" style={{ height: "152px", width: "115px" }} />
-                        <img src={Clip2Img} alt="Mobile preview" style={{ height: "153px", width: "145px" }} />
-                        <img src={Clip3Img} alt="Mobile preview" style={{ height: "340px", width: "173px" }} />
-                        <img src={Clip4Img} alt="Mobile preview" style={{ height: "152px", width: "100px" }} />
+                    <div className="col-md-6 u-worldtext-end d-flex align-items-center gap-2">
+                       <img src={WhoWeAreImg} alt="Who We Are" />
                     </div>
                 </div>
             </div>

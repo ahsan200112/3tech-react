@@ -11,7 +11,7 @@ const YourSuccessOurPriority = () => {
             <div className="container py-5">
                 <div className="row">
                     <div className="col-md-6 d-flex flex-column">
-                        <button className="btn btn-sm u-easy" style={{ width: "180px", height: "30px", color: "#3B9BE9" }}>{t("Your Success, Our Priority")}</button>
+                        <button className="btn-sm u-easy mb-2" style={{ width: "225px"}}>{t("Your Success, Our Priority")}</button>
                         <h2 className="u-vell">{t("Why Partner With 3Tech?")}</h2>
                         <p className="v-wel">
                             {t("3Tech doesn't just deliver solutions; we create stories. With us, you own your project without recurring fees and gain access to a complete suite of services to transform your ideas into reality.")}

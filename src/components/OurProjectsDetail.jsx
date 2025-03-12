@@ -11,8 +11,8 @@ const OurProjectsDetail = () => {
     return (
         <section className="v-section" style={{ marginTop: "-48px" }}>
             <div className="container my-5 py-4">
-                <button className="btn btn-sm o-e mt-5" style={{ color: "#3B9BE9", width: "110px", border: "1px solid var(--Colors-Border-Border03, #1B1264)" }}>{t("Our Projects")}</button>
-                <h2 className="n-w ">{t("Showcasing Excellence Across Industries")}</h2>
+                <button className="btn-sm u-vise mt-5 mb-2" style={{ width: "125px"}}>{t("Our Projects")}</button>
+                <h2 className="n-w">{t("Showcasing Excellence Across Industries")}</h2>
                 <p className="n-e" style={{maxWidth: "800px", wordBreak: "break-word"}}>
                     {t("At 3Tech, every project is a reflection of our commitment to innovation, quality, and client success. Explore how we’ve helped businesses grow and thrive in the digital world.")}
                 </p>
@@ -28,20 +28,20 @@ const OurProjectsDetail = () => {
                         ].map((item, index, array) => (
                             <React.Fragment key={index}>
                                 <p className="c-m">{item}</p>
-                                {index !== array.length - 1 && <span className="mx-2 mb-4" style={{ color: " #989898" }}>|</span>}
+                                {index !== array.length - 1 && <span className="mx-2 mb-4">|</span>}
                             </React.Fragment>
                         ))}
                     </div>
                 </div>
                 <div className="row g-4">
                     <div className="col-md-6">
-                        <div className="card project-card position-relative" style={{ backgroundColor: "#181818" }}>
+                        <div className="card project-card position-relative">
                             <div className="tag">{t("E-Commerce Solutions")}</div>
                             <img src={TopImg} class="card-img-top" alt="Project" style={{ width: "588px", height: "350px" }} />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
-                                    <h5 className="card-title n-r mb-0 text-white">{t("Web Design & Development")}</h5>
-                                    <i className="bi bi-arrow-up-right text-white"></i>
+                                    <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
+                                    <i className="bi bi-arrow-up-right n-r"></i>
                                 </div>
                                 <p className="card-text n-t" style={{maxWidth: "600px", wordBreak: "break-word"}}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
                                 <div className="tags n-y">
@@ -58,8 +58,8 @@ const OurProjectsDetail = () => {
                             <img src={LapImg} className="card-img-top" alt="Project" style={{ width: "588px", height: "350px" }} />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
-                                    <h5 className="card-title n-r mb-0 text-white">{t("Web Design & Development")}</h5>
-                                    <i className="bi bi-arrow-up-right text-white"></i>
+                                    <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
+                                    <i className="bi bi-arrow-up-right n-r"></i>
                                 </div>
                                 <p className="card-text n-t" style={{maxWidth: "600px", wordBreak: "break-word"}}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
                                 <div className="tags n-y">
@@ -80,8 +80,8 @@ const OurProjectsDetail = () => {
                             <img src={LapImg} className="card-img-top" alt="Project" style={{ width: "588px", height: "350px" }} />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
-                                    <h5 className="card-title n-r mb-0 text-white">{t("Web Design & Development")}</h5>
-                                    <i className="bi bi-arrow-up-right text-white"></i>
+                                    <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
+                                    <i className="bi bi-arrow-up-right n-r"></i>
                                 </div>
                                 <p className="card-text n-t" style={{maxWidth: "600px", wordBreak: "break-word"}}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
                                 <div className="tags n-y">
@@ -98,8 +98,8 @@ const OurProjectsDetail = () => {
                             <img src={ParImg} className="card-img-top" alt="Project" style={{ width: "588px", height: "350px" }} />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
-                                    <h5 className="card-title n-r mb-0 text-white">{t("Web Design & Development")}</h5>
-                                    <i className="bi bi-arrow-up-right text-white"></i>
+                                    <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
+                                    <i className="bi bi-arrow-up-right n-r"></i>
                                 </div>
                                 <p className="card-text n-t" style={{maxWidth: "600px", wordBreak: "break-word"}}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
                                 <div className="tags n-y">
@@ -120,8 +120,8 @@ const OurProjectsDetail = () => {
                             <img src={TopImg} className="card-img-top" alt="Project" style={{ width: "588px", height: "350px" }} />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
-                                    <h5 className="card-title n-r mb-0 text-white">{t("Web Design & Development")}</h5>
-                                    <i className="bi bi-arrow-up-right text-white"></i>
+                                    <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
+                                    <i className="bi bi-arrow-up-right n-r"></i>
                                 </div>
                                 <p className="card-text n-t" style={{maxWidth: "600px", wordBreak: "break-word"}}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
                                 <div className="tags n-y">
@@ -138,8 +138,8 @@ const OurProjectsDetail = () => {
                             <img src={ParImg} className="card-img-top" alt="Project" style={{ width: "588px", height: "350px" }} />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
-                                    <h5 className="card-title n-r mb-0 text-white">{t("Web Design & Development")}</h5>
-                                    <i className="bi bi-arrow-up-right text-white"></i>
+                                    <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
+                                    <i className="bi bi-arrow-up-right n-r"></i>
                                 </div>
                                 <p className="card-text n-t" style={{maxWidth: "600px", wordBreak: "break-word"}}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
                                 <div className="tags n-y">

@@ -9,10 +9,10 @@ const CustomPackageOpinion = () => {
     const isRTL = document.dir === "rtl"; // Ya kisi global state se lein
     
     return (
-        <section style={{ backgroundColor: "#181818" }}>
+        <section className='u-section'>
             <div className="container py-5">
                 <div className="mb-4">
-                    <button className="btn btn-sm o-e" style={{ color: "#3B9BE9", border: "1px solid var(--Colors-Border-Border03, #1B1264)" }}>{t('Custom Package Option')}</button>
+                    <button className="u-easy btn-sm">{t('Custom Package Option')}</button>
                     <h2 className="v-r mt-3" style={{maxWidth: "800px", wordBreak: "break-word"}}>{t('Didn’t Find What You Need? Let’s Build A Custom Package Just For You!')}</h2>
                 </div>
                 <div className="row">
@@ -50,36 +50,36 @@ const CustomPackageOpinion = () => {
                             <div className="row g-3">
                                 <div className="col-lg-6">
                                     <div>
-                                        <label htmlFor="name" className="form-label text-white">{t('Name')}*</label>
-                                        <input type="text" className="form-control bg-transparent text-white" id="name" required />
+                                        <label htmlFor="name" className="form-label text-primary-color">{t('Name')}*</label>
+                                        <input type="text" className="form-control bg-transparent text-primary-color" id="name" required />
                                     </div>
                                 </div>
                                 <div className="col-lg-6">
                                     <div>
-                                        <label htmlFor="email" className="form-label text-white">{t('Email')}*</label>
-                                        <input type="email" className="form-control bg-transparent text-white" id="email" required />
+                                        <label htmlFor="email" className="form-label text-primary-color">{t('Email')}*</label>
+                                        <input type="email" className="form-control bg-transparent text-primary-color" id="email" required />
                                     </div>
                                 </div>
                                 <div className="col-lg-6">
                                     <div>
-                                        <label htmlFor="phone" className="form-label text-white">{t('Phone')}*</label>
-                                        <input type="text" className="form-control bg-transparent text-white" id="phone" required />
+                                        <label htmlFor="phone" className="form-label text-primary-color">{t('Phone')}*</label>
+                                        <input type="text" className="form-control bg-transparent text-primary-color" id="phone" required />
                                     </div>
                                 </div>
                                 <div className="col-lg-6">
                                     <div>
-                                        <label htmlFor="subject" className="form-label text-white">{t('Subject')}*</label>
-                                        <input type="text" className="form-control bg-transparent text-white" id="subject" required />
+                                        <label htmlFor="subject" className="form-label text-primary-color">{t('Subject')}*</label>
+                                        <input type="text" className="form-control bg-transparent text-primary-color" id="subject" required />
                                     </div>
                                 </div>
                                 <div className="col-lg-12 mb-2">
                                     <div>
-                                        <label htmlFor="message" className="form-label text-white">{t('Message')}*</label>
-                                        <textarea className="form-control bg-transparent text-white" id="message" rows="2" required></textarea>
+                                        <label htmlFor="message" className="form-label text-primary-color">{t('Message')}*</label>
+                                        <textarea className="form-control bg-transparent text-primary-color" id="message" rows="2" required></textarea>
                                     </div>
                                 </div>
                                 <div className="col-lg-12 mt-3">
-                                    <button type="submit" className="btn text-white px-4 py-2" style={{ border: "1px solid #989898", borderRadius: "25px" }}>
+                                    <button type="submit" className="btn-while px-4 py-2" style={{width:"260px"}}>
                                         {t('Request a Custom Package')}
                                     </button>
                                 </div>

@@ -54,7 +54,7 @@ const OurClientsSay = () => {
     <section className="client-testimonials py-5" style={{ direction: isRTL ? "rtl" : "ltr" }} >
       <div className="container">
         <div className="mb-4">
-          <button className="btn btn-sm v-hi" style={{ color: "#3B9BE9" }}>
+          <button className="btn-sm v-hi" style={{ width: "215px" }}>
             {t("Real Stories, Real Impact")}
           </button>
           <h2 className="v-hence">{t("What Our Clients Say About Us")}</h2>
@@ -82,7 +82,7 @@ const OurClientsSay = () => {
             <SwiperSlide key={testimonial.id}>
               <div className="card p-3 shadow text-white"
                 style={{
-                  backgroundColor: "#212121",
+                  backgroundColor: "var(--bg-secondary)",
                   borderRadius: "20px",
                   textAlign: isRTL ? "right" : "left",
                 }}
@@ -107,7 +107,7 @@ const OurClientsSay = () => {
                   />
                   {/* Text */}
                   <div>
-                    <p className="mb-0 g-value">{t(testimonial.name)}</p>
+                    <p className="mb-0 g-value" style={{fontWeight:"700", fontSize:"18px"}}>{t(testimonial.name)}</p>
                     <p className="mb-0 g-value">{t(testimonial.position)}</p>
                   </div>
                 </div>
