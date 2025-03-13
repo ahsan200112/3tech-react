@@ -9,12 +9,13 @@ html[dir="ltr"] {
   direction: ltr;
   text-align: left;
 }
+
 :root {
-  --bg-primary: #181818;  /* Dark Gray */
-  --bg-secondary: #212121; /* Slightly Lighter Gray */
-  --bg-firstcomponent:#090909;
-  --text-primary: #ffffff; /* White */
-  --text-secondary:#CFCECE; 
+  --bg-primary: #181818;
+  --bg-secondary: #212121;
+  --bg-firstcomponent: #090909;
+  --text-primary: #ffffff;
+  --text-secondary: #CFCECE;
   --navbar-bg: #14191f;
   --button-bg: #181818;
   --button-border: #ffffff;
@@ -23,10 +24,10 @@ html[dir="ltr"] {
 
 /* Light Mode */
 [data-theme="light"] {
-  --bg-primary: #ffffff;  /* White */
-  --bg-secondary: #f8f9fa; /* Light Gray */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
   --bg-firstcomponent: #FBFBFB;
-  --text-primary: #000000; /* Black */
+  --text-primary: #000000;
   --text-secondary: #636363;
   --navbar-bg: #fcfdfe;
   --button-bg: #ffffff;
@@ -37,6 +38,7 @@ html[dir="ltr"] {
 * {
   margin: 0;
 }
+
 /* Apply background and text colors */
 body {
   background: var(--bg-primary);
@@ -57,8 +59,12 @@ body {
   background-color: var(--bg-primary);
 }
 
-.while-valu{
+.while-valu {
   background-color: var(--bg-firstcomponent);
+}
+
+.f-hj {
+  background: linear-gradient(90deg, #191a1c 0%, rgb(25, 26, 28) 10%);
 }
 
 .theme-switcher-btn {
@@ -96,11 +102,10 @@ body {
 }
 
 [dir="rtl"] .margin-right-40 {
- margin-right: 40px;
+  margin-right: 40px;
 }
 
 .hlo {
-
   font-family: Reddit Sans;
   font-size: 18px;
   font-weight: 400;
@@ -110,7 +115,6 @@ body {
 }
 
 .u-vie {
-
   font-family: Reddit Sans;
   font-size: 56px;
   font-weight: 700;
@@ -144,6 +148,11 @@ body {
   opacity: 1;
 }
 
+.btn-under:hover {
+  color: #3B9BE9;
+  background-color: #FFFFFF;
+}
+
 .btn-while {
   width: 214px;
   padding: 15px;
@@ -158,6 +167,11 @@ body {
   text-align: center;
   color: var(--button-text);
   opacity: 1;
+}
+
+.btn-while:hover {
+  color: var(--button-bg);
+  background-color: var(--button-text);
 }
 
 .u-vise {
@@ -177,7 +191,7 @@ body {
   opacity: 0px;
 }
 
-.f-vise{
+.f-vise {
   font-family: Reddit Sans;
   font-size: 16px;
   font-weight: 700;
@@ -195,17 +209,12 @@ body {
 }
 
 .u-visit {
-
   font-family: Reddit Sans;
   font-size: 38px;
   font-weight: 700;
   line-height: 50.4px;
   text-align: left;
   color: var(--text-primary);
-}
-
-.f-hj {
-  background: linear-gradient(90deg, #191a1c 0%, rgb(25, 26, 28) 10%);
 }
 
 .u-were {
@@ -218,7 +227,6 @@ body {
 }
 
 .u-here {
-
   font-family: Reddit Sans;
   font-size: 18px;
   font-weight: 400;
@@ -342,9 +350,15 @@ body {
   color: var(--text-secondary);
 }
 
+.btn-our:hover {
+  color: var(--bg-primary);
+  background-color: var(--text-secondary);
+}
+
 .v-section {
   background-color: var(--bg-primary);
 }
+
 .border-line {
   position: absolute;
   top: 50%;
@@ -363,7 +377,6 @@ body {
 [dir="rtl"] .border-line {
   left: 0;
 }
-
 
 .u-easy {
   height: 40px;
@@ -424,6 +437,11 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease, opacity 0.3s ease;
   color: white;
+}
+
+.btn-contact:hover {
+  color: #3B9BE9;
+  background-color: #ffffff;
 }
 
 /* Hover Effect */
@@ -548,9 +566,11 @@ body {
   font-weight: bold;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
-[dir="rtl"] .overlay-text{
+
+[dir="rtl"] .overlay-text {
   transform: translate(-12%, -50%);
 }
+
 .v-help {
   font-family: Reddit Sans;
   font-size: 17px;
@@ -644,7 +664,7 @@ body {
 }
 
 .client-testimonials {
- background-color: var(--bg-secondary);
+  background-color: var(--bg-secondary);
 }
 
 .v-hi {
@@ -685,7 +705,7 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card-body{
+.card-body {
   color: var(--text-primary) !important;
 }
 
@@ -757,6 +777,12 @@ body {
   opacity: 1;
 }
 
+.btn-all:hover {
+  background-color: #bcbcbc;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
 .i-has {
   font-family: Reddit Sans;
   font-size: 20px;
@@ -794,6 +820,11 @@ body {
   color: #FFFFFF;
   opacity: 1;
   border: 1px solid #1B1264;
+}
+
+.btn-get:hover {
+  color: #3B9BE9;
+  background-color: #FFFFFF;
 }
 
 .i-world {
@@ -837,6 +868,11 @@ body {
   background-color: #3B9BE9;
 }
 
+.btn-free:hover {
+  color: #3B9BE9;
+  background-color: #FFFFFF;
+}
+
 .v-house {
   font-family: Reddit Sans;
   font-size: 20px;
@@ -850,6 +886,24 @@ body {
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 140%;
+  color: var(--text-primary);
+}
+
+.v-inner:hover {
+  color: var(--text-secondary);
+}
+
+.v-term {
+  font-family: Reddit Sans;
+  color: var(--text-primary);
+}
+
+.v-term:hover {
+  color: var(--text-secondary);
+}
+
+.v-copy {
+  font-family: Reddit Sans;
   color: var(--text-primary);
 }
 
@@ -892,6 +946,11 @@ body {
   text-align: center;
   color: #FFFFFF;
   opacity: 1;
+}
+
+.btn-well:hover {
+  background-color: #FFFFFF;
+  color: #3B9BE9;
 }
 
 .v-vise {
@@ -1217,10 +1276,15 @@ body {
   top: 10px;
   left: 10px;
   background-color: #007bff;
-  color: #fff;
+  color: #ffffff;
   border-radius: 30px;
   padding: 10px;
   font-size: 0.9rem;
+}
+
+.tag:hover {
+  background-color: #ffffff;
+  color: #007bff;
 }
 
 .card-content {
@@ -1461,6 +1525,10 @@ body {
   padding: 10px;
 }
 
+.c-m:hover {
+  color: var(--text-primary);
+}
+
 .swiper {
   /* width: 600px; */
   height: 300px;
@@ -1469,17 +1537,22 @@ body {
 .swiper-button-next,
 .swiper-button-prev {
   position: absolute;
-  top: -50px; /* Arrows ko upar le jaane ke liye adjust karein */
-  color: #3B9BE9; /* Arrows ka color */
-  z-index: 10; /* Ensure arrows are visible above other elements */
+  top: -50px;
+  /* Arrows ko upar le jaane ke liye adjust karein */
+  color: #3B9BE9;
+  /* Arrows ka color */
+  z-index: 10;
+  /* Ensure arrows are visible above other elements */
 }
 
 .swiper-button-prev {
-  left: 40%; /* Adjust as needed */
+  left: 40%;
+  /* Adjust as needed */
 }
 
 .swiper-button-next {
-  right: 40%; /* Adjust as needed */
+  right: 40%;
+  /* Adjust as needed */
 }
 
 /* Default Style (for all screens) */
@@ -1492,15 +1565,18 @@ img {
 /* Tablet View (Jab screen 768px tak ho) */
 @media (max-width: 768px) {
   img {
-    width: 90%; /* Thoda chota kar diya */
-    margin: 0 auto; /* Center align karne ke liye */
+    width: 90%;
+    /* Thoda chota kar diya */
+    margin: 0 auto;
+    /* Center align karne ke liye */
   }
 }
 
 /* Mobile View (Jab screen 480px tak ho) */
 @media (max-width: 480px) {
   img {
-    width: 100%; /* Pura screen cover kare */
+    width: 100%;
+    /* Pura screen cover kare */
   }
 }
 

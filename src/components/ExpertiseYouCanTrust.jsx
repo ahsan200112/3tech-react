@@ -19,7 +19,7 @@ const ExpertiseYouCanTrust = () => {
                     <div className="row">
                         <div className="col-md-8">
                             <div className="mb-5">
-                                <p className="l-k">
+                                <p className="l-k mb-4">
                                     {t("3Tech was born from a desire to bridge creativity and technology. We’ve built a team of experts who don’t just develop apps or design stores—they craft experiences that inspire, connect, and drive results. Every line of code, every design choice, and every campaign is created with your success in mind.")}
                                 </p>
                                 <Link className="contact-btn text-decoration-none" to="/contact">{t("Contact Us")}</Link>

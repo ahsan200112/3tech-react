@@ -66,11 +66,11 @@ const Footer = () => {
         </div>
         <div className="row mt-4 pt-3" style={{ borderTop: " 1px solid #1B1264" }}>
           <div className="col d-flex justify-content-between text-primary-color">
-            <p className="mb-0">{t("Copyright © 2024 3Tech")}</p>
+            <p className="mb-0 v-copy">{t("Copyright © 2024 3Tech")}</p>
             <p className="mb-0">
-              <a href="/" className="text-decoration-none text-primary-color">{t("Term of use")}</a> |
-              <a href="/" className="text-decoration-none text-primary-color"> {t("Privacy Policy")}</a> |
-              <a href="/" className="text-decoration-none text-primary-color"> {t("Cookie Policy")}</a>
+              <a href="/" className="text-decoration-none v-term">{t("Term of use")}</a> |
+              <a href="/" className="text-decoration-none v-term"> {t("Privacy Policy")}</a> |
+              <a href="/" className="text-decoration-none v-term"> {t("Cookie Policy")}</a>
             </p>
           </div>
         </div>
