@@ -10,7 +10,7 @@ import ThemeSwitcher from './ThemeSwitcher';
 const Navbar = () => {
   const { t, i18n } = useTranslation();
   const isRTL = i18n.dir() === "rtl";
-  
+
   return (
     <>
       <section style={{ backgroundColor: "var(--bg-primary)" }}>
@@ -29,7 +29,7 @@ const Navbar = () => {
               <a href="/" className={`${isRTL ? "ms-3" : "me-3"} d-flex align-items-center`}><i className="bi bi-facebook text-primary-color"></i></a>
               <a href="/" className={`${isRTL ? "ms-3" : "me-3"} d-flex align-items-center`}><i className="bi bi-whatsapp text-primary-color"></i></a>
               <a href="/" className={`${isRTL ? "ms-3" : "me-3"} d-flex align-items-center`}><i className="bi bi-instagram text-primary-color"></i></a>
-              <ThemeSwitcher /> 
+              <ThemeSwitcher />
             </div>
           </div>
         </div>
@@ -38,7 +38,7 @@ const Navbar = () => {
       <section className="navbar-bg-color">
         <nav className="navbar navbar-expand-lg" style={{ padding: "15px 30px", borderRadius: "30px" }}>
           <div className="container d-flex align-items-center justify-content-between">
-            
+
             {/* Left: Logo */}
             <div className="d-flex align-items-center">
               <img src={RectangleImg} alt="Logo" className="img-fluid logo-img" />
@@ -64,21 +64,6 @@ const Navbar = () => {
                 {t("Get a Free Consultation")}
               </button>
             </div>
-
-            {/* Mobile Toggle Button */}
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-              style={{ border: "none", backgroundColor: "antiquewhite" }}
-            >
-              <span className="navbar-toggler-icon" style={{ color: "#333" }}></span>
-            </button>
-
           </div>
         </nav>
       </section>

@@ -906,385 +906,8 @@ body {
   color: var(--text-primary) !important;
 }
 
-/* Desktop (Large screens: ≥1200px) */
-@media (min-width: 1200px) {}
-
-/* Tablet (Medium screens: 768px–1199px) */
-@media (min-width: 768px) and (max-width: 1199px) {
-  .v-vise {
-    font-size: 12px !important;
-  }
-
-}
-
-/* Mobile (Small screens: <768px) */
-@media (max-width: 767px) {
-  .v-vise {
-    font-size: 10px !important;
-  }
-}
-
-/* Default styles for the logo */
-.logo-img {
-  max-width: 100%;
-  height: auto;
-  /* Maintain aspect ratio */
-}
-
-/* Tablet-specific adjustments */
-@media (min-width: 768px) and (max-width: 1199px) {
-  .logo-img {
-    width: 90px;
-    /* Adjust width for tablet */
-    height: auto;
-  }
-}
-
-/* Mobile-specific adjustments */
-@media (max-width: 767px) {
-  .logo-img {
-    width: 70px;
-    /* Adjust width for mobile */
-    height: auto;
-  }
-}
-
 .hero-well {
   background-color: #2c2a41;
-}
-
-/* Desktop (Large screens: ≥1200px) */
-@media (min-width: 1200px) {}
-
-/* Tablet (Medium screens: 768px–1199px) */
-@media (min-width: 768px) and (max-width: 1199px) {
-  .v-vise {
-    font-size: 12px !important;
-  }
-
-}
-
-/* Mobile (Small screens: <768px) */
-@media (max-width: 767px) {
-  .v-vise {
-    font-size: 10px !important;
-  }
-}
-
-/* Desktop (Large screens: ≥1200px) */
-@media (min-width: 1200px) {}
-
-/* Tablet (Medium screens: 768px–1199px) */
-@media (min-width: 768px) and (max-width: 1199px) {
-  .btn-well {
-    width: 182px;
-    font-size: 13px;
-  }
-
-}
-
-/* Mobile (Small screens: <768px) */
-@media (max-width: 767px) {
-  .btn-well {
-    width: 178px;
-    font-size: 11px;
-  }
-}
-
-/*    ----------------------------*/
-
-/* Desktop (Large screens: ≥1200px) */
-@media (min-width: 1200px) {
-  .u-vie {
-    font-size: 56px;
-    font-weight: 700;
-    line-height: 67.2px;
-  }
-}
-
-/* Tablet (Medium screens: 768px–1199px) */
-@media (min-width: 768px) and (max-width: 1199px) {
-  .u-vie {
-    font-size: 25px;
-    font-weight: 300;
-
-  }
-
-}
-
-/* Mobile (Small screens: <768px) */
-@media (max-width: 767px) {
-
-  .u-vie {
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 25px;
-
-
-  }
-}
-
-/* Desktop (Large screens: ≥1200px) */
-@media (min-width: 1200px) {
-  .u-visit {
-    font-size: 38px;
-  }
-}
-
-/* Tablet (Medium screens: 768px–1199px) */
-@media (min-width: 768px) and (max-width: 1199px) {
-  .u-visit {
-    font-size: 18px;
-  }
-}
-
-/* Mobile (Small screens: <768px) */
-@media (max-width: 767px) {
-  .u-visit {
-    font-size: 16px;
-    line-height: 15px;
-  }
-
-}
-
-/* Desktop (Large screens: ≥1200px) */
-@media (min-width: 1200px) {
-  .u-were {
-    font-size: 38px;
-  }
-}
-
-/* Tablet (Medium screens: 768px–1199px) */
-@media (min-width: 768px) and (max-width: 1199px) {
-  .u-were {
-    font-size: 18px;
-  }
-
-}
-
-/* Mobile (Small screens: <768px) */
-@media (max-width: 767px) {
-  .u-were {
-    font-size: 16px;
-    line-height: 30px;
-  }
-}
-
-/* Desktop (Large screens: ≥1200px) */
-@media (min-width: 1200px) {
-  .u-ll {
-    font-size: 38px;
-  }
-}
-
-/* Tablet (Medium screens: 768px–1199px) */
-@media (min-width: 768px) and (max-width: 1199px) {
-  .u-ll {
-    font-size: 12px;
-  }
-
-}
-
-/* Mobile (Small screens: <768px) */
-@media (max-width: 767px) {
-  .u-ll {
-    font-size: 10px;
-
-  }
-}
-
-/* Desktop (Large screens: ≥1200px) */
-@media (min-width: 1200px) {
-  .u-ll {
-    font-size: 38px;
-  }
-
-  .u-well {
-    font-size: 25px;
-  }
-
-  .v-visit {
-    font-size: 42px;
-  }
-
-  .v-value {
-    font-size: 42px;
-  }
-
-  .v-hence {
-    font-size: 42px;
-  }
-
-  .i-visit {
-    font-size: 42px;
-  }
-
-  .v-use {
-    font-size: 56px;
-  }
-
-  .o-hlo {
-    font-size: 56px;
-  }
-
-  .o-b {
-    font-size: 42px;
-  }
-
-  .z-x {
-    font-size: 42px;
-  }
-
-  .f-g {
-    font-size: 42px;
-  }
-
-  .f-z {
-    font-size: 24px;
-  }
-
-  .g-r {
-    font-size: 42px;
-  }
-}
-
-/* Tablet (Medium screens: 768px–1199px) */
-@media (min-width: 768px) and (max-width: 1199px) {
-  .u-ll {
-    font-size: 12px;
-  }
-
-  .u-item {
-    font-size: 20px;
-  }
-
-  .v-visit {
-    font-size: 19px;
-  }
-
-  .v-value {
-    font-size: 20px;
-  }
-
-  .v-hence {
-    font-size: 20px;
-  }
-
-  .i-visit {
-    font-size: 21px;
-  }
-
-  .v-use {
-    font-size: 28px;
-  }
-
-  .o-hlo {
-    font-size: 30px;
-  }
-
-  .o-b {
-    font-size: 20px;
-  }
-
-}
-
-/* Mobile (Small screens: <768px) */
-@media (max-width: 767px) {
-  .u-ll {
-    font-size: 10px;
-  }
-
-  .u-item {
-    font-size: 18px;
-    line-height: 25px;
-  }
-
-  .u-well {
-    font-size: 16px;
-    line-height: 18px;
-  }
-
-  .v-visit {
-    font-size: 17px;
-  }
-
-  .v-value {
-    font-size: 18px;
-  }
-
-  .v-hence {
-    font-size: 18px;
-  }
-
-  .i-visit {
-    font-size: 19px;
-  }
-
-  .v-use {
-    font-size: 26px;
-  }
-
-  .o-hlo {
-    font-size: 30px !important;
-  }
-
-  .k-hlo {
-    font-size: 18px !important;
-  }
-
-  .o-b {
-    font-size: 17px !important;
-  }
-
-  .z-x {
-    font-size: 19px !important;
-  }
-
-  .f-g {
-    font-size: 21px !important;
-  }
-
-  .f-z {
-    font-size: 13px !important;
-  }
-
-  .g-r {
-    font-size: 22px !important;
-  }
-
-  .btn-while {
-    padding: 12px 12px 12px 12px !important;
-    width: 140px !important;
-    font-size: 10px;
-  }
-
-  .btn-under {
-    width: 140px !important;
-    padding: 15px 15px 15px 15px !important;
-    font-size: 10px;
-  }
-}
-
-/*--------------------*/
-/* Desktop (Large screens: ≥1200px) */
-@media (min-width: 1200px) {
-  .o-b {
-    font-size: 42px;
-  }
-}
-
-/* Tablet (Medium screens: 768px–1199px) */
-@media (min-width: 768px) and (max-width: 1199px) {
-  .o-b {
-    font-size: 20px;
-  }
-}
-
-/* Mobile (Small screens: <768px) */
-@media (max-width: 767px) {
-  .o-b {
-    font-size: 17px !important;
-  }
 }
 
 .navbar-bg-color {
@@ -1857,4 +1480,393 @@ body {
 
 .swiper-button-next {
   right: 40%; /* Adjust as needed */
+}
+
+/* Default Style (for all screens) */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Tablet View (Jab screen 768px tak ho) */
+@media (max-width: 768px) {
+  img {
+    width: 90%; /* Thoda chota kar diya */
+    margin: 0 auto; /* Center align karne ke liye */
+  }
+}
+
+/* Mobile View (Jab screen 480px tak ho) */
+@media (max-width: 480px) {
+  img {
+    width: 100%; /* Pura screen cover kare */
+  }
+}
+
+
+/* Tablet (Medium screens: 768px–1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .v-vise {
+    font-size: 12px !important;
+  }
+
+}
+
+/* Mobile (Small screens: <768px) */
+@media (max-width: 767px) {
+  .v-vise {
+    font-size: 10px !important;
+  }
+}
+
+/* Default styles for the logo */
+.logo-img {
+  max-width: 100%;
+  height: auto;
+  /* Maintain aspect ratio */
+}
+
+/* Tablet-specific adjustments */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .logo-img {
+    width: 90px;
+    height: auto;
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 767px) {
+  .logo-img {
+    width: 70px;
+    height: auto;
+  }
+}
+
+/* Tablet (Medium screens: 768px–1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .v-vise {
+    font-size: 12px !important;
+  }
+
+}
+
+/* Mobile (Small screens: <768px) */
+@media (max-width: 767px) {
+  .v-vise {
+    font-size: 10px !important;
+  }
+}
+
+/* Tablet (Medium screens: 768px–1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .btn-well {
+    width: 182px;
+    font-size: 13px;
+  }
+
+}
+
+/* Mobile (Small screens: <768px) */
+@media (max-width: 767px) {
+  .btn-well {
+    width: 178px;
+    font-size: 11px;
+  }
+}
+
+/*    ----------------------------*/
+
+/* Desktop (Large screens: ≥1200px) */
+@media (min-width: 1200px) {
+  .u-vie {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 67.2px;
+  }
+}
+
+/* Tablet (Medium screens: 768px–1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .u-vie {
+    font-size: 25px;
+    font-weight: 300;
+
+  }
+
+}
+
+/* Mobile (Small screens: <768px) */
+@media (max-width: 767px) {
+
+  .u-vie {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 25px;
+
+
+  }
+}
+
+/* Desktop (Large screens: ≥1200px) */
+@media (min-width: 1200px) {
+  .u-visit {
+    font-size: 38px;
+  }
+}
+
+/* Tablet (Medium screens: 768px–1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .u-visit {
+    font-size: 18px;
+  }
+}
+
+/* Mobile (Small screens: <768px) */
+@media (max-width: 767px) {
+  .u-visit {
+    font-size: 16px;
+    line-height: 15px;
+  }
+
+}
+
+/* Desktop (Large screens: ≥1200px) */
+@media (min-width: 1200px) {
+  .u-were {
+    font-size: 38px;
+  }
+}
+
+/* Tablet (Medium screens: 768px–1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .u-were {
+    font-size: 18px;
+  }
+
+}
+
+/* Mobile (Small screens: <768px) */
+@media (max-width: 767px) {
+  .u-were {
+    font-size: 16px;
+    line-height: 30px;
+  }
+}
+
+/* Desktop (Large screens: ≥1200px) */
+@media (min-width: 1200px) {
+  .u-ll {
+    font-size: 38px;
+  }
+}
+
+/* Tablet (Medium screens: 768px–1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .u-ll {
+    font-size: 12px;
+  }
+
+}
+
+/* Mobile (Small screens: <768px) */
+@media (max-width: 767px) {
+  .u-ll {
+    font-size: 10px;
+
+  }
+}
+
+/* Desktop (Large screens: ≥1200px) */
+@media (min-width: 1200px) {
+  .u-ll {
+    font-size: 38px;
+  }
+
+  .u-well {
+    font-size: 25px;
+  }
+
+  .v-visit {
+    font-size: 42px;
+  }
+
+  .v-value {
+    font-size: 42px;
+  }
+
+  .v-hence {
+    font-size: 42px;
+  }
+
+  .i-visit {
+    font-size: 42px;
+  }
+
+  .v-use {
+    font-size: 56px;
+  }
+
+  .o-hlo {
+    font-size: 56px;
+  }
+
+  .o-b {
+    font-size: 42px;
+  }
+
+  .z-x {
+    font-size: 42px;
+  }
+
+  .f-g {
+    font-size: 42px;
+  }
+
+  .f-z {
+    font-size: 24px;
+  }
+
+  .g-r {
+    font-size: 42px;
+  }
+}
+
+/* Tablet (Medium screens: 768px–1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .u-ll {
+    font-size: 12px;
+  }
+
+  .u-item {
+    font-size: 20px;
+  }
+
+  .v-visit {
+    font-size: 19px;
+  }
+
+  .v-value {
+    font-size: 20px;
+  }
+
+  .v-hence {
+    font-size: 20px;
+  }
+
+  .i-visit {
+    font-size: 21px;
+  }
+
+  .v-use {
+    font-size: 28px;
+  }
+
+  .o-hlo {
+    font-size: 30px;
+  }
+
+  .o-b {
+    font-size: 20px;
+  }
+
+}
+
+/* Mobile (Small screens: <768px) */
+@media (max-width: 767px) {
+  .u-ll {
+    font-size: 10px;
+  }
+
+  .u-item {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .u-well {
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .v-visit {
+    font-size: 17px;
+  }
+
+  .v-value {
+    font-size: 18px;
+  }
+
+  .v-hence {
+    font-size: 18px;
+  }
+
+  .i-visit {
+    font-size: 19px;
+  }
+
+  .v-use {
+    font-size: 26px;
+  }
+
+  .o-hlo {
+    font-size: 30px !important;
+  }
+
+  .k-hlo {
+    font-size: 18px !important;
+  }
+
+  .o-b {
+    font-size: 17px !important;
+  }
+
+  .z-x {
+    font-size: 19px !important;
+  }
+
+  .f-g {
+    font-size: 21px !important;
+  }
+
+  .f-z {
+    font-size: 13px !important;
+  }
+
+  .g-r {
+    font-size: 22px !important;
+  }
+
+  .btn-while {
+    padding: 12px 12px 12px 12px !important;
+    width: 140px !important;
+    font-size: 10px;
+  }
+
+  .btn-under {
+    width: 140px !important;
+    padding: 15px 15px 15px 15px !important;
+    font-size: 10px;
+  }
+}
+
+/*--------------------*/
+/* Desktop (Large screens: ≥1200px) */
+@media (min-width: 1200px) {
+  .o-b {
+    font-size: 42px;
+  }
+}
+
+/* Tablet (Medium screens: 768px–1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .o-b {
+    font-size: 20px;
+  }
+}
+
+/* Mobile (Small screens: <768px) */
+@media (max-width: 767px) {
+  .o-b {
+    font-size: 17px !important;
+  }
 }

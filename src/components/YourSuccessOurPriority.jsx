@@ -22,23 +22,23 @@ const YourSuccessOurPriority = () => {
                             {t("3Tech doesn't just deliver solutions; we create stories. With us, you own your project without recurring fees and gain access to a complete suite of services to transform your ideas into reality.")}
                         </p>
                         <ul className="list-unstyled">
-                            <li className="custom-list-item d-flex align-items-center text-start mt-3">
+                            <li className="custom-list-item d-flex align-items-center mt-3">
                                 <img src={YTImg} alt="Icon" className={isRTL ? "ms-2" : "me-2"} style={{ width: "20px", height: "20px" }} />
                                 <span>{t("Project Ownership")}</span>
                             </li>
-                            <li className="custom-list-item d-flex align-items-center text-start mt-3">
+                            <li className="custom-list-item d-flex align-items-center mt-3">
                                 <img src={YTImg} alt="Icon" className={isRTL ? "ms-2" : "me-2"} style={{ width: "20px", height: "20px" }} />
                                 <span>{t("Custom-Tailored Solutions")}</span>
                             </li>
-                            <li className="custom-list-item d-flex align-items-center text-start mt-3">
+                            <li className="custom-list-item d-flex align-items-center mt-3">
                                 <img src={YTImg} alt="Icon" className={isRTL ? "ms-2" : "me-2"} style={{ width: "20px", height: "20px" }} />
                                 <span>{t("Creative Marketing Expertise")}</span>
                             </li>
-                            <li className="custom-list-item d-flex align-items-center text-start mt-3">
+                            <li className="custom-list-item d-flex align-items-center mt-3">
                                 <img src={YTImg} alt="Icon" className={isRTL ? "ms-2" : "me-2"} style={{ width: "20px", height: "20px" }} />
                                 <span>{t("Dedicated Support Team")}</span>
                             </li>
-                            <li className="custom-list-item d-flex align-items-center text-start mt-3">
+                            <li className="custom-list-item d-flex align-items-center mt-3">
                                 <img src={YTImg} alt="Icon" className={isRTL ? "ms-2" : "me-2"} style={{ width: "20px", height: "20px" }} />
                                 <span>{t("Cost-Effective Solutions")}</span>
                             </li>
