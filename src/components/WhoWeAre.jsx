@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import WhoWeAreImg from '../assets/images/WhoWeAre.png';
 
 const WhoWeAre = () => {
@@ -9,14 +10,16 @@ const WhoWeAre = () => {
         <section className="u-section">
             <div className="container py-5">
                 <div className="row align-items-center">
-                    <button className="btn-sm u-vise mb-3" style={{ width: "130px"}}>{t("Who We Are")}</button>
+                    <button className="btn-sm u-vise mb-3" style={{ width: "130px" }}>{t("Who We Are")}</button>
                     <h1 className={`u-visit ${textAlignment}`}>{t("Connecting Your Business With The World!")}</h1>
                     <div className="col-md-6 ">
                         <h1 className={`u-were ${textAlignment}`}>{t("About Us")}</h1>
                         <p className={`u-here ${textAlignment}`}>
                             {t("In a world where creativity meets technology, 3Tech delivers exceptional experiences in building online stores, apps, and digital marketing. We’re here to tell your story and connect you with your audience through unique and impactful approaches. Every project with us becomes a memorable journey to success.")}
                         </p>
-                        <button className="btn-our w-100">{t("Discover Our Story")}</button>
+                        <Link to="/about" className="btn-our d-block w-100 text-decoration-none">
+                            {t("Discover Our Story")}
+                        </Link>
                         <div className="row text-white mt-3">
                             <div className="col-md-4" style={{
                                 [document.dir === "rtl" ? "borderLeft" : "borderRight"]: "1px solid",
@@ -37,7 +40,7 @@ const WhoWeAre = () => {
                         </div>
                     </div>
                     <div className="col-md-6 u-worldtext-end d-flex align-items-center gap-2">
-                       <img src={WhoWeAreImg} alt="Who We Are" />
+                        <img src={WhoWeAreImg} alt="Who We Are" />
                     </div>
                 </div>
             </div>

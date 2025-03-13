@@ -4,7 +4,8 @@ import ArrowImg from "../assets/images/arrow.png";
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.dir() === "rtl";
 
   return (
     <>
@@ -56,10 +57,10 @@ const Footer = () => {
             <p className="v-left pb-2" style={{ borderBottom: "1px solid " }}>{t("Phone no")}: <a href="tel:966557122917+"
               className="v-coke text-decoration-none">966557122917+</a></p>
             <div className="d-flex mt-3">
-              <a href="/" className="me-4"><i className="bi bi-linkedin text-primary-color"></i></a>
-              <a href="/" className="me-4"><i className="bi bi-facebook text-primary-color"></i></a>
-              <a href="/" className="me-4"><i className="bi bi-whatsapp text-primary-color"></i></a>
-              <a href="/" className="me-4"><i className="bi bi-instagram text-primary-color"></i></a>
+              <a href="/" className={isRTL ? "ms-4" : "me-4"}><i className="bi bi-linkedin text-primary-color"></i></a>
+              <a href="/" className={isRTL ? "ms-4" : "me-4"}><i className="bi bi-facebook text-primary-color"></i></a>
+              <a href="/" className={isRTL ? "ms-4" : "me-4"}><i className="bi bi-whatsapp text-primary-color"></i></a>
+              <a href="/" className={isRTL ? "ms-4" : "me-4"}><i className="bi bi-instagram text-primary-color"></i></a>
             </div>
           </div>
         </div>

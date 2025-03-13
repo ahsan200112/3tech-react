@@ -1,10 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import YTImg from "../assets/images/yt.png";
-import BlueImg from "../assets/images/blue.png";
+import { useTheme } from "../context/ThemeContext";
+import PartnerImgDark from '../assets/images/partner dark mode.png';
+import PartnerImgLight from '../assets/images/partner light mode.png';
 
 const YourSuccessOurPriority = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const isRTL = i18n.dir() === "rtl";
+    const { theme } = useTheme(); // Get theme from context
    // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     return (
         <section className="v-section">
@@ -18,40 +23,40 @@ const YourSuccessOurPriority = () => {
                         </p>
                         <ul className="list-unstyled">
                             <li className="custom-list-item d-flex align-items-center text-start mt-3">
-                                <img src={YTImg} alt="Icon" className="me-2" style={{ width: "20px", height: "20px" }} />
+                                <img src={YTImg} alt="Icon" className={isRTL ? "ms-2" : "me-2"} style={{ width: "20px", height: "20px" }} />
+                                <span>{t("Project Ownership")}</span>
+                            </li>
+                            <li className="custom-list-item d-flex align-items-center text-start mt-3">
+                                <img src={YTImg} alt="Icon" className={isRTL ? "ms-2" : "me-2"} style={{ width: "20px", height: "20px" }} />
                                 <span>{t("Custom-Tailored Solutions")}</span>
                             </li>
                             <li className="custom-list-item d-flex align-items-center text-start mt-3">
-                                <img src={YTImg} alt="Icon" className="me-2" style={{ width: "20px", height: "20px" }} />
-                                <span>{t("Custom-Tailored Solutions")}</span>
+                                <img src={YTImg} alt="Icon" className={isRTL ? "ms-2" : "me-2"} style={{ width: "20px", height: "20px" }} />
+                                <span>{t("Creative Marketing Expertise")}</span>
                             </li>
                             <li className="custom-list-item d-flex align-items-center text-start mt-3">
-                                <img src={YTImg} alt="Icon" className="me-2" style={{ width: "20px", height: "20px" }} />
-                                <span>{t("Custom-Tailored Solutions")}</span>
+                                <img src={YTImg} alt="Icon" className={isRTL ? "ms-2" : "me-2"} style={{ width: "20px", height: "20px" }} />
+                                <span>{t("Dedicated Support Team")}</span>
                             </li>
                             <li className="custom-list-item d-flex align-items-center text-start mt-3">
-                                <img src={YTImg} alt="Icon" className="me-2" style={{ width: "20px", height: "20px" }} />
-                                <span>{t("Custom-Tailored Solutions")}</span>
-                            </li>
-                            <li className="custom-list-item d-flex align-items-center text-start mt-3">
-                                <img src={YTImg} alt="Icon" className="me-2" style={{ width: "20px", height: "20px" }} />
-                                <span>{t("Custom-Tailored Solutions")}</span>
+                                <img src={YTImg} alt="Icon" className={isRTL ? "ms-2" : "me-2"} style={{ width: "20px", height: "20px" }} />
+                                <span>{t("Cost-Effective Solutions")}</span>
                             </li>
                         </ul>
-                        <button className="btn-contact">{t("Contact Us")}</button>
+                        <Link className="btn-contact text-decoration-none" to="/contact">{t("Contact Us")}</Link>
                     </div>
                     <div className="col-md-6">
                         <div className="d-flex justify-content-between align-items-center">
-                            <h5 className="v-well" style={{color: "#FFFFFF", margin: "0"}}>{t("Our Customers' Reviews")}</h5>
+                            <h5 className="v-well" style={{margin: "0"}}>{t("Our Customers' Reviews")}</h5>
                             <p className="v-fill text-end">
-                                <i className="bi bi-star-fill text-white"></i> 4.8
+                                <i className="bi bi-star-fill"></i> 4.8
                             </p>
                         </div>
-                        <div className="card text-white bg-dark">
-                            <img src={BlueImg} className="card-img img-fluid w-100" alt="Customer Reviews" />
+                        <div className="card border-0">
+                            <img src={theme === "light" ? PartnerImgLight : PartnerImgDark} className="card-img img-fluid w-100" alt="Customer Reviews" />
                         </div>
                         <div className="d-flex align-items-start">
-                            <span className="highlighted-number me-3">120+</span>
+                            <span className={`highlighted-number ${isRTL ? "ms-3" : "me-3"}`}>120+</span>
 
                             <div className="regular-text mt-2">
                                 <span>{t("Customers in over 5 countries")}</span><br />

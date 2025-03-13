@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import Frame41Img from "../assets/images/Frame 41.png";
 
 const ExpertiseYouCanTrust = () => {
@@ -21,7 +22,7 @@ const ExpertiseYouCanTrust = () => {
                                 <p className="l-k">
                                     {t("3Tech was born from a desire to bridge creativity and technology. We’ve built a team of experts who don’t just develop apps or design stores—they craft experiences that inspire, connect, and drive results. Every line of code, every design choice, and every campaign is created with your success in mind.")}
                                 </p>
-                                <button className="contact-btn">{t("Contact Us")}</button>
+                                <Link className="contact-btn text-decoration-none" to="/contact">{t("Contact Us")}</Link>
                             </div>
                             <div className="stats row">
                                 <div className="col-md-4 stat-item"

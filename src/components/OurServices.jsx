@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import SocialMediaMarketingImg from '../assets/images/social-media-marketing 1.png';
 import Group2Img from "../assets/images/Group (2).png";
 import Ellipse2Img from "../assets/images/Ellipse 2.png";
@@ -33,7 +34,9 @@ const OurServices = () => {
                                         <p className="card-text u-space">
                                             {t("Launch and manage online stores effortlessly with user-friendly designs, payment integration, and shipping tools for e-commerce success.")}
                                         </p>
-                                        <p className="u-help">{t("Explore Service")}</p>
+                                        <p>
+                                        <Link className="u-help text-decoration-none" to="/ecommercesolutions">{t("Explore E-Commerce Solutions")}</Link>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -46,7 +49,9 @@ const OurServices = () => {
                                         <p className="card-text u-space">
                                             {t("Build or enhance custom apps, offering seamless user experiences in a mobile-first world.")}
                                         </p>
-                                        <p className="u-help">{t("Explore Service")}</p>
+                                        <p>
+                                        <Link className="u-help text-decoration-none" to="/mobileapplications">{t("Explore Mobile Applications")}</Link>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +67,9 @@ const OurServices = () => {
                                         <p className="card-text u-space">
                                             {t("Achieve growth with tailored marketing strategies, expert advertising, and high-quality content creation.")}
                                         </p>
-                                        <p className="u-help">{t("Explore Service")}</p>
+                                        <p>
+                                        <Link className="u-help text-decoration-none" to="/marketingsolutions">{t("Explore Marketing Solutions")}</Link>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -75,7 +82,9 @@ const OurServices = () => {
                                         <p className="card-text u-space">
                                             {t("Elevate your brand with unique visual identities, stunning graphics, and innovative designs.")}
                                         </p>
-                                        <p class="u-help">{t("Explore Service")}</p>
+                                        <p>
+                                        <Link className="u-help text-decoration-none" to="/creativedesign">{t("Explore Creative Design")}</Link>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +97,9 @@ const OurServices = () => {
                                         <p className="card-text u-space">
                                             {t("Enhance online visibility through expert SEO and social media management to reach the right audience.")}
                                         </p>
-                                        <p className="u-help">{t("Explore Service")}</p>
+                                        <p>
+                                        <Link className="u-help text-decoration-none" to="/digitaloptimization">{t("Explore Digital Optimization")}</Link>
+                                        </p>
                                     </div>
                                 </div>
                             </div>

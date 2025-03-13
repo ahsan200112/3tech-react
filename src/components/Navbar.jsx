@@ -8,7 +8,8 @@ import LanguageToggle from './LanguageToggle';
 import ThemeSwitcher from './ThemeSwitcher';
 
 const Navbar = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.dir() === "rtl";
   
   return (
     <>
@@ -24,10 +25,10 @@ const Navbar = () => {
               </a>
             </div>
             <div className="col d-flex justify-content-end mt-3 mb-3">
-              <a href="/" className="me-3 d-flex align-items-center"><i className="bi bi-linkedin text-primary-color"></i></a>
-              <a href="/" className="me-3 d-flex align-items-center"><i className="bi bi-facebook text-primary-color"></i></a>
-              <a href="/" className="me-3 d-flex align-items-center"><i className="bi bi-whatsapp text-primary-color"></i></a>
-              <a href="/" className="me-3 d-flex align-items-center"><i className="bi bi-instagram text-primary-color"></i></a>
+              <a href="/" className={`${isRTL ? "ms-3" : "me-3"} d-flex align-items-center`}><i className="bi bi-linkedin text-primary-color"></i></a>
+              <a href="/" className={`${isRTL ? "ms-3" : "me-3"} d-flex align-items-center`}><i className="bi bi-facebook text-primary-color"></i></a>
+              <a href="/" className={`${isRTL ? "ms-3" : "me-3"} d-flex align-items-center`}><i className="bi bi-whatsapp text-primary-color"></i></a>
+              <a href="/" className={`${isRTL ? "ms-3" : "me-3"} d-flex align-items-center`}><i className="bi bi-instagram text-primary-color"></i></a>
               <ThemeSwitcher /> 
             </div>
           </div>
