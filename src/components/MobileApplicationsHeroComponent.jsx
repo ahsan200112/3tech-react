@@ -120,7 +120,7 @@ function MobileApplicationsHeroSection() {
                 ))}
 
                 <div className="container mt-5 pt-5">
-                    <h2 className="text-start g-r mt-2">{t("Crafting Seamless Mobile Experiences")}</h2>
+                    <h2 className="g-r mt-2">{t("Crafting Seamless Mobile Experiences")}</h2>
                     <div className="row text-center">
                         {[
                             { step: t("Step 1"), title: t("Consultation & Planning"), desc: t("We define your app's objectives and features with a clear understanding of your target users.")},

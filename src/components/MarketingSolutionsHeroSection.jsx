@@ -126,7 +126,7 @@ function MarketingSolutionsHeroSection() {
                 ))}
 
                 <div className="container mt-5 pt-5">
-                    <h2 className="text-start g-r mt-2">{t("Our Path to E-Commerce Success")}</h2>
+                    <h2 className="g-r mt-2">{t("Our Path to E-Commerce Success")}</h2>
                     <div className="row text-center">
                         {[
                             { step: t("Step 1"), title: t("Goal Setting"), desc:t("Understand your business objectives and define clear marketing goals.") },

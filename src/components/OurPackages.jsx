@@ -85,7 +85,7 @@ const OurPackages = () => {
                         <div className="card shadow border-0">
                             <div className="card-body">
                                 <h5 className="i-has">{t("Business Branding Package")}</h5>
-                                <h3 className="i-value">600 SAR</h3>
+                                <h3 className="i-value">{t("600 SAR")}</h3>
                                 <p className="card-text i-when">
                                     {t("Build a strong, cohesive brand identity with a package designed to make your business unforgettable.")}
                                 </p>

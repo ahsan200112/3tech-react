@@ -125,7 +125,7 @@ function CreativeDesignHeroSection() {
                 ))}
 
                 <div className="container mt-5 pt-5">
-                    <h2 className="text-start g-r mt-2">{t("Designing with Purpose")}</h2>
+                    <h2 className="g-r mt-2">{t("Designing with Purpose")}</h2>
                     <div className="row text-center">
                         {[
                             { step: t("Step 1"), title: t("Initial Consultation"), desc: t("Understand your brand, values, and design requirements.") },
