@@ -56,7 +56,7 @@ function MobileApplicationsHeroSection() {
                                             style={{ padding: "25px" }}
                                         >
                                             <div className="card-body">
-                                                <img
+                                                <img className="custom-size-img"
                                                     src={card.img}
                                                     alt={card.title}
                                                 // style={{ height: "60px", width: "60px" }}
@@ -74,7 +74,7 @@ function MobileApplicationsHeroSection() {
                 </div>
 
 
-                <div className="container mt-5">
+                <div className="container mt-5 custom-padding-h">
                     <h2 className="f-g">{t("Why Choose Us for Mobile App Development?")}</h2>
                     <div
                         className="card-body mt-3"
@@ -104,7 +104,7 @@ function MobileApplicationsHeroSection() {
                     { num: "003", title: t("User-Centric Design") },
                     { num: "004", title: t("Ongoing Updates & Support") },
                 ].map((item, index) => (
-                    <div key={index} className="container mt-5">
+                    <div key={index} className="container mt-5 custom-padding-h">
                         <div className="row" style={{ borderBottom: "1px solid var(--text-primary)" }}>
                             <div className="col-4 f-z">
                                 <p>{item.num}</p>
@@ -119,11 +119,11 @@ function MobileApplicationsHeroSection() {
                     </div>
                 ))}
 
-                <div className="container mt-5 pt-5">
+                <div className="container mt-5 pt-5 custom-padding-h">
                     <h2 className="g-r mt-2">{t("Crafting Seamless Mobile Experiences")}</h2>
                     <div className="row text-center">
                         {[
-                            { step: t("Step 1"), title: t("Consultation & Planning"), desc: t("We define your app's objectives and features with a clear understanding of your target users.")},
+                            { step: t("Step 1"), title: t("Consultation & Planning"), desc: t("We define your app's objectives and features with a clear understanding of your target users.") },
                             { step: t("Step 2"), title: t("UI/UX Design"), desc: t("Create intuitive and aesthetically pleasing designs that enhance the user experience.") },
                             { step: t("Step 3"), title: t("App Development"), desc: t("Build the app, ensuring it’s scalable, secure, and functional.") },
                             { step: t("Step 4"), title: t("Testing & Feedback"), desc: t("Conduct extensive testing across devices and gather user feedback for improvements.") },
@@ -134,7 +134,7 @@ function MobileApplicationsHeroSection() {
                                 <div className="step">
                                     <div className="custom-row">
                                         <button className="text-start btn-sm n-j">{item.step}</button>
-                                        <img src={PinImg} alt="Company Logo" className="img-fluid" />
+                                        <img src={PinImg} alt="Company Logo" className="img-fluid custom-size-img" />
                                     </div>
                                     <h5 className="h-klm">{item.title}</h5>
                                     <p className="h-ul">{item.desc}</p>

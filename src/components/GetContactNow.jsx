@@ -16,7 +16,7 @@ const GetContactNow = () => {
                     <h2 className="v-r mt-3">{t("Let’s Create Something Remarkable Together.")}</h2>
                 </div>
                 <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-4 custom-form-padding">
                         <div className="contact-info mb-4">
                             <div className="d-flex align-items-center">
                                 <img src={EmailImg} alt={t("Company Logo")} className="img-fluid" style={{ width: "35px", height: "33px" }} />
@@ -68,7 +68,7 @@ const GetContactNow = () => {
                                     <label htmlFor="message" className="form-label text-primary-color">{t("Message")} *</label>
                                     <textarea className="form-control bg-transparent text-primary-color" id="message" rows="2" required></textarea>
                                 </div>
-                                <div className="col-lg-12 mt-3">
+                                <div className="col-lg-12 mt-3 custom-text-center">
                                     <button type="submit" className="btn-while px-4 py-2">
                                         {t("Send Now")}
                                     </button>

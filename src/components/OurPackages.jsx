@@ -12,7 +12,7 @@ const OurPackages = () => {
                     <button className="btn-sm i-idea mb-2" style={{ width: "140px"}}>{t("Our Packages")}</button>
                     <div className="d-flex justify-content-between align-items-center">
                         <h2 className="i-visit mb-0">{t("Flexible Packages For Every Need")}</h2>
-                        <button className="btn-all">{t("View All Packages")}</button>
+                        <button className="btn-all custom-responsive-btn">{t("View All Packages")}</button>
                     </div>
                     <p className="i-were">
                         {t("Explore our custom packages offering top-notch solutions at great prices.")}
@@ -46,7 +46,7 @@ const OurPackages = () => {
                                     </li>
                                 </ul>
                                 <p className="i-world">{t("Support : Email Support")}</p>
-                                <button className="btn-get">{t("Get a Free Consultation")}</button>
+                                <button className="btn-get responsive-btn">{t("Get a Free Consultation")}</button>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@ const OurPackages = () => {
                                 </p>
                                 <ul className="list-unstyled">
                                     <li clasNames="custom-list-item d-flex align-items-center text-start mt-3">
-                                        <img src={YTImg} alt="Icon" className="me-2 ms-2" style={{ width: "20px", height: "20px" }} />
+                                        <img src={YTImg} alt="Icon" className="me-2 ms-2 d-inline" style={{ width: "20px", height: "20px" }} />
                                         <span>{t("SEO Basics")}</span>
                                     </li>
                                     <li className="custom-list-item d-flex align-items-center text-start mt-3">
@@ -77,7 +77,7 @@ const OurPackages = () => {
                                     </li>
                                 </ul>
                                 <p className="i-world">{t("Support : Email Support")}</p>
-                                <button className="btn-get">{t("Get a Free Consultation")}</button>
+                                <button className="btn-get responsive-btn">{t("Get a Free Consultation")}</button>
                             </div>
                         </div>
                     </div>
@@ -108,7 +108,7 @@ const OurPackages = () => {
                                     </li>
                                 </ul>
                                 <p className="i-world">{t("Support : Email Support")}</p>
-                                <button className="btn-get">{t("Get a Free Consultation")}</button>
+                                <button className="btn-get responsive-btn">{t("Get a Free Consultation")}</button>
                             </div>
                         </div>
                     </div>

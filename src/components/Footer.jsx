@@ -12,7 +12,7 @@ const Footer = () => {
     <section className="review-value py-5">
     <div className="container">
       <div className="d-flex justify-content-between align-items-center">
-        <h1 className="mb-0 me-2 text-primary-color">{t("Let’s Start to Work")}</h1>
+        <h1 className="mb-0 me-2 text-primary-color custom-padding-h">{t("Let’s Start to Work")}</h1>
         <img src={ArrowImg} alt="Icon" className="img-fluid" style={{width: "60px", height: "60px"}}/>
       </div>
     </div>
@@ -27,36 +27,36 @@ const Footer = () => {
             <p className="v-face mt-3">
               {t("At 3Tech, we specialize in delivering innovative solutions to empower businesses in the digital age. From website development to branding, we turn your vision into reality.")}
             </p>
-            <button className="btn-free">{t("Request Free Audit")}</button>
+            <button className="btn-free responsive-btn mb-3">{t("Request Free Audit")}</button>
           </div>
-          <div className="col-md-2">
+          <div className="col-md-2 custom-text-center">
             <h5 className="v-house margin-right-40" style={{fontWeight:"700"}}>{t("Quick Links")}</h5>
-            <ul className="list-unstyled">
-              <li><a href="/" className="text-start v-inner text-decoration-none">{t("Home")}</a></li>
-              <li><a href="/about" className="text-start  v-inner text-decoration-none">{t("About Us")}</a></li>
-              <li><a href="/services" className="text-start v-inner text-decoration-none">{t("Services")}</a></li>
-              <li><a href="/packages" className="text-start v-inner text-decoration-none">{t("Packages")}</a></li>
-              <li><a href="/blogs" className="text-start v-inner text-decoration-none">{t("Blogs")}</a></li>
-              <li><a href="/contact" className="text-start v-inner text-decoration-none">{t("Contact Us")}</a></li>
+            <ul className="list-unstyled custom-text-center">
+              <li className='custom-list-padding'><a href="/" className="text-start v-inner text-decoration-none">{t("Home")}</a></li>
+              <li className='custom-list-padding'><a href="/about" className="text-start  v-inner text-decoration-none">{t("About Us")}</a></li>
+              <li className='custom-list-padding' ><a href="/services" className="text-start v-inner text-decoration-none">{t("Services")}</a></li>
+              <li className='custom-list-padding'><a href="/packages" className="text-start v-inner text-decoration-none">{t("Packages")}</a></li>
+              <li className='custom-list-padding'><a href="/blogs" className="text-start v-inner text-decoration-none">{t("Blogs")}</a></li>
+              <li className='custom-list-padding'><a href="/contact" className="text-start v-inner text-decoration-none">{t("Contact Us")}</a></li>
             </ul>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-3 custom-text-center">
             <h5 className="v-house margin-right-40" style={{fontWeight:"700"}}>{t("Services")}</h5>
-            <ul className="list-unstyled">
-              <li><a href="/ecommercesolutions" className="text-start v-inner  text-decoration-none">{t("E-Commerce Solutions")}</a></li>
-              <li><a href="/mobileapplications" className="text-start v-inner text-decoration-none">{t("Mobile Applications")}</a></li>
-              <li><a href="/marketingsolutions" className="text-start v-inner text-decoration-none">{t("Marketing Solutions")}</a></li>
-              <li><a href="/creativedesign" className="text-start v-inner text-decoration-none">{t("Creative Design")}</a></li>
-              <li><a href="/digitaloptimization" className="text-start v-inner text-decoration-none">{t("Digital Optimization")}</a></li>
+            <ul className="list-unstyled custom-text-center">
+              <li className='custom-list-padding'><a href="/ecommercesolutions" className="text-start v-inner  text-decoration-none">{t("E-Commerce Solutions")}</a></li>
+              <li className='custom-list-padding'><a href="/mobileapplications" className="text-start v-inner text-decoration-none">{t("Mobile Applications")}</a></li>
+              <li className='custom-list-padding'><a href="/marketingsolutions" className="text-start v-inner text-decoration-none">{t("Marketing Solutions")}</a></li>
+              <li className='custom-list-padding'><a href="/creativedesign" className="text-start v-inner text-decoration-none">{t("Creative Design")}</a></li>
+              <li className='custom-list-padding'><a href="/digitaloptimization" className="text-start v-inner text-decoration-none">{t("Digital Optimization")}</a></li>
             </ul>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-3 custom-text-center">
             <h5 className="v-house" style={{fontWeight:"700"}}>{t("Have Questions?")}</h5>
             <p className="v-left">{t("Email")}: <a href="mailto:info@3tech.sa"
               className="v-coke text-decoration-none">info@3tech.sa</a></p>
             <p className="v-left pb-2" style={{ borderBottom: "1px solid " }}>{t("Phone no")}: <a href="tel:966557122917+"
               className="v-coke text-decoration-none">966557122917+</a></p>
-            <div className="d-flex mt-3">
+            <div className="d-flex mt-3 custom-list-padding custom-text-center custom-content-center">
               <a href="/" className={isRTL ? "ms-4" : "me-4"}><i className="bi bi-linkedin text-primary-color"></i></a>
               <a href="/" className={isRTL ? "ms-4" : "me-4"}><i className="bi bi-facebook text-primary-color"></i></a>
               <a href="/" className={isRTL ? "ms-4" : "me-4"}><i className="bi bi-whatsapp text-primary-color"></i></a>
@@ -64,10 +64,10 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="row mt-4 pt-3" style={{ borderTop: " 1px solid #1B1264" }}>
+        <div className="row mt-4 pt-3 custom-text-center" style={{ borderTop: " 1px solid #1B1264" }}>
           <div className="col d-flex justify-content-between text-primary-color">
             <p className="mb-0 v-copy">{t("Copyright © 2024 3Tech")}</p>
-            <p className="mb-0">
+            <p className="mb-0 custom-list-padding">
               <a href="/" className="text-decoration-none v-term">{t("Term of use")}</a> |
               <a href="/" className="text-decoration-none v-term"> {t("Privacy Policy")}</a> |
               <a href="/" className="text-decoration-none v-term"> {t("Cookie Policy")}</a>

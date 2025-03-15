@@ -23,11 +23,9 @@ const HeroSection = () => {
                             <h1 className={`u-vie ${textAlignment}`}>{t("Empowering Innovation with Cutting-Edge Technology")}</h1>
                             <p className={`u-whi ${textAlignment}`}>{t("At 3Tech, we provide cutting-edge solutions designed to help your business grow and succeed. From customized software to seamless system integrations, we deliver the tools you need to stay ahead in a fast-paced digital world.")}
                             </p>
-                            <div>
-                                <div className={`col ${textAlignment} d-flex gap-3`}>
-                                    <button className="btn-under">{t("Discover Our Solutions")}</button>
-                                    <button className="btn-while">{t("Get a Free Consultation")}</button>
-                                </div>
+                            <div className={`col ${textAlignment} d-flex gap-3 mb-3 margin-10`}>
+                                <button className="btn-under">{t("Discover Our Solutions")}</button>
+                                <button className="btn-while">{t("Get a Free Consultation")}</button>
                             </div>
                         </div>
                     </div>

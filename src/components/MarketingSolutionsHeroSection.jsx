@@ -11,7 +11,7 @@ function MarketingSolutionsHeroSection() {
     const textAlignmentArrow = i18n.dir() === "ltr" ? "text-end" : "text-start"; // Check language direction
     return (
         <>
-             <section className="u-section">
+            <section className="u-section">
                 <div className="container py-5">
                     <div className="row">
                         <div className="col-md-8">
@@ -59,13 +59,13 @@ function MarketingSolutionsHeroSection() {
                                     <div key={index} className="col-md-4">
                                         <div
                                             className="card h-100"
-                                            style={{ padding: "25px"}}
+                                            style={{ padding: "25px" }}
                                         >
                                             <div className="card-body">
-                                                <img
+                                                <img className="custom-size-img"
                                                     src={card.img}
                                                     alt={card.title}
-                                                   // style={{ height: "60px", width: "60px" }}
+                                                // style={{ height: "60px", width: "60px" }}
                                                 />
                                                 <h5 className="card-title ul-b mt-3">{card.title}</h5>
                                                 <p className="card-text ul-c">{card.text}</p>
@@ -80,7 +80,7 @@ function MarketingSolutionsHeroSection() {
                 </div>
 
 
-                <div className="container mt-5">
+                <div className="container mt-5 custom-padding-h">
                     <h2 className="f-g">{t("Why Choose Us for Marketing Solutions?")}</h2>
                     <div
                         className="card-body mt-3"
@@ -98,7 +98,7 @@ function MarketingSolutionsHeroSection() {
                                 </div>
                                 <div className="col-md-6 mt-3">
                                     <p className="f-l">
-                                    {t("We create tailored campaigns that reach your specific audience and achieve your goals.")}
+                                        {t("We create tailored campaigns that reach your specific audience and achieve your goals.")}
                                     </p>
                                 </div>
                             </div>
@@ -110,7 +110,7 @@ function MarketingSolutionsHeroSection() {
                     { num: "003", title: t("Creative Content") },
                     { num: "004", title: t("Multi-Channel Expertise") },
                 ].map((item, index) => (
-                    <div key={index} className="container mt-5">
+                    <div key={index} className="container mt-5 custom-padding-h">
                         <div className="row" style={{ borderBottom: "1px solid var(--text-primary)" }}>
                             <div className="col-4 f-z">
                                 <p>{item.num}</p>
@@ -125,11 +125,11 @@ function MarketingSolutionsHeroSection() {
                     </div>
                 ))}
 
-                <div className="container mt-5 pt-5">
+                <div className="container mt-5 pt-5 custom-padding-h">
                     <h2 className="g-r mt-2">{t("Our Path to E-Commerce Success")}</h2>
                     <div className="row text-center">
                         {[
-                            { step: t("Step 1"), title: t("Goal Setting"), desc:t("Understand your business objectives and define clear marketing goals.") },
+                            { step: t("Step 1"), title: t("Goal Setting"), desc: t("Understand your business objectives and define clear marketing goals.") },
                             { step: t("Step 2"), title: t("Research & Targeting"), desc: t("Identify your ideal customer and develop a targeted marketing strategy.") },
                             { step: t("Step 3"), title: t("Compaign Development"), desc: t("Create compelling ads, content, and marketing materials.") },
                             { step: t("Step 4"), title: t("Execution & Monitoring"), desc: t("Launch campaigns and monitor their performance to optimize results.") },
@@ -139,8 +139,8 @@ function MarketingSolutionsHeroSection() {
                             <div key={index} className="col-md-4 mb-4">
                                 <div className="step">
                                     <div className="custom-row">
-                                    <button className="text-start btn-sm n-j">{item.step}</button>
-                                    <img src={PinImg} alt="Company Logo" className="img-fluid" />
+                                        <button className="text-start btn-sm n-j">{item.step}</button>
+                                        <img src={PinImg} alt="Company Logo" className="img-fluid custom-size-img" />
                                     </div>
                                     <h5 className="h-klm">{item.title}</h5>
                                     <p className="h-ul">{item.desc}</p>

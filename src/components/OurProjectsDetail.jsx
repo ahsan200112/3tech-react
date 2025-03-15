@@ -12,7 +12,7 @@ const OurProjectsDetail = () => {
     return (
         <section className="v-section" style={{ marginTop: "-48px" }}>
             <div className="container my-5 py-4">
-                <button className="btn-sm u-vise mt-5 mb-2" style={{ width: "125px" }}>{t("Our Projects")}</button>
+                <button className="btn-sm u-vise mt-5 mb-2" style={{ width: "150px" }}>{t("Our Projects")}</button>
                 <h2 className="n-w">{t("Showcasing Excellence Across Industries")}</h2>
                 <p className="n-e" style={{ maxWidth: "800px", wordBreak: "break-word" }}>
                     {t("At 3Tech, every project is a reflection of our commitment to innovation, quality, and client success. Explore how we’ve helped businesses grow and thrive in the digital world.")}

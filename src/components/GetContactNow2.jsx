@@ -38,7 +38,7 @@ const GetContactNow2 = () => {
                                     <label htmlFor="message" className="form-label text-primary-color">{t('Message')} *</label>
                                     <textarea className="form-control bg-transparent text-primary-color" id="message" rows="3" required></textarea>
                                 </div>
-                                <div className="col-lg-12 mt-3">
+                                <div className="col-lg-12 mt-3 custom-text-center">
                                     <button type="submit" className="btn-while px-5 py-2">
                                         {t('Send Now')}
                                     </button>

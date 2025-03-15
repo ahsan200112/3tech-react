@@ -13,7 +13,7 @@ const LanguageToggle = () => {
   };
 
   return (
-    <div className="nav-item dropdown me-3" style={{ position: "relative", display: "inline-block" }}>
+    <div className="nav-item dropdown" style={{ position: "relative", display: "inline-block" }}>
       <button
         className="btn dropdown-toggle v-vise"
         id="languageDropdown"

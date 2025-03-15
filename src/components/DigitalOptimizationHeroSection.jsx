@@ -63,6 +63,7 @@ function DigitalOptimizationHeroSection() {
                                         >
                                             <div className="card-body">
                                                 <img
+                                                    className="custom-size-img"
                                                     src={card.img}
                                                     alt={card.title}
                                                 // style={{ height: "60px", width: "60px" }}
@@ -80,7 +81,7 @@ function DigitalOptimizationHeroSection() {
                 </div>
 
 
-                <div className="container mt-5">
+                <div className="container mt-5 custom-padding-h">
                     <h2 className="f-g">{t("Why Choose Us for Digital Optimization?")}</h2>
                     <div
                         className="card-body mt-3"
@@ -112,7 +113,7 @@ function DigitalOptimizationHeroSection() {
                     { num: "004", title: t('Cross-Platform Optimization') },
                     { num: "005", title: t('Continuous Growth') },
                 ].map((item, index) => (
-                    <div key={index} className="container mt-5">
+                    <div key={index} className="container mt-5 custom-padding-h">
                         <div className="row" style={{ borderBottom: "1px solid var(--text-primary)" }}>
                             <div className="col-4 f-z">
                                 <p>{item.num}</p>
@@ -127,7 +128,7 @@ function DigitalOptimizationHeroSection() {
                     </div>
                 ))}
 
-                <div className="container mt-5 pt-5">
+                <div className="container mt-5 pt-5 custom-padding-h">
                     <h2 className="g-r mt-2">{t("Our Path to E-Commerce Success")}</h2>
                     <div className="row text-center">
                         {[
@@ -142,7 +143,7 @@ function DigitalOptimizationHeroSection() {
                                 <div className="step">
                                     <div className="custom-row">
                                         <button className="text-start btn-sm n-j">{item.step}</button>
-                                        <img src={PinImg} alt="Company Logo" className="img-fluid" />
+                                        <img src={PinImg} alt="Company Logo" className="img-fluid custom-size-img" />
                                     </div>
                                     <h5 className="h-klm">{item.title}</h5>
                                     <p className="h-ul">{item.desc}</p>

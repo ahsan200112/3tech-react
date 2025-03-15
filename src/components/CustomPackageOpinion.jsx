@@ -16,7 +16,7 @@ const CustomPackageOpinion = () => {
                     <h2 className="v-r mt-3" style={{maxWidth: "800px", wordBreak: "break-word"}}>{t('Didn’t Find What You Need? Let’s Build A Custom Package Just For You!')}</h2>
                 </div>
                 <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-4 custom-form-padding">
                         <div className="contact-info mb-4">
                             <div className="d-flex align-items-center">
                                 <img src={EmailImg} alt="Company Logo" className="img-fluid" style={{ width: "35px", height: "33px" }} />
@@ -78,8 +78,8 @@ const CustomPackageOpinion = () => {
                                         <textarea className="form-control bg-transparent text-primary-color" id="message" rows="2" required></textarea>
                                     </div>
                                 </div>
-                                <div className="col-lg-12 mt-3">
-                                    <button type="submit" className="btn-while px-4 py-2" style={{width:"260px"}}>
+                                <div className="col-lg-12 mt-3 custom-text-center">
+                                    <button type="submit" className="btn-while py-2" style={{width:"260px"}}>
                                         {t('Request a Custom Package')}
                                     </button>
                                 </div>
