@@ -23,7 +23,7 @@ const Footer = () => {
     <footer className="text-light py-5 review-value">
       <div className="container">
         <div className="row">
-          <div className="col-md-4">
+          <div className="col-md-5">
             <div className="d-flex align-items-start">
               <img src={theme === "light" ? LogoLightMode : LogoDarkMode} alt="Company Logo" className="img-fluid footer-logo-img margin-top-minus" />
             </div>
@@ -53,17 +53,16 @@ const Footer = () => {
               <li className='custom-list-padding'><a href="/digitaloptimization" className="text-start v-inner text-decoration-none">{t("Digital Optimization")}</a></li>
             </ul>
           </div>
-          <div className="col-md-4 custom-text-center">
+          <div className="col-md-3 custom-text-center">
             <h5 className="v-house" style={{fontWeight:"700"}}>{t("Have Questions?")}</h5>
             <p className="v-left">{t("Email")}: <a href="mailto:info@3tech.sa"
               className="v-coke text-decoration-none">info@3tech.sa</a></p>
             <p className="v-left pb-2" style={{ borderBottom: "1px solid" }}>{t("Phone no")}: <a href="tel:966557122917+"
               className="v-coke text-decoration-none">966557122917+</a></p>
             <div className="d-flex mt-3 custom-list-padding custom-text-center custom-content-center">
-              <a href="/" className={isRTL ? "ms-4" : "me-4"}><i className="bi bi-linkedin text-primary-color"></i></a>
-              <a href="/" className={isRTL ? "ms-4" : "me-4"}><i className="bi bi-facebook text-primary-color"></i></a>
-              <a href="/" className={isRTL ? "ms-4" : "me-4"}><i className="bi bi-whatsapp text-primary-color"></i></a>
-              <a href="/" className={isRTL ? "ms-4" : "me-4"}><i className="bi bi-instagram text-primary-color"></i></a>
+              <a href="/" className={`${isRTL ? "ms-4" : "me-4"} margin`}><i className="bi bi-linkedin text-primary-color"></i></a>
+              <a href="/" className={`${isRTL ? "ms-4" : "me-4"} margin`}><i className="bi bi-whatsapp text-primary-color"></i></a>
+              <a href="/" className={`${isRTL ? "ms-4" : "me-4"} margin`}><i className="bi bi-instagram text-primary-color"></i></a>
             </div>
           </div>
         </div>

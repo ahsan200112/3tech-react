@@ -27,7 +27,6 @@ const Navbar = () => {
             </div>
             <div className="col d-flex custom-content-end mt-3 mb-3 custom-navbar-center">
               <a href="/" className={`${isRTL ? "ms-3" : "me-3"} d-flex align-items-center`}><i className="bi bi-linkedin text-primary-color"></i></a>
-              <a href="/" className={`${isRTL ? "ms-3" : "me-3"} d-flex align-items-center`}><i className="bi bi-facebook text-primary-color"></i></a>
               <a href="/" className={`${isRTL ? "ms-3" : "me-3"} d-flex align-items-center`}><i className="bi bi-whatsapp text-primary-color"></i></a>
               <a href="/" className={`${isRTL ? "ms-3" : "me-3"} d-flex align-items-center`}><i className="bi bi-instagram text-primary-color"></i></a>
               <ThemeSwitcher />
@@ -57,7 +56,9 @@ const Navbar = () => {
               type="button"
               onClick={() => setIsNavOpen(!isNavOpen)}
             >
-              <i className="bi bi-list"></i>
+              <i className="bi bi-list"
+              style={{ color: theme === "light" ? "#000" : "#fff" }}>
+              </i>
             </button>
 
             {/* Navbar Links (Collapsible on Mobile) */}
