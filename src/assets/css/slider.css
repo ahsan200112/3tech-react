@@ -1,0 +1,65 @@
+/* Bootstrap-styled Custom Arrows */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50%;
+    z-index: 10;
+  }
+  
+  .next-arrow {
+    right: -40px;
+  }
+  
+  .prev-arrow {
+    left: -40px;
+  }
+  @media (max-width: 611px) {
+    .next-arrow {
+      right: 0px;
+    }
+    
+    .prev-arrow {
+      left: 0px;
+    }
+  }
+  /* Light Theme Arrows */
+  .btn-dark.slider-arrow {
+    background-color: #343a40; /* Bootstrap Dark */
+    color: white;
+  }
+  
+  .btn-dark.slider-arrow:hover {
+    background-color: #23272b;
+  }
+  
+  /* Dark Theme Arrows */
+  .btn-light.slider-arrow {
+    background-color: white;
+    color: #343a40;
+    border: 1px solid #343a40;
+  }
+  
+  .btn-light.slider-arrow:hover {
+    background-color: #f8f9fa;
+  }
+  
+  /* Slick Dots Styling */
+  .slick-dots li button:before {
+    font-size: 12px;
+    opacity: 0.6;
+  }
+  
+  /* Light Theme Dots */
+  .light .slick-dots li button {
+    color: #343a40; /* Dark dots for light theme */
+  }
+  
+  /* Dark Theme Dots */
+  .dark .slick-dots li button {
+    color: #fff; /* White dots for dark theme */
+  }
+  

@@ -112,7 +112,7 @@ body {
 }
 
 .hlo {
- /* font-family: Reddit Sans; */
+  /* font-family: Reddit Sans; */
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
@@ -121,7 +121,7 @@ body {
 }
 
 .u-vie {
- /* font-family: Reddit Sans; */
+  /* font-family: Reddit Sans; */
   font-size: 56px;
   font-weight: 700;
   line-height: 67.2px;
@@ -131,7 +131,7 @@ body {
 }
 
 .u-whi {
- /* font-family: Reddit Sans; */
+  /* font-family: Reddit Sans; */
   font-size: 14px;
   font-weight: 400;
   line-height: 27px;
@@ -145,7 +145,7 @@ body {
   gap: 10px;
   border-radius: 30px;
   background-color: #3B9BE9;
- /* font-family: 'Reddit Sans'; */
+  /* font-family: 'Reddit Sans'; */
   font-size: 16px;
   font-weight: 700;
   text-align: center;
@@ -166,7 +166,7 @@ body {
   border-radius: 30px;
   border: 1px solid var(--button-border);
   background-color: var(--button-bg);
-/*  font-family: 'Reddit Sans';*/
+  /*  font-family: 'Reddit Sans';*/
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
@@ -181,7 +181,7 @@ body {
 }
 
 .u-vise {
- /* font-family: Reddit Sans; */
+  /* font-family: Reddit Sans; */
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
@@ -198,7 +198,7 @@ body {
 }
 
 .f-vise {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
@@ -215,7 +215,7 @@ body {
 }
 
 .u-visit {
-/*  font-family: Reddit Sans;*/
+  /*  font-family: Reddit Sans;*/
   font-size: 38px;
   font-weight: 700;
   line-height: 50.4px;
@@ -224,7 +224,7 @@ body {
 }
 
 .u-were {
- /* font-family: Reddit Sans; */
+  /* font-family: Reddit Sans; */
   font-size: 38px;
   font-weight: 700;
   line-height: 49.36px;
@@ -233,7 +233,7 @@ body {
 }
 
 .u-here {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
@@ -241,7 +241,7 @@ body {
 }
 
 .u-how {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 56px !important;
   font-weight: 700 !important;
   line-height: 67.2px;
@@ -250,7 +250,7 @@ body {
 }
 
 .u-all {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
@@ -267,7 +267,7 @@ body {
 }
 
 .u-home {
-/*  font-family: Reddit Sans;*/
+  /*  font-family: Reddit Sans;*/
   font-size: 56px;
   font-weight: 700;
   line-height: 67.2px;
@@ -276,7 +276,7 @@ body {
 }
 
 .u-well {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 24px;
   font-weight: 700;
   line-height: 33.6px;
@@ -284,7 +284,7 @@ body {
 }
 
 .u-vell {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 24px;
   font-weight: 700;
   line-height: 33.6px;
@@ -292,7 +292,7 @@ body {
 }
 
 .u-space {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 14px;
   font-weight: 400;
   line-height: 16.8px;
@@ -300,7 +300,7 @@ body {
 }
 
 .u-help {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 18px;
   font-weight: 700;
   line-height: 27px;
@@ -308,7 +308,7 @@ body {
 }
 
 .u-item {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 35px;
   font-weight: 700;
   line-height: 50.4px;
@@ -316,7 +316,7 @@ body {
 }
 
 .btn-next {
-/*  font-family: 'Reddit Sans', sans-serif; */
+  /*  font-family: 'Reddit Sans', sans-serif; */
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
@@ -348,7 +348,7 @@ body {
   border: 1px solid;
   background-color: var(--bg-primary);
   align-items: center;
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
@@ -392,7 +392,7 @@ body {
   border: 1px 0px 0px 0px;
   opacity: 0px;
   border: 1px solid #1B1264;
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
@@ -402,7 +402,7 @@ body {
 }
 
 .u-well {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 42px;
   font-weight: 700;
   line-height: 50.4px;
@@ -410,7 +410,7 @@ body {
 }
 
 .v-wel {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
@@ -560,7 +560,7 @@ body {
 }
 
 .custom-list-item {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   font-weight: 400;
   line-height: 22.4px;
@@ -621,7 +621,7 @@ body {
   background-color: #3B9BE9;
   opacity: 1;
   border: none;
-/*  font-family: 'Reddit Sans', sans-serif; */
+  /*  font-family: 'Reddit Sans', sans-serif; */
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
@@ -643,7 +643,7 @@ body {
 }
 
 .v-well {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 20px;
   font-weight: 700;
   line-height: 28px;
@@ -651,7 +651,7 @@ body {
 }
 
 .highlighted-number {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 42px;
   font-weight: 700;
   line-height: 50.4px;
@@ -660,7 +660,7 @@ body {
 }
 
 .regular-text {
- /* font-family: Reddit Sans; */
+  /* font-family: Reddit Sans; */
   font-size: 14px;
   font-weight: 400;
   line-height: 16.8px;
@@ -669,7 +669,7 @@ body {
 }
 
 .v-fill {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 20px;
   font-weight: 700;
   line-height: 28px;
@@ -678,7 +678,7 @@ body {
 }
 
 .v-viral {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
@@ -695,7 +695,7 @@ body {
 }
 
 .v-visit {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 42px;
   font-weight: 700;
   line-height: 54.55px;
@@ -704,7 +704,7 @@ body {
 }
 
 .v-info {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
@@ -719,7 +719,7 @@ body {
   border: 1px solid var(--text-secondary);
   opacity: 1;
   color: var(--text-secondary);
-/*  font-family: 'Reddit Sans', sans-serif; */
+  /*  font-family: 'Reddit Sans', sans-serif; */
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
@@ -764,7 +764,7 @@ body {
 }
 */
 .v-help {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 18px;
   font-weight: 700;
   line-height: 28px;
@@ -772,7 +772,7 @@ body {
 }
 
 .v-live {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 13px;
   font-weight: 400;
   line-height: 22.4px;
@@ -896,7 +896,7 @@ body {
   opacity: 0px;
   color: #3B9BE9;
   border: 1px solid #1B1264;
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
@@ -905,7 +905,7 @@ body {
 }
 
 .v-value {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 42px;
   font-weight: 700;
   line-height: 54.55px;
@@ -913,7 +913,7 @@ body {
 }
 
 .v-auto {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
@@ -932,7 +932,7 @@ body {
 }
 
 .v-noise {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
@@ -941,7 +941,7 @@ body {
 }
 
 .v-hence {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 42px;
   font-weight: 700;
   line-height: 54.55px;
@@ -960,7 +960,7 @@ body {
   border: 1px 0px 0px 0px;
   opacity: 0px;
   border: 1px solid #1B1264;
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
@@ -971,14 +971,14 @@ body {
 
 
 .v-clean {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   letter-spacing: 0px;
   color: var(--text-primary);
 }
 
 .g-value {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 14px;
   letter-spacing: 0px;
   color: var(--text-primary);
@@ -1008,7 +1008,7 @@ body {
 }
 
 .i-idea {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
@@ -1024,7 +1024,7 @@ body {
 }
 
 .v-idea {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 140px;
@@ -1032,7 +1032,7 @@ body {
 }
 
 .i-visit {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 42px;
   letter-spacing: 0px;
   line-height: auto;
@@ -1040,7 +1040,7 @@ body {
 }
 
 .i-were {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 18px;
   letter-spacing: 0px;
   line-height: 150%;
@@ -1053,7 +1053,7 @@ body {
   gap: 10px;
   border-radius: 30px;
   background-color: var(--bg-primary);
-/*  font-family: 'Reddit Sans'; */
+  /*  font-family: 'Reddit Sans'; */
   font-size: 16px;
   font-weight: 700;
   text-align: center;
@@ -1069,7 +1069,7 @@ body {
 }
 
 .i-has {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 20px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1077,7 +1077,7 @@ body {
 }
 
 .i-value {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 32px;
   letter-spacing: 0px;
   line-height: 130%;
@@ -1085,7 +1085,7 @@ body {
 }
 
 .i-when {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1098,7 +1098,7 @@ body {
   gap: 10px;
   border-radius: 30px;
   background-color: #3B9BE9;
-/*  font-family: 'Reddit Sans', sans-serif; */
+  /*  font-family: 'Reddit Sans', sans-serif; */
   font-size: 16px;
   font-weight: 700;
   text-align: center;
@@ -1113,7 +1113,7 @@ body {
 }
 
 .i-world {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1129,7 +1129,7 @@ body {
 }
 
 .v-use {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 56px;
   letter-spacing: 0px;
   line-height: 120%;
@@ -1143,7 +1143,7 @@ body {
   gap: 10px;
   border-radius: 30px;
   border: 1px solid #181818;
-/*  font-family: 'Reddit Sans', sans-serif; */
+  /*  font-family: 'Reddit Sans', sans-serif; */
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
@@ -1159,7 +1159,7 @@ body {
 }
 
 .v-house {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 20px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1167,7 +1167,7 @@ body {
 }
 
 .v-inner {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1179,7 +1179,7 @@ body {
 }
 
 .v-term {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   color: var(--text-primary);
 }
 
@@ -1188,12 +1188,12 @@ body {
 }
 
 .v-copy {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   color: var(--text-primary);
 }
 
 .v-left {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1201,7 +1201,7 @@ body {
 }
 
 .v-coke {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1209,7 +1209,7 @@ body {
 }
 
 .v-face {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1224,7 +1224,7 @@ body {
   border-radius: 30px;
   border: 1px solid #181818;
   background-color: #3B9BE9;
-/*  font-family: 'Reddit Sans', sans-serif; */
+  /*  font-family: 'Reddit Sans', sans-serif; */
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
@@ -1239,7 +1239,7 @@ body {
 }
 
 .v-vise {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px !important;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1259,7 +1259,7 @@ body {
 }
 
 .o-hlo {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 56px;
   font-weight: 700;
   letter-spacing: 0px;
@@ -1268,7 +1268,7 @@ body {
 }
 
 .o-a {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 14px;
   letter-spacing: 0px;
   line-height: 120%;
@@ -1276,7 +1276,7 @@ body {
 }
 
 .o-b {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 42px;
   letter-spacing: 0px;
   line-height: auto;
@@ -1284,7 +1284,7 @@ body {
 }
 
 .o-c {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 18px;
   letter-spacing: 0px;
   line-height: 150%;
@@ -1292,7 +1292,7 @@ body {
 }
 
 .n-j {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 12px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1304,7 +1304,7 @@ body {
 }
 
 .s-j {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 12px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1316,7 +1316,7 @@ body {
 }
 
 .b-b {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 42px;
   letter-spacing: 0px;
   line-height: auto;
@@ -1324,7 +1324,7 @@ body {
 }
 
 .b-c {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 18px;
   letter-spacing: 0px;
   line-height: 150%;
@@ -1332,7 +1332,7 @@ body {
 }
 
 .b-e {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 24px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1340,7 +1340,7 @@ body {
 }
 
 .b-d {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 20px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1415,7 +1415,7 @@ body {
 }
 
 .g-r {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 42px;
   letter-spacing: 0px;
   line-height: auto;
@@ -1423,7 +1423,7 @@ body {
 }
 
 .h-w {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 24px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1431,7 +1431,7 @@ body {
 }
 
 .h-klm {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 19px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1439,7 +1439,7 @@ body {
 }
 
 .h-u {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 14px;
   letter-spacing: 0px;
   line-height: 120%;
@@ -1447,7 +1447,7 @@ body {
 }
 
 .h-ul {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 14px !important;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1486,7 +1486,7 @@ body {
 }
 
 .v-r {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 42px;
   letter-spacing: 0px;
   line-height: auto;
@@ -1494,7 +1494,7 @@ body {
 }
 
 .h-o {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 24px !important;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1502,7 +1502,7 @@ body {
 }
 
 .h-k {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 20px !important;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1510,7 +1510,7 @@ body {
 }
 
 .n-w {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 42px;
   letter-spacing: 0px;
   line-height: auto;
@@ -1518,7 +1518,7 @@ body {
 }
 
 .n-e {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 18px;
   letter-spacing: 0px;
   line-height: 150%;
@@ -1526,7 +1526,7 @@ body {
 }
 
 .n-r {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 24px;
   font-weight: bold;
   letter-spacing: 0px;
@@ -1535,7 +1535,7 @@ body {
 }
 
 .n-t {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 18px;
   letter-spacing: 0px;
   line-height: 150%;
@@ -1543,7 +1543,7 @@ body {
 }
 
 .n-y {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 14px;
   letter-spacing: 0px;
   line-height: 120%;
@@ -1581,7 +1581,7 @@ body {
   border: 1px solid var(--text-secondary);
   padding: 6px 10px;
   border-radius: 15px;
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 14px;
   letter-spacing: 0px;
   line-height: 120%;
@@ -1614,7 +1614,7 @@ body {
 }
 
 .v-u {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 42px;
   font-weight: bold;
   letter-spacing: 0px;
@@ -1623,7 +1623,7 @@ body {
 }
 
 .v-i {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1631,7 +1631,7 @@ body {
 }
 
 .v-o {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 24px;
   font-weight: bold;
   letter-spacing: 0px;
@@ -1640,7 +1640,7 @@ body {
 }
 
 .v-p {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1648,7 +1648,7 @@ body {
 }
 
 .v-a {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1656,7 +1656,7 @@ body {
 }
 
 .v-s {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 20px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1664,14 +1664,14 @@ body {
 }
 
 .v-d {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   letter-spacing: 0px;
   color: var(--text-secondary);
 }
 
 .v-f {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 24px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1679,7 +1679,7 @@ body {
 }
 
 .v-g {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 12px;
   letter-spacing: 0px;
   line-height: 150%;
@@ -1687,7 +1687,7 @@ body {
 }
 
 .z-x {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 42px;
   letter-spacing: 0px;
   line-height: Auto;
@@ -1695,7 +1695,7 @@ body {
 }
 
 .z-c {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 18px;
   letter-spacing: 0px;
   line-height: 150%;
@@ -1705,7 +1705,7 @@ body {
 }
 
 .ul-b {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 22px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1713,7 +1713,7 @@ body {
 }
 
 .ul-c {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 13px;
   letter-spacing: 0px;
   line-height: 120%;
@@ -1721,7 +1721,7 @@ body {
 }
 
 .f-g {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 42px;
   font-weight: bold;
   letter-spacing: 0px;
@@ -1730,7 +1730,7 @@ body {
 }
 
 .f-h {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 32px;
   font-weight: bold;
   letter-spacing: 0px;
@@ -1739,7 +1739,7 @@ body {
 }
 
 .f-k {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 140%;
@@ -1747,7 +1747,7 @@ body {
 }
 
 .f-l {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 18px;
   letter-spacing: 0px;
   line-height: 150%;
@@ -1755,7 +1755,7 @@ body {
 }
 
 .f-z {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 24px;
   letter-spacing: 0px;
   line-height: 130%;
@@ -1763,7 +1763,7 @@ body {
 }
 
 .l-k {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 17px;
   letter-spacing: 0px;
   line-height: 150%;
@@ -1771,7 +1771,7 @@ body {
 }
 
 .v-c {
- /* font-family: Reddit Sans; */
+  /* font-family: Reddit Sans; */
   font-size: 20px;
   text-align: start;
   letter-spacing: 0px;
@@ -1781,7 +1781,7 @@ body {
 }
 
 .v-x {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 20px;
   text-align: start;
   letter-spacing: 0px;
@@ -1791,7 +1791,7 @@ body {
 }
 
 .v-n {
-/*  font-family: Reddit Sans; */
+  /*  font-family: Reddit Sans; */
   font-size: 14px;
   text-align: start;
   letter-spacing: 0px;
@@ -1801,7 +1801,7 @@ body {
 }
 
 .c-m {
-/*  font-family: Cairo; */
+  /*  font-family: Cairo; */
   font-size: 16px;
   font-weight: 500;
   line-height: 25px;
@@ -1883,16 +1883,26 @@ img {
 
 /* Default styles for the logo */
 .logo-img {
-  max-width: 100%;
-  height: auto;
+  /* max-width: 100%; */
+  width: 130px;
+  height: 130px !important;
   /* Maintain aspect ratio */
+}
+
+.footer-logo-img {
+  width: 230px;
+  height: 170px !important;
+}
+
+.margin-top-minus40 {
+  margin-top: -40px;
 }
 
 /* Tablet-specific adjustments */
 @media (min-width: 768px) and (max-width: 1199px) {
   .logo-img {
-    width: 90px;
-    height: auto;
+    width: 100px;
+    height: auto !important;
   }
 }
 
@@ -1900,7 +1910,7 @@ img {
 @media (max-width: 767px) {
   .logo-img {
     width: 70px;
-    height: auto;
+    height: auto !important;
   }
 }
 
@@ -1922,7 +1932,7 @@ img {
 /* Tablet (Medium screens: 768px–1199px) */
 @media (min-width: 768px) and (max-width: 1199px) {
   .btn-well {
-    width: 182px;
+    width: 200px;
     font-size: 13px;
   }
 
@@ -1931,7 +1941,7 @@ img {
 /* Mobile (Small screens: <768px) */
 @media (max-width: 767px) {
   .btn-well {
-    width: 178px;
+    width: 180px;
     font-size: 11px;
   }
 }

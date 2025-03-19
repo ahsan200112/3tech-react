@@ -6,6 +6,8 @@ import WhoWeAreImg from '../assets/images/WhoWeAre.png';
 const WhoWeAre = () => {
     const { t, i18n } = useTranslation();
     const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
+    const isRTL = i18n.dir() === "rtl";
+
     return (
         <section className="u-section">
             <div className="container py-5">
@@ -22,13 +24,13 @@ const WhoWeAre = () => {
                         </Link>
                         <div className="row text-white mt-3">
                             <div className="col-md-4 custom-border-bottom" style={{
-                                [document.dir === "rtl" ? "borderLeft" : "borderRight"]: "1px solid",
+                                [isRTL ? "borderLeft" : "borderRight"]: "1px solid",
                             }}>
                                 <h2 className="u-how">7+</h2>
                                 <p className="u-all">{t("Years in Business")}</p>
                             </div>
                             <div className="col-md-4 custom-border-bottom" style={{
-                                [document.dir === "rtl" ? "borderLeft" : "borderRight"]: "1px solid",
+                                [isRTL ? "borderLeft" : "borderRight"]: "1px solid",
                             }}>
                                 <h2 className="u-value">+150</h2>
                                 <p className="u-all">{t("Successful Projects")}</p>

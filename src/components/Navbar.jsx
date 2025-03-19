@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useTranslation } from 'react-i18next';
-import RectangleImg from '../assets/images/Rectangle.png';
 import LanguageToggle from './LanguageToggle';
 import ThemeSwitcher from './ThemeSwitcher';
+import { useTheme } from "../context/ThemeContext";
+import LogoDarkMode from '../assets/images/3tech logo for dark mode.png';
+import LogoLightMode from '../assets/images/3tech logo for light mode.png';
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
   const isRTL = i18n.dir() === "rtl";
   const [isNavOpen, setIsNavOpen] = useState(false); // Toggle state
+  const { theme } = useTheme(); // Get theme from context
 
   return (
     <>
@@ -40,7 +43,7 @@ const Navbar = () => {
 
             {/* Left: Logo */}
             <div className="d-flex align-items-center">
-              <img src={RectangleImg} alt="Logo" className="img-fluid logo-img" />
+              <img src={theme === "light" ? LogoLightMode : LogoDarkMode} alt="Logo" className="img-fluid logo-img" />
             </div>
 
             {/* Center: Language Toggle (for Mobile View) */}
@@ -59,7 +62,7 @@ const Navbar = () => {
 
             {/* Navbar Links (Collapsible on Mobile) */}
             <div className={`navbar-collapse ${isNavOpen ? "show text-center" : "collapse"}`}>
-              <ul className="navbar-nav mx-auto">
+              <ul className="navbar-nav mx-auto" style={{paddingRight:"0"}}>
                 <li className="nav-item"><Link className="nav-link v-vise" to="/">{t("Home")}</Link></li>
                 <li className="nav-item"><Link className="nav-link v-vise" to="/about">{t("About Us")}</Link></li>
                 <li className="nav-item"><Link className="nav-link v-vise" to="/services">{t("Services")}</Link></li>

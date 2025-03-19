@@ -1,11 +1,14 @@
 import React from 'react';
-import RectangleImg from '../assets/images/Rectangle.png';
+import LogoDarkMode from '../assets/images/3tech logo for dark mode.png';
+import LogoLightMode from '../assets/images/3tech logo for light mode.png';
+import { useTheme } from "../context/ThemeContext";
 import ArrowImg from "../assets/images/arrow.png";
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
   const { t, i18n } = useTranslation();
   const isRTL = i18n.dir() === "rtl";
+    const { theme } = useTheme(); // Get theme from context
 
   return (
     <>
@@ -22,9 +25,9 @@ const Footer = () => {
         <div className="row">
           <div className="col-md-4">
             <div className="d-flex align-items-start">
-              <img src={RectangleImg} alt="Company Logo" className="img-fluid" style={{ width: "193px", height: "104px" }} />
+              <img src={theme === "light" ? LogoLightMode : LogoDarkMode} alt="Company Logo" className="img-fluid footer-logo-img margin-top-minus40" />
             </div>
-            <p className="v-face mt-3">
+            <p className="v-face margin-top-minus40">
               {t("At 3Tech, we specialize in delivering innovative solutions to empower businesses in the digital age. From website development to branding, we turn your vision into reality.")}
             </p>
             <button className="btn-free responsive-btn mb-3">{t("Request Free Audit")}</button>
