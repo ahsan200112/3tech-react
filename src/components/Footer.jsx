@@ -25,16 +25,16 @@ const Footer = () => {
         <div className="row">
           <div className="col-md-4">
             <div className="d-flex align-items-start">
-              <img src={theme === "light" ? LogoLightMode : LogoDarkMode} alt="Company Logo" className="img-fluid footer-logo-img margin-top-minus40" />
+              <img src={theme === "light" ? LogoLightMode : LogoDarkMode} alt="Company Logo" className="img-fluid footer-logo-img margin-top-minus" />
             </div>
-            <p className="v-face margin-top-minus40">
+            <p className="v-face margin-top-minus">
               {t("At 3Tech, we specialize in delivering innovative solutions to empower businesses in the digital age. From website development to branding, we turn your vision into reality.")}
             </p>
             <button className="btn-free responsive-btn mb-3">{t("Request Free Audit")}</button>
           </div>
-          <div className="col-md-2 custom-text-center">
-            <h5 className="v-house margin-right-40" style={{fontWeight:"700"}}>{t("Quick Links")}</h5>
-            <ul className="list-unstyled custom-text-center">
+          <div className="col-md-2 custom-text-center text-center">
+            <h5 className="v-house" style={{fontWeight:"700"}}>{t("Quick Links")}</h5>
+            <ul className="list-unstyled custom-text-center padding-right-0 text-center">
               <li className='custom-list-padding'><a href="/" className="text-start v-inner text-decoration-none">{t("Home")}</a></li>
               <li className='custom-list-padding'><a href="/about" className="text-start  v-inner text-decoration-none">{t("About Us")}</a></li>
               <li className='custom-list-padding' ><a href="/services" className="text-start v-inner text-decoration-none">{t("Services")}</a></li>
@@ -43,9 +43,9 @@ const Footer = () => {
               <li className='custom-list-padding'><a href="/contact" className="text-start v-inner text-decoration-none">{t("Contact Us")}</a></li>
             </ul>
           </div>
-          <div className="col-md-3 custom-text-center">
-            <h5 className="v-house margin-right-40" style={{fontWeight:"700"}}>{t("Services")}</h5>
-            <ul className="list-unstyled custom-text-center">
+          <div className="col-md-2 custom-text-center text-center">
+            <h5 className="v-house" style={{fontWeight:"700"}}>{t("Services")}</h5>
+            <ul className="list-unstyled custom-text-center padding-right-0 text-center">
               <li className='custom-list-padding'><a href="/ecommercesolutions" className="text-start v-inner  text-decoration-none">{t("E-Commerce Solutions")}</a></li>
               <li className='custom-list-padding'><a href="/mobileapplications" className="text-start v-inner text-decoration-none">{t("Mobile Applications")}</a></li>
               <li className='custom-list-padding'><a href="/marketingsolutions" className="text-start v-inner text-decoration-none">{t("Marketing Solutions")}</a></li>
@@ -53,11 +53,11 @@ const Footer = () => {
               <li className='custom-list-padding'><a href="/digitaloptimization" className="text-start v-inner text-decoration-none">{t("Digital Optimization")}</a></li>
             </ul>
           </div>
-          <div className="col-md-3 custom-text-center">
+          <div className="col-md-4 custom-text-center">
             <h5 className="v-house" style={{fontWeight:"700"}}>{t("Have Questions?")}</h5>
             <p className="v-left">{t("Email")}: <a href="mailto:info@3tech.sa"
               className="v-coke text-decoration-none">info@3tech.sa</a></p>
-            <p className="v-left pb-2" style={{ borderBottom: "1px solid " }}>{t("Phone no")}: <a href="tel:966557122917+"
+            <p className="v-left pb-2" style={{ borderBottom: "1px solid" }}>{t("Phone no")}: <a href="tel:966557122917+"
               className="v-coke text-decoration-none">966557122917+</a></p>
             <div className="d-flex mt-3 custom-list-padding custom-text-center custom-content-center">
               <a href="/" className={isRTL ? "ms-4" : "me-4"}><i className="bi bi-linkedin text-primary-color"></i></a>

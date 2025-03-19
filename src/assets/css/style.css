@@ -1171,11 +1171,11 @@ body {
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 140%;
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
 
 .v-inner:hover {
-  color: var(--text-secondary);
+  color: var(--text-primary);
 }
 
 .v-term {
@@ -1894,10 +1894,13 @@ img {
   height: 170px !important;
 }
 
-.margin-top-minus40 {
-  margin-top: -40px;
+.margin-top-minus {
+  margin-top: -45px;
 }
 
+.padding-right-0 {
+  padding-right: 0;
+}
 /* Tablet-specific adjustments */
 @media (min-width: 768px) and (max-width: 1199px) {
   .logo-img {
@@ -1909,8 +1912,11 @@ img {
 /* Mobile-specific adjustments */
 @media (max-width: 767px) {
   .logo-img {
-    width: 70px;
+    width: 80px;
     height: auto !important;
+  }
+  .margin-right-40 {
+    margin-right: 0px !important;
   }
 }
 
@@ -2249,7 +2255,7 @@ img {
 
 @media (max-width: 996px) {
   .responsive-btn {
-    width: 110%;
+    width: 100%;
   }
 }
 
