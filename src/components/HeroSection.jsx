@@ -1,5 +1,6 @@
 import React from 'react';
 import BackgroundImg from "../assets/images/backgroundImgInHeroSection.png";
+import HeroImage from "../assets/images/HeroSectionImage.png";
 import PhoneImg from "../assets/images/phone.png";
 import { useTranslation } from 'react-i18next';
 
@@ -29,7 +30,7 @@ const HeroSection = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-6 mockup-image">
+                    <div className="col-md-6 align-items-center mockup-image">
                         <img src={PhoneImg} alt="Phone Mockup" className="img-fluid phone-mockup" />
                     </div>
                 </div>

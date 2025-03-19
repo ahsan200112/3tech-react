@@ -54,7 +54,7 @@ const OurClientsSay = () => {
     <section className="client-testimonials py-5" style={{ direction: isRTL ? "rtl" : "ltr" }} >
       <div className="container">
         <div className="mb-4">
-          <button className="btn-sm v-hi" style={{ width: "215px" }}>
+          <button className="btn-sm v-hi" style={{ width: "230px" }}>
             {t("Real Stories, Real Impact")}
           </button>
           <h2 className="v-hence">{t("What Our Clients Say About Us")}</h2>
