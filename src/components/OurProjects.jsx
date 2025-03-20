@@ -14,11 +14,11 @@ const OurProjects = () => {
             <div className="container py-5">
                 <div className="py-5">
                     <button className="btn-sm v-viral" style={{ width: "150px" }}>{t("Our Projects")}</button>
-                    <div className="d-flex justify-content-between align-items-center">
+                    <div className="d-flex justify-content-between align-items-center btn-nextline">
                         <h2 className="v-visit">{t("Our Work Speaks For Itself")}</h2>
-                        <button className="btn-view text-end">{t("View More")}</button>
+                        <button className="btn-view">{t("View More")}</button>
                     </div>
-                    <p className="v-info" style={{ maxWidth: "800px", wordBreak: "break-word" }}>{t("Explore our success stories in e-commerce, app development, and creative marketing. See how we've helped businesses like yours thrive.")}</p>
+                    <p className="v-info mt-2" style={{ maxWidth: "800px", wordBreak: "break-word" }}>{t("Explore our success stories in e-commerce, app development, and creative marketing. See how we've helped businesses like yours thrive.")}</p>
                     {/* ✅ Image Cards */}
                     <div className="row mt-4">
                         {[

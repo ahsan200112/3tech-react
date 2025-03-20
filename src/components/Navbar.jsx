@@ -37,7 +37,7 @@ const Navbar = () => {
 
       {/* Main Navbar */}
       <section className="navbar-bg-color">
-        <nav className="navbar navbar-expand-lg">
+        <nav className="navbar navbar-expand-lg" style={{ borderRadius: "30px" }}>
           <div className="container d-flex align-items-center justify-content-between">
 
             {/* Left: Logo */}
@@ -64,18 +64,18 @@ const Navbar = () => {
             {/* Navbar Links (Collapsible on Mobile) */}
             <div className={`navbar-collapse ${isNavOpen ? "show text-center" : "collapse"}`}>
               <ul className="navbar-nav mx-auto" style={{paddingRight:"0"}}>
-                <li className="nav-item"><Link className="nav-link v-vise" to="/">{t("Home")}</Link></li>
-                <li className="nav-item"><Link className="nav-link v-vise" to="/about">{t("About Us")}</Link></li>
-                <li className="nav-item"><Link className="nav-link v-vise" to="/services">{t("Services")}</Link></li>
-                <li className="nav-item"><Link className="nav-link v-vise" to="/projects">{t("Projects")}</Link></li>
-                <li className="nav-item"><Link className="nav-link v-vise" to="/packages">{t("Packages")}</Link></li>
-                <li className="nav-item"><Link className="nav-link v-vise" to="/blogs">{t("Blogs")}</Link></li>
-                <li className="nav-item"><Link className="nav-link v-vise" to="/contact">{t("Contact Us")}</Link></li>
+                <li className="nav-item"><Link className="nav-link v-vise" to="/" onClick={() => setIsNavOpen(false)}>{t("Home")}</Link></li>
+                <li className="nav-item"><Link className="nav-link v-vise" to="/about" onClick={() => setIsNavOpen(false)}>{t("About Us")}</Link></li>
+                <li className="nav-item"><Link className="nav-link v-vise" to="/services" onClick={() => setIsNavOpen(false)}>{t("Services")}</Link></li>
+                <li className="nav-item"><Link className="nav-link v-vise" to="/projects" onClick={() => setIsNavOpen(false)}>{t("Projects")}</Link></li>
+                <li className="nav-item"><Link className="nav-link v-vise" to="/packages" onClick={() => setIsNavOpen(false)}>{t("Packages")}</Link></li>
+                <li className="nav-item"><Link className="nav-link v-vise" to="/blogs" onClick={() => setIsNavOpen(false)}>{t("Blogs")}</Link></li>
+                <li className="nav-item"><Link className="nav-link v-vise" to="/contact" onClick={() => setIsNavOpen(false)}>{t("Contact Us")}</Link></li>
               </ul>
 
               {/* Mobile View: Button (Hidden by Default) */}
               <div className="d-lg-none text-center mt-3">
-                <button className="btn-well">
+                <button className="btn-well" onClick={() => setIsNavOpen(false)}>
                   {t("Get a Free Consultation")}
                 </button>
               </div>

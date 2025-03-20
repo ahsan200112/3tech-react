@@ -20,10 +20,7 @@ html[dir="ltr"] {
   --button-bg: #181818;
   --button-border: #ffffff;
   --button-text: #ffffff;
-  --border-color-light: #000;
-  /* Black for light theme */
-  --border-color-dark: #fff;
-  /* White for dark theme */
+  --border-color: #fff;
 }
 
 /* Light Mode */
@@ -37,6 +34,7 @@ html[dir="ltr"] {
   --button-bg: #ffffff;
   --button-border: #181818;
   --button-text: #181818;
+  --border-color: #000;
 }
 
 * {
@@ -84,7 +82,6 @@ body {
 
 .hero-section {
   padding: 80px 0;
-  text-align: center;
   position: relative;
   background-color: var(--bg-primary);
   background-repeat: no-repeat;
@@ -121,7 +118,6 @@ body {
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
-  text-align: center;
   color: #E84EAB !important;
 }
 
@@ -130,7 +126,6 @@ body {
   font-size: 56px;
   font-weight: 700;
   line-height: 67.2px;
-  text-align: left;
   color: var(--text-primary);
 
 }
@@ -140,7 +135,6 @@ body {
   font-size: 14px;
   font-weight: 400;
   line-height: 27px;
-  text-align: left;
   color: var(--text-primary);
 }
 
@@ -198,8 +192,6 @@ body {
   padding: 9px 15px;
   gap: 10px;
   border-radius: 10px;
-  border: 1px 0px 0px 0px;
-  opacity: 0px;
 }
 
 .f-vise {
@@ -224,7 +216,6 @@ body {
   font-size: 38px;
   font-weight: 700;
   line-height: 50.4px;
-  text-align: left;
   color: var(--text-primary);
 }
 
@@ -233,7 +224,6 @@ body {
   font-size: 38px;
   font-weight: 700;
   line-height: 49.36px;
-  text-align: left;
   color: var(--text-primary);
 }
 
@@ -479,11 +469,7 @@ body {
 }
 
 @media (max-width: 576px) {
-
-  .v-r,
-  .n-w,
-  .b-b,
-  .v-u {
+  .n-w {
     font-size: 35px !important;
   }
 
@@ -504,8 +490,6 @@ body {
 }
 
 @media (max-width: 410px) {
-
-  .v-r,
   .n-w {
     font-size: 30px !important;
   }
@@ -616,14 +600,6 @@ body {
   .custom-content-center {
     justify-content: center !important;
   }
-
-  .custom-margin-10 {
-    margin-left: 10px !important;
-  }
-
-  [dir="rtl"] .custom-margin-10 {
-    margin-right: 10px !important;
-  }
 }
 
 .btn-contact {
@@ -712,7 +688,6 @@ body {
   font-size: 42px;
   font-weight: 700;
   line-height: 54.55px;
-  text-align: left;
   color: var(--text-primary);
 }
 
@@ -736,7 +711,7 @@ body {
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
-  text-align: left;
+  text-align: center;
   background-color: var(--bg-primary);
   cursor: pointer;
   transition: all 0.3s ease;
@@ -1141,14 +1116,6 @@ body {
   border: 1px solid #555;
 }
 
-.v-use {
-  /*  font-family: Reddit Sans; */
-  font-size: 56px;
-  letter-spacing: 0px;
-  line-height: 120%;
-  color: var(--text-primary);
-}
-
 .btn-free {
   width: 225px;
   height: 50px;
@@ -1388,6 +1355,7 @@ body {
 
 .v-section .contact-btn {
   margin-top: 20px;
+  text-align: center;
   color: var(--text-primary);
   background: var(--bg-primary);
   border: 1px solid var(--text-primary);
@@ -1683,6 +1651,13 @@ body {
   color: var(--text-secondary);
 }
 
+.v-q {
+  /*  font-family: Reddit Sans; */
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: var(--text-secondary);
+}
+
 .v-f {
   /*  font-family: Reddit Sans; */
   font-size: 24px;
@@ -1915,6 +1890,14 @@ img {
   padding-right: 0;
 }
 
+.textAlignment {
+  text-align: left;
+}
+
+[dir="rtl"] .textAlignment {
+  text-align: right;
+}
+
 /* Tablet-specific adjustments */
 @media (min-width: 768px) and (max-width: 1199px) {
   .logo-img {
@@ -1932,6 +1915,90 @@ img {
 
   .margin-right-40 {
     margin-right: 0px !important;
+  }
+
+  .hlo,
+  .u-vie,
+  .u-whi,
+  .v-u,
+  .v-p,
+  .v-a,
+  .v-s,
+  .v-f,
+  .v-d,
+  .z-x,
+  .f-g,
+  .f-k,
+  .f-h,
+  .f-l,
+  .g-r,
+  .v-hence,
+  .v-value,
+  .v-auto,
+  .v-clean,
+  .v-face,
+  .v-r,
+  .u-visit,
+  .u-were,
+  .u-here,
+  .u-item,
+  .u-vell,
+  .v-wel,
+  .v-visit,
+  .v-info,
+  .i-were,
+  .o-b,
+  .o-c,
+  .l-k,
+  .n-w,
+  .n-e,
+  .i-visit,
+  .b-b,
+  .b-c {
+    text-align: center !important;
+  }
+
+  .v-d {
+    display: flex;
+    justify-content: center;
+  }
+
+  .v-q {
+    display: flex;
+    justify-content: center;
+  }
+
+  .u-vise,
+  .v-hi,
+  .u-easy,
+  .btn-next,
+  .btn-contact,
+  .v-viral,
+  .v-were,
+  .i-idea,
+  .f-vise {
+    display: block;
+    margin: 0 auto;
+    /* Horizontally center karega */
+  }
+}
+
+.nav-item {
+  padding: 0 10px;
+  color: var(--text-primary); /* Light/Dark theme ke mutabiq */
+}
+
+.nav-divider {
+  width: 2px; /* Border ki width */
+  height: 20px; /* Border ka height */
+  background-color: var(--border-color); /* Theme ke mutabiq */
+  display: inline-block;
+  margin: 0 8px;
+}
+
+@media (max-width: 900px) {
+  .mission-vision {
+    width: 100%;
   }
 }
 
@@ -2095,10 +2162,6 @@ img {
     font-size: 42px;
   }
 
-  .v-use {
-    font-size: 56px;
-  }
-
   .o-hlo {
     font-size: 56px;
   }
@@ -2146,12 +2209,8 @@ img {
     font-size: 20px;
   }
 
-  .i-visit {
-    font-size: 21px;
-  }
-
-  .v-use {
-    font-size: 28px;
+  .i-visit , .v-r , .v-u , .b-b {
+    font-size: 36px;
   }
 
   .o-hlo {
@@ -2171,7 +2230,7 @@ img {
   }
 
   .u-item {
-    font-size: 18px;
+    font-size: 25px;
     line-height: 25px;
   }
 
@@ -2192,12 +2251,8 @@ img {
     font-size: 18px;
   }
 
-  .i-visit {
-    font-size: 19px;
-  }
-
-  .v-use {
-    font-size: 26px;
+  .i-visit , .v-r , .v-u , .b-b {
+    font-size: 28px;
   }
 
   .o-hlo {
@@ -2299,31 +2354,27 @@ img {
     padding: 6px 14px;
   }
 
-  .margin-10 {
-    margin-left: 10px;
-    margin-right: 0px;
-  }
-
-  html[dir="rtl"] .margin-10 {
-    margin-left: 0px;
-    margin-right: 10px;
-  }
-
   .u-vise,
   .u-visit {
     padding: 6px 22px;
   }
 
   .custom-border-bottom {
-    border-bottom: 1px solid var(--border-color-dark);
+    border-bottom: 1px solid var(--border-color);
     /* Default light theme */
     padding: 5px 10px;
     border-left: 0px !important;
     border-right: 0px !important;
   }
 
-  [data-theme="light"] .custom-border-bottom {
-    border-bottom: 1px solid var(--border-color-light);
+  .contact-btn-full {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .contact-btn {
+    width: 100% !important;
+    font-size: 16px;
   }
 }
 
@@ -2331,6 +2382,18 @@ img {
   .custom-responsive-btn {
     padding: 8px 10px;
     width: 80%;
+  }
+
+  .btn-nextline {
+    flex-direction: column !important;
+    /* Buttons ko vertical karna */
+    align-items: center !important;
+    /* Center align karna */
+  }
+
+  .btn-nextline button {
+    width: 100% !important;
+    font-size: 16px;
   }
 }
 

@@ -6,7 +6,6 @@ import { useTheme } from "../context/ThemeContext";
 
 const WhoWeAre = () => {
     const { t, i18n } = useTranslation();
-    const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     const isRTL = i18n.dir() === "rtl";
     const { theme } = useTheme(); // Get theme from context
 
@@ -15,10 +14,10 @@ const WhoWeAre = () => {
             <div className="container py-5">
                 <div className="row align-items-center">
                     <button className="btn-sm u-vise mb-3 custom-margin-10" style={{ width: "130px" }}>{t("Who We Are")}</button>
-                    <h1 className={`u-visit custom-margin-10 ${textAlignment}`}>{t("Connecting Your Business With The World!")}</h1>
+                    <h1 className="u-visit custom-margin-10">{t("Connecting Your Business With The World!")}</h1>
                     <div className="col-md-6 ">
-                        <h1 className={`u-were ${textAlignment}`}>{t("About Us")}</h1>
-                        <p className={`u-here ${textAlignment}`}>
+                        <h1 className="u-were">{t("About Us")}</h1>
+                        <p className="u-here">
                             {t("In a world where creativity meets technology, 3Tech delivers exceptional experiences in building online stores, apps, and digital marketing. We’re here to tell your story and connect you with your audience through unique and impactful approaches. Every project with us becomes a memorable journey to success.")}
                         </p>
                         <Link to="/about" className="btn-our d-block w-100 text-decoration-none">

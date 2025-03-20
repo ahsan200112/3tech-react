@@ -6,7 +6,7 @@ const GetInTouch = () => {
     const { t } = useTranslation();
     // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     return (
-        <section className="v-section py-4">
+        <section className="v-section py-5">
             <div className="container py-5">
                 <div>
                     <button className="btn-sm u-vise mb-2">{t("Get in Touch")}</button>

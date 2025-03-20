@@ -10,29 +10,14 @@ const OurProjectsDetail = () => {
     const { t } = useTranslation();
     // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     return (
-        <section className="v-section" style={{ marginTop: "-48px" }}>
-            <div className="container my-5 py-4">
+        <section className="v-section">
+            <div className="container py-5">
                 <button className="btn-sm u-vise mt-5 mb-2" style={{ width: "150px" }}>{t("Our Projects")}</button>
                 <h2 className="n-w">{t("Showcasing Excellence Across Industries")}</h2>
                 <p className="n-e" style={{ maxWidth: "800px", wordBreak: "break-word" }}>
                     {t("At 3Tech, every project is a reflection of our commitment to innovation, quality, and client success. Explore how we’ve helped businesses grow and thrive in the digital world.")}
                 </p>
                 <div className="row">
-                    {/*<div className="d-flex justify-content-around align-items-center flex-wrap">
-                        {[
-                            t("All"),
-                            t("E-Commerce Solutions"),
-                            t("Mobile Applications"),
-                            t("Marketing Solutions"),
-                            t("Creative Design"),
-                            t("Digital Optimization")
-                        ].map((item, index, array) => (
-                            <React.Fragment key={index}>
-                                <p className="c-m">{item}</p>
-                                {index !== array.length - 1 && <span className="mx-2 mb-4">|</span>}
-                            </React.Fragment>
-                        ))}
-                    </div> */}
                     <div className="d-flex justify-content-around align-items-center flex-wrap mb-3">
                         {[
                             { label: t("All"), path: "/projects" },
@@ -43,10 +28,10 @@ const OurProjectsDetail = () => {
                             { label: t("Digital Optimization"), path: "/digitaloptimization" }
                         ].map((item, index, array) => (
                             <React.Fragment key={index}>
-                                <Link to={item.path} className="c-m text-decoration-none">
+                                <Link to={item.path} className="c-m text-decoration-none nav-item">
                                     {item.label}
                                 </Link>
-                                {index !== array.length - 1 && <span className="mx-2 mb-4">|</span>}
+                                {index !== array.length - 1 && <span className="nav-divider"></span>}
                             </React.Fragment>
                         ))}
                     </div>

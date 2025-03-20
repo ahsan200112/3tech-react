@@ -6,13 +6,13 @@ const OurPackages = () => {
     const { t } = useTranslation();
    // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     return (
-        <section className="packages py-5 u-section">
+        <section className="packages u-section">
             <div className="container py-5">
-                <div className="mb-5">
+                <div className="py-5">
                     <button className="btn-sm i-idea mb-2" style={{ width: "140px"}}>{t("Our Packages")}</button>
-                    <div className="d-flex justify-content-between align-items-center">
-                        <h2 className="i-visit mb-0">{t("Flexible Packages For Every Need")}</h2>
-                        <button className="btn-all custom-responsive-btn">{t("View All Packages")}</button>
+                    <div className="d-flex align-items-center custom-content-center">
+                        <h2 className="i-visit mb-2">{t("Flexible Packages For Every Need")}</h2>
+                      {/*  <button className="btn-all custom-responsive-btn">{t("View All Packages")}</button> */}
                     </div>
                     <p className="i-were">
                         {t("Explore our custom packages offering top-notch solutions at great prices.")}
