@@ -42,7 +42,9 @@ const Navbar = () => {
 
             {/* Left: Logo */}
             <div className="d-flex align-items-center">
-              <img src={theme === "light" ? LogoLightMode : LogoDarkMode} alt="Logo" className="img-fluid logo-img" />
+              <Link to="/">
+                <img src={theme === "light" ? LogoLightMode : LogoDarkMode} alt="Logo" className="img-fluid logo-img" />
+              </Link>
             </div>
 
             {/* Center: Language Toggle (for Mobile View) */}
@@ -57,13 +59,13 @@ const Navbar = () => {
               onClick={() => setIsNavOpen(!isNavOpen)}
             >
               <i className="bi bi-list"
-              style={{ color: theme === "light" ? "#000" : "#fff" }}>
+                style={{ color: theme === "light" ? "#000" : "#fff" }}>
               </i>
             </button>
 
             {/* Navbar Links (Collapsible on Mobile) */}
             <div className={`navbar-collapse ${isNavOpen ? "show text-center" : "collapse"}`}>
-              <ul className="navbar-nav mx-auto" style={{paddingRight:"0"}}>
+              <ul className="navbar-nav mx-auto" style={{ paddingRight: "0" }}>
                 <li className="nav-item"><Link className="nav-link v-vise" to="/" onClick={() => setIsNavOpen(false)}>{t("Home")}</Link></li>
                 <li className="nav-item"><Link className="nav-link v-vise" to="/about" onClick={() => setIsNavOpen(false)}>{t("About Us")}</Link></li>
                 <li className="nav-item"><Link className="nav-link v-vise" to="/services" onClick={() => setIsNavOpen(false)}>{t("Services")}</Link></li>
