@@ -18,9 +18,9 @@ const Navbar = () => {
   return (
     <>
       {/* Top Contact Section */}
-      <section style={{ backgroundColor: "var(--bg-primary)" }}>
+      <section className='u-section'>
         <div className="container">
-          <div className="row align-items-center">
+          <div className="row align-items-center py-3">
             <div className="col d-flex custom-content-start mt-3 mb-3 custom-navbar-center">
               <a className="navbar-brand v-vise" href="/"><i className="bi bi-telephone"></i> 966557122917+</a>
               <a className="navbar-brand v-vise ms-3" href="/"><i className="bi bi-envelope"></i> info@3tech.sa</a>
@@ -36,8 +36,8 @@ const Navbar = () => {
       </section>
 
       {/* Main Navbar */}
-      <section className="navbar-bg-color">
-        <nav className="navbar navbar-expand-lg" style={{ borderRadius: "30px" }}>
+      <section className="u-section navbar-padding">
+        <nav className="navbar-bg-color navbar navbar-expand-lg navbar-border">
           <div className="container d-flex align-items-center justify-content-between">
 
             {/* Left: Logo */}
