@@ -37,7 +37,7 @@ const Navbar = () => {
 
       {/* Main Navbar */}
       <section className="navbar-bg-color">
-        <nav className="navbar navbar-expand-lg" style={{ padding: "15px 30px", borderRadius: "30px" }}>
+        <nav className="navbar navbar-expand-lg">
           <div className="container d-flex align-items-center justify-content-between">
 
             {/* Left: Logo */}

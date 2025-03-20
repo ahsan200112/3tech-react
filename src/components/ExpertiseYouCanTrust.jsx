@@ -2,9 +2,12 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Frame41Img from "../assets/images/Frame 41.png";
+import { useTheme } from "../context/ThemeContext";
 
 const ExpertiseYouCanTrust = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const isRTL = i18n.dir() === "rtl";
+    const { theme } = useTheme(); // Get theme from context
    // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     return (
         <div className="v-section" style={{ marginTop: "-16px" }}>
@@ -25,19 +28,16 @@ const ExpertiseYouCanTrust = () => {
                                 <Link className="contact-btn text-decoration-none" to="/contact">{t("Contact Us")}</Link>
                             </div>
                             <div className="stats row">
-                                <div className="col-md-4 stat-item"
+                                <div className="col-md-4 stat-item custom-border-bottom"
                                     style={{
-                                        borderRight: document.dir === "ltr" ? "1px solid var(--text-secondary)" : "none",
-                                        borderLeft: document.dir === "rtl" ? "1px solid var(--text-secondary)" : "none",
+                                        [isRTL ? "borderLeft" : "borderRight"]: `1px solid ${theme === "light" ? "#000" : "#fff"}`
                                     }}>
                                     <h2 className="u-how">10+</h2>
                                     <p className="u-all">{t("Years in Business")}</p>
                                 </div>
-                                <div className="col-md-4 stat-item"
-                                    /*style={{ borderRight: "1px solid", color: "#CFCECE" }} */
+                                <div className="col-md-4 stat-item custom-border-bottom"
                                     style={{
-                                        borderRight: document.dir === "ltr" ? "1px solid #CFCECE" : "none",
-                                        borderLeft: document.dir === "rtl" ? "1px solid #CFCECE" : "none",
+                                        [isRTL ? "borderLeft" : "borderRight"]: `1px solid ${theme === "light" ? "#000" : "#fff"}`
                                     }}>
                                     <h2 className="u-how">200+</h2>
                                     <p className="u-all">{t("Successful Projects")}</p>

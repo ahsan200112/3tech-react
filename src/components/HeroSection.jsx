@@ -1,12 +1,15 @@
 import React from 'react';
 import BackgroundImg from "../assets/images/backgroundImgInHeroSection.png";
-import HeroImage from "../assets/images/HeroSectionImage.png";
-import PhoneImg from "../assets/images/phone.png";
+import HeroImageDark from "../assets/images/HeroImage Dark Mode.png";
+import HeroImageLight from "../assets/images/HeroImage Light Mode.png";
 import { useTranslation } from 'react-i18next';
+import { useTheme } from "../context/ThemeContext";
 
 const HeroSection = () => {
     const { t, i18n } = useTranslation();
     const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
+    const { theme } = useTheme(); // Get theme from context
+
     return (
         <section className={`hero-section ${textAlignment}`}
             style={{
@@ -31,7 +34,7 @@ const HeroSection = () => {
                         </div>
                     </div>
                     <div className="col-md-6 align-items-center mockup-image">
-                        <img src={PhoneImg} alt="Phone Mockup" className="img-fluid phone-mockup" />
+                        <img src={theme === "light" ? HeroImageLight : HeroImageDark} alt="Phone Mockup" className="img-fluid phone-mockup" />
                     </div>
                 </div>
             </div>

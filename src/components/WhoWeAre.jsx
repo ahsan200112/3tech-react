@@ -2,11 +2,13 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import WhoWeAreImg from '../assets/images/WhoWeAre.png';
+import { useTheme } from "../context/ThemeContext";
 
 const WhoWeAre = () => {
     const { t, i18n } = useTranslation();
     const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     const isRTL = i18n.dir() === "rtl";
+    const { theme } = useTheme(); // Get theme from context
 
     return (
         <section className="u-section">
@@ -24,13 +26,13 @@ const WhoWeAre = () => {
                         </Link>
                         <div className="row text-white mt-3">
                             <div className="col-md-4 custom-border-bottom" style={{
-                                [isRTL ? "borderLeft" : "borderRight"]: "1px solid",
+                                [isRTL ? "borderLeft" : "borderRight"]: `1px solid ${theme === "light" ? "#000" : "#fff"}`
                             }}>
                                 <h2 className="u-how">7+</h2>
                                 <p className="u-all">{t("Years in Business")}</p>
                             </div>
                             <div className="col-md-4 custom-border-bottom" style={{
-                                [isRTL ? "borderLeft" : "borderRight"]: "1px solid",
+                                [isRTL ? "borderLeft" : "borderRight"]: `1px solid ${theme === "light" ? "#000" : "#fff"}`
                             }}>
                                 <h2 className="u-value">+150</h2>
                                 <p className="u-all">{t("Successful Projects")}</p>

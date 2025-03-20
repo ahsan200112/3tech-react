@@ -20,6 +20,10 @@ html[dir="ltr"] {
   --button-bg: #181818;
   --button-border: #ffffff;
   --button-text: #ffffff;
+  --border-color-light: #000;
+  /* Black for light theme */
+  --border-color-dark: #fff;
+  /* White for dark theme */
 }
 
 /* Light Mode */
@@ -1893,18 +1897,18 @@ img {
 /* Default styles for the logo */
 .logo-img {
   /* max-width: 100%; */
-  width: 130px;
-  height: 130px !important;
+  width: 125px;
+  height: 90px !important;
   /* Maintain aspect ratio */
 }
 
 .footer-logo-img {
-  width: 230px;
-  height: 170px !important;
+  width: 205px;
+  height: 150px !important;
 }
 
 .margin-top-minus {
-  margin-top: -45px;
+  margin-top: -18px;
 }
 
 .padding-right-0 {
@@ -1922,7 +1926,7 @@ img {
 /* Mobile-specific adjustments */
 @media (max-width: 767px) {
   .logo-img {
-    width: 80px;
+    width: 75px;
     height: auto !important;
   }
 
@@ -2311,12 +2315,16 @@ img {
   }
 
   .custom-border-bottom {
-    border-bottom: 1px solid;
+    border-bottom: 1px solid var(--border-color-dark);
+    /* Default light theme */
     padding: 5px 10px;
     border-left: 0px !important;
     border-right: 0px !important;
   }
 
+  [data-theme="light"] .custom-border-bottom {
+    border-bottom: 1px solid var(--border-color-light);
+  }
 }
 
 @media (max-width: 463px) {
