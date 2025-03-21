@@ -60,9 +60,9 @@ const Footer = () => {
               <p className="v-left pb-2" style={{ borderBottom: "1px solid" }}>{t("Phone no")}: <a href="tel:966557122917+"
                 className="v-coke text-decoration-none">966557122917+</a></p>
               <div className="d-flex mt-3 custom-list-padding custom-text-center custom-content-center">
-                <a href="/" className={`${isRTL ? "ms-4" : "me-4"} margin`}><i className="bi bi-linkedin text-primary-color"></i></a>
-                <a href="/" className={`${isRTL ? "ms-4" : "me-4"} margin`}><i className="bi bi-whatsapp text-primary-color"></i></a>
-                <a href="/" className={`${isRTL ? "ms-4" : "me-4"} margin`}><i className="bi bi-instagram text-primary-color"></i></a>
+                <a href="https://www.linkedin.com/company/3tech-platform" className={`${isRTL ? "ms-4" : "me-4"} margin`}><i className="bi bi-linkedin text-primary-color"></i></a>
+                <a href="https://api.whatsapp.com/send/?phone=966557122917" className={`${isRTL ? "ms-4" : "me-4"} margin`}><i className="bi bi-whatsapp text-primary-color"></i></a>
+                <a href="https://www.instagram.com/3tech.sa?igsh=aW14cDY0cmtvZW9p" className={`${isRTL ? "ms-4" : "me-4"} margin`}><i className="bi bi-instagram text-primary-color"></i></a>
               </div>
             </div>
           </div>
