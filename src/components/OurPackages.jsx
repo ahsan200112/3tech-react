@@ -52,7 +52,7 @@ const OurPackages = () => {
                     </div>
                     <div className="col-md-4">
                         <div className="card shadow border-0">
-                            <div className="card-body">
+                            <div className="card-body" style={{ background: "linear-gradient(106.11deg, rgba(193, 64, 193, 0.1) 7.4%, rgba(127, 148, 230, 0.1) 100%)" }}>
                                 <h5 className="i-has">{t("Business Branding Package")}</h5>
                                 <h3 className="i-value">{t("600 SAR")}</h3>
                                 <p className="card-text i-when">
