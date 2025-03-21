@@ -60,15 +60,15 @@ const Footer = () => {
               <p className="v-left pb-2" style={{ borderBottom: "1px solid" }}>{t("Phone no")}: <a href="tel:966557122917+"
                 className="v-coke text-decoration-none">966557122917+</a></p>
               <div className="d-flex mt-3 custom-list-padding custom-text-center custom-content-center">
-                <a href="https://www.linkedin.com/company/3tech-platform" className={`${isRTL ? "ms-4" : "me-4"} margin`}><i className="bi bi-linkedin text-primary-color"></i></a>
-                <a href="https://api.whatsapp.com/send/?phone=966557122917" className={`${isRTL ? "ms-4" : "me-4"} margin`}><i className="bi bi-whatsapp text-primary-color"></i></a>
-                <a href="https://www.instagram.com/3tech.sa?igsh=aW14cDY0cmtvZW9p" className={`${isRTL ? "ms-4" : "me-4"} margin`}><i className="bi bi-instagram text-primary-color"></i></a>
+                <a href="https://www.linkedin.com/company/3tech-platform" target='blank' className={`${isRTL ? "ms-4" : "me-4"} margin`}><i className="bi bi-linkedin text-primary-color"></i></a>
+                <a href="https://api.whatsapp.com/send/?phone=966557122917" target='blank' className={`${isRTL ? "ms-4" : "me-4"} margin`}><i className="bi bi-whatsapp text-primary-color"></i></a>
+                <a href="https://www.instagram.com/3tech.sa?igsh=aW14cDY0cmtvZW9p" target='blank' className={`${isRTL ? "ms-4" : "me-4"} margin`}><i className="bi bi-instagram text-primary-color"></i></a>
               </div>
             </div>
           </div>
           <div className="row mt-4 pt-3 custom-text-center" style={{ borderTop: " 1px solid #1B1264" }}>
             <div className="col d-flex justify-content-between text-primary-color">
-              <p className="mb-0 v-copy">{t("Copyright © 2024 3Tech")}</p>
+              <p className="mb-0 v-copy">{t("Copyright © 2025 3Tech")}</p>
               <p className="mb-0 custom-list-padding">
                 <a href="/" className="text-decoration-none v-term">{t("Term of use")}</a> |
                 <a href="/" className="text-decoration-none v-term"> {t("Privacy Policy")}</a> |
