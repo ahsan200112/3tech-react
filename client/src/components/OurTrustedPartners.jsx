@@ -23,7 +23,7 @@ import F7ImgLight from '../assets/images/F7Light.png';
 import F8ImgLight from '../assets/images/F8Light.png';
 
 // Custom Arrows
-const NextArrow = ({ onClick, theme }) => {
+/*const NextArrow = ({ onClick, theme }) => {
   return (
     <button
       className={`btn slider-arrow next-arrow ${theme === "light" ? "btn-dark" : "btn-light"}`}
@@ -43,7 +43,7 @@ const PrevArrow = ({ onClick, theme }) => {
       ❮
     </button>
   );
-};
+}; */
 
 
 const OurTrustedPartners = () => {
@@ -69,8 +69,9 @@ const OurTrustedPartners = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    nextArrow: <NextArrow theme={theme} />,
-    prevArrow: <PrevArrow theme={theme} />,
+    arrows: false, // Disable side arrows
+  /*  nextArrow: <NextArrow theme={theme} />,
+    prevArrow: <PrevArrow theme={theme} />, */
     responsive: [
       {
         breakpoint: 1024, // For tablets

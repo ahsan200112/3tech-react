@@ -1,12 +1,13 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
+//import { Pagination, Navigation } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
+//import "swiper/css/navigation";
 import { useTranslation } from "react-i18next";
 import InkImg from "../assets/images/ink.png";
-import Girl2Img from "../assets/images/girl2.png";
+//import Girl2Img from "../assets/images/girl2.png";
 
 const OurClientsSay = () => {
   const { t, i18n } = useTranslation();
@@ -18,35 +19,35 @@ const OurClientsSay = () => {
       text: t("Working with 3Tech has been a game-changer for our business. They transformed our online store with a beautiful, user-friendly design and seamless functionality."),
       name: "Sarah L",
       position: t("Founder of Luxe Appeal"),
-      image: Girl2Img,
+     // image: Girl2Img,
     },
     {
       id: 2,
       text: t("3Tech exceeded our expectations. Their expertise in web development and design gave us a professional online presence that attracts more customers."),
       name: "David M",
       position: t("CEO of Tech Solutions"),
-      image: Girl2Img,
+     // image: Girl2Img,
     },
     {
       id: 3,
       text: t("What sets 3Tech apart is their commitment to understanding our business goals and aligning their solutions accordingly. I am working as Marketing Manager"),
       name: "Emily R",
       position: t("Marketing Manager at Digital World"),
-      image: Girl2Img,
+      //image: Girl2Img,
     },
     {
       id: 4,
-      text: t("Their team is highly skilled and delivers projects on time. The support and communication have been outstanding throughout the process."),
+      text: t("Their team is highly skilled and delivers projects on time. The support and communication have been outstanding throughout the process. I am Founder of InnovateX"),
       name: "John D",
       position: t("Founder of InnovateX"),
-      image: Girl2Img,
+      //image: Girl2Img,
     },
     {
       id: 5,
       text: t("They helped us create a beautiful brand identity, and our customer retention has significantly improved. I am COO of FutureWave."),
       name: "Linda K",
       position: t("COO of FutureWave"),
-      image: Girl2Img,
+      //image: Girl2Img,
     },
   ];
 
@@ -62,10 +63,11 @@ const OurClientsSay = () => {
 
         {/* Swiper Component */}
         <Swiper
-          modules={[Pagination, Navigation]}
+        //  modules={[Pagination, Navigation]}
+          modules={[Pagination]}
           spaceBetween={20}
           slidesPerView={3} // Default to 3 slides
-          navigation
+         // navigation
           pagination={{ clickable: true }}
           centeredSlides={false}
           rtl={isRTL} // Enable RTL mode
@@ -95,7 +97,7 @@ const OurClientsSay = () => {
                 <div className="d-flex align-items-center"
                   style={{ flexDirection: "row" }}>
                   {/* Image */}
-                  <img src={testimonial.image} alt={testimonial.name}
+                 {/* <img src={testimonial.image} alt={testimonial.name}
                     className="img-fluid"
                     style={{
                       width: "47px",
@@ -104,7 +106,7 @@ const OurClientsSay = () => {
                       marginLeft: "7px",
                       marginRight: "7px",
                     }}
-                  />
+                  /> */}
                   {/* Text */}
                   <div>
                     <p className="mb-0 g-value" style={{fontWeight:"700", fontSize:"18px"}}>{t(testimonial.name)}</p>
