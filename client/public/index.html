@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="Web site created using create-react-app" />
- <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
+  <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
   <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -45,6 +45,20 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+  <script>
+    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJob3N0IjoiaHR0cHM6Ly8zdGVjaC5zYSIsImlkIjoiNjdkZGUwNjdhOTUxNGE0MTgwZDA2ODEwIiwiYWNjSWQiOiI2NzdiYzEwYjMxM2UyMGE5MzViNWQyZDQiLCJpYXQiOjE3NDI1OTQxNTF9.f6S2hBcU2oDB9K7a4lvB3_2zIcJCYUjZ7e5Td0f6AT8";
+    (function (w, d, s, u, t) {
+      w.Chatty = function (c) { w.Chatty._.push(c) };
+      w.Chatty._ = [];
+      w.Chatty.url = u;
+      w.Chatty.hash = t;
+      var h = d.getElementsByTagName(s)[0],
+        j = d.createElement(s);
+      j.async = true;
+      j.src = 'https://widget.gallabox.com/chatty-widget.min.js?_=' + Math.random();
+      h.parentNode.insertBefore(j, h);
+    })(window, document, 'script', 'https://widget.gallabox.com', token);
+  </script>
 </body>
 
 </html>
