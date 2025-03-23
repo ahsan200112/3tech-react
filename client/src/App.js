@@ -19,7 +19,13 @@ const App = () => {
         i18n.language === "ar"
             ? "اطلق متجرك الالكتروني مع منصة ثري تك"
             : "Launch your online store with 3tech platform";
-
+    useEffect(() => {
+        document.title = title; // Title update
+        const metaDesc = document.querySelector("meta[name='description']");
+        if (metaDesc) {
+            metaDesc.setAttribute("content", description); // Description update
+        }
+    }, [title, description]); // Jab bhi title ya description change ho, update karega
     return (
         <>
             <Helmet>
