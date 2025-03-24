@@ -2457,3 +2457,16 @@ img {
   line-height: 140%;
   color: var(--text-primary);
 }
+
+.custom-project-card {
+  margin: 0 25px; /* ✅ Extra spacing between cards */
+}
+
+.slide-item {
+  padding: 0 4px;
+} 
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+} 
