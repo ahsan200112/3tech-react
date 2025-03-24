@@ -12,6 +12,8 @@ const app = express();
 app.use(cors());
 app.use(express.json()); // Middleware to parse JSON data
 
+const ContactRoutes = require('./ContactForm/routes/Contact.route')
+app.use('/api/contact', ContactRoutes);
 
 app.use((err, req, res, next) => {
   res.status(err.status || 500).json({

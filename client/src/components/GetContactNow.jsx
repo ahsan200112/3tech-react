@@ -3,11 +3,36 @@ import { useTranslation } from 'react-i18next';
 import CallImg from "../assets/images/call.svg";
 import LocationImg from "../assets/images/Location.svg";
 import EmailImg from "../assets/images/Email.png";
+import { useForm } from 'react-hook-form';
 
 const GetContactNow = () => {
     const { t } = useTranslation();
     const isRTL = document.dir === "rtl"; // Ya kisi global state se lein
     //const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
+
+    const onSubmit = async (data) => {
+        try {
+            const response = await fetch('http://localhost:5001/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                alert('Form submitted successfully!');
+                reset(); // Reset form after successful submission
+            } else {
+                alert('Something went wrong, please try again.');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('Error submitting form, please try again.');
+        }
+    };
+
     return (
         <section className='u-section'>
             <div className="container py-5">
@@ -46,27 +71,57 @@ const GetContactNow = () => {
                         </div>
                     </div>
                     <div className="col-md-8">
-                        <form>
+                        <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="row g-3">
                                 <div className="col-lg-6">
-                                    <label htmlFor="name" className="form-label text-primary-color">{t("Name")} *</label>
-                                    <input type="text" className="form-control bg-transparent text-primary-color" id="name" required />
+                                    <label htmlFor="name" className="form-label text-primary-color">{t('Name')} *</label>
+                                    <input
+                                        type="text"
+                                        className="form-control bg-transparent text-primary-color"
+                                        id="name"
+                                        {...register('name', { required: true })}
+                                    />
+                                    {errors.name && <span className="text-danger">Name is required</span>}
                                 </div>
                                 <div className="col-lg-6">
-                                    <label htmlFor="email" className="form-label text-primary-color">{t("Email")} *</label>
-                                    <input type="email" className="form-control bg-transparent text-primary-color" id="email" required />
+                                    <label htmlFor="email" className="form-label text-primary-color">{t('Email')} *</label>
+                                    <input
+                                        type="email"
+                                        className="form-control bg-transparent text-primary-color"
+                                        id="email"
+                                        {...register('email', { required: true })}
+                                    />
+                                    {errors.email && <span className="text-danger">Email is required</span>}
                                 </div>
                                 <div className="col-lg-6">
-                                    <label htmlFor="phone" className="form-label text-primary-color">{t("Phone")} *</label>
-                                    <input type="text" className="form-control bg-transparent text-primary-color" id="phone" required />
+                                    <label htmlFor="phone" className="form-label text-primary-color">{t('Phone')} *</label>
+                                    <input
+                                        type="text"
+                                        className="form-control bg-transparent text-primary-color"
+                                        id="phone"
+                                        {...register('phone', { required: true })}
+                                    />
+                                    {errors.phone && <span className="text-danger">Phone is required</span>}
                                 </div>
                                 <div className="col-lg-6">
-                                    <label htmlFor="subject" className="form-label text-primary-color">{t("Subject")} *</label>
-                                    <input type="text" className="form-control bg-transparent text-primary-color" id="subject" required />
+                                    <label htmlFor="subject" className="form-label text-primary-color">{t('Subject')} *</label>
+                                    <input
+                                        type="text"
+                                        className="form-control bg-transparent text-primary-color"
+                                        id="subject"
+                                        {...register('subject', { required: true })}
+                                    />
+                                    {errors.subject && <span className="text-danger">Subject is required</span>}
                                 </div>
                                 <div className="col-lg-12 mb-2">
-                                    <label htmlFor="message" className="form-label text-primary-color">{t("Message")} *</label>
-                                    <textarea className="form-control bg-transparent text-primary-color" id="message" rows="2" required></textarea>
+                                    <label htmlFor="message" className="form-label text-primary-color">{t('Message')} *</label>
+                                    <textarea
+                                        className="form-control bg-transparent text-primary-color"
+                                        id="message"
+                                        rows="3"
+                                        {...register('message', { required: true })}
+                                    ></textarea>
+                                    {errors.message && <span className="text-danger">Message is required</span>}
                                 </div>
                                 <div className="col-lg-12 mt-3 custom-text-center">
                                     <button type="submit" className="btn-while px-4 py-2">
