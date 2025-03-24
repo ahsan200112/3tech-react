@@ -16,37 +16,30 @@ const OurClientsSay = () => {
   const testimonials = [
     {
       id: 1,
-      text: t("Working with 3Tech has been a game-changer for our business. They transformed our online store with a beautiful, user-friendly design and seamless functionality."),
-      name: "Sarah L",
-      position: t("Founder of Luxe Appeal"),
-     // image: Girl2Img,
+      text: t("Thank you for your perfect work and achievement in a short period of time. The team is professional and cooperative, and the support service is excellent. Thank you."),
+      name: t("Abdullah"),
+      position: t("CEO of Osus"),
+      // image: Girl2Img,
     },
     {
       id: 2,
-      text: t("3Tech exceeded our expectations. Their expertise in web development and design gave us a professional online presence that attracts more customers."),
-      name: "David M",
-      position: t("CEO of Tech Solutions"),
-     // image: Girl2Img,
+      text: t("I worked with them to set up an online store. Their attention to detail, their amazing designs, their constant communication, and their expertise in sponsored ads are all things that set them apart from other platforms. I wish them success."),
+      name: t("Omar"),
+      position: t("Store Manager of One Me"),
+      // image: Girl2Img,
     },
     {
       id: 3,
-      text: t("What sets 3Tech apart is their commitment to understanding our business goals and aligning their solutions accordingly. I am working as Marketing Manager"),
-      name: "Emily R",
-      position: t("Marketing Manager at Digital World"),
+      text: t("They are really excellent. They help you with everything, thinking with you until you find the right thing for you. All the best to you."),
+      name: t("Mahdi"),
+      position: t("Operations Manager of Waad"),
       //image: Girl2Img,
     },
     {
       id: 4,
-      text: t("Their team is highly skilled and delivers projects on time. The support and communication have been outstanding throughout the process. I am Founder of InnovateX"),
-      name: "John D",
-      position: t("Founder of InnovateX"),
-      //image: Girl2Img,
-    },
-    {
-      id: 5,
-      text: t("They helped us create a beautiful brand identity, and our customer retention has significantly improved. I am COO of FutureWave."),
-      name: "Linda K",
-      position: t("COO of FutureWave"),
+      text: t("The marketing team has extensive experience and is attentive to the smallest details. The dealings were very polite and ethical."),
+      name: t("Talal"),
+      position: t("Marketing Manager of Awtar"),
       //image: Girl2Img,
     },
   ];
@@ -63,11 +56,11 @@ const OurClientsSay = () => {
 
         {/* Swiper Component */}
         <Swiper
-        //  modules={[Pagination, Navigation]}
+          //  modules={[Pagination, Navigation]}
           modules={[Pagination]}
           spaceBetween={20}
           slidesPerView={3} // Default to 3 slides
-         // navigation
+          // navigation
           pagination={{ clickable: true }}
           centeredSlides={false}
           rtl={isRTL ? "true" : "false"}
@@ -91,6 +84,10 @@ const OurClientsSay = () => {
                   backgroundColor: "var(--bg-secondary)",
                   borderRadius: "20px",
                   textAlign: isRTL ? "right" : "left",
+                  minHeight: "250px", // Ensuring equal height for all cards
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between", // Spacing elements properly
                 }}
               >
                 <img src={InkImg} alt="Brand Logo" className="img-fluid mt-2"
@@ -101,7 +98,7 @@ const OurClientsSay = () => {
                 <div className="d-flex align-items-center"
                   style={{ flexDirection: "row" }}>
                   {/* Image */}
-                 {/* <img src={testimonial.image} alt={testimonial.name}
+                  {/* <img src={testimonial.image} alt={testimonial.name}
                     className="img-fluid"
                     style={{
                       width: "47px",
@@ -113,7 +110,7 @@ const OurClientsSay = () => {
                   /> */}
                   {/* Text */}
                   <div>
-                    <p className="mb-0 g-value" style={{fontWeight:"700", fontSize:"18px"}}>{t(testimonial.name)}</p>
+                    <p className="mb-0 g-value" style={{ fontWeight: "700", fontSize: "18px" }}>{t(testimonial.name)}</p>
                     <p className="mb-0 g-value">{t(testimonial.position)}</p>
                   </div>
                 </div>
