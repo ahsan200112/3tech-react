@@ -29,22 +29,22 @@ const ExpertiseYouCanTrust = () => {
                                     <Link className="contact-btn text-decoration-none" to="/contact">{t("Contact Us")}</Link>
                                 </div>
                             </div>
-                            <div className="stats row">
-                                <div className="col-md-4 stat-item custom-border-bottom"
+                            <div className="row text-white mt-3 flex-nowrap text-center mb-3">
+                                <div className="col-4 px-2"
                                     style={{
                                         [isRTL ? "borderLeft" : "borderRight"]: `1px solid ${theme === "light" ? "#000" : "#fff"}`
                                     }}>
                                     <h2 className="u-how">10+</h2>
                                     <p className="u-all">{t("Years in Business")}</p>
                                 </div>
-                                <div className="col-md-4 stat-item custom-border-bottom"
+                                <div className="col-4 px-2"
                                     style={{
                                         [isRTL ? "borderLeft" : "borderRight"]: `1px solid ${theme === "light" ? "#000" : "#fff"}`
                                     }}>
                                     <h2 className="u-how">200+</h2>
                                     <p className="u-all">{t("Successful Projects")}</p>
                                 </div>
-                                <div className="col-md-4 stat-item">
+                                <div className="col-4 px-2">
                                     <h2 className="u-how">99%</h2>
                                     <p className="u-all">{t("Happy Clients")}</p>
                                 </div>

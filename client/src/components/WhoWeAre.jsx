@@ -23,20 +23,20 @@ const WhoWeAre = () => {
                         <Link to="/about" className="btn-our d-block w-100 text-decoration-none">
                             {t("Discover Our Story")}
                         </Link>
-                        <div className="row text-white mt-3">
-                            <div className="col-md-4 custom-border-bottom" style={{
+                        <div className="row text-white mt-3 flex-nowrap text-center">
+                            <div className="col-4 px-2" style={{
                                 [isRTL ? "borderLeft" : "borderRight"]: `1px solid ${theme === "light" ? "#000" : "#fff"}`
                             }}>
                                 <h2 className="u-how">7+</h2>
                                 <p className="u-all">{t("Years in Business")}</p>
                             </div>
-                            <div className="col-md-4 custom-border-bottom" style={{
+                            <div className="col-4 px-2" style={{
                                 [isRTL ? "borderLeft" : "borderRight"]: `1px solid ${theme === "light" ? "#000" : "#fff"}`
                             }}>
                                 <h2 className="u-value">+150</h2>
                                 <p className="u-all">{t("Successful Projects")}</p>
                             </div>
-                            <div className="col-md-4 mb-2">
+                            <div className="col-4 px-2 mb-2">
                                 <h2 className="u-home">99%</h2>
                                 <p className="u-all">{t("Happy Clients")}</p>
                             </div>

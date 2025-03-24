@@ -21,7 +21,9 @@ const OurServices = () => {
                                 <div className="card-body">
                                     <button className="btn-sm u-vise">{t("Our Services")}</button>
                                     <h5 className="card-title u-item mt-3 mb-3">{t("Solutions That Redefine Excellence")}</h5>
-                                    <button className="btn-next">{t("View All Services")}</button>
+                                    <Link to="/services" className="text-decoration-none">
+                                        <button className="btn-next">{t("View All Services")}</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

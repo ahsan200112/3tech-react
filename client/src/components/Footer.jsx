@@ -31,7 +31,9 @@ const Footer = () => {
               <p className="v-face margin-top-minus">
                 {t("At 3Tech, we specialize in delivering innovative solutions to empower businesses in the digital age. From website development to branding, we turn your vision into reality.")}
               </p>
-              <button className="btn-free responsive-btn mb-3">{t("Request Free Audit")}</button>
+              <Link to="/contact" className="text-decoration-none">
+                <button className="btn-free responsive-btn mb-3">{t("Request Free Audit")}</button>
+              </Link>
             </div>
             <div className="col-md-2 custom-text-center text-center">
               <h5 className="v-house" style={{ fontWeight: "700" }}>{t("Quick Links")}</h5>
@@ -74,7 +76,7 @@ const Footer = () => {
                 <Link to="/privacypolicy" className="text-decoration-none v-term">{t("Privacy Policy")}</Link> |
                 {/* <a href="/" className="text-decoration-none v-term"> {t("Privacy Policy")}</a> | */}
                 <Link to="/termsandconditions" className="text-decoration-none v-term">
-                  {t("Terms and Conditions")}
+                   {t("Terms and Conditions")}
                 </Link>
               </p>
             </div>

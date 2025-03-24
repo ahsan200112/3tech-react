@@ -48,7 +48,7 @@ const Navbar = () => {
             </div>
 
             {/* Center: Language Toggle (for Mobile View) */}
-         {/*   <div className="d-flex align-items-center d-lg-none">
+            {/*   <div className="d-flex align-items-center d-lg-none">
               <LanguageToggle />
             </div> */}
 
@@ -74,25 +74,29 @@ const Navbar = () => {
                 <li className="nav-item"><Link className="nav-link v-vise" to="/blogs" onClick={() => setIsNavOpen(false)}>{t("Blogs")}</Link></li>
                 <li className="nav-item"><Link className="nav-link v-vise" to="/contact" onClick={() => setIsNavOpen(false)}>{t("Contact Us")}</Link></li>
               </ul>
-              
+
               {/* Center: Language Toggle (for Mobile View) */}
-            <div className="d-flex align-items-center justify-content-center d-lg-none">
-              <LanguageToggle />
-            </div> 
+              <div className="d-flex align-items-center justify-content-center d-lg-none">
+                <LanguageToggle />
+              </div>
 
               {/* Mobile View: Button (Hidden by Default) */}
               <div className="d-lg-none text-center mt-3">
-                <button className="btn-well" onClick={() => setIsNavOpen(false)}>
-                  {t("Get a Free Consultation")}
-                </button>
+                <Link to="/contact" className="text-decoration-none">
+                  <button className="btn-well" onClick={() => setIsNavOpen(false)}>
+                    {t("Get a Free Consultation")}
+                  </button>
+                </Link>
               </div>
 
               {/* Desktop View: Language Toggle + Button */}
               <div className="d-none d-lg-flex align-items-center">
                 <LanguageToggle />  {/* Language Button Pehle Hoga */}
-                <button className="btn-well ms-3">
-                  {t("Get a Free Consultation")}
-                </button>
+                <Link to="/contact" className="text-decoration-none">
+                  <button className="btn-well ms-3">
+                    {t("Get a Free Consultation")}
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
