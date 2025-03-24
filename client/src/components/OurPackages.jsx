@@ -40,7 +40,7 @@ const OurPackages = () => {
                                         <img src={YTImg} alt="Icon" className="me-2 ms-2" style={{ width: "20px", height: "20px" }} />
                                         <span>{t("Monthly Performance Reports")}</span>
                                     </li>
-                                    <li class="custom-list-item d-flex align-items-center text-start mt-3">
+                                    <li className="custom-list-item d-flex align-items-center text-start mt-3">
                                         <img src={YTImg} alt="Icon" className="me-2 ms-2" style={{ width: "20px", height: "20px" }} />
                                         <span>{t("Email Marketing")}</span>
                                     </li>
@@ -52,14 +52,14 @@ const OurPackages = () => {
                     </div>
                     <div className="col-md-4">
                         <div className="card shadow border-0">
-                            <div className="card-body" style={{ background: "linear-gradient(106.11deg, rgba(193, 64, 193, 0.1) 7.4%, rgba(127, 148, 230, 0.1) 100%)" }}>
+                            <div className="card-body">
                                 <h5 className="i-has">{t("Business Branding Package")}</h5>
                                 <h3 className="i-value">{t("600 SAR")}</h3>
                                 <p className="card-text i-when">
                                     {t("Build a strong, cohesive brand identity with a package designed to make your business unforgettable.")}
                                 </p>
                                 <ul className="list-unstyled">
-                                    <li clasNames="custom-list-item d-flex align-items-center text-start mt-3">
+                                    <li className="custom-list-item d-flex align-items-center text-start mt-3">
                                         <img src={YTImg} alt="Icon" className="me-2 ms-2 d-inline" style={{ width: "20px", height: "20px" }} />
                                         <span>{t("SEO Basics")}</span>
                                     </li>

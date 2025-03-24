@@ -6,7 +6,7 @@ import YourSuccessOurPriority from '../components/YourSuccessOurPriority';
 import OurProjects from '../components/OurProjects';
 import OurTrustedPartners from '../components/OurTrustedPartners';
 import OurClientsSay from '../components/OurClientsSay';
-import OurPackages from '../components/OurPackages';
+//import OurPackages from '../components/OurPackages';
 
 function Home() {
   return (
@@ -18,7 +18,7 @@ function Home() {
       <OurProjects/>
       <OurTrustedPartners/>
       <OurClientsSay/>
-      <OurPackages/>
+     {/* <OurPackages/> */}
     </>
   );
 }

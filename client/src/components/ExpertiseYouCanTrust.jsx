@@ -46,7 +46,7 @@ const ExpertiseYouCanTrust = () => {
                                 </div>
                                 <div className="col-md-4 stat-item">
                                     <h2 className="u-how">99%</h2>
-                                    <p class="u-all">{t("Happy Clients")}</p>
+                                    <p className="u-all">{t("Happy Clients")}</p>
                                 </div>
                             </div>
                         </div>

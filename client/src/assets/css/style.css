@@ -2427,3 +2427,33 @@ img {
     font-size: 43px !important;
   }
 }
+.card {
+  cursor: pointer;
+}
+.card:hover {
+  background: linear-gradient(106.11deg, rgba(193, 64, 193, 0.1) 7.4%, rgba(127, 148, 230, 0.1) 100%) ;
+}
+
+.p-h {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  line-height: 140%;
+  color: var(--text-primary);
+}
+
+.p-p {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  line-height: 150%;
+  color: var(--text-secondary);
+}
+
+.p-i {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  line-height: 140%;
+  color: var(--text-primary);
+}

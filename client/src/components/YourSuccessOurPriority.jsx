@@ -56,11 +56,11 @@ const YourSuccessOurPriority = () => {
                             <img src={theme === "light" ? PartnerImgLight : PartnerImgDark} className="card-img img-fluid w-100" alt="Customer Reviews" />
                         </div>
                         <div className="d-flex align-items-start">
-                            <span className={`highlighted-number ${isRTL ? "ms-3" : "me-3"}`}>120+</span>
+                            <span className={`highlighted-number ${isRTL ? "ms-3" : "me-3"}`}>150+</span>
 
                             <div className="regular-text mt-2">
                                 <span>{t("Customers in over 5 countries")}</span><br />
-                                <span>{t("growing their businesses with 3Tech")}</span>
+                                <span>{t("Clients grow their business with 3tech")}</span>
                             </div>
                         </div>
                     </div>

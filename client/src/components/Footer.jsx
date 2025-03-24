@@ -4,6 +4,7 @@ import LogoLightMode from '../assets/images/3tech logo for light mode.png';
 import { useTheme } from "../context/ThemeContext";
 import ArrowImg from "../assets/images/arrow.png";
 import { useTranslation } from 'react-i18next';
+import { Link } from "react-router-dom"; // Import Link from React Router
 
 const Footer = () => {
   const { t, i18n } = useTranslation();
@@ -35,22 +36,22 @@ const Footer = () => {
             <div className="col-md-2 custom-text-center text-center">
               <h5 className="v-house" style={{ fontWeight: "700" }}>{t("Quick Links")}</h5>
               <ul className="list-unstyled custom-text-center padding-right-0 text-center">
-                <li className='custom-list-padding'><a href="/" className="text-start v-inner text-decoration-none">{t("Home")}</a></li>
-                <li className='custom-list-padding'><a href="/about" className="text-start  v-inner text-decoration-none">{t("About Us")}</a></li>
-                <li className='custom-list-padding' ><a href="/services" className="text-start v-inner text-decoration-none">{t("Services")}</a></li>
-                <li className='custom-list-padding'><a href="/packages" className="text-start v-inner text-decoration-none">{t("Packages")}</a></li>
-                <li className='custom-list-padding'><a href="/blogs" className="text-start v-inner text-decoration-none">{t("Blogs")}</a></li>
-                <li className='custom-list-padding'><a href="/contact" className="text-start v-inner text-decoration-none">{t("Contact Us")}</a></li>
+                <li className='custom-list-padding'><Link to="/" className="text-start v-inner text-decoration-none">{t("Home")}</Link></li>
+                <li className='custom-list-padding'><Link to="/about" className="text-start  v-inner text-decoration-none">{t("About Us")}</Link></li>
+                <li className='custom-list-padding'><Link to="/services" className="text-start v-inner text-decoration-none">{t("Services")}</Link></li>
+                <li className='custom-list-padding'><Link to="/packages" className="text-start v-inner text-decoration-none">{t("Packages")}</Link></li>
+                <li className='custom-list-padding'><Link to="/blogs" className="text-start v-inner text-decoration-none">{t("Blogs")}</Link></li>
+                <li className='custom-list-padding'><Link to="/contact" className="text-start v-inner text-decoration-none">{t("Contact Us")}</Link></li>
               </ul>
             </div>
             <div className="col-md-2 custom-text-center text-center">
               <h5 className="v-house" style={{ fontWeight: "700" }}>{t("Services")}</h5>
               <ul className="list-unstyled custom-text-center padding-right-0 text-center">
-                <li className='custom-list-padding'><a href="/ecommercesolutions" className="text-start v-inner  text-decoration-none">{t("E-Commerce Solutions")}</a></li>
-                <li className='custom-list-padding'><a href="/mobileapplications" className="text-start v-inner text-decoration-none">{t("Mobile Applications")}</a></li>
-                <li className='custom-list-padding'><a href="/marketingsolutions" className="text-start v-inner text-decoration-none">{t("Marketing Solutions")}</a></li>
-                <li className='custom-list-padding'><a href="/creativedesign" className="text-start v-inner text-decoration-none">{t("Creative Design")}</a></li>
-                <li className='custom-list-padding'><a href="/digitaloptimization" className="text-start v-inner text-decoration-none">{t("Digital Optimization")}</a></li>
+                <li className='custom-list-padding'><Link to="/ecommercesolutions" className="text-start v-inner  text-decoration-none">{t("E-Commerce Solutions")}</Link></li>
+                <li className='custom-list-padding'><Link to="/mobileapplications" className="text-start v-inner text-decoration-none">{t("Mobile Applications")}</Link></li>
+                <li className='custom-list-padding'><Link to="/marketingsolutions" className="text-start v-inner text-decoration-none">{t("Marketing Solutions")}</Link></li>
+                <li className='custom-list-padding'><Link to="/creativedesign" className="text-start v-inner text-decoration-none">{t("Creative Design")}</Link></li>
+                <li className='custom-list-padding'><Link to="/digitaloptimization" className="text-start v-inner text-decoration-none">{t("Digital Optimization")}</Link></li>
               </ul>
             </div>
             <div className="col-md-3 custom-text-center">
@@ -70,9 +71,11 @@ const Footer = () => {
             <div className="col d-flex justify-content-between text-primary-color">
               <p className="mb-0 v-copy">{t("Copyright © 2025 3Tech")}</p>
               <p className="mb-0 custom-list-padding">
-                <a href="/" className="text-decoration-none v-term">{t("Term of use")}</a> |
-                <a href="/" className="text-decoration-none v-term"> {t("Privacy Policy")}</a> |
-                <a href="/" className="text-decoration-none v-term"> {t("Cookie Policy")}</a>
+                <Link to="/privacypolicy" className="text-decoration-none v-term">{t("Privacy Policy")}</Link> |
+                {/* <a href="/" className="text-decoration-none v-term"> {t("Privacy Policy")}</a> | */}
+                <Link to="/termsandconditions" className="text-decoration-none v-term">
+                  {t("Terms and Conditions")}
+                </Link>
               </p>
             </div>
           </div>

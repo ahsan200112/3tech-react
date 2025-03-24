@@ -70,7 +70,11 @@ const OurClientsSay = () => {
          // navigation
           pagination={{ clickable: true }}
           centeredSlides={false}
-          rtl={isRTL} // Enable RTL mode
+          rtl={isRTL ? "true" : "false"}
+          autoplay={{
+            delay: 1000, // 1 second delay
+            disableOnInteraction: false, // Continue autoplay after user interaction
+          }}
           breakpoints={{
             320: { slidesPerView: 1 }, // Mobile: 1 slide
             768: { slidesPerView: 2 }, // Tablet: 2 slides

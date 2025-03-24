@@ -26,7 +26,7 @@ const OurServices = () => {
                             </div>
                         </div>
                         <div className="col-md-4">
-                            <div className="card h-100" style={{ background: "linear-gradient(106.11deg, rgba(193, 64, 193, 0.1) 7.4%, rgba(127, 148, 230, 0.1) 100%)" }}>
+                            <div className="card h-100">
                                 <div className="card-body" style={{ padding: "30px 30px" }}>
                                     <img src={Group2Img} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
                                     <h5 className="card-title u-well mt-3">{t("E-Commerce Solutions")}</h5>

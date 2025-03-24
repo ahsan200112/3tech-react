@@ -14,6 +14,8 @@ import DigitalOptimization from '../pages/DigitalOptimization';
 import ECommerceSolution from '../pages/E-commerceSolutions';
 import MarketingSolutions from '../pages/MarketingSolutions';
 import MobileApplications from '../pages/MobileApplications';
+import PrivacyPolicy from '../pages/PrivacyPolicy';
+import TermsAndConditions from '../pages/TermsAndConditions';
 
 const AppRoutes = () => {
     return (
@@ -32,6 +34,8 @@ const AppRoutes = () => {
           <Route path="/ecommercesolutions" element={<ECommerceSolution />} />
           <Route path="/marketingsolutions" element={<MarketingSolutions />} />
           <Route path="/mobileapplications" element={<MobileApplications />} />
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+          <Route path="/termsandconditions" element={<TermsAndConditions />} />
         </Routes>
         <Footer />
       </Router>
