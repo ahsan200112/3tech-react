@@ -16,7 +16,7 @@ function MobileApplicationsHeroSection() {
                         <div className="col-md-8">
                             <h2 className="z-x">{t("Here’s What We Provide")}</h2>
                         </div>
-                        <div className="col-md-4">
+                    {/*    <div className="col-md-4">
                             <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", textAlign: "center" }}>
                                 <p
                                     className="z-c"
@@ -32,7 +32,7 @@ function MobileApplicationsHeroSection() {
                                     {t("Front End Development")}<br />{t("JavaScript")}<br />{t("Flutter Framework")}
                                 </p>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
 
                     <div className="mt-3">

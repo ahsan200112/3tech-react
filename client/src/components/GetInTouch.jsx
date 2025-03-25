@@ -26,7 +26,7 @@ const GetInTouch = () => {
                         </div>
                         <div className="col-md-3 position-relative">
                             <p className="b-e">{t("Phone")}</p>
-                            <h2 className="b-d">966557122917+</h2>
+                            <h2 className="b-d">{t("+966557122917")}</h2>
                             <div className="border-line"></div>
                         </div>
                         <div className="col-md-3">

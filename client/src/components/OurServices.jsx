@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import SocialMediaMarketingImg from '../assets/images/social-media-marketing 1.png';
 import Group2Img from "../assets/images/Group (2).png";
-import Ellipse2Img from "../assets/images/Ellipse 2.png";
 import YGPImg from "../assets/images/ygb.png";
 import JUImg from "../assets/images/ju.png";
 import Group3Img from "../assets/images/Group (3).png";
@@ -43,7 +42,6 @@ const OurServices = () => {
                         </div>
                         <div className="col-md-4">
                             <div className="card h-100">
-                                <img src={Ellipse2Img} alt="Mobile preview" style={{ height: "15px", width: "350px" }} />
                                 <div className="card-body" style={{ padding: "30px 30px" }}>
                                     <img src={YGPImg} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
                                     <h5 className="card-title u-well mt-3">{t("Mobile Applications")}</h5>
@@ -60,9 +58,7 @@ const OurServices = () => {
                     <div className="row g-3 mt-3">
                         <div className="col-md-4 ">
                             <div className="card h-100">
-                                <img src={Ellipse2Img} alt="Mobile preview" style={{ height: "15px", width: "350px" }} />
                                 <div className="card-body" style={{ padding: "30px 30px" }}>
-
                                     <img src={SocialMediaMarketingImg} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
                                     <h5 className="card-title u-well mt-3">{t("Marketing Solutions")}</h5>
                                     <p className="card-text u-space">
@@ -76,7 +72,6 @@ const OurServices = () => {
                         </div>
                         <div className="col-md-4 ">
                             <div className="card h-100">
-                                <img src={Ellipse2Img} alt="Mobile preview" style={{ height: "15px", width: "350px" }} />
                                 <div className="card-body" style={{ padding: "30px 30px" }}>
                                     <img src={JUImg} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
                                     <h5 className="card-title u-well mt-3">{t("Creative Design")}</h5>
@@ -91,7 +86,6 @@ const OurServices = () => {
                         </div>
                         <div className="col-md-4 ">
                             <div className="card h-100">
-                                <img src={Ellipse2Img} alt="Mobile preview" style={{ height: "15px", width: "350px" }} />
                                 <div className="card-body" style={{ padding: "30px 30px" }}>
                                     <img src={Group3Img} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
                                     <h5 className="card-title u-well mt-3">{t("Digital Optimization")}</h5>

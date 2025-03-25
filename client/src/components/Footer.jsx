@@ -60,8 +60,8 @@ const Footer = () => {
               <h5 className="v-house" style={{ fontWeight: "700" }}>{t("Have Questions?")}</h5>
               <p className="v-left">{t("Email")}: <a href="mailto:info@3tech.sa"
                 className="v-coke text-decoration-none">info@3tech.sa</a></p>
-              <p className="v-left pb-2" style={{ borderBottom: "1px solid" }}>{t("Phone no")}: <a href="tel:966557122917+"
-                className="v-coke text-decoration-none">966557122917+</a></p>
+              <p className="v-left pb-2" style={{ borderBottom: "1px solid" }}>{t("Phone no")}: <a href="tel:+966557122917"
+                className="v-coke text-decoration-none"> {t("+966557122917")}</a></p>
               <div className="d-flex mt-3 custom-list-padding custom-text-center custom-content-center">
                 <a href="https://www.linkedin.com/company/3tech-platform" target='blank' className={`${isRTL ? "ms-4" : "me-4"} margin`}><i className="bi bi-linkedin text-primary-color"></i></a>
                 <a href="https://api.whatsapp.com/send/?phone=966557122917" target='blank' className={`${isRTL ? "ms-4" : "me-4"} margin`}><i className="bi bi-whatsapp text-primary-color"></i></a>
@@ -70,10 +70,11 @@ const Footer = () => {
             </div>
           </div>
           <div className="row mt-4 pt-3 custom-text-center" style={{ borderTop: " 1px solid #1B1264" }}>
-            <div className="col d-flex justify-content-between text-primary-color">
+            <div className="col d-flex justify-content-between text-primary-color custom-direction">
               <p className="mb-0 v-copy">{t("Copyright © 2025 3Tech")}</p>
               <p className="mb-0 custom-list-padding">
-                <Link to="/privacypolicy" className="text-decoration-none v-term">{t("Privacy Policy")}</Link> |
+                <Link to="/privacypolicy" className="text-decoration-none v-term">{t("Privacy Policy")}</Link> 
+                <span> | </span>
                 {/* <a href="/" className="text-decoration-none v-term"> {t("Privacy Policy")}</a> | */}
                 <Link to="/termsandconditions" className="text-decoration-none v-term">
                    {t("Terms and Conditions")}

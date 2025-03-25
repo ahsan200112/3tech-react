@@ -56,7 +56,7 @@ const GetContactNow = () => {
                                 <img src={CallImg} alt={t("Company Logo")} className="img-fluid" style={{ width: "35px", height: "33px" }} />
                                 <div className={isRTL ? "me-2" : "ms-2"}>
                                     <h6 className="h-o mb-0">{t("Call Us On")}</h6>
-                                    <p className="h-k mb-0">966557122917+</p>
+                                    <p className="h-k mb-0"> {t("+966557122917")}</p>
                                 </div>
                             </div>
                         </div>

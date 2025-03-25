@@ -23,7 +23,7 @@ const WhoWeAre = () => {
                         <Link to="/about" className="btn-our d-block w-100 text-decoration-none">
                             {t("Discover Our Story")}
                         </Link>
-                        <div className="row text-white mt-3 flex-nowrap text-center">
+                        <div className="row text-white mt-3 flex-nowrap text-center mb-3">
                             <div className="col-4 px-2" style={{
                                 [isRTL ? "borderLeft" : "borderRight"]: `1px solid ${theme === "light" ? "#000" : "#fff"}`
                             }}>

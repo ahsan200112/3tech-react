@@ -15,7 +15,7 @@ const YourSuccessOurPriority = () => {
         <section className="v-section">
             <div className="container py-5">
                 <div className="row">
-                    <div className="col-md-6 d-flex flex-column">
+                    <div className="col-md-6 d-flex flex-column mb-4">
                         <button className="btn-sm u-easy mb-2" style={{ width: "225px"}}>{t("Your Success, Our Priority")}</button>
                         <h2 className="u-vell">{t("Why Partner With 3Tech?")}</h2>
                         <p className="v-wel">
@@ -43,7 +43,7 @@ const YourSuccessOurPriority = () => {
                                 <span>{t("Cost-Effective Solutions")}</span>
                             </li>
                         </ul>
-                        <Link className="btn-contact text-decoration-none" to="/contact">{t("Contact Us")}</Link>
+                        <Link className="btn-contact text-decoration-none mb-2" to="/contact">{t("Contact Us")}</Link>
                     </div>
                     <div className="col-md-6">
                         <div className="d-flex justify-content-between align-items-center">
@@ -58,8 +58,8 @@ const YourSuccessOurPriority = () => {
                         <div className="d-flex align-items-start">
                             <span className={`highlighted-number ${isRTL ? "ms-3" : "me-3"}`}>150+</span>
 
-                            <div className="regular-text mt-2">
-                                <span>{t("Customers in over 5 countries")}</span><br />
+                            <div className="regular-text mt-3">
+                              {/*  <span>{t("Customers in over 5 countries")}</span><br /> */}
                                 <span>{t("Clients grow their business with 3tech")}</span>
                             </div>
                         </div>

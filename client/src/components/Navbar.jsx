@@ -22,7 +22,7 @@ const Navbar = () => {
         <div className="container">
           <div className="row align-items-center py-3">
             <div className="col d-flex custom-content-start mt-3 mb-3 custom-navbar-center">
-              <a className="navbar-brand v-vise" href="/"><i className="bi bi-telephone"></i> 966557122917+</a>
+              <a className="navbar-brand v-vise" href="/"><i className="bi bi-telephone"></i> {t("+966557122917")}</a>
               <a className="navbar-brand v-vise ms-3" href="/"><i className="bi bi-envelope"></i> info@3tech.sa</a>
             </div>
             <div className="col d-flex custom-content-end mt-3 mb-3 custom-navbar-center">

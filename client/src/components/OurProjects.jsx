@@ -50,7 +50,7 @@ const OurProjects = () => {
                     <button className="btn-sm v-viral" style={{ width: "150px" }}>{t("Our Projects")}</button>
                     <div className="d-flex justify-content-between align-items-center btn-nextline">
                         <h2 className="v-visit">{t("Our Work Speaks For Itself")}</h2>
-                        <button className="btn-view">{t("View More")}</button>
+                       {/* <button className="btn-view width-full">{t("View More")}</button> */}
                     </div>
                     <p className="v-info mt-2" style={{ maxWidth: "800px", wordBreak: "break-word" }}>{t("Explore our success stories in e-commerce, app development, and creative marketing. See how we've helped businesses like yours thrive.")}</p>
                     {/* ✅ Image Cards */}
@@ -91,7 +91,7 @@ const OurProjects = () => {
                         ].map((item, index) => (
                             <div key={index} className="slide-item">
                                 <div className="card project-card custom-project-card">
-                                    <div className="image-overlay-container" style={{height:"395px"}}>
+                                    <div className="image-overlay-container" style={{height:"400px"}}>
                                         <img src={item.img} className="card-img-top" alt={item.text} />
                                        {/* <div className="overlay-text">
                                             <div className="v-help">{t(item.text)}</div>

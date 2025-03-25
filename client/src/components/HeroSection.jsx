@@ -27,7 +27,7 @@ const HeroSection = () => {
                             <h1 className="u-vie">{t("Empowering Innovation with Cutting-Edge Technology")}</h1>
                             <p className="u-whi">{t("At 3Tech, we provide cutting-edge solutions designed to help your business grow and succeed. From customized software to seamless system integrations, we deliver the tools you need to stay ahead in a fast-paced digital world.")}
                             </p>
-                            <div className="d-flex gap-3 mb-3 custom-content-center btn-nextline">
+                            <div className="d-flex gap-3 mb-3 custom-content-center btn-column btn-nextline responsive-buttons">
                                 <Link to="/contact" className="text-decoration-none">
                                     <button className="btn-under">{t("Discover Our Solutions")}</button>
                                 </Link>

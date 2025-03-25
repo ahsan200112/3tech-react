@@ -1,10 +1,7 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-//import { Pagination, Navigation } from "swiper/modules";
-import { Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-//import "swiper/css/navigation";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { useTranslation } from "react-i18next";
 import InkImg from "../assets/images/ink.png";
 //import Girl2Img from "../assets/images/girl2.png";
@@ -44,6 +41,31 @@ const OurClientsSay = () => {
     },
   ];
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    arrows: false,
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
+  };
+
   return (
     <section className="client-testimonials py-5" style={{ direction: isRTL ? "rtl" : "ltr" }} >
       <div className="container">
@@ -54,71 +76,31 @@ const OurClientsSay = () => {
           <h2 className="v-hence">{t("What Our Clients Say About Us")}</h2>
         </div>
 
-        {/* Swiper Component */}
-        <Swiper
-          //  modules={[Pagination, Navigation]}
-          modules={[Pagination]}
-          spaceBetween={20}
-          slidesPerView={3} // Default to 3 slides
-          // navigation
-          pagination={{ clickable: true }}
-          centeredSlides={false}
-          rtl={isRTL ? "true" : "false"}
-          autoplay={{
-            delay: 1000, // 1 second delay
-            disableOnInteraction: false, // Continue autoplay after user interaction
-          }}
-          breakpoints={{
-            320: { slidesPerView: 1 }, // Mobile: 1 slide
-            768: { slidesPerView: 2 }, // Tablet: 2 slides
-            1024: { slidesPerView: 3 }, // Desktop: 3 slides
-            1440: { slidesPerView: 4 }, // Large screens: 4 slides
-          }}
-          className="swiper-container"
-        >
+        <Slider {...settings} className="slick-slider">
           {/* Map through Testimonials */}
           {testimonials.map((testimonial) => (
-            <SwiperSlide key={testimonial.id}>
-              <div className="card p-3 shadow text-white"
+            <div key={testimonial.id} className="slide-item">
+              <div className="card p-3 text-white project-card"
                 style={{
                   backgroundColor: "var(--bg-secondary)",
                   borderRadius: "20px",
                   textAlign: isRTL ? "right" : "left",
-                  minHeight: "250px", // Ensuring equal height for all cards
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between", // Spacing elements properly
-                }}
-              >
-                <img src={InkImg} alt="Brand Logo" className="img-fluid mt-2"
-                  style={{ width: "44px", height: "30px" }} />
-                <p className="v-clean mt-2">{t(testimonial.text)}</p>
-
-                {/* Image + Text Alignment */}
-                <div className="d-flex align-items-center"
-                  style={{ flexDirection: "row" }}>
-                  {/* Image */}
-                  {/* <img src={testimonial.image} alt={testimonial.name}
-                    className="img-fluid"
-                    style={{
-                      width: "47px",
-                      height: "47px",
-                      borderRadius: "50%",
-                      marginLeft: "7px",
-                      marginRight: "7px",
-                    }}
-                  /> */}
+                  minHeight: "300px", // Ensuring equal height for all cards
+                }}>
+                <div>
+                  <img src={InkImg} alt="Brand Logo" className="img-fluid mt-2 d-inline-block"
+                    style={{ width: "44px", height: "30px" }} />
+                  <p className="v-cleana mt-2">{t(testimonial.text)}</p>
                   {/* Text */}
-                  <div>
+                  <div style={{ textAlign: isRTL ? "right" : "left" }}>
                     <p className="mb-0 g-value" style={{ fontWeight: "700", fontSize: "18px" }}>{t(testimonial.name)}</p>
                     <p className="mb-0 g-value">{t(testimonial.position)}</p>
                   </div>
                 </div>
-
               </div>
-            </SwiperSlide>
+            </div>
           ))}
-        </Swiper>
+        </Slider>
       </div>
     </section>
   );

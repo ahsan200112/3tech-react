@@ -34,14 +34,14 @@ const ExpertiseYouCanTrust = () => {
                                     style={{
                                         [isRTL ? "borderLeft" : "borderRight"]: `1px solid ${theme === "light" ? "#000" : "#fff"}`
                                     }}>
-                                    <h2 className="u-how">10+</h2>
+                                    <h2 className="u-how">7+</h2>
                                     <p className="u-all">{t("Years in Business")}</p>
                                 </div>
                                 <div className="col-4 px-2"
                                     style={{
                                         [isRTL ? "borderLeft" : "borderRight"]: `1px solid ${theme === "light" ? "#000" : "#fff"}`
                                     }}>
-                                    <h2 className="u-how">200+</h2>
+                                    <h2 className="u-how">150+</h2>
                                     <p className="u-all">{t("Successful Projects")}</p>
                                 </div>
                                 <div className="col-4 px-2">

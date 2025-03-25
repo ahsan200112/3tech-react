@@ -493,8 +493,8 @@ padding: 0px 50px;
   }
 
   .custom-size-img {
-    width: 50% !important;
-    height: 45% !important;
+    width: 40% !important;
+    height: 35% !important;
   }
 }
 
@@ -968,6 +968,13 @@ padding: 0px 50px;
 
 
 .v-clean {
+  /*  font-family: Reddit Sans; */
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: var(--text-primary);
+}
+
+.v-cleana {
   /*  font-family: Reddit Sans; */
   font-size: 16px;
   letter-spacing: 0px;
@@ -2059,20 +2066,6 @@ img {
   .u-vie {
     font-size: 25px;
     font-weight: 300;
-
-  }
-
-}
-
-/* Mobile (Small screens: <768px) */
-@media (max-width: 767px) {
-
-  .u-vie {
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 25px;
-
-
   }
 }
 
@@ -2232,6 +2225,28 @@ img {
 
 }
 
+@media (max-width: 993px) {
+  .btn-under {
+    width: 200px !important;
+    font-size: 14px;
+    height: 60px;
+    padding: 5px 10px;
+  }
+
+  .btn-while {
+    width: 200px !important;
+    font-size: 14px;
+    height: 60px;
+    padding: 5px 10px;
+  }
+
+  .u-how,
+  .u-value,
+  .u-home {
+    font-size: 43px !important;
+  }
+}
+
 /* Mobile (Small screens: <768px) */
 @media (max-width: 767px) {
   .u-ll {
@@ -2291,16 +2306,6 @@ img {
   .g-r {
     font-size: 22px !important;
   }
-
-  .btn-while {
-    width: 140px !important;
-    font-size: 10px;
-  }
-
-  .btn-under {
-    width: 140px !important;
-    font-size: 10px;
-  }
 }
 
 /*--------------------*/
@@ -2338,9 +2343,19 @@ img {
   }
 }
 
+@media (max-width: 990px) {
+  .btn-column {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 768px) {
   .responsive-btn {
     width: 100%;
+  }
+
+  .btn-column {
+    flex-direction: row;
   }
 
   .custom-responsive-btn {
@@ -2385,6 +2400,10 @@ img {
     width: 100% !important;
     font-size: 16px;
   }
+
+  .custom-direction {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 463px) {
@@ -2401,32 +2420,29 @@ img {
   }
 
   .btn-nextline button {
-    width: 100% !important;
     font-size: 16px;
   }
-}
 
-@media (max-width: 993px) {
-  .btn-under {
-    width: 200px !important;
-    font-size: 14px;
-    height: 60px;
-    padding: 5px 10px;
-  }
-
-  .btn-while {
-    width: 200px !important;
-    font-size: 14px;
-    height: 60px;
-    padding: 5px 10px;
-  }
-
-  .u-how,
-  .u-value,
-  .u-home {
-    font-size: 43px !important;
+  .width-full {
+    width: 100% !important;
   }
 }
+
+@media (max-width: 465px) {
+  .responsive-buttons {
+      flex-direction: column !important;
+      width: 100% !important;
+  }
+
+  .responsive-buttons a {
+      width: 100% !important;
+  }
+
+  .responsive-buttons button {
+      width: 100% !important;
+  }
+}
+
 .card {
   cursor: pointer;
 }
