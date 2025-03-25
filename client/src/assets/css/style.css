@@ -16,7 +16,7 @@ html[dir="ltr"] {
   --bg-firstcomponent: #090909;
   --text-primary: #ffffff;
   --text-secondary: #CFCECE;
-  --navbar-bg: #14191f;
+  --navbar-bg: #00000030;
   --button-bg: #181818;
   --button-border: #ffffff;
   --button-text: #ffffff;
@@ -57,6 +57,10 @@ body {
 [dir="ltr"] .navbar-brand {
   margin-right: 0 !important;
   margin-left: 1rem !important;
+}
+
+.navbar-bg-color {
+  background-color: var(--navbar-bg);
 }
 
 .u-section {
@@ -159,7 +163,6 @@ padding: 0px 50px;
   text-align: center;
   color: #FFFFFF;
   border: 1px solid var(--text-primary);
-  opacity: 1;
 }
 
 .btn-under:hover {
@@ -180,7 +183,6 @@ padding: 0px 50px;
   line-height: 22.4px;
   text-align: center;
   color: var(--button-text);
-  opacity: 1;
 }
 
 .btn-while:hover {
@@ -217,7 +219,6 @@ padding: 0px 50px;
   gap: 10px;
   border-radius: 10px;
   border: 1px 0px 0px 0px;
-  opacity: 0px;
 }
 
 .u-visit {
@@ -332,7 +333,6 @@ padding: 0px 50px;
   gap: 10px;
   border-radius: 30px;
   border: 1px solid var(--text-secondary);
-  opacity: 1;
   background-color: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -348,7 +348,6 @@ padding: 0px 50px;
   gap: 10px;
   border-radius: 30px;
   border: 1px 0px 0px 0px;
-  opacity: 0px;
   border: 1px solid;
   background-color: var(--bg-primary);
   align-items: center;
@@ -394,7 +393,6 @@ padding: 0px 50px;
   gap: 10px;
   border-radius: 8px;
   border: 1px 0px 0px 0px;
-  opacity: 0px;
   border: 1px solid #1B1264;
   /*  font-family: Reddit Sans; */
   font-size: 16px;
@@ -617,7 +615,6 @@ padding: 0px 50px;
   padding: 12px 100px;
   border-radius: 30px;
   background-color: #3B9BE9;
-  opacity: 1;
   border: none;
   /*  font-family: 'Reddit Sans', sans-serif; */
   font-size: 16px;
@@ -625,7 +622,6 @@ padding: 0px 50px;
   line-height: 22.4px;
   text-align: center;
   cursor: pointer;
-  transition: background-color 0.3s ease, opacity 0.3s ease;
   color: white;
 }
 
@@ -637,7 +633,6 @@ padding: 0px 50px;
 /* Hover Effect */
 .button-custom:hover {
   background-color: #2B8AD6;
-  opacity: 0.9;
 }
 
 .v-well {
@@ -688,7 +683,6 @@ padding: 0px 50px;
   gap: 10px;
   border-radius: 8px;
   border: 1px 1px 1px 1px;
-  opacity: 0px;
   border: 1px solid #1B1264;
 }
 
@@ -714,7 +708,6 @@ padding: 0px 50px;
   gap: 10px;
   border-radius: 30px 30px 30px 30px;
   border: 1px solid var(--text-secondary);
-  opacity: 1;
   color: var(--text-secondary);
   /*  font-family: 'Reddit Sans', sans-serif; */
   font-size: 16px;
@@ -729,7 +722,6 @@ padding: 0px 50px;
 .btn-view:hover {
   background-color: #bcbcbc;
   color: #ffffff;
-  opacity: 0.9;
 }
 
 .card-img-top {
@@ -804,6 +796,52 @@ padding: 0px 50px;
   overflow: hidden;
   height: 100%;
   width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  background-color: var(--bg-primary) !important;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-body {
+  color: var(--text-primary) !important;
+}
+
+.card:hover {
+  background: linear-gradient(106.11deg, rgba(193, 64, 193, 0.1) 7.4%, rgba(127, 148, 230, 0.1) 100%) ;
+}
+
+/*.card:hover {
+  transform: translateY(-10px);
+} */
+
+.card ul {
+  padding: 0;
+}
+
+.card ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.card-img {
+  object-fit: cover;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.custom-card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+  padding: 1rem;
 }
 
 /* Responsive Image Container */
@@ -890,7 +928,6 @@ padding: 0px 50px;
   gap: 10px;
   border-radius: 10px;
   border: 1px 0px 0px 0px;
-  opacity: 0px;
   color: #3B9BE9;
   border: 1px solid #1B1264;
   /*  font-family: Reddit Sans; */
@@ -923,7 +960,6 @@ padding: 0px 50px;
   padding: 30.65px 65.5px 32px 66.5px;
   gap: 0px;
   border-radius: 16px 16px 16px 16px;
-  opacity: 0px;
   background-color: var(--bg-secondary);
   text-align: center;
 }
@@ -955,7 +991,6 @@ padding: 0px 50px;
   gap: 10px;
   border-radius: 10px;
   border: 1px 0px 0px 0px;
-  opacity: 0px;
   border: 1px solid #1B1264;
   /*  font-family: Reddit Sans; */
   font-size: 16px;
@@ -988,29 +1023,6 @@ padding: 0px 50px;
   color: var(--text-primary);
 }
 
-.card {
-  background-color: var(--bg-primary) !important;
-  border-radius: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-body {
-  color: var(--text-primary) !important;
-}
-
-/*.card:hover {
-  transform: translateY(-10px);
-} */
-
-.card ul {
-  padding: 0;
-}
-
-.card ul li {
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
 .i-idea {
   /*  font-family: Reddit Sans; */
   font-size: 16px;
@@ -1023,7 +1035,6 @@ padding: 0px 50px;
   gap: 10px;
   border-radius: 10px;
   border: 1px 1px 1px 1px;
-  opacity: 0px;
   border: 1px solid #1B1264;
 }
 
@@ -1063,13 +1074,11 @@ padding: 0px 50px;
   text-align: center;
   color: var(--text-secondary);
   border: 1px solid var(--text-secondary);
-  opacity: 1;
 }
 
 .btn-all:hover {
   background-color: #bcbcbc;
   color: #ffffff;
-  opacity: 0.9;
 }
 
 .i-has {
@@ -1107,7 +1116,6 @@ padding: 0px 50px;
   font-weight: 700;
   text-align: center;
   color: #FFFFFF;
-  opacity: 1;
   border: 1px solid #1B1264;
 }
 
@@ -1145,7 +1153,6 @@ padding: 0px 50px;
   line-height: 22.4px;
   text-align: center;
   color: #FFFFFF;
-  opacity: 1;
   background-color: #3B9BE9;
 }
 
@@ -1226,7 +1233,6 @@ padding: 0px 50px;
   line-height: 22.4px;
   text-align: center;
   color: #FFFFFF;
-  opacity: 1;
 }
 
 .btn-well:hover {
@@ -1248,10 +1254,6 @@ padding: 0px 50px;
 
 .hero-well {
   background-color: #2c2a41;
-}
-
-.navbar-bg-color {
-  background-color: var(--navbar-bg);
 }
 
 .o-hlo {
@@ -1345,7 +1347,6 @@ padding: 0px 50px;
 
 .custom-placeholder::placeholder {
   color: var(--text-secondary) !important;
-  opacity: 1;
 }
 
 .stats {
@@ -1547,12 +1548,6 @@ padding: 0px 50px;
   color: var(--text-secondary);
 }
 
-.project-card {
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
 .tag {
   position: absolute;
   top: 10px;
@@ -1569,10 +1564,6 @@ padding: 0px 50px;
   color: #007bff;
 }
 
-.card-content {
-  padding: 1rem;
-}
-
 .tags span {
   margin-right: 7px;
   border: 1px solid var(--text-secondary);
@@ -1584,18 +1575,6 @@ padding: 0px 50px;
   line-height: 120%;
   color: var(--text-secondary);
 
-}
-
-.card-img {
-  object-fit: cover;
-  height: 300px;
-  border-radius: 10px;
-}
-
-.custom-card {
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .category-list li {
@@ -2443,13 +2422,6 @@ img {
   }
 }
 
-.card {
-  cursor: pointer;
-}
-.card:hover {
-  background: linear-gradient(106.11deg, rgba(193, 64, 193, 0.1) 7.4%, rgba(127, 148, 230, 0.1) 100%) ;
-}
-
 .p-h {
   font-size: 24px;
   font-weight: 700;
@@ -2472,10 +2444,6 @@ img {
   letter-spacing: 0px;
   line-height: 140%;
   color: var(--text-primary);
-}
-
-.custom-project-card {
-  margin: 0 25px; /* ✅ Extra spacing between cards */
 }
 
 .slide-item {

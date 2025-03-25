@@ -90,7 +90,7 @@ const OurProjects = () => {
                             { img: Project7, text: "E-Commerce Solutions", description: "Explore modern, responsive websites crafted for diverse industries." }
                         ].map((item, index) => (
                             <div key={index} className="slide-item">
-                                <div className="card project-card custom-project-card">
+                                <div className="card project-card">
                                     <div className="image-overlay-container" style={{height:"400px"}}>
                                         <img src={item.img} className="card-img-top" alt={item.text} />
                                        {/* <div className="overlay-text">
