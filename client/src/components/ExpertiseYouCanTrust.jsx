@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Frame41Img from "../assets/images/Frame 41.png";
@@ -8,6 +8,7 @@ const ExpertiseYouCanTrust = () => {
     const { t, i18n } = useTranslation();
     const isRTL = i18n.dir() === "rtl";
     const { theme } = useTheme(); // Get theme from context
+    const [activeSection, setActiveSection] = useState("mission");
     // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     return (
         <div className="v-section">
@@ -50,7 +51,7 @@ const ExpertiseYouCanTrust = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-4">
+                        {/*   <div className="col-md-4">
                             <div className="d-flex flex-column">
                                 <div>
                                     <div className="mission-vision">
@@ -58,6 +59,8 @@ const ExpertiseYouCanTrust = () => {
                                             <h5 className="v-c">{t("01. Our Mission")}</h5>
                                             <i className="bi bi-arrow-up-right"></i>
                                         </div>
+                                        <p className="v-n">{t("Our mission is to be the merchant’s destination")}</p>
+                                        <p className="v-q">{t("We create a presence that reflects your identity and achieves your goals. At 3TECH, we create technical and marketing solutions that help your business grow and shine in the Saudi and global markets.")}</p>
                                     </div>
                                 </div>
                                 <div className="mt-3">
@@ -68,6 +71,45 @@ const ExpertiseYouCanTrust = () => {
                                         </div>
                                         <p className="v-n">{t("Shaping the Future, One Idea at a Time")}</p>
                                         <p className="v-q">{t("We envision a world where businesses of every size thrive in the digital era. Our mission is to empower brands with the tools, strategies, and creativity they need to leave a mark on their industry.")}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> */}
+                        <div className="col-md-4">
+                            <div className="d-flex flex-column">
+                                {/* Our Mission Section */}
+                                <div onClick={() => setActiveSection("mission")} style={{ cursor: "pointer" }}>
+                                    <div className="mission-vision">
+                                        <div className="d-flex justify-content-between align-items-center">
+                                            <h5 className="v-x">{t("01. Our Mission")}</h5>
+                                            <i className="bi bi-arrow-up-right"></i>
+                                        </div>
+                                        {activeSection === "mission" && (
+                                            <>
+                                                <p className="v-n">{t("Our mission is to be the merchant’s destination")}</p>
+                                                <p className="v-q">
+                                                    {t("We create a presence that reflects your identity and achieves your goals. At 3TECH, we create technical and marketing solutions that help your business grow and shine in the Saudi and global markets.")}
+                                                </p>
+                                            </>
+                                        )}
+                                    </div>
+                                </div>
+
+                                {/* Our Vision Section */}
+                                <div className="mt-3" onClick={() => setActiveSection("vision")} style={{ cursor: "pointer" }}>
+                                    <div className="mission-vision">
+                                        <div className="d-flex justify-content-between align-items-center">
+                                            <h5 className="v-x">{t("02. Our Vision")}</h5>
+                                            <i className="bi bi-arrow-up-right"></i>
+                                        </div>
+                                        {activeSection === "vision" && (
+                                            <>
+                                                <p className="v-n">{t("Shaping the Future, One Idea at a Time")}</p>
+                                                <p className="v-q">
+                                                    {t("We envision a world where businesses of every size thrive in the digital era. Our mission is to empower brands with the tools, strategies, and creativity they need to leave a mark on their industry.")}
+                                                </p>
+                                            </>
+                                        )}
                                     </div>
                                 </div>
                             </div>
