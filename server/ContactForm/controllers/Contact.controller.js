@@ -25,8 +25,8 @@ exports.createContact = async (req, res) => {
 
         // Email options
         const mailOptions = {
-            from: 'ahsan6775676@gmail.com',
-            to: 'ahsan200112@gmail.com', // Jahan mail bhejni hai
+            from: '3techcompany.sa@gmail.com',
+            to: 'info@3tech.sa', // Jahan mail bhejni hai
             subject: `New Contact Form Submission from ${name}`,
             replyTo: email, // User ka email, taki aap direct reply kar sakein
             html: `
