@@ -5,6 +5,7 @@ import { useTheme } from "../context/ThemeContext";
 import ArrowImg from "../assets/images/arrow.png";
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom"; // Import Link from React Router
+import CertificateLogo from '../assets/images/certificateLogo.png';
 
 const Footer = () => {
   const { t, i18n } = useTranslation();
@@ -17,7 +18,9 @@ const Footer = () => {
         <div className="container">
           <div className="d-flex justify-content-between align-items-center">
             <h1 className="mb-0 me-2 text-primary-color custom-padding-h">{t("Let’s Start to Work")}</h1>
-            <img src={ArrowImg} alt="Icon" className="img-fluid" style={{ width: "60px", height: "60px" }} />
+            <Link to="/contact">
+              <img src={ArrowImg} alt="Icon" className="img-fluid" style={{ width: "60px", height: "60px" }} />
+            </Link>
           </div>
         </div>
       </section>
@@ -26,7 +29,7 @@ const Footer = () => {
           <div className="row">
             <div className="col-md-5">
               <div className="d-flex align-items-start">
-                <img src={theme === "light" ? LogoLightMode : LogoDarkMode} alt="Company Logo" className="img-fluid footer-logo-img margin-top-minus" />
+                <img src={theme === "light" ? LogoLightMode : LogoDarkMode} alt="Company Logo" className="img-fluid footer-logo-img margin-top-minus custom-transition" />
               </div>
               <p className="v-face margin-top-minus">
                 {t("At 3Tech, we specialize in delivering innovative solutions to empower businesses in the digital age. From website development to branding, we turn your vision into reality.")}
@@ -66,20 +69,27 @@ const Footer = () => {
                 <a href="https://www.linkedin.com/company/3tech-platform" target='blank' className={`${isRTL ? "ms-4" : "me-4"} margin`}><i className="bi bi-linkedin text-primary-color"></i></a>
                 <a href="https://api.whatsapp.com/send/?phone=966557122917" target='blank' className={`${isRTL ? "ms-4" : "me-4"} margin`}><i className="bi bi-whatsapp text-primary-color"></i></a>
                 <a href="https://www.instagram.com/3tech.sa?igsh=aW14cDY0cmtvZW9p" target='blank' className={`${isRTL ? "ms-4" : "me-4"} margin`}><i className="bi bi-instagram text-primary-color"></i></a>
+                <a href="https://eauthenticate.saudibusiness.gov.sa/certificate-details/0000112765" target='blank' className={`${isRTL ? "ms-4" : "me-4"} margin`}>
+                  <img src={CertificateLogo} alt="Icon" className="img-fluid" style={{ width: "26px", height: "26px" }}></img>
+                </a>
               </div>
             </div>
           </div>
           <div className="row mt-4 pt-3 custom-text-center" style={{ borderTop: " 1px solid #1B1264" }}>
             <div className="col d-flex justify-content-between text-primary-color custom-direction">
-              <p className="mb-0 v-copy">{t("Copyright © 2025 3Tech")}</p>
               <p className="mb-0 custom-list-padding">
-                <Link to="/privacypolicy" className="text-decoration-none v-term">{t("Privacy Policy")}</Link> 
+                <Link to="/privacypolicy" className="text-decoration-none v-term">{t("Privacy Policy")}</Link>
                 <span> | </span>
                 {/* <a href="/" className="text-decoration-none v-term"> {t("Privacy Policy")}</a> | */}
                 <Link to="/termsandconditions" className="text-decoration-none v-term">
-                   {t("Terms and Conditions")}
+                  {t("Terms and Conditions")}
+                </Link>
+                <span> | </span>
+                <Link to="/contact" className="text-decoration-none v-term">
+                  {t("Complaints and suggestions")}
                 </Link>
               </p>
+              <p className="mb-0 v-copy">{t("Copyright © 2025 3Tech")}</p>
             </div>
           </div>
         </div>

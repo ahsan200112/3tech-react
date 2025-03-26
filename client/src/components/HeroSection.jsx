@@ -11,7 +11,7 @@ const HeroSection = () => {
     const { theme } = useTheme(); // Get theme from context
 
     return (
-        <section className="hero-section"
+        <section className="hero-section color-effect-navbar"
             style={{
                 backgroundImage: `url(${BackgroundImg})`, // Replace BackgroundImg with your image import
                 backgroundSize: "cover", // Cover full div

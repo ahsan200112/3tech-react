@@ -18,12 +18,12 @@ const Navbar = () => {
   return (
     <>
       {/* Top Contact Section */}
-      <section className='u-section'>
+      <section className='u-section color-effect-navbar'>
         <div className="container">
           <div className="row align-items-center py-3">
             <div className="col d-flex custom-content-start mt-3 mb-3 custom-navbar-center">
-              <a className="navbar-brand v-vise" href="tel:+966557122917"><i className="bi bi-telephone"></i> {t("+966557122917")}</a>
-              <a className="navbar-brand v-vise ms-3" href="mailto:info@3tech.sa"><i className="bi bi-envelope"></i> info@3tech.sa</a>
+              <a className={`${isRTL ? "ms-3" : "me-3"} navbar-brand v-vise`} href="tel:+966557122917" ><i className={`${isRTL ? "ms-2" : "me-2"} bi bi-telephone`}></i> {t("+966557122917")}</a>
+              <a className={`${isRTL ? "ms-3" : "me-3"} navbar-brand v-vise`} href="mailto:info@3tech.sa"><i className={`${isRTL ? "ms-2" : "me-2"} bi bi-envelope`}></i> info@3tech.sa</a>
             </div>
             <div className="col d-flex custom-content-end mt-3 mb-3 custom-navbar-center">
               <a href="https://www.linkedin.com/company/3tech-platform" target='blank' className={`${isRTL ? "ms-3" : "me-3"} d-flex align-items-center`}><i className="bi bi-linkedin text-primary-color"></i></a>
@@ -36,8 +36,8 @@ const Navbar = () => {
       </section>
 
       {/* Main Navbar */}
-      <section className="u-section navbar-padding">
-        <nav className="navbar-bg-color navbar navbar-expand-lg navbar-border" style={{ backdropFilter: "blur(4px)"}}>
+      <section className="u-section navbar-padding color-effect-navbar pb-3">
+        <nav className="navbar-bg-color navbar navbar-expand-lg navbar-border">
           <div className="container d-flex align-items-center justify-content-between">
 
             {/* Left: Logo */}

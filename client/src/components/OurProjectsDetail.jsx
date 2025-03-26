@@ -1,10 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import TopImg from "../assets/images/top.png";
-import LapImg from "../assets/images/lap.png";
-import ParImg from "../assets/images/par.png";
-
+import Project1 from "../assets/images/1Project.png";
+import Project2 from "../assets/images/2Project.png";
+import Project3 from "../assets/images/3Project.png";
+import Project4 from "../assets/images/4Project.png";
+import Project5 from "../assets/images/5Project.png";
+import Project6 from "../assets/images/6Project.png";
+import Project7 from "../assets/images/7Project.png";
 
 const OurProjectsDetail = () => {
     const { t } = useTranslation();
@@ -39,37 +42,37 @@ const OurProjectsDetail = () => {
                 <div className="row g-4">
                     <div className="col-md-6">
                         <div className="card project-card position-relative">
-                            <div><Link className="tag text-decoration-none" to="/ecommercesolutions">{t("E-Commerce Solutions")}</Link></div>
-                            <img src={TopImg} class="card-img-top" alt="Project" style={{ width: "588px", height: "350px" }} />
+                            {/* <div><Link className="tag text-decoration-none" to="/ecommercesolutions">{t("E-Commerce Solutions")}</Link></div> */}
+                            <img src={Project1} class="card-img-top" alt="Project" />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
                                     <i className="bi bi-arrow-up-right n-r"></i>
                                 </div>
                                 <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
-                                <div className="tags n-y">
+                                {/*  <div className="tags n-y">
                                     <span>{t("UI & UX Design")}</span>
                                     <span>{t("Web Design")}</span>
                                     <span>{t("Graphic Design")}</span>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="card project-card position-relative">
-                            <div><Link className="tag text-decoration-none" to="/creativedesign">{t("Creative Design")}</Link></div>
-                            <img src={LapImg} className="card-img-top" alt="Project" style={{ width: "588px", height: "350px" }} />
+                            {/*   <div><Link className="tag text-decoration-none" to="/creativedesign">{t("Creative Design")}</Link></div> */}
+                            <img src={Project2} className="card-img-top" alt="Project" />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
                                     <i className="bi bi-arrow-up-right n-r"></i>
                                 </div>
                                 <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
-                                <div className="tags n-y">
+                                {/*<div className="tags n-y">
                                     <span>{t("UI & UX Design")}</span>
                                     <span>{t("Web Design")}</span>
                                     <span>{t("Graphic Design")}</span>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -79,37 +82,77 @@ const OurProjectsDetail = () => {
                 <div className="row g-4">
                     <div className="col-md-6">
                         <div className="card project-card position-relative">
-                            <div><Link className="tag text-decoration-none" to="/mobileapplications">{t("Mobile Applications")}</Link></div>
-                            <img src={LapImg} className="card-img-top" alt="Project" style={{ width: "588px", height: "350px" }} />
+                            {/*  <div><Link className="tag text-decoration-none" to="/mobileapplications">{t("Mobile Applications")}</Link></div> */}
+                            <img src={Project3} className="card-img-top" alt="Project" />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
                                     <i className="bi bi-arrow-up-right n-r"></i>
                                 </div>
                                 <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
-                                <div className="tags n-y">
+                                {/*  <div className="tags n-y">
                                     <span>{t("UI & UX Design")}</span>
                                     <span>{t("Web Design")}</span>
                                     <span>{t("Graphic Design")}</span>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="card project-card position-relative">
-                            <div><Link className="tag text-decoration-none" to="/digitaloptimization">{t("Digital Optimization")}</Link></div>
-                            <img src={ParImg} className="card-img-top" alt="Project" style={{ width: "588px", height: "350px" }} />
+                            {/*  <div><Link className="tag text-decoration-none" to="/digitaloptimization">{t("Digital Optimization")}</Link></div> */}
+                            <img src={Project4} className="card-img-top" alt="Project" />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
                                     <i className="bi bi-arrow-up-right n-r"></i>
                                 </div>
                                 <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
-                                <div className="tags n-y">
+                                {/*  <div className="tags n-y">
                                     <span>{t("UI & UX Design")}</span>
                                     <span>{t("Web Design")}</span>
                                     <span>{t("Graphic Design")}</span>
+                                </div> */}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="container">
+                <div className="row g-4">
+                    <div className="col-md-6">
+                        <div className="card project-card position-relative">
+                            {/*  <div><Link className="tag text-decoration-none" to="/marketingsolutions">{t("Marketing Solutions")}</Link></div> */}
+                            <img src={Project5} className="card-img-top" alt="Project" />
+                            <div className="card-content">
+                                <div className="d-flex justify-content-between align-items-center">
+                                    <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
+                                    <i className="bi bi-arrow-up-right n-r"></i>
                                 </div>
+                                <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
+                                {/*   <div className="tags n-y">
+                                    <span>{t("UI & UX Design")}</span>
+                                    <span>{t("Web Design")}</span>
+                                    <span>{t("Graphic Design")}</span>
+                                </div> */}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="card project-card position-relative">
+                            {/*  <div><Link className="tag text-decoration-none" to="/ecommercesolutions">{t("E-Commerce Solutions")}</Link></div> */}
+                            <img src={Project6} className="card-img-top" alt="Project" />
+                            <div className="card-content">
+                                <div className="d-flex justify-content-between align-items-center">
+                                    <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
+                                    <i className="bi bi-arrow-up-right n-r"></i>
+                                </div>
+                                <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
+                                {/*  <div className="tags n-y">
+                                    <span>{t("UI & UX Design")}</span>
+                                    <span>{t("Web Design")}</span>
+                                    <span>{t("Graphic Design")}</span>
+                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -119,37 +162,19 @@ const OurProjectsDetail = () => {
                 <div className="row g-4">
                     <div className="col-md-6">
                         <div className="card project-card position-relative">
-                            <div><Link className="tag text-decoration-none" to="/marketingsolutions">{t("Marketing Solutions")}</Link></div>
-                            <img src={TopImg} className="card-img-top" alt="Project" style={{ width: "588px", height: "350px" }} />
+                            {/*  <div><Link className="tag text-decoration-none" to="/marketingsolutions">{t("Marketing Solutions")}</Link></div> */}
+                            <img src={Project7} className="card-img-top" alt="Project" />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
                                     <i className="bi bi-arrow-up-right n-r"></i>
                                 </div>
                                 <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
-                                <div className="tags n-y">
+                                {/*   <div className="tags n-y">
                                     <span>{t("UI & UX Design")}</span>
                                     <span>{t("Web Design")}</span>
                                     <span>{t("Graphic Design")}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="card project-card position-relative">
-                            <div><Link className="tag text-decoration-none" to="/ecommercesolutions">{t("E-Commerce Solutions")}</Link></div>
-                            <img src={ParImg} className="card-img-top" alt="Project" style={{ width: "588px", height: "350px" }} />
-                            <div className="card-content">
-                                <div className="d-flex justify-content-between align-items-center">
-                                    <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
-                                    <i className="bi bi-arrow-up-right n-r"></i>
-                                </div>
-                                <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
-                                <div className="tags n-y">
-                                    <span>{t("UI & UX Design")}</span>
-                                    <span>{t("Web Design")}</span>
-                                    <span>{t("Graphic Design")}</span>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

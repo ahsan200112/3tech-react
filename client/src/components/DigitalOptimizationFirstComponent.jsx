@@ -6,7 +6,7 @@ import BlackImg from "../assets/images/Black.png";
 const DigitalOptimizationFirstComponent = () => {
     const { t } = useTranslation();
     return (
-        <div className="while-valu">
+        <div className="while-valu color-effect-firstC">
             <section >
                 <div className="container pt-5">
                     <div className="d-flex justify-content-between align-items-center">

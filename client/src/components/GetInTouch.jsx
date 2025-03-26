@@ -32,10 +32,9 @@ const GetInTouch = () => {
                         <div className="col-md-3">
                             <p className="b-e">{t("Social")}</p>
                             <div className="d-flex justify-content-center align-items-center">
-                                <i className="bi bi-linkedin text-white mx-2"></i>
-                                <i className="bi bi-facebook text-white mx-2"></i>
-                                <i className="bi bi-whatsapp text-white mx-2"></i>
-                                <i className="bi bi-instagram text-white mx-2"></i>
+                                <i href="https://www.linkedin.com/company/3tech-platform" target='blank' className="bi bi-linkedin text-white mx-2"></i>
+                                <i href="https://api.whatsapp.com/send/?phone=966557122917" target='blank' className="bi bi-whatsapp text-white mx-2"></i>
+                                <i href="https://www.instagram.com/3tech.sa?igsh=aW14cDY0cmtvZW9p" target='blank' className="bi bi-instagram text-white mx-2"></i>
                             </div>
                         </div>
                     </div>

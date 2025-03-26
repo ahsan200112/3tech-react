@@ -7,7 +7,7 @@ const CreativeDesignFirstComponent = () => {
     const { t } = useTranslation();
    // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     return (
-        <div className="while-valu">
+        <div className="while-valu color-effect-firstC">
             <section >
                 <div className="container pt-5">
                     <div className="d-flex justify-content-between align-items-center">

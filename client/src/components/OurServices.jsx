@@ -16,7 +16,7 @@ const OurServices = () => {
                 <div className="container">
                     <div className="row g-3">
                         <div className="col-md-4">
-                            <div className="card h-100">
+                            <div className="card h-100 custom-transition">
                                 <div className="card-body">
                                     <button className="btn-sm u-vise">{t("Our Services")}</button>
                                     <h5 className="card-title u-item mt-3 mb-3">{t("Solutions That Redefine Excellence")}</h5>
@@ -27,76 +27,86 @@ const OurServices = () => {
                             </div>
                         </div>
                         <div className="col-md-4">
-                            <div className="card h-100">
-                                <div className="card-body" style={{ padding: "30px 30px" }}>
-                                    <img src={Group2Img} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
-                                    <h5 className="card-title u-well mt-3">{t("E-Commerce Solutions")}</h5>
-                                    <p className="card-text u-space">
-                                        {t("Launch and manage online stores effortlessly with user-friendly designs, payment integration, and shipping tools for e-commerce success.")}
-                                    </p>
-                                    <p>
-                                        <Link className="u-help text-decoration-none" to="/ecommercesolutions">{t("Explore E-Commerce Solutions")}</Link>
-                                    </p>
+                            <Link className="text-decoration-none" to="/ecommercesolutions">
+                                <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
+                                    <div className="card-body" style={{ padding: "30px 30px" }}>
+                                        <img src={Group2Img} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
+                                        <h5 className="card-title u-well mt-3">{t("E-Commerce Solutions")}</h5>
+                                        <p className="card-text u-space">
+                                            {t("Launch and manage online stores effortlessly with user-friendly designs, payment integration, and shipping tools for e-commerce success.")}
+                                        </p>
+                                        <p>
+                                            <Link className="u-help text-decoration-none" to="/ecommercesolutions">{t("Explore E-Commerce Solutions")}</Link>
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                         <div className="col-md-4">
-                            <div className="card h-100">
-                                <div className="card-body" style={{ padding: "30px 30px" }}>
-                                    <img src={YGPImg} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
-                                    <h5 className="card-title u-well mt-3">{t("Mobile Applications")}</h5>
-                                    <p className="card-text u-space">
-                                        {t("Build or enhance custom apps, offering seamless user experiences in a mobile-first world.")}
-                                    </p>
-                                    <p>
-                                        <Link className="u-help text-decoration-none" to="/mobileapplications">{t("Explore Mobile Applications")}</Link>
-                                    </p>
+                            <Link className="text-decoration-none" to="/mobileapplications">
+                                <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
+                                    <div className="card-body" style={{ padding: "30px 30px" }}>
+                                        <img src={YGPImg} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
+                                        <h5 className="card-title u-well mt-3">{t("Mobile Applications")}</h5>
+                                        <p className="card-text u-space">
+                                            {t("Build or enhance custom apps, offering seamless user experiences in a mobile-first world.")}
+                                        </p>
+                                        <p>
+                                            <Link className="u-help text-decoration-none" to="/mobileapplications">{t("Explore Mobile Applications")}</Link>
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                     </div>
                     <div className="row g-3 mt-3">
                         <div className="col-md-4 ">
-                            <div className="card h-100">
-                                <div className="card-body" style={{ padding: "30px 30px" }}>
-                                    <img src={SocialMediaMarketingImg} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
-                                    <h5 className="card-title u-well mt-3">{t("Marketing Solutions")}</h5>
-                                    <p className="card-text u-space">
-                                        {t("Achieve growth with tailored marketing strategies, expert advertising, and high-quality content creation.")}
-                                    </p>
-                                    <p>
-                                        <Link className="u-help text-decoration-none" to="/marketingsolutions">{t("Explore Marketing Solutions")}</Link>
-                                    </p>
+                            <Link className="text-decoration-none" to="/marketingsolutions">
+                                <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
+                                    <div className="card-body" style={{ padding: "30px 30px" }}>
+                                        <img src={SocialMediaMarketingImg} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
+                                        <h5 className="card-title u-well mt-3">{t("Marketing Solutions")}</h5>
+                                        <p className="card-text u-space">
+                                            {t("Achieve growth with tailored marketing strategies, expert advertising, and high-quality content creation.")}
+                                        </p>
+                                        <p>
+                                            <Link className="u-help text-decoration-none" to="/marketingsolutions">{t("Explore Marketing Solutions")}</Link>
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                         <div className="col-md-4 ">
-                            <div className="card h-100">
-                                <div className="card-body" style={{ padding: "30px 30px" }}>
-                                    <img src={JUImg} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
-                                    <h5 className="card-title u-well mt-3">{t("Creative Design")}</h5>
-                                    <p className="card-text u-space">
-                                        {t("Elevate your brand with unique visual identities, stunning graphics, and innovative designs.")}
-                                    </p>
-                                    <p>
-                                        <Link className="u-help text-decoration-none" to="/creativedesign">{t("Explore Creative Design")}</Link>
-                                    </p>
+                            <Link className="text-decoration-none" to="/creativedesign">
+                                <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
+                                    <div className="card-body" style={{ padding: "30px 30px" }}>
+                                        <img src={JUImg} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
+                                        <h5 className="card-title u-well mt-3">{t("Creative Design")}</h5>
+                                        <p className="card-text u-space">
+                                            {t("Elevate your brand with unique visual identities, stunning graphics, and innovative designs.")}
+                                        </p>
+                                        <p>
+                                            <Link className="u-help text-decoration-none" to="/creativedesign">{t("Explore Creative Design")}</Link>
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                         <div className="col-md-4 ">
-                            <div className="card h-100">
-                                <div className="card-body" style={{ padding: "30px 30px" }}>
-                                    <img src={Group3Img} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
-                                    <h5 className="card-title u-well mt-3">{t("Digital Optimization")}</h5>
-                                    <p className="card-text u-space">
-                                        {t("Enhance online visibility through expert SEO and social media management to reach the right audience.")}
-                                    </p>
-                                    <p>
-                                        <Link className="u-help text-decoration-none" to="/digitaloptimization">{t("Explore Digital Optimization")}</Link>
-                                    </p>
+                            <Link to="/digitaloptimization" className="text-decoration-none">
+                                <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
+                                    <div className="card-body" style={{ padding: "30px 30px" }}>
+                                        <img src={Group3Img} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
+                                        <h5 className="card-title u-well mt-3">{t("Digital Optimization")}</h5>
+                                        <p className="card-text u-space">
+                                            {t("Enhance online visibility through expert SEO and social media management to reach the right audience.")}
+                                        </p>
+                                        <p>
+                                            <Link className="u-help text-decoration-none" to="/digitaloptimization">{t("Explore Digital Optimization")}</Link>
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 </div>

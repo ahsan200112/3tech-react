@@ -7,8 +7,8 @@ function ContactUs() {
   return (
     <>
       <ContactFirstComponent />
-      <GetInTouch />
       <GetContactNow2 />
+      <GetInTouch />
     </>
   );
 }
