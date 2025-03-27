@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
 //import { Link } from "react-router-dom";
 import ToImg from '../assets/images/to.png';
@@ -9,6 +9,12 @@ import PinImg from '../assets/images/pin.png';
 function EcommerceSolutionsHeroSection() {
     const { t, i18n } = useTranslation();
     const textAlignmentArrow = i18n.dir() === "ltr" ? "text-end" : "text-start"; // Check language direction
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    const toggleSection = (index) => {
+        setActiveIndex(activeIndex === index ? null : index); // Toggle open/close
+    };
+
     return (
         <>
             <section className="u-section">
@@ -17,7 +23,7 @@ function EcommerceSolutionsHeroSection() {
                         <div className="col-md-8">
                             <h2 className="z-x">{t('Here’s What We Provide')}</h2>
                         </div>
-                      {/*  <div className="col-md-4">
+                        {/*  <div className="col-md-4">
                             <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", textAlign: "center" }}>
                                 <p
                                     className="z-c"
@@ -107,13 +113,14 @@ function EcommerceSolutionsHeroSection() {
                 </div>
 
                 {[
-                    { num: "002", title: t("End-to-End Integration") },
-                    { num: "003", title: t("Cutting-Edge Technology") },
-                    { num: "004", title: t("Ownership with No Hidden Fees") },
-                    { num: "005", title: t("Dedicated Support") },
+                    { num: "002", title: t("End-to-End Integration"), description: t("We deliver fully integrated software solutions that seamlessly connect all aspects of your business. From development to deployment, we ensure smooth interoperability, reducing complexities and maximizing efficiency.") },
+                    { num: "003", title: t("Cutting-Edge Technology"), description: t("Our software solutions are built on the latest technologies, ensuring scalability, security, and high performance. Stay ahead of the competition with future-ready IT solutions tailored to your business needs.") },
+                    { num: "004", title: t("Ownership with No Hidden Fees"), description: t("We provide complete transparency—your software, your ownership. With clear pricing and no hidden charges, you get full control over your IT solutions without unexpected costs.") },
+                    { num: "005", title: t("Dedicated Support"), description: t("Our expert team is available around the clock to provide proactive and responsive support. Whether it's troubleshooting, updates, or enhancements, we ensure your software runs flawlessly at all times.") },
                 ].map((item, index) => (
                     <div key={index} className="container mt-5 custom-padding-h">
-                        <div className="row" style={{ borderBottom: "1px solid var(--text-primary)" }}>
+                        <div className="row" style={{ borderBottom: "1px solid var(--text-primary)", cursor: "pointer" }}
+                            onClick={() => toggleSection(index)}>
                             <div className="col-4 f-z">
                                 <p>{item.num}</p>
                             </div>
@@ -124,6 +131,13 @@ function EcommerceSolutionsHeroSection() {
                                 <i className="bi bi-arrow-right"></i>
                             </div>
                         </div>
+                        {activeIndex === index && (
+                            <div className="row mt-3 custom-border">
+                                <div className="col-12">
+                                    <p className="l-k">{t(item.description)}</p>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 ))}
 

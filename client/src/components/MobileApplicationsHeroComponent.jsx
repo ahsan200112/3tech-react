@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
 //import { Link } from "react-router-dom";
 import MobileDevelopmentImg from '../assets/images/mobile-development.png';
@@ -8,6 +8,12 @@ import PinImg from '../assets/images/pin.png';
 function MobileApplicationsHeroSection() {
     const { t, i18n } = useTranslation();
     const textAlignmentArrow = i18n.dir() === "ltr" ? "text-end" : "text-start"; // Check language direction
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    const toggleSection = (index) => {
+        setActiveIndex(activeIndex === index ? null : index); // Toggle open/close
+    };
+
     return (
         <>
             <section className="u-section">
@@ -16,7 +22,7 @@ function MobileApplicationsHeroSection() {
                         <div className="col-md-8">
                             <h2 className="z-x">{t("Here’s What We Provide")}</h2>
                         </div>
-                    {/*    <div className="col-md-4">
+                        {/*    <div className="col-md-4">
                             <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", textAlign: "center" }}>
                                 <p
                                     className="z-c"
@@ -100,12 +106,13 @@ function MobileApplicationsHeroSection() {
                     </div>
                 </div>
                 {[
-                    { num: "002", title: t("Cross-Platform Compatibility") },
-                    { num: "003", title: t("User-Centric Design") },
-                    { num: "004", title: t("Ongoing Updates & Support") },
+                    { num: "002", title: t("Cross-Platform Compatibility"), description: t("We develop software that works seamlessly across web, mobile, and desktop platforms, ensuring a consistent and optimized experience for all users, regardless of their device or operating system.") },
+                    { num: "003", title: t("User-Centric Design"), description: t("Our solutions prioritize usability and intuitive design, creating smooth, engaging, and accessible experiences that enhance user satisfaction and drive higher engagement.") },
+                    { num: "004", title: t("Ongoing Updates & Support"), description: t("We provide continuous updates, security patches, and dedicated support to keep your software running smoothly. Our commitment ensures long-term reliability, performance, and scalability.") },
                 ].map((item, index) => (
                     <div key={index} className="container mt-5 custom-padding-h">
-                        <div className="row" style={{ borderBottom: "1px solid var(--text-primary)" }}>
+                        <div className="row" style={{ borderBottom: "1px solid var(--text-primary)", cursor: "pointer" }}
+                            onClick={() => toggleSection(index)}>
                             <div className="col-4 f-z">
                                 <p>{item.num}</p>
                             </div>
@@ -116,6 +123,13 @@ function MobileApplicationsHeroSection() {
                                 <i className="bi bi-arrow-right"></i>
                             </div>
                         </div>
+                        {activeIndex === index && (
+                            <div className="row mt-3 custom-border">
+                                <div className="col-12">
+                                    <p className="l-k">{t(item.description)}</p>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 ))}
 

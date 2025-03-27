@@ -3,7 +3,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const cors = require('cors');
-
+const path = require("path");
 
 dotenv.config(); // Load environment variables
 connectDB(); // Connect to MongoDB
@@ -11,6 +11,12 @@ connectDB(); // Connect to MongoDB
 const app = express();
 app.use(cors());
 app.use(express.json()); // Middleware to parse JSON data
+
+app.use(express.static(path.join(__dirname, "build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
 
 const ContactRoutes = require('./ContactForm/routes/Contact.route')
 app.use('/api/contact', ContactRoutes);

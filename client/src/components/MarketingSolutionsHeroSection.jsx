@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
 //import { Link } from "react-router-dom";
 import Vector5Img from '../assets/images/Vector (5).png';
@@ -9,6 +9,12 @@ import PinImg from '../assets/images/pin.png';
 function MarketingSolutionsHeroSection() {
     const { t, i18n } = useTranslation();
     const textAlignmentArrow = i18n.dir() === "ltr" ? "text-end" : "text-start"; // Check language direction
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    const toggleSection = (index) => {
+        setActiveIndex(activeIndex === index ? null : index); // Toggle open/close
+    };
+
     return (
         <>
             <section className="u-section">
@@ -17,7 +23,7 @@ function MarketingSolutionsHeroSection() {
                         <div className="col-md-8">
                             <h2 className="z-x">{t("Here’s What We Provide")}</h2>
                         </div>
-                      {/*  <div className="col-md-4">
+                        {/*  <div className="col-md-4">
                             <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", textAlign: "center" }}>
                                 <p
                                     className="z-c"
@@ -106,12 +112,13 @@ function MarketingSolutionsHeroSection() {
                     </div>
                 </div>
                 {[
-                    { num: "002", title: t("Data-Driven Results") },
-                    { num: "003", title: t("Creative Content") },
-                    { num: "004", title: t("Multi-Channel Expertise") },
+                    { num: "002", title: t("Data-Driven Results"), description: t("We leverage advanced analytics and insights to optimize performance, ensuring every decision is backed by data. Our solutions help maximize efficiency, boost ROI, and drive measurable success.") },
+                    { num: "003", title: t("Creative Content"), description: t("We craft engaging and impactful content that resonates with your audience. Our innovative approach ensures your brand stands out, delivering compelling digital experiences.") },
+                    { num: "004", title: t("Multi-Channel Expertise"), description: t("From web and mobile to social media and beyond, we ensure a seamless and consistent presence across all platforms. Our expertise helps you reach and engage your audience wherever they are.") },
                 ].map((item, index) => (
                     <div key={index} className="container mt-5 custom-padding-h">
-                        <div className="row" style={{ borderBottom: "1px solid var(--text-primary)" }}>
+                        <div className="row" style={{ borderBottom: "1px solid var(--text-primary)", cursor: "pointer" }}
+                            onClick={() => toggleSection(index)}>
                             <div className="col-4 f-z">
                                 <p>{item.num}</p>
                             </div>
@@ -122,6 +129,13 @@ function MarketingSolutionsHeroSection() {
                                 <i className="bi bi-arrow-right"></i>
                             </div>
                         </div>
+                        {activeIndex === index && (
+                            <div className="row mt-3 custom-border">
+                                <div className="col-12">
+                                    <p className="l-k">{t(item.description)}</p>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 ))}
 

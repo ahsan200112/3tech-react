@@ -1,4 +1,4 @@
-import React from "react";
+import React , { useState } from "react";
 import { useTranslation } from 'react-i18next';
 //import { Link } from "react-router-dom";
 import Group1Img from '../assets/images/Group (1).png';
@@ -9,6 +9,12 @@ import PinImg from '../assets/images/pin.png';
 function CreativeDesignHeroSection() {
     const { t, i18n } = useTranslation();
     const textAlignmentArrow = i18n.dir() === "ltr" ? "text-end" : "text-start"; // Check language direction
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    const toggleSection = (index) => {
+        setActiveIndex(activeIndex === index ? null : index); // Toggle open/close
+    };
+
     return (
         <>
             <section className="u-section">
@@ -17,7 +23,7 @@ function CreativeDesignHeroSection() {
                         <div className="col-md-8">
                             <h2 className="z-x">{t("Here’s What We Provide")}</h2>
                         </div>
-                       {/* <div className="col-md-4">
+                        {/* <div className="col-md-4">
                             <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", textAlign: "center" }}>
                                 <p
                                     className="z-c"
@@ -105,12 +111,13 @@ function CreativeDesignHeroSection() {
                 </div>
 
                 {[
-                    { num: "002", title: t("Innovative Solutions") },
-                    { num: "003", title: t("Consistency Across Channels") },
-                    { num: "004", title: t("Fast Turnaround Time") },
+                    { num: "002", title: t("Innovative Solutions"), description: t("We craft cutting-edge software solutions tailored to your business needs, leveraging the latest technologies to drive efficiency and growth. Our forward-thinking approach ensures you stay ahead in the digital landscape.") },
+                    { num: "003", title: t("Consistency Across Channels"), description: t("We ensure a seamless user experience across web, mobile, and desktop platforms, maintaining uniform functionality and design. Your brand and operations stay aligned across all digital touchpoints.") },
+                    { num: "004", title: t("Fast Turnaround Time"), description : t("Our agile development process ensures rapid delivery of high-quality software without compromising on performance. We prioritize efficiency to help you meet your business goals on time.") },
                 ].map((item, index) => (
                     <div key={index} className="container mt-5 custom-padding-h">
-                        <div className="row" style={{ borderBottom: "1px solid var(--text-primary)" }}>
+                        <div className="row" style={{ borderBottom: "1px solid var(--text-primary)", cursor:"pointer" }}
+                            onClick={() => toggleSection(index)}>
                             <div className="col-4 f-z">
                                 <p>{item.num}</p>
                             </div>
@@ -121,6 +128,13 @@ function CreativeDesignHeroSection() {
                                 <i className="bi bi-arrow-right"></i>
                             </div>
                         </div>
+                        {activeIndex === index && (
+                            <div className="row mt-3 custom-border">
+                                <div className="col-12">
+                                    <p className="l-k">{t(item.description)}</p>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 ))}
 

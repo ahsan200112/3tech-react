@@ -11,26 +11,37 @@ exports.createContact = async (req, res) => {
         await newContact.save();
 
         // Configure Nodemailer transporter (Replace with your credentials)
+        /* ye personal gamil ke liye
+         const transporter = nodemailer.createTransport({
+             service: 'gmail', // Ya kisi aur SMTP server ka use karein
+             auth: {
+                 user: process.env.EMAIL_USER,
+                 pass: process.env.EMAIL_PASS
+             }
+         }); */
+
         const transporter = nodemailer.createTransport({
-            service: 'gmail', // Ya kisi aur SMTP server ka use karein
-            /*  auth: {
-                  user: 'your-email@gmail.com', // Apna email
-                  pass: 'your-email-password' // Apna email password ya App Password (2FA enable ho to App Password generate karein)
-              } */
+            host: process.env.SMTP_HOST,
+            port: Number(process.env.SMTP_PORT),
+            secure: true, // SSL ke liye true rakhein (port 465 ke liye)
             auth: {
                 user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASS
+            },
+            tls: {
+                rejectUnauthorized: false  // Ye allow karega self-signed SSL certificates
             }
         });
 
+
         // Email options
         const mailOptions = {
-            from: '3techcompany.sa@gmail.com',
-            to: 'info@3tech.sa', // Jahan mail bhejni hai
+            from: process.env.EMAIL_USER, // Hostinger email jo send karega
+            to: 'info@3tech.sa', // Jahan mail bhejni hai 
             subject: `New Contact Form Submission from ${name}`,
             replyTo: email, // User ka email, taki aap direct reply kar sakein
             html: `
-                <h3>New Contact Form Submission</h3>
+                <h3>New Contact Form Submission (3tech)</h3>
                 <p><strong>Name:</strong> ${name}</p>
                 <p><strong>Email:</strong> ${email}</p>
                 <p><strong>Phone:</strong> ${phone}</p>
@@ -44,6 +55,7 @@ exports.createContact = async (req, res) => {
 
         res.status(201).json({ message: 'Contact form submitted and email sent successfully' });
     } catch (error) {
-        res.status(500).json({ error: 'Something went wrong' });
+        console.error("Error in createContact:", error);
+        res.status(500).json({ error: 'Something went wrong', details: error.message });
     }
 };

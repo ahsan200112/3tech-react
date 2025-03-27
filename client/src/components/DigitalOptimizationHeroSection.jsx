@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
 //import { Link } from "react-router-dom";
 import SEOImg from '../assets/images/seo.png';
@@ -9,6 +9,12 @@ import PinImg from '../assets/images/pin.png';
 function DigitalOptimizationHeroSection() {
     const { t, i18n } = useTranslation();
     const textAlignmentArrow = i18n.dir() === "ltr" ? "text-end" : "text-start"; // Check language direction
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    const toggleSection = (index) => {
+        setActiveIndex(activeIndex === index ? null : index); // Toggle open/close
+    };
+
     return (
         <>
             <section className="u-section">
@@ -17,7 +23,7 @@ function DigitalOptimizationHeroSection() {
                         <div className="col-md-8">
                             <h2 className="z-x">{t('Here’s What We Provide')}</h2>
                         </div>
-                       {/* <div className="col-md-4">
+                        {/* <div className="col-md-4">
                             <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", textAlign: "center" }}>
                                 <p
                                     className="z-c"
@@ -108,13 +114,14 @@ function DigitalOptimizationHeroSection() {
                 </div>
 
                 {[
-                    { num: "002", title: t('Data-Driven Insights') },
-                    { num: "003", title: t('User Experience Focused') },
-                    { num: "004", title: t('Cross-Platform Optimization') },
-                    { num: "005", title: t('Continuous Growth') },
+                    { num: "002", title: t('Data-Driven Insights'), description: t("We harness the power of data analytics to deliver actionable insights that drive smarter business decisions. Our solutions help you optimize performance, improve efficiency, and stay ahead of the competition.") },
+                    { num: "003", title: t('User Experience Focused'), description: t("Our software is designed with users in mind, ensuring intuitive interfaces, seamless interactions, and high engagement. We prioritize usability to enhance customer satisfaction and business success.") },
+                    { num: "004", title: t('Cross-Platform Optimization'), description: t("We develop software that works flawlessly across web, mobile, and desktop, ensuring a seamless experience for users on any device. Our solutions maximize accessibility and performance across all platforms.") },
+                    { num: "005", title: t('Continuous Growth'), description: t("Our scalable solutions evolve with your business, ensuring long-term success and adaptability. We focus on innovation and ongoing improvements to keep your software competitive and future-ready.") },
                 ].map((item, index) => (
                     <div key={index} className="container mt-5 custom-padding-h">
-                        <div className="row" style={{ borderBottom: "1px solid var(--text-primary)" }}>
+                        <div className="row" style={{ borderBottom: "1px solid var(--text-primary)", cursor: "pointer" }}
+                            onClick={() => toggleSection(index)}>
                             <div className="col-4 f-z">
                                 <p>{item.num}</p>
                             </div>
@@ -125,6 +132,13 @@ function DigitalOptimizationHeroSection() {
                                 <i className="bi bi-arrow-right"></i>
                             </div>
                         </div>
+                        {activeIndex === index && (
+                            <div className="row mt-3 custom-border">
+                                <div className="col-12">
+                                    <p className="l-k">{t(item.description)}</p>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 ))}
 
