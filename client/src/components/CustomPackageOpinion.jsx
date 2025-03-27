@@ -30,7 +30,19 @@ const CustomPackageOpinion = () => {
             console.error('Error submitting form:', error);
             alert('Error submitting form, please try again.');
         }
-    };
+    }; 
+
+   /* const onSubmit = (data) => {
+        const subject = encodeURIComponent(data.subject);
+        const body = encodeURIComponent(
+            `Name: ${data.name}
+            Email: ${data.email}
+            Phone: ${data.phone}
+            Message: ${data.message}`
+        );
+    
+        window.location.href = `mailto:ahsan200112@gmail.com?subject=${subject}&body=${body}`;
+    }; */
 
     return (
         <section className='u-section'>

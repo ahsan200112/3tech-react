@@ -58,7 +58,7 @@ function MobileApplicationsHeroSection() {
                                 ].map((card, index) => (
                                     <div key={index} className=" col-12 col-md-6">
                                         <div
-                                            className="card h-100"
+                                            className="card h-100 color-effect-card"
                                             style={{ padding: "25px" }}
                                         >
                                             <div className="card-body">
