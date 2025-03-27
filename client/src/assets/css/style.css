@@ -84,7 +84,7 @@ body {
   position: relative;
   overflow: hidden;
   /* Ensures gradient doesn't go outside */
-  z-index: 1;
+  z-index: 0;
 }
 
 .color-effect-navbar::before {
@@ -113,7 +113,7 @@ body {
       rgba(0, 0, 0, 0.3) 0%,
       rgba(0, 0, 0, 0.2) 50%,
       rgba(0, 0, 0, 0.1) 100%);
-  z-index: 0;
+  z-index: -1;
   opacity: 0.4;
 }
 
@@ -121,7 +121,7 @@ body {
   position: relative;
   overflow: hidden;
   /* Ensures gradient doesn't go outside */
-  z-index: 1;
+  z-index: 0;
 }
 
 .color-effect-card::before {
@@ -140,7 +140,7 @@ body {
   /* rgba(177, 63, 188, 0.2) 70%,   /* Gradually reducing */
   /* rgba(177, 63, 188, 0.1) 100%    /* Right side (visible but light) */
   /*); */
-  z-index: 0;
+  z-index: -1;
   opacity: 0.1;
 }
 
@@ -152,7 +152,7 @@ body {
   position: relative;
   overflow: hidden;
   /* Ensures gradient doesn't go outside */
-  z-index: 1;
+  z-index: 0;
 }
 
 .color-effect-firstC::before {
@@ -179,7 +179,7 @@ body {
       rgba(241, 124, 222, 0.1) 0%,
       rgba(248, 159, 248, 0.1) 50%,
       rgba(99, 49, 235, 0.1) 100%);
-  z-index: 0;
+  z-index: -1;
   opacity: 0.3;
 }
 
@@ -1912,32 +1912,6 @@ body {
 
 .c-m:hover {
   color: var(--text-primary);
-}
-
-.swiper {
-  /* width: 600px; */
-  height: 300px;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  position: absolute;
-  top: -50px;
-  /* Arrows ko upar le jaane ke liye adjust karein */
-  color: #3B9BE9;
-  /* Arrows ka color */
-  z-index: 10;
-  /* Ensure arrows are visible above other elements */
-}
-
-.swiper-button-prev {
-  left: 40%;
-  /* Adjust as needed */
-}
-
-.swiper-button-next {
-  right: 40%;
-  /* Adjust as needed */
 }
 
 /* Default Style (for all screens) */
