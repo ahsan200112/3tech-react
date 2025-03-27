@@ -1,6 +1,6 @@
 import React from 'react';
 import BackgroundImg from "../assets/images/backgroundImgInHeroSection.png";
-import HeroImageDark from "../assets/images/HeroImage Dark Mode1.png";
+import HeroImageDark from "../assets/images/HeroImage Dark Mode2.png";
 import HeroImageLight from "../assets/images/HeroImage Light Mode.png";
 import { useTranslation } from 'react-i18next';
 import { useTheme } from "../context/ThemeContext";

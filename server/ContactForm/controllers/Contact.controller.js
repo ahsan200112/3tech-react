@@ -22,7 +22,7 @@ exports.createContact = async (req, res) => {
 
         const transporter = nodemailer.createTransport({
             host: process.env.SMTP_HOST,
-            port: Number(process.env.SMTP_PORT),
+            port: 465,
             secure: true, // SSL ke liye true rakhein (port 465 ke liye)
             auth: {
                 user: process.env.EMAIL_USER,
