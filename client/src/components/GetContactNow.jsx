@@ -4,8 +4,8 @@ import CallImg from "../assets/images/call.svg";
 import LocationImg from "../assets/images/Location.svg";
 import EmailImg from "../assets/images/Email.png";
 import { useForm } from 'react-hook-form';
-//import emailjs from "@emailjs/browser";
-import api from '../api';
+import emailjs from "@emailjs/browser";
+//import api from '../api';
 
 const GetContactNow = () => {
     const { t } = useTranslation();
@@ -13,7 +13,7 @@ const GetContactNow = () => {
     //const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     
-    const onSubmit = async (data) => {
+    /*const onSubmit = async (data) => {
         try {
             const response = await api("/api/contact", {
                 method: 'POST',
@@ -33,10 +33,10 @@ const GetContactNow = () => {
             console.error('Error submitting form:', error);
             alert('Error submitting form, please try again.');
         }
-    };
+    }; */
 
     //ye emailjs hai jo frontend se email send krta hai ye 200 free email hai per month baqi ye paid
-    /* const onSubmit = (data) => {
+     const onSubmit = (data) => {
          const serviceID = "service_bk2mmlr";  // EmailJS se copy karo
          const templateID = "template_ij5qjqm";  // EmailJS se copy karo
          const publicKey = "rBuu6w3lR4LQIztjf";  // EmailJS se copy karo
@@ -58,7 +58,7 @@ const GetContactNow = () => {
                  console.error("Error sending email:", error);
                  alert("Failed to send email, please try again.");
              });
-     }; */
+     }; 
 
     return (
         <section className='u-section'>

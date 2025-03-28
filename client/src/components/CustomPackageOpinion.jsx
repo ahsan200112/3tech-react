@@ -4,46 +4,71 @@ import CallImg from "../assets/images/call.svg";
 import LocationImg from "../assets/images/Location.svg";
 import EmailImg from "../assets/images/Email.png";
 import { useForm } from 'react-hook-form';
-import api from '../api';
+import emailjs from "@emailjs/browser";
+//import api from '../api';
 
 const CustomPackageOpinion = () => {
     const { t } = useTranslation();
     const isRTL = document.dir === "rtl"; // Ya kisi global state se lein
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-    const onSubmit = async (data) => {
-        try {
-            const response = await api("/api/contact", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
+    /* const onSubmit = async (data) => {
+         try {
+             const response = await api("/api/contact", {
+                 method: 'POST',
+                 headers: {
+                     'Content-Type': 'application/json',
+                 },
+                 body: JSON.stringify(data),
+             });
+ 
+             if (response.ok) {
+                 alert('Form submitted successfully!');
+                 reset(); // Reset form after successful submission
+             } else {
+                 alert('Something went wrong, please try again.');
+             }
+         } catch (error) {
+             console.error('Error submitting form:', error);
+             alert('Error submitting form, please try again.');
+         }
+     }; */
+
+    const onSubmit = (data) => {
+        const serviceID = "service_bk2mmlr";  // EmailJS se copy karo
+        const templateID = "template_ij5qjqm";  // EmailJS se copy karo
+        const publicKey = "rBuu6w3lR4LQIztjf";  // EmailJS se copy karo
+
+        const templateParams = {
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+            subject: data.subject,
+            message: data.message,
+        };
+
+        emailjs.send(serviceID, templateID, templateParams, publicKey)
+            .then((response) => {
+                alert("Email sent successfully!");
+                reset();
+            })
+            .catch((error) => {
+                console.error("Error sending email:", error);
+                alert("Failed to send email, please try again.");
             });
+    };
 
-            if (response.ok) {
-                alert('Form submitted successfully!');
-                reset(); // Reset form after successful submission
-            } else {
-                alert('Something went wrong, please try again.');
-            }
-        } catch (error) {
-            console.error('Error submitting form:', error);
-            alert('Error submitting form, please try again.');
-        }
-    }; 
-
-   /* const onSubmit = (data) => {
-        const subject = encodeURIComponent(data.subject);
-        const body = encodeURIComponent(
-            `Name: ${data.name}
-            Email: ${data.email}
-            Phone: ${data.phone}
-            Message: ${data.message}`
-        );
-    
-        window.location.href = `mailto:ahsan200112@gmail.com?subject=${subject}&body=${body}`;
-    }; */
+    /* const onSubmit = (data) => {
+         const subject = encodeURIComponent(data.subject);
+         const body = encodeURIComponent(
+             `Name: ${data.name}
+             Email: ${data.email}
+             Phone: ${data.phone}
+             Message: ${data.message}`
+         );
+     
+         window.location.href = `mailto:ahsan200112@gmail.com?subject=${subject}&body=${body}`;
+     }; */
 
     return (
         <section className='u-section'>
