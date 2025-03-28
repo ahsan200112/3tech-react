@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
+import api from '../api';
 
 const GetContactNow2 = () => {
     const { t } = useTranslation();
@@ -8,7 +9,7 @@ const GetContactNow2 = () => {
 
     const onSubmit = async (data) => {
         try {
-            const response = await fetch('https://backend.3tech.sa/api/contact', {
+            const response = await api("/api/contact", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

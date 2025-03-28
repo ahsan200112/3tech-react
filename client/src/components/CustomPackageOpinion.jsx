@@ -4,6 +4,7 @@ import CallImg from "../assets/images/call.svg";
 import LocationImg from "../assets/images/Location.svg";
 import EmailImg from "../assets/images/Email.png";
 import { useForm } from 'react-hook-form';
+import api from '../api';
 
 const CustomPackageOpinion = () => {
     const { t } = useTranslation();
@@ -12,7 +13,7 @@ const CustomPackageOpinion = () => {
 
     const onSubmit = async (data) => {
         try {
-            const response = await fetch('https://backend.3tech.sa/api/contact', {
+            const response = await api("/api/contact", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
