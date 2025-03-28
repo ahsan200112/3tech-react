@@ -2561,3 +2561,13 @@ img {
   padding: 10px;
   border-radius: 15px;
 }
+
+.rotate-image {
+  transition: transform 0.5s ease-in-out;
+  /* Smooth effect ke liye */
+}
+
+.rotate-image:hover {
+  transform: rotate(360deg);
+  /* 360-degree rotation on hover */
+}

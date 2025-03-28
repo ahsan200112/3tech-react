@@ -18,7 +18,7 @@ const Footer = () => {
         <div className="container">
           <div className="d-flex justify-content-between align-items-center">
             <h1 className="mb-0 me-2 text-primary-color custom-padding-h">{t("Let’s Start to Work")}</h1>
-            <Link to="/contact">
+            <Link to="/contact" className='rotate-image'>
               <img src={ArrowImg} alt="Icon" className="img-fluid" style={{ width: "60px", height: "60px" }} />
             </Link>
           </div>
