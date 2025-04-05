@@ -32,7 +32,7 @@ const FrequentlyAskedQuestions = () => {
 
     return (
         <section id="faq" className="py-5 u-section">
-            <div className="container">
+            <div className="container" data-aos="fade-up" data-aos-delay="500">
                 <button className="u-easy btm-sm mb-2">{t("(FAQs)")}</button>
                 <h2 className="v-value">{t("Frequently Asked Questions (FAQs)")}</h2>
                 <p className="mb-4 v-auto">

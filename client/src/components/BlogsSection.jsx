@@ -22,7 +22,7 @@ const BlogsSection = () => {
                     <p className="v-p" style={{ maxWidth: "670px", wordBreak: "break-word" }}>{t("Stay updated with expert insights, actionable tips, and industry trends that help you grow your business in the ever-evolving digital world.")}</p>
                 </div>
                 <div className="row">
-                    <div className="col-lg-8 mb-4">
+                    <div className="col-lg-8 mb-4" data-aos="fade-up" data-aos-delay="300">
                         <div className="card custom-card">
                             <img src={WinImg} alt="Digital Trends" className="card-img img-fluid responsive-image" />
                             <div className="card-body">
@@ -93,7 +93,7 @@ const BlogsSection = () => {
             </div>
             <div className="container pb-5">
                 <div className="row">
-                    <div className="col-lg-8 mb-4">
+                    <div className="col-lg-8 mb-4" data-aos="fade-up" data-aos-delay="300">
                         <div className="card custom-card">
                             <img src={HtmlImg} alt="Digital Trends" className="card-img img-fluid responsive-img" />
                             <div className="card-body">
@@ -114,7 +114,7 @@ const BlogsSection = () => {
                     </div>
                     <div className="container my-5">
                         <div className="row">
-                            <div className="col-lg-8 mb-4">
+                            <div className="col-lg-8 mb-4" data-aos="fade-up" data-aos-delay="300">
                                 <div className="card custom-card">
                                     <img src={ErImg} alt="Digital Trends" className="card-img img-fluid" />
                                     <div className="card-body">
@@ -137,7 +137,7 @@ const BlogsSection = () => {
                             </div>
                             <div className="container my-5">
                                 <div className="row">
-                                    <div className="col-lg-8 mb-4">
+                                    <div className="col-lg-8 mb-4" data-aos="fade-up" data-aos-delay="300">
                                         <div className="card custom-card">
                                             <img src={BnImg} alt="Digital Trends" className="card-img img-fluid" />
                                             <div className="card-body">

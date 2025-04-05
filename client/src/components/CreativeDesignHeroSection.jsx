@@ -62,7 +62,7 @@ function CreativeDesignHeroSection() {
                                         text: t("Bring your ideas to life with dynamic motion graphics and professionally edited videos."),
                                     },
                                 ].map((card, index) => (
-                                    <div key={index} className="col-md-4">
+                                    <div key={index} className="col-md-4" data-aos="fade-down" data-aos-delay="1200">
                                         <div
                                             className="card h-100 color-effect-card"
                                             style={{ padding: "25px" }}
@@ -84,7 +84,7 @@ function CreativeDesignHeroSection() {
                         </div>
                     </div>
                 </div>
-                <div className="container mt-5 custom-padding-h">
+                <div className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="300">
                     <h2 className="f-g">{t("Why Choose Us for Creative Design?")}</h2>
                     <div
                         className="card-body mt-3"
@@ -115,7 +115,7 @@ function CreativeDesignHeroSection() {
                     { num: "003", title: t("Consistency Across Channels"), description: t("We ensure a seamless user experience across web, mobile, and desktop platforms, maintaining uniform functionality and design. Your brand and operations stay aligned across all digital touchpoints.") },
                     { num: "004", title: t("Fast Turnaround Time"), description : t("Our agile development process ensures rapid delivery of high-quality software without compromising on performance. We prioritize efficiency to help you meet your business goals on time.") },
                 ].map((item, index) => (
-                    <div key={index} className="container mt-5 custom-padding-h">
+                    <div key={index} className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="300">
                         <div className="row" style={{ borderBottom: "1px solid var(--text-primary)", cursor:"pointer" }}
                             onClick={() => toggleSection(index)}>
                             <div className="col-4 f-z">
@@ -148,7 +148,7 @@ function CreativeDesignHeroSection() {
                             { step: t("Step 4"), title: t("Final Delivery"), desc: t("Deliver high-quality, scalable design assets for use across all channels.") },
                             { step: t("Step 5"), title: t("Brand Implementation"), desc: t("Assist in implementing the designs across various platforms.") },
                         ].map((item, index) => (
-                            <div key={index} className="col-md-4 mb-4">
+                            <div key={index} className="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
                                 <div className="step">
                                     <div className="custom-row">
                                         <button className="text-start btn-sm n-j">{item.step}</button>

@@ -92,7 +92,7 @@ const OurTrustedPartners = () => {
 
   return (
     <section className="trusted-partners py-5">
-      <div className="container">
+      <div className="container" data-aos="fade-right" data-aos-delay="800">
         <button className="btn-sm v-were" style={{ width: "205px" }}>{t("Be Part of Our Journey")}</button>
         <h2 className="v-value">{t("Our Trusted Partners")}</h2>
         <p className="v-auto">
@@ -115,7 +115,7 @@ const OurTrustedPartners = () => {
         </div>
       </div>
       */}
-      <div className="container mt-4 py-4">
+      <div className="container mt-4 py-4" data-aos="fade-right" data-aos-delay="300">
         <Slider {...settings}>
           {images.map((img, index) => (
             <div key={index} className="text-center">

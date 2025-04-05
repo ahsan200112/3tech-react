@@ -13,7 +13,7 @@ const YourSuccessOurPriority = () => {
    // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     return (
         <section className="v-section">
-            <div className="container py-5">
+            <div className="container py-5" data-aos="fade-up" data-aos-delay="800">
                 <div className="row">
                     <div className="col-md-6 d-flex flex-column mb-4">
                         <button className="btn-sm u-easy mb-2" style={{ width: "225px"}}>{t("Your Success, Our Priority")}</button>

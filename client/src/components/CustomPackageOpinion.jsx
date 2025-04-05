@@ -72,7 +72,7 @@ const CustomPackageOpinion = () => {
 
     return (
         <section className='u-section'>
-            <div className="container py-5">
+            <div className="container py-5" data-aos="fade-up" data-aos-delay="800">
                 <div className="mb-4">
                     <button className="u-easy btn-sm">{t('Custom Package Option')}</button>
                     <h2 className="v-r mt-3" style={{ maxWidth: "800px", wordBreak: "break-word" }}>{t('Didn’t Find What You Need? Let’s Build A Custom Package Just For You!')}</h2>

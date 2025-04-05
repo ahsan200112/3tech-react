@@ -46,7 +46,7 @@ const OurProjects = () => {
     return (
         <section className="v-section">
             <div className="container py-5">
-                <div className="py-5">
+                <div className="py-5" data-aos="fade-left" data-aos-delay="600">
                     <button className="btn-sm v-viral" style={{ width: "150px" }}>{t("Our Projects")}</button>
                     <div className="d-flex justify-content-between align-items-center btn-nextline">
                         <h2 className="v-visit">{t("Our Work Speaks For Itself")}</h2>

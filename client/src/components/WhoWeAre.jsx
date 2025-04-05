@@ -11,7 +11,7 @@ const WhoWeAre = () => {
 
     return (
         <section className="u-section">
-            <div className="container py-5">
+            <div className="container py-5" data-aos="fade-right" data-aos-delay="800">
                 <div className="row align-items-center">
                     <button className="btn-sm u-vise mb-3 custom-margin-10" style={{ width: "130px" }}>{t("Who We Are")}</button>
                     <h1 className="u-visit custom-margin-10">{t("Connecting Your Business With The World!")}</h1>

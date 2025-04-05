@@ -12,7 +12,7 @@ const ExpertiseYouCanTrust = () => {
     // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     return (
         <div className="v-section">
-            <section className='py-5'>
+            <section className='py-5' data-aos="fade-up" data-aos-delay="800">
                 <div className="container">
                     <button className="btn-sm u-easy" style={{ width: "210px" }}>{t("Expertise you can Trust")}</button>
                     <h4 className="mt-3 o-b">{t("Turning Ideas into Impactful Digital Journeys")}</h4>

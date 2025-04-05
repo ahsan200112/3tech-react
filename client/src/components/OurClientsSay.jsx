@@ -68,7 +68,7 @@ const OurClientsSay = () => {
 
   return (
     <section className="client-testimonials py-5" style={{ direction: isRTL ? "rtl" : "ltr" }} >
-      <div className="container">
+      <div className="container" data-aos="fade-right" data-aos-delay="600">
         <div className="mb-4">
           <button className="btn-sm v-hi" style={{ width: "230px" }}>
             {t("Real Stories, Real Impact")}

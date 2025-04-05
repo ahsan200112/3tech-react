@@ -62,7 +62,7 @@ function MarketingSolutionsHeroSection() {
                                         text: t("Engage your audience with persuasive, high-quality content that reflects your brand’s voice."),
                                     },
                                 ].map((card, index) => (
-                                    <div key={index} className="col-md-4">
+                                    <div key={index} className="col-md-4" data-aos="fade-down" data-aos-delay="1200">
                                         <div
                                             className="card h-100 color-effect-card"
                                             style={{ padding: "25px" }}
@@ -86,7 +86,7 @@ function MarketingSolutionsHeroSection() {
                 </div>
 
 
-                <div className="container mt-5 custom-padding-h">
+                <div className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="300">
                     <h2 className="f-g">{t("Why Choose Us for Marketing Solutions?")}</h2>
                     <div
                         className="card-body mt-3"
@@ -116,7 +116,7 @@ function MarketingSolutionsHeroSection() {
                     { num: "003", title: t("Creative Content"), description: t("We craft engaging and impactful content that resonates with your audience. Our innovative approach ensures your brand stands out, delivering compelling digital experiences.") },
                     { num: "004", title: t("Multi-Channel Expertise"), description: t("From web and mobile to social media and beyond, we ensure a seamless and consistent presence across all platforms. Our expertise helps you reach and engage your audience wherever they are.") },
                 ].map((item, index) => (
-                    <div key={index} className="container mt-5 custom-padding-h">
+                    <div key={index} className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="300">
                         <div className="row" style={{ borderBottom: "1px solid var(--text-primary)", cursor: "pointer" }}
                             onClick={() => toggleSection(index)}>
                             <div className="col-4 f-z">
@@ -139,7 +139,7 @@ function MarketingSolutionsHeroSection() {
                     </div>
                 ))}
 
-                <div className="container mt-5 pt-5 custom-padding-h">
+                <div className="container mt-5 pt-5 custom-padding-h" data-aos="fade-up" data-aos-delay="300">
                     <h2 className="g-r mt-2">{t("Our Path to E-Commerce Success")}</h2>
                     <div className="row text-center">
                         {[

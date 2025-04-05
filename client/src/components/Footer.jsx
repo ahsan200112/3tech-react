@@ -24,7 +24,7 @@ const Footer = () => {
           </div>
         </div>
       </section>
-      <footer className="text-light py-4 review-value">
+      <footer className="text-light py-4 review-value" data-aos="fade-down" data-aos-delay="400">
         <div className="container">
           <div className="row">
             <div className="col-md-5">

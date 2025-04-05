@@ -11,7 +11,7 @@ const HeroSection = () => {
     const { theme } = useTheme(); // Get theme from context
 
     return (
-        <section className="hero-section color-effect-navbar"
+        <section className="hero-section color-effect-navbar" 
             style={{
                 backgroundImage: `url(${BackgroundImg})`, // Replace BackgroundImg with your image import
                 backgroundSize: "cover", // Cover full div
@@ -19,7 +19,7 @@ const HeroSection = () => {
                 backgroundRepeat: "no-repeat", // No repeat
             }}
         >
-            <div className="container">
+            <div className="container" data-aos="fade-left" data-aos-delay="800">
                 <div className="row align-items-center">
                     <div className="col-md-6">
                         <div className="user">

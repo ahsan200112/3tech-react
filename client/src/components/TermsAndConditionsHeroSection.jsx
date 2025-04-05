@@ -7,7 +7,7 @@ function TermsAndConditionsHeroSection() {
     return (
         <>
             <section className="u-section">
-                <div className="container mx-auto py-5">
+                <div className="container mx-auto py-5" data-aos="fade-left" data-aos-delay="1200">
                     <h1 className="p-h">{t('3Tech Platform Privacy and Usage Policy')}</h1>
                     <p className="p-p">{t('Last updated:')} June 1, 2024</p>
                     <p className="p-p">{t("Welcome to the 3Tech Platform. We place great importance on protecting the privacy of our users and respecting their rights. Therefore, we adhere to a strict privacy and usage policy. Please read the following policy carefully to understand how we collect and use personal information and our user's rights.")}</p>

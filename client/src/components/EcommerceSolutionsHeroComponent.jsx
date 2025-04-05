@@ -62,7 +62,7 @@ function EcommerceSolutionsHeroSection() {
                                         text: t("Streamline your logistics with integrated shipping solutions that save time and enhance customer satisfaction."),
                                     },
                                 ].map((card, index) => (
-                                    <div key={index} className="col-md-4">
+                                    <div key={index} className="col-md-4" data-aos="fade-down" data-aos-delay="1200">
                                         <div
                                             className="card h-100 color-effect-card"
                                             style={{ padding: "25px" }}
@@ -86,7 +86,7 @@ function EcommerceSolutionsHeroSection() {
                 </div>
 
 
-                <div className="container mt-5 custom-padding-h">
+                <div className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="300">
                     <h2 className="f-g">{t("Why 3Tech is Your Perfect E-Commerce Partner?")}</h2>
                     <div
                         className="card-body mt-3"
@@ -118,7 +118,7 @@ function EcommerceSolutionsHeroSection() {
                     { num: "004", title: t("Ownership with No Hidden Fees"), description: t("We provide complete transparency—your software, your ownership. With clear pricing and no hidden charges, you get full control over your IT solutions without unexpected costs.") },
                     { num: "005", title: t("Dedicated Support"), description: t("Our expert team is available around the clock to provide proactive and responsive support. Whether it's troubleshooting, updates, or enhancements, we ensure your software runs flawlessly at all times.") },
                 ].map((item, index) => (
-                    <div key={index} className="container mt-5 custom-padding-h">
+                    <div key={index} className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="300">
                         <div className="row" style={{ borderBottom: "1px solid var(--text-primary)", cursor: "pointer" }}
                             onClick={() => toggleSection(index)}>
                             <div className="col-4 f-z">
@@ -152,7 +152,7 @@ function EcommerceSolutionsHeroSection() {
                             { step: t("Step 5"), title: t("Launch & Training"), desc: t("Once ready, we launch your store and provide training so you can manage it confidently.") },
                             { step: t("Step 6"), title: t("Ongoing Support"), desc: t("Our team remains available for maintenance, updates, and any additional features you may need.") },
                         ].map((item, index) => (
-                            <div key={index} className="col-md-4 mb-4">
+                            <div key={index} className="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
                                 <div className="step">
                                     <div className="custom-row">
                                         <button className="text-start btn-sm n-j">{item.step}</button>
