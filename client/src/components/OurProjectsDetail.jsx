@@ -1,13 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import Project1 from "../assets/images/1Project.png";
-import Project2 from "../assets/images/2Project.png";
-import Project3 from "../assets/images/3Project.png";
-import Project4 from "../assets/images/4Project.png";
-import Project5 from "../assets/images/5Project.png";
-import Project6 from "../assets/images/6Project.png";
-import Project7 from "../assets/images/7Project.png";
+import Project1 from "../assets/images/1Project.webp";
+import Project2 from "../assets/images/2Project.webp";
+import Project3 from "../assets/images/3Project.webp";
+import Project4 from "../assets/images/4Project.webp";
+import Project5 from "../assets/images/5Project.webp";
+import Project6 from "../assets/images/6Project.webp";
+import Project7 from "../assets/images/7Project.webp";
 
 const OurProjectsDetail = () => {
     const { t } = useTranslation();
