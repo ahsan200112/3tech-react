@@ -15,7 +15,7 @@ const OurServices = () => {
             <div className="container py-5">
                 <div className="container">
                     <div className="row g-3">
-                        <div className="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                        <div className="col-md-4" data-aos="flip-left" data-aos-delay="400">
                             <div className="card h-100 custom-transition">
                                 <div className="card-body">
                                     <button className="btn-sm u-vise">{t("Our Services")}</button>
@@ -26,7 +26,7 @@ const OurServices = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                        <div className="col-md-4" data-aos="flip-left" data-aos-delay="400">
                             <Link className="text-decoration-none" to="/ecommercesolutions">
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
                                     <div className="card-body" style={{ padding: "30px 30px" }}>
@@ -42,7 +42,7 @@ const OurServices = () => {
                                 </div>
                             </Link>
                         </div>
-                        <div className="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                        <div className="col-md-4" data-aos="flip-left" data-aos-delay="400">
                             <Link className="text-decoration-none" to="/mobileapplications">
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
                                     <div className="card-body" style={{ padding: "30px 30px" }}>
@@ -60,7 +60,7 @@ const OurServices = () => {
                         </div>
                     </div>
                     <div className="row g-3 mt-3">
-                        <div className="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                        <div className="col-md-4" data-aos="flip-left" data-aos-delay="400">
                             <Link className="text-decoration-none" to="/marketingsolutions">
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
                                     <div className="card-body" style={{ padding: "30px 30px" }}>
@@ -76,7 +76,7 @@ const OurServices = () => {
                                 </div>
                             </Link>
                         </div>
-                        <div className="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                        <div className="col-md-4" data-aos="flip-left" data-aos-delay="400">
                             <Link className="text-decoration-none" to="/creativedesign">
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
                                     <div className="card-body" style={{ padding: "30px 30px" }}>
@@ -92,7 +92,7 @@ const OurServices = () => {
                                 </div>
                             </Link>
                         </div>
-                        <div className="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                        <div className="col-md-4" data-aos="flip-left" data-aos-delay="400">
                             <Link to="/digitaloptimization" className="text-decoration-none">
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
                                     <div className="card-body" style={{ padding: "30px 30px" }}>

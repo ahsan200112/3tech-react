@@ -62,7 +62,7 @@ function DigitalOptimizationHeroSection() {
                                         text: t('Streamline your logistics with integrated shipping solutions that save time and enhance customer satisfaction.')
                                     },
                                 ].map((card, index) => (
-                                    <div key={index} className="col-md-4" data-aos="fade-down" data-aos-delay="1200">
+                                    <div key={index} className="col-md-4" data-aos="flip-left" data-aos-delay="1200">
                                         <div
                                             className="card h-100 color-effect-card"
                                             style={{ padding: "25px" }}
@@ -87,7 +87,7 @@ function DigitalOptimizationHeroSection() {
                 </div>
 
 
-                <div className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="300">
+                <div className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="500">
                     <h2 className="f-g">{t("Why Choose Us for Digital Optimization?")}</h2>
                     <div
                         className="card-body mt-3"

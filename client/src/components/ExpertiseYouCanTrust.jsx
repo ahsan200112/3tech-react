@@ -76,7 +76,7 @@ const ExpertiseYouCanTrust = () => {
                             </div>
                         </div> */}
                         <div className="col-md-4">
-                            <div className="d-flex flex-column">
+                            <div className="d-flex flex-column" data-aos="flip-right" data-aos-delay="600">
                                 {/* Our Mission Section */}
                                 <div onClick={() => setActiveSection("mission")} style={{ cursor: "pointer" }}>
                                     <div className="mission-vision">

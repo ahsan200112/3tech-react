@@ -62,7 +62,7 @@ function MarketingSolutionsHeroSection() {
                                         text: t("Engage your audience with persuasive, high-quality content that reflects your brand’s voice."),
                                     },
                                 ].map((card, index) => (
-                                    <div key={index} className="col-md-4" data-aos="fade-down" data-aos-delay="1200">
+                                    <div key={index} className="col-md-4" data-aos="flip-left" data-aos-delay="1200">
                                         <div
                                             className="card h-100 color-effect-card"
                                             style={{ padding: "25px" }}
@@ -86,7 +86,7 @@ function MarketingSolutionsHeroSection() {
                 </div>
 
 
-                <div className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="300">
+                <div className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="500">
                     <h2 className="f-g">{t("Why Choose Us for Marketing Solutions?")}</h2>
                     <div
                         className="card-body mt-3"
@@ -150,7 +150,7 @@ function MarketingSolutionsHeroSection() {
                             { step: t("Step 5"), title: t("Reporting & Analysis"), desc: t("Provide detailed reports to track the success of campaigns.") },
                             { step: t("Step 6"), title: t("Continuous Optimization"), desc: t("Use data insights to refine and improve campaigns over time.") },
                         ].map((item, index) => (
-                            <div key={index} className="col-md-4 mb-4">
+                            <div key={index} className="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
                                 <div className="step">
                                     <div className="custom-row">
                                         <button className="text-start btn-sm n-j">{item.step}</button>

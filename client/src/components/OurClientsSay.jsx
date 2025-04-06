@@ -68,39 +68,40 @@ const OurClientsSay = () => {
 
   return (
     <section className="client-testimonials py-5" style={{ direction: isRTL ? "rtl" : "ltr" }} >
-      <div className="container" data-aos="fade-right" data-aos-delay="600">
+      <div className="container" data-aos="fade-left" data-aos-delay="600">
         <div className="mb-4">
           <button className="btn-sm v-hi" style={{ width: "230px" }}>
             {t("Real Stories, Real Impact")}
           </button>
           <h2 className="v-hence">{t("What Our Clients Say About Us")}</h2>
         </div>
-
-        <Slider {...settings} className="slick-slider">
-          {/* Map through Testimonials */}
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="slide-item">
-              <div className="card p-3 text-white project-card"
-                style={{
-                  backgroundColor: "var(--bg-secondary)",
-                  borderRadius: "20px",
-                  textAlign: isRTL ? "right" : "left",
-                  minHeight: "300px", // Ensuring equal height for all cards
-                }}>
-                <div>
-                  <img src={InkImg} alt="Brand Logo" className="img-fluid mt-2 d-inline-block"
-                    style={{ width: "44px", height: "30px" }} />
-                  <p className="v-cleana mt-2">{t(testimonial.text)}</p>
-                  {/* Text */}
-                  <div style={{ textAlign: isRTL ? "right" : "left" }}>
-                    <p className="mb-0 g-value" style={{ fontWeight: "700", fontSize: "18px" }}>{t(testimonial.name)}</p>
-                    <p className="mb-0 g-value">{t(testimonial.position)}</p>
+        <div data-aos="flip-left" data-aos-delay="600">
+          <Slider {...settings} className="slick-slider">
+            {/* Map through Testimonials */}
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.id} className="slide-item">
+                <div className="card p-3 text-white project-card"
+                  style={{
+                    backgroundColor: "var(--bg-secondary)",
+                    borderRadius: "20px",
+                    textAlign: isRTL ? "right" : "left",
+                    minHeight: "300px", // Ensuring equal height for all cards
+                  }}>
+                  <div>
+                    <img src={InkImg} alt="Brand Logo" className="img-fluid mt-2 d-inline-block"
+                      style={{ width: "44px", height: "30px" }} />
+                    <p className="v-cleana mt-2">{t(testimonial.text)}</p>
+                    {/* Text */}
+                    <div style={{ textAlign: isRTL ? "right" : "left" }}>
+                      <p className="mb-0 g-value" style={{ fontWeight: "700", fontSize: "18px" }}>{t(testimonial.name)}</p>
+                      <p className="mb-0 g-value">{t(testimonial.position)}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        </div>
       </div>
     </section>
   );

@@ -62,7 +62,7 @@ const GetContactNow = () => {
 
     return (
         <section className='u-section'>
-            <div className="container py-5" data-aos="fade-right" data-aos-delay="600">
+            <div className="container py-5" data-aos="fade-up" data-aos-delay="600">
                 <div className="mb-4">
                     <button className="btn-sm u-vise">{t("Get Contact Now")}</button>
                     <h2 className="v-r mt-3">{t("Let’s Create Something Remarkable Together.")}</h2>

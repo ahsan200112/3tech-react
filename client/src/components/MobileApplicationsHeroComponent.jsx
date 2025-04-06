@@ -56,7 +56,7 @@ function MobileApplicationsHeroSection() {
                                         text: t("Ensure your app stays functional, secure, and up-to-date with regular maintenance and enhancements."),
                                     },
                                 ].map((card, index) => (
-                                    <div key={index} className=" col-12 col-md-6" data-aos="fade-down" data-aos-delay="1200">
+                                    <div key={index} className=" col-12 col-md-6" data-aos="flip-left" data-aos-delay="1200">
                                         <div
                                             className="card h-100 color-effect-card"
                                             style={{ padding: "25px" }}
@@ -80,7 +80,7 @@ function MobileApplicationsHeroSection() {
                 </div>
 
 
-                <div className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="300">
+                <div className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="500">
                     <h2 className="f-g">{t("Why Choose Us for Mobile App Development?")}</h2>
                     <div
                         className="card-body mt-3"
