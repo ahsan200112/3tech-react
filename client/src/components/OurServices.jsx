@@ -35,8 +35,8 @@ const OurServices = () => {
                                         <p className="card-text u-space">
                                             {t("Launch and manage online stores effortlessly with user-friendly designs, payment integration, and shipping tools for e-commerce success.")}
                                         </p>
-                                        <p>
-                                            <Link className="u-help text-decoration-none" to="/ecommercesolutions">{t("Explore E-Commerce Solutions")}</Link>
+                                        <p className="u-help">
+                                            {t("Explore E-Commerce Solutions")}
                                         </p>
                                     </div>
                                 </div>
@@ -51,8 +51,8 @@ const OurServices = () => {
                                         <p className="card-text u-space">
                                             {t("Build or enhance custom apps, offering seamless user experiences in a mobile-first world.")}
                                         </p>
-                                        <p>
-                                            <Link className="u-help text-decoration-none" to="/mobileapplications">{t("Explore Mobile Applications")}</Link>
+                                        <p className="u-help">
+                                            {t("Explore Mobile Applications")}
                                         </p>
                                     </div>
                                 </div>
@@ -69,8 +69,8 @@ const OurServices = () => {
                                         <p className="card-text u-space">
                                             {t("Achieve growth with tailored marketing strategies, expert advertising, and high-quality content creation.")}
                                         </p>
-                                        <p>
-                                            <Link className="u-help text-decoration-none" to="/marketingsolutions">{t("Explore Marketing Solutions")}</Link>
+                                        <p className="u-help">
+                                            {t("Explore Marketing Solutions")}
                                         </p>
                                     </div>
                                 </div>
@@ -85,8 +85,8 @@ const OurServices = () => {
                                         <p className="card-text u-space">
                                             {t("Elevate your brand with unique visual identities, stunning graphics, and innovative designs.")}
                                         </p>
-                                        <p>
-                                            <Link className="u-help text-decoration-none" to="/creativedesign">{t("Explore Creative Design")}</Link>
+                                        <p className="u-help">
+                                            {t("Explore Creative Design")}
                                         </p>
                                     </div>
                                 </div>
@@ -101,8 +101,8 @@ const OurServices = () => {
                                         <p className="card-text u-space">
                                             {t("Enhance online visibility through expert SEO and social media management to reach the right audience.")}
                                         </p>
-                                        <p>
-                                            <Link className="u-help text-decoration-none" to="/digitaloptimization">{t("Explore Digital Optimization")}</Link>
+                                        <p className="u-help">
+                                            {t("Explore Digital Optimization")}
                                         </p>
                                     </div>
                                 </div>
