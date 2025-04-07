@@ -7,7 +7,7 @@ const OurPackages = () => {
    // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     return (
         <section className="packages u-section">
-            <div className="container py-5" data-aos="fade-right" data-aos-delay="600">
+            <div className="container py-5" data-aos="fade-down" data-aos-delay="600">
                 <div className="py-5">
                     <button className="btn-sm i-idea mb-2" style={{ width: "140px"}}>{t("Our Packages")}</button>
                     <div className="d-flex align-items-center custom-content-center">

@@ -19,7 +19,7 @@ const HeroSection = () => {
                 backgroundRepeat: "no-repeat", // No repeat
             }}
         >
-            <div className="container" data-aos="fade-left" data-aos-delay="800">
+            <div className="container" data-aos="fade-up" data-aos-delay="800">
                 <div className="row align-items-center">
                     <div className="col-md-6">
                         <div className="user">

@@ -9,7 +9,7 @@ const TermsAndConditionsFirstComponent = () => {
     return (
         <div className="while-valu color-effect-firstC">
             <section >
-                <div className="container pt-5" data-aos="fade-right" data-aos-delay="600">
+                <div className="container pt-5" data-aos="fade-down" data-aos-delay="600">
                     <div className="d-flex justify-content-between align-items-center">
                         <div>
                             <h2 className="o-hlo" style={{ borderBottom: "2px solid" }}>{t("Terms and Conditions")}</h2>

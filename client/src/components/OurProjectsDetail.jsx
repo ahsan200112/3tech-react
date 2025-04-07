@@ -40,7 +40,7 @@ const OurProjectsDetail = () => {
                     </div>
                 </div>
                 <div className="row g-4">
-                    <div className="col-md-6" data-aos="fade-left" data-aos-delay="500">
+                    <div className="col-md-6" data-aos="fade-up" data-aos-delay="500">
                         <div className="card project-card position-relative">
                             {/* <div><Link className="tag text-decoration-none" to="/ecommercesolutions">{t("E-Commerce Solutions")}</Link></div> */}
                             <img src={Project1} class="card-img-top" alt="Project" />
@@ -58,7 +58,7 @@ const OurProjectsDetail = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-6" data-aos="fade-right" data-aos-delay="500">
+                    <div className="col-md-6" data-aos="fade-down" data-aos-delay="500">
                         <div className="card project-card position-relative">
                             {/*   <div><Link className="tag text-decoration-none" to="/creativedesign">{t("Creative Design")}</Link></div> */}
                             <img src={Project2} className="card-img-top" alt="Project" />
@@ -80,7 +80,7 @@ const OurProjectsDetail = () => {
             </div>
             <div className="container mb-5">
                 <div className="row g-4">
-                    <div className="col-md-6" data-aos="fade-left" data-aos-delay="500">
+                    <div className="col-md-6" data-aos="fade-up" data-aos-delay="500">
                         <div className="card project-card position-relative">
                             {/*  <div><Link className="tag text-decoration-none" to="/mobileapplications">{t("Mobile Applications")}</Link></div> */}
                             <img src={Project3} className="card-img-top" alt="Project" />
@@ -98,7 +98,7 @@ const OurProjectsDetail = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-6" data-aos="fade-right" data-aos-delay="500">
+                    <div className="col-md-6" data-aos="fade-down" data-aos-delay="500">
                         <div className="card project-card position-relative">
                             {/*  <div><Link className="tag text-decoration-none" to="/digitaloptimization">{t("Digital Optimization")}</Link></div> */}
                             <img src={Project4} className="card-img-top" alt="Project" />
@@ -120,7 +120,7 @@ const OurProjectsDetail = () => {
             </div>
             <div className="container">
                 <div className="row g-4">
-                    <div className="col-md-6" data-aos="fade-left" data-aos-delay="500">
+                    <div className="col-md-6" data-aos="fade-up" data-aos-delay="500">
                         <div className="card project-card position-relative">
                             {/*  <div><Link className="tag text-decoration-none" to="/marketingsolutions">{t("Marketing Solutions")}</Link></div> */}
                             <img src={Project5} className="card-img-top" alt="Project" />
@@ -138,7 +138,7 @@ const OurProjectsDetail = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-6" data-aos="fade-right" data-aos-delay="500">
+                    <div className="col-md-6" data-aos="fade-down" data-aos-delay="500">
                         <div className="card project-card position-relative">
                             {/*  <div><Link className="tag text-decoration-none" to="/ecommercesolutions">{t("E-Commerce Solutions")}</Link></div> */}
                             <img src={Project6} className="card-img-top" alt="Project" />
@@ -160,7 +160,7 @@ const OurProjectsDetail = () => {
             </div>
             <div className="container py-5">
                 <div className="row g-4">
-                    <div className="col-md-6" data-aos="fade-right" data-aos-delay="500">
+                    <div className="col-md-6" data-aos="fade-down" data-aos-delay="500">
                         <div className="card project-card position-relative">
                             {/*  <div><Link className="tag text-decoration-none" to="/marketingsolutions">{t("Marketing Solutions")}</Link></div> */}
                             <img src={Project7} className="card-img-top" alt="Project" />
