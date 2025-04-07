@@ -1300,6 +1300,7 @@ body {
 .v-term {
   /*  font-family: Reddit Sans; */
   color: var(--text-primary);
+  font-size: 17px;
 }
 
 .v-term:hover {
@@ -1309,6 +1310,7 @@ body {
 .v-copy {
   /*  font-family: Reddit Sans; */
   color: var(--text-primary);
+  font-size: 17px;
 }
 
 .v-left {
@@ -1936,6 +1938,12 @@ img {
   img {
     width: 100%;
     /* Pura screen cover kare */
+  }
+  .v-term {
+    font-size: 13px;
+  }
+  .v-copy {
+    font-size: 13px;
   }
 }
 
