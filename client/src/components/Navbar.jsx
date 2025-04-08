@@ -36,7 +36,7 @@ const Navbar = () => {
       </section>
 
       {/* Main Navbar */}
-      <section className="u-section navbar-padding color-effect-navbar pb-3">
+      <section className="u-section navbar-padding color-effect-navbarLink pb-3">
         <nav className="navbar-bg-color navbar navbar-expand-lg navbar-border">
           <div className="container d-flex align-items-center justify-content-between">
 
