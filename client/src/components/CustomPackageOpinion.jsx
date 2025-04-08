@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import CallImg from "../assets/images/call.svg";
 import LocationImg from "../assets/images/Location.svg";
 import EmailImg from "../assets/images/Email.png";
 import { useForm } from 'react-hook-form';
 import emailjs from "@emailjs/browser";
+import Swal from 'sweetalert2';
 //import api from '../api';
 
 const CustomPackageOpinion = () => {
     const { t } = useTranslation();
     const isRTL = document.dir === "rtl"; // Ya kisi global state se lein
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
-    const [showSuccessModal, setShowSuccessModal] = useState(false); // State for the success modal
 
     /* const onSubmit = async (data) => {
          try {
@@ -50,7 +50,11 @@ const CustomPackageOpinion = () => {
 
         emailjs.send(serviceID, templateID, templateParams, publicKey)
             .then((response) => {
-                setShowSuccessModal(true);  // Show the success modal
+                Swal.fire({
+                    title: t("Thank you for contacting us!"),
+                    text: t("Your message has been sent successfully. We will contact you later"),
+                    icon: "success"
+                });
                 reset();
             })
             .catch((error) => {
@@ -171,26 +175,6 @@ const CustomPackageOpinion = () => {
                     </div>
                 </div>
             </div>
-
-            {/* Success Modal */}
-            {showSuccessModal && (
-                <div className="modal" tabIndex="-1" style={{ display: "block", zIndex: "1050" }}>
-                    <div className="modal-dialog">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h5 className="modal-title">{t("Thank you for contacting us!")}</h5>
-                                <button type="button" className="btn-close" onClick={() => setShowSuccessModal(false)}></button>
-                            </div>
-                            <div className="modal-body">
-                                <p>{t("Your message has been sent successfully. We will contact you later")}</p>
-                            </div>
-                            <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" onClick={() => setShowSuccessModal(false)}>{t("Close")}</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
         </section>
     );
 };

@@ -29,6 +29,7 @@
     "sitemap": "^8.0.0",
     "slick-carousel": "^1.8.1",
     "stream-to-promise": "^3.0.0",
+    "sweetalert2": "^11.17.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

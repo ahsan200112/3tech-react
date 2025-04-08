@@ -12,14 +12,17 @@ const App = () => {
     const location = useLocation();  // Get current location (route) from react-router
 
     useEffect(() => {
-        // Google Tag Manager - track page view on route change
-        if (window.dataLayer) {
+        if (typeof window !== 'undefined' && window.dataLayer) {
             window.dataLayer.push({
                 event: 'pageview',
                 page: location.pathname + location.search,
             });
-        }
-    }, [location]);  // Trigger whenever the location (route) changes
+           // console.log('Pageview event pushed:', location.pathname);
+        } 
+        /* else {
+            console.log("GTM dataLayer is not defined yet.");
+        } */
+    }, [location]); 
 
     useEffect(() => {
         document.documentElement.lang = i18n.language;  // Language set karein

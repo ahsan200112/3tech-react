@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import CallImg from "../assets/images/call.svg";
 import LocationImg from "../assets/images/Location.svg";
 import EmailImg from "../assets/images/Email.png";
 import { useForm } from 'react-hook-form';
 import emailjs from "@emailjs/browser";
+import Swal from 'sweetalert2';
 //import api from '../api';
 
 const GetContactNow = () => {
@@ -12,8 +13,7 @@ const GetContactNow = () => {
     const isRTL = document.dir === "rtl"; // Ya kisi global state se lein
     //const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
-    const [showSuccessModal, setShowSuccessModal] = useState(false); // State for the success modal
-    
+
     /*const onSubmit = async (data) => {
         try {
             const response = await api("/api/contact", {
@@ -37,29 +37,33 @@ const GetContactNow = () => {
     }; */
 
     //ye emailjs hai jo frontend se email send krta hai ye 200 free email hai per month baqi ye paid
-     const onSubmit = (data) => {
-         const serviceID = "service_bk2mmlr";  // EmailJS se copy karo
-         const templateID = "template_ij5qjqm";  // EmailJS se copy karo
-         const publicKey = "rBuu6w3lR4LQIztjf";  // EmailJS se copy karo
- 
-         const templateParams = {
-             name: data.name,
-             email: data.email,
-             phone: data.phone,
-             subject: data.subject,
-             message: data.message,
-         };
- 
-         emailjs.send(serviceID, templateID, templateParams, publicKey)
-             .then((response) => {
-                setShowSuccessModal(true);  // Show the success modal
-                 reset();
-             })
-             .catch((error) => {
-                 console.error("Error sending email:", error);
-                 alert("Failed to send email, please try again.");
-             });
-     }; 
+    const onSubmit = (data) => {
+        const serviceID = "service_bk2mmlr";  // EmailJS se copy karo
+        const templateID = "template_ij5qjqm";  // EmailJS se copy karo
+        const publicKey = "rBuu6w3lR4LQIztjf";  // EmailJS se copy karo
+
+        const templateParams = {
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+            subject: data.subject,
+            message: data.message,
+        };
+
+        emailjs.send(serviceID, templateID, templateParams, publicKey)
+            .then((response) => {
+                Swal.fire({
+                    title: t("Thank you for contacting us!"),
+                    text: t("Your message has been sent successfully. We will contact you later"),
+                    icon: "success"
+                });
+                reset();
+            })
+            .catch((error) => {
+                console.error("Error sending email:", error);
+                alert("Failed to send email, please try again.");
+            });
+    };
 
     return (
         <section className='u-section'>
@@ -161,26 +165,6 @@ const GetContactNow = () => {
                     </div>
                 </div>
             </div>
-            
-            {/* Success Modal */}
-            {showSuccessModal && (
-                <div className="modal" tabIndex="-1" style={{ display: "block", zIndex: "1050" }}>
-                    <div className="modal-dialog">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h5 className="modal-title">{t("Thank you for contacting us!")}</h5>
-                                <button type="button" className="btn-close" onClick={() => setShowSuccessModal(false)}></button>
-                            </div>
-                            <div className="modal-body">
-                                <p>{t("Your message has been sent successfully. We will contact you later")}</p>
-                            </div>
-                            <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" onClick={() => setShowSuccessModal(false)}>{t("Close")}</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
         </section>
     );
 };
