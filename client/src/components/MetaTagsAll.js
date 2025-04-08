@@ -21,7 +21,7 @@ const MetaTags = () => {
     }, [title, description]); // Jab bhi title ya description change ho, update karega
 
     // Public folder ka favicon URL
-    const imageUrl = `${window.location.origin}/favicon.ico`;
+    const imageUrl = `${window.location.origin}/3techLogo.png`;
     const siteUrl = window.location.origin; // Website ka base URL
 
     return (
