@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import emailjs from "@emailjs/browser";
@@ -7,6 +7,8 @@ import emailjs from "@emailjs/browser";
 const GetContactNow2 = () => {
     const { t } = useTranslation();
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const [showSuccessModal, setShowSuccessModal] = useState(false); // State for the success modal
+
 
     /* const onSubmit = async (data) => {
          try {
@@ -45,7 +47,7 @@ const GetContactNow2 = () => {
 
         emailjs.send(serviceID, templateID, templateParams, publicKey)
             .then((response) => {
-                alert("Email sent successfully!");
+                setShowSuccessModal(true);  // Show the success modal
                 reset();
             })
             .catch((error) => {
@@ -129,6 +131,26 @@ const GetContactNow2 = () => {
                     </div>
                 </div>
             </div>
+            
+            {/* Success Modal */}
+            {showSuccessModal && (
+                <div className="modal" tabIndex="-1" style={{ display: "block", zIndex: "1050" }}>
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title">{t("Thank you for contacting us!")}</h5>
+                                <button type="button" className="btn-close" onClick={() => setShowSuccessModal(false)}></button>
+                            </div>
+                            <div className="modal-body">
+                                <p>{t("Your message has been sent successfully. We will contact you later")}</p>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" onClick={() => setShowSuccessModal(false)}>{t("Close")}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </section>
     );
 };

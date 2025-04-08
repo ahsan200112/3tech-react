@@ -5,13 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from './context/ThemeContext';
 import { HelmetProvider } from "react-helmet-async";
+import { BrowserRouter as Router } from 'react-router-dom';  // Import Router here
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <HelmetProvider>
       <ThemeProvider>
-        <App />
+        <Router>
+          <App />
+        </Router>
       </ThemeProvider>
     </HelmetProvider>
   </React.StrictMode>
