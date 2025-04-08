@@ -67,7 +67,7 @@ const OurWorkingProcess = () => {
                     <div className="col-md-3 mb-4">
                         <div className="step">
                             <div className="custom-row">
-                                <button class="step-number btn-sm s-j">{t("Step 6")}</button>
+                                <button className="step-number btn-sm s-j">{t("Step 6")}</button>
                                 <img src={PinImg} alt="Company Logo" className="img-fluid custom-size-img" />
                             </div>
                             <h5 className="h-w">{t("Testing & Optimization")}</h5>
