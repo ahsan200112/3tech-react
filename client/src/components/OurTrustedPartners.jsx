@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from "../context/ThemeContext";
 import Slider from "react-slick";
@@ -28,6 +28,7 @@ const OurTrustedPartners = () => {
   const { theme } = useTheme(); // Get theme from context
   // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
   const trackEvent = useGTMEventTracker();  // Get the event tracker
+  const previousSlide = useRef(0); // Track the previous slide index
 
   const images = [
     { light: F1ImgLight, dark: F1Img },
@@ -70,8 +71,9 @@ const OurTrustedPartners = () => {
   };
 
   // Handle slide change event tracking
-  const handleSlideChange = (current, next) => {
-    trackEvent('Our Partners Carousel', 'Slide Change', `From Slide ${current} to Slide ${next}`);
+  const handleSlideChange = (current) => {
+    trackEvent('Our Partners Carousel', 'Slide Change', `From Slide ${previousSlide.current} to Slide ${current}`);
+    previousSlide.current = current;
   };
 
   // Handle project image click event tracking

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -11,6 +11,7 @@ const OurClientsSay = () => {
   const { t, i18n } = useTranslation();
   const isRTL = i18n.language === "ar"; // Check if language is Arabic
   const trackEvent = useGTMEventTracker();  // Get the event tracker
+  const previousSlide = useRef(0); // Track the previous slide index
   // Testimonials Array
   const testimonials = [
     {
@@ -69,8 +70,9 @@ const OurClientsSay = () => {
   };
 
   // Handle slide change event tracking
-  const handleSlideChange = (current, next) => {
-    trackEvent('Clients Carousel', 'Slide Change', `From Slide ${current} to Slide ${next}`);
+  const handleSlideChange = (current) => {
+    trackEvent('Clients Carousel', 'Slide Change', `From Slide ${previousSlide.current} to Slide ${current}`);
+    previousSlide.current = current;
   };
 
   // Handle project image click event tracking

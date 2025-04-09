@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -15,6 +15,7 @@ import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Impo
 const OurProjects = () => {
     const { t } = useTranslation();
     const trackEvent = useGTMEventTracker();  // Get the event tracker
+    const previousSlide = useRef(0); // Track the previous slide index
     
     const settings = {
         dots: true,
@@ -43,8 +44,9 @@ const OurProjects = () => {
     };
 
     // Handle slide change event tracking
-    const handleSlideChange = (current, next) => {
-        trackEvent('Projects Carousel', 'Slide Change', `From Slide ${current} to Slide ${next}`);
+    const handleSlideChange = (current) => {
+        trackEvent('Projects Carousel', 'Slide Change', `From Slide ${previousSlide.current} to Slide ${current}`);
+        previousSlide.current = current;
     };
 
     // Handle project image click event tracking
