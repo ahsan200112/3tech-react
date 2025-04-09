@@ -5,10 +5,12 @@ import HeroImageLight from "../assets/images/HeroImage Light Mode.png";
 import { useTranslation } from 'react-i18next';
 import { useTheme } from "../context/ThemeContext";
 import { Link } from 'react-router-dom';
+import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
 const HeroSection = () => {
     const { t } = useTranslation();
     const { theme } = useTheme(); // Get theme from context
+    const trackEvent = useGTMEventTracker();  // Use the custom hook
 
     return (
         <section className="hero-section color-effect-navbar" 
@@ -28,10 +30,14 @@ const HeroSection = () => {
                             <p className="u-whi">{t("At 3Tech, we provide cutting-edge solutions designed to help your business grow and succeed. From customized software to seamless system integrations, we deliver the tools you need to stay ahead in a fast-paced digital world.")}
                             </p>
                             <div className="d-flex gap-3 mb-3 custom-content-center btn-column btn-nextline responsive-buttons">
-                                <Link to="/contact" className="text-decoration-none">
+                                <Link to="/contact" className="text-decoration-none"
+                                onClick={() => trackEvent('Navigation', 'Click', 'Discover Our Solutions Button')}
+                                >
                                     <button className="btn-under">{t("Discover Our Solutions")}</button>
                                 </Link>
-                                <Link to="/contact" className="text-decoration-none">
+                                <Link to="/contact" className="text-decoration-none"
+                                onClick={() => trackEvent('Navigation', 'Click', 'Get a Free Consultation Button')}
+                                >
                                     <button className="btn-while">{t("Get a Free Consultation")}</button>
                                 </Link>
                             </div>

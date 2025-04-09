@@ -56,6 +56,21 @@ const CustomPackageOpinion = () => {
                     icon: "success"
                 });
                 reset();
+                 // Push the form submission event to GTM with page path
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    event: 'form_submission',  // Custom event name
+                    form_name: 'CustomPackageOpinion',  // Form name or identifier
+                    page: window.location.pathname,  // Page URL (path)
+                    form_data: {
+                        name: data.name,
+                        email: data.email,
+                        phone: data.phone,
+                        subject: data.subject,
+                        message: data.message
+                    }
+                });
+            }
             })
             .catch((error) => {
                 console.error("Error sending email:", error);

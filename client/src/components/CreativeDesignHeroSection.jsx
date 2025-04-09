@@ -1,18 +1,21 @@
-import React , { useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
 //import { Link } from "react-router-dom";
 import Group1Img from '../assets/images/Group (1).png';
 import PresentationDesignImg from '../assets/images/presentation-design.png';
 import AnimationImg from '../assets/images/animation.png';
 import PinImg from '../assets/images/pin.png';
+import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
 function CreativeDesignHeroSection() {
     const { t, i18n } = useTranslation();
     const textAlignmentArrow = i18n.dir() === "ltr" ? "text-end" : "text-start"; // Check language direction
     const [activeIndex, setActiveIndex] = useState(null);
+    const trackEvent = useGTMEventTracker();  // Initialize the GTM event tracker
 
-    const toggleSection = (index) => {
+    const toggleSection = (index, title) => {
         setActiveIndex(activeIndex === index ? null : index); // Toggle open/close
+        trackEvent('Creative Design Page', 'Toggle Section', title);  // Track event on section toggle
     };
 
     return (
@@ -66,6 +69,7 @@ function CreativeDesignHeroSection() {
                                         <div
                                             className="card h-100 color-effect-card"
                                             style={{ padding: "25px" }}
+                                            onClick={() => trackEvent('Creative Design Page', 'Explore Service Click', card.title)}  // Track event when "Explore Service" is clicked
                                         >
                                             <div className="card-body">
                                                 <img className="custom-size-img"
@@ -113,11 +117,11 @@ function CreativeDesignHeroSection() {
                 {[
                     { num: "002", title: t("Innovative Solutions"), description: t("We craft cutting-edge software solutions tailored to your business needs, leveraging the latest technologies to drive efficiency and growth. Our forward-thinking approach ensures you stay ahead in the digital landscape.") },
                     { num: "003", title: t("Consistency Across Channels"), description: t("We ensure a seamless user experience across web, mobile, and desktop platforms, maintaining uniform functionality and design. Your brand and operations stay aligned across all digital touchpoints.") },
-                    { num: "004", title: t("Fast Turnaround Time"), description : t("Our agile development process ensures rapid delivery of high-quality software without compromising on performance. We prioritize efficiency to help you meet your business goals on time.") },
+                    { num: "004", title: t("Fast Turnaround Time"), description: t("Our agile development process ensures rapid delivery of high-quality software without compromising on performance. We prioritize efficiency to help you meet your business goals on time.") },
                 ].map((item, index) => (
                     <div key={index} className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="300">
-                        <div className="row" style={{ borderBottom: "1px solid var(--text-primary)", cursor:"pointer" }}
-                            onClick={() => toggleSection(index)}>
+                        <div className="row" style={{ borderBottom: "1px solid var(--text-primary)", cursor: "pointer" }}
+                            onClick={() => toggleSection(index, item.title)}>
                             <div className="col-4 f-z">
                                 <p>{item.num}</p>
                             </div>

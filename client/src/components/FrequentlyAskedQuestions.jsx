@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
 const FrequentlyAskedQuestions = () => {
     const { t } = useTranslation();
-   // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start";
+    // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start";
     const [openIndex, setOpenIndex] = useState(0);
+    const trackEvent = useGTMEventTracker();  // Use the custom hook
 
     const toggleFAQ = (index) => {
         setOpenIndex(openIndex === index ? null : index);
+
+        // Track the FAQ section click event
+        trackEvent('FAQ Interaction', 'Click', `FAQ ${index + 1} ${openIndex === index ? 'Closed' : 'Opened'}`);
     };
 
     const faqData = [

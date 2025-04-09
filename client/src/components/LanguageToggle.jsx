@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker'; // Import the custom hook
 
 const LanguageToggle = () => {
   const { i18n } = useTranslation();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const trackEvent = useGTMEventTracker();  // Get the event tracker
 
   // Function to toggle language
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     document.documentElement.dir = lng === "ar" ? "rtl" : "ltr"; // Update page direction
     setDropdownOpen(false); // Close dropdown after selecting language
+
+    // Track the language change event
+    trackEvent("Language", "Change", lng === "ar" ? "English to Arabic" : "Arabic to English");
   };
 
   return (

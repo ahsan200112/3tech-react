@@ -3,11 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import WhoWeAreImg from '../assets/images/WhoWeAre.png';
 import { useTheme } from "../context/ThemeContext";
+import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
 const WhoWeAre = () => {
     const { t, i18n } = useTranslation();
     const isRTL = i18n.dir() === "rtl";
     const { theme } = useTheme(); // Get theme from context
+    const trackEvent = useGTMEventTracker();  // Use the custom hook
 
     return (
         <section className="u-section">
@@ -20,7 +22,9 @@ const WhoWeAre = () => {
                         <p className="u-here">
                             {t("In a world where creativity meets technology, 3Tech delivers exceptional experiences in building online stores, apps, and digital marketing. We’re here to tell your story and connect you with your audience through unique and impactful approaches. Every project with us becomes a memorable journey to success.")}
                         </p>
-                        <Link to="/about" className="btn-our d-block w-100 text-decoration-none">
+                        <Link to="/about" className="btn-our d-block w-100 text-decoration-none"
+                            onClick={() => trackEvent('Navigation', 'Click', 'Discover Our Story Button')}
+                        >
                             {t("Discover Our Story")}
                         </Link>
                         <div className="row text-white mt-3 flex-nowrap text-center mb-3">

@@ -2,10 +2,13 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 import BlackImg from "../assets/images/Black.png";
+import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
 const ProjectsFirstComponent = () => {
     const { t } = useTranslation();
     // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
+    const trackEvent = useGTMEventTracker();  // Use the custom hook
+
     return (
         <div className="while-valu color-effect-firstC">
             <section >
@@ -15,12 +18,16 @@ const ProjectsFirstComponent = () => {
                             <h2 className="o-hlo" style={{ borderBottom: "2px solid" }}>{t("Projects")}</h2>
                             <h4 className="o-a d-flex align-items-center" style={{ gap: "8px" }}>
                                 <i className="bi bi-house-door"></i>
-                                <Link to="/" style={{ textDecoration: "none", color: "inherit" }}> {t("Home")} </Link> / {t("Projects")}
+                                <Link to="/" style={{ textDecoration: "none", color: "inherit" }}
+                                    onClick={() => trackEvent('Navigation', 'Click', 'Home Page Link')}  // Track event
+                                > {t("Home")} </Link> / {t("Projects")}
                             </h4>
                         </div>
                         <div className="text-end">
                             <img src={BlackImg} alt="Company Logo" className="img-fluid responsive-logo"
-                                style={{ maxWidth: "100%", height: "auto" }} />
+                                style={{ maxWidth: "100%", height: "auto" }}
+                                onClick={() => trackEvent('Image', 'Click', 'Background Image')}  // Track event
+                            />
                         </div>
                     </div>
                 </div>

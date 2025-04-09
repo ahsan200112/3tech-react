@@ -9,10 +9,18 @@ import Container3Img from '../assets/images/Container (3).png';
 import HtmlImg from '../assets/images/html.png';
 import ErImg from '../assets/images/er.png';
 import BnImg from '../assets/images/bn.png';
+import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
 const BlogsSection = () => {
     const { t, i18n } = useTranslation();
     const RTL = i18n.dir() === "rtl"; // Check language direction
+    const trackEvent = useGTMEventTracker();  // Use the custom hook
+
+    // Function to handle blog link click event
+    const handleBlogClick = (eventLabel) => {
+        trackEvent('Blog Section', 'Click', eventLabel);
+    };
+
     return (
         <section className="v-section">
             <div className="container py-5">
@@ -23,7 +31,9 @@ const BlogsSection = () => {
                 </div>
                 <div className="row">
                     <div className="col-lg-8 mb-4" data-aos="fade-up" data-aos-delay="300">
-                        <div className="card custom-card">
+                        <div className="card custom-card"
+                            onClick={() => handleBlogClick('Best SEO Techniques For Ecommerce')}
+                        >
                             <img src={WinImg} alt="Digital Trends" className="card-img img-fluid responsive-image" />
                             <div className="card-body">
                                 <div className="d-flex justify-content-between align-items-center">
@@ -58,18 +68,30 @@ const BlogsSection = () => {
                         </div>
                         <h5 className="v-s">{t("Category List")}</h5>
                         <ul className="category-list ps-0 pe-0">
-                            <li className='custom-padding-h'><a href="ecommercesolutions" className="text-decoration-none v-d">{t("E-Commerce Solutions (3)")}</a></li>
-                            <li className='custom-padding-h'><a href="mobileapplications" className="text-decoration-none v-d">{t("Mobile Applications (4)")}</a></li>
-                            <li className='custom-padding-h'><a href="marketingsolutions" className="text-decoration-none v-d">{t("Marketing Solutions (4)")}</a></li>
-                            <li className='custom-padding-h'><a href="creativedesign" className="text-decoration-none v-d">{t("Creative Design (4)")}</a></li>
-                            <li className='custom-padding-h'><a href="digitaloptimization" className="text-decoration-none v-d">{t("Digital Optimization (4)")}</a></li>
+                            <li className='custom-padding-h'><a href="ecommercesolutions" className="text-decoration-none v-d"
+                                onClick={() => handleBlogClick('E-Commerce Solutions')}
+                            >{t("E-Commerce Solutions (3)")}</a></li>
+                            <li className='custom-padding-h'><a href="mobileapplications" className="text-decoration-none v-d"
+                                onClick={() => handleBlogClick('Mobile Applications')}
+                            >{t("Mobile Applications (4)")}</a></li>
+                            <li className='custom-padding-h'><a href="marketingsolutions" className="text-decoration-none v-d"
+                                onClick={() => handleBlogClick('Marketing Solutions')}
+                            >{t("Marketing Solutions (4)")}</a></li>
+                            <li className='custom-padding-h'><a href="creativedesign" className="text-decoration-none v-d"
+                                onClick={() => handleBlogClick('Creative Design')}
+                            >{t("Creative Design (4)")}</a></li>
+                            <li className='custom-padding-h'><a href="digitaloptimization" className="text-decoration-none v-d"
+                                onClick={() => handleBlogClick('Digital Optimization')}
+                            >{t("Digital Optimization (4)")}</a></li>
                         </ul>
                         <h5 className="mt-4 v-f">{t("Recent Post")}</h5>
                         <div className="d-flex align-items-center recent-post mb-3 mt-3 custom-padding-h custom-content-center">
                             <img className="custom-margin-img" src={Container1Img} alt="Post" style={{ width: "70", height: "71" }} />
                             <div className="ms-3 me-3">
                                 <small className="v-g">March 21, 2024</small>
-                                <p className="mb-0 v-p" style={{maxWidth: "130px", wordBreak: "break-word"}}>{t("Connecting with Key Online Voices")}</p>
+                                <p className="mb-0 v-p" style={{ maxWidth: "130px", wordBreak: "break-word" }}
+                                    onClick={() => handleBlogClick('Connecting with Key Online Voices')}
+                                >{t("Connecting with Key Online Voices")}</p>
                             </div>
                         </div>
 
@@ -77,7 +99,9 @@ const BlogsSection = () => {
                             <img className="custom-margin-img" src={Container2Img} alt="Post" style={{ width: "70", height: "71" }} />
                             <div className="ms-3 me-3">
                                 <small className="v-g">March 21, 2024</small>
-                                <p className="mb-0 v-p" style={{maxWidth: "130px", wordBreak: "break-word"}}>{t("Creating for an On-the-Go Audience")}</p>
+                                <p className="mb-0 v-p" style={{ maxWidth: "130px", wordBreak: "break-word" }}
+                                    onClick={() => handleBlogClick('Creating for an On-the-Go Audience')}
+                                >{t("Creating for an On-the-Go Audience")}</p>
                             </div>
                         </div>
 
@@ -85,7 +109,9 @@ const BlogsSection = () => {
                             <img className="custom-margin-img" src={Container3Img} alt="Post" style={{ width: "70", height: "71" }} />
                             <div className="ms-3 me-3">
                                 <small className="v-g">March 21, 2024</small>
-                                <p className="mb-0 v-p" style={{maxWidth: "130px", wordBreak: "break-word"}}>{t("Your Path to Audience Engagement")}</p>
+                                <p className="mb-0 v-p" style={{ maxWidth: "130px", wordBreak: "break-word" }}
+                                    onClick={() => handleBlogClick('Your Path to Audience Engagement')}
+                                >{t("Your Path to Audience Engagement")}</p>
                             </div>
                         </div>
                     </div>
@@ -94,7 +120,9 @@ const BlogsSection = () => {
             <div className="container pb-5">
                 <div className="row">
                     <div className="col-lg-8 mb-4" data-aos="fade-up" data-aos-delay="300">
-                        <div className="card custom-card">
+                        <div className="card custom-card"
+                            onClick={() => handleBlogClick('Best SEO Techniques For Ecommerce')}
+                        >
                             <img src={HtmlImg} alt="Digital Trends" className="card-img img-fluid responsive-img" />
                             <div className="card-body">
                                 <div className="d-flex justify-content-between align-items-center">
@@ -115,7 +143,9 @@ const BlogsSection = () => {
                     <div className="container my-5">
                         <div className="row">
                             <div className="col-lg-8 mb-4" data-aos="fade-up" data-aos-delay="300">
-                                <div className="card custom-card">
+                                <div className="card custom-card"
+                                    onClick={() => handleBlogClick('Best SEO Techniques For Ecommerce')}
+                                >
                                     <img src={ErImg} alt="Digital Trends" className="card-img img-fluid" />
                                     <div className="card-body">
                                         <div className="d-flex justify-content-between align-items-center">
@@ -138,7 +168,9 @@ const BlogsSection = () => {
                             <div className="container my-5">
                                 <div className="row">
                                     <div className="col-lg-8 mb-4" data-aos="fade-up" data-aos-delay="300">
-                                        <div className="card custom-card">
+                                        <div className="card custom-card"
+                                            onClick={() => handleBlogClick('Best SEO Techniques For Ecommerce')}
+                                        >
                                             <img src={BnImg} alt="Digital Trends" className="card-img img-fluid" />
                                             <div className="card-body">
                                                 <div className="d-flex justify-content-between align-items-center">

@@ -6,10 +6,13 @@ import Group2Img from "../assets/images/Group (2).png";
 import YGPImg from "../assets/images/ygb.png";
 import JUImg from "../assets/images/ju.png";
 import Group3Img from "../assets/images/Group (3).png";
+import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
 const OurServices = () => {
     const { t } = useTranslation();
     // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
+    const trackEvent = useGTMEventTracker();  // Use the custom hook
+    
     return (
         <section className="u-section">
             <div className="container py-5">
@@ -20,14 +23,18 @@ const OurServices = () => {
                                 <div className="card-body">
                                     <button className="btn-sm u-vise">{t("Our Services")}</button>
                                     <h5 className="card-title u-item mt-3 mb-3">{t("Solutions That Redefine Excellence")}</h5>
-                                    <Link to="/services" className="text-decoration-none">
+                                    <Link to="/services" className="text-decoration-none"
+                                        onClick={() => trackEvent('Navigation', 'Click', 'Services Page Link')}
+                                    >
                                         <button className="btn-next">{t("View All Services")}</button>
                                     </Link>
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-4" data-aos="flip-left" data-aos-delay="400">
-                            <Link className="text-decoration-none" to="/ecommercesolutions">
+                            <Link className="text-decoration-none" to="/ecommercesolutions"
+                                onClick={() => trackEvent('Navigation', 'Click', 'E-commerce Solutions Page Link')}
+                            >
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
                                     <div className="card-body" style={{ padding: "30px 30px" }}>
                                         <img src={Group2Img} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
@@ -43,7 +50,9 @@ const OurServices = () => {
                             </Link>
                         </div>
                         <div className="col-md-4" data-aos="flip-left" data-aos-delay="400">
-                            <Link className="text-decoration-none" to="/mobileapplications">
+                            <Link className="text-decoration-none" to="/mobileapplications"
+                                onClick={() => trackEvent('Navigation', 'Click', 'Mobile Applications Page Link')}
+                            >
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
                                     <div className="card-body" style={{ padding: "30px 30px" }}>
                                         <img src={YGPImg} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
@@ -61,7 +70,9 @@ const OurServices = () => {
                     </div>
                     <div className="row g-3 mt-3">
                         <div className="col-md-4" data-aos="flip-left" data-aos-delay="400">
-                            <Link className="text-decoration-none" to="/marketingsolutions">
+                            <Link className="text-decoration-none" to="/marketingsolutions"
+                                onClick={() => trackEvent('Navigation', 'Click', 'Marketing Soltions Page Link')}
+                            >
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
                                     <div className="card-body" style={{ padding: "30px 30px" }}>
                                         <img src={SocialMediaMarketingImg} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
@@ -77,7 +88,9 @@ const OurServices = () => {
                             </Link>
                         </div>
                         <div className="col-md-4" data-aos="flip-left" data-aos-delay="400">
-                            <Link className="text-decoration-none" to="/creativedesign">
+                            <Link className="text-decoration-none" to="/creativedesign"
+                                onClick={() => trackEvent('Navigation', 'Click', 'Creative Design Page Link')}
+                            >
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
                                     <div className="card-body" style={{ padding: "30px 30px" }}>
                                         <img src={JUImg} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />
@@ -93,7 +106,9 @@ const OurServices = () => {
                             </Link>
                         </div>
                         <div className="col-md-4" data-aos="flip-left" data-aos-delay="400">
-                            <Link to="/digitaloptimization" className="text-decoration-none">
+                            <Link to="/digitaloptimization" className="text-decoration-none"
+                                onClick={() => trackEvent('Navigation', 'Click', 'Digital Optimization Page Link')}
+                            >
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
                                     <div className="card-body" style={{ padding: "30px 30px" }}>
                                         <img src={Group3Img} alt="Mobile preview" style={{ height: "60px", width: "56px" }} />

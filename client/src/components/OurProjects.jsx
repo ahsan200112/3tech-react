@@ -10,9 +10,12 @@ import Project4 from "../assets/images/4Project.webp";
 import Project5 from "../assets/images/5Project.webp";
 import Project6 from "../assets/images/6Project.webp";
 import Project7 from "../assets/images/7Project.webp";
+import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
 const OurProjects = () => {
     const { t } = useTranslation();
+    const trackEvent = useGTMEventTracker();  // Get the event tracker
+    
     const settings = {
         dots: true,
         infinite: true,
@@ -39,6 +42,16 @@ const OurProjects = () => {
         ]
     };
 
+    // Handle slide change event tracking
+    const handleSlideChange = (current, next) => {
+        trackEvent('Projects Carousel', 'Slide Change', `From Slide ${current} to Slide ${next}`);
+    };
+
+    // Handle project image click event tracking
+    const handleImageClick = (projectName) => {
+        trackEvent('Projects', 'Click', projectName);
+    };
+
     return (
         <section className="v-section">
             <div className="container py-5">
@@ -50,7 +63,9 @@ const OurProjects = () => {
                     <p className="v-info mt-2" style={{ maxWidth: "800px", wordBreak: "break-word" }}>{t("Explore our success stories in e-commerce, app development, and creative marketing. See how we've helped businesses like yours thrive.")}</p>
                     {/* ✅ Image Slider */}
                     <div data-aos="flip-left" data-aos-delay="500">
-                        <Slider {...settings} className="mt-4">
+                        <Slider {...settings} className="mt-4"
+                            afterChange={handleSlideChange}  // Event on slide change
+                        >
                             {[
                                 { img: Project1, text: "Web Design & Development", description: "Explore modern, responsive websites crafted for diverse industries." },
                                 { img: Project2, text: "Creative Design", description: "Explore modern, responsive websites crafted for diverse industries." },
@@ -61,7 +76,7 @@ const OurProjects = () => {
                                 { img: Project7, text: "E-Commerce Solutions", description: "Explore modern, responsive websites crafted for diverse industries." }
                             ].map((item, index) => (
                                 <div key={index} className="slide-item">
-                                    <div className="card project-card">
+                                    <div className="card project-card" onClick={() => handleImageClick(item.text)}>
                                         <div className="image-overlay-container" style={{ height: "400px" }}>
                                             <img src={item.img} className="card-img-top" alt={item.text} loading="lazy" />
                                             {/* <div className="overlay-text">

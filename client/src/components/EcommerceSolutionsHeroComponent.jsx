@@ -5,14 +5,17 @@ import ToImg from '../assets/images/to.png';
 import TiImg from '../assets/images/ti.png';
 import ShippingImg from '../assets/images/shipping.png';
 import PinImg from '../assets/images/pin.png';
+import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
 function EcommerceSolutionsHeroSection() {
     const { t, i18n } = useTranslation();
     const textAlignmentArrow = i18n.dir() === "ltr" ? "text-end" : "text-start"; // Check language direction
     const [activeIndex, setActiveIndex] = useState(null);
+    const trackEvent = useGTMEventTracker();  // Initialize the GTM event tracker
 
-    const toggleSection = (index) => {
+    const toggleSection = (index, title) => {
         setActiveIndex(activeIndex === index ? null : index); // Toggle open/close
+        trackEvent('E-commerce Solutuon Page', 'Toggle Section', title);  // Track event on section toggle
     };
 
     return (
@@ -66,6 +69,7 @@ function EcommerceSolutionsHeroSection() {
                                         <div
                                             className="card h-100 color-effect-card"
                                             style={{ padding: "25px" }}
+                                            onClick={() => trackEvent('Ecommerce Solution Page', 'Explore Service Click', card.title)}  // Track event when "Explore Service" is clicked
                                         >
                                             <div className="card-body">
                                                 <img className="custom-size-img"
@@ -120,7 +124,7 @@ function EcommerceSolutionsHeroSection() {
                 ].map((item, index) => (
                     <div key={index} className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="300">
                         <div className="row" style={{ borderBottom: "1px solid var(--text-primary)", cursor: "pointer" }}
-                            onClick={() => toggleSection(index)}>
+                            onClick={() => toggleSection(index, item.title)}>
                             <div className="col-4 f-z">
                                 <p>{item.num}</p>
                             </div>

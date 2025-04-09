@@ -1,8 +1,9 @@
-import React , { useState } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Frame41Img from "../assets/images/Frame 41.png";
 import { useTheme } from "../context/ThemeContext";
+import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
 const ExpertiseYouCanTrust = () => {
     const { t, i18n } = useTranslation();
@@ -10,6 +11,14 @@ const ExpertiseYouCanTrust = () => {
     const { theme } = useTheme(); // Get theme from context
     const [activeSection, setActiveSection] = useState("mission");
     // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
+    const trackEvent = useGTMEventTracker();  // Use the custom hook
+
+    const handleSectionClick = (section) => {
+        setActiveSection(section);
+        // Track event based on section clicked
+        trackEvent('Section', 'Click', `${section} Section`);
+    };
+
     return (
         <div className="v-section">
             <section className='py-5' data-aos="fade-up" data-aos-delay="800">
@@ -27,7 +36,9 @@ const ExpertiseYouCanTrust = () => {
                                     {t("3Tech was born from a desire to bridge creativity and technology. We’ve built a team of experts who don’t just develop apps or design stores—they craft experiences that inspire, connect, and drive results. Every line of code, every design choice, and every campaign is created with your success in mind.")}
                                 </p>
                                 <div className='d-flex contact-btn-full'>
-                                    <Link className="contact-btn text-decoration-none" to="/contact">{t("Contact Us")}</Link>
+                                    <Link className="contact-btn text-decoration-none" to="/contact"
+                                        onClick={() => trackEvent('Navigation', 'Click', 'ContactUs Button')}
+                                    >{t("Contact Us")}</Link>
                                 </div>
                             </div>
                             <div className="row text-white mt-3 flex-nowrap text-center mb-3">
@@ -78,7 +89,7 @@ const ExpertiseYouCanTrust = () => {
                         <div className="col-md-4">
                             <div className="d-flex flex-column" data-aos="flip-right" data-aos-delay="600">
                                 {/* Our Mission Section */}
-                                <div onClick={() => setActiveSection("mission")} style={{ cursor: "pointer" }}>
+                                <div onClick={() => handleSectionClick("mission")} style={{ cursor: "pointer" }}>
                                     <div className="mission-vision">
                                         <div className="d-flex justify-content-between align-items-center">
                                             <h5 className="v-x">{t("01. Our Mission")}</h5>
@@ -96,7 +107,7 @@ const ExpertiseYouCanTrust = () => {
                                 </div>
 
                                 {/* Our Vision Section */}
-                                <div className="mt-3" onClick={() => setActiveSection("vision")} style={{ cursor: "pointer" }}>
+                                <div className="mt-3" onClick={() => handleSectionClick("vision")} style={{ cursor: "pointer" }}>
                                     <div className="mission-vision">
                                         <div className="d-flex justify-content-between align-items-center">
                                             <h5 className="v-x">{t("02. Our Vision")}</h5>

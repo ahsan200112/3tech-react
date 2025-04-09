@@ -1,12 +1,20 @@
 import React from "react";
 import { useTheme } from "../context/ThemeContext";
 import { FaSun, FaMoon } from "react-icons/fa"; // Icons for theme toggle
+import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
 const ThemeSwitcher = () => {
   const { theme, toggleTheme } = useTheme();
+  const trackEvent = useGTMEventTracker();  // Use the custom hook
+
+  const handleThemeChange = () => {
+    toggleTheme();
+    // Track the theme change event
+    trackEvent("Theme", "Click", theme === "light" ? "Light to Dark" : "Dark to Light");
+  };
 
   return (
-    <button className="theme-switcher-btn" onClick={toggleTheme}>
+    <button className="theme-switcher-btn" onClick={handleThemeChange}>
       {theme === "light" ? <FaMoon /> : <FaSun />}
     </button>
   );

@@ -5,10 +5,12 @@ import "slick-carousel/slick/slick-theme.css";
 import { useTranslation } from "react-i18next";
 import InkImg from "../assets/images/ink.png";
 //import Girl2Img from "../assets/images/girl2.png";
+import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
 const OurClientsSay = () => {
   const { t, i18n } = useTranslation();
   const isRTL = i18n.language === "ar"; // Check if language is Arabic
+  const trackEvent = useGTMEventTracker();  // Get the event tracker
   // Testimonials Array
   const testimonials = [
     {
@@ -66,6 +68,16 @@ const OurClientsSay = () => {
     ]
   };
 
+  // Handle slide change event tracking
+  const handleSlideChange = (current, next) => {
+    trackEvent('Clients Carousel', 'Slide Change', `From Slide ${current} to Slide ${next}`);
+  };
+
+  // Handle project image click event tracking
+  const handleImageClick = (personName) => {
+    trackEvent('Clients Comments', 'Click', personName);
+  };
+
   return (
     <section className="client-testimonials py-5" style={{ direction: isRTL ? "rtl" : "ltr" }} >
       <div className="container" data-aos="fade-up" data-aos-delay="600">
@@ -76,7 +88,9 @@ const OurClientsSay = () => {
           <h2 className="v-hence">{t("What Our Clients Say About Us")}</h2>
         </div>
         <div data-aos="flip-left" data-aos-delay="600">
-          <Slider {...settings} className="slick-slider">
+          <Slider {...settings} className="slick-slider"
+            afterChange={handleSlideChange}  // Event on slide change
+          >
             {/* Map through Testimonials */}
             {testimonials.map((testimonial) => (
               <div key={testimonial.id} className="slide-item">
@@ -86,7 +100,9 @@ const OurClientsSay = () => {
                     borderRadius: "20px",
                     textAlign: isRTL ? "right" : "left",
                     minHeight: "300px", // Ensuring equal height for all cards
-                  }}>
+                  }}
+                  onClick={() => handleImageClick(testimonial.name)}
+                >
                   <div>
                     <img src={InkImg} alt="Brand Logo" className="img-fluid mt-2 d-inline-block"
                       style={{ width: "44px", height: "30px" }} />

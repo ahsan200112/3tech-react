@@ -21,35 +21,14 @@ import F5ImgLight from '../assets/images/F5Light.png';
 import F6ImgLight from '../assets/images/F6Light.png';
 import F7ImgLight from '../assets/images/F7Light.png';
 import F8ImgLight from '../assets/images/F8Light.png';
-
-// Custom Arrows
-/*const NextArrow = ({ onClick, theme }) => {
-  return (
-    <button
-      className={`btn slider-arrow next-arrow ${theme === "light" ? "btn-dark" : "btn-light"}`}
-      onClick={onClick}
-    >
-      ❯
-    </button>
-  );
-};
-
-const PrevArrow = ({ onClick, theme }) => {
-  return (
-    <button
-      className={`btn slider-arrow prev-arrow ${theme === "light" ? "btn-dark" : "btn-light"}`}
-      onClick={onClick}
-    >
-      ❮
-    </button>
-  );
-}; */
-
+import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
 const OurTrustedPartners = () => {
   const { t } = useTranslation();
   const { theme } = useTheme(); // Get theme from context
   // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
+  const trackEvent = useGTMEventTracker();  // Get the event tracker
+
   const images = [
     { light: F1ImgLight, dark: F1Img },
     { light: F2ImgLight, dark: F2Img },
@@ -70,8 +49,8 @@ const OurTrustedPartners = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     arrows: false, // Disable side arrows
-  /*  nextArrow: <NextArrow theme={theme} />,
-    prevArrow: <PrevArrow theme={theme} />, */
+    /*  nextArrow: <NextArrow theme={theme} />,
+      prevArrow: <PrevArrow theme={theme} />, */
     responsive: [
       {
         breakpoint: 1024, // For tablets
@@ -88,6 +67,16 @@ const OurTrustedPartners = () => {
         },
       },
     ],
+  };
+
+  // Handle slide change event tracking
+  const handleSlideChange = (current, next) => {
+    trackEvent('Our Partners Carousel', 'Slide Change', `From Slide ${current} to Slide ${next}`);
+  };
+
+  // Handle project image click event tracking
+  const handleImageClick = (ImgName) => {
+    trackEvent('Our Partners', 'Click', ImgName);
   };
 
   return (
@@ -116,7 +105,9 @@ const OurTrustedPartners = () => {
       </div>
       */}
       <div className="container mt-4 py-4" data-aos="flip-left" data-aos-delay="500">
-        <Slider {...settings}>
+        <Slider {...settings}
+          afterChange={handleSlideChange}  // Event on slide change
+        >
           {images.map((img, index) => (
             <div key={index} className="text-center">
               <img
@@ -124,6 +115,7 @@ const OurTrustedPartners = () => {
                 alt="Partner Logo"
                 className="img-fluid"
                 style={{ height: "152px", width: "282px", margin: "auto" }}
+                onClick={() => handleImageClick(img)}
               />
             </div>
           ))}

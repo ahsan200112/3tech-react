@@ -1,10 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import FraImg from '../assets/images/fra.png';
+import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
 const GetInTouch = () => {
     const { t } = useTranslation();
     // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
+    const trackEvent = useGTMEventTracker();  // Use the custom hook
+
     return (
         <section className="v-section py-5">
             <div className="container py-5" data-aos="fade-up" data-aos-delay="600">
@@ -32,9 +35,15 @@ const GetInTouch = () => {
                         <div className="col-md-3">
                             <p className="b-e">{t("Social")}</p>
                             <div className="d-flex justify-content-center align-items-center">
-                                <a href="https://www.linkedin.com/company/3tech-platform" target='blank'><i className="bi bi-linkedin text-white mx-2"></i></a>
-                                <a href="https://api.whatsapp.com/send/?phone=966557122917" target='blank'><i className="bi bi-whatsapp text-white mx-2"></i></a>
-                                <a href="https://www.instagram.com/3tech.sa?igsh=aW14cDY0cmtvZW9p" target='blank'><i className="bi bi-instagram text-white mx-2"></i></a>
+                                <a href="https://www.linkedin.com/company/3tech-platform" target='blank'
+                                    onClick={() => trackEvent('Social Media', 'Click', 'LinkedIn')}
+                                ><i className="bi bi-linkedin text-white mx-2"></i></a>
+                                <a href="https://api.whatsapp.com/send/?phone=966557122917" target='blank'
+                                    onClick={() => trackEvent('Social Media', 'Click', 'WhatsApp')}
+                                ><i className="bi bi-whatsapp text-white mx-2"></i></a>
+                                <a href="https://www.instagram.com/3tech.sa?igsh=aW14cDY0cmtvZW9p" target='blank'
+                                    onClick={() => trackEvent('Social Media', 'Click', 'Instagram')}
+                                ><i className="bi bi-instagram text-white mx-2"></i></a>
                             </div>
                         </div>
                     </div>

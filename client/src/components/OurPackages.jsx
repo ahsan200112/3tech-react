@@ -1,18 +1,26 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import YTImg from "../assets/images/yt.png";
+import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
 const OurPackages = () => {
     const { t } = useTranslation();
-   // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
+    // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
+    const trackEvent = useGTMEventTracker();  // Use the custom hook
+
+    // Function to track button click event
+    const handleConsultationClick = (packageName) => {
+        trackEvent('Package', 'Click', `Get Free Consultation: ${packageName}`);
+    };
+
     return (
         <section className="packages u-section">
             <div className="container py-5" data-aos="fade-down" data-aos-delay="600">
                 <div className="py-5">
-                    <button className="btn-sm i-idea mb-2" style={{ width: "140px"}}>{t("Our Packages")}</button>
+                    <button className="btn-sm i-idea mb-2" style={{ width: "140px" }}>{t("Our Packages")}</button>
                     <div className="d-flex align-items-center custom-content-center">
                         <h2 className="i-visit mb-2">{t("Flexible Packages For Every Need")}</h2>
-                      {/*  <button className="btn-all custom-responsive-btn">{t("View All Packages")}</button> */}
+                        {/*  <button className="btn-all custom-responsive-btn">{t("View All Packages")}</button> */}
                     </div>
                     <p className="i-were">
                         {t("Explore our custom packages offering top-notch solutions at great prices.")}
@@ -46,7 +54,9 @@ const OurPackages = () => {
                                     </li>
                                 </ul>
                                 <p className="i-world">{t("Support : Email Support")}</p>
-                                <button className="btn-get responsive-btn">{t("Get a Free Consultation")}</button>
+                                <button className="btn-get responsive-btn"
+                                    onClick={() => handleConsultationClick(packageName)} // Track the event when button is clicked
+                                >{t("Get a Free Consultation")}</button>
                             </div>
                         </div>
                     </div>
@@ -77,7 +87,9 @@ const OurPackages = () => {
                                     </li>
                                 </ul>
                                 <p className="i-world">{t("Support : Email Support")}</p>
-                                <button className="btn-get responsive-btn">{t("Get a Free Consultation")}</button>
+                                <button className="btn-get responsive-btn"
+                                    onClick={() => handleConsultationClick(packageName)} // Track the event when button is clicked
+                                >{t("Get a Free Consultation")}</button>
                             </div>
                         </div>
                     </div>
@@ -108,7 +120,9 @@ const OurPackages = () => {
                                     </li>
                                 </ul>
                                 <p className="i-world">{t("Support : Email Support")}</p>
-                                <button className="btn-get responsive-btn">{t("Get a Free Consultation")}</button>
+                                <button className="btn-get responsive-btn"
+                                    onClick={() => handleConsultationClick(packageName)} // Track the event when button is clicked
+                                >{t("Get a Free Consultation")}</button>
                             </div>
                         </div>
                     </div>

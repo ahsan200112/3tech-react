@@ -8,10 +8,17 @@ import Project4 from "../assets/images/4Project.webp";
 import Project5 from "../assets/images/5Project.webp";
 import Project6 from "../assets/images/6Project.webp";
 import Project7 from "../assets/images/7Project.webp";
+import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
 const OurProjectsDetail = () => {
     const { t } = useTranslation();
     // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
+    const trackEvent = useGTMEventTracker();  // Use the custom hook
+
+    const handleProjectClick = (projectName) => {
+        trackEvent('Project', 'Click', projectName);  // Track the event when a project is clicked
+    };
+
     return (
         <section className="v-section">
             <div className="container py-5">
@@ -31,7 +38,9 @@ const OurProjectsDetail = () => {
                             { label: t("Digital Optimization"), path: "/digitaloptimization" }
                         ].map((item, index, array) => (
                             <React.Fragment key={index}>
-                                <Link to={item.path} className="c-m text-decoration-none nav-item">
+                                <Link to={item.path} className="c-m text-decoration-none nav-item"
+                                    onClick={() => trackEvent('Navigation', 'Click', item.label)} // Track navigation link clicks
+                                >
                                     {item.label}
                                 </Link>
                                 {index !== array.length - 1 && <span className="nav-divider"></span>}
@@ -43,7 +52,9 @@ const OurProjectsDetail = () => {
                     <div className="col-md-6" data-aos="fade-up" data-aos-delay="500">
                         <div className="card project-card position-relative">
                             {/* <div><Link className="tag text-decoration-none" to="/ecommercesolutions">{t("E-Commerce Solutions")}</Link></div> */}
-                            <img src={Project1} class="card-img-top" alt="Project" />
+                            <img src={Project1} className="card-img-top" alt="Project"
+                                onClick={() => handleProjectClick("Web Design & Development")}  // Track project image click
+                            />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
@@ -61,7 +72,9 @@ const OurProjectsDetail = () => {
                     <div className="col-md-6" data-aos="fade-down" data-aos-delay="500">
                         <div className="card project-card position-relative">
                             {/*   <div><Link className="tag text-decoration-none" to="/creativedesign">{t("Creative Design")}</Link></div> */}
-                            <img src={Project2} className="card-img-top" alt="Project" />
+                            <img src={Project2} className="card-img-top" alt="Project"
+                                onClick={() => handleProjectClick("Web Design & Development")}  // Track project image click
+                            />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
@@ -83,7 +96,9 @@ const OurProjectsDetail = () => {
                     <div className="col-md-6" data-aos="fade-up" data-aos-delay="500">
                         <div className="card project-card position-relative">
                             {/*  <div><Link className="tag text-decoration-none" to="/mobileapplications">{t("Mobile Applications")}</Link></div> */}
-                            <img src={Project3} className="card-img-top" alt="Project" />
+                            <img src={Project3} className="card-img-top" alt="Project"
+                                onClick={() => handleProjectClick("Web Design & Development")}  // Track project image click
+                            />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
@@ -101,7 +116,9 @@ const OurProjectsDetail = () => {
                     <div className="col-md-6" data-aos="fade-down" data-aos-delay="500">
                         <div className="card project-card position-relative">
                             {/*  <div><Link className="tag text-decoration-none" to="/digitaloptimization">{t("Digital Optimization")}</Link></div> */}
-                            <img src={Project4} className="card-img-top" alt="Project" />
+                            <img src={Project4} className="card-img-top" alt="Project"
+                                onClick={() => handleProjectClick("Web Design & Development")}  // Track project image click
+                            />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
@@ -123,7 +140,9 @@ const OurProjectsDetail = () => {
                     <div className="col-md-6" data-aos="fade-up" data-aos-delay="500">
                         <div className="card project-card position-relative">
                             {/*  <div><Link className="tag text-decoration-none" to="/marketingsolutions">{t("Marketing Solutions")}</Link></div> */}
-                            <img src={Project5} className="card-img-top" alt="Project" />
+                            <img src={Project5} className="card-img-top" alt="Project"
+                                onClick={() => handleProjectClick("Web Design & Development")}  // Track project image click
+                            />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
@@ -141,7 +160,9 @@ const OurProjectsDetail = () => {
                     <div className="col-md-6" data-aos="fade-down" data-aos-delay="500">
                         <div className="card project-card position-relative">
                             {/*  <div><Link className="tag text-decoration-none" to="/ecommercesolutions">{t("E-Commerce Solutions")}</Link></div> */}
-                            <img src={Project6} className="card-img-top" alt="Project" />
+                            <img src={Project6} className="card-img-top" alt="Project"
+                                onClick={() => handleProjectClick("Web Design & Development")}  // Track project image click
+                            />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
@@ -163,7 +184,9 @@ const OurProjectsDetail = () => {
                     <div className="col-md-6" data-aos="fade-down" data-aos-delay="500">
                         <div className="card project-card position-relative">
                             {/*  <div><Link className="tag text-decoration-none" to="/marketingsolutions">{t("Marketing Solutions")}</Link></div> */}
-                            <img src={Project7} className="card-img-top" alt="Project" />
+                            <img src={Project7} className="card-img-top" alt="Project"
+                                onClick={() => handleProjectClick("Web Design & Development")}  // Track project image click
+                            />
                             <div className="card-content">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>

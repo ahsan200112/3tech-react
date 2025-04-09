@@ -6,23 +6,32 @@ import './i18n';
 import MetaTags from './components/MetaTagsAll';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import GTMPageViewTracker from './components/GoogleTagManager/GTMPageViewTracker';
+import GTMPageReloadTracker from './components/GoogleTagManager/GTMPageReloadTracker';
+import GTMScrollDepthTracker from './components/GoogleTagManager/GTMScrollDepthTracker';
 
 const App = () => {
     const { i18n } = useTranslation();
     const location = useLocation();  // Get current location (route) from react-router
 
     useEffect(() => {
-        if (typeof window !== 'undefined' && window.dataLayer) {
+        if (typeof window !== 'undefined') {
+            // Initialize dataLayer if it doesn't exist
+            window.dataLayer = window.dataLayer || [];
+
+            // Enhanced pageview event
             window.dataLayer.push({
-                event: 'pageview',
-                page: location.pathname + location.search,
+                'event': 'virtualPageView',
+                'page': {
+                    'url': location.pathname + location.search,
+                    'title': document.title,
+                    'language': i18n.language
+                }
             });
+
            // console.log('Pageview event pushed:', location.pathname);
-        } 
-        /* else {
-            console.log("GTM dataLayer is not defined yet.");
-        } */
-    }, [location]); 
+        }
+    }, [location, i18n.language]);
 
     useEffect(() => {
         document.documentElement.lang = i18n.language;  // Language set karein
@@ -40,6 +49,9 @@ const App = () => {
     return (
         <>
             <MetaTags />
+            <GTMPageViewTracker />
+            <GTMPageReloadTracker />
+            <GTMScrollDepthTracker />
             <AppRoutes />
         </>
     );
