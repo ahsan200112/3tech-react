@@ -13,6 +13,7 @@ const CustomPackageOpinion = () => {
     const isRTL = document.dir === "rtl"; // Ya kisi global state se lein
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
+    // ye node js backend ke sath hai api already bani hui hai 
     /* const onSubmit = async (data) => {
          try {
              const response = await api("/api/contact", {
@@ -24,8 +25,27 @@ const CustomPackageOpinion = () => {
              });
  
              if (response.ok) {
-                 alert('Form submitted successfully!');
+                 Swal.fire({
+                    title: t("Thank you for contacting us!"),
+                    text: t("Your message has been sent successfully. We will contact you later"),
+                    icon: "success"
+                });
                  reset(); // Reset form after successful submission
+                  // Push the form submission event to GTM with page path
+                if (window.dataLayer) {
+                    window.dataLayer.push({
+                        event: 'form_submission',  // Custom event name
+                        form_name: 'CustomPackageOpinion',  // Form name or identifier
+                        page: window.location.pathname,  // Page URL (path)
+                        form_data: {
+                            name: data.name,
+                            email: data.email,
+                            phone: data.phone,
+                            subject: data.subject,
+                            message: data.message
+                        }
+                    });
+                }
              } else {
                  alert('Something went wrong, please try again.');
              }
@@ -56,21 +76,21 @@ const CustomPackageOpinion = () => {
                     icon: "success"
                 });
                 reset();
-                 // Push the form submission event to GTM with page path
-            if (window.dataLayer) {
-                window.dataLayer.push({
-                    event: 'form_submission',  // Custom event name
-                    form_name: 'CustomPackageOpinion',  // Form name or identifier
-                    page: window.location.pathname,  // Page URL (path)
-                    form_data: {
-                        name: data.name,
-                        email: data.email,
-                        phone: data.phone,
-                        subject: data.subject,
-                        message: data.message
-                    }
-                });
-            }
+                // Push the form submission event to GTM with page path
+                if (window.dataLayer) {
+                    window.dataLayer.push({
+                        event: 'form_submission',  // Custom event name
+                        form_name: 'CustomPackageOpinion',  // Form name or identifier
+                        page: window.location.pathname,  // Page URL (path)
+                        form_data: {
+                            name: data.name,
+                            email: data.email,
+                            phone: data.phone,
+                            subject: data.subject,
+                            message: data.message
+                        }
+                    });
+                }
             })
             .catch((error) => {
                 console.error("Error sending email:", error);
