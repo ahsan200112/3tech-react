@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import FraImg from '../assets/images/fra.png';
+//import FraImg from '../assets/images/fra.png';
 import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
 const GetInTouch = () => {
@@ -15,7 +15,20 @@ const GetInTouch = () => {
                     <button className="btn-sm u-vise mb-2">{t("Get in Touch")}</button>
                     <h2 className="b-b">{t("Need Further Assistance?")}</h2>
                     <p className="b-c">{t("Have a question, feedback, or just want to say hello? We’d love to hear from you!")}</p>
-                    <img src={FraImg} alt="Company Logo" className="img-fluid" style={{ maxWidth: "100%", height: "auto" }} />
+                    {/*<img src={FraImg} alt="Company Logo" className="img-fluid" style={{ maxWidth: "100%", height: "auto" }} /> */}
+                    <div>
+                        <iframe
+                            title="Google Map Location"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3709.562292158156!2d39.18257630000001!3d21.603002200000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3cf33cbead32b%3A0xf411ea54c61219ed!2zM3RlY2ggfCDYq9ix2Yog2KrZgw!5e0!3m2!1sen!2s!4v1744374582531!5m2!1sen!2s"
+                            width="100%"
+                            height="450"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                        >
+                        </iframe>
+                    </div>
                     <div className="row mt-3 text-center">
                         <div className="col-md-3 position-relative">
                             <p className="b-e">{t("Location")}</p>
