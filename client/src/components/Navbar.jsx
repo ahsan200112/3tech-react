@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="container">
           <div className="row align-items-center py-3">
             <div className="col d-flex custom-content-start mt-3 mb-3 custom-navbar-center">
-              <a className={`${isRTL ? "ms-3" : "me-3"} navbar-brand v-vise`} href="tel:+966557122917"
+              <a className={`${isRTL ? "ms-3" : "me-3"} navbar-brand v-vise`} href="https://api.whatsapp.com/send/?phone=966557122917" target='blank'
                 onClick={() => trackEvent('Contact', 'Click', 'Phone Number')}
               ><i className={`${isRTL ? "ms-2" : "me-2"} bi bi-telephone`}></i> {t("+966557122917")}</a>
               <a className={`${isRTL ? "ms-3" : "me-3"} navbar-brand v-vise`} href="mailto:info@3tech.sa"

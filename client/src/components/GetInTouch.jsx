@@ -21,8 +21,8 @@ const GetInTouch = () => {
                             title="Google Map Location"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3709.562292158156!2d39.18257630000001!3d21.603002200000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3cf33cbead32b%3A0xf411ea54c61219ed!2zM3RlY2ggfCDYq9ix2Yog2KrZgw!5e0!3m2!1sen!2s!4v1744374582531!5m2!1sen!2s"
                             width="100%"
-                            height="450"
-                            style={{ border: 0 }}
+                            height="320"
+                            style={{ border: 0, borderRadius: "15px" }}
                             allowFullScreen
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
@@ -37,12 +37,25 @@ const GetInTouch = () => {
                         </div>
                         <div className="col-md-3 position-relative">
                             <p className="b-e">{t("Email")}</p>
-                            <h2 className="b-d">info@3tech.sa</h2>
+                            <h2 className="b-d">
+                                <a href="mailto:info@3tech.sa" className="text-white text-decoration-none"
+                                    onClick={() => trackEvent('Contact', 'Click', 'Email Address')}
+                                >
+                                    info@3tech.sa
+                                </a>
+                            </h2>
                             <div className="border-line"></div>
                         </div>
                         <div className="col-md-3 position-relative">
                             <p className="b-e">{t("Phone")}</p>
-                            <h2 className="b-d">{t("+966557122917")}</h2>
+                            <h2 className="b-d">
+                                <a href="https://api.whatsapp.com/send/?phone=966557122917" target='blank'
+                                    className="text-white text-decoration-none"
+                                    onClick={() => trackEvent('Contact', 'Click', 'Phone Number')}
+                                >
+                                    {t("+966557122917")}
+                                </a>
+                            </h2>
                             <div className="border-line"></div>
                         </div>
                         <div className="col-md-3">

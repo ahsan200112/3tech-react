@@ -95,7 +95,7 @@ const Footer = () => {
                 className="v-coke text-decoration-none"
                 onClick={() => trackEvent('Contact', 'Click', 'Email Address')}
               >info@3tech.sa</a></p>
-              <p className="v-left pb-2" style={{ borderBottom: "1px solid" }}>{t("Phone no")}: <a href="tel:+966557122917"
+              <p className="v-left pb-2" style={{ borderBottom: "1px solid" }}>{t("Phone no")}: <a href="https://api.whatsapp.com/send/?phone=966557122917" target='blank'
                 className="v-coke text-decoration-none"
                 onClick={() => trackEvent('Contact', 'Click', 'Phone Number')}
               > {t("+966557122917")}</a></p>
