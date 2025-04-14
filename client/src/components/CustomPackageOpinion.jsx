@@ -5,13 +5,15 @@ import LocationImg from "../assets/images/Location.svg";
 import EmailImg from "../assets/images/Email.png";
 import { useForm } from 'react-hook-form';
 import emailjs from "@emailjs/browser";
-import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom'; 
+//import Swal from 'sweetalert2';
 //import api from '../api';
 
 const CustomPackageOpinion = () => {
     const { t } = useTranslation();
     const isRTL = document.dir === "rtl"; // Ya kisi global state se lein
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const navigate = useNavigate();
 
     // ye node js backend ke sath hai api already bani hui hai 
     /* const onSubmit = async (data) => {
@@ -70,12 +72,13 @@ const CustomPackageOpinion = () => {
 
         emailjs.send(serviceID, templateID, templateParams, publicKey)
             .then((response) => {
-                Swal.fire({
+              /*  Swal.fire({
                     title: t("Thank you for contacting us!"),
                     text: t("Your message has been sent successfully. We will contact you later"),
                     icon: "success"
-                });
+                }); */
                 reset();
+                navigate('/thankyou');
                 // Push the form submission event to GTM with page path
                 if (window.dataLayer) {
                     window.dataLayer.push({

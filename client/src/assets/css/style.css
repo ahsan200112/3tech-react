@@ -2144,13 +2144,6 @@ img {
 
 }
 
-/* Mobile (Small screens: <768px) */
-@media (max-width: 767px) {
-  .v-vise {
-    font-size: 10px !important;
-  }
-}
-
 /* Tablet (Medium screens: 768px–1199px) */
 @media (min-width: 768px) and (max-width: 1199px) {
   .btn-well {
@@ -2159,16 +2152,6 @@ img {
   }
 
 }
-
-/* Mobile (Small screens: <768px) */
-@media (max-width: 767px) {
-  .btn-well {
-    width: 180px;
-    font-size: 11px;
-  }
-}
-
-/*    ----------------------------*/
 
 /* Desktop (Large screens: ≥1200px) */
 @media (min-width: 1200px) {
@@ -2201,15 +2184,6 @@ img {
   }
 }
 
-/* Mobile (Small screens: <768px) */
-@media (max-width: 767px) {
-  .u-visit {
-    font-size: 16px;
-    line-height: 15px;
-  }
-
-}
-
 /* Desktop (Large screens: ≥1200px) */
 @media (min-width: 1200px) {
   .u-were {
@@ -2225,14 +2199,6 @@ img {
 
 }
 
-/* Mobile (Small screens: <768px) */
-@media (max-width: 767px) {
-  .u-were {
-    font-size: 16px;
-    line-height: 30px;
-  }
-}
-
 /* Desktop (Large screens: ≥1200px) */
 @media (min-width: 1200px) {
   .u-ll {
@@ -2246,14 +2212,6 @@ img {
     font-size: 12px;
   }
 
-}
-
-/* Mobile (Small screens: <768px) */
-@media (max-width: 767px) {
-  .u-ll {
-    font-size: 10px;
-
-  }
 }
 
 /* Desktop (Large screens: ≥1200px) */
@@ -2370,6 +2328,21 @@ img {
 
 /* Mobile (Small screens: <768px) */
 @media (max-width: 767px) {
+  .v-vise {
+    font-size: 10px !important;
+  }
+  .btn-well {
+    width: 180px;
+    font-size: 11px;
+  }
+  .u-visit {
+    font-size: 16px;
+    line-height: 15px;
+  }
+  .u-were {
+    font-size: 16px;
+    line-height: 30px;
+  }
   .u-ll {
     font-size: 10px;
   }
@@ -2430,6 +2403,15 @@ img {
   .g-r {
     font-size: 22px !important;
   }
+  .o-b {
+    font-size: 17px !important;
+  }
+  .c-h {
+    font-size: 34px !important;
+  }
+  .c-p {
+    font-size: 16px !important;
+  }
 }
 
 /*--------------------*/
@@ -2444,13 +2426,6 @@ img {
 @media (min-width: 768px) and (max-width: 1199px) {
   .o-b {
     font-size: 20px;
-  }
-}
-
-/* Mobile (Small screens: <768px) */
-@media (max-width: 767px) {
-  .o-b {
-    font-size: 17px !important;
   }
 }
 
@@ -2589,6 +2564,22 @@ img {
   letter-spacing: 0px;
   line-height: 140%;
   color: var(--text-primary);
+}
+
+.c-h {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  line-height: 100%;
+  color: var(--text-primary);
+}
+
+.c-p {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 150%;
+  color: var(--text-secondary);
 }
 
 .slide-item {

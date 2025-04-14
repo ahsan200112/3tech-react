@@ -17,6 +17,7 @@ import MobileApplications from '../pages/MobileApplications';
 import PrivacyPolicy from '../pages/PrivacyPolicy';
 import TermsAndConditions from '../pages/TermsAndConditions';
 import ScrollToTop from "../components/ScrollToTop";
+import ThankYou from '../pages/ThankYou';
 
 const AppRoutes = () => {
   return (
@@ -38,6 +39,7 @@ const AppRoutes = () => {
         <Route path="/mobileapplications" element={<MobileApplications />} />
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
         <Route path="/termsandconditions" element={<TermsAndConditions />} />
+        <Route path="/thankyou" element={<ThankYou />} />
       </Routes>
       <Footer />
     </>
