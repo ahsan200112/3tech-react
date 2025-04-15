@@ -5,7 +5,7 @@ const useGTMEventTracker = () => {
   const location = useLocation();  // Get the current page URL
 
   const trackEvent = (event, eventCategory, eventAction, eventLabel) => {
-    const fromPageName = location.pathname;
+    const fromPageUrl = location.pathname;
 
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
@@ -13,9 +13,10 @@ const useGTMEventTracker = () => {
       eventCategory,
       eventAction,
       eventLabel,
-      fromPageName,  // Adding the page name here
+      fromPageUrl,  // Adding the page name here
       timestamp: new Date().toISOString()
     });
+     console.log('GTM pushed:', window.dataLayer);
   };
 
   return trackEvent;
