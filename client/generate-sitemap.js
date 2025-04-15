@@ -19,6 +19,7 @@ const links = [
   { url: "/mobileapplications", changefreq: "monthly", priority: 0.7 },
   { url: "/privacypolicy", changefreq: "monthly", priority: 0.5 },
   { url: "/termsandconditions", changefreq: "monthly", priority: 0.5 },
+  { url: "/thankyou", changefreq: "monthly", priority: 0.5 },
 ];
 
 (async () => {
