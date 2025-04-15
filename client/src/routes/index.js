@@ -18,10 +18,12 @@ import PrivacyPolicy from '../pages/PrivacyPolicy';
 import TermsAndConditions from '../pages/TermsAndConditions';
 import ScrollToTop from "../components/ScrollToTop";
 import ThankYou from '../pages/ThankYou';
+import GTM from '../components/GoogleTagManager/GTM';
 
 const AppRoutes = () => {
   return (
     <>
+      <GTM />
       <ScrollToTop />
       <Navbar />
       <Routes>

@@ -9,12 +9,12 @@ import FrequentlyAskedQuestions from '../components/FrequentlyAskedQuestions';
 function AboutUs() {
   return (
     <>
-     <AboutFirstComponent/>
-     <ExpertiseYouCanTrust/>
-     <YourSuccessOurPriority/>
-     <OurTrustedPartners/>
-     <OurClientsSay/>
-     <FrequentlyAskedQuestions/>
+      <AboutFirstComponent />
+      <ExpertiseYouCanTrust />
+      <YourSuccessOurPriority />
+      <OurTrustedPartners />
+      <OurClientsSay />
+      <FrequentlyAskedQuestions />
     </>
   );
 }
