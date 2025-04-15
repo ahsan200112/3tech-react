@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import React from 'react';
+//import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -15,7 +16,7 @@ import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Impo
 const OurProjects = () => {
     const { t } = useTranslation();
     const trackEvent = useGTMEventTracker();  // Get the event tracker
-    const previousSlide = useRef(0); // Track the previous slide index
+    //const previousSlide = useRef(0); // Track the previous slide index
     
     const settings = {
         dots: true,
@@ -44,15 +45,15 @@ const OurProjects = () => {
     };
 
     // Handle slide change event tracking
-    const handleSlideChange = (current) => {
+   /* const handleSlideChange = (current) => {
         trackEvent('Projects Carousel', 'Slide Change', `From Slide ${previousSlide.current} to Slide ${current}`);
         previousSlide.current = current;
-    };
+    }; */
 
     // Handle project image click event tracking
     const handleImageClick = (projectName) => {
         trackEvent('Projects', 'Click', projectName);
-    };
+    }; 
 
     return (
         <section className="v-section">
@@ -66,7 +67,7 @@ const OurProjects = () => {
                     {/* ✅ Image Slider */}
                     <div data-aos="flip-left" data-aos-delay="500">
                         <Slider {...settings} className="mt-4"
-                            afterChange={handleSlideChange}  // Event on slide change
+                        //    afterChange={handleSlideChange}  // Event on slide change
                         >
                             {[
                                 { img: Project1, text: "Web Design & Development", description: "Explore modern, responsive websites crafted for diverse industries." },

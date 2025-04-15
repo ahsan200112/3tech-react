@@ -15,7 +15,7 @@ function DigitalOptimizationHeroSection() {
 
     const toggleSection = (index, title) => {
         setActiveIndex(activeIndex === index ? null : index); // Toggle open/close
-        trackEvent('Digital Optimization Page', 'Toggle Section', title);  // Track event on section toggle
+        trackEvent('click on toggle','Digital Optimization Page', 'Toggle Section', title);  // Track event on section toggle
     };
 
     return (

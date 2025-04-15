@@ -4,20 +4,18 @@ import { useLocation } from 'react-router-dom';
 const useGTMEventTracker = () => {
   const location = useLocation();  // Get the current page URL
 
-  const trackEvent = (eventCategory, eventAction, eventLabel) => {
-    const pageName = location.pathname;
+  const trackEvent = (event, eventCategory, eventAction, eventLabel) => {
+    const fromPageName = location.pathname;
 
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: 'click',
+      event,
       eventCategory,
       eventAction,
       eventLabel,
-      pageName,  // Adding the page name here
+      fromPageName,  // Adding the page name here
       timestamp: new Date().toISOString()
     });
-
-   // console.log(`${eventCategory} event pushed: ${eventAction} , ${eventLabel} , From Page: ${pageName}`);
   };
 
   return trackEvent;

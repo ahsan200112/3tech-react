@@ -47,7 +47,7 @@ const YourSuccessOurPriority = () => {
                             </li>
                         </ul>
                         <Link className="btn-contact text-decoration-none mb-2" to="/contact"
-                            onClick={() => trackEvent('Navigation', 'Click', 'ContactUs Button')}
+                            onClick={() => trackEvent('click on button','Navigation', 'Click', 'ContactUs Button')}
                         >{t("Contact Us")}</Link>
                     </div>
                     <div className="col-md-6">

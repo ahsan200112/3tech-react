@@ -15,7 +15,7 @@ function CreativeDesignHeroSection() {
 
     const toggleSection = (index, title) => {
         setActiveIndex(activeIndex === index ? null : index); // Toggle open/close
-        trackEvent('Creative Design Page', 'Toggle Section', title);  // Track event on section toggle
+        trackEvent('click on toggle','Creative Design Page', 'Toggle Section', title);  // Track event on section toggle
     };
 
     return (

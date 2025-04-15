@@ -14,7 +14,7 @@ function MobileApplicationsHeroSection() {
 
     const toggleSection = (index, title) => {
         setActiveIndex(activeIndex === index ? null : index); // Toggle open/close
-        trackEvent('Mobile Applications Page', 'Toggle Section', title);  // Track event on section toggle
+        trackEvent('click on toggle section', 'Mobile Applications Page', 'Toggle Section', title);  // Track event on section toggle
     };
 
     return (

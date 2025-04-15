@@ -14,7 +14,7 @@ const LanguageToggle = () => {
     setDropdownOpen(false); // Close dropdown after selecting language
 
     // Track the language change event
-    trackEvent("Language", "Change", lng === "ar" ? "English to Arabic" : "Arabic to English");
+    trackEvent('click on language button', "Language", "Change", lng === "ar" ? "English to Arabic" : "Arabic to English");
   };
 
   return (
@@ -33,17 +33,17 @@ const LanguageToggle = () => {
       >
         <i className="bi bi-globe"></i> {i18n.language === "ar" ? "عربي" : "En"}
       </button>
-      
+
       {dropdownOpen && (
         <ul className="dropdown-menu show" aria-labelledby="languageDropdown"
-        style={{
-          display: "block",
-          position: "absolute",
-          top: "100%", // Ensures dropdown appears below the button
-          left: "0",
-          minWidth: "100%", // Makes dropdown same width as button
-          textAlign: "center",
-        }}
+          style={{
+            display: "block",
+            position: "absolute",
+            top: "100%", // Ensures dropdown appears below the button
+            left: "0",
+            minWidth: "100%", // Makes dropdown same width as button
+            textAlign: "center",
+          }}
         >
           <li>
             <button

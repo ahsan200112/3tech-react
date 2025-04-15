@@ -5,7 +5,8 @@ import LocationImg from "../assets/images/Location.svg";
 import EmailImg from "../assets/images/Email.png";
 import { useForm } from 'react-hook-form';
 import emailjs from "@emailjs/browser";
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
+import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';
 //import Swal from 'sweetalert2';
 //import api from '../api';
 
@@ -14,6 +15,7 @@ const CustomPackageOpinion = () => {
     const isRTL = document.dir === "rtl"; // Ya kisi global state se lein
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const navigate = useNavigate();
+    const trackEvent = useGTMEventTracker();
 
     // ye node js backend ke sath hai api already bani hui hai 
     /* const onSubmit = async (data) => {
@@ -72,11 +74,11 @@ const CustomPackageOpinion = () => {
 
         emailjs.send(serviceID, templateID, templateParams, publicKey)
             .then((response) => {
-              /*  Swal.fire({
-                    title: t("Thank you for contacting us!"),
-                    text: t("Your message has been sent successfully. We will contact you later"),
-                    icon: "success"
-                }); */
+                /*  Swal.fire({
+                      title: t("Thank you for contacting us!"),
+                      text: t("Your message has been sent successfully. We will contact you later"),
+                      icon: "success"
+                  }); */
                 reset();
                 navigate('/thankyou');
                 // Push the form submission event to GTM with page path
@@ -204,7 +206,9 @@ const CustomPackageOpinion = () => {
                                     {errors.message && <span className="text-danger">Message is required</span>}
                                 </div>
                                 <div className="col-lg-12 mt-3 custom-text-center">
-                                    <button type="submit" className="btn-while py-2" style={{ width: "260px" }}>
+                                    <button type="submit" className="btn-while py-2" style={{ width: "260px" }}
+                                        onClick={() => trackEvent('click on submit button', 'Submit Form', 'Click', 'Request custom package button')}
+                                    >
                                         {t('Request a Custom Package')}
                                     </button>
                                 </div>

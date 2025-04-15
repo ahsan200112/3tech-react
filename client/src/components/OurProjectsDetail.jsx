@@ -16,7 +16,7 @@ const OurProjectsDetail = () => {
     const trackEvent = useGTMEventTracker();  // Use the custom hook
 
     const handleProjectClick = (projectName) => {
-        trackEvent('Project', 'Click', projectName);  // Track the event when a project is clicked
+        trackEvent(`click on ${projectName} project button`, 'Project', 'Click', projectName);  // Track the event when a project is clicked
     };
 
     return (
@@ -39,7 +39,7 @@ const OurProjectsDetail = () => {
                         ].map((item, index, array) => (
                             <React.Fragment key={index}>
                                 <Link to={item.path} className="c-m text-decoration-none nav-item"
-                                    onClick={() => trackEvent('Navigation', 'Click', item.label)} // Track navigation link clicks
+                                    onClick={() => trackEvent('click on links', 'Navigation', 'Click', item.label)} // Track navigation link clicks
                                 >
                                     {item.label}
                                 </Link>

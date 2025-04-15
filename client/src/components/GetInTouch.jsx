@@ -26,6 +26,7 @@ const GetInTouch = () => {
                             allowFullScreen
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
+                            onClick={() => trackEvent('click on map(3tech)', 'Contact', 'Click', 'Map link(3tech)')}
                         >
                         </iframe>
                     </div>
@@ -39,7 +40,7 @@ const GetInTouch = () => {
                             <p className="b-e">{t("Email")}</p>
                             <h2 className="b-d">
                                 <a href="mailto:info@3tech.sa" className="text-white text-decoration-none"
-                                    onClick={() => trackEvent('Contact', 'Click', 'Email Address')}
+                                    onClick={() => trackEvent('click on email address link', 'Contact', 'Click', 'Email Address Link')}
                                 >
                                     info@3tech.sa
                                 </a>
@@ -51,7 +52,7 @@ const GetInTouch = () => {
                             <h2 className="b-d">
                                 <a href="https://api.whatsapp.com/send/?phone=966557122917" target='blank'
                                     className="text-white text-decoration-none"
-                                    onClick={() => trackEvent('Contact', 'Click', 'Phone Number')}
+                                    onClick={() => trackEvent('click on phone number link', 'Contact', 'Click', 'Phone Number Link')}
                                 >
                                     {t("+966557122917")}
                                 </a>
@@ -62,13 +63,13 @@ const GetInTouch = () => {
                             <p className="b-e">{t("Social")}</p>
                             <div className="d-flex justify-content-center align-items-center">
                                 <a href="https://www.linkedin.com/company/3tech-platform" target='blank'
-                                    onClick={() => trackEvent('Social Media', 'Click', 'LinkedIn')}
+                                    onClick={() => trackEvent('click on social medialink', 'Social Media', 'Click', 'LinkedIn link')}
                                 ><i className="bi bi-linkedin text-white mx-2"></i></a>
                                 <a href="https://api.whatsapp.com/send/?phone=966557122917" target='blank'
-                                    onClick={() => trackEvent('Social Media', 'Click', 'WhatsApp')}
+                                    onClick={() => trackEvent('click on social media link', 'Social Media', 'Click', 'WhatsApp Link')}
                                 ><i className="bi bi-whatsapp text-white mx-2"></i></a>
                                 <a href="https://www.instagram.com/3tech.sa?igsh=aW14cDY0cmtvZW9p" target='blank'
-                                    onClick={() => trackEvent('Social Media', 'Click', 'Instagram')}
+                                    onClick={() => trackEvent('click on social media link', 'Social Media', 'Click', 'Instagram Link')}
                                 ><i className="bi bi-instagram text-white mx-2"></i></a>
                             </div>
                         </div>

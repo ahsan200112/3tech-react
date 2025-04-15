@@ -13,7 +13,7 @@ const HeroSection = () => {
     const trackEvent = useGTMEventTracker();  // Use the custom hook
 
     return (
-        <section className="hero-section color-effect-navbar" 
+        <section className="hero-section color-effect-navbar"
             style={{
                 backgroundImage: `url(${BackgroundImg})`, // Replace BackgroundImg with your image import
                 backgroundSize: "cover", // Cover full div
@@ -31,12 +31,12 @@ const HeroSection = () => {
                             </p>
                             <div className="d-flex gap-3 mb-3 custom-content-center btn-column btn-nextline responsive-buttons">
                                 <Link to="/contact" className="text-decoration-none"
-                                onClick={() => trackEvent('Navigation', 'Click', 'Discover Our Solutions Button')}
+                                    onClick={() => trackEvent('click on button', 'Navigation', 'Click', 'Discover Our Solutions Button')}
                                 >
                                     <button className="btn-under">{t("Discover Our Solutions")}</button>
                                 </Link>
                                 <Link to="/contact" className="text-decoration-none"
-                                onClick={() => trackEvent('Navigation', 'Click', 'Get a Free Consultation Button')}
+                                    onClick={() => trackEvent('click on button', 'Navigation', 'Click', 'Get a Free Consultation Button')}
                                 >
                                     <button className="btn-while">{t("Get a Free Consultation")}</button>
                                 </Link>

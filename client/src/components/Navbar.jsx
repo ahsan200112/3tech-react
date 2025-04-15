@@ -25,21 +25,21 @@ const Navbar = () => {
           <div className="row align-items-center py-3">
             <div className="col d-flex custom-content-start mt-3 mb-3 custom-navbar-center">
               <a className={`${isRTL ? "ms-3" : "me-3"} navbar-brand v-vise`} href="https://api.whatsapp.com/send/?phone=966557122917" target='blank'
-                onClick={() => trackEvent('Contact', 'Click', 'Phone Number')}
+                onClick={() => trackEvent('click on navbar phone number link', 'Contact', 'Click', 'Phone Number Link')}
               ><i className={`${isRTL ? "ms-2" : "me-2"} bi bi-telephone`}></i> {t("+966557122917")}</a>
               <a className={`${isRTL ? "ms-3" : "me-3"} navbar-brand v-vise`} href="mailto:info@3tech.sa"
-                onClick={() => trackEvent('Contact', 'Click', 'Email Address')}
+                onClick={() => trackEvent('click on navbar email address link', 'Contact', 'Click', 'Email Address Link')}
               ><i className={`${isRTL ? "ms-2" : "me-2"} bi bi-envelope`}></i> info@3tech.sa</a>
             </div>
             <div className="col d-flex custom-content-end mt-3 mb-3 custom-navbar-center">
               <a href="https://www.linkedin.com/company/3tech-platform" target='blank' className={`${isRTL ? "ms-3" : "me-3"} d-flex align-items-center`}
-                onClick={() => trackEvent('Social Media', 'Click', 'LinkedIn')}
+                onClick={() => trackEvent('click on navbar socail media link', 'Social Media', 'Click', 'LinkedIn Link')}
               ><i className="bi bi-linkedin text-primary-color"></i></a>
               <a href="https://api.whatsapp.com/send/?phone=966557122917" target='blank' className={`${isRTL ? "ms-3" : "me-3"} d-flex align-items-center`}
-                onClick={() => trackEvent('Social Media', 'Click', 'WhatsApp')}
+                onClick={() => trackEvent('click on social media link', 'Social Media', 'Click', 'WhatsApp Link')}
               ><i className="bi bi-whatsapp text-primary-color"></i></a>
               <a href="https://www.instagram.com/3tech.sa?igsh=aW14cDY0cmtvZW9p" target='blank' className={`${isRTL ? "ms-3" : "me-3"} d-flex align-items-center`}
-                onClick={() => trackEvent('Social Media', 'Click', 'Instagram')}
+                onClick={() => trackEvent('click on social media link', 'Social Media', 'Click', 'Instagram Link')}
               ><i className="bi bi-instagram text-primary-color"></i></a>
               <ThemeSwitcher />
             </div>
@@ -56,7 +56,7 @@ const Navbar = () => {
             <div className="d-flex align-items-center">
               <Link to="/">
                 <img src={theme === "light" ? LogoLightMode : LogoDarkMode} alt="Logo" className="img-fluid logo-img"
-                  onClick={() => trackEvent('Navigation', 'Click', 'Logo')}
+                  onClick={() => trackEvent('click on navbar Company logo', 'Navigation', 'Click', 'Company Logo')}
                 />
               </Link>
             </div>
@@ -72,7 +72,7 @@ const Navbar = () => {
               type="button"
               onClick={() => {
                 setIsNavOpen(!isNavOpen);
-                trackEvent('Navigation', 'Toggle', 'Navbar Toggler');
+                trackEvent('click on toggle menu button in mobile', 'Navigation', 'Toggle', 'Navbar Toggler');
               }}
             >
               <i className="bi bi-list"
@@ -85,32 +85,32 @@ const Navbar = () => {
               <ul className="navbar-nav mx-auto" style={{ paddingRight: "0" }}>
                 <li className="nav-item"><Link className="nav-link v-vise" to="/" onClick={() => {
                   setIsNavOpen(false);
-                  trackEvent('Navigation', 'Click', 'Home Page Link');
+                  trackEvent('click on navbar page link', 'Navigation', 'Click', 'Home Page Link');
                 }} >
                   {t("Home")}</Link></li>
                 <li className="nav-item"><Link className="nav-link v-vise" to="/about" onClick={() => {
                   setIsNavOpen(false);
-                  trackEvent('Navigation', 'Click', 'About Page Link');
+                  trackEvent('click on navbar page link', 'Navigation', 'Click', 'About Page Link');
                 }}>{t("About Us")}</Link></li>
                 <li className="nav-item"><Link className="nav-link v-vise" to="/services" onClick={() => {
                   setIsNavOpen(false);
-                  trackEvent('Navigation', 'Click', 'Services Page Link');
+                  trackEvent('click on navbar page link', 'Navigation', 'Click', 'Services Page Link');
                 }}>{t("Services")}</Link></li>
                 <li className="nav-item"><Link className="nav-link v-vise" to="/projects" onClick={() => {
                   setIsNavOpen(false);
-                  trackEvent('Navigation', 'Click', 'Project Page Link');
+                  trackEvent('click on navbar page link', 'Navigation', 'Click', 'Project Page Link');
                 }}>{t("Projects")}</Link></li>
                 <li className="nav-item"><Link className="nav-link v-vise" to="/packages" onClick={() => {
                   setIsNavOpen(false);
-                  trackEvent('Navigation', 'Click', 'Packages Page Link');
+                  trackEvent('click on navbar page link', 'Navigation', 'Click', 'Packages Page Link');
                 }}>{t("Packages")}</Link></li>
                 <li className="nav-item"><Link className="nav-link v-vise" to="/blogs" onClick={() => {
                   setIsNavOpen(false);
-                  trackEvent('Navigation', 'Click', 'Blogs Page Link');
+                  trackEvent('click on navbar page link', 'Navigation', 'Click', 'Blogs Page Link');
                 }}>{t("Blogs")}</Link></li>
                 <li className="nav-item"><Link className="nav-link v-vise" to="/contact" onClick={() => {
                   setIsNavOpen(false);
-                  trackEvent('Navigation', 'Click', 'Contact Page Link');
+                  trackEvent('click on navbar page link', 'Navigation', 'Click', 'Contact Page Link');
                 }}>{t("Contact Us")}</Link></li>
               </ul>
 
@@ -124,7 +124,7 @@ const Navbar = () => {
                 <Link to="/contact" className="text-decoration-none">
                   <button className="btn-well" onClick={() => {
                     setIsNavOpen(false);
-                    trackEvent('Navigation', 'Click', 'Get a Free Consultation Button');
+                    trackEvent('click on navbar button', 'Navigation', 'Click', 'Get a Free Consultation Button');
                   }}>
                     {t("Get a Free Consultation")}
                   </button>
@@ -136,7 +136,7 @@ const Navbar = () => {
                 <LanguageToggle />  {/* Language Button Pehle Hoga */}
                 <Link to="/contact" className="text-decoration-none">
                   <button className="btn-well ms-3"
-                    onClick={() => trackEvent('Navigation', 'Click', 'Get a Free Consultation Button')}
+                    onClick={() => trackEvent('click on navbar button', 'Navigation', 'Click', 'Get a Free Consultation Button')}
                   >
                     {t("Get a Free Consultation")}
                   </button>

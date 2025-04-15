@@ -10,7 +10,7 @@ const ThemeSwitcher = () => {
   const handleThemeChange = () => {
     toggleTheme();
     // Track the theme change event
-    trackEvent("Theme", "Click", theme === "light" ? "Light to Dark" : "Dark to Light");
+    trackEvent('click on theme button',"Theme", "Click", theme === "light" ? "Light to Dark" : "Dark to Light");
   };
 
   return (

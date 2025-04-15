@@ -13,7 +13,7 @@ const FrequentlyAskedQuestions = () => {
         setOpenIndex(openIndex === index ? null : index);
 
         // Track the FAQ section click event
-        trackEvent('FAQ Interaction', 'Click', `FAQ ${index + 1} ${openIndex === index ? 'Closed' : 'Opened'}`);
+        trackEvent('click on Faq question', 'FAQ Interaction', 'Click', `FAQ ${index + 1} ${openIndex === index ? 'Closed' : 'Opened'}`);
     };
 
     const faqData = [

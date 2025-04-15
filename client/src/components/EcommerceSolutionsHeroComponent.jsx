@@ -15,7 +15,7 @@ function EcommerceSolutionsHeroSection() {
 
     const toggleSection = (index, title) => {
         setActiveIndex(activeIndex === index ? null : index); // Toggle open/close
-        trackEvent('E-commerce Solutuon Page', 'Toggle Section', title);  // Track event on section toggle
+        trackEvent('click on toggle section','E-commerce Solutuon Page', 'Toggle Section', title);  // Track event on section toggle
     };
 
     return (

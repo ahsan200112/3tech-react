@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import React from 'react';
+//import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from "../context/ThemeContext";
 import Slider from "react-slick";
@@ -28,7 +29,7 @@ const OurTrustedPartners = () => {
   const { theme } = useTheme(); // Get theme from context
   // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
   const trackEvent = useGTMEventTracker();  // Get the event tracker
-  const previousSlide = useRef(0); // Track the previous slide index
+  //const previousSlide = useRef(0); // Track the previous slide index
 
   const images = [
     { light: F1ImgLight, dark: F1Img },
@@ -71,10 +72,10 @@ const OurTrustedPartners = () => {
   };
 
   // Handle slide change event tracking
-  const handleSlideChange = (current) => {
-    trackEvent('Our Partners Carousel', 'Slide Change', `From Slide ${previousSlide.current} to Slide ${current}`);
-    previousSlide.current = current;
-  };
+  /* const handleSlideChange = (current) => {
+     trackEvent('Our Partners Carousel', 'Slide Change', `From Slide ${previousSlide.current} to Slide ${current}`);
+     previousSlide.current = current;
+   }; */
 
   // Handle project image click event tracking
   const handleImageClick = (ImgName) => {
@@ -90,25 +91,9 @@ const OurTrustedPartners = () => {
           {t("We collaborate with exceptional partners who help us deliver luxury and unforgettable experiences. Together, we craft excellence, from premium services to world-class hospitality, ensuring every visit is extraordinary.")}
         </p>
       </div>
-      {/*
-      <div className="container">
-        <div className="row text-center g-4 mt-3">
-          <img src={theme === "light" ? F1ImgLight : F1Img} alt="Madfu" className="img-fluid" style={{ height: "152px", width: "282px" }} />
-          <img src={theme === "light" ? F2ImgLight : F2Img} alt="Madfu" className="img-fluid" style={{ height: "152px", width: "282px" }} />
-          <img src={theme === "light" ? F3ImgLight : F3Img} alt="Madfu" className="img-fluid" style={{ height: "152px", width: "282px" }} />
-          <img src={theme === "light" ? F4ImgLight : F4Img} alt="Madfu" className="img-fluid" style={{ height: "152px", width: "282px" }} />
-        </div>
-        <div className="row text-center g-4 mt-3">
-          <img src={theme === "light" ? F5ImgLight : F5Img} alt="Madfu" className="img-fluid" style={{ height: "152px", width: "282px" }} />
-          <img src={theme === "light" ? F6ImgLight : F6Img} alt="Madfu" className="img-fluid" style={{ height: "152px", width: "282px" }} />
-          <img src={theme === "light" ? F7ImgLight : F7Img} alt="Madfu" className="img-fluid" style={{ height: "152px", width: "282px" }} />
-          <img src={theme === "light" ? F8ImgLight : F8Img} alt="Madfu" className="img-fluid" style={{ height: "152px", width: "282px" }} />
-        </div>
-      </div>
-      */}
       <div className="container mt-4 py-4" data-aos="flip-left" data-aos-delay="500">
         <Slider {...settings}
-          afterChange={handleSlideChange}  // Event on slide change
+        // afterChange={handleSlideChange}  // Event on slide change
         >
           {images.map((img, index) => (
             <div key={index} className="text-center">

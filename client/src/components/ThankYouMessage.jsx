@@ -41,7 +41,7 @@ const ThankYouMessage = () => {
                     <div className="text-center">
                         <Link to="/" className="text-decoration-none">
                             <button className="btn-well"
-                                onClick={() => { trackEvent('Navigation', 'Click', 'Back to Home') }}
+                                onClick={() => { trackEvent('click on button','Navigation', 'Click', 'Back to Home') }}
                             >
                                 {t("Back to Home")}
                             </button>

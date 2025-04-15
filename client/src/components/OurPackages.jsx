@@ -10,7 +10,7 @@ const OurPackages = () => {
 
     // Function to track button click event
     const handleConsultationClick = (packageName) => {
-        trackEvent('Package', 'Click', `Get Free Consultation: ${packageName}`);
+        trackEvent(`click on ${packageName} pakage button`, 'Package', 'Click', `Get Free Consultation: ${packageName}`);
     };
 
     return (

@@ -15,7 +15,7 @@ function MarketingSolutionsHeroSection() {
 
     const toggleSection = (index, title) => {
         setActiveIndex(activeIndex === index ? null : index); // Toggle open/close
-        trackEvent('Marketing Solutions Page', 'Toggle Section', title);  // Track event on section toggle
+        trackEvent('click on toggle section', 'Marketing Solutions Page', 'Toggle Section', title);  // Track event on section toggle
     };
 
     return (

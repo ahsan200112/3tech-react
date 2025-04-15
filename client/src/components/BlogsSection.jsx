@@ -18,7 +18,7 @@ const BlogsSection = () => {
 
     // Function to handle blog link click event
     const handleBlogClick = (eventLabel) => {
-        trackEvent('Blog Section', 'Click', eventLabel);
+        trackEvent('click on blogs','Blog Section', 'Click', eventLabel);
     };
 
     return (

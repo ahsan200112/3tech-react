@@ -23,7 +23,7 @@ const WhoWeAre = () => {
                             {t("In a world where creativity meets technology, 3Tech delivers exceptional experiences in building online stores, apps, and digital marketing. We’re here to tell your story and connect you with your audience through unique and impactful approaches. Every project with us becomes a memorable journey to success.")}
                         </p>
                         <Link to="/about" className="btn-our d-block w-100 text-decoration-none"
-                            onClick={() => trackEvent('Navigation', 'Click', 'Discover Our Story Button')}
+                            onClick={() => trackEvent('click on button', 'Navigation', 'Click', 'Discover Our Story Button')}
                         >
                             {t("Discover Our Story")}
                         </Link>

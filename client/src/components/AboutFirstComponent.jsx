@@ -19,7 +19,7 @@ const AboutFirstComponent = () => {
                             <h4 className="o-a d-flex align-items-center" style={{ gap: "8px" }}>
                                 <i className="bi bi-house-door"></i>
                                 <Link to="/" style={{ textDecoration: "none", color: "inherit" }}
-                                    onClick={() => trackEvent('Navigation', 'Click', 'Home Page Link')}  // Track event
+                                    onClick={() => trackEvent('click on link', 'Navigation', 'Click', 'Home Page Link')}  // Track event
                                 >
                                     {t("Home")}
                                 </Link> / {t("About Us")}
@@ -28,7 +28,7 @@ const AboutFirstComponent = () => {
                         <div className="text-end">
                             <img src={BlackImg} alt={t("Company Logo")} className="img-fluid responsive-logo"
                                 style={{ maxWidth: "100%", height: "auto" }}
-                                onClick={() => trackEvent('Image', 'Click', 'Background Image')}  // Track event
+                                onClick={() => trackEvent('click on image', 'Image', 'Click', 'Background Image')}  // Track event
                             />
                         </div>
                     </div>

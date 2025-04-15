@@ -12,7 +12,7 @@ const OurServices = () => {
     const { t } = useTranslation();
     // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     const trackEvent = useGTMEventTracker();  // Use the custom hook
-    
+
     return (
         <section className="u-section">
             <div className="container py-5">
@@ -24,7 +24,7 @@ const OurServices = () => {
                                     <button className="btn-sm u-vise">{t("Our Services")}</button>
                                     <h5 className="card-title u-item mt-3 mb-3">{t("Solutions That Redefine Excellence")}</h5>
                                     <Link to="/services" className="text-decoration-none"
-                                        onClick={() => trackEvent('Navigation', 'Click', 'Services Page Link')}
+                                        onClick={() => trackEvent('click on services link', 'Navigation', 'Click', 'Services Page Link')}
                                     >
                                         <button className="btn-next">{t("View All Services")}</button>
                                     </Link>
@@ -33,7 +33,7 @@ const OurServices = () => {
                         </div>
                         <div className="col-md-4" data-aos="flip-left" data-aos-delay="400">
                             <Link className="text-decoration-none" to="/ecommercesolutions"
-                                onClick={() => trackEvent('Navigation', 'Click', 'E-commerce Solutions Page Link')}
+                                onClick={() => trackEvent('click on services link', 'Navigation', 'Click', 'E-commerce Solutions Page Link')}
                             >
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
                                     <div className="card-body" style={{ padding: "30px 30px" }}>
@@ -51,7 +51,7 @@ const OurServices = () => {
                         </div>
                         <div className="col-md-4" data-aos="flip-left" data-aos-delay="400">
                             <Link className="text-decoration-none" to="/mobileapplications"
-                                onClick={() => trackEvent('Navigation', 'Click', 'Mobile Applications Page Link')}
+                                onClick={() => trackEvent('click on services link', 'Navigation', 'Click', 'Mobile Applications Page Link')}
                             >
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
                                     <div className="card-body" style={{ padding: "30px 30px" }}>
@@ -71,7 +71,7 @@ const OurServices = () => {
                     <div className="row g-3 mt-3">
                         <div className="col-md-4" data-aos="flip-left" data-aos-delay="400">
                             <Link className="text-decoration-none" to="/marketingsolutions"
-                                onClick={() => trackEvent('Navigation', 'Click', 'Marketing Soltions Page Link')}
+                                onClick={() => trackEvent('click on services link', 'Navigation', 'Click', 'Marketing Soltions Page Link')}
                             >
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
                                     <div className="card-body" style={{ padding: "30px 30px" }}>
@@ -89,7 +89,7 @@ const OurServices = () => {
                         </div>
                         <div className="col-md-4" data-aos="flip-left" data-aos-delay="400">
                             <Link className="text-decoration-none" to="/creativedesign"
-                                onClick={() => trackEvent('Navigation', 'Click', 'Creative Design Page Link')}
+                                onClick={() => trackEvent('click on services link', 'Navigation', 'Click', 'Creative Design Page Link')}
                             >
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
                                     <div className="card-body" style={{ padding: "30px 30px" }}>
@@ -107,7 +107,7 @@ const OurServices = () => {
                         </div>
                         <div className="col-md-4" data-aos="flip-left" data-aos-delay="400">
                             <Link to="/digitaloptimization" className="text-decoration-none"
-                                onClick={() => trackEvent('Navigation', 'Click', 'Digital Optimization Page Link')}
+                                onClick={() => trackEvent('click on services link', 'Navigation', 'Click', 'Digital Optimization Page Link')}
                             >
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
                                     <div className="card-body" style={{ padding: "30px 30px" }}>

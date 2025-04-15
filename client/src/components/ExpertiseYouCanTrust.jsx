@@ -16,7 +16,7 @@ const ExpertiseYouCanTrust = () => {
     const handleSectionClick = (section) => {
         setActiveSection(section);
         // Track event based on section clicked
-        trackEvent('Section', 'Click', `${section} Section`);
+        trackEvent('click on section', 'Section', 'Click', `${section} Section`);
     };
 
     return (
@@ -37,7 +37,7 @@ const ExpertiseYouCanTrust = () => {
                                 </p>
                                 <div className='d-flex contact-btn-full'>
                                     <Link className="contact-btn text-decoration-none" to="/contact"
-                                        onClick={() => trackEvent('Navigation', 'Click', 'ContactUs Button')}
+                                        onClick={() => trackEvent('click on contact us button', 'Navigation', 'Click', 'ContactUs Button')}
                                     >{t("Contact Us")}</Link>
                                 </div>
                             </div>
@@ -62,30 +62,6 @@ const ExpertiseYouCanTrust = () => {
                                 </div>
                             </div>
                         </div>
-                        {/*   <div className="col-md-4">
-                            <div className="d-flex flex-column">
-                                <div>
-                                    <div className="mission-vision">
-                                        <div className="d-flex justify-content-between align-items-center">
-                                            <h5 className="v-c">{t("01. Our Mission")}</h5>
-                                            <i className="bi bi-arrow-up-right"></i>
-                                        </div>
-                                        <p className="v-n">{t("Our mission is to be the merchant’s destination")}</p>
-                                        <p className="v-q">{t("We create a presence that reflects your identity and achieves your goals. At 3TECH, we create technical and marketing solutions that help your business grow and shine in the Saudi and global markets.")}</p>
-                                    </div>
-                                </div>
-                                <div className="mt-3">
-                                    <div className="mission-vision">
-                                        <div className="d-flex justify-content-between">
-                                            <h5 className="v-x">{t("02. Our Vision")}</h5>
-                                            <i className="bi bi-x"></i>
-                                        </div>
-                                        <p className="v-n">{t("Shaping the Future, One Idea at a Time")}</p>
-                                        <p className="v-q">{t("We envision a world where businesses of every size thrive in the digital era. Our mission is to empower brands with the tools, strategies, and creativity they need to leave a mark on their industry.")}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> */}
                         <div className="col-md-4">
                             <div className="d-flex flex-column" data-aos="flip-right" data-aos-delay="600">
                                 {/* Our Mission Section */}
