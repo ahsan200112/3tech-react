@@ -7,10 +7,23 @@ const GTMPageViewTracker = () => {
   const location = useLocation();
   const { i18n } = useTranslation();
 
+  // Helper to create a readable event name from the path
+  const getEventNameFromPath = (path) => {
+    if (path === '/' || path === '/home') return 'HomePageView';
+    const cleanPath = path.replace(/^\/+|\/+$/g, ''); // remove leading/trailing slashes
+    const capitalized = cleanPath
+      .split('/')
+      .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+      .join('');
+    return `${capitalized}PageView`;
+  };
+
   useEffect(() => {
+    const dynamicEventName = getEventNameFromPath(location.pathname);
+
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: 'pageView',
+      event: dynamicEventName,
       pagePath: location.pathname,
       pageTitle: document.title,
       language: i18n.language,

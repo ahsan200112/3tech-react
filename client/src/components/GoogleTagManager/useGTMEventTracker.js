@@ -16,7 +16,7 @@ const useGTMEventTracker = () => {
       fromPageUrl,  // Adding the page name here
       timestamp: new Date().toISOString()
     });
-     console.log('GTM pushed:', window.dataLayer);
+    // console.log('GTM pushed:', window.dataLayer);
   };
 
   return trackEvent;
