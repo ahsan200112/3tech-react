@@ -1,19 +1,29 @@
-import React from "react";
-//import { Helmet } from "react-helmet";
-import { HelmetProvider, Helmet } from "react-helmet-async";  // Updated import
+import React, { useEffect } from "react";
+import { Helmet } from "react-helmet-async";  // Updated import
+import { useLocation } from "react-router-dom";
 
-// Replace with your GTM ID
 const GTM_ID = "GTM-TKSNBVWD";
 //const GTM_ID = "GTM-NVLTKMN2";
 
 const GTM = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        console.log("Pageview pushed:", location.pathname);
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'pageview',
+            page: location.pathname,
+        });
+    }, [location]);
+
     return (
         <>
-            <HelmetProvider>
-                <Helmet>
-                    {/* GTM Script in <head> */}
-                    <script>
-                        {`
+            <Helmet>
+                {/* GTM Script in <head> */}
+                <script>
+                    {`
             (function(w,d,s,l,i){
               w[l]=w[l]||[]; 
               w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'}); 
@@ -25,22 +35,21 @@ const GTM = () => {
               f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','${GTM_ID}');
           `}
-                    </script>
+                </script>
 
-                    {/* GTM noscript for users without JavaScript */}
-                    <noscript
-                        dangerouslySetInnerHTML={{
-                            __html: `<iframe
+                {/* GTM noscript for users without JavaScript */}
+                <noscript
+                    dangerouslySetInnerHTML={{
+                        __html: `<iframe
                       src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}"
                       height="0"
                       width="0"
                       style="display:none; visibility:hidden"
                       title="GTM"
                     ></iframe>`,
-                        }}
-                    />
-                </Helmet>
-            </HelmetProvider>
+                    }}
+                />
+            </Helmet>
         </>
     );
 };

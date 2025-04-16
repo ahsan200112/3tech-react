@@ -12,7 +12,7 @@ const tagManagerArgs = {
   gtmId: 'GTM-TKSNBWD',
   // gtmId: 'GTM-NVLTKMN2',
 };
-TagManager.initialize(tagManagerArgs);  // ✅ Initialize GTM */
+TagManager.initialize(tagManagerArgs);  // ✅ Initialize GTM  */
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
