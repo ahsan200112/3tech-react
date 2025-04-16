@@ -3,10 +3,12 @@ import CreativeDesignFirstComponent from "../components/CreativeDesignFirstCompo
 import CreativeDesignHeroSection from '../components/CreativeDesignHeroSection';
 import OurClientsSay from '../components/OurClientsSay';
 import FrequentlyAskedQuestions from '../components/FrequentlyAskedQuestions';
+import GTM from '../components/GoogleTagManager/GTM';
 
 function CreativeDesign() {
     return (
         <>
+            <GTM />
             <CreativeDesignFirstComponent />
             <CreativeDesignHeroSection />
             <OurClientsSay />

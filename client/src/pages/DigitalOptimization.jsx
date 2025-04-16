@@ -3,14 +3,16 @@ import DigitalOptimizationFirstComponent from '../components/DigitalOptimization
 import OurClientsSay from '../components/OurClientsSay';
 import FrequentlyAskedQuestions from '../components/FrequentlyAskedQuestions';
 import DigitalOptimizationHeroSection from '../components/DigitalOptimizationHeroSection';
+import GTM from '../components/GoogleTagManager/GTM';
 
 function DigitalOptimization() {
   return (
     <>
-      <DigitalOptimizationFirstComponent/>
-      <DigitalOptimizationHeroSection/>
-      <OurClientsSay/>
-      <FrequentlyAskedQuestions/>
+      <GTM />
+      <DigitalOptimizationFirstComponent />
+      <DigitalOptimizationHeroSection />
+      <OurClientsSay />
+      <FrequentlyAskedQuestions />
     </>
   );
 }

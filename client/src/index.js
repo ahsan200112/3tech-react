@@ -6,6 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from './context/ThemeContext';
 import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter as Router } from 'react-router-dom';  // Import Router here
+/*import TagManager from 'react-gtm-module';  // ✅ GTM module
+
+const tagManagerArgs = {
+  gtmId: 'GTM-TKSNBWD',
+  // gtmId: 'GTM-NVLTKMN2',
+};
+TagManager.initialize(tagManagerArgs);  // ✅ Initialize GTM */
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

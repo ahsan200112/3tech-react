@@ -3,11 +3,12 @@ import MarketingSolutionsFirstComponent from '../components/MarketingSolutionsFi
 import MarketingSolutionsHeroSection from '../components/MarketingSolutionsHeroSection';
 import OurClientsSay from '../components/OurClientsSay';
 import FrequentlyAskedQuestions from '../components/FrequentlyAskedQuestions';
-
+import GTM from '../components/GoogleTagManager/GTM';
 
 function MarketingSolutions() {
     return (
         <>
+            <GTM />
             <MarketingSolutionsFirstComponent />
             <MarketingSolutionsHeroSection />
             <OurClientsSay />
