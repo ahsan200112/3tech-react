@@ -23,25 +23,24 @@ import GTM from '../components/GoogleTagManager/GTM';
 const AppRoutes = () => {
   return (
     <>
-      <GTM />
       <ScrollToTop />
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/packages" element={<Packages />} />
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/creativedesign" element={<CreativeDesign />} />
-        <Route path="/digitaloptimization" element={<DigitalOptimization />} />
-        <Route path="/ecommercesolutions" element={<ECommerceSolution />} />
-        <Route path="/marketingsolutions" element={<MarketingSolutions />} />
-        <Route path="/mobileapplications" element={<MobileApplications />} />
-        <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-        <Route path="/termsandconditions" element={<TermsAndConditions />} />
-        <Route path="/thankyou" element={<ThankYou />} />
+        <Route path="/" element={<><GTM /><Home /></>} />
+        <Route path="/about" element={<><GTM /><AboutUs /></>} />
+        <Route path="/services" element={<><GTM /><Services /></>} />
+        <Route path="/projects" element={<><GTM /><Projects /></>} />
+        <Route path="/packages" element={<><GTM /><Packages /></>} />
+        <Route path="/blogs" element={<><GTM /><Blogs /></>} />
+        <Route path="/contact" element={<><GTM /><ContactUs /></>} />
+        <Route path="/creativedesign" element={<><GTM /><CreativeDesign /></>} />
+        <Route path="/digitaloptimization" element={<><GTM /><DigitalOptimization /></>} />
+        <Route path="/ecommercesolutions" element={<><GTM /><ECommerceSolution /></>} />
+        <Route path="/marketingsolutions" element={<><GTM /><MarketingSolutions /></>} />
+        <Route path="/mobileapplications" element={<><GTM /><MobileApplications /></>} />
+        <Route path="/privacypolicy" element={<><GTM /><PrivacyPolicy /></>} />
+        <Route path="/termsandconditions" element={<><GTM /><TermsAndConditions /></>} />
+        <Route path="/thankyou" element={<><GTM /><ThankYou /></>} />
       </Routes>
       <Footer />
     </>

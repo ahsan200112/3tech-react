@@ -25,6 +25,7 @@ const GTMPageViewTracker = () => {
     window.dataLayer.push({
       event: dynamicEventName,
       pagePath: location.pathname,
+      pageLocation: window.location.href,
       pageTitle: document.title,
       language: i18n.language,
       timestamp: new Date().toISOString()
