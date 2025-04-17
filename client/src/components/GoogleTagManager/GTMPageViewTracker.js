@@ -23,7 +23,8 @@ const GTMPageViewTracker = () => {
 
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: dynamicEventName,
+      event: 'page_view', // 👈 GTM summary block trigger
+      custom_event_name: dynamicEventName, // 👈 optional tracking
       pagePath: location.pathname,
       pageLocation: window.location.href,
       pageTitle: document.title,

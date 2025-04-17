@@ -1,22 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet-async";  // Updated import
-import { useLocation } from "react-router-dom";
 
 const GTM_ID = "GTM-TKSNBVWD";
 //const GTM_ID = "GTM-NVLTKMN2";
 
 const GTM = () => {
-    const location = useLocation();
-
-    useEffect(() => {
-        console.log("Pageview pushed:", location.pathname);
-
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            event: 'pageview',
-            page: location.pathname,
-        });
-    }, [location]);
 
     return (
         <>
