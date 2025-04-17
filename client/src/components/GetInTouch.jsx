@@ -10,7 +10,7 @@ const GetInTouch = () => {
 
     return (
         <section className="v-section py-5">
-            <div className="container py-5" data-aos="fade-up" data-aos-delay="600">
+            <div className="container py-5" data-aos="fade-up"data-aos-delay="500">
                 <div>
                     <button className="btn-sm u-vise mb-2">{t("Get in Touch")}</button>
                     <h2 className="b-b">{t("Need Further Assistance?")}</h2>

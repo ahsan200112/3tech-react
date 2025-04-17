@@ -83,14 +83,14 @@ const OurClientsSay = () => {
 
   return (
     <section className="client-testimonials py-5" style={{ direction: isRTL ? "rtl" : "ltr" }} >
-      <div className="container" data-aos="fade-up" data-aos-delay="600">
+      <div className="container" data-aos="fade-up"data-aos-delay="500">
         <div className="mb-4">
           <button className="btn-sm v-hi" style={{ width: "230px" }}>
             {t("Real Stories, Real Impact")}
           </button>
           <h2 className="v-hence">{t("What Our Clients Say About Us")}</h2>
         </div>
-        <div data-aos="flip-left" data-aos-delay="600">
+        <div data-aos="flip-left"data-aos-delay="500">
           <Slider {...settings} className="slick-slider"
           //  afterChange={handleSlideChange}  // Event on slide change 
           >
