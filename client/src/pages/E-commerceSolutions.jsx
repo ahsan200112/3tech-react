@@ -3,12 +3,10 @@ import EcommerceSolutionsFirstComponent from '../components/EcommerceSolutionsFi
 import EcommerceSolutionsHeroSection from '../components/EcommerceSolutionsHeroComponent';
 import OurClientsSay from '../components/OurClientsSay';
 import FrequentlyAskedQuestions from '../components/FrequentlyAskedQuestions';
-import GTM from '../components/GoogleTagManager/GTM';
 
 function ECommerceSolution() {
     return (
         <>
-            <GTM />
             <EcommerceSolutionsFirstComponent />
             <EcommerceSolutionsHeroSection />
             <OurClientsSay />

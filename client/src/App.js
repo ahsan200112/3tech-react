@@ -7,6 +7,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import GTMPageViewTracker from './components/GoogleTagManager/GTMPageViewTracker';
 import GTMPageReloadTracker from './components/GoogleTagManager/GTMPageReloadTracker';
+import GTMPageView from './components/GoogleTagManager/GTMPageView';
 
 const App = () => {
     const { i18n } = useTranslation();
@@ -29,6 +30,7 @@ const App = () => {
     return (
         <>
             <MetaTags />
+            <GTMPageView />
             <GTMPageViewTracker />
             <GTMPageReloadTracker />
             <AppRoutes />

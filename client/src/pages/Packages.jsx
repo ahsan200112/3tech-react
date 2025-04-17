@@ -4,12 +4,10 @@ import PackagesFirstComponent from '../components/PackagesFirstComponent';
 import CustomPackageOpinion from '../components/CustomPackageOpinion';
 import OurClientsSay from '../components/OurClientsSay';
 import FrequentlyAskedQuestions from '../components/FrequentlyAskedQuestions';
-import GTM from '../components/GoogleTagManager/GTM';
 
 function Packages() {
   return (
     <>
-      <GTM />
       <PackagesFirstComponent />
       {/* <OurPackages /> */}
       <CustomPackageOpinion />
