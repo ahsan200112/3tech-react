@@ -84,7 +84,7 @@ const OurTrustedPartners = () => {
 
   return (
     <section className="trusted-partners py-5">
-      <div className="container" data-aos="fade-down" data-aos-delay="400">
+      <div className="container" data-aos="fade-down" data-aos-delay="300">
         <button className="btn-sm v-were" style={{ width: "205px" }}>{t("Be Part of Our Journey")}</button>
         <h2 className="v-value">{t("Our Trusted Partners")}</h2>
         <p className="v-auto">

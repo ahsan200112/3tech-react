@@ -65,7 +65,7 @@ const OurProjects = () => {
                     </div>
                     <p className="v-info mt-2" style={{ maxWidth: "800px", wordBreak: "break-word" }}>{t("Explore our success stories in e-commerce, app development, and creative marketing. See how we've helped businesses like yours thrive.")}</p>
                     {/* ✅ Image Slider */}
-                    <div data-aos="flip-left" data-aos-delay="500">
+                    <div data-aos="flip-left" data-aos-delay="400">
                         <Slider {...settings} className="mt-4"
                         //    afterChange={handleSlideChange}  // Event on slide change
                         >
