@@ -7,7 +7,7 @@ import AboutUs from '../pages/AboutUs';
 import Services from '../pages/Services';
 import Projects from '../pages/Projects';
 import Packages from '../pages/Packages';
-import Blogs from '../pages/Blogs';
+//import Blogs from '../pages/Blogs';
 import ContactUs from '../pages/ContactUs';
 import CreativeDesign from '../pages/CreativeDesign';
 import DigitalOptimization from '../pages/DigitalOptimization';
@@ -18,6 +18,8 @@ import PrivacyPolicy from '../pages/PrivacyPolicy';
 import TermsAndConditions from '../pages/TermsAndConditions';
 import ScrollToTop from "../components/ScrollToTop";
 import ThankYou from '../pages/ThankYou';
+import GTMPageViewTracker from '../components/GoogleTagManager/GTMPageViewTracker';
+import GTMPageReloadTracker from '../components/GoogleTagManager/GTMPageReloadTracker';
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -35,6 +37,8 @@ const AppRoutes = () => {
 
   return (
     <>
+      <GTMPageViewTracker />
+      <GTMPageReloadTracker />
       <ScrollToTop />
       <Navbar />
       <Routes>
@@ -43,7 +47,7 @@ const AppRoutes = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/packages" element={<Packages />} />
-        <Route path="/blogs" element={<Blogs />} />
+       {/* <Route path="/blogs" element={<Blogs />} /> */}
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/creativedesign" element={<CreativeDesign />} />
         <Route path="/digitaloptimization" element={<DigitalOptimization />} />

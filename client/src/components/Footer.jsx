@@ -63,9 +63,9 @@ const Footer = () => {
                 <li className='custom-list-padding'><Link to="/packages" className="text-start v-inner text-decoration-none"
                   onClick={() => trackEvent('click on footer page link', 'Navigation', 'Click', 'Packages Page Link')}
                 >{t("Packages")}</Link></li>
-                <li className='custom-list-padding'><Link to="/blogs" className="text-start v-inner text-decoration-none"
+              {/*  <li className='custom-list-padding'><Link to="/blogs" className="text-start v-inner text-decoration-none"
                   onClick={() => trackEvent('click on footer page link', 'Navigation', 'Click', 'Blogs Page Link')}
-                >{t("Blogs")}</Link></li>
+                >{t("Blogs")}</Link></li> */}
                 <li className='custom-list-padding'><Link to="/contact" className="text-start v-inner text-decoration-none"
                   onClick={() => trackEvent('click on footer page link', 'Navigation', 'Click', 'ContactUs Page Link')}
                 >{t("Contact Us")}</Link></li>
