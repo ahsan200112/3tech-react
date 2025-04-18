@@ -6,10 +6,10 @@ const MetaTags = () => {
     const { i18n } = useTranslation();
 
     // Dynamic Title & Description Based on Language
-    const title = i18n.language === "ar" ? "ثري تك" : "3tech";
+    const title = i18n.language === "ar" ? "3tech | اطلق متجرك مع منصة ثري تك " : "3tech | اطلق متجرك مع منصة ثري تك ";
     const description =
         i18n.language === "ar"
-            ? "اطلق متجرك الالكتروني مع منصة ثري تك"
+            ? "!اهلا بك في عالم التجارة الالكترونية مع منصة ثري تك، اطلق متجرك الالكتروني"
             : "Launch your online store with 3tech platform";
 
     useEffect(() => {

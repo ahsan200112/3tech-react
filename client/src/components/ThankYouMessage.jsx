@@ -36,7 +36,7 @@ const ThankYouMessage = () => {
                         {t("Thank You! We've Received Your Message")}
                     </h1>
                     <p className="c-p mb-3">
-                        {t("Thank you for reaching out to 3Tech! Your message has been received and our team is already reviewing it. We typically respond within 5–15 minutes during working hours, so sit tight. We’ll be in touch shortly")}
+                        {t("Thank you for reaching out to 3Tech! Your message has been received and our team is already reviewing it. We typically respond within 5–15 minutes during working hours. We’ll be in touch shortly")}
                     </p>
                     <div className="text-center">
                         <Link to="/" className="text-decoration-none">
