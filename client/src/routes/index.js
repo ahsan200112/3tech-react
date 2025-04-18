@@ -41,8 +41,8 @@ const AppRoutes = () => {
       <GTMPageReloadTracker />
       <ScrollToTop />
       <Routes>
-       {/* <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} /> */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
