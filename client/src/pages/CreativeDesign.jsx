@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import CreativeDesignFirstComponent from "../components/CreativeDesignFirstComponent";
 import CreativeDesignHeroSection from '../components/CreativeDesignHeroSection';
 import OurClientsSay from '../components/OurClientsSay';
@@ -7,10 +9,12 @@ import FrequentlyAskedQuestions from '../components/FrequentlyAskedQuestions';
 function CreativeDesign() {
     return (
         <>
+            <Navbar />
             <CreativeDesignFirstComponent />
             <CreativeDesignHeroSection />
             <OurClientsSay />
             <FrequentlyAskedQuestions />
+            <Footer />
         </>
     );
 }

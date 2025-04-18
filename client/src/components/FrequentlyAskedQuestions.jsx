@@ -23,7 +23,7 @@ const FrequentlyAskedQuestions = () => {
         },
         {
             question: t("Do I Own The Website After It’s Created?"),
-            answer: t("Yes, once the project is complete, you fully own your website, including all its assets and code.")
+            answer: t("Yes, once the project is complete, you own your website on 3tech")
         },
         {
             question: t("How Long Does It Take To Deliver A Project?"),

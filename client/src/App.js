@@ -5,6 +5,8 @@ import './i18n';
 import MetaTags from './components/MetaTagsAll';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
     const { i18n } = useTranslation();
@@ -26,6 +28,7 @@ const App = () => {
 
     return (
         <>
+            <ToastContainer position="top-right" autoClose={3000} />
             <MetaTags />
             <AppRoutes />
         </>

@@ -18,7 +18,10 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-const ContactRoutes = require('./ContactForm/routes/Contact.route')
+const authRoutes = require("./api/auth/routes/authRoute");
+app.use("/api/auth", authRoutes);
+
+const ContactRoutes = require('./api/ContactForm/routes/ContactRoute')
 app.use('/api/contact', ContactRoutes);
 
 app.use((err, req, res, next) => {

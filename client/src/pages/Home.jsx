@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
 import WhoWeAre from '../components/WhoWeAre';
 import OurServices from '../components/OurServices';
@@ -11,6 +13,7 @@ import OurClientsSay from '../components/OurClientsSay';
 function Home() {
   return (
     <>
+      <Navbar />
       <HeroSection />
       <WhoWeAre />
       <OurServices />
@@ -19,6 +22,7 @@ function Home() {
       <OurTrustedPartners />
       <OurClientsSay />
       {/* <OurPackages/> */}
+      <Footer />
     </>
   );
 }
