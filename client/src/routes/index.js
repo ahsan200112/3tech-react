@@ -18,8 +18,8 @@ import ScrollToTop from "../components/ScrollToTop";
 import ThankYou from '../pages/ThankYou';
 import GTMPageViewTracker from '../components/GoogleTagManager/GTMPageViewTracker';
 import GTMPageReloadTracker from '../components/GoogleTagManager/GTMPageReloadTracker';
-import Login from '../pages/Login/Login';
-import Signup from '../pages/Signup/Signup';
+//import Login from '../pages/Login/Login';
+//import Signup from '../pages/Signup/Signup';
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -41,8 +41,8 @@ const AppRoutes = () => {
       <GTMPageReloadTracker />
       <ScrollToTop />
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+       {/* <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} /> */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
