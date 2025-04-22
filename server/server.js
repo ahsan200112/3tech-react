@@ -21,6 +21,12 @@ app.use('/api/contact', ContactRoutes);
 const BlogRoutes = require('./api/Blogs/routes/blogRoutes')
 app.use('/api/blogs', BlogRoutes);
 
+const ServiceRoutes = require('./api/Services/routes/serviceRoutes')
+app.use('/api/services', ServiceRoutes);
+
+const ProjectRoutes = require('./api/Projects/routes/projectRoutes')
+app.use('/api/projects', ProjectRoutes);
+
 app.use((err, req, res, next) => {
   res.status(err.status || 500).json({
     error: err.message || "Server Error",

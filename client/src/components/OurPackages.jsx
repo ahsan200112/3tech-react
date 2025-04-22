@@ -55,7 +55,7 @@ const OurPackages = () => {
                                 </ul>
                                 <p className="i-world">{t("Support : Email Support")}</p>
                                 <button className="btn-get responsive-btn"
-                                    onClick={() => handleConsultationClick(packageName)} // Track the event when button is clicked
+                                    onClick={() => handleConsultationClick("Business Branding Package")} // Track the event when button is clicked
                                 >{t("Get a Free Consultation")}</button>
                             </div>
                         </div>
@@ -88,7 +88,7 @@ const OurPackages = () => {
                                 </ul>
                                 <p className="i-world">{t("Support : Email Support")}</p>
                                 <button className="btn-get responsive-btn"
-                                    onClick={() => handleConsultationClick(packageName)} // Track the event when button is clicked
+                                    onClick={() => handleConsultationClick("Business Branding Package")} // Track the event when button is clicked
                                 >{t("Get a Free Consultation")}</button>
                             </div>
                         </div>
@@ -121,7 +121,7 @@ const OurPackages = () => {
                                 </ul>
                                 <p className="i-world">{t("Support : Email Support")}</p>
                                 <button className="btn-get responsive-btn"
-                                    onClick={() => handleConsultationClick(packageName)} // Track the event when button is clicked
+                                    onClick={() => handleConsultationClick("Business Branding Package")} // Track the event when button is clicked
                                 >{t("Get a Free Consultation")}</button>
                             </div>
                         </div>

@@ -20,6 +20,8 @@ import ThankYou from '../pages/ThankYou';
 import GTMPageViewTracker from '../components/GoogleTagManager/GTMPageViewTracker';
 import GTMPageReloadTracker from '../components/GoogleTagManager/GTMPageReloadTracker';
 import Login from '../pages/Login/Login';
+import Services1 from '../pages/Services1';
+import Projects1 from '../pages/Projects1';
 //import Signup from '../pages/Signup/Signup';
 
 const PublicRoutes = () => {
@@ -47,7 +49,9 @@ const PublicRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/services1" element={<Services1 />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects1" element={<Projects1 />} />
         <Route path="/packages" element={<Packages />} />
         <Route path="/blogs" element={<Blogs />} /> 
         <Route path="/blogs1" element={<Blogs1 />} />

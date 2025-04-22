@@ -2,33 +2,34 @@ const Blog = require('../models/blogModel');
 
 // Create Blog
 exports.createBlog = async (req, res) => {
-    try {
-      const { title, description, author, category, image } = req.body;
-  
-      const newBlog = new Blog({
-        title,
-        description,
-        author,
-        category,
-        image,
-      });
-  
-      const savedBlog = await newBlog.save();
-      res.status(201).json(savedBlog);
-    } catch (err) {
-      res.status(400).json({ error: err.message });
-    }
-  };
+  try {
+    const { title, description, author, category } = req.body;
+    const imageUrl = req.imageUrl || '';
+
+    const newBlog = new Blog({
+      title,
+      description,
+      author,
+      category,
+      image: imageUrl || '',
+    });
+
+    const savedBlog = await newBlog.save();
+    res.status(201).json(savedBlog);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+};
 
 // Get All Blogs
 exports.getBlogs = async (req, res) => {
-    try {
-      const blogs = await Blog.find().sort({ date: -1 });
-      res.status(200).json(blogs);
-    } catch (err) {
-      res.status(500).json({ error: err.message });
-    }
-  };
+  try {
+    const blogs = await Blog.find().sort({ date: -1 });
+    res.status(200).json(blogs);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
 
 // Get Single Blog
 exports.getBlogById = async (req, res) => {
@@ -44,7 +45,13 @@ exports.getBlogById = async (req, res) => {
 // Update Blog
 exports.updateBlog = async (req, res) => {
   try {
-    const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    // Check if the image URL is provided and include it in the update
+    const updatedData = { ...req.body };
+    if (req.imageUrl) {
+      updatedData.image = req.imageUrl;
+    }
+
+    const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, updatedData, { new: true });
     if (!updatedBlog) return res.status(404).json({ message: 'Blog not found' });
     res.status(200).json(updatedBlog);
   } catch (err) {

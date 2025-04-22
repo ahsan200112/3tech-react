@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../assets/images/3tech logo for dark mode.png';
 import { useTranslation } from 'react-i18next';
-import { FaHome, FaBox, FaShoppingCart, FaUsers, FaCog, FaStore, FaBullhorn } from 'react-icons/fa';
+import { FaHome, FaBox, FaUsers, FaCog, FaBoxOpen, FaClipboardList, FaStore, FaBullhorn } from 'react-icons/fa';
 
 const Sidebar = () => {
   const { i18n } = useTranslation();
@@ -22,17 +22,20 @@ const Sidebar = () => {
         <NavLink to="/dashboard/blogs" className="nav-link text-white">
           <FaBox className={isRtl ? 'ms-2' : 'me-2'} /> Blogs
         </NavLink>
-        <NavLink to="/dashboard/orders" className="nav-link text-white">
-          <FaShoppingCart className={isRtl ? 'ms-2' : 'me-2'} /> Orders
+        <NavLink to="/dashboard/services" className="nav-link text-white">
+          <FaClipboardList className={isRtl ? 'ms-2' : 'me-2'} /> Services
         </NavLink>
-        <NavLink to="/dashboard/customers" className="nav-link text-white">
-          <FaUsers className={isRtl ? 'ms-2' : 'me-2'} /> Customers
+        <NavLink to="/dashboard/projects" className="nav-link text-white">
+          <FaStore className="me-2" /> Projects
+        </NavLink>
+        <NavLink to="/dashboard/packages" className="nav-link text-white">
+          <FaBoxOpen className={isRtl ? 'ms-2' : 'me-2'} /> Packages
+        </NavLink>
+        <NavLink to="/dashboard/users" className="nav-link text-white">
+          <FaUsers className={isRtl ? 'ms-2' : 'me-2'} /> Users
         </NavLink>
         <NavLink to="/dashboard/settings" className="nav-link text-white">
           <FaCog className={isRtl ? 'ms-2' : 'me-2'} /> Settings
-        </NavLink>
-        <NavLink to="/dashboard/store" className="nav-link text-white">
-          <FaStore className="me-2" /> Store Configuration
         </NavLink>
         <NavLink to="/dashboard/marketing" className="nav-link text-white">
           <FaBullhorn className={isRtl ? 'ms-2' : 'me-2'} /> Marketing
