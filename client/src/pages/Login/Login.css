@@ -4,20 +4,32 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.login-background {
+    background-image: url('../../assets/images/3techLoginBack.png');
+    /* ← image ka correct path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f5f5f5;
     padding: 10px 15px;
 }
 
 .login-card {
     display: flex;
+    min-height: 450px;
     max-width: 1000px;
     width: 100%;
-    background-color: #fff;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -30,13 +42,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
     background-color: #fff;
 }
 
 .logo-container {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .company-logo {
@@ -47,26 +57,26 @@ body {
 .login-left h2 {
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 6px;
+    margin-bottom: 15px;
 }
 
 .login-left p {
     font-size: 14px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
-.signup-link {
-    color: rgb(36, 100, 148);
-    text-decoration: none;
-}
-
-.login-form{
-    width: 55%;
+.login-form {
+    width: 100%;
 }
 
 .form-group {
     margin-bottom: 15px;
     width: 100%;
+}
+
+.login-form label {
+    margin-bottom: 6px;
+    display: block;
 }
 
 .form-control {
@@ -78,6 +88,46 @@ body {
     font-size: 16px !important;
 }
 
+input.form-control {
+    background-color: #F6F6F6;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper input {
+    padding-right: 40px;
+    /* default LTR */
+}
+
+.input-wrapper.rtl input {
+    padding-right: 10px;
+    padding-left: 40px;
+    /* for icon space on left */
+}
+
+.password-toggle-icon {
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* LTR default */
+.input-wrapper.ltr .password-toggle-icon {
+    right: 16px;
+}
+
+/* RTL */
+.input-wrapper.rtl .password-toggle-icon {
+    left: 16px;
+}
+
 .login-btn {
     width: 100%;
     padding: 10px;
@@ -86,7 +136,7 @@ body {
     font-size: 16px;
     font-weight: bold;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 20px;
     cursor: pointer;
 }
@@ -95,42 +145,30 @@ body {
     background-color: rgb(30, 85, 125);
 }
 
-.forgetpassword-link {
-    color: rgb(36, 100, 148);
-    text-decoration: none;
-}
-
 /* Right Section (Introduction) */
 .login-right {
     flex: 1;
-    background-color: rgba(36, 100, 148, 1);
+    background-color: rgba(208, 216, 238, 0.1);
     color: #fff;
-    padding: 45px 30px;
+    padding: 45px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
 .login-right h3 {
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .login-right p {
-    padding-right: 5px;
-    padding-left: 5px;
-    text-align: center;
     font-size: 16px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
-.analytics-preview img {
-    margin-top: 10px;
-    border-radius: 10px;
-    max-width: 100%;
-    padding: 0px 35px;
+.mobile-p {
+    display: none;
 }
 
 /* Media Queries for Responsiveness */
@@ -140,13 +178,33 @@ body {
     }
 
     .login-right {
-        display: none;
-      /*  order: -1; */
+        /* display: none; */
+        order: -1;
         /* Moves the introduction section to the top */
-      /*  padding: 20px; */
+        padding: 20px 25px;
+    }
+
+    .logo-container {
+        margin-bottom: 1px;
+    }
+
+    .login-right h3 {
+        margin-bottom: 10px;
+    }
+
+    .login-right p {
+        margin-bottom: 5px;
+    }
+
+    .web-p {
+        display: none;
+    }
+
+    .mobile-p {
+        display: flex;
     }
 
     .login-left {
-        padding: 20px;
+        padding: 30px;
     }
 }

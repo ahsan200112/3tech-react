@@ -366,15 +366,18 @@
     "Full Name": "الاسم الكامل",
     "Password": "كلمة المرور",
     "Confirm Password": "تأكيد كلمة المرور",
+    "Enter your email": "أدخل بريدك الإلكتروني",
+    "Enter your password": "أدخل كلمة المرور",
     "Phone Number": "رقم الجوال",
     "Select Gender": "اختر الجنس",
     "Male": "ذكر",
     "Female": "أنثى",
     "Other": "آخر",
     "Sign Up": "تسجيل",
-    "Introducing new features": "تقديم ميزات جديدة",
-    "Manage sales, inventory, and customer insights seamlessly with a POS  system designed for modern businesses.": "قم بإدارة المبيعات والمخزون وتحليلات العملاء بسهولة من خلال نظام نقاط بيع مصمم للأعمال الحديثة.",
-    "Login to your account": "تسجيل الدخول إلى حسابك",
+    "Sign In": "تسجيل الدخول",
     "Create new account?": "إنشاء حساب جديد؟",
-    "forget password?": "هل نسيت كلمة المرور؟"
+    "forget password?": "هل نسيت كلمة المرور؟",
+    "Welcome To Your Website!": "مرحبًا بك في موقعك الإلكتروني!",
+    "Manage sales, inventory, and customer insights seamlessly with a POS system designed for modern businesses. Streamline operations, boost efficiency, and deliver exceptional customer experiences. Empower your business with real-time data and smart decision-making tools.": "قم بإدارة المبيعات والمخزون وتحليلات العملاء بسلاسة من خلال نظام نقاط البيع المصمم للأعمال العصرية. قم بتبسيط العمليات، وزيادة الكفاءة، وتقديم تجارب استثنائية للعملاء. عزز عملك ببيانات فورية وأدوات ذكية لاتخاذ القرارات.",
+    "Manage sales, inventory, and customer insights seamlessly with a POS  system designed for modern businesses.": "قم بإدارة المبيعات والمخزون وتحليلات العملاء بسهولة من خلال نظام نقاط بيع مصمم للأعمال الحديثة."
 }

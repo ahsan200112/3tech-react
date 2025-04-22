@@ -6,8 +6,7 @@ const streamToPromise = require("stream-to-promise");  // <-- Add this import
 // Array of your routes (updated with your 3Tech website routes)
 const links = [
   { url: "/", changefreq: "monthly", priority: 1.0 },
-  { url: "/login", changefreq: "monthly", priority: 1.0 },
-  { url: "/signup", changefreq: "monthly", priority: 1.0 },
+  { url: "/dashboard-login", changefreq: "monthly", priority: 1.0 },
   { url: "/about", changefreq: "monthly", priority: 0.8 },
   { url: "/services", changefreq: "monthly", priority: 0.8 },
   { url: "/projects", changefreq: "monthly", priority: 0.8 },

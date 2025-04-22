@@ -12,17 +12,14 @@ const app = express();
 app.use(cors());
 app.use(express.json()); // Middleware to parse JSON data
 
-app.use(express.static(path.join(__dirname, "build")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
-
 const authRoutes = require("./api/auth/routes/authRoute");
 app.use("/api/auth", authRoutes);
 
 const ContactRoutes = require('./api/ContactForm/routes/ContactRoute')
 app.use('/api/contact', ContactRoutes);
+
+const BlogRoutes = require('./api/Blogs/routes/blogRoutes')
+app.use('/api/blogs', BlogRoutes);
 
 app.use((err, req, res, next) => {
   res.status(err.status || 500).json({

@@ -366,15 +366,18 @@
   "Full Name": "Full Name",
   "Password": "Password",
   "Confirm Password": "Confirm Password",
+  "Enter your email": "Enter your email",
+  "Enter your password": "Enter your password",
   "Phone Number": "Phone Number",
   "Select Gender": "Select Gender",
   "Male": "Male",
   "Female": "Female",
   "Other": "Other",
   "Sign Up": "Sign Up",
-  "Introducing new features": "Introducing new features",
-  "Manage sales, inventory, and customer insights seamlessly with a POS  system designed for modern businesses.": "Manage sales, inventory, and customer insights seamlessly with a POS  system designed for modern businesses.",
-  "Login to your account": "Login to your account",
+  "Sign In": "Sign In",
   "Create new account?": "Create new account?",
-  "forget password?": "forget password?"
+  "forget password?": "forget password?",
+  "Welcome To Your Website!": "Welcome To Your Website!",
+  "Manage sales, inventory, and customer insights seamlessly with a POS system designed for modern businesses. Streamline operations, boost efficiency, and deliver exceptional customer experiences. Empower your business with real-time data and smart decision-making tools.": "Manage sales, inventory, and customer insights seamlessly with a POS system designed for modern businesses. Streamline operations, boost efficiency, and deliver exceptional customer experiences. Empower your business with real-time data and smart decision-making tools.",
+  "Manage sales, inventory, and customer insights seamlessly with a POS  system designed for modern businesses.": "Manage sales, inventory, and customer insights seamlessly with a POS  system designed for modern businesses."
 }
