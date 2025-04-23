@@ -5,7 +5,7 @@ import "./Login.css";
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom"; // Import Link from React Router
 import useGTMEventTracker from "../../components/GoogleTagManager/useGTMEventTracker";
-import api from '../../api';
+import api from '../../api/api';
 import { toast } from 'react-toastify';
 
 const Login = () => {

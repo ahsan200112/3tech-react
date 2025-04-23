@@ -1,11 +1,12 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
-import emailjs from "@emailjs/browser";
+//import emailjs from "@emailjs/browser";
 import { useNavigate } from 'react-router-dom';
 import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';
 //import Swal from 'sweetalert2';
-//import api from '../api';
+import api from '../api/api';
+import { createContactForm } from '../api/apiEndpoints';
 
 const GetContactNow2 = () => {
     const { t } = useTranslation();
@@ -14,68 +15,21 @@ const GetContactNow2 = () => {
     const trackEvent = useGTMEventTracker();
 
     // ye node js backend ke sath hai api already bani hui hai
-    /* const onSubmit = async (data) => {
-         try {
-             const response = await api("/api/contact", {
-                 method: 'POST',
-                 headers: {
-                     'Content-Type': 'application/json',
-                 },
-                 body: JSON.stringify(data),
-             });
- 
-             if (response.ok) {
-                 Swal.fire({
-                    title: t("Thank you for contacting us!"),
-                    text: t("Your message has been sent successfully. We will contact you later"),
-                    icon: "success"
-                });
-                 reset(); // Reset form after successful submission
-                 // Push the form submission event to GTM with page path
-                if (window.dataLayer) {
-                    window.dataLayer.push({
-                        event: 'form_submission',  // Custom event name
-                        form_name: 'ContactUs',  // Form name or identifier
-                        page: window.location.pathname,  // Page URL (path)
-                        form_data: {
-                            name: data.name,
-                            email: data.email,
-                            phone: data.phone,
-                            subject: data.subject,
-                            message: data.message
-                        }
-                    });
-                }
-             } else {
-                 alert('Something went wrong, please try again.');
-             }
-         } catch (error) {
-             console.error('Error submitting form:', error);
-             alert('Error submitting form, please try again.');
-         }
-     }; */
+    const onSubmit = async (data) => {
+        try {
+            const response = await api.post(createContactForm, data, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
 
-    const onSubmit = (data) => {
-        const serviceID = "service_bk2mmlr";  // EmailJS se copy karo
-        const templateID = "template_ij5qjqm";  // EmailJS se copy karo
-        const publicKey = "rBuu6w3lR4LQIztjf";  // EmailJS se copy karo
-
-        const templateParams = {
-            name: data.name,
-            email: data.email,
-            phone: data.phone,
-            subject: data.subject,
-            message: data.message,
-        };
-
-        emailjs.send(serviceID, templateID, templateParams, publicKey)
-            .then((response) => {
-                /*  Swal.fire({
+            if (response.status === 200 || response.status === 201) {
+                /*   Swal.fire({
                       title: t("Thank you for contacting us!"),
                       text: t("Your message has been sent successfully. We will contact you later"),
                       icon: "success"
                   }); */
-                reset();
+                reset(); // Reset form after successful submission
                 navigate('/thankyou');
                 // Push the form submission event to GTM with page path
                 if (window.dataLayer) {
@@ -92,16 +46,62 @@ const GetContactNow2 = () => {
                         }
                     });
                 }
-            })
-            .catch((error) => {
-                console.error("Error sending email:", error);
-                alert("Failed to send email, please try again.");
-            });
+            } else {
+                alert('Something went wrong, please try again.');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('Error submitting form, please try again.');
+        }
     };
+
+    /*  const onSubmit = (data) => {
+          const serviceID = "service_bk2mmlr";  // EmailJS se copy karo
+          const templateID = "template_ij5qjqm";  // EmailJS se copy karo
+          const publicKey = "rBuu6w3lR4LQIztjf";  // EmailJS se copy karo
+  
+          const templateParams = {
+              name: data.name,
+              email: data.email,
+              phone: data.phone,
+              subject: data.subject,
+              message: data.message,
+          };
+  
+          emailjs.send(serviceID, templateID, templateParams, publicKey)
+              .then((response) => {
+                  /*  Swal.fire({
+                        title: t("Thank you for contacting us!"),
+                        text: t("Your message has been sent successfully. We will contact you later"),
+                        icon: "success"
+                    }); */
+    /*  reset();
+      navigate('/thankyou');
+      // Push the form submission event to GTM with page path
+      if (window.dataLayer) {
+          window.dataLayer.push({
+              event: 'form_submission',  // Custom event name
+              form_name: 'ContactUs',  // Form name or identifier
+              page: window.location.pathname,  // Page URL (path)
+              form_data: {
+                  name: data.name,
+                  email: data.email,
+                  phone: data.phone,
+                  subject: data.subject,
+                  message: data.message
+              }
+          });
+      }
+  })
+  .catch((error) => {
+      console.error("Error sending email:", error);
+      alert("Failed to send email, please try again.");
+  });
+}; */
 
     return (
         <section className='u-section'>
-            <div className="container py-5" data-aos="fade-up"data-aos-delay="500">
+            <div className="container py-5" data-aos="fade-up" data-aos-delay="500">
                 <div className="mb-4">
                     <button className="btn-sm u-vise">
                         {t('Get Contact Now')}

@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = process.env.REACT_APP_BASE_URL; // React CRA
-// const BASE_URL = import.meta.env.VITE_BASE_URL; // Vite (If using Vite)
+const BASE_URL = process.env.REACT_APP_BASE_URL; 
 
 const api = {
   method: async (httpMethod, endpoint, data = null) => {
@@ -18,7 +17,6 @@ const api = {
     }
   },
 
-  // You can create shortcuts for common HTTP methods if you prefer
   get: (endpoint) => api.method('get', endpoint),
   post: (endpoint, data) => api.method('post', endpoint, data),
   put: (endpoint, data) => api.method('put', endpoint, data),

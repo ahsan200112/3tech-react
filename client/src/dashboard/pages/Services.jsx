@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Table, Modal, Form } from 'react-bootstrap';
-import api from '../../api';
+import api from '../../api/api';
+import { getServices, createService, updateService, deleteService } from '../../api/apiEndpoints';
 import { FaEdit, FaTrash, FaEye } from 'react-icons/fa';
 
 const Services = () => {
@@ -18,7 +19,7 @@ const Services = () => {
 
     const fetchServices = async () => {
         try {
-            const res = await api.get('/api/services');
+            const res = await api.get(getServices);
             console.log('Fetched services:', res.data); // 👈 Add this
             setServices(res.data);
         } catch (error) {
@@ -47,11 +48,11 @@ const Services = () => {
         formData.append('image', serviceData.image); // 👈 file append
 
         if (isEditing) {
-            await api.put(`/api/services/${serviceData._id}`, formData, {
+            await api.put(updateService(serviceData._id), formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
         } else {
-            await api.post('/api/services', formData, {
+            await api.post(createService, formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
         }
@@ -67,7 +68,7 @@ const Services = () => {
 
     const handleDelete = async (id) => {
         if (window.confirm('Are you sure you want to delete this service?')) {
-            await api.delete(`/api/services/${id}`);
+            await api.delete(deleteService(id));
             fetchServices();
         }
     };

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import api from '../api';
+import api from '../api/api';
+import { getBlogs } from '../api/apiEndpoints'
 import Calender1Img from '../assets/images/calendar 1.png';
 import Search1Img from '../assets/images/search 1.png';
 import Container1Img from '../assets/images/Container (1).png';
@@ -16,7 +17,7 @@ const BlogsSection1 = () => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        api.get('/api/blogs') // adjust this endpoint to match your backend
+        api.get(getBlogs) 
             .then(response => {
                 setBlogs(response.data);
             })

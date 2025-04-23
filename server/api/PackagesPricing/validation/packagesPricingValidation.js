@@ -2,7 +2,7 @@
 const { validationResult, body } = require("express-validator");
 
 // Validation rules for pricing
-const validatePricing = [
+const validatePackagesPricing = [
   body("title").notEmpty().withMessage("Title is required"),
   body("description").notEmpty().withMessage("Description is required"),
   body("monthlyPrice").notEmpty().withMessage("Monthly Price is required"),
@@ -16,4 +16,4 @@ const validatePricing = [
   },
 ];
 
-module.exports = validatePricing;
+module.exports = validatePackagesPricing;

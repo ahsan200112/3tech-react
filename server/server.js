@@ -27,6 +27,9 @@ app.use('/api/services', ServiceRoutes);
 const ProjectRoutes = require('./api/Projects/routes/projectRoutes')
 app.use('/api/projects', ProjectRoutes);
 
+const PackagesPricingRoutes = require('./api/PackagesPricing/routes/packagesPricingRoutes')
+app.use('/api/packagesPricing', PackagesPricingRoutes);
+
 app.use((err, req, res, next) => {
   res.status(err.status || 500).json({
     error: err.message || "Server Error",

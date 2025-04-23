@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import api from '../api';
+import api from '../api/api';
+import { getServices } from '../api/apiEndpoints'
 import { useTranslation } from 'react-i18next';
 import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 import { Link } from 'react-router-dom';
@@ -10,7 +11,7 @@ const OurServices1 = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        api.get('/api/services')
+        api.get(getServices)
             .then(response => {
                 setServices(response.data);
             })

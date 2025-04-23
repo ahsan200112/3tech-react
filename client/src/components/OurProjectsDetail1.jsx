@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import api from '../api';
+import api from '../api/api';
+import { getProjects } from '../api/apiEndpoints'
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';
@@ -10,7 +11,7 @@ const OurProjectsDetail1 = () => {
     const trackEvent = useGTMEventTracker();
 
     useEffect(() => {
-        api.get('/api/projects')
+        api.get(getProjects)
             .then(response => {
                 setProjects(response.data);
             })

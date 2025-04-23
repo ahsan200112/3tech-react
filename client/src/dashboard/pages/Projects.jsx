@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Table, Modal, Form } from 'react-bootstrap';
-import api from '../../api';
+import api from '../../api/api';
+import { getProjects, createProject, updateProject, deleteProject } from '../../api/apiEndpoints';
 import { FaEdit, FaTrash, FaEye } from 'react-icons/fa';
 
 const Projects = () => {
@@ -18,7 +19,7 @@ const Projects = () => {
 
     const fetchProjects = async () => {
         try {
-            const res = await api.get('/api/projects');
+            const res = await api.get(getProjects);
             console.log('Fetched projects:', res.data); // 👈 Add this
             setProjects(res.data);
         } catch (error) {
@@ -47,11 +48,11 @@ const Projects = () => {
         formData.append('image', projectData.image); // 👈 file append
 
         if (isEditing) {
-            await api.put(`/api/projects/${projectData._id}`, formData, {
+            await api.put(updateProject(projectData._id), formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
         } else {
-            await api.post('/api/projects', formData, {
+            await api.post(createProject, formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
         }
@@ -67,7 +68,7 @@ const Projects = () => {
 
     const handleDelete = async (id) => {
         if (window.confirm('Are you sure you want to delete this project?')) {
-            await api.delete(`/api/projects/${id}`);
+            await api.delete(deleteProject(id));
             fetchProjects();
         }
     };

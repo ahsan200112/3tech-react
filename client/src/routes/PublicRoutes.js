@@ -22,6 +22,7 @@ import GTMPageReloadTracker from '../components/GoogleTagManager/GTMPageReloadTr
 import Login from '../pages/Login/Login';
 import Services1 from '../pages/Services1';
 import Projects1 from '../pages/Projects1';
+import Packages1 from '../pages/Packages1';
 //import Signup from '../pages/Signup/Signup';
 
 const PublicRoutes = () => {
@@ -53,6 +54,7 @@ const PublicRoutes = () => {
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects1" element={<Projects1 />} />
         <Route path="/packages" element={<Packages />} />
+        <Route path="/packages1" element={<Packages1 />} />
         <Route path="/blogs" element={<Blogs />} /> 
         <Route path="/blogs1" element={<Blogs1 />} />
         <Route path="/contact" element={<ContactUs />} />

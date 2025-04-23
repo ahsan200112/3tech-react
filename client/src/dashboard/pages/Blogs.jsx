@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Table, Modal, Form } from 'react-bootstrap';
-import api from '../../api';
+import api from '../../api/api';
+import { getBlogs, createBlog, updateBlog, deleteBlog } from '../../api/apiEndpoints';
 import { FaEdit, FaTrash, FaEye } from 'react-icons/fa';
 //import { CKEditor } from '@ckeditor/ckeditor5-react';
 //import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
@@ -22,7 +23,7 @@ const Blogs = () => {
 
   const fetchBlogs = async () => {
     try {
-      const res = await api.get('/api/blogs');
+      const res = await api.get(getBlogs);
       console.log('Fetched blogs:', res.data); // 👈 Add this
       setBlogs(res.data);
     } catch (error) {
@@ -52,11 +53,11 @@ const Blogs = () => {
     formData.append('image', blogData.image); // 👈 file append
 
     if (isEditing) {
-      await api.put(`/api/blogs/${blogData._id}`, formData, {
+      await api.put(updateBlog(blogData._id), formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
     } else {
-      await api.post('/api/blogs', formData, {
+      await api.post(createBlog, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
     }
@@ -72,7 +73,7 @@ const Blogs = () => {
 
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this blog?')) {
-      await api.delete(`/api/blogs/${id}`);
+      await api.delete(deleteBlog(id));
       fetchBlogs();
     }
   };

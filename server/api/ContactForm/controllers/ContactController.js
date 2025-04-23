@@ -20,7 +20,8 @@ exports.createContact = async (req, res) => {
              }
          }); */
 
-        const transporter = nodemailer.createTransport({
+         //ye wala krna hai bussiness email ke liye
+       /* const transporter = nodemailer.createTransport({
             host: process.env.SMTP_HOST,
             port: 465,
             secure: true, // SSL ke liye true rakhein (port 465 ke liye)
@@ -51,11 +52,21 @@ exports.createContact = async (req, res) => {
         };
 
         // Send email
-        await transporter.sendMail(mailOptions);
+        await transporter.sendMail(mailOptions); */
 
         res.status(201).json({ message: 'Contact form submitted and email sent successfully' });
     } catch (error) {
         console.error("Error in createContact:", error);
         res.status(500).json({ error: 'Something went wrong', details: error.message });
+    }
+};
+
+exports.getContacts = async (req, res) => {
+    try {
+        const contacts = await Contact.find().sort({ createdAt: -1 }); // Latest first
+        res.status(200).json(contacts);
+    } catch (error) {
+        console.error("Error in getContacts:", error);
+        res.status(500).json({ error: 'Failed to fetch contact submissions', details: error.message });
     }
 };
