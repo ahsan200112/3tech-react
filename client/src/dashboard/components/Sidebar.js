@@ -34,6 +34,9 @@ const Sidebar = () => {
         <NavLink to="/dashboard/contactforms" className="nav-link text-white">
           <FaUsers className={isRtl ? 'ms-2' : 'me-2'} /> Contact Forms
         </NavLink>
+        <NavLink to="/dashboard/faq" className="nav-link text-white">
+          <FaUsers className={isRtl ? 'ms-2' : 'me-2'} /> FAQS
+        </NavLink>
         <NavLink to="/dashboard/users" className="nav-link text-white">
           <FaUsers className={isRtl ? 'ms-2' : 'me-2'} /> Users
         </NavLink>

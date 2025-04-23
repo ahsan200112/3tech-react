@@ -25,3 +25,9 @@ export const getPackagesPricing = '/api/packagesPricing';
 export const createPackagesPricing = '/api/packagesPricing';
 export const updatePackagesPricing = (id) => `/api/packagesPricing/${id}`;
 export const deletePackagesPricing = (id) => `/api/packagesPricing/${id}`;
+
+//faq
+export const getFAQ = '/api/faq';
+export const createFAQ = '/api/faq';
+export const updateFAQ = (id) => `/api/faq/${id}`;
+export const deleteFAQ = (id) => `/api/faq/${id}`;
