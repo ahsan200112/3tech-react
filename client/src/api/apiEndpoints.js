@@ -31,3 +31,9 @@ export const getFAQ = '/api/faq';
 export const createFAQ = '/api/faq';
 export const updateFAQ = (id) => `/api/faq/${id}`;
 export const deleteFAQ = (id) => `/api/faq/${id}`;
+
+//testimonial
+export const getTestimonials = '/api/testimonial';
+export const createTestimonial = '/api/testimonial';
+export const updateTestimonial = (id) => `/api/testimonial/${id}`;
+export const deleteTestimonial = (id) => `/api/testimonial/${id}`;

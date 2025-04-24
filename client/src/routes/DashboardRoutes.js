@@ -10,6 +10,7 @@ import Projects from '../dashboard/pages/Projects';
 import ContactForm from '../dashboard/pages/ContactForm';
 import ScrollToTop from "../components/ScrollToTop";
 import FAQ from '../dashboard/pages/FAQ';
+import Testimonial from '../dashboard/pages/Testimonial';
 
 const DashboardRoutes = () => {
   return (
@@ -24,7 +25,8 @@ const DashboardRoutes = () => {
           <Route path="packages" element={<Packages />} />
           <Route path="projects" element={<Projects />} />
           <Route path="contactforms" element={<ContactForm />} />
-          <Route path="faq" element={<FAQ />} />
+          <Route path="faqs" element={<FAQ />} />
+          <Route path="testimonials" element={<Testimonial />} />
           {/* Add more pages as needed */}
         </Route>
       </Routes>

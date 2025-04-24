@@ -33,6 +33,9 @@ app.use('/api/packagesPricing', PackagesPricingRoutes);
 const FAQRoutes = require('./api/Faq/routes/faqRoutes')
 app.use('/api/faq', FAQRoutes);
 
+const TestimonialRoutes = require('./api/Testimonial/routes/testimonialRoutes')
+app.use('/api/testimonial', TestimonialRoutes);
+
 app.use((err, req, res, next) => {
   res.status(err.status || 500).json({
     error: err.message || "Server Error",
