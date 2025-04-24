@@ -18,12 +18,12 @@ exports.createPackagesPricing = [
   try {
     // Calculate yearly price based on monthly price
     const monthlyPrice = req.body.price; // Assume 'price' is the monthly price
-    const yearlyPrice = req.body.yearlyPrice; // Assume 'yearlyPrice' is the yearly price
+    //const yearlyPrice = req.body.yearlyPrice; // Assume 'yearlyPrice' is the yearly price
 
     // You can calculate yearlyPrice if it was not provided
-    if (!yearlyPrice) {
+   /* if (!yearlyPrice) {
       req.body.yearlyPrice = monthlyPrice * 12; // If no yearly price provided, calculate it from monthly price
-    }
+    } */
 
     const newPackages = new PackagesPricing(req.body);
     const savedPackages = await newPackages.save();
@@ -41,9 +41,9 @@ exports.updatePackagesPricing = [
   try {
     // Calculate yearly price based on monthly price if it isn't provided
     const monthlyPrice = req.body.price;
-    if (!req.body.yearlyPrice) {
+   /* if (!req.body.yearlyPrice) {
       req.body.yearlyPrice = monthlyPrice * 12; // Calculate from monthly price if yearlyPrice is missing
-    }
+    } */
 
     const updatedPackagesPricing = await PackagesPricing.findByIdAndUpdate(
       req.params.id,

@@ -6,7 +6,7 @@ const packagesPricingSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
   monthlyPrice: { type: Number, required: true },
-  yearlyPrice: { type: Number, required: true },
+  //yearlyPrice: { type: Number, required: true },
   features: [
     {
       text: { type: String, required: true },

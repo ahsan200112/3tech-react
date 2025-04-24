@@ -72,7 +72,7 @@ const Packages = () => {
       title: "",
       description: "",
       monthlyPrice: "",
-      yearlyPrice: "",
+     // yearlyPrice: "",
       features: [{ text: "", available: false }],
     });
 
@@ -131,7 +131,7 @@ const Packages = () => {
               />
             </Form.Group>
 
-            <Form.Group as={Col}>
+          {/*  <Form.Group as={Col}>
               <Form.Label>{t("Yearly Price (Per Month)")}</Form.Label>
               <Form.Control
                 type="text"
@@ -140,7 +140,7 @@ const Packages = () => {
                 onChange={(e) => setFormData({ ...formData, yearlyPrice: e.target.value })}
                 required
               />
-            </Form.Group>
+            </Form.Group> */}
           </Row>
 
           <Form.Group className="mb-3">
@@ -237,7 +237,7 @@ const Packages = () => {
               <th>{t("Title")}</th>
               <th>{t("Description")}</th>
               <th>{t("Monthly Price")}</th>
-              <th>{t("Yearly Price (Per Month)")}</th>
+              {/*<th>{t("Yearly Price (Per Month)")}</th> */}
               <th>{t("Features")}</th>
               <th>{t("Actions")}</th>
             </tr>
@@ -245,8 +245,8 @@ const Packages = () => {
           <tbody>
             {pricingPlans.map((plan) => (
               <tr key={plan._id}>
-                <td style={{ width: '120px' }}>{plan.title}</td>
-                <td style={{ width: '270px' }}>
+                <td style={{ width: '150px' }}>{plan.title}</td>
+                <td style={{ width: '360px' }}>
                   {plan.description}
                 </td>
                 {/*   <td style={{ width: '400px', position: 'relative' }}>
@@ -266,8 +266,8 @@ const Packages = () => {
                     title="View full description"
                   />
                 </td> */}
-                <td style={{ width: '100px' }}>{plan.monthlyPrice}</td>
-                <td style={{ width: '100px' }}>{plan.yearlyPrice}</td>
+                <td style={{ width: '115px' }}>{plan.monthlyPrice}</td>
+                {/*<td style={{ width: '100px' }}>{plan.yearlyPrice}</td> */}
                 <td>
                   <ul>
                     {plan.features.map((feature, index) => (

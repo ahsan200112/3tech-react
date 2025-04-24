@@ -11,6 +11,7 @@ const OurPackages1 = () => {
     const [packages, setPackages] = useState([]); // State to store package data
     const [loading, setLoading] = useState(true); // State to track loading status
     const [error, setError] = useState(null); // State to track any errors during the API call
+   // const [isYearly, setIsYearly] = useState(false);
 
     // Function to track button click event
     const handleConsultationClick = (packageName) => {
@@ -48,13 +49,33 @@ const OurPackages1 = () => {
                         {t("Explore our custom packages offering top-notch solutions at great prices.")}
                     </p>
                 </div>
+              {/*  <div className="toggle-section">
+                    <button
+                        className={`toggle-button ${!isYearly ? 'active' : ''}`}
+                        onClick={() => setIsYearly(false)}
+                    >
+                        {t("Pay Monthly")}
+                    </button>
+                    <button
+                        className={`toggle-button ${isYearly ? 'active' : ''}`}
+                        onClick={() => setIsYearly(true)}
+                    >
+                        {t("Pay Yearly")} <span className="save-badge">{t("Save Money")}</span>
+                    </button>
+                </div> */}
                 <div className="row g-4">
                     {packages.map((pkg) => (
                         <div className="col-md-4" key={pkg.id}>
                             <div className="card shadow border-0">
                                 <div className="card-body">
                                     <h5 className="i-has">{pkg.title}</h5>
-                                    <h3 className="i-value">{pkg.monthlyPrice} SAR</h3>
+                                      <h3 className="i-value">{pkg.monthlyPrice} SAR</h3> 
+                                   {/* <h3 className="i-value">
+                                        <span>
+                                            {isYearly ? `SAR ${pkg.yearlyPrice}` : `SAR ${pkg.monthlyPrice}`}
+                                        </span>{' '}
+                                        {isYearly ? '/ Month' : '/ Month'}
+                                    </h3> */}
                                     <p className="card-text i-when">{pkg.description}</p>
                                     <ul className="list-unstyled">
                                         {pkg.features.map((feature, index) => (
@@ -65,7 +86,7 @@ const OurPackages1 = () => {
                                                 </li>
                                             ) : (
                                                 <li className="custom-list-item d-flex align-items-center text-start mt-3" key={index}>
-                                                   <i className="fas fa-times me-2 ms-2" style={{ color: "red", fontSize: "20px" }}></i>
+                                                    <i className="fas fa-times me-2 ms-2" style={{ color: "red", fontSize: "25px" }}></i>
                                                     <span>{feature.text}</span>
                                                 </li>
                                             )

@@ -27,13 +27,31 @@ export const updatePackagesPricing = (id) => `/api/packagesPricing/${id}`;
 export const deletePackagesPricing = (id) => `/api/packagesPricing/${id}`;
 
 //faq
-export const getFAQ = '/api/faq';
-export const createFAQ = '/api/faq';
-export const updateFAQ = (id) => `/api/faq/${id}`;
-export const deleteFAQ = (id) => `/api/faq/${id}`;
+export const getFAQ = '/api/faqs';
+export const createFAQ = '/api/faqs';
+export const updateFAQ = (id) => `/api/faqs/${id}`;
+export const deleteFAQ = (id) => `/api/faqs/${id}`;
 
 //testimonial
-export const getTestimonials = '/api/testimonial';
-export const createTestimonial = '/api/testimonial';
-export const updateTestimonial = (id) => `/api/testimonial/${id}`;
-export const deleteTestimonial = (id) => `/api/testimonial/${id}`;
+export const getTestimonials = '/api/testimonials';
+export const createTestimonial = '/api/testimonials';
+export const updateTestimonial = (id) => `/api/testimonials/${id}`;
+export const deleteTestimonial = (id) => `/api/testimonials/${id}`;
+
+//users
+export const getUsers = '/api/users';
+export const createUser = '/api/users';
+export const updateUser = (id) => `/api/users/${id}`;
+export const deleteUser = (id) => `/api/users/${id}`;
+
+//roles
+export const getRoles = '/api/roles';
+export const createRole = '/api/roles';
+export const updateRole = (id) => `/api/roles/${id}`;
+export const deleteRole = (id) => `/api/roles/${id}`;
+
+//permissions
+export const getPermissions = '/api/permissions';
+export const createPermission = '/api/permissions';
+export const updatePermission = (id) => `/api/permissions/${id}`;
+export const deletePermission = (id) => `/api/permissions/${id}`;

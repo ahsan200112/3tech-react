@@ -12,9 +12,6 @@ const app = express();
 app.use(cors());
 app.use(express.json()); // Middleware to parse JSON data
 
-const authRoutes = require("./api/auth/routes/authRoute");
-app.use("/api/auth", authRoutes);
-
 const ContactRoutes = require('./api/ContactForm/routes/ContactRoute')
 app.use('/api/contact', ContactRoutes);
 
@@ -31,10 +28,19 @@ const PackagesPricingRoutes = require('./api/PackagesPricing/routes/packagesPric
 app.use('/api/packagesPricing', PackagesPricingRoutes);
 
 const FAQRoutes = require('./api/Faq/routes/faqRoutes')
-app.use('/api/faq', FAQRoutes);
+app.use('/api/faqs', FAQRoutes);
 
 const TestimonialRoutes = require('./api/Testimonial/routes/testimonialRoutes')
-app.use('/api/testimonial', TestimonialRoutes);
+app.use('/api/testimonials', TestimonialRoutes);
+
+const UserRoutes = require('./api/Users/routes/userRoutes')
+app.use('/api/users', UserRoutes);
+
+const RoleRoutes = require('./api/Roles/routes/roleRoutes')
+app.use('/api/roles', RoleRoutes);
+
+const PermissionRoutes = require('./api/Permissions/routes/permissionRoutes')
+app.use('/api/permissions', PermissionRoutes);
 
 app.use((err, req, res, next) => {
   res.status(err.status || 500).json({
