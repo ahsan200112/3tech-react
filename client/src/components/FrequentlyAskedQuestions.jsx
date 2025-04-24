@@ -52,7 +52,7 @@ const FrequentlyAskedQuestions = () => {
                                 style={{ cursor: "pointer" }}
                             >
                                 <span className="v-clean">{faq.question}</span>
-                                {openIndex === index ? <FaAngleUp size={20} /> : <FaAngleDown size={20} />}
+                                {openIndex === index ? <FaAngleUp size={20} style={{ color: "var(--text-primary)" }}/> : <FaAngleDown size={20} style={{ color: "var(--text-primary)" }}/>}
                             </div>
                             {openIndex === index && (
                                 <div className="px-3 py-2 border border-secondary rounded mt-2" style={{ color: "var(--text-secondary)" }}>

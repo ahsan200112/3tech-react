@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const testimonialSchema = new mongoose.Schema({
-  text: { type: String, required: true },
+  message: { type: String, required: true },
   name: { type: String, required: true },
   position: { type: String, required: true }
 }, { timestamps: true });

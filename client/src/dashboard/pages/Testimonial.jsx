@@ -9,7 +9,7 @@ const Testimonial = () => {
     const [show, setShow] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
     const [testimonialData, setTestimonialData] = useState({
-        text: '',
+        message: '',
         name: '',
         position: '',
     });
@@ -31,7 +31,7 @@ const Testimonial = () => {
     const handleClose = () => {
         setShow(false);
         setIsEditing(false);
-        setTestimonialData({ text: '', name: '', position: '', });
+        setTestimonialData({ message: '', name: '', position: '', });
     };
 
     const handleShow = () => setShow(true);
@@ -71,7 +71,7 @@ const Testimonial = () => {
             <Table bordered hover responsive className="custom-table">
                 <thead>
                     <tr>
-                        <th>Text</th>
+                        <th>Message</th>
                         <th>Name</th>
                         <th>Position</th>
                         <th>Date</th>
@@ -81,7 +81,7 @@ const Testimonial = () => {
                 <tbody>
                     {testimonials.map(testimonial => (
                         <tr key={testimonial._id}>
-                            <td style={{ width: "500px" }}>{testimonial.text}</td>
+                            <td style={{ width: "500px" }}>{testimonial.message}</td>
                             <td style={{ width: "150px" }}>{testimonial.name}</td>
                             <td style={{ width: "150px" }}>{testimonial.position}</td>
                             {/*<td>{new Date(faq.date).toLocaleDateString()}</td>*/}
@@ -103,12 +103,12 @@ const Testimonial = () => {
                 <Modal.Body>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Text</Form.Label>
+                            <Form.Label>Message</Form.Label>
                             <Form.Control
                                 as="textarea" rows={4}
                                 type="text"
-                                value={testimonialData.text}
-                                onChange={(e) => setTestimonialData({ ...testimonialData, text: e.target.value })}
+                                value={testimonialData.message}
+                                onChange={(e) => setTestimonialData({ ...testimonialData, message: e.target.value })}
                                 required
                             />
                         </Form.Group>
