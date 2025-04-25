@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Table, Modal, Form } from 'react-bootstrap';
 import api from '../../api/api';
+import { useTranslation } from 'react-i18next';
 import { getServices, createService, updateService, deleteService } from '../../api/apiEndpoints';
 import { FaEdit, FaTrash, FaEye } from 'react-icons/fa';
 
 const Services = () => {
+    const { i18n } = useTranslation();
+    const lang = i18n.language;
     const [services, setServices] = useState([]);
     const [show, setShow] = useState(false);
     const [showDescription, setShowDescription] = useState(false);
     const [fullDescription, setFullDescription] = useState('');
     const [isEditing, setIsEditing] = useState(false);
     const [serviceData, setServiceData] = useState({
-        title: '',
+        title: { en: '', ar: '' },
         image: null,
-        description: '',
+        description: { en: '', ar: '' },
         link: ''
     });
 
@@ -34,7 +37,7 @@ const Services = () => {
     const handleClose = () => {
         setShow(false);
         setIsEditing(false);
-        setServiceData({ title: '', image: '', description: '', link: '' });
+        setServiceData({ title: { en: '', ar: '' }, image: '', description: { en: '', ar: '' }, link: '' });
     };
 
     const handleShow = () => setShow(true);
@@ -42,8 +45,10 @@ const Services = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append('title', serviceData.title);
-        formData.append('description', serviceData.description);
+        formData.append('title[en]', serviceData.title.en);
+        formData.append('title[ar]', serviceData.title.ar);
+        formData.append('description[en]', serviceData.description.en);
+        formData.append('description[ar]', serviceData.description.ar);
         formData.append('link', serviceData.category);
         formData.append('image', serviceData.image); // 👈 file append
 
@@ -61,7 +66,13 @@ const Services = () => {
     };
 
     const handleEdit = (service) => {
-        setServiceData(service);
+        setServiceData({
+            title: { en: service.title.en, ar: service.title.ar },
+            description: { en: service.description.en, ar: service.description.ar },
+            link: service.link,
+            image: service.image,
+            _id: service._id
+        });
         setIsEditing(true);
         handleShow();
     };
@@ -82,8 +93,10 @@ const Services = () => {
             <Table bordered hover responsive className="custom-table">
                 <thead>
                     <tr>
-                        <th>Title</th>
-                        <th>Description</th>
+                        <th>Title (English)</th>
+                        <th>Title (Arabic)</th>
+                        <th>Description (English)</th>
+                        <th>Description (Arabic)</th>
                         <th>Image</th>
                         <th>Link</th>
                         <th>Date</th>
@@ -93,9 +106,27 @@ const Services = () => {
                 <tbody>
                     {services.map(service => (
                         <tr key={service._id}>
-                            <td style={{ width: '200px' }}>{service.title}</td>
-                            <td style={{ width: '400px', position: 'relative' }}>
-                                <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: service.description }}></div>
+                            <td style={{ width: '150px' }}>{service.title.en}</td>
+                            <td style={{ width: '150px' }}>{service.title.ar}</td>
+                            <td style={{ width: '200', position: 'relative' }}>
+                                <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: service.description.en }}></div>
+                                <FaEye
+                                    style={{
+                                        position: 'absolute',
+                                        bottom: '50px',
+                                        right: '4px',
+                                        cursor: 'pointer',
+                                        color: '#0d6efd'
+                                    }}
+                                    onClick={() => {
+                                        setFullDescription(service.description);
+                                        setShowDescription(true);
+                                    }}
+                                    title="View full description"
+                                />
+                            </td>
+                            <td style={{ width: '200px', position: 'relative' }}>
+                                <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: service.description.ar }}></div>
                                 <FaEye
                                     style={{
                                         position: 'absolute',
@@ -112,9 +143,9 @@ const Services = () => {
                                 />
                             </td>
                             <td>
-                                <img src={service.image} alt={service.title} style={{ height: '60px', objectFit: 'cover' }} />
+                                <img src={service.image} alt={service.title[lang]} style={{ height: '60px', objectFit: 'cover' }} />
                             </td>
-                            <td style={{ width: '100px' }}>{service.link}</td>
+                            <td style={{ width: '50px' }}>{service.link}</td>
                             <td>{new Date(service.date).toLocaleDateString()}</td>
                             <td>
                                 <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(service)}><FaEdit /></Button>
@@ -146,23 +177,43 @@ const Services = () => {
                 <Modal.Body>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Title</Form.Label>
+                            <Form.Label>Title (English)</Form.Label>
                             <Form.Control
                                 type="text"
-                                value={serviceData.title}
-                                onChange={(e) => setServiceData({ ...serviceData, title: e.target.value })}
+                                value={serviceData.title.en}
+                                onChange={(e) => setServiceData({ ...serviceData, title: { ...serviceData.title, en: e.target.value } })}
                                 required
                             />
                         </Form.Group>
 
                         <Form.Group className="mb-3">
-                            <Form.Label>Description</Form.Label>
+                            <Form.Label>Title (Arabic)</Form.Label>
                             <Form.Control
                                 type="text"
-                                value={serviceData.description}
-                                onChange={(e) => setServiceData({ ...serviceData, description: e.target.value })}
+                                value={serviceData.title.ar}
+                                onChange={(e) => setServiceData({ ...serviceData, title: { ...serviceData.title, ar: e.target.value } })}
+                                required
                             />
                         </Form.Group>
+
+                        <Form.Group className="mb-3">
+                            <Form.Label>Description (English)</Form.Label>
+                            <Form.Control
+                                type="text"
+                                value={serviceData.description.en}
+                                onChange={(e) => setServiceData({ ...serviceData, description: { ...serviceData.description, en: e.target.value } })}
+                            />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3">
+                            <Form.Label>Description (Arabic)</Form.Label>
+                            <Form.Control
+                                type="text"
+                                value={serviceData.description.ar}
+                                onChange={(e) => setServiceData({ ...serviceData, description: { ...serviceData.description, ar: e.target.value } })}
+                            />
+                        </Form.Group>
+
 
                         <Form.Group className="mb-3">
                             <Form.Label>Link</Form.Label>

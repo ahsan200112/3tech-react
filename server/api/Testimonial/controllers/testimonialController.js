@@ -3,7 +3,23 @@ const Testimonial = require("../models/testimonialModel");
 // Create a testimonial
 exports.createTestimonial = async (req, res) => {
   try {
-    const testimonial = new Testimonial(req.body);
+    const { message, name, position } = req.body;
+
+    const testimonial = new Testimonial({
+      message: {
+        en: message.en,
+        ar: message.ar,
+      },
+      name: {
+        en: name.en,
+        ar: name.ar,
+      },
+      position: {
+        en: position.en,
+        ar: position.ar,
+      }
+    });
+
     await testimonial.save();
     res.status(201).json(testimonial);
   } catch (error) {
@@ -24,7 +40,22 @@ exports.getTestimonials = async (req, res) => {
 // Update a testimonial
 exports.updateTestimonial = async (req, res) => {
   try {
-    const testimonial = await Testimonial.findByIdAndUpdate(req.params.id, req.body, { new: true });
+     const { message, name, position } = req.body;
+
+    const testimonial = await Testimonial.findByIdAndUpdate(req.params.id, {
+      message: {
+        en: message.en,
+        ar: message.ar,
+      },
+      name: {
+        en: name.en,
+        ar: name.ar,
+      },
+      position: {
+        en: position.en,
+        ar: position.ar,
+      }
+    }, { new: true });
     if (!testimonial) return res.status(404).json({ error: 'Testimonial not found' });
     res.status(200).json(testimonial);
   } catch (error) {

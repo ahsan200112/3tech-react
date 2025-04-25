@@ -6,8 +6,14 @@ exports.createProject = async (req, res) => {
         const imageUrl = req.imageUrl || '';
 
         const newProject = new Project({
-            title,
-            description,
+            title: {
+                en: title.en,
+                ar: title.ar,
+            },
+            description: {
+                en: description.en,
+                ar: description.ar,
+            },
             link,
             image: imageUrl || '',
         });
@@ -47,7 +53,7 @@ exports.updateProject = async (req, res) => {
             updatedData.image = req.imageUrl;
         }
 
-        const updatedProject = await Project.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const updatedProject = await Project.findByIdAndUpdate(req.params.id, updatedData, { new: true });
         if (!updatedProject) return res.status(404).json({ message: 'Project not found' });
         res.status(200).json(updatedProject);
     } catch (err) {

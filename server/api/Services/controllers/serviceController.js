@@ -7,8 +7,14 @@ exports.createService = async (req, res) => {
         const imageUrl = req.imageUrl || '';
 
         const newService = new Service({
-            title,
-            description,
+            title: {
+                en: title.en,
+                ar: title.ar,
+            },
+            description: {
+                en: description.en,
+                ar: description.ar,
+            },
             link,
             image: imageUrl || '',
         });
@@ -50,7 +56,7 @@ exports.updateService = async (req, res) => {
             updatedData.image = req.imageUrl;
         }
 
-        const updatedService = await Service.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const updatedService = await Service.findByIdAndUpdate(req.params.id, updatedData, { new: true });
         if (!updatedService) return res.status(404).json({ message: 'Service not found' });
         res.status(200).json(updatedService);
     } catch (err) {

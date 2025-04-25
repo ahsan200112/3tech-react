@@ -6,18 +6,22 @@ import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Impo
 import { Link } from 'react-router-dom';
 
 const OurServices1 = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const lang = i18n.language;
     const trackEvent = useGTMEventTracker();  // Use the custom hook
     const [services, setServices] = useState([]);
 
+    const fetchServices = async () => {
+        try {
+            const res = await api.get(getServices);
+            setServices(res.data); // Save the FAQ data returned from the backend
+        } catch (error) {
+            console.error("Error fetching FAQ data:", error);
+        }
+    };
+
     useEffect(() => {
-        api.get(getServices)
-            .then(response => {
-                setServices(response.data);
-            })
-            .catch(error => {
-                console.error("There was an error fetching the services!", error);
-            });
+        fetchServices(); // Fetch FAQs when the component mounts
     }, []);
 
     return (
@@ -45,11 +49,11 @@ const OurServices1 = () => {
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
                                     <div className="card-body" style={{ padding: "30px 30px" }}>
                                         {service.image && (
-                                            <img src={service.image} alt={service.title} style={{ height: "60px", width: "60px" }} />
+                                            <img src={service.image} alt={service.title[lang]} style={{ height: "60px", width: "60px" }} />
                                         )}
-                                        <h5 className="card-title u-well mt-3">{service.title}</h5>
-                                        <p className="card-text u-space">{service.description}</p>
-                                        <p className="u-help">{t("Explore")} {service.title}</p>
+                                        <h5 className="card-title u-well mt-3">{service.title[lang]}</h5>
+                                        <p className="card-text u-space">{service.description[lang]}</p>
+                                        <p className="u-help">{t("Explore")} {service.title[lang]}</p>
                                     </div>
                                 </div>
                             </Link>

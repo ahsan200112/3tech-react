@@ -2,18 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { Button, Table, Modal, Form } from 'react-bootstrap';
 import api from '../../api/api';
 import { getProjects, createProject, updateProject, deleteProject } from '../../api/apiEndpoints';
+import { useTranslation } from 'react-i18next';
 import { FaEdit, FaTrash, FaEye } from 'react-icons/fa';
 
 const Projects = () => {
+    const { i18n } = useTranslation();
+    const lang = i18n.language;
     const [projects, setProjects] = useState([]);
     const [show, setShow] = useState(false);
     const [showDescription, setShowDescription] = useState(false);
     const [fullDescription, setFullDescription] = useState('');
     const [isEditing, setIsEditing] = useState(false);
     const [projectData, setProjectData] = useState({
-        title: '',
+        title: { en: '', ar: '' },
         image: null,
-        description: '',
+        description: { en: '', ar: '' },
         link: ''
     });
 
@@ -34,7 +37,7 @@ const Projects = () => {
     const handleClose = () => {
         setShow(false);
         setIsEditing(false);
-        setProjectData({ title: '', image: '', description: '', link: '' });
+        setProjectData({ title: { en: '', ar: '' }, image: '', description: { en: '', ar: '' }, link: '' });
     };
 
     const handleShow = () => setShow(true);
@@ -42,8 +45,10 @@ const Projects = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append('title', projectData.title);
-        formData.append('description', projectData.description);
+        formData.append('title[en]', projectData.title.en);
+        formData.append('title[ar]', projectData.title.ar);
+        formData.append('description[en]', projectData.description.en);
+        formData.append('description[ar]', projectData.description.ar);
         formData.append('link', projectData.category);
         formData.append('image', projectData.image); // 👈 file append
 
@@ -61,7 +66,13 @@ const Projects = () => {
     };
 
     const handleEdit = (project) => {
-        setProjectData(project);
+        setProjectData({
+            title: { en: project.title.en, ar: project.title.ar },
+            description: { en: project.description.en, ar: project.description.ar },
+            link: project.link,
+            image: project.image,
+            _id: project._id
+        });
         setIsEditing(true);
         handleShow();
     };
@@ -82,8 +93,10 @@ const Projects = () => {
             <Table bordered hover responsive className="custom-table">
                 <thead>
                     <tr>
-                        <th>Title</th>
-                        <th>Description</th>
+                        <th>Title (English)</th>
+                        <th>Title (Arabic)</th>
+                        <th>Description (English)</th>
+                        <th>Description (Arabic)</th>
                         <th>Image</th>
                         <th>Link</th>
                         <th>Date</th>
@@ -93,9 +106,27 @@ const Projects = () => {
                 <tbody>
                     {projects.map(project => (
                         <tr key={project._id}>
-                            <td style={{ width: '200px' }}>{project.title}</td>
-                            <td style={{ width: '400px', position: 'relative' }}>
-                                <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: project.description }}></div>
+                            <td style={{ width: '150px' }}>{project.title.en}</td>
+                            <td style={{ width: '150px' }}>{project.title.ar}</td>
+                            <td style={{ width: '200', position: 'relative' }}>
+                                <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: project.description.en }}></div>
+                                <FaEye
+                                    style={{
+                                        position: 'absolute',
+                                        bottom: '50px',
+                                        right: '4px',
+                                        cursor: 'pointer',
+                                        color: '#0d6efd'
+                                    }}
+                                    onClick={() => {
+                                        setFullDescription(project.description);
+                                        setShowDescription(true);
+                                    }}
+                                    title="View full description"
+                                />
+                            </td>
+                            <td style={{ width: '200px', position: 'relative' }}>
+                                <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: project.description.ar }}></div>
                                 <FaEye
                                     style={{
                                         position: 'absolute',
@@ -112,7 +143,7 @@ const Projects = () => {
                                 />
                             </td>
                             <td>
-                                <img src={project.image} alt={project.title} style={{ height: '60px', objectFit: 'cover' }} />
+                                <img src={project.image} alt={project.title[lang]} style={{ height: '60px', objectFit: 'cover' }} />
                             </td>
                             <td style={{ width: '100px' }}>{project.link}</td>
                             <td>{new Date(project.date).toLocaleDateString()}</td>
@@ -146,21 +177,40 @@ const Projects = () => {
                 <Modal.Body>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Title</Form.Label>
+                            <Form.Label>Title (English)</Form.Label>
                             <Form.Control
                                 type="text"
-                                value={projectData.title}
-                                onChange={(e) => setProjectData({ ...projectData, title: e.target.value })}
+                                value={projectData.title.en}
+                                onChange={(e) => setProjectData({ ...projectData, title: { ...projectData.title, en: e.target.value } })}
                                 required
                             />
                         </Form.Group>
 
                         <Form.Group className="mb-3">
-                            <Form.Label>Description</Form.Label>
+                            <Form.Label>Title (Arabic)</Form.Label>
                             <Form.Control
                                 type="text"
-                                value={projectData.description}
-                                onChange={(e) => setProjectData({ ...projectData, description: e.target.value })}
+                                value={projectData.title.ar}
+                                onChange={(e) => setProjectData({ ...projectData, title: { ...projectData.title, ar: e.target.value } })}
+                                required
+                            />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3">
+                            <Form.Label>Description (English)</Form.Label>
+                            <Form.Control
+                                type="text"
+                                value={projectData.description.en}
+                                onChange={(e) => setProjectData({ ...projectData, description: { ...projectData.description, en: e.target.value } })}
+                            />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3">
+                            <Form.Label>Description (Arabic)</Form.Label>
+                            <Form.Control
+                                type="text"
+                                value={projectData.description.ar}
+                                onChange={(e) => setProjectData({ ...projectData, description: { ...projectData.description, ar: e.target.value } })}
                             />
                         </Form.Group>
 

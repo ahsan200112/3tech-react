@@ -9,9 +9,9 @@ const Testimonial = () => {
     const [show, setShow] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
     const [testimonialData, setTestimonialData] = useState({
-        message: '',
-        name: '',
-        position: '',
+        message: { en: '', ar: '' },
+        name: { en: '', ar: '' },
+        position: { en: '', ar: '' },
     });
 
     const fetchTestimonial = async () => {
@@ -31,7 +31,11 @@ const Testimonial = () => {
     const handleClose = () => {
         setShow(false);
         setIsEditing(false);
-        setTestimonialData({ message: '', name: '', position: '', });
+        setTestimonialData({
+            message: { en: '', ar: '' },
+            name: { en: '', ar: '' },
+            position: { en: '', ar: '' },
+        });
     };
 
     const handleShow = () => setShow(true);
@@ -50,7 +54,11 @@ const Testimonial = () => {
     };
 
     const handleEdit = (testimonial) => {
-        setTestimonialData(testimonial);
+        setTestimonialData({
+            message: { en: testimonial.message.en, ar: testimonial.message.ar },
+            name: { en: testimonial.name.en, ar: testimonial.name.ar },
+            position: { en: testimonial.position.en, ar: testimonial.position.ar },
+        });
         setIsEditing(true);
         handleShow();
     };
@@ -71,9 +79,12 @@ const Testimonial = () => {
             <Table bordered hover responsive className="custom-table">
                 <thead>
                     <tr>
-                        <th>Message</th>
-                        <th>Name</th>
-                        <th>Position</th>
+                        <th>Message (English)</th>
+                        <th>Message (Arabic)</th>
+                        <th>Name (English)</th>
+                        <th>Name (Arabic)</th>
+                        <th>Position (English)</th>
+                        <th>Position (Arabic)</th>
                         <th>Date</th>
                         <th>Actions</th>
                     </tr>
@@ -81,9 +92,12 @@ const Testimonial = () => {
                 <tbody>
                     {testimonials.map(testimonial => (
                         <tr key={testimonial._id}>
-                            <td style={{ width: "500px" }}>{testimonial.message}</td>
-                            <td style={{ width: "150px" }}>{testimonial.name}</td>
-                            <td style={{ width: "150px" }}>{testimonial.position}</td>
+                            <td style={{ width: "220px" }}>{testimonial.message.en}</td>
+                            <td style={{ width: "220px" }}>{testimonial.message.ar}</td>
+                            <td style={{ width: "100px" }}>{testimonial.name.en}</td>
+                            <td style={{ width: "100px" }}>{testimonial.name.ar}</td>
+                            <td style={{ width: "110px" }}>{testimonial.position.en}</td>
+                            <td style={{ width: "110px" }}>{testimonial.position.ar}</td>
                             {/*<td>{new Date(faq.date).toLocaleDateString()}</td>*/}
                             <td>{new Date(testimonial.createdAt).toLocaleDateString()}</td>
                             <td>
@@ -102,31 +116,59 @@ const Testimonial = () => {
                 </Modal.Header>
                 <Modal.Body>
                     <Form onSubmit={handleSubmit}>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Message</Form.Label>
+                    <Form.Group className="mb-3">
+                            <Form.Label>Message (English)</Form.Label>
                             <Form.Control
                                 as="textarea" rows={4}
                                 type="text"
-                                value={testimonialData.message}
-                                onChange={(e) => setTestimonialData({ ...testimonialData, message: e.target.value })}
+                                value={testimonialData.message.en}
+                                onChange={(e) => setTestimonialData({ ...testimonialData, message: { ...testimonialData.message, en: e.target.value } })}
                                 required
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Name</Form.Label>
+                            <Form.Label>Message (Arabic)</Form.Label>
                             <Form.Control
+                                as="textarea" rows={4}
                                 type="text"
-                                value={testimonialData.name}
-                                onChange={(e) => setTestimonialData({ ...testimonialData, name: e.target.value })}
+                                value={testimonialData.message.ar}
+                                onChange={(e) => setTestimonialData({ ...testimonialData, message: { ...testimonialData.message, ar: e.target.value } })}
                                 required
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Position</Form.Label>
+                            <Form.Label>Name (English)</Form.Label>
                             <Form.Control
                                 type="text"
-                                value={testimonialData.position}
-                                onChange={(e) => setTestimonialData({ ...testimonialData, position: e.target.value })}
+                                value={testimonialData.name.en}
+                                onChange={(e) => setTestimonialData({ ...testimonialData, name: { ...testimonialData.name, en: e.target.value } })}
+                                required
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Name (Arabic)</Form.Label>
+                            <Form.Control
+                                type="text"
+                                value={testimonialData.name.ar}
+                                onChange={(e) => setTestimonialData({ ...testimonialData, name: { ...testimonialData.name, ar: e.target.value } })}
+                                required
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Position (English)</Form.Label>
+                            <Form.Control
+                                type="text"
+                                value={testimonialData.position.en}
+                                onChange={(e) => setTestimonialData({ ...testimonialData, position: { ...testimonialData.position, en: e.target.value } })}
+                                required
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Position (Arabic)</Form.Label>
+                            <Form.Control
+                                type="text"
+                                value={testimonialData.position.ar}
+                                onChange={(e) => setTestimonialData({ ...testimonialData, position: { ...testimonialData.position, ar: e.target.value } })}
                                 required
                             />
                         </Form.Group>

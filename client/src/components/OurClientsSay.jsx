@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 //import { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -7,43 +7,29 @@ import { useTranslation } from "react-i18next";
 import InkImg from "../assets/images/ink.png";
 //import Girl2Img from "../assets/images/girl2.png";
 import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
+import api from "../api/api";
+import { getTestimonials } from "../api/apiEndpoints";
 
 const OurClientsSay = () => {
   const { t, i18n } = useTranslation();
   const isRTL = i18n.language === "ar"; // Check if language is Arabic
+  const lang = i18n.language;
   const trackEvent = useGTMEventTracker();  // Get the event tracker
+  const [testimonials, setTestimonials] = useState([]);
   //const previousSlide = useRef(0); // Track the previous slide index
   // Testimonials Array
-  const testimonials = [
-    {
-      id: 1,
-      text: t("Thank you for your perfect work and achievement in a short period of time. The team is professional and cooperative, and the support service is excellent. Thank you."),
-      name: t("Abdullah"),
-      position: t("CEO of Osus"),
-      // image: Girl2Img,
-    },
-    {
-      id: 2,
-      text: t("I worked with them to set up an online store. Their attention to detail, their amazing designs, their constant communication, and their expertise in sponsored ads are all things that set them apart from other platforms. I wish them success."),
-      name: t("Omar"),
-      position: t("Store Manager of One Me"),
-      // image: Girl2Img,
-    },
-    {
-      id: 3,
-      text: t("They are really excellent. They help you with everything, thinking with you until you find the right thing for you. All the best to you."),
-      name: t("Mahdi"),
-      position: t("Operations Manager of Waad"),
-      //image: Girl2Img,
-    },
-    {
-      id: 4,
-      text: t("The marketing team has extensive experience and is attentive to the smallest details. The dealings were very polite and ethical."),
-      name: t("Talal"),
-      position: t("Marketing Manager of Awtar"),
-      //image: Girl2Img,
-    },
-  ];
+  const fetchTestimonials = async () => {
+    try {
+      const res = await api.get(getTestimonials);
+      setTestimonials(res.data); // Save the FAQ data returned from the backend
+    } catch (error) {
+      console.error("Error fetching Testimonials data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchTestimonials(); // Fetch FAQs when the component mounts
+  }, []);
 
   const settings = {
     dots: true,
@@ -71,26 +57,26 @@ const OurClientsSay = () => {
   };
 
   // Handle slide change event tracking
- /* const handleSlideChange = (current) => {
-    trackEvent('Clients Carousel', 'Slide Change', `From Slide ${previousSlide.current} to Slide ${current}`);
-    previousSlide.current = current;
-  }; */
+  /* const handleSlideChange = (current) => {
+     trackEvent('Clients Carousel', 'Slide Change', `From Slide ${previousSlide.current} to Slide ${current}`);
+     previousSlide.current = current;
+   }; */
 
   // Handle project image click event tracking
   const handleImageClick = (personName) => {
     trackEvent('Clients Comments', 'Click', personName);
-  }; 
+  };
 
   return (
     <section className="client-testimonials py-5" style={{ direction: isRTL ? "rtl" : "ltr" }} >
-      <div className="container" data-aos="fade-up"data-aos-delay="500">
+      <div className="container" data-aos="fade-up" data-aos-delay="500">
         <div className="mb-4">
           <button className="btn-sm v-hi" style={{ width: "230px" }}>
             {t("Real Stories, Real Impact")}
           </button>
           <h2 className="v-hence">{t("What Our Clients Say About Us")}</h2>
         </div>
-        <div data-aos="flip-left"data-aos-delay="500">
+        <div data-aos="flip-left" data-aos-delay="500">
           <Slider {...settings} className="slick-slider"
           //  afterChange={handleSlideChange}  // Event on slide change 
           >
@@ -104,16 +90,22 @@ const OurClientsSay = () => {
                     textAlign: isRTL ? "right" : "left",
                     minHeight: "300px", // Ensuring equal height for all cards
                   }}
-                  onClick={() => handleImageClick(testimonial.name)}
+                  onClick={() => handleImageClick(testimonial.name ? testimonial.name[lang] : "Unknown Name")}
                 >
                   <div>
                     <img src={InkImg} alt="Brand Logo" className="img-fluid mt-2 d-inline-block"
                       style={{ width: "44px", height: "30px" }} />
-                    <p className="v-cleana mt-2">{t(testimonial.text)}</p>
+                    <p className="v-cleana mt-2">
+                      {testimonial.message && testimonial.message[lang] ? testimonial.message[lang] : "Default Text"}
+                    </p>
                     {/* Text */}
                     <div style={{ textAlign: isRTL ? "right" : "left" }}>
-                      <p className="mb-0 g-value" style={{ fontWeight: "700", fontSize: "18px" }}>{t(testimonial.name)}</p>
-                      <p className="mb-0 g-value">{t(testimonial.position)}</p>
+                      <p className="mb-0 g-value" style={{ fontWeight: "700", fontSize: "18px" }}>
+                        {testimonial.name && testimonial.name[lang] ? testimonial.name[lang] : "Unknown Name"}
+                      </p>
+                      <p className="mb-0 g-value">
+                        {testimonial.position && testimonial.position[lang] ? testimonial.position[lang] : "Unknown Position"}
+                      </p>
                     </div>
                   </div>
                 </div>

@@ -6,18 +6,22 @@ import { Link } from 'react-router-dom';
 import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';
 
 const OurProjectsDetail1 = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const lang = i18n.language;
     const [projects, setProjects] = useState([]);
     const trackEvent = useGTMEventTracker();
 
+    const fetchProjects = async () => {
+        try {
+            const res = await api.get(getProjects);
+            setProjects(res.data); // Save the FAQ data returned from the backend
+        } catch (error) {
+            console.error("Error fetching FAQ data:", error);
+        }
+    };
+
     useEffect(() => {
-        api.get(getProjects)
-            .then(response => {
-                setProjects(response.data);
-            })
-            .catch(error => {
-                console.error("There was an error fetching the projects!", error);
-            });
+        fetchProjects(); // Fetch FAQs when the component mounts
     }, []);
 
     const handleProjectClick = (projectName) => {
@@ -65,15 +69,14 @@ const OurProjectsDetail1 = () => {
                                         src={project.image}
                                         className="card-img-top"
                                         alt="Project"
-                                        onClick={() => handleProjectClick(project.title)}
-                                        style={{ width: "1064px", height: "1160px" }}
+                                        onClick={() => handleProjectClick(project.title[lang])}
                                     />
                                     <div className="card-content">
                                         <div className="d-flex justify-content-between align-items-center">
-                                            <h5 className="card-title n-r mb-0">{t(project.title)}</h5>
+                                            <h5 className="card-title n-r mb-0">{t(project.title[lang])}</h5>
                                             <i className="bi bi-arrow-up-right n-r"></i>
                                         </div>
-                                        <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t(project.description)}</p>
+                                        <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t(project.description[lang])}</p>
                                     </div>
                                 </div>
                             </div>
