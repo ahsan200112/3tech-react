@@ -9,8 +9,8 @@ const FAQ = () => {
     const [show, setShow] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
     const [faqData, setFaqData] = useState({
-        question: '',
-        answer: '',
+        question: { en: '', ar: '' },
+        answer: { en: '', ar: '' },
     });
 
     const fetchFaq = async () => {
@@ -30,7 +30,7 @@ const FAQ = () => {
     const handleClose = () => {
         setShow(false);
         setIsEditing(false);
-        setFaqData({ question: '', answer: '', });
+        setFaqData({ question: { en: '', ar: '' }, answer: { en: '', ar: '' } });
     };
 
     const handleShow = () => setShow(true);
@@ -70,8 +70,10 @@ const FAQ = () => {
             <Table bordered hover responsive className="custom-table">
                 <thead>
                     <tr>
-                        <th>Question</th>
-                        <th>Answer</th>
+                        <th>Question (English)</th>
+                        <th>Question ( Arabic)</th>
+                        <th>Answer (English)</th>
+                        <th>Answer (Arabic)</th>
                         <th>Date</th>
                         <th>Actions</th>
                     </tr>
@@ -79,9 +81,10 @@ const FAQ = () => {
                 <tbody>
                     {faqs.map(faq => (
                         <tr key={faq._id}>
-                            <td style={{width:"330px"}}>{faq.question}</td>
-                            <td style={{width:"470px"}}>{faq.answer}</td>
-                            {/*<td>{new Date(faq.date).toLocaleDateString()}</td>*/}
+                            <td style={{ width: "200px" }}> {faq.question.en}</td>
+                            <td style={{ width: "200px" }}> {faq.question.ar}</td>
+                            <td style={{ width: "200px" }}> {faq.answer.en}</td>
+                            <td style={{ width: "200px" }}> {faq.answer.ar}</td>
                             <td>{new Date(faq.createdAt).toLocaleDateString()}</td>
                             <td>
                                 <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(faq)}><FaEdit /></Button>
@@ -100,22 +103,64 @@ const FAQ = () => {
                 <Modal.Body>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Question</Form.Label>
+                            <Form.Label>Question (English)</Form.Label>
                             <Form.Control
                                 type="text"
-                                value={faqData.question}
-                                onChange={(e) => setFaqData({ ...faqData, question: e.target.value })}
+                                value={faqData.question.en}
+                                onChange={(e) =>
+                                    setFaqData({
+                                        ...faqData,
+                                        question: { ...faqData.question, en: e.target.value }
+                                    })
+                                }
                                 required
                             />
                         </Form.Group>
 
                         <Form.Group className="mb-3">
-                            <Form.Label>Answer</Form.Label>
+                            <Form.Label>Question (Arabic)</Form.Label>
                             <Form.Control
-                                as="textarea" rows={4}
                                 type="text"
-                                value={faqData.answer}
-                                onChange={(e) => setFaqData({ ...faqData, answer: e.target.value })}
+                                value={faqData.question.ar}
+                                onChange={(e) =>
+                                    setFaqData({
+                                        ...faqData,
+                                        question: { ...faqData.question, ar: e.target.value }
+                                    })
+                                }
+                                required
+                            />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3">
+                            <Form.Label>Answer (English)</Form.Label>
+                            <Form.Control
+                                as="textarea"
+                                rows={3}
+                                value={faqData.answer.en}
+                                onChange={(e) =>
+                                    setFaqData({
+                                        ...faqData,
+                                        answer: { ...faqData.answer, en: e.target.value }
+                                    })
+                                }
+                                required
+                            />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3">
+                            <Form.Label>Answer (Arabic)</Form.Label>
+                            <Form.Control
+                                as="textarea"
+                                rows={3}
+                                value={faqData.answer.ar}
+                                onChange={(e) =>
+                                    setFaqData({
+                                        ...faqData,
+                                        answer: { ...faqData.answer, ar: e.target.value }
+                                    })
+                                }
+                                required
                             />
                         </Form.Group>
 

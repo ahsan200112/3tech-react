@@ -116,7 +116,7 @@ const Navbar = () => {
 
               {/* Center: Language Toggle (for Mobile View) */}
               <div className="d-flex align-items-center justify-content-center d-lg-none">
-                <LanguageToggle />
+                <LanguageToggle className=".nav-language-color v-vise" />
               </div>
 
               {/* Mobile View: Button (Hidden by Default) */}
@@ -133,7 +133,7 @@ const Navbar = () => {
 
               {/* Desktop View: Language Toggle + Button */}
               <div className="d-none d-lg-flex align-items-center">
-                <LanguageToggle />  {/* Language Button Pehle Hoga */}
+                <LanguageToggle className=".nav-language-color v-vise"/>  {/* Language Button Pehle Hoga */}
                 <Link to="/contact" className="text-decoration-none">
                   <button className="btn-well ms-3"
                     onClick={() => trackEvent('click on navbar button', 'Navigation', 'Click', 'Get a Free Consultation Button')}

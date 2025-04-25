@@ -9,7 +9,7 @@ const Sidebar = () => {
   const isRtl = i18n.dir() === 'rtl'; // Check the current direction (RTL or LTR)
 
   return (
-    <div className="text-white p-3 vh-100" style={{ backgroundColor: "rgb(26,55,121)", width: '250px' }}>
+    <div className="text-white p-3 vh-100" style={{ backgroundColor: "rgb(26,55,121)", width: '240px' }}>
       <div className="d-flex align-items-center">
         <Link to="/dashboard">
           <img src={Logo} alt="Logo" className="img-fluid logo-img" />
@@ -26,7 +26,7 @@ const Sidebar = () => {
           <FaClipboardList className={isRtl ? 'ms-2' : 'me-2'} /> Services
         </NavLink>
         <NavLink to="/dashboard/projects" className="nav-link text-white">
-          <FaStore className="me-2" /> Projects
+          <FaStore className={isRtl ? 'ms-2' : 'me-2'}/> Projects
         </NavLink>
         <NavLink to="/dashboard/packages" className="nav-link text-white">
           <FaBoxOpen className={isRtl ? 'ms-2' : 'me-2'} /> Packages

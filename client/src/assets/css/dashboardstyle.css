@@ -53,3 +53,24 @@
   color: rgb(36, 100, 148);
   margin-left: 5px;
 }
+
+.dashboard-language-color{
+  padding: 0 10px;
+  color: black !important;
+}
+
+.language-button-vise {
+  /*  font-family: Reddit Sans; */
+  font-size: 16px !important;
+  letter-spacing: 0px;
+  line-height: 140%;
+  color: black !important;
+}
+
+
+@media (max-width: 767px) {
+  .language-button-vise {
+    font-size: 12px !important;
+  }
+}
+

@@ -1,9 +1,10 @@
 import React from 'react';
 //import { useTranslation } from 'react-i18next';
+import LanguageToggleDashboard from './LanguageToggleDashboard';
 import UserImage from '../../assets/images/girl2.png';
 
 const Header = () => {
- // const { t, i18n } = useTranslation();
+  // const { t, i18n } = useTranslation();
   //const isRtl = i18n.dir() === 'rtl'; // Check the current direction (RTL or LTR)
 
   return (
@@ -17,6 +18,9 @@ const Header = () => {
             style={{ width: '400px' }}
           />
           <button className="btn btn-outline-secondary btn-sm">Visit Site</button>
+        </div>
+        <div>
+          <LanguageToggleDashboard />
         </div>
         <div className="d-flex align-items-center gap-3">
           <span className="text-muted">Sherlock</span>

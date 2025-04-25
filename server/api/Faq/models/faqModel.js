@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 
 const faqSchema = new mongoose.Schema({
   question: {
-    type: String,
-    required: true,
+    en: { type: String, required: true },
+    ar: { type: String, required: true }
   },
   answer: {
-    type: String,
-    required: true,
+    en: { type: String, required: true },
+    ar: { type: String, required: true }
   }
 }, { timestamps: true });
 

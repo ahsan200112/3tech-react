@@ -14,7 +14,16 @@ exports.getFAQs = async (req, res) => {
 exports.createFAQ = async (req, res) => {
   try {
     const { question, answer } = req.body;
-    const newFAQ = new FAQ({ question, answer });
+    const newFAQ = new FAQ({
+      question: {
+        en: question.en,
+        ar: question.ar
+      },
+      answer: {
+        en: answer.en,
+        ar: answer.ar
+      }
+    });
     await newFAQ.save();
     res.status(201).json(newFAQ);
   } catch (err) {
@@ -25,7 +34,23 @@ exports.createFAQ = async (req, res) => {
 // Update
 exports.updateFAQ = async (req, res) => {
   try {
-    const updated = await FAQ.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const { question, answer } = req.body;
+
+    const updated = await FAQ.findByIdAndUpdate(
+      req.params.id,
+      {
+        question: {
+          en: question.en,
+          ar: question.ar
+        },
+        answer: {
+          en: answer.en,
+          ar: answer.ar
+        }
+      },
+      { new: true }
+    );
+
     res.json(updated);
   } catch (err) {
     res.status(400).json({ error: err.message });
