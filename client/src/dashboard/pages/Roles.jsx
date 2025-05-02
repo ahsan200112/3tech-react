@@ -134,7 +134,7 @@ const Roles = () => {
               <td>
                 {/* <button className="btn btn-sm btn-danger me-2" onClick={() => handleDeleteRole(role._id)}>Delete</button>
                 <button className="btn btn-sm btn-warning me-2" onClick={() => handleEditRole(role)}>Edit</button> */}
-                {role.name !== 'Admin' && (
+                {role.name !== 'Super Admin' && (
                   <>
                     <button className="btn btn-sm btn-danger me-2" onClick={() => handleDeleteRole(role._id)}>Delete</button>
                     <button className="btn btn-sm btn-warning me-2" onClick={() => handleEditRole(role)}>Edit</button>

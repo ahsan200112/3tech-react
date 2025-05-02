@@ -13,6 +13,6 @@ export const updateCurrentUserAPI = async (userData) => {
 };
 
 export const updatePasswordAPI = async (passwordData) => {
-  const response = await api.post(updatePassword(), passwordData);
+  const response = await api.put(updatePassword(), passwordData);
   return response.data;
 };

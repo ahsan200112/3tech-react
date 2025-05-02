@@ -100,7 +100,7 @@ const Permissions = ({ role, onClose }) => {
                                         type="checkbox"
                                         checked={permissions[module]?.[action] || false}
                                         onChange={() => togglePermission(module, action)}
-                                        disabled={role.name === 'Admin'}
+                                        disabled={role.name === 'Super Admin'}
                                     />
                                 </td>
                             ))}
@@ -112,7 +112,7 @@ const Permissions = ({ role, onClose }) => {
             <div className="d-flex justify-content-end mt-3">
                 <button className="btn btn-secondary me-2" onClick={onClose}>Cancel</button>
                 {/* <button className="btn btn-primary" onClick={handleUpdate}>Update Permissions</button> */}
-                {role.name !== 'Admin' && (
+                {role.name !== 'Super Admin' && (
                     <button className="btn btn-primary" onClick={handleUpdate}>Update Permissions</button>
                 )}
             </div>

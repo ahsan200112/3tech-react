@@ -51,7 +51,7 @@ exports.getUserById = async (req, res) => {
             return res.status(401).json({ message: 'Authentication required' });
         }
 
-        const user = await User.findById(userId).populate('role').select('-password');
+        const user = await User.findById(userId).populate('role', 'name').select('-password');
         if (!user) return res.status(404).json({ message: 'User not found' });
 
         res.status(200).json(user);
@@ -65,7 +65,9 @@ exports.getUserById = async (req, res) => {
 exports.getCurrentUser = async (req, res) => {
     try {
         // Request object me stored user ki details ko fetch karna (from authMiddleware)
-        const user = req.user;
+        const user = await User.findById(req.user._id)
+        .populate('role', 'name') // ✅ Populate only the name field from role
+        .select('-password');
 
         if (!user) return res.status(404).json({ message: 'User not found' });
 
@@ -113,7 +115,7 @@ exports.updateUserByAdmin = async (req, res) => {
         if (!user) return res.status(404).json({ message: 'User not found' });
 
         // Admin ke liye role check karna
-        if (req.user.role !== 'admin') {
+        if (req.user.role !== 'Super Admin') {
             return res.status(403).json({ message: 'Access denied. Admins only' });
         }
 
@@ -152,6 +154,8 @@ exports.deleteUser = async (req, res) => {
 
 exports.updatePassword = async (req, res) => {
     const { oldPassword, newPassword } = req.body;
+    console.log('Old Password:', oldPassword);         // Optional
+    console.log('New Plain Password:', newPassword);   // 👈 YEH LINE
     const user = await User.findById(req.user.id);
 
     if (!user) return res.status(404).json({ message: 'User not found' });
@@ -159,8 +163,7 @@ exports.updatePassword = async (req, res) => {
     const isMatch = await bcrypt.compare(oldPassword, user.password);
     if (!isMatch) return res.status(400).json({ message: 'Old password is incorrect' });
 
-    const salt = await bcrypt.genSalt(10);
-    user.password = await bcrypt.hash(newPassword, salt);
+    user.password = newPassword;
     await user.save();
 
     res.status(200).json({ message: 'Password updated successfully' });

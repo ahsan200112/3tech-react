@@ -44,19 +44,19 @@ const createAdminRole = async () => {
     adminPermissions.push(permission._id);
   }
 
-  const existingRole = await Role.findOne({ name: 'Admin' });
+  const existingRole = await Role.findOne({ name: 'Super Admin' });
   if (existingRole) {
-    console.log('ℹ️ Admin role already exists');
+    console.log('ℹ️ Super Admin role already exists');
     return existingRole;
   }
 
   const role = new Role({
-    name: 'Admin',
+    name: 'Super Admin',
     permissions: adminPermissions,
   });
 
   await role.save();
-  console.log('✅ Admin role created');
+  console.log('✅ Super Admin role created');
   return role;
 };
 
@@ -64,7 +64,7 @@ const createAdminRole = async () => {
 const createAdminUser = async (role) => {
   const existingUser = await User.findOne({ email: 'admin@admin.com' });
   if (existingUser) {
-    console.log('ℹ️ Admin user already exists');
+    console.log('ℹ️ Super Admin user already exists');
     return;
   }
 
@@ -79,7 +79,7 @@ const createAdminUser = async (role) => {
   });
 
   await user.save();
-  console.log('✅ Admin user created');
+  console.log('✅Super Admin user created');
 };
 
 // Seed function

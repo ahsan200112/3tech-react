@@ -109,7 +109,7 @@ const Users = () => {
             <th>Role</th>
             <th>Date</th>
             {/* <th>Actions</th> */}
-            {users.some(user => user.role?.name !== 'Admin') && (
+            {users.some(user => user.role?.name !== 'Super Admin') && (
               <th>Actions</th>
             )}
           </tr>
@@ -129,7 +129,7 @@ const Users = () => {
                 <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(user)}><FaEdit /></Button>
                 <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(user._id)}><FaTrash /></Button>
               </td> */}
-              {user.role?.name !== 'Admin' && (
+              {user.role?.name !== 'Super Admin' && (
                 <td>
                   <>
                     <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(user)}><FaEdit /></Button>
@@ -235,11 +235,18 @@ const Users = () => {
                 required
               >
                 <option value="">Select Role</option>
-                {roles.map((role) => (
-                  <option key={role._id} value={role._id}> {/* Use role._id as value */}
-                    {role.name} {/* Display role name */}
+                {/* {roles.map((role) => (
+                  <option key={role._id} value={role._id}> 
+                    {role.name} 
                   </option>
-                ))}
+                ))} */}
+                {roles
+                  .filter(role => role.name !== 'Super Admin') // 👈 Filter out Super Admin
+                  .map((role) => (
+                    <option key={role._id} value={role._id}>
+                      {role.name}
+                    </option>
+                  ))}
               </Form.Select>
             </Form.Group>
 

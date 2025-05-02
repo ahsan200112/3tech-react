@@ -76,6 +76,7 @@ const userSlice = createSlice({
             })
             .addCase(updatePassword.fulfilled, (state, action) => {
                 state.loading = false;
+                state.success = 'Password updated successfully';
             })
             .addCase(updatePassword.rejected, (state, action) => {
                 state.loading = false;
