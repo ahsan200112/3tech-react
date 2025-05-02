@@ -7,10 +7,22 @@ exports.createBlog = async (req, res) => {
     const imageUrl = req.imageUrl || '';
 
     const newBlog = new Blog({
-      title,
-      description,
-      author,
-      category,
+      title: {
+        en: title.en,
+        ar: title.ar,
+      },
+      description: {
+        en: description.en,
+        ar: description.ar,
+      },
+      author: {
+        en: author.en,
+        ar: author.ar,
+      },
+      category: {
+        en: category.en,
+        ar: category.ar,
+      },
       image: imageUrl || '',
     });
 

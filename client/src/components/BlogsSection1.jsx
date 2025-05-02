@@ -12,12 +12,13 @@ import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';
 const BlogsSection1 = () => {
     const { t, i18n } = useTranslation();
     const RTL = i18n.dir() === "rtl";
+    const lang = i18n.language;
     const trackEvent = useGTMEventTracker();
 
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        api.get(getBlogs) 
+        api.get(getBlogs)
             .then(response => {
                 setBlogs(response.data);
             })
@@ -44,9 +45,9 @@ const BlogsSection1 = () => {
                     <div className="col-lg-8 mb-4" data-aos="fade-up" data-aos-delay="300">
                         {blogs.map(blog => (
                             <div key={blog._id} className="card custom-card mb-4"
-                                onClick={() => handleBlogClick(blog.title)}
+                                onClick={() => handleBlogClick(blog.title[lang])}
                             >
-                                <img src={blog.image} alt={blog.title} className="card-img img-fluid responsive-image"
+                                <img src={blog.image} alt={blog.title[lang]} className="card-img img-fluid responsive-image"
                                     style={{ width: '792px', height: '450px' }} />
                                 <div className="card-body">
                                     <div className="d-flex justify-content-between align-items-center">
@@ -60,9 +61,9 @@ const BlogsSection1 = () => {
                                         <i className="bi bi-arrow-up-right text-primary-color"></i>
                                     </div>
 
-                                    <h5 className="v-o mt-3">{t(blog.title)}</h5>
-                                    <p className="card-text v-p">{t(blog.description)}</p>
-                                    <p className="v-a">{t("By")} {blog.author || "Avrix"}</p>
+                                    <h5 className="v-o mt-3">{t(blog.title[lang])}</h5>
+                                    <p className="card-text v-p">{t(blog.description[lang])}</p>
+                                    <p className="v-a">{t("By")} {blog.author[lang] || "Avrix"}</p>
                                 </div>
                             </div>
                         ))}

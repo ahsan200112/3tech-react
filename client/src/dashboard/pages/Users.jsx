@@ -108,7 +108,10 @@ const Users = () => {
             <th>Email</th>
             <th>Role</th>
             <th>Date</th>
-            <th>Actions</th>
+            {/* <th>Actions</th> */}
+            {users.some(user => user.role?.name !== 'Admin') && (
+              <th>Actions</th>
+            )}
           </tr>
         </thead>
         <tbody>
@@ -122,10 +125,18 @@ const Users = () => {
               <td>{user.role ? user.role.name : 'No role assigned'}</td> {/* Displaying role name */}
               {/*<td>{new Date(faq.date).toLocaleDateString()}</td>*/}
               <td>{new Date(user.createdAt).toLocaleDateString()}</td>
-              <td>
+              {/* <td>
                 <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(user)}><FaEdit /></Button>
                 <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(user._id)}><FaTrash /></Button>
-              </td>
+              </td> */}
+              {user.role?.name !== 'Admin' && (
+                <td>
+                  <>
+                    <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(user)}><FaEdit /></Button>
+                    <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(user._id)}><FaTrash /></Button>
+                  </>
+                </td>
+              )}
             </tr>
           ))}
         </tbody>

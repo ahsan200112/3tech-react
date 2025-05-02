@@ -14,11 +14,11 @@ const Blogs = () => {
   const [fullDescription, setFullDescription] = useState('');
   const [isEditing, setIsEditing] = useState(false);
   const [blogData, setBlogData] = useState({
-    title: '',
+    title: { en: '', ar: '' },
     image: null,
-    description: '',
-    author: '',
-    category: ''
+    description: { en: '', ar: '' },
+    author: { en: '', ar: '' },
+    category: { en: '', ar: '' }
   });
 
   const fetchBlogs = async () => {
@@ -38,7 +38,7 @@ const Blogs = () => {
   const handleClose = () => {
     setShow(false);
     setIsEditing(false);
-    setBlogData({ title: '', image: '', description: '', author: '', category: '' });
+    setBlogData({ title: { en: '', ar: '' }, image: "", description: { en: '', ar: '' }, author: { en: '', ar: '' }, category: { en: '', ar: '' } });
   };
 
   const handleShow = () => setShow(true);
@@ -46,10 +46,14 @@ const Blogs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append('title', blogData.title);
-    formData.append('description', blogData.description);
-    formData.append('author', blogData.author);
-    formData.append('category', blogData.category);
+    formData.append('title[en]', blogData.title.en);
+    formData.append('title[ar]', blogData.title.ar);
+    formData.append('description[en]', blogData.description.en);
+    formData.append('description[ar]', blogData.description.ar);
+    formData.append('author[en]', blogData.author.en);
+    formData.append('author[ar]', blogData.author.ar);
+    formData.append('category[en]', blogData.category.en);
+    formData.append('category[ar]', blogData.category.ar);
     formData.append('image', blogData.image); // 👈 file append
 
     if (isEditing) {
@@ -66,7 +70,16 @@ const Blogs = () => {
   };
 
   const handleEdit = (blog) => {
-    setBlogData(blog);
+    setBlogData(
+      {
+        title: { en: blog.title.en, ar: blog.title.ar },
+        description: { en: blog.description.en, ar: blog.description.ar },
+        author: { en: blog.author.en, ar: blog.author.ar },
+        category: { en: blog.category.en, ar: blog.category.ar },
+        image: blog.image,
+        _id: blog._id
+      }
+    );
     setIsEditing(true);
     handleShow();
   };
@@ -87,11 +100,15 @@ const Blogs = () => {
       <Table bordered hover responsive className="custom-table">
         <thead>
           <tr>
-            <th>Title</th>
-            <th>Description</th>
+            <th>Title (English)</th>
+            <th>Title (Arabic)</th>
+            <th>Description (English)</th>
+            <th>Description (Arabic)</th>
             <th>Image</th>
-            <th>Author</th>
-            <th>Category</th>
+            <th>Author (English)</th>
+            <th>Author (Arabic)</th>
+            <th>Category (English)</th>
+            <th>Category (Arabic)</th>
             <th>Date</th>
             <th>Actions</th>
           </tr>
@@ -99,11 +116,12 @@ const Blogs = () => {
         <tbody>
           {blogs.map(blog => (
             <tr key={blog._id}>
-              <td style={{ width: '200px' }}>{blog.title}</td>
+              <td style={{ width: '100px' }}>{blog.title.en}</td>
+              <td style={{ width: '100px' }}>{blog.title.ar}</td>
               {/*<td style={{ width: '400px' }}
                 dangerouslySetInnerHTML={{ __html: blog.description }}></td> */}
-              <td style={{ width: '400px', position: 'relative' }}>
-                <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: blog.description }}></div>
+              <td style={{ width: '200px', position: 'relative' }}>
+                <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: blog.description.en }}></div>
                 <FaEye
                   style={{
                     position: 'absolute',
@@ -113,18 +131,38 @@ const Blogs = () => {
                     color: '#0d6efd'
                   }}
                   onClick={() => {
-                    setFullDescription(blog.description);
+                    setFullDescription(blog.description.en);
+                    setShowDescription(true);
+                  }}
+                  title="View full description"
+                />
+              </td>
+              <td style={{ width: '200px', position: 'relative' }}>
+                <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: blog.description.ar }}></div>
+                <FaEye
+                  style={{
+                    position: 'absolute',
+                    bottom: '50px',
+                    right: '4px',
+                    cursor: 'pointer',
+                    color: '#0d6efd'
+                  }}
+                  onClick={() => {
+                    setFullDescription(blog.description.ar);
                     setShowDescription(true);
                   }}
                   title="View full description"
                 />
               </td>
               <td>
-                <img src={blog.image} alt={blog.title} style={{ height: '60px', objectFit: 'cover' }} />
+                <img src={blog.image} alt={blog.title.ar} style={{ height: '60px', objectFit: 'cover' }} />
               </td>
-              <td style={{ width: '50px' }}>{blog.author}</td>
-              <td style={{ width: '50px' }}>{blog.category}</td>
-              <td>{new Date(blog.date).toLocaleDateString()}</td>
+              <td style={{ width: '50px' }}>{blog.author.en}</td>
+              <td style={{ width: '50px' }}>{blog.author.ar}</td>
+              <td style={{ width: '50px' }}>{blog.category.en}</td>
+              <td style={{ width: '50px' }}>{blog.category.ar}</td>
+              <td>{blog.date ? new Date(blog.date).toLocaleDateString() : '-'}</td>
+
               <td>
                 <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(blog)}><FaEdit /></Button>
                 <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(blog._id)}><FaTrash /></Button>
@@ -153,11 +191,20 @@ const Blogs = () => {
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3">
-              <Form.Label>Title</Form.Label>
+              <Form.Label>Title (English)</Form.Label>
               <Form.Control
                 type="text"
-                value={blogData.title}
-                onChange={(e) => setBlogData({ ...blogData, title: e.target.value })}
+                value={blogData.title.en}
+                onChange={(e) => setBlogData({ ...blogData, title: { ...blogData.title, en: e.target.value } })}
+                required
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Title (Arabic)</Form.Label>
+              <Form.Control
+                type="text"
+                value={blogData.title.ar}
+                onChange={(e) => setBlogData({ ...blogData, title: { ...blogData.title, ar: e.target.value } })}
                 required
               />
             </Form.Group>
@@ -175,11 +222,20 @@ const Blogs = () => {
               />
             </Form.Group> */}
             <Form.Group className="mb-3">
-              <Form.Label>Description</Form.Label>
+              <Form.Label>Description (English)</Form.Label>
               <Form.Control
                 type="text"
-                value={blogData.description}
-                onChange={(e) => setBlogData({ ...blogData, description: e.target.value })}
+                value={blogData.description.en}
+                onChange={(e) => setBlogData({ ...blogData, description: { ...blogData.description, en: e.target.value } })}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Description (Arabic)</Form.Label>
+              <Form.Control
+                type="text"
+                value={blogData.description.ar}
+                onChange={(e) => setBlogData({ ...blogData, description: { ...blogData.description, ar: e.target.value } })}
               />
             </Form.Group>
 
@@ -193,20 +249,36 @@ const Blogs = () => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Author Name</Form.Label>
+              <Form.Label>Author Name (English)</Form.Label>
               <Form.Control
                 type="text"
-                value={blogData.author}
-                onChange={(e) => setBlogData({ ...blogData, author: e.target.value })}
+                value={blogData.author.en}
+                onChange={(e) => setBlogData({ ...blogData, author: { ...blogData.author, en: e.target.value } })}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Author Name (Arabic)</Form.Label>
+              <Form.Control
+                type="text"
+                value={blogData.author.ar}
+                onChange={(e) => setBlogData({ ...blogData, author: { ...blogData.author, ar: e.target.value } })}
               />
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Category</Form.Label>
+              <Form.Label>Category (English)</Form.Label>
               <Form.Control
                 type="text"
-                value={blogData.category}
-                onChange={(e) => setBlogData({ ...blogData, category: e.target.value })}
+                value={blogData.category.en}
+                onChange={(e) => setBlogData({ ...blogData, category: { ...blogData.category, en: e.target.value } })}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Category (Arabic)</Form.Label>
+              <Form.Control
+                type="text"
+                value={blogData.category.ar}
+                onChange={(e) => setBlogData({ ...blogData, category: { ...blogData.category, ar: e.target.value } })}
               />
             </Form.Group>
 

@@ -23,10 +23,19 @@ import Login from '../pages/Login/Login';
 import Services1 from '../pages/Services1';
 import Projects1 from '../pages/Projects1';
 import Packages1 from '../pages/Packages1';
+import ChatBot from '../components/ChatBot';
 //import Signup from '../pages/Signup/Signup';
 
 const PublicRoutes = () => {
   const location = useLocation();
+  const allowedPaths = [
+    "/", "/about", "/services", "/services1", "/projects", "/projects1",
+    "/packages", "/packages1", "/blogs", "/blogs1", "/contact",
+    "/creativedesign", "/digitaloptimization", "/ecommercesolutions",
+    "/marketingsolutions", "/mobileapplications", "/privacypolicy", "/termsandconditions", "/thankyou"
+  ];
+
+  const shouldShowChatBot = allowedPaths.includes(location.pathname);
 
   useEffect(() => {
     // Push route change event to dataLayer
@@ -41,12 +50,13 @@ const PublicRoutes = () => {
 
   return (
     <>
+      {shouldShowChatBot && <ChatBot />}
       <GTMPageViewTracker />
       <GTMPageReloadTracker />
       <ScrollToTop />
       <Routes>
         <Route path="/dashboard-login" element={<Login />} />
-       {/* <Route path="/signup" element={<Signup />} />  */}
+        {/* <Route path="/signup" element={<Signup />} />  */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
@@ -55,7 +65,7 @@ const PublicRoutes = () => {
         <Route path="/projects1" element={<Projects1 />} />
         <Route path="/packages" element={<Packages />} />
         <Route path="/packages1" element={<Packages1 />} />
-        <Route path="/blogs" element={<Blogs />} /> 
+        <Route path="/blogs" element={<Blogs />} />
         <Route path="/blogs1" element={<Blogs1 />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/creativedesign" element={<CreativeDesign />} />

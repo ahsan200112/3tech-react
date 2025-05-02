@@ -43,15 +43,24 @@ export const getUsers = '/api/users';
 export const createUser = '/api/users';
 export const updateUser = (id) => `/api/users/${id}`;
 export const deleteUser = (id) => `/api/users/${id}`;
+export const updatePassword = () => `/api/users/updatepassword`;
 
-//roles
+// Current User (Logged-in User)
+export const getCurrentUser = '/api/users/me'; // Get current logged-in user details
+export const updateCurrentUser = () => '/api/users/me'; // Update the current user (self update)
+
+//auth
+export const login = '/api/auth/login';
+export const getProfile = '/api/auth/userprofile';
+export const updateProfile = '/api/auth/update';
+
+// Roles
 export const getRoles = '/api/roles';
 export const createRole = '/api/roles';
+export const getRoleById = (id) => `/api/roles/${id}`;
 export const updateRole = (id) => `/api/roles/${id}`;
 export const deleteRole = (id) => `/api/roles/${id}`;
 
-//permissions
-export const getPermissions = '/api/permissions';
-export const createPermission = '/api/permissions';
-export const updatePermission = (id) => `/api/permissions/${id}`;
-export const deletePermission = (id) => `/api/permissions/${id}`;
+// Permissions
+export const getRolePermissions = (roleId) => `/api/permissions/${roleId}`;
+export const updatePermissions = '/api/permissions';

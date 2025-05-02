@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom"; // Import Link from React Router
 import useGTMEventTracker from "../../components/GoogleTagManager/useGTMEventTracker";
 import api from '../../api/api';
+import { login } from "../../api/apiEndpoints";
 import { toast } from 'react-toastify';
 
 const Login = () => {
@@ -21,25 +22,14 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await api("/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password })
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        toast.success("Login successful!");
-        // Store token or navigate to dashboard
-        localStorage.setItem("token", data.token);
-        navigate("/dashboard");
-      } else {
-        toast.error(data.message || "Login failed.");
-      }
+      const response = await api.post(login, { email, password });
+      const { token } = response.data;
+      localStorage.setItem('token', token);
+      toast.success('Login successful');
+      navigate('/dashboard');
     } catch (error) {
-      console.error("Login error:", error);
-      toast.error("Something went wrong.");
+      console.error("Login Error:", error.response ? error.response.data : error);
+      toast.error(error.response ? error.response.data.message : 'Invalid credentials or server error');
     }
   };
 

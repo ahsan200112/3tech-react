@@ -42,6 +42,9 @@ app.use('/api/roles', RoleRoutes);
 const PermissionRoutes = require('./api/Permissions/routes/permissionRoutes')
 app.use('/api/permissions', PermissionRoutes);
 
+const AuthRoutes = require('./api/Auth/routes/authRoutes')
+app.use('/api/auth', AuthRoutes);
+
 app.use((err, req, res, next) => {
   res.status(err.status || 500).json({
     error: err.message || "Server Error",

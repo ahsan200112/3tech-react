@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 //import { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -29,7 +29,7 @@ const OurClientsSay = () => {
 
   useEffect(() => {
     fetchTestimonials(); // Fetch FAQs when the component mounts
-  }, []);
+  }, [testimonials]);
 
   const settings = {
     dots: true,
@@ -63,9 +63,9 @@ const OurClientsSay = () => {
    }; */
 
   // Handle project image click event tracking
-  const handleImageClick = (personName) => {
+  const handleImageClick = useCallback((personName) => {
     trackEvent('Clients Comments', 'Click', personName);
-  };
+  }, [trackEvent]);
 
   return (
     <section className="client-testimonials py-5" style={{ direction: isRTL ? "rtl" : "ltr" }} >
@@ -81,8 +81,8 @@ const OurClientsSay = () => {
           //  afterChange={handleSlideChange}  // Event on slide change 
           >
             {/* Map through Testimonials */}
-            {testimonials.map((testimonial) => (
-              <div key={testimonial.id} className="slide-item">
+            {testimonials.map((testimonial, index) => (
+              <div key={testimonial.id || index} className="slide-item">
                 <div className="card p-3 text-white project-card"
                   style={{
                     backgroundColor: "var(--bg-secondary)",

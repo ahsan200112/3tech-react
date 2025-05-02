@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../assets/images/3tech logo for dark mode.png';
 import { useTranslation } from 'react-i18next';
-import { FaHome, FaBox, FaUsers, FaCog, FaBoxOpen, FaClipboardList, FaStore, FaBullhorn } from 'react-icons/fa';
+import { FaHome, FaBox, FaUsers, FaBoxOpen, FaClipboardList, FaStore, FaBullhorn, FaCogs } from 'react-icons/fa';
 
 const Sidebar = () => {
   const { i18n } = useTranslation();
@@ -63,11 +63,11 @@ const Sidebar = () => {
           <NavLink to="/dashboard/users" className="nav-link text-white">
             <FaUsers className={isRtl ? 'ms-2' : 'me-2'} /> Users
           </NavLink>
-          <NavLink to="/dashboard/settings" className="nav-link text-white">
-            <FaCog className={isRtl ? 'ms-2' : 'me-2'} /> Settings
+          <NavLink to="/dashboard/rolesandpermissions" className="nav-link text-white">
+            <FaBullhorn className={isRtl ? 'ms-2' : 'me-2'} /> Roles and Permission
           </NavLink>
-          <NavLink to="/dashboard/marketing" className="nav-link text-white">
-            <FaBullhorn className={isRtl ? 'ms-2' : 'me-2'} /> Marketing
+          <NavLink to="/dashboard/settings" className="nav-link text-white">
+            <FaCogs className={isRtl ? 'ms-2' : 'me-2'} /> Setting
           </NavLink>
         </nav>
       </div>

@@ -43,22 +43,81 @@ exports.getUsers = async (req, res) => {
 // 🔍 Get Single User by ID
 exports.getUserById = async (req, res) => {
     try {
-        const user = await User.findById(req.params.id).populate('role').select('-password');
+        const userId = req.params.id === 'me'
+            ? (req.user?._id || null)
+            : req.params.id;
+
+        if (req.params.id === 'me' && !req.user) {
+            return res.status(401).json({ message: 'Authentication required' });
+        }
+
+        const user = await User.findById(userId).populate('role').select('-password');
         if (!user) return res.status(404).json({ message: 'User not found' });
+
         res.status(200).json(user);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
 
-// ✏️ Update User
-exports.updateUser = async (req, res) => {
+
+// ✅ Current Logged-In User
+exports.getCurrentUser = async (req, res) => {
+    try {
+        // Request object me stored user ki details ko fetch karna (from authMiddleware)
+        const user = req.user;
+
+        if (!user) return res.status(404).json({ message: 'User not found' });
+
+        res.status(200).json(user); // User ki details ko response me bhejna
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
+exports.updateCurrentUser = async (req, res) => {
+    try {
+        const user = req.user; // ✅ Ensure this is not undefined
+
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        const { firstName, lastName, userName, email, password, phoneNo } = req.body;
+
+        user.firstName = firstName || user.firstName;
+        user.lastName = lastName || user.lastName;
+        user.userName = userName || user.userName;
+        user.email = email || user.email;
+        user.phoneNo = phoneNo || user.phoneNo;
+
+        if (password) {
+            const salt = await bcrypt.genSalt(10);
+            user.password = await bcrypt.hash(password, salt);
+        }
+
+        const updatedUser = await user.save();
+
+        res.status(200).json({ message: 'User updated successfully', user: updatedUser });
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
+
+// ✏️ Update User (Admin)
+exports.updateUserByAdmin = async (req, res) => {
     try {
         const { firstName, lastName, userName, email, password, role, phoneNo } = req.body;
 
         const user = await User.findById(req.params.id);
         if (!user) return res.status(404).json({ message: 'User not found' });
 
+        // Admin ke liye role check karna
+        if (req.user.role !== 'admin') {
+            return res.status(403).json({ message: 'Access denied. Admins only' });
+        }
+
+        // User ki details ko update karna
         user.firstName = firstName || user.firstName;
         user.lastName = lastName || user.lastName;
         user.phoneNo = phoneNo || user.phoneNo;
@@ -72,7 +131,7 @@ exports.updateUser = async (req, res) => {
         }
 
         const updatedUser = await user.save();
-        res.status(200).json({ message: 'User updated', user: updatedUser });
+        res.status(200).json({ message: 'User updated successfully by admin', user: updatedUser });
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
@@ -91,3 +150,18 @@ exports.deleteUser = async (req, res) => {
     }
 };
 
+exports.updatePassword = async (req, res) => {
+    const { oldPassword, newPassword } = req.body;
+    const user = await User.findById(req.user.id);
+
+    if (!user) return res.status(404).json({ message: 'User not found' });
+
+    const isMatch = await bcrypt.compare(oldPassword, user.password);
+    if (!isMatch) return res.status(400).json({ message: 'Old password is incorrect' });
+
+    const salt = await bcrypt.genSalt(10);
+    user.password = await bcrypt.hash(newPassword, salt);
+    await user.save();
+
+    res.status(200).json({ message: 'Password updated successfully' });
+};

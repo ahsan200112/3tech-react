@@ -1,11 +1,11 @@
 const express = require('express');
-const permissionController = require('../controllers/permissionController');
 const router = express.Router();
+const permissionController = require('../controllers/permissionController');
 
-router.post('/', permissionController.createPermission);
-router.get('/', permissionController.getPermissions);
-router.get('/:id', permissionController.getPermissionById);
-router.put('/:id', permissionController.updatePermission);
-router.delete('/:id', permissionController.deletePermission);
+// Get permissions for a role
+router.get('/:id', permissionController.getRolePermissions);
+
+// Update permissions for a role
+router.put('/', permissionController.updateRolePermissions);
 
 module.exports = router;
