@@ -80,7 +80,17 @@ const Users = () => {
   };
 
   const handleEdit = (user) => {
-    setUserData(user);
+    setUserData({
+      _id: user._id,
+      firstName: user.firstName || '',
+      lastName: user.lastName || '',
+      phoneNo: user.phoneNo || '',
+      userName: user.userName || '',
+      email: user.email || '',
+      password: user.password || '', // ⚠️ only if backend provides hashed/plain password
+      confirmPassword: user.password || '',
+      role: user.role?._id || '', // ✅ ensure role is an ID
+    });
     setIsEditing(true);
     handleShow();
   };
@@ -205,7 +215,7 @@ const Users = () => {
                 type="password"
                 value={userData.password}
                 onChange={(e) => setUserData({ ...userData, password: e.target.value })}
-                required
+                required={!isEditing}
               />
             </Form.Group>
 
@@ -217,7 +227,7 @@ const Users = () => {
                 onChange={(e) =>
                   setUserData({ ...userData, confirmPassword: e.target.value })
                 }
-                required
+                required={!isEditing}
                 isInvalid={
                   userData.confirmPassword && userData.password !== userData.confirmPassword
                 }

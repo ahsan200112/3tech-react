@@ -9,16 +9,13 @@ exports.createUser = async (req, res) => {
         const userExists = await User.findOne({ $or: [{ email }, { userName }] });
         if (userExists) return res.status(400).json({ message: 'Email or Username already exists' });
 
-        const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(password, salt);
-
         const user = new User({
             firstName,
             lastName,
             userName,
             phoneNo,
             email,
-            password: hashedPassword,
+            password: password,
             role
         });
 
@@ -111,33 +108,40 @@ exports.updateUserByAdmin = async (req, res) => {
     try {
         const { firstName, lastName, userName, email, password, role, phoneNo } = req.body;
 
-        const user = await User.findById(req.params.id);
+        const user = await User.findById(req.params.id).populate('role');
         if (!user) return res.status(404).json({ message: 'User not found' });
-
-        // Admin ke liye role check karna
-        if (req.user.role !== 'Super Admin') {
+        console.log("user",req.user.role?.name);
+        // Check if the logged-in user is a Super Admin
+        if (req.user.role?.name !== 'Super Admin') {
             return res.status(403).json({ message: 'Access denied. Admins only' });
         }
 
-        // User ki details ko update karna
+        // Update fields
         user.firstName = firstName || user.firstName;
         user.lastName = lastName || user.lastName;
-        user.phoneNo = phoneNo || user.phoneNo;
         user.userName = userName || user.userName;
         user.email = email || user.email;
+        user.phoneNo = phoneNo || user.phoneNo;
         user.role = role || user.role;
 
-        if (password) {
-            const salt = await bcrypt.genSalt(10);
-            user.password = await bcrypt.hash(password, salt);
+        // Handle password update
+        if (password && password.trim() !== "") {
+            user.password = password;
         }
 
         const updatedUser = await user.save();
-        res.status(200).json({ message: 'User updated successfully by admin', user: updatedUser });
+
+        // Re-fetch the updated user with role populated and password excluded
+        const refreshedUser = await User.findById(updatedUser._id)
+            .populate('role', 'name')
+            .select('-password');
+
+        res.status(200).json({ message: 'User updated successfully by admin', user: refreshedUser });
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
 };
+
 
 // ❌ Delete User
 exports.deleteUser = async (req, res) => {
@@ -145,7 +149,7 @@ exports.deleteUser = async (req, res) => {
         const user = await User.findById(req.params.id);
         if (!user) return res.status(404).json({ message: 'User not found' });
 
-        await user.remove();
+        await User.findByIdAndDelete(req.params.id);
         res.status(200).json({ message: 'User deleted successfully' });
     } catch (error) {
         res.status(500).json({ error: error.message });
