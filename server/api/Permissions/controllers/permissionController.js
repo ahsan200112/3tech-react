@@ -1,7 +1,5 @@
 const Role = require('../../Roles/models/roleModel');
-const Permission = require('../models/permissionModel');
 
-// Get permissions for a role
 exports.getRolePermissions = async (req, res) => {
   try {
     const role = await Role.findById(req.params.id).populate('permissions');
@@ -10,21 +8,16 @@ exports.getRolePermissions = async (req, res) => {
     }
 
     const modules = [
-      'Blogs',
-      'Services',
-      'ContactForm',
-      'Faqs',
-      'Testimonials',
-      'Users',
-      'Projects',
-      'Roles',
-      'Settings'
+      'Blogs', 'Services', 'ContactForm', 'Faqs', 'Testimonials',
+      'Users', 'Projects', 'Roles', 'Settings'
     ];
 
-    const actions = ['create', 'edit', 'view', 'delete'];
+    const actions = ['create', 'edit', 'view', 'delete', 'all'];
+
+    const rolePermission = role.permissions; // already populated
 
     res.status(200).json({
-      rolePermissions: role.permissions,
+      rolePermissions: rolePermission ? rolePermission.permissions : [],
       modules,
       actions
     });
@@ -34,7 +27,6 @@ exports.getRolePermissions = async (req, res) => {
   }
 };
 
-// Update permissions for a role
 exports.updateRolePermissions = async (req, res) => {
   try {
     const { roleId, permissions } = req.body;
@@ -44,26 +36,25 @@ exports.updateRolePermissions = async (req, res) => {
       return res.status(404).json({ message: 'Role not found' });
     }
 
-    const updatedPermissionIds = [];
-
-    for (const perm of permissions) {
-      const { module, actions } = perm;
-
-      let permission = await Permission.findOne({ module, _id: { $in: role.permissions } });
-
-      if (permission) {
-        permission.actions = actions;
-        await permission.save();
-        updatedPermissionIds.push(permission._id);
-      } else {
-        const newPermission = new Permission({ module, actions });
-        await newPermission.save();
-        updatedPermissionIds.push(newPermission._id);
+    let permissionDoc;
+    if (role.permissions) {
+      permissionDoc = await Permission.findById(role.permissions);
+      if (permissionDoc) {
+        permissionDoc.permissions = permissions;
+        await permissionDoc.save();
       }
     }
 
-    role.permissions = updatedPermissionIds;
-    await role.save();
+    if (!permissionDoc) {
+      // create new permission doc if not exist
+      permissionDoc = new Permission({
+        role: role._id,
+        permissions
+      });
+      await permissionDoc.save();
+      role.permissions = permissionDoc._id;
+      await role.save();
+    }
 
     res.status(200).json({ message: 'Permissions updated successfully' });
   } catch (error) {

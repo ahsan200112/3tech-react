@@ -8,7 +8,7 @@ const Role = require('./api/Roles/models/roleModel');
 const Permission = require('./api/Permissions/models/permissionModel');
 
 // List of permission modules
-const permissions = [
+const modules = [
   'Blogs',
   'Services',
   'ContactForm',
@@ -20,48 +20,52 @@ const permissions = [
   'Settings',
 ];
 
-// Create Admin role with all permissions
-const createAdminRole = async () => {
-  const adminPermissions = [];
-
-  for (const module of permissions) {
-    let permission = await Permission.findOne({ module });
-
-    if (!permission) {
-      permission = new Permission({
-        module,
-        actions: {
-          create: true,
-          edit: true,
-          view: true,
-          delete: true,
-        },
-      });
-      await permission.save();
-      console.log(`✅ Permission for ${module} created.`);
-    }
-
-    adminPermissions.push(permission._id);
-  }
-
-  const existingRole = await Role.findOne({ name: 'Super Admin' });
-  if (existingRole) {
+// Create Super Admin role (just name)
+const createSuperAdminRole = async () => {
+  let role = await Role.findOne({ name: 'Super Admin' });
+  if (role) {
     console.log('ℹ️ Super Admin role already exists');
-    return existingRole;
+    return role;
   }
 
-  const role = new Role({
-    name: 'Super Admin',
-    permissions: adminPermissions,
-  });
-
+  role = new Role({ name: 'Super Admin' });
   await role.save();
   console.log('✅ Super Admin role created');
   return role;
 };
 
+// Create permissions and return the permission document
+const createPermissionsForRole = async (roleId) => {
+  const existingPermission = await Permission.findOne({ role: roleId });
+  if (existingPermission) {
+    console.log('ℹ️ Permissions already exist for this role');
+    return existingPermission;
+  }
+
+  const permissions = modules.map((module) => ({
+    module,
+    actions: {
+      create: true,
+      edit: true,
+      view: true,
+      delete: true,
+      all: true,
+    },
+  }));
+
+  const permissionDoc = new Permission({
+    role: roleId,
+    roleName: 'Super Admin',
+    permissions,
+  });
+
+  await permissionDoc.save();
+  console.log('✅ Permissions created for Super Admin role');
+  return permissionDoc;
+};
+
 // Create Admin user
-const createAdminUser = async (role) => {
+const createSuperAdminUser = async (role) => {
   const existingUser = await User.findOne({ email: 'admin@admin.com' });
   if (existingUser) {
     console.log('ℹ️ Super Admin user already exists');
@@ -87,8 +91,16 @@ const seedData = async () => {
   await connectDB();
 
   try {
-    const role = await createAdminRole();
-    await createAdminUser(role);
+    const role = await createSuperAdminRole();
+    const permissionDoc = await createPermissionsForRole(role);
+
+    if (!role.permissions || role.permissions.toString() !== permissionDoc._id.toString()) {
+      role.permissions = permissionDoc._id;
+      await role.save();
+      console.log('✅ Linked permission to Super Admin role');
+    }
+
+    await createSuperAdminUser(role);
     console.log('🌱 Seeding completed!');
     process.exit();
   } catch (error) {

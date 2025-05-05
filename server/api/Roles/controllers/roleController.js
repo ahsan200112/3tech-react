@@ -24,27 +24,30 @@ exports.createRole = async (req, res) => {
       'Settings'
     ];
 
-    const permissionIds = [];
+    const permissionsArray = modules.map((mod) => ({
+      module: mod,
+      actions: {
+        create: false,
+        edit: false,
+        view: false,
+        delete: false,
+        all: false
+      }
+    }));
 
-    for (const module of modules) {
-      const newPermission = new Permission({
-        module,
-        actions: {
-          create: false,
-          edit: false,
-          view: false,
-          delete: false
-        }
-      });
-      await newPermission.save();
-      permissionIds.push(newPermission._id);
-    }
-
-    // Step 2: Create the role with these permission references
-    const newRole = new Role({ name, permissions: permissionIds });
+    const newRole = new Role({ name });
     await newRole.save();
 
-    res.status(201).json(newRole);
+    const permissionObject = new Permission({
+      role: newRole._id,
+      roleName: name,
+      permissions: permissionsArray
+    });
+    await permissionObject.save();
+
+    newRole.permissions = permissionObject._id;
+    await newRole.save();
+    res.status(201).json({ role: newRole, permissions: permissionObject });
   } catch (err) {
     console.error('Error creating role:', err);
     res.status(500).json({ message: err.message });
