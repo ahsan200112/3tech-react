@@ -29,7 +29,7 @@ const OurServices1 = () => {
             <div className="container py-5">
                 <div className="row g-3">
                     <div className="col-md-4" data-aos="flip-left" data-aos-delay="300">
-                        <div className="card h-100 custom-transition">
+                        <div className="card h-100 custom-transition" style={{ cursor: "default" }}>
                             <div className="card-body">
                                 <h3 className="u-vise" style={{ width: "134px" }}>{t("Our Services")}</h3>
                                 <h5 className="card-title u-item mt-3 mb-3">{t("Solutions That Redefine Excellence")}</h5>
