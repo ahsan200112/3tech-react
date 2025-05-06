@@ -10,7 +10,7 @@ import { BrowserRouter as Router } from 'react-router-dom';  // Import Router he
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Provider } from 'react-redux';
-import store from './store/store';
+import store from './redux/store/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

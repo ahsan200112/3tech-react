@@ -1,6 +1,6 @@
 // src/features/user/userAPI.js
-import api from '../../api/api';
-import { getCurrentUser, updateCurrentUser, updatePassword } from '../../api/apiEndpoints';
+import api from '../../../api/api';
+import { getCurrentUser, updateCurrentUser, updatePassword } from '../../../api/apiEndpoints';
 
 export const fetchCurrentUserAPI = async () => {
   const response = await api.get(getCurrentUser);
