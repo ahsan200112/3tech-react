@@ -4,12 +4,11 @@ import CallImg from "../assets/images/call.svg";
 //import LocationImg from "../assets/images/Location.svg";
 import EmailImg from "../assets/images/Email.png";
 import { useForm } from 'react-hook-form';
-//import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 import { useNavigate } from 'react-router-dom';
 import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';
-//import Swal from 'sweetalert2';
-import api from '../api/api';
-import { createContactForm } from '../api/apiEndpoints';
+//import api from '../api/api';
+//import { createContactForm } from '../api/apiEndpoints';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
 const GetContactNow = () => {
@@ -21,6 +20,7 @@ const GetContactNow = () => {
     const trackEvent = useGTMEventTracker();
 
     // ye node js backend ke sath hai api already bani hui hai
+    /*
     const onSubmit = async (data) => {
         try {
             const response = await api.post(createContactForm, data, {
@@ -30,11 +30,6 @@ const GetContactNow = () => {
             });
 
             if (response.status === 200 || response.status === 201) {
-                /*  Swal.fire({
-                      title: t("Thank you for contacting us!"),
-                      text: t("Your message has been sent successfully. We will contact you later"),
-                      icon: "success"
-                  });  */
                 reset(); // Reset form after successful submission
                 navigate('/thankyou');
                 // Push the form submission event to GTM with page path
@@ -59,52 +54,47 @@ const GetContactNow = () => {
             console.error('Error submitting form:', error);
             alert('Error submitting form, please try again.');
         }
-    };
+    }; */
 
     //ye emailjs hai jo frontend se email send krta hai ye 200 free email hai per month baqi ye paid
-    /* const onSubmit = (data) => {
-         const serviceID = "service_bk2mmlr";  // EmailJS se copy karo
-         const templateID = "template_ij5qjqm";  // EmailJS se copy karo
-         const publicKey = "rBuu6w3lR4LQIztjf";  // EmailJS se copy karo
- 
-         const templateParams = {
-             name: data.name,
-             email: data.email,
-             phone: data.phone,
-             subject: data.subject,
-             message: data.message,
-         };
- 
-         emailjs.send(serviceID, templateID, templateParams, publicKey)
-             .then((response) => {
-                 /*  Swal.fire({
-                       title: t("Thank you for contacting us!"),
-                       text: t("Your message has been sent successfully. We will contact you later"),
-                       icon: "success"
-                   }); */
-    /*  reset();
-      navigate('/thankyou');
-      // Push the form submission event to GTM with page path
-      if (window.dataLayer) {
-          window.dataLayer.push({
-              event: 'form_submission',  // Custom event name
-              form_name: 'ContactUs',  // Form name or identifier
-              page: window.location.pathname,  // Page URL (path)
-              form_data: {
-                  name: data.name,
-                  email: data.email,
-                  phone: data.phone,
-                  subject: data.subject,
-                  message: data.message
-              }
-          });
-      }
-  })
-  .catch((error) => {
-      console.error("Error sending email:", error);
-      alert("Failed to send email, please try again.");
-  });
-}; */
+    const onSubmit = (data) => {
+        const serviceID = "service_bk2mmlr";  // EmailJS se copy karo
+        const templateID = "template_ij5qjqm";  // EmailJS se copy karo
+        const publicKey = "rBuu6w3lR4LQIztjf";  // EmailJS se copy karo
+
+        const templateParams = {
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+            subject: data.subject,
+            message: data.message,
+        };
+
+        emailjs.send(serviceID, templateID, templateParams, publicKey)
+            .then((response) => {
+                reset();
+                navigate('/thankyou');
+                // Push the form submission event to GTM with page path
+                if (window.dataLayer) {
+                    window.dataLayer.push({
+                        event: 'form_submission',  // Custom event name
+                        form_name: 'ContactUs',  // Form name or identifier
+                        page: window.location.pathname,  // Page URL (path)
+                        form_data: {
+                            name: data.name,
+                            email: data.email,
+                            phone: data.phone,
+                            subject: data.subject,
+                            message: data.message
+                        }
+                    });
+                }
+            })
+            .catch((error) => {
+                console.error("Error sending email:", error);
+                alert("Failed to send email, please try again.");
+            });
+    };
 
     return (
         <section className='u-section'>
@@ -148,7 +138,7 @@ const GetContactNow = () => {
                         <div className="contact-info">
                             <div className="d-flex align-items-center">
                                 {/*<img src={LocationImg} alt={t("Company Logo")} className="img-fluid" style={{ width: "35px", height: "33px" }} /> */}
-                                <FaMapMarkerAlt size={26} color="#3b9be9"/>
+                                <FaMapMarkerAlt size={26} color="#3b9be9" />
                                 <div className={isRTL ? "me-2" : "ms-2"}>
                                     <a
                                         href="https://maps.app.goo.gl/b3KDbQz5Ea1u4wuH9"
