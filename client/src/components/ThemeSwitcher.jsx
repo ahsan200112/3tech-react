@@ -14,7 +14,7 @@ const ThemeSwitcher = () => {
   };
 
   return (
-    <button className="theme-switcher-btn" onClick={handleThemeChange}>
+    <button className="theme-switcher-btn theme-icon-size" onClick={handleThemeChange}>
       {theme === "light" ? <FaMoon /> : <FaSun />}
     </button>
   );

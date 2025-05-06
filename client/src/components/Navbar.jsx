@@ -34,13 +34,13 @@ const Navbar = () => {
             <div className="col d-flex custom-content-end mt-3 mb-3 custom-navbar-center">
               <a href="https://www.linkedin.com/company/3tech-platform" target='blank' className={`${isRTL ? "ms-3" : "me-3"} d-flex align-items-center`}
                 onClick={() => trackEvent('click on navbar socail media link', 'Social Media', 'Click', 'LinkedIn Link')}
-              ><i className="bi bi-linkedin text-primary-color"></i></a>
+              ><i className="bi bi-linkedin text-primary-color icon-size"></i></a>
               <a href="https://api.whatsapp.com/send/?phone=966557122917" target='blank' className={`${isRTL ? "ms-3" : "me-3"} d-flex align-items-center`}
                 onClick={() => trackEvent('click on social media link', 'Social Media', 'Click', 'WhatsApp Link')}
-              ><i className="bi bi-whatsapp text-primary-color"></i></a>
+              ><i className="bi bi-whatsapp text-primary-color icon-size"></i></a>
               <a href="https://www.instagram.com/3tech.sa?igsh=aW14cDY0cmtvZW9p" target='blank' className={`${isRTL ? "ms-3" : "me-3"} d-flex align-items-center`}
                 onClick={() => trackEvent('click on social media link', 'Social Media', 'Click', 'Instagram Link')}
-              ><i className="bi bi-instagram text-primary-color"></i></a>
+              ><i className="bi bi-instagram text-primary-color icon-size"></i></a>
               <ThemeSwitcher />
             </div>
           </div>
@@ -61,12 +61,7 @@ const Navbar = () => {
                 />
               </Link>
             </div>
-            <div className="text-center d-lg-none" style={{
-              marginRight: isRTL ? "70px" : "0",
-              marginLeft: !isRTL ? "70px" : "0",
-              paddingRight: isRTL ? "30px" : "0",
-              paddingLeft: !isRTL ? "40px" : "0",
-            }}>
+            <div className={`text-center d-lg-none language-toggle-container ${isRTL ? 'rtl' : 'ltr'}`}>
               <LanguageToggle className=".nav-language-color v-vise" />
             </div>
 
@@ -77,7 +72,7 @@ const Navbar = () => {
 
             {/* Right: Navbar Toggler */}
             <button
-              className="navbar-toggler ms-3"
+              className="navbar-toggler"
               type="button"
               onClick={() => {
                 setIsNavOpen(!isNavOpen);
