@@ -14,8 +14,8 @@ function AboutUs() {
       <Navbar />
       <AboutFirstComponent />
       <ExpertiseYouCanTrust />
-      <YourSuccessOurPriority />
       <OurTrustedPartners />
+      <YourSuccessOurPriority />
       <OurClientsSay />
       <FrequentlyAskedQuestions />
       <Footer />
