@@ -41,12 +41,12 @@ const Login = () => {
           <div className="login-left">
             <h2>{t("Sign In")}</h2>
             <form className="login-form" onSubmit={handleLogin}>
-              <div className="form-group">
+              <div className="login-form-group">
                 <label htmlFor="email">{t("Email")}</label>
                 <input
                   id="email"
                   type="email"
-                  className="form-control"
+                  className="login-form-control"
                   placeholder={t("Enter your email")}
                   required
                   value={email}
@@ -60,7 +60,7 @@ const Login = () => {
                 <input
                   id="password"
                   type={showPassword ? "text" : "password"}
-                  className="form-control"
+                  className="login-form-control"
                   placeholder={t("Enter your password")}
                   required
                   value={password}

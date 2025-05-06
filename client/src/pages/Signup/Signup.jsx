@@ -78,20 +78,20 @@ const Signup = () => {
             </p>
             <form className="signup-form" onSubmit={handleSignup}>
               <div className="form-row">
-                <div className="form-group">
+                <div className="signup-form-group">
                   <input
                     type="text"
-                    className="form-control"
+                    className="signup-form-control"
                     placeholder={t("First Name")}
                     required
                     value={formData.firstName}
                     onChange={handleChange}
                   />
                 </div>
-                <div className="form-group">
+                <div className="signup-form-group">
                   <input
                     type="text"
-                    className="form-control"
+                    className="signup-form-control"
                     placeholder={t("Last Name")}
                     required
                     value={formData.lastName}
@@ -101,20 +101,20 @@ const Signup = () => {
               </div>
 
               <div className="form-row">
-                <div className="form-group">
+                <div className="signup-form-group">
                   <input
                     type="text"
-                    className="form-control"
+                    className="signup-form-control"
                     placeholder={t("Full Name")}
                     required
                     value={formData.fullName}
                     onChange={handleChange}
                   />
                 </div>
-                <div className="form-group">
+                <div className="signup-form-group">
                   <input
                     type="email"
-                    className="form-control"
+                    className="signup-form-control"
                     placeholder={t("Email")}
                     required
                     value={formData.email}
@@ -124,20 +124,20 @@ const Signup = () => {
               </div>
 
               <div className="form-row">
-                <div className="form-group">
+                <div className="signup-form-group">
                   <input
                     type="password"
-                    className="form-control"
+                    className="signup-form-control"
                     placeholder={t("Password")}
                     required
                     value={formData.password}
                     onChange={handleChange}
                   />
                 </div>
-                <div className="form-group">
+                <div className="signup-form-group">
                   <input
                     type="password"
-                    className="form-control"
+                    className="signup-form-control"
                     placeholder={t("Confirm Password")}
                     required
                     value={formData.confirmPassword}
@@ -147,10 +147,10 @@ const Signup = () => {
               </div>
 
               <div className="form-row">
-                <div className="form-group">
+                <div className="signup-form-group">
                   <input
                     type="text"
-                    className="form-control"
+                    className="signup-form-control"
                     placeholder={t("Phone Number")}
                     required
                     value={formData.phone}
@@ -158,7 +158,7 @@ const Signup = () => {
                   />
                 </div>
                 <div className="form-group">
-                  <select className="form-control"
+                  <select className="signup-form-control"
                     required
                     value={formData.gender}
                     onChange={handleChange}>
