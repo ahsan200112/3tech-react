@@ -20,7 +20,7 @@ const LanguageToggle = () => {
   return (
     <div className="nav-item dropdown" style={{ position: "relative", display: "inline-block" }}>
       <button
-        className="btn dropdown-toggle v-vise"
+        className="btn dropdown-toggle v-vise language-toggle-btn"
         id="languageDropdown"
         onClick={() => setDropdownOpen(!dropdownOpen)}
         aria-expanded={dropdownOpen}
@@ -40,8 +40,7 @@ const LanguageToggle = () => {
             display: "block",
             position: "absolute",
             top: "100%", // Ensures dropdown appears below the button
-            left: "0",
-            minWidth: "100%", // Makes dropdown same width as button
+            minWidth: "80%", // Makes dropdown same width as button
             textAlign: "center",
           }}
         >

@@ -61,14 +61,10 @@ const Navbar = () => {
                 />
               </Link>
             </div>
+            {/* Center: Language Toggle (for Mobile View) */}
             <div className={`text-center d-lg-none language-toggle-container ${isRTL ? 'rtl' : 'ltr'}`}>
               <LanguageToggle className=".nav-language-color v-vise" />
             </div>
-
-            {/* Center: Language Toggle (for Mobile View) */}
-            {/*   <div className="d-flex align-items-center d-lg-none">
-              <LanguageToggle />
-            </div> */}
 
             {/* Right: Navbar Toggler */}
             <button
