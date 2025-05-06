@@ -19,7 +19,7 @@ const YourSuccessOurPriority = () => {
             <div className="container py-5" data-aos="fade-up" data-aos-delay="800">
                 <div className="row">
                     <div className="col-md-6 d-flex flex-column mb-4">
-                        <button className="btn-sm u-easy mb-2" style={{ width: "225px" }}>{t("Your Success, Our Priority")}</button>
+                        <h3 className="u-easy mb-2" style={{ width: "225px" }}>{t("Your Success, Our Priority")}</h3>
                         <h2 className="u-vell">{t("Why Partner With 3Tech?")}</h2>
                         <p className="v-wel">
                             {t("3Tech doesn't just deliver solutions; we create stories. With us, you own your project without recurring fees and gain access to a complete suite of services to transform your ideas into reality.")}

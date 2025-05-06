@@ -17,8 +17,8 @@ function Home() {
       <HeroSection />
       <WhoWeAre />
       <OurServices />
-      <YourSuccessOurPriority />
       <OurProjects />
+      <YourSuccessOurPriority />
       <OurTrustedPartners />
       <OurClientsSay />
       {/* <OurPackages/> */}

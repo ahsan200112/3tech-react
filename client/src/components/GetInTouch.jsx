@@ -10,9 +10,9 @@ const GetInTouch = () => {
 
     return (
         <section className="v-section py-5">
-            <div className="container py-5" data-aos="fade-up"data-aos-delay="500">
+            <div className="container py-5" data-aos="fade-up" data-aos-delay="500">
                 <div>
-                    <button className="btn-sm u-vise mb-2">{t("Get in Touch")}</button>
+                    <h3 className="u-vise mb-2" style={{ width: "165px" }}>{t("Get in Touch")}</h3>
                     <h2 className="b-b">{t("Need Further Assistance?")}</h2>
                     <p className="b-c">{t("Have a question, feedback, or just want to say hello? We’d love to hear from you!")}</p>
                     {/*<img src={FraImg} alt="Company Logo" className="img-fluid" style={{ maxWidth: "100%", height: "auto" }} /> */}
@@ -32,31 +32,34 @@ const GetInTouch = () => {
                     </div>
                     <div className="row mt-3 text-center">
                         <div className="col-md-3 position-relative">
-                            <p className="b-e">{t("Location")}</p>
-                            <h2 className="b-d">{t("Saudi Arabia (KSA)")}</h2>
+                            <a
+                                href="https://maps.app.goo.gl/b3KDbQz5Ea1u4wuH9"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-decoration-none"
+                            >
+                                <p className="b-e">{t("Location")}</p>
+                                <h2 className="b-d">{t("Saudi Arabia (KSA)")}</h2>
+                            </a>
                             <div className="border-line"></div>
                         </div>
                         <div className="col-md-3 position-relative">
-                            <p className="b-e">{t("Email")}</p>
-                            <h2 className="b-d">
-                                <a href="mailto:info@3tech.sa" className="text-white text-decoration-none"
-                                    onClick={() => trackEvent('click on email address link', 'Contact', 'Click', 'Email Address Link')}
-                                >
-                                    info@3tech.sa
-                                </a>
-                            </h2>
+                            <a href="mailto:info@3tech.sa" className="text-white text-decoration-none"
+                                onClick={() => trackEvent('click on email address link', 'Contact', 'Click', 'Email Address Link')}
+                            >
+                                <p className="b-e">{t("Email")}</p>
+                                <h2 className="b-d">info@3tech.sa</h2>
+                            </a>
                             <div className="border-line"></div>
                         </div>
                         <div className="col-md-3 position-relative">
-                            <p className="b-e">{t("Phone")}</p>
-                            <h2 className="b-d">
-                                <a href="https://api.whatsapp.com/send/?phone=966557122917" target='blank'
-                                    className="text-white text-decoration-none"
-                                    onClick={() => trackEvent('click on phone number link', 'Contact', 'Click', 'Phone Number Link')}
-                                >
-                                    {t("+966557122917")}
-                                </a>
-                            </h2>
+                            <a href="https://api.whatsapp.com/send/?phone=966557122917" target='blank'
+                                className="text-white text-decoration-none"
+                                onClick={() => trackEvent('click on phone number link', 'Contact', 'Click', 'Phone Number Link')}
+                            >
+                                <p className="b-e">{t("Phone")}</p>
+                                <h2 className="b-d"> {t("+966557122917")} </h2>
+                            </a>
                             <div className="border-line"></div>
                         </div>
                         <div className="col-md-3">

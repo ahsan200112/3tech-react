@@ -27,7 +27,7 @@ const CreativeDesignFirstComponent = () => {
                             </h4>
                         </div>
                         <div className="text-end">
-                            <img src={BlackImg} alt="Company Logo" className="img-fluid responsive-logo"
+                            <img src={BlackImg} alt="Company Logo" className="img-fluid responsive-logo first-component-img"
                                 style={{ maxWidth: "100%", height: "auto" }}
                                 onClick={() => trackEvent('click on image','Image', 'Click', 'Background Image')}  // Track event
                             />

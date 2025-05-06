@@ -48,7 +48,8 @@ const Navbar = () => {
       </section>
 
       {/* Main Navbar */}
-      <section className="u-section navbar-padding color-effect-navbarLink pb-3">
+      {/* navbar-padding class hai jo side pe padding de rahi hai */}
+      <section className="u-section color-effect-navbarLink pb-4">
         <nav className="navbar-bg-color navbar navbar-expand-lg navbar-border">
           <div className="container d-flex align-items-center justify-content-between">
 
@@ -59,6 +60,14 @@ const Navbar = () => {
                   onClick={() => trackEvent('click on navbar Company logo', 'Navigation', 'Click', 'Company Logo')}
                 />
               </Link>
+            </div>
+            <div className="text-center d-lg-none" style={{
+              marginRight: isRTL ? "70px" : "0",
+              marginLeft: !isRTL ? "70px" : "0",
+              paddingRight: isRTL ? "30px" : "0",
+              paddingLeft: !isRTL ? "40px" : "0",
+            }}>
+              <LanguageToggle className=".nav-language-color v-vise" />
             </div>
 
             {/* Center: Language Toggle (for Mobile View) */}
@@ -83,41 +92,36 @@ const Navbar = () => {
             {/* Navbar Links (Collapsible on Mobile) */}
             <div className={`navbar-collapse ${isNavOpen ? "show text-center" : "collapse"}`}>
               <ul className="navbar-nav mx-auto" style={{ paddingRight: "0" }}>
-                <li className="nav-item"><Link className="nav-link v-vise" to="/" onClick={() => {
+                <li className="nav-item"><Link className="nav-link n-vise" to="/" onClick={() => {
                   setIsNavOpen(false);
                   trackEvent('click on navbar page link', 'Navigation', 'Click', 'Home Page Link');
                 }} >
                   {t("Home")}</Link></li>
-                <li className="nav-item"><Link className="nav-link v-vise" to="/about" onClick={() => {
+                <li className="nav-item"><Link className="nav-link n-vise" to="/about" onClick={() => {
                   setIsNavOpen(false);
                   trackEvent('click on navbar page link', 'Navigation', 'Click', 'About Page Link');
                 }}>{t("About Us")}</Link></li>
-                <li className="nav-item"><Link className="nav-link v-vise" to="/services" onClick={() => {
+                <li className="nav-item"><Link className="nav-link n-vise" to="/services" onClick={() => {
                   setIsNavOpen(false);
                   trackEvent('click on navbar page link', 'Navigation', 'Click', 'Services Page Link');
                 }}>{t("Services")}</Link></li>
-                <li className="nav-item"><Link className="nav-link v-vise" to="/projects" onClick={() => {
+                <li className="nav-item"><Link className="nav-link n-vise" to="/projects" onClick={() => {
                   setIsNavOpen(false);
                   trackEvent('click on navbar page link', 'Navigation', 'Click', 'Project Page Link');
                 }}>{t("Projects")}</Link></li>
-                <li className="nav-item"><Link className="nav-link v-vise" to="/packages" onClick={() => {
+                <li className="nav-item"><Link className="nav-link n-vise" to="/packages" onClick={() => {
                   setIsNavOpen(false);
                   trackEvent('click on navbar page link', 'Navigation', 'Click', 'Packages Page Link');
                 }}>{t("Packages")}</Link></li>
-               {/* <li className="nav-item"><Link className="nav-link v-vise" to="/blogs" onClick={() => {
+                {/* <li className="nav-item"><Link className="nav-link v-vise" to="/blogs" onClick={() => {
                   setIsNavOpen(false);
                   trackEvent('click on navbar page link', 'Navigation', 'Click', 'Blogs Page Link');
                 }}>{t("Blogs")}</Link></li> */}
-                <li className="nav-item"><Link className="nav-link v-vise" to="/contact" onClick={() => {
+                <li className="nav-item"><Link className="nav-link n-vise" to="/contact" onClick={() => {
                   setIsNavOpen(false);
                   trackEvent('click on navbar page link', 'Navigation', 'Click', 'Contact Page Link');
                 }}>{t("Contact Us")}</Link></li>
               </ul>
-
-              {/* Center: Language Toggle (for Mobile View) */}
-              <div className="d-flex align-items-center justify-content-center d-lg-none">
-                <LanguageToggle className=".nav-language-color v-vise" />
-              </div>
 
               {/* Mobile View: Button (Hidden by Default) */}
               <div className="d-lg-none text-center mt-3">
@@ -133,7 +137,7 @@ const Navbar = () => {
 
               {/* Desktop View: Language Toggle + Button */}
               <div className="d-none d-lg-flex align-items-center">
-                <LanguageToggle className=".nav-language-color v-vise"/>  {/* Language Button Pehle Hoga */}
+                <LanguageToggle className=".nav-language-color v-vise" />  {/* Language Button Pehle Hoga */}
                 <Link to="/contact" className="text-decoration-none">
                   <button className="btn-well ms-3"
                     onClick={() => trackEvent('click on navbar button', 'Navigation', 'Click', 'Get a Free Consultation Button')}

@@ -238,7 +238,7 @@ body {
 }
 
 .hero-section {
-  padding: 80px 0;
+  padding: 40px 0;
   position: relative;
   background-color: var(--bg-primary);
   background-repeat: no-repeat;
@@ -363,7 +363,6 @@ body {
   text-align: center;
   color: #3B9BE9;
   border: 1px solid #1B1264;
-  background-color: var(--bg-secondary);
   height: 40px;
   padding: 9px 15px;
   gap: 10px;
@@ -1127,7 +1126,7 @@ body {
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
-  text-align: left;
+  text-align: center;
   color: #3B9BE9;
   background-color: var(--bg-secondary);
 }
@@ -1381,6 +1380,13 @@ body {
   color: var(--text-primary) !important;
 }
 
+.n-vise{
+  font-size: 16px !important;
+  letter-spacing: 0px;
+  line-height: 140%;
+  color: var(--text-primary) !important;
+}
+
 .text-primary-color {
   color: var(--text-primary) !important;
 }
@@ -1522,9 +1528,8 @@ body {
 }
 
 .step {
-  padding: 30px;
+  padding: 15px 20px;
   border-radius: 15px;
-  margin-bottom: 20px;
   position: relative;
   text-align: start;
   height: 100%;
@@ -2141,14 +2146,6 @@ img {
   }
 }
 
-/* Tablet (Medium screens: 768px–1199px) */
-@media (min-width: 768px) and (max-width: 1199px) {
-  .u-vie {
-    font-size: 25px;
-    font-weight: 300;
-  }
-}
-
 /* Desktop (Large screens: ≥1200px) */
 @media (min-width: 1200px) {
   .u-visit {
@@ -2309,6 +2306,9 @@ img {
 @media (max-width: 767px) {
   .v-vise {
     font-size: 10px !important;
+  }
+  .n-vise {
+    font-size: 22px !important;
   }
   .btn-well {
     width: 180px;
@@ -2518,6 +2518,12 @@ img {
 
   .responsive-buttons button {
     width: 100% !important;
+  }
+  .u-vie {
+    font-size: 40px;
+  }
+  .first-component-img{
+      width: 60% !important;
   }
 }
 

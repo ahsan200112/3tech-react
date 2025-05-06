@@ -31,7 +31,7 @@ const OurProjectsDetail1 = () => {
     return (
         <section className="v-section">
             <div className="container py-5">
-                <button className="btn-sm u-vise mt-5 mb-2" style={{ width: "150px" }}>{t("Our Projects")}</button>
+                <h3 className="u-vise mt-5 mb-2" style={{ width: "150px" }}>{t("Our Projects")}</h3>
                 <h2 className="n-w">{t("Showcasing Excellence Across Industries")}</h2>
                 <p className="n-e" style={{ maxWidth: "800px", wordBreak: "break-word" }}>
                     {t("At 3Tech, every project is a reflection of our commitment to innovation, quality, and client success. Explore how we’ve helped businesses grow and thrive in the digital world.")}

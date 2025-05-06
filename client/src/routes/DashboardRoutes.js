@@ -13,6 +13,7 @@ import FAQ from '../dashboard/pages/FAQ';
 import Testimonial from '../dashboard/pages/Testimonial';
 import Roles from '../dashboard/pages/Roles';
 import Setting from '../dashboard/pages/Setting';
+import NotFound from '../components/404NotFound';
 
 const DashboardRoutes = () => {
   return (
@@ -31,6 +32,7 @@ const DashboardRoutes = () => {
           <Route path="testimonials" element={<Testimonial />} />
           <Route path="rolesandpermissions" element={<Roles />} />
           <Route path="settings" element={<Setting />} />
+          <Route path="*" element={<NotFound />} />
           {/* Add more pages as needed */}
         </Route>
       </Routes>

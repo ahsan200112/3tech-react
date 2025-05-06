@@ -23,7 +23,7 @@ const ExpertiseYouCanTrust = () => {
         <div className="v-section">
             <section className='py-5' data-aos="fade-up" data-aos-delay="800">
                 <div className="container">
-                    <button className="btn-sm u-easy" style={{ width: "210px" }}>{t("Expertise you can Trust")}</button>
+                    <h3 className="u-easy" style={{ width: "210px" }}>{t("Expertise you can Trust")}</h3>
                     <h4 className="mt-3 o-b">{t("Turning Ideas into Impactful Digital Journeys")}</h4>
                     {/* <p className="o-c">{t("Transform your business with a seamless digital journey.")}</p> */}
                     <img src={Frame41Img} alt="Company Logo" className="img-fluid" style={{ maxWidth: "100%", height: "auto" }} />

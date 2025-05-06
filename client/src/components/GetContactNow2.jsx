@@ -103,9 +103,9 @@ const GetContactNow2 = () => {
         <section className='u-section'>
             <div className="container py-5" data-aos="fade-up" data-aos-delay="500">
                 <div className="mb-4">
-                    <button className="btn-sm u-vise">
+                    <h3 className="u-vise" style={{ width: "170px" }}>
                         {t('Get Contact Now')}
-                    </button>
+                    </h3>
                     <h2 className="v-r mt-3">{t("Let's Bring Your Vision Into Reality")}</h2>
                     <p className="b-c">{t("Your email address will not be published. Required fields are marked *")}</p>
                 </div>

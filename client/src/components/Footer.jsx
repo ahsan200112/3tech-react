@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
         </div>
       </section>
-      <footer className="text-light py-4 review-value">
+      <footer className="text-light py-4 review-value" style={{ marginBottom: "-30px"}}>
         <div className="container">
           <div className="row">
             <div className="col-md-5">
@@ -48,7 +48,7 @@ const Footer = () => {
                 >{t("Request Free Audit")}</button>
               </Link>
             </div>
-            <div className="col-md-2 custom-text-center text-center">
+            <div className="col-md-4 custom-text-center text-center">
               <h5 className="v-house" style={{ fontWeight: "700" }}>{t("Quick Links")}</h5>
               <ul className="list-unstyled custom-text-center padding-right-0 text-center">
                 <li className='custom-list-padding'><Link to="/" className="text-start v-inner text-decoration-none"
@@ -60,6 +60,9 @@ const Footer = () => {
                 <li className='custom-list-padding'><Link to="/services" className="text-start v-inner text-decoration-none"
                   onClick={() => trackEvent('click on footer page link', 'Navigation', 'Click', 'Services Page Link')}
                 >{t("Services")}</Link></li>
+                <li className='custom-list-padding'><Link to="/projects" className="text-start v-inner text-decoration-none"
+                  onClick={() => trackEvent('click on footer page link', 'Navigation', 'Click', 'Projects Page Link')}
+                >{t("Projects")}</Link></li>
                 <li className='custom-list-padding'><Link to="/packages" className="text-start v-inner text-decoration-none"
                   onClick={() => trackEvent('click on footer page link', 'Navigation', 'Click', 'Packages Page Link')}
                 >{t("Packages")}</Link></li>
@@ -71,7 +74,7 @@ const Footer = () => {
                 >{t("Contact Us")}</Link></li>
               </ul>
             </div>
-            <div className="col-md-2 custom-text-center text-center">
+           {/* <div className="col-md-2 custom-text-center text-center">
               <h5 className="v-house" style={{ fontWeight: "700" }}>{t("Services")}</h5>
               <ul className="list-unstyled custom-text-center padding-right-0 text-center">
                 <li className='custom-list-padding'><Link to="/ecommercesolutions" className="text-start v-inner  text-decoration-none"
@@ -90,7 +93,7 @@ const Footer = () => {
                   onClick={() => trackEvent('click on footer page link', 'Navigation', 'Click', 'Digital Optimization Page Link')}
                 >{t("Digital Optimization")}</Link></li>
               </ul>
-            </div>
+            </div> */}
             <div className="col-md-3 custom-text-center">
               <h5 className="v-house" style={{ fontWeight: "700" }}>{t("Have Questions?")}</h5>
               <p className="v-left">{t("Email")}: <a href="mailto:info@3tech.sa"
@@ -119,7 +122,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="row mt-4 pt-3 custom-text-center" style={{ borderTop: " 1px solid #1B1264" }}>
+          <div className="row mt-4 pt-3 mb-0 custom-text-center" style={{ borderTop: " 1px solid #1B1264" }}>
             <div className="col d-flex justify-content-between text-primary-color custom-direction">
               <p className="mb-0 custom-list-padding">
                 <Link to="/privacypolicy" className="text-decoration-none v-term"

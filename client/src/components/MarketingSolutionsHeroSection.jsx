@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Vector5Img from '../assets/images/Vector (5).png';
 import TaskImg from '../assets/images/task.png';
 import CopyWritingImg from '../assets/images/copy-writing.png';
-import PinImg from '../assets/images/pin.png';
+//import PinImg from '../assets/images/pin.png';
 import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
 function MarketingSolutionsHeroSection() {
@@ -154,11 +154,11 @@ function MarketingSolutionsHeroSection() {
                             { step: t("Step 5"), title: t("Reporting & Analysis"), desc: t("Provide detailed reports to track the success of campaigns.") },
                             { step: t("Step 6"), title: t("Continuous Optimization"), desc: t("Use data insights to refine and improve campaigns over time.") },
                         ].map((item, index) => (
-                            <div key={index} className="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                            <div key={index} className="col-md-4 mb-2" data-aos="fade-up" data-aos-delay="300">
                                 <div className="step">
                                     <div className="custom-row">
                                         <button className="text-start btn-sm n-j">{item.step}</button>
-                                        <img src={PinImg} alt="Company Logo" className="img-fluid custom-size-img" />
+                                       {/* <img src={PinImg} alt="Company Logo" className="img-fluid custom-size-img" /> */}
                                     </div>
                                     <h5 className="h-klm">{item.title}</h5>
                                     <p className="h-ul">{item.desc}</p>

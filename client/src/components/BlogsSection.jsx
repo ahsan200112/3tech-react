@@ -24,7 +24,7 @@ const BlogsSection = () => {
     return (
         <section className="v-section">
             <div className="container py-5">
-                <button className="btn-sm u-vise">{t("Insights, Tips, and Trends")}</button>
+                <h3 className="u-vise">{t("Insights, Tips, and Trends")}</h3>
                 <div className="mt-3">
                     <h2 className="v-u">{t("Explore The Latest In Digital Solutions")}</h2>
                     <p className="v-p" style={{ maxWidth: "670px", wordBreak: "break-word" }}>{t("Stay updated with expert insights, actionable tips, and industry trends that help you grow your business in the ever-evolving digital world.")}</p>

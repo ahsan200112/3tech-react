@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 //import { Link } from "react-router-dom";
 import MobileDevelopmentImg from '../assets/images/mobile-development.png';
 import Maintenance1Img from '../assets/images/maintenance (1).png';
-import PinImg from '../assets/images/pin.png';
+//import PinImg from '../assets/images/pin.png';
 import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
 function MobileApplicationsHeroSection() {
@@ -148,11 +148,11 @@ function MobileApplicationsHeroSection() {
                             { step: t("Step 5"), title: t("Launch & Monitoring"), desc: t("We launch the app and monitor its performance closely.") },
                             { step: t("Step 6"), title: t("Ongoing Support & Maintenance"), desc: t("Regular updates and bug fixes to ensure your app remains fresh and functional.") },
                         ].map((item, index) => (
-                            <div key={index} className="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                            <div key={index} className="col-md-4 mb-2" data-aos="fade-up" data-aos-delay="300">
                                 <div className="step">
                                     <div className="custom-row">
                                         <button className="text-start btn-sm n-j">{item.step}</button>
-                                        <img src={PinImg} alt="Company Logo" className="img-fluid custom-size-img" />
+                                       {/* <img src={PinImg} alt="Company Logo" className="img-fluid custom-size-img" /> */}
                                     </div>
                                     <h5 className="h-klm">{item.title}</h5>
                                     <p className="h-ul">{item.desc}</p>

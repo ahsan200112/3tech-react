@@ -14,20 +14,20 @@ const WhoWeAre = () => {
     return (
         <section className="u-section">
             <div className="container py-5" data-aos="fade-down" data-aos-delay="800">
-                <div className="row align-items-center">
-                    <button className="btn-sm u-vise mb-3 custom-margin-10" style={{ width: "130px" }}>{t("Who We Are")}</button>
-                    <h1 className="u-visit custom-margin-10">{t("Connecting Your Business With The World!")}</h1>
+                <div className={`row align-items-center flex-${isRTL ? 'row-reverse' : 'row'}`}>
                     <div className="col-md-6 ">
-                        <h1 className="u-were">{t("About Us")}</h1>
-                        <p className="u-here">
+                        <h3 className="u-vise mb-3" style={{ width: "135px" }}>{t("Who We Are")}</h3>
+                        {/*<h1 className="u-visit custom-margin-10">{t("Connecting Your Business With The World!")}</h1>*/}
+                        {/* <h1 className="u-were">{t("About Us")}</h1> */}
+                        <p className="u-here mb-4">
                             {t("In a world where creativity meets technology, 3Tech delivers exceptional experiences in building online stores, apps, and digital marketing. We’re here to tell your story and connect you with your audience through unique and impactful approaches. Every project with us becomes a memorable journey to success.")}
                         </p>
-                        <Link to="/about" className="btn-our d-block w-100 text-decoration-none"
+                        <Link to="/about" className="btn-our d-block w-100 text-decoration-none mb-4"
                             onClick={() => trackEvent('click on button', 'Navigation', 'Click', 'Discover Our Story Button')}
                         >
                             {t("Discover Our Story")}
                         </Link>
-                        <div className="row text-white mt-3 flex-nowrap text-center mb-3">
+                        <div className="row text-white mt-3 flex-nowrap text-center mb-4">
                             <div className="col-4 px-2" style={{
                                 [isRTL ? "borderLeft" : "borderRight"]: `1px solid ${theme === "light" ? "#000" : "#fff"}`
                             }}>
@@ -46,7 +46,7 @@ const WhoWeAre = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-6 u-worldtext-end d-flex align-items-center gap-2">
+                    <div className="col-md-6 d-flex align-items-center gap-2">
                         <img src={WhoWeAreImg} alt="Who We Are" />
                     </div>
                 </div>

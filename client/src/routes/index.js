@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import PublicRoutes from './PublicRoutes';
-import DashboardRoutes from './DashboardRoutes';
-import PrivateRoute from './PrivateRoute';
+//import DashboardRoutes from './DashboardRoutes';
+//import PrivateRoute from './PrivateRoute';
 
 const AppRoutes = () => {
 
@@ -13,7 +13,7 @@ const AppRoutes = () => {
         <Route path="/*" element={<PublicRoutes />} />
 
         {/* Dashboard Routes */}
-        <Route path="/dashboard/*" element={<PrivateRoute> <DashboardRoutes /> </PrivateRoute>} />
+       {/* <Route path="/dashboard/*" element={<PrivateRoute> <DashboardRoutes /> </PrivateRoute>} /> */}
       </Routes>
     </>
   );

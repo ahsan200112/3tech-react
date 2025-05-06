@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import CallImg from "../assets/images/call.svg";
-import LocationImg from "../assets/images/Location.svg";
+//import LocationImg from "../assets/images/Location.svg";
 import EmailImg from "../assets/images/Email.png";
 import { useForm } from 'react-hook-form';
 //import emailjs from "@emailjs/browser";
@@ -10,6 +10,7 @@ import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';
 //import Swal from 'sweetalert2';
 import api from '../api/api';
 import { createContactForm } from '../api/apiEndpoints';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 const CustomPackageOpinion = () => {
     const { t } = useTranslation();
@@ -104,7 +105,7 @@ const CustomPackageOpinion = () => {
         <section className='u-section'>
             <div className="container py-5" data-aos="fade-up" data-aos-delay="800">
                 <div className="mb-4">
-                    <button className="u-easy btn-sm">{t('Custom Package Option')}</button>
+                    <h3 className="u-easy" style={{ width: "200px" }}>{t('Custom Package Option')}</h3>
                     <h2 className="v-r mt-3" style={{ maxWidth: "800px", wordBreak: "break-word" }}>{t('Didn’t Find What You Need? Let’s Build A Custom Package Just For You!')}</h2>
                 </div>
                 <div className="row">
@@ -113,8 +114,14 @@ const CustomPackageOpinion = () => {
                             <div className="d-flex align-items-center">
                                 <img src={EmailImg} alt="Company Logo" className="img-fluid" style={{ width: "35px", height: "33px" }} />
                                 <div className={isRTL ? "me-2" : "ms-2"}>
-                                    <h6 className="h-o mb-0">{t('Email')}</h6>
-                                    <p className="h-k mb-0">Info@3tech.Sa</p>
+                                    <a
+                                        href="mailto:info@3tech.sa"
+                                        className="text-decoration-none"
+                                        onClick={() => trackEvent('click on email link', 'Contact', 'Click', 'Email Link')}
+                                    >
+                                        <h6 className="h-o mb-0">{t("Email")}</h6>
+                                        <p className="h-k mb-0">info@3tech.sa</p>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -122,17 +129,31 @@ const CustomPackageOpinion = () => {
                             <div className="d-flex align-items-center">
                                 <img src={CallImg} alt="Company Logo" className="img-fluid" style={{ width: "35px", height: "33px" }} />
                                 <div className={isRTL ? "me-2" : "ms-2"}>
-                                    <h6 className="h-o mb-0">{t('Call Us On')}</h6>
-                                    <p className="h-k mb-0"> {t("+966557122917")}</p>
+                                    <a
+                                        href="https://api.whatsapp.com/send/?phone=966557122917" target='blank'
+                                        className='text-decoration-none'
+                                        onClick={() => trackEvent('click on phone link', 'Contact', 'Click', 'Phone Link')}
+                                    >
+                                        <h6 className="h-o mb-0">{t("Call Us On")}</h6>
+                                        <p className="h-k mb-0">{t("+966557122917")}</p>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                         <div className="contact-info">
                             <div className="d-flex align-items-center">
-                                <img src={LocationImg} alt="Company Logo" className="img-fluid" style={{ width: "35px", height: "33px" }} />
+                                {/*<img src={LocationImg} alt="Company Logo" className="img-fluid" style={{ width: "35px", height: "33px" }} />*/}
+                                <FaMapMarkerAlt size={26} color="#3b9be9" />
                                 <div className={isRTL ? "me-2" : "ms-2"}>
-                                    <h6 className="h-o">{t('Location')}</h6>
-                                    <p className="h-k">{t('Saudi Arabia (KSA)')}</p>
+                                    <a
+                                        href="https://maps.app.goo.gl/b3KDbQz5Ea1u4wuH9"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-decoration-none"
+                                    >
+                                        <h6 className="h-o mb-0">{t("Location")}</h6>
+                                        <p className="h-k mb-0">{t("Saudi Arabia (KSA)")}</p>
+                                    </a>
                                 </div>
                             </div>
                         </div>

@@ -21,13 +21,13 @@ const OurServices = () => {
                         <div className="col-md-4" data-aos="flip-left" data-aos-delay="300">
                             <div className="card h-100 custom-transition">
                                 <div className="card-body">
-                                    <button className="btn-sm u-vise">{t("Our Services")}</button>
+                                    <h3 className="u-vise" style={{ width: "134px" }}>{t("Our Services")}</h3>
                                     <h5 className="card-title u-item mt-3 mb-3">{t("Solutions That Redefine Excellence")}</h5>
-                                    <Link to="/services" className="text-decoration-none"
+                                  {/*  <Link to="/services" className="text-decoration-none"
                                         onClick={() => trackEvent('click on services link', 'Navigation', 'Click', 'Services Page Link')}
                                     >
                                         <button className="btn-next">{t("View All Services")}</button>
-                                    </Link>
+                                    </Link> */}
                                 </div>
                             </div>
                         </div>
