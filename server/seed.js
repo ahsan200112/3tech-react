@@ -49,7 +49,6 @@ const createPermissionsForRole = async (roleId) => {
       edit: true,
       view: true,
       delete: true,
-      all: true,
     },
   }));
 

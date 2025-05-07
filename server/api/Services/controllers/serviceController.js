@@ -15,7 +15,7 @@ exports.createService = async (req, res) => {
                 en: description.en,
                 ar: description.ar,
             },
-            link,
+            link :link,
             image: imageUrl || '',
         });
 

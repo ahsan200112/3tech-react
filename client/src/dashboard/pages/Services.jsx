@@ -49,7 +49,7 @@ const Services = () => {
         formData.append('title[ar]', serviceData.title.ar);
         formData.append('description[en]', serviceData.description.en);
         formData.append('description[ar]', serviceData.description.ar);
-        formData.append('link', serviceData.category);
+        formData.append('link', serviceData.link);
         formData.append('image', serviceData.image); // 👈 file append
 
         if (isEditing) {

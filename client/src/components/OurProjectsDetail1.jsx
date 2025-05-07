@@ -65,19 +65,23 @@ const OurProjectsDetail1 = () => {
                         {projects.map((project, index) => (
                             <div className="col-md-6" key={project.id} data-aos={index % 2 === 0 ? "fade-up" : "fade-down"} data-aos-delay="500">
                                 <div className="card project-card position-relative">
-                                    <img
-                                        src={project.image}
-                                        className="card-img-top"
-                                        alt="Project"
-                                        onClick={() => handleProjectClick(project.title[lang])}
-                                    />
-                                    <div className="card-content">
-                                        <div className="d-flex justify-content-between align-items-center">
-                                            <h5 className="card-title n-r mb-0">{t(project.title[lang])}</h5>
-                                            <i className="bi bi-arrow-up-right n-r"></i>
+                                  {/*  <Link to={project.link} className="text-decoration-none"
+                                        onClick={() => trackEvent('click on projects link', 'Navigation', 'Click', `${project.title.en} Page Link`)}
+                                    > */}
+                                        <img
+                                            src={project.image}
+                                            className="card-img-top"
+                                            alt="Project"
+                                            onClick={() => handleProjectClick(project.title[lang])}
+                                        />
+                                        <div className="card-content">
+                                            <div className="d-flex justify-content-between align-items-center">
+                                                <h5 className="card-title n-r mb-0">{project.title[lang]}</h5>
+                                                <i className="bi bi-arrow-up-right n-r"></i>
+                                            </div>
+                                            <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{project.description[lang]}</p>
                                         </div>
-                                        <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t(project.description[lang])}</p>
-                                    </div>
+                                   {/* </Link> */}
                                 </div>
                             </div>
                         ))}

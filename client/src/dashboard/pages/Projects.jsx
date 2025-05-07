@@ -49,7 +49,7 @@ const Projects = () => {
         formData.append('title[ar]', projectData.title.ar);
         formData.append('description[en]', projectData.description.en);
         formData.append('description[ar]', projectData.description.ar);
-        formData.append('link', projectData.category);
+        formData.append('link', projectData.link);
         formData.append('image', projectData.image); // 👈 file append
 
         if (isEditing) {

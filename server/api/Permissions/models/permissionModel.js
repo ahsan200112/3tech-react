@@ -35,8 +35,7 @@ const permissionSchema = new mongoose.Schema({
           create: false,
           edit: false,
           view: false,
-          delete: false,
-          all: false
+          delete: false
         },
         // Disable _id field in actions
         _id: false,

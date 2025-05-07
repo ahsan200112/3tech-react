@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import LanguageToggleDashboard from './LanguageToggleDashboard';
 import UserImage from '../../assets/images/girl2.png';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCurrentUser } from '../../features/user/userSlice';
+import { fetchCurrentUser } from '../../redux/features/users/usersSlice';
 
 const Header = () => {
   const navigate = useNavigate(); // Hook to navigate

@@ -44,7 +44,7 @@ const OurServices1 = () => {
                     {services.map(service => (
                         <div key={service._id} className="col-md-4" data-aos="flip-left" data-aos-delay="300">
                             <Link to={service.link} className="text-decoration-none"
-                                onClick={() => trackEvent('click on services link', 'Navigation', 'Click', `${service.title} Page Link`)}
+                                onClick={() => trackEvent('click on services link', 'Navigation', 'Click', `${service.title.en} Page Link`)}
                             >
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
                                     <div className="card-body" style={{ padding: "30px 30px" }}>

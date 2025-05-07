@@ -1,4 +1,3 @@
-/*
 import React, { useState, useEffect, useCallback } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -108,8 +107,8 @@ const OurClientsSay = () => {
   );
 };
 
-export default OurClientsSay; */
-
+export default OurClientsSay; 
+/*
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -197,7 +196,6 @@ const OurClientsSay = () => {
         <div data-aos="flip-left"data-aos-delay="500">
           <Slider {...settings} className="slick-slider"
           >
-            {/* Map through Testimonials */}
             {testimonials.map((testimonial) => (
               <div key={testimonial.id} className="slide-item">
                 <div className="card p-3 text-white project-card"
@@ -213,7 +211,6 @@ const OurClientsSay = () => {
                     <img src={InkImg} alt="Brand Logo" className="img-fluid mt-2 d-inline-block"
                       style={{ width: "44px", height: "30px" }} />
                     <p className="v-cleana mt-2">{t(testimonial.text)}</p>
-                    {/* Text */}
                     <div style={{ textAlign: isRTL ? "right" : "left" }}>
                       <p className="mb-0 g-value" style={{ fontWeight: "700", fontSize: "18px" }}>{t(testimonial.name)}</p>
                       <p className="mb-0 g-value">{t(testimonial.position)}</p>
@@ -229,4 +226,4 @@ const OurClientsSay = () => {
   );
 };
 
-export default OurClientsSay;
+export default OurClientsSay; */

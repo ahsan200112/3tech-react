@@ -30,8 +30,7 @@ exports.createRole = async (req, res) => {
         create: false,
         edit: false,
         view: false,
-        delete: false,
-        all: false
+        delete: false
       }
     }));
 

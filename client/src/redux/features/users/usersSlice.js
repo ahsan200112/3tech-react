@@ -1,6 +1,6 @@
 // src/features/user/userSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchCurrentUserAPI, updateCurrentUserAPI, updatePasswordAPI } from './userAPI';
+import { fetchCurrentUserAPI, updateCurrentUserAPI, updatePasswordAPI } from './usersAPI';
 
 export const fetchCurrentUser = createAsyncThunk(
     'user/fetchCurrentUser',
@@ -39,6 +39,8 @@ const userSlice = createSlice({
     name: 'user',
     initialState: {
         user: null,
+        roles: [],
+        permissions: [],
         loading: false,
         error: null,
     },
@@ -51,6 +53,8 @@ const userSlice = createSlice({
             })
             .addCase(fetchCurrentUser.fulfilled, (state, action) => {
                 state.user = action.payload;
+                state.roles = action.payload.roles || [];
+                state.permissions = action.payload.permissions || [];
                 state.loading = false;
             })
             .addCase(fetchCurrentUser.rejected, (state, action) => {

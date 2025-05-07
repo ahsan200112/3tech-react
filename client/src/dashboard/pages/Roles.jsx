@@ -1,69 +1,58 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Permissions from './Permissions';
-import api from '../../api/api';
-import { getRoles, createRole, deleteRole, updateRole } from '../../api/apiEndpoints';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  fetchRoles,
+  addRole,
+  editRole,
+  removeRole,
+} from '../../redux/features/roles/rolesSlice';
+
 
 const Roles = () => {
-  const [roles, setRoles] = useState([]);
+  const dispatch = useDispatch();
+  const { roles } = useSelector((state) => state.roles);
   const [selectedRole, setSelectedRole] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [roleName, setRoleName] = useState('');
   const [isEditing, setIsEditing] = useState(false);
   const [roleIdToEdit, setRoleIdToEdit] = useState('');
 
-  const fetchRoles = async () => {
-    try {
-      const response = await api.get(getRoles);
-      setRoles(response.data);
-    } catch (error) {
-      console.error('Error fetching roles:', error);
-    }
-  };
+  useEffect(() => {
+    dispatch(fetchRoles());
+  }, [dispatch]);
 
-  const handleCreateRole = async () => {
+
+  const handleCreateRole = () => {
     if (!roleName.trim()) return alert('Please enter a role name');
-    try {
-      const response = await api.post(createRole, { name: roleName });
-      setRoles([...roles, response.data]);
+    dispatch(addRole({ name: roleName })).then(() => {
       setShowModal(false);
       setRoleName('');
-    } catch (error) {
-      console.error('Error creating role:', error);
-    }
+      dispatch(fetchRoles());
+    });
   };
 
-  const handleUpdateRole = async () => {
+  const handleUpdateRole = () => {
     if (!roleName.trim()) return alert('Please enter a role name');
-    try {
-      const response = await api.put(updateRole(roleIdToEdit), { name: roleName });
-      setRoles(roles.map(role => role._id === roleIdToEdit ? response.data : role));
+    dispatch(editRole({ id: roleIdToEdit, name: roleName })).then(() => {
       setShowModal(false);
       setRoleName('');
       setIsEditing(false);
       setRoleIdToEdit('');
-    } catch (error) {
-      console.error('Error updating role:', error);
-    }
+      dispatch(fetchRoles());
+    });
   };
 
-  const handlePermissionClick = (role) => {
-    setSelectedRole(role);
+  const handleDeleteRole = (id) => {
+    dispatch(removeRole(id)).then(() => {
+      if (selectedRole && selectedRole._id === id) {
+        setSelectedRole(null);
+      }
+      dispatch(fetchRoles());
+    });
   };
 
-  const handleClosePermissions = () => {
-    setSelectedRole(null);
-    fetchRoles(); // Refresh role list after permissions update
-  };
-
-  const handleDeleteRole = async (roleId) => {
-    try {
-      await api.delete(deleteRole(roleId));
-      setRoles(roles.filter(role => role._id !== roleId));
-    } catch (error) {
-      console.error('Error deleting role:', error);
-    }
-  };
 
   const handleEditRole = (role) => {
     setRoleName(role.name);
@@ -72,9 +61,14 @@ const Roles = () => {
     setShowModal(true);
   };
 
-  useEffect(() => {
-    fetchRoles();
-  }, []);
+  const handlePermissionClick = (role) => {
+    setSelectedRole(role);
+  };
+
+  const handleClosePermissions = () => {
+    setSelectedRole(null);
+    dispatch(fetchRoles());
+  };
 
   return (
     <div className="container mt-5">

@@ -49,7 +49,7 @@ const Navbar = () => {
 
       {/* Main Navbar */}
       {/* navbar-padding class hai jo side pe padding de rahi hai */}
-      <section className="u-section color-effect-navbarLink pb-4">
+      <section className="u-section color-effect-navbarLink pb-4 navbar-padding sticky-top">
         <nav className="navbar-bg-color navbar navbar-expand-lg navbar-border">
           <div className="container d-flex align-items-center justify-content-between">
 

@@ -75,7 +75,7 @@ const Login = () => {
               </div>
 
               {/* Sign Up Button */}
-              <button type="submit" className="btn login-btn"
+              <button type="submit" className="btn login-btn mt-3"
                 onClick={() => trackEvent('click on dashboard-login button', 'Navigation', 'Click', 'dashboard-login button')}
               >
                 {t("Login")}

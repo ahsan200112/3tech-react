@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCurrentUser, updateCurrentUser, updatePassword } from '../../features/user/userSlice';
+import { fetchCurrentUser, updateCurrentUser, updatePassword } from '../../redux/features/users/usersSlice';
 import { Button, Form, Container, Spinner, Alert } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 

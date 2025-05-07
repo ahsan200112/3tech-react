@@ -1,4 +1,5 @@
 const Role = require('../../Roles/models/roleModel');
+const Permission = require('../models/permissionModel')
 
 exports.getRolePermissions = async (req, res) => {
   try {
@@ -12,7 +13,7 @@ exports.getRolePermissions = async (req, res) => {
       'Users', 'Projects', 'Roles', 'Settings'
     ];
 
-    const actions = ['create', 'edit', 'view', 'delete', 'all'];
+    const actions = ['create', 'edit', 'view', 'delete'];
 
     const rolePermission = role.permissions; // already populated
 

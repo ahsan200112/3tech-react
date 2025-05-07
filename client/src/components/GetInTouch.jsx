@@ -39,7 +39,7 @@ const GetInTouch = () => {
                                 className="text-decoration-none"
                             >
                                 <p className="b-e">{t("Location")}</p>
-                                <h2 className="b-d">{t("Saudi Arabia (KSA)")}</h2>
+                                <h2 className="b-d">{t("Jeddah - Al Makarunah Rd")}</h2>
                             </a>
                             <div className="border-line"></div>
                         </div>
@@ -67,13 +67,13 @@ const GetInTouch = () => {
                             <div className="d-flex justify-content-center align-items-center">
                                 <a href="https://www.linkedin.com/company/3tech-platform" target='blank'
                                     onClick={() => trackEvent('click on social medialink', 'Social Media', 'Click', 'LinkedIn link')}
-                                ><i className="bi bi-linkedin text-white mx-2"></i></a>
+                                ><i className="bi bi-linkedin mx-2" style={{color:"var(--text-primary)"}}></i></a>
                                 <a href="https://api.whatsapp.com/send/?phone=966557122917" target='blank'
                                     onClick={() => trackEvent('click on social media link', 'Social Media', 'Click', 'WhatsApp Link')}
-                                ><i className="bi bi-whatsapp text-white mx-2"></i></a>
+                                ><i className="bi bi-whatsapp mx-2" style={{color:"var(--text-primary)"}}></i></a>
                                 <a href="https://www.instagram.com/3tech.sa?igsh=aW14cDY0cmtvZW9p" target='blank'
                                     onClick={() => trackEvent('click on social media link', 'Social Media', 'Click', 'Instagram Link')}
-                                ><i className="bi bi-instagram text-white mx-2"></i></a>
+                                ><i className="bi bi-instagram mx-2" style={{color:"var(--text-primary)"}}></i></a>
                             </div>
                         </div>
                     </div>
