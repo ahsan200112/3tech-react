@@ -8,6 +8,17 @@ const faqSchema = new mongoose.Schema({
   answer: {
     en: { type: String, required: true },
     ar: { type: String, required: true }
+  },
+  category: {
+    type: String,
+    enum: [
+      "ecommerce solutions",
+      "mobile applications",
+      "marketing solutions",
+      "creative design",
+      "digital optimization"
+    ],
+    required: true
   }
 }, { timestamps: true });
 

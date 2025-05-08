@@ -31,6 +31,8 @@ export const getFAQ = '/api/faqs';
 export const createFAQ = '/api/faqs';
 export const updateFAQ = (id) => `/api/faqs/${id}`;
 export const deleteFAQ = (id) => `/api/faqs/${id}`;
+export const getFAQCategories = '/api/faqs/categories';
+export const getFAQByCategory = (category) => `/api/faqs/category/${category}`;
 
 //testimonial
 export const getTestimonials = '/api/testimonials';

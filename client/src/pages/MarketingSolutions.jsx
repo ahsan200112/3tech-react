@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import MarketingSolutionsFirstComponent from '../components/MarketingSolutionsFirstComponent';
 import MarketingSolutionsHeroSection from '../components/MarketingSolutionsHeroSection';
 import OurClientsSay from '../components/OurClientsSay';
-import FrequentlyAskedQuestions from '../components/FrequentlyAskedQuestions';
+import MarketingSolutionsFaqs from '../components/MarketingSolutionsFaqs';
 
 function MarketingSolutions() {
     return (
@@ -13,7 +13,7 @@ function MarketingSolutions() {
             <MarketingSolutionsFirstComponent />
             <MarketingSolutionsHeroSection />
             <OurClientsSay />
-            <FrequentlyAskedQuestions />
+            <MarketingSolutionsFaqs />
             <Footer />
         </>
     );

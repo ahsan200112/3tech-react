@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import CreativeDesignFirstComponent from "../components/CreativeDesignFirstComponent";
 import CreativeDesignHeroSection from '../components/CreativeDesignHeroSection';
 import OurClientsSay from '../components/OurClientsSay';
-import FrequentlyAskedQuestions from '../components/FrequentlyAskedQuestions';
+import CreativeDesignFaqs from '../components/CreativeDesignFaqs';
 
 function CreativeDesign() {
     return (
@@ -13,7 +13,7 @@ function CreativeDesign() {
             <CreativeDesignFirstComponent />
             <CreativeDesignHeroSection />
             <OurClientsSay />
-            <FrequentlyAskedQuestions />
+            <CreativeDesignFaqs />
             <Footer />
         </>
     );

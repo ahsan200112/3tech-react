@@ -13,7 +13,7 @@ exports.getFAQs = async (req, res) => {
 // Create
 exports.createFAQ = async (req, res) => {
   try {
-    const { question, answer } = req.body;
+    const { question, answer, category } = req.body;
     const newFAQ = new FAQ({
       question: {
         en: question.en,
@@ -22,7 +22,8 @@ exports.createFAQ = async (req, res) => {
       answer: {
         en: answer.en,
         ar: answer.ar
-      }
+      },
+      category
     });
     await newFAQ.save();
     res.status(201).json(newFAQ);
@@ -34,7 +35,7 @@ exports.createFAQ = async (req, res) => {
 // Update
 exports.updateFAQ = async (req, res) => {
   try {
-    const { question, answer } = req.body;
+    const { question, answer, category } = req.body;
 
     const updated = await FAQ.findByIdAndUpdate(
       req.params.id,
@@ -46,7 +47,8 @@ exports.updateFAQ = async (req, res) => {
         answer: {
           en: answer.en,
           ar: answer.ar
-        }
+        },
+        category
       },
       { new: true }
     );
@@ -66,3 +68,28 @@ exports.deleteFAQ = async (req, res) => {
     res.status(400).json({ error: err.message });
   }
 };
+
+// Get category options
+exports.getFAQCategories = (req, res) => {
+  const categories = [
+    "ecommerce solutions",
+    "mobile applications",
+    "marketing solutions",
+    "creative design",
+    "digital optimization"
+  ];
+  res.json(categories);
+};
+
+
+// GET FAQs by Category
+exports.getFAQsByCategory = async (req, res) => {
+  try {
+    const { category } = req.params;
+    const faqs = await FAQ.find({ category });
+    res.json(faqs);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+

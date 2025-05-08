@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import EcommerceSolutionsFirstComponent from '../components/EcommerceSolutionsFirstComponent';
 import EcommerceSolutionsHeroSection from '../components/EcommerceSolutionsHeroComponent';
 import OurClientsSay from '../components/OurClientsSay';
-import FrequentlyAskedQuestions from '../components/FrequentlyAskedQuestions';
+import EcommerceSolutionsFaqs from '../components/EcommerceSolutionsFaqs';
 
 function ECommerceSolution() {
     return (
@@ -13,7 +13,7 @@ function ECommerceSolution() {
             <EcommerceSolutionsFirstComponent />
             <EcommerceSolutionsHeroSection />
             <OurClientsSay />
-            <FrequentlyAskedQuestions />
+            <EcommerceSolutionsFaqs />
             <Footer />
         </>
     );

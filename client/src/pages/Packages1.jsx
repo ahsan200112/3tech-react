@@ -5,7 +5,6 @@ import PackagesFirstComponent from '../components/PackagesFirstComponent';
 import OurPackages1 from '../components/OurPackages1';
 import CustomPackageOpinion from '../components/CustomPackageOpinion';
 import OurClientsSay from '../components/OurClientsSay';
-import FrequentlyAskedQuestions from '../components/FrequentlyAskedQuestions';
 
 function Packages() {
     return (
@@ -15,7 +14,6 @@ function Packages() {
             <OurPackages1 />
             <CustomPackageOpinion />
             <OurClientsSay />
-            <FrequentlyAskedQuestions />
             <Footer />
         </>
     );

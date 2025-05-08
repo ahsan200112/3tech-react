@@ -3,8 +3,8 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import DigitalOptimizationFirstComponent from '../components/DigitalOptimizationFirstComponent';
 import OurClientsSay from '../components/OurClientsSay';
-import FrequentlyAskedQuestions from '../components/FrequentlyAskedQuestions';
 import DigitalOptimizationHeroSection from '../components/DigitalOptimizationHeroSection';
+import DigitalOptimizationFaqs from '../components/DigitalOptimizationFaqs';
 
 function DigitalOptimization() {
   return (
@@ -13,7 +13,7 @@ function DigitalOptimization() {
       <DigitalOptimizationFirstComponent />
       <DigitalOptimizationHeroSection />
       <OurClientsSay />
-      <FrequentlyAskedQuestions />
+      <DigitalOptimizationFaqs />
       <Footer />
     </>
   );

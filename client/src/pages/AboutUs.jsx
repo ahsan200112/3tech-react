@@ -6,7 +6,6 @@ import ExpertiseYouCanTrust from '../components/ExpertiseYouCanTrust';
 import YourSuccessOurPriority from '../components/YourSuccessOurPriority';
 import OurTrustedPartners from '../components/OurTrustedPartners';
 import OurClientsSay from '../components/OurClientsSay';
-import FrequentlyAskedQuestions from '../components/FrequentlyAskedQuestions';
 
 function AboutUs() {
   return (
@@ -17,7 +16,6 @@ function AboutUs() {
       <OurTrustedPartners />
       <YourSuccessOurPriority />
       <OurClientsSay />
-      <FrequentlyAskedQuestions />
       <Footer />
     </>
   );
