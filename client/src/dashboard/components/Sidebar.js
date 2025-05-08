@@ -63,7 +63,7 @@ const Sidebar = () => {
           <NavLink to="/dashboard/users" className="nav-link text-white">
             <FaUsers className={isRtl ? 'ms-2' : 'me-2'} /> Users
           </NavLink>
-          <NavLink to="/dashboard/rolesandpermissions" className="nav-link text-white">
+          <NavLink to="/dashboard/roles-permissions" className="nav-link text-white">
             <FaBullhorn className={isRtl ? 'ms-2' : 'me-2'} /> Roles and Permission
           </NavLink>
           <NavLink to="/dashboard/settings" className="nav-link text-white">

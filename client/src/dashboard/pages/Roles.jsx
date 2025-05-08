@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Permissions from './Permissions';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   fetchRoles,
@@ -8,10 +8,13 @@ import {
   editRole,
   removeRole,
 } from '../../redux/features/roles/rolesSlice';
-
+import { useTranslation } from 'react-i18next';
 
 const Roles = () => {
+  const { i18n } = useTranslation();
+  const RTL = i18n.dir() === "rtl";
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { roles } = useSelector((state) => state.roles);
   const [selectedRole, setSelectedRole] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -62,12 +65,7 @@ const Roles = () => {
   };
 
   const handlePermissionClick = (role) => {
-    setSelectedRole(role);
-  };
-
-  const handleClosePermissions = () => {
-    setSelectedRole(null);
-    dispatch(fetchRoles());
+    navigate(`/dashboard/roles-permissions/${role._id}`, { state: { role } });
   };
 
   return (
@@ -130,8 +128,8 @@ const Roles = () => {
                 <button className="btn btn-sm btn-warning me-2" onClick={() => handleEditRole(role)}>Edit</button> */}
                 {role.name !== 'Super Admin' && (
                   <>
-                    <button className="btn btn-sm btn-danger me-2" onClick={() => handleDeleteRole(role._id)}>Delete</button>
-                    <button className="btn btn-sm btn-warning me-2" onClick={() => handleEditRole(role)}>Edit</button>
+                    <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-sm btn-danger`} onClick={() => handleDeleteRole(role._id)}>Delete</button>
+                    <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-sm btn-warning`} onClick={() => handleEditRole(role)}>Edit</button>
                   </>
                 )}
                 <button className="btn btn-sm btn-secondary" onClick={() => handlePermissionClick(role)}>
@@ -142,12 +140,6 @@ const Roles = () => {
           ))}
         </tbody>
       </table>
-
-      {selectedRole && (
-        <div className="mt-4">
-          <Permissions role={selectedRole} onClose={handleClosePermissions} />
-        </div>
-      )}
     </div>
   );
 };

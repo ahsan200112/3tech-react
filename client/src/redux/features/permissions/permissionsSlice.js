@@ -57,6 +57,13 @@ const permissionSlice = createSlice({
     setFormattedPermissions: (state, action) => {
       state.permissions = action.payload;
     },
+    resetPermissions: (state) => {
+      state.modules = [];
+      state.actions = [];
+      state.permissions = {};
+      state.loading = false;
+      state.error = null;
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -101,5 +108,5 @@ const permissionSlice = createSlice({
   },
 });
 
-export const { togglePermission, setFormattedPermissions } = permissionSlice.actions;
+export const { togglePermission, setFormattedPermissions, resetPermissions } = permissionSlice.actions;
 export default permissionSlice.reducer;

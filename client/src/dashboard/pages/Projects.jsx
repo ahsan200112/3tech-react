@@ -119,7 +119,7 @@ const Projects = () => {
                                         color: '#0d6efd'
                                     }}
                                     onClick={() => {
-                                        setFullDescription(project.description);
+                                        setFullDescription(project.description.en);
                                         setShowDescription(true);
                                     }}
                                     title="View full description"
@@ -136,7 +136,7 @@ const Projects = () => {
                                         color: '#0d6efd'
                                     }}
                                     onClick={() => {
-                                        setFullDescription(project.description);
+                                        setFullDescription(project.description.ar);
                                         setShowDescription(true);
                                     }}
                                     title="View full description"

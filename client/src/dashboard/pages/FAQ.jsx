@@ -3,8 +3,13 @@ import { Button, Table, Modal, Form } from 'react-bootstrap';
 import api from '../../api/api';
 import { getFAQ, createFAQ, updateFAQ, deleteFAQ, getFAQCategories } from '../../api/apiEndpoints';
 import { FaEdit, FaTrash } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 const FAQ = () => {
+    const { i18n } = useTranslation();
+    const RTL = i18n.dir() === "rtl";
+    const [filteredFaqs, setFilteredFaqs] = useState([]);
+    const [selectedCategory, setSelectedCategory] = useState('All');
     const [faqs, setFaqs] = useState([]);
     const [show, setShow] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
@@ -29,6 +34,7 @@ const FAQ = () => {
             const res = await api.get(getFAQ);
             console.log('Fetched faqs:', res.data); // 👈 Add this
             setFaqs(res.data);
+            setFilteredFaqs(res.data);
         } catch (error) {
             console.error('ERROR', error);
         }
@@ -75,12 +81,44 @@ const FAQ = () => {
         }
     };
 
+    const handleCategoryFilter = (category) => {
+        setSelectedCategory(category);
+        if (category === 'All') {
+            setFilteredFaqs(faqs);
+        } else {
+            const filtered = faqs.filter(faq => faq.category === category);
+            setFilteredFaqs(filtered);
+        }
+    };
+
     return (
         <div className="container py-5">
             <div className="d-flex justify-content-between align-items-center mb-3">
                 <h2>FAQ Management</h2>
                 <Button variant="primary" onClick={handleShow}>Add New FAQ</Button>
             </div>
+
+            {/* Category Filter Buttons */}
+            <div className="mb-3">
+                <Button
+                    variant={selectedCategory === 'All' ? 'primary' : 'outline-primary'}
+                    className={`${RTL ? 'ms-2' : 'me-2'} mb-2`}
+                    onClick={() => handleCategoryFilter('All')}
+                >
+                    All
+                </Button>
+                {categoryOptions.map((cat, idx) => (
+                    <Button
+                        key={idx}
+                        variant={selectedCategory === cat ? 'primary' : 'outline-primary'}
+                        className={`${RTL ? 'ms-2' : 'me-2'} mb-2`}
+                        onClick={() => handleCategoryFilter(cat)}
+                    >
+                        {cat}
+                    </Button>
+                ))}
+            </div>
+
             <Table bordered hover responsive className="custom-table">
                 <thead>
                     <tr>
@@ -94,7 +132,7 @@ const FAQ = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {faqs.map(faq => (
+                    {filteredFaqs.map(faq => (
                         <tr key={faq._id}>
                             <td style={{ width: "200px" }}> {faq.question.en}</td>
                             <td style={{ width: "200px" }}> {faq.question.ar}</td>

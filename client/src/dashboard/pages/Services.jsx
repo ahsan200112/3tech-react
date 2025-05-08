@@ -119,7 +119,7 @@ const Services = () => {
                                         color: '#0d6efd'
                                     }}
                                     onClick={() => {
-                                        setFullDescription(service.description);
+                                        setFullDescription(service.description.en);
                                         setShowDescription(true);
                                     }}
                                     title="View full description"
@@ -136,7 +136,7 @@ const Services = () => {
                                         color: '#0d6efd'
                                     }}
                                     onClick={() => {
-                                        setFullDescription(service.description);
+                                        setFullDescription(service.description.ar);
                                         setShowDescription(true);
                                     }}
                                     title="View full description"

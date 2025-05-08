@@ -5,10 +5,19 @@ import {
   fetchPermissions,
   updateRolePermissions,
   togglePermission,
+  resetPermissions
 } from '../../redux/features/permissions/permissionsSlice';
+import { useNavigate, useLocation } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { useTranslation } from 'react-i18next';
 
-const Permissions = ({ role, onClose }) => {
+const Permissions = () => {
+  const { i18n } = useTranslation();
+  const RTL = i18n.dir() === "rtl";
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
+  const role = location.state?.role;
   const {
     modules,
     actions,
@@ -18,10 +27,16 @@ const Permissions = ({ role, onClose }) => {
   } = useSelector((state) => state.permissions);
 
   useEffect(() => {
-    if (role?._id) {
-      dispatch(fetchPermissions(role._id));
+    if (!role) {
+      navigate('/dashboard/roles-permissions'); // Redirect back if role is not provided
+      return;
     }
-  }, [role, dispatch]);
+    dispatch(fetchPermissions(role._id));
+
+    return () => {
+      dispatch(resetPermissions());
+    };
+  }, [dispatch, role, navigate]);
 
   const handleToggle = (module, action) => {
     if (role.name === 'Super Admin') return;
@@ -36,8 +51,25 @@ const Permissions = ({ role, onClose }) => {
     dispatch(updateRolePermissions({
       roleId: role._id,
       permissions: updatedPermissions,
-    })).then(() => onClose());
+    })).then((res) => {
+      // Show success alert when update completes
+      Swal.fire({
+        icon: 'success',
+        title: 'Permissions Updated',
+        text: 'Role permissions have been successfully updated.',
+        confirmButtonColor: '#3085d6',
+      });
+    }).catch((err) => {
+      // Optionally handle error
+      Swal.fire({
+        icon: 'error',
+        title: 'Update Failed',
+        text: 'Something went wrong while updating permissions.',
+      });
+    });
   };
+
+  if (!role) return null;
 
   return (
     <div className="border rounded p-4 shadow-sm bg-light">
@@ -80,7 +112,8 @@ const Permissions = ({ role, onClose }) => {
       )}
 
       <div className="d-flex justify-content-end mt-3">
-        <button className="btn btn-secondary me-2" onClick={onClose}>Cancel</button>
+        <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-secondary `} onClick={() => navigate('/dashboard/roles-permissions')}>Back</button>
+        <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-secondary`} onClick={() => navigate('/dashboard/roles-permissions')}>Cancel</button>
         {role.name !== 'Super Admin' && (
           <button className="btn btn-primary" onClick={handleUpdate}>Update Permissions</button>
         )}
