@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../assets/images/3tech logo for dark mode.png';
 import { useTranslation } from 'react-i18next';
-import { FaHome, FaBox, FaUsers, FaBoxOpen, FaClipboardList, FaStore, FaBullhorn, FaCogs } from 'react-icons/fa';
+import { FaHome, FaRegNewspaper, FaUsers, FaGift, FaConciergeBell, FaProjectDiagram, FaEnvelope, FaQuestionCircle, FaQuoteLeft, FaUserShield, FaSearch, FaCogs } from 'react-icons/fa';
 import usePermission from '../../hooks/usePermission';
 
 const Sidebar = () => {
@@ -54,37 +54,37 @@ const Sidebar = () => {
           </NavLink>
           {blogsPermission.canView && (
             <NavLink to="/dashboard/blogs" className="nav-link text-white">
-              <FaBox className={isRtl ? 'ms-2' : 'me-2'} /> Blogs
+              <FaRegNewspaper className={isRtl ? 'ms-2' : 'me-2'} /> Blogs
             </NavLink>
           )}
           {servicesPermission.canView && (
             <NavLink to="/dashboard/services" className="nav-link text-white">
-              <FaClipboardList className={isRtl ? 'ms-2' : 'me-2'} /> Services
+              <FaConciergeBell className={isRtl ? 'ms-2' : 'me-2'} /> Services
             </NavLink>
           )}
           {projectsPermission.canView && (
             <NavLink to="/dashboard/projects" className="nav-link text-white">
-              <FaStore className={isRtl ? 'ms-2' : 'me-2'} /> Projects
+              <FaProjectDiagram className={isRtl ? 'ms-2' : 'me-2'} /> Projects
             </NavLink>
           )}
           {packagesPermission.canView && (
             <NavLink to="/dashboard/packages" className="nav-link text-white">
-              <FaBoxOpen className={isRtl ? 'ms-2' : 'me-2'} /> Packages
+              <FaGift className={isRtl ? 'ms-2' : 'me-2'} /> Packages
             </NavLink>
           )}
           {contactFormsPermission.canView && (
             <NavLink to="/dashboard/contactforms" className="nav-link text-white">
-              <FaUsers className={isRtl ? 'ms-2' : 'me-2'} /> Contact Forms
+              <FaEnvelope className={isRtl ? 'ms-2' : 'me-2'} /> Contact Forms
             </NavLink>
           )}
           {faqsPermission.canView && (
             <NavLink to="/dashboard/faqs" className="nav-link text-white">
-              <FaUsers className={isRtl ? 'ms-2' : 'me-2'} /> FAQS
+              <FaQuestionCircle className={isRtl ? 'ms-2' : 'me-2'} /> FAQS
             </NavLink>
           )}
           {testimonialsPermission.canView && (
             <NavLink to="/dashboard/testimonials" className="nav-link text-white">
-              <FaUsers className={isRtl ? 'ms-2' : 'me-2'} /> Testimonials
+              <FaQuoteLeft className={isRtl ? 'ms-2' : 'me-2'} /> Testimonials
             </NavLink>
           )}
           {usersPermission.canView && (
@@ -94,12 +94,12 @@ const Sidebar = () => {
           )}
           {rolesPermission.canView && (
             <NavLink to="/dashboard/roles-permissions" className="nav-link text-white">
-              <FaBullhorn className={isRtl ? 'ms-2' : 'me-2'} /> Roles and Permission
+              <FaUserShield className={isRtl ? 'ms-2' : 'me-2'} /> Roles and Permission
             </NavLink>
           )}
           {seoMetaPermission.canView && (
-            <NavLink to="/dashboard/roles-permissions" className="nav-link text-white">
-              <FaBullhorn className={isRtl ? 'ms-2' : 'me-2'} /> Seo Meta Page
+            <NavLink to="/dashboard/seo-meta" className="nav-link text-white">
+              <FaSearch className={isRtl ? 'ms-2' : 'me-2'} /> Seo Meta Page
             </NavLink>
           )}
             <NavLink to="/dashboard/settings" className="nav-link text-white">

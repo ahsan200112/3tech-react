@@ -48,6 +48,7 @@ app.use('/api/auth', AuthRoutes);
 const SeoMetaRoutes = require('./api/SeoMeta/routes/seoMetaRoutes');
 app.use('/api/seo-meta', SeoMetaRoutes);
 
+const fs = require("fs");
 const SeoMeta = require('./api/SeoMeta/models/seoMetaModel');
 app.get('*', async (req, res) => {
   const indexPath = path.join(__dirname, 'client/build', 'index.html');

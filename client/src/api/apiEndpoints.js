@@ -68,7 +68,7 @@ export const getRolePermissions = (roleId) => `/api/permissions/${roleId}`;
 export const updatePermissions = '/api/permissions';
 
 //seometa for sharing route
-export const getSEOMetas = "/seo-meta";
-export const createSEOMeta = "/seo-meta";
-export const updateSEOMeta = (id) => `/seo-meta/${id}`;
-export const deleteSEOMeta = (id) => `/seo-meta/${id}`;
+export const getSEOMetas = "/api/seo-meta";
+export const createSEOMeta = "/api/seo-meta";
+export const updateSEOMeta = (id) => `/api/seo-meta/${id}`;
+export const deleteSEOMeta = (id) => `/api/seo-meta/${id}`;

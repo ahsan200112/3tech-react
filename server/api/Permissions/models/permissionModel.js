@@ -24,7 +24,7 @@ const permissionSchema = new mongoose.Schema({
           'Users',
           'Projects',
           'Roles',
-          'seoMeta'
+          'SeoMeta'
         ],
         required: true
       },

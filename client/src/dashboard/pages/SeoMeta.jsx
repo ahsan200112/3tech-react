@@ -15,7 +15,7 @@ const SeoMeta = () => {
         description: ''
     });
 
-    const { canCreate, canEdit, canDelete } = usePermission("SEOMeta");
+    const { canCreate, canEdit, canDelete } = usePermission("SeoMeta");
 
     const fetchSEOMetas = async () => {
         try {
@@ -80,7 +80,7 @@ const SeoMeta = () => {
             <Table bordered hover responsive className="custom-table">
                 <thead>
                     <tr>
-                        <th>Page</th>
+                        <th>Page Link</th>
                         <th>Title</th>
                         <th>Description</th>
                         <th>Date</th>
@@ -119,13 +119,16 @@ const SeoMeta = () => {
                 <Modal.Body>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Page</Form.Label>
+                            <Form.Label>Page Link</Form.Label>
                             <Form.Control
                                 type="text"
                                 value={seoData.page}
                                 onChange={(e) => setSeoData({ ...seoData, page: e.target.value })}
                                 required
                             />
+                            <Form.Text className="text-muted">
+                                Example: <code>/</code>,<code>/ecommercesolutions</code>, <code>/services</code>, <code>/mobileapplications</code>
+                            </Form.Text>
                         </Form.Group>
 
                         <Form.Group className="mb-3">
