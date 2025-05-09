@@ -21,7 +21,6 @@ exports.createRole = async (req, res) => {
       'Users',
       'Projects',
       'Roles',
-      'Settings'
     ];
 
     const permissionsArray = modules.map((mod) => ({

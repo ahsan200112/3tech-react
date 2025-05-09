@@ -63,7 +63,12 @@ exports.getCurrentUser = async (req, res) => {
     try {
         // Request object me stored user ki details ko fetch karna (from authMiddleware)
         const user = await User.findById(req.user._id)
-        .populate('role', 'name') // ✅ Populate only the name field from role
+        .populate({
+            path: 'role',
+            populate: {
+                path: 'permissions', // This assumes `role.permissions` is an array of Permission ObjectIds
+            },
+        }) // ✅ Populate only the name field from role
         .select('-password');
 
         if (!user) return res.status(404).json({ message: 'User not found' });

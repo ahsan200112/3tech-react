@@ -23,8 +23,7 @@ const permissionSchema = new mongoose.Schema({
           'Testimonials',
           'Users',
           'Projects',
-          'Roles',
-          'Settings'
+          'Roles'
         ],
         required: true
       },

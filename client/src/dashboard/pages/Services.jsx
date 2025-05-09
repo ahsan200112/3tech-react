@@ -4,6 +4,7 @@ import api from '../../api/api';
 import { useTranslation } from 'react-i18next';
 import { getServices, createService, updateService, deleteService } from '../../api/apiEndpoints';
 import { FaEdit, FaTrash, FaEye } from 'react-icons/fa';
+import usePermission from '../../hooks/usePermission';
 
 const Services = () => {
     const { i18n } = useTranslation();
@@ -19,6 +20,8 @@ const Services = () => {
         description: { en: '', ar: '' },
         link: ''
     });
+
+    const { canCreate, canEdit, canDelete } = usePermission("Services");
 
     const fetchServices = async () => {
         try {
@@ -88,7 +91,9 @@ const Services = () => {
         <div className="container py-5">
             <div className="d-flex justify-content-between align-items-center mb-3">
                 <h2>Service Management</h2>
-                <Button variant="primary" onClick={handleShow}>Add New Service</Button>
+                {canCreate && (
+                    <Button variant="primary" onClick={handleShow}>Add New Service</Button>
+                )}
             </div>
             <Table bordered hover responsive className="custom-table">
                 <thead>
@@ -148,8 +153,12 @@ const Services = () => {
                             <td style={{ width: '50px' }}>{service.link}</td>
                             <td>{new Date(service.date).toLocaleDateString()}</td>
                             <td>
-                                <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(service)}><FaEdit /></Button>
-                                <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(service._id)}><FaTrash /></Button>
+                                {canEdit && (
+                                    <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(service)}><FaEdit /></Button>
+                                )}
+                                {canDelete && (
+                                    <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(service._id)}><FaTrash /></Button>
+                                )}
                             </td>
                         </tr>
                     ))}

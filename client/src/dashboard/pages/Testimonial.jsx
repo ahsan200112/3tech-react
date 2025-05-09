@@ -3,6 +3,7 @@ import { Button, Table, Modal, Form } from 'react-bootstrap';
 import api from '../../api/api';
 import { getTestimonials, createTestimonial, updateTestimonial, deleteTestimonial } from '../../api/apiEndpoints';
 import { FaEdit, FaTrash } from 'react-icons/fa';
+import usePermission from '../../hooks/usePermission';
 
 const Testimonial = () => {
     const [testimonials, setTestimonials] = useState([]);
@@ -14,10 +15,11 @@ const Testimonial = () => {
         position: { en: '', ar: '' },
     });
 
+    const { canCreate, canEdit, canDelete } = usePermission("Testimonials");
+
     const fetchTestimonial = async () => {
         try {
             const res = await api.get(getTestimonials);
-            console.log('Fetched testimonials:', res.data); // 👈 Add this
             setTestimonials(res.data);
         } catch (error) {
             console.error('ERROR', error);
@@ -74,7 +76,9 @@ const Testimonial = () => {
         <div className="container py-5">
             <div className="d-flex justify-content-between align-items-center mb-3">
                 <h2>Testimonial Management</h2>
-                <Button variant="primary" onClick={handleShow}>Add New Testimonial</Button>
+                {canCreate && (
+                    <Button variant="primary" onClick={handleShow}>Add New Testimonial</Button>
+                )}
             </div>
             <Table bordered hover responsive className="custom-table">
                 <thead>
@@ -101,8 +105,12 @@ const Testimonial = () => {
                             {/*<td>{new Date(faq.date).toLocaleDateString()}</td>*/}
                             <td>{new Date(testimonial.createdAt).toLocaleDateString()}</td>
                             <td>
-                                <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(testimonial)}><FaEdit /></Button>
-                                <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(testimonial._id)}><FaTrash /></Button>
+                                {canEdit && (
+                                    <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(testimonial)}><FaEdit /></Button>
+                                )}
+                                {canDelete && (
+                                    <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(testimonial._id)}><FaTrash /></Button>
+                                )}
                             </td>
                         </tr>
                     ))}
@@ -116,7 +124,7 @@ const Testimonial = () => {
                 </Modal.Header>
                 <Modal.Body>
                     <Form onSubmit={handleSubmit}>
-                    <Form.Group className="mb-3">
+                        <Form.Group className="mb-3">
                             <Form.Label>Message (English)</Form.Label>
                             <Form.Control
                                 as="textarea" rows={4}

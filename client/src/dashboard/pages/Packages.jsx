@@ -4,6 +4,7 @@ import api from '../../api/api';
 import { getPackagesPricing, createPackagesPricing, updatePackagesPricing, deletePackagesPricing } from "../../api/apiEndpoints";
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import { Button, Form, Col, Row, Table, Modal } from "react-bootstrap";
+import usePermission from '../../hooks/usePermission';
 
 const Packages = () => {
   const [pricingPlans, setPricingPlans] = useState([]);
@@ -12,6 +13,8 @@ const Packages = () => {
   // const [showDescription, setShowDescription] = useState(false);
   //const [fullDescription, setFullDescription] = useState('');
   const { t } = useTranslation();
+
+  const { canCreate, canEdit, canDelete } = usePermission("Packages");
 
   const fetchPackages = async () => {
     try {
@@ -72,7 +75,7 @@ const Packages = () => {
       title: "",
       description: "",
       monthlyPrice: "",
-     // yearlyPrice: "",
+      // yearlyPrice: "",
       features: [{ text: "", available: false }],
     });
 
@@ -131,7 +134,7 @@ const Packages = () => {
               />
             </Form.Group>
 
-          {/*  <Form.Group as={Col}>
+            {/*  <Form.Group as={Col}>
               <Form.Label>{t("Yearly Price (Per Month)")}</Form.Label>
               <Form.Control
                 type="text"
@@ -212,7 +215,9 @@ const Packages = () => {
     <div className="container py-5">
       <div className="d-flex justify-content-between align-items-center mb-3">
         <h2>Packages Management</h2>
-        <Button variant="primary" onClick={handleShow}>Add New Package</Button>
+        {canCreate && (
+          <Button variant="primary" onClick={handleShow}>Add New Package</Button>
+        )}
       </div>
       <Modal show={show} onHide={handleClose} size="lg" centered backdrop="static">
         <Modal.Header closeButton>
@@ -278,16 +283,20 @@ const Packages = () => {
                   </ul>
                 </td>
                 <td>
-                  <Button variant="outline-primary" size="sm" className="mx-1 my-1"
-                    onClick={() => handleEdit(plan)}
-                  >
-                    <FaEdit />
-                  </Button>{" "}
-                  <Button variant="outline-danger" size="sm" className="mx-1 my-1"
-                    onClick={() => handleDelete(plan._id)}
-                  >
-                    <FaTrash />
-                  </Button>
+                  {canEdit && (
+                    <Button variant="outline-primary" size="sm" className="mx-1 my-1"
+                      onClick={() => handleEdit(plan)}
+                    >
+                      <FaEdit />
+                    </Button>
+                  )}
+                  {canDelete && (
+                    <Button variant="outline-danger" size="sm" className="mx-1 my-1"
+                      onClick={() => handleDelete(plan._id)}
+                    >
+                      <FaTrash />
+                    </Button>
+                  )}
                 </td>
               </tr>
             ))}

@@ -3,6 +3,7 @@ import { Button, Table, Modal, Form } from 'react-bootstrap';
 import api from '../../api/api';
 import { getUsers, createUser, updateUser, deleteUser, getRoles } from '../../api/apiEndpoints';
 import { FaEdit, FaTrash } from 'react-icons/fa';
+import usePermission from '../../hooks/usePermission';
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -19,6 +20,8 @@ const Users = () => {
     confirmPassword: '',
     role: '',
   });
+
+  const { canCreate, canEdit, canDelete } = usePermission("Users");
 
   const fetchUser = async () => {
     try {
@@ -106,7 +109,9 @@ const Users = () => {
     <div className="container py-5">
       <div className="d-flex justify-content-between align-items-center mb-3">
         <h2>User Management</h2>
-        <Button variant="primary" onClick={handleShow}>Add New User</Button>
+        {canCreate && (
+          <Button variant="primary" onClick={handleShow}>Add New User</Button>
+        )}
       </div>
       <Table bordered hover responsive className="custom-table">
         <thead>
@@ -142,8 +147,12 @@ const Users = () => {
               {user.role?.name !== 'Super Admin' && (
                 <td>
                   <>
-                    <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(user)}><FaEdit /></Button>
-                    <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(user._id)}><FaTrash /></Button>
+                    {canEdit && (
+                      <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(user)}><FaEdit /></Button>
+                    )}
+                    {canDelete && (
+                      <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(user._id)}><FaTrash /></Button>
+                    )}
                   </>
                 </td>
               )}

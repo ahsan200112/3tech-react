@@ -9,6 +9,7 @@ import {
   removeRole,
 } from '../../redux/features/roles/rolesSlice';
 import { useTranslation } from 'react-i18next';
+import usePermission from '../../hooks/usePermission';
 
 const Roles = () => {
   const { i18n } = useTranslation();
@@ -21,6 +22,8 @@ const Roles = () => {
   const [roleName, setRoleName] = useState('');
   const [isEditing, setIsEditing] = useState(false);
   const [roleIdToEdit, setRoleIdToEdit] = useState('');
+
+  const { canCreate, canEdit, canDelete } = usePermission("Roles");
 
   useEffect(() => {
     dispatch(fetchRoles());
@@ -72,7 +75,9 @@ const Roles = () => {
     <div className="container mt-5">
       <div className="d-flex justify-content-between align-items-center mb-3">
         <h2>Roles Management</h2>
-        <button className="btn btn-primary" onClick={() => setShowModal(true)}>Add Role</button>
+        {canCreate && (
+          <button className="btn btn-primary" onClick={() => setShowModal(true)}>Add Role</button>
+        )}
       </div>
 
       {/* Role Creation or Update Modal */}
@@ -128,8 +133,12 @@ const Roles = () => {
                 <button className="btn btn-sm btn-warning me-2" onClick={() => handleEditRole(role)}>Edit</button> */}
                 {role.name !== 'Super Admin' && (
                   <>
-                    <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-sm btn-danger`} onClick={() => handleDeleteRole(role._id)}>Delete</button>
-                    <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-sm btn-warning`} onClick={() => handleEditRole(role)}>Edit</button>
+                    {canEdit && (
+                      <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-sm btn-warning`} onClick={() => handleEditRole(role)}>Edit</button>
+                    )}
+                    {canDelete && (
+                      <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-sm btn-danger`} onClick={() => handleDeleteRole(role._id)}>Delete</button>
+                    )}
                   </>
                 )}
                 <button className="btn btn-sm btn-secondary" onClick={() => handlePermissionClick(role)}>

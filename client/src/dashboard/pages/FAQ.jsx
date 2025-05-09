@@ -4,6 +4,7 @@ import api from '../../api/api';
 import { getFAQ, createFAQ, updateFAQ, deleteFAQ, getFAQCategories } from '../../api/apiEndpoints';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
+import usePermission from '../../hooks/usePermission';
 
 const FAQ = () => {
     const { i18n } = useTranslation();
@@ -19,6 +20,8 @@ const FAQ = () => {
         answer: { en: '', ar: '' },
         category: ''
     });
+
+    const { canCreate, canEdit, canDelete } = usePermission("Faqs");
 
     const fetchCategories = async () => {
         try {
@@ -95,7 +98,9 @@ const FAQ = () => {
         <div className="container py-5">
             <div className="d-flex justify-content-between align-items-center mb-3">
                 <h2>FAQ Management</h2>
-                <Button variant="primary" onClick={handleShow}>Add New FAQ</Button>
+                {canCreate && (
+                    <Button variant="primary" onClick={handleShow}>Add New FAQ</Button>
+                )}
             </div>
 
             {/* Category Filter Buttons */}
@@ -141,8 +146,12 @@ const FAQ = () => {
                             <td>{faq.category}</td>
                             <td>{new Date(faq.createdAt).toLocaleDateString()}</td>
                             <td>
-                                <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(faq)}><FaEdit /></Button>
-                                <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(faq._id)}><FaTrash /></Button>
+                                {canEdit && (
+                                    <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(faq)}><FaEdit /></Button>
+                                )}
+                                {canDelete && (
+                                    <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(faq._id)}><FaTrash /></Button>
+                                )}
                             </td>
                         </tr>
                     ))}

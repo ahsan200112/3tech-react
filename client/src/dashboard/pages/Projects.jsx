@@ -4,6 +4,7 @@ import api from '../../api/api';
 import { getProjects, createProject, updateProject, deleteProject } from '../../api/apiEndpoints';
 import { useTranslation } from 'react-i18next';
 import { FaEdit, FaTrash, FaEye } from 'react-icons/fa';
+import usePermission from '../../hooks/usePermission';
 
 const Projects = () => {
     const { i18n } = useTranslation();
@@ -19,6 +20,8 @@ const Projects = () => {
         description: { en: '', ar: '' },
         link: ''
     });
+
+    const { canCreate, canEdit, canDelete } = usePermission("Projects");
 
     const fetchProjects = async () => {
         try {
@@ -88,7 +91,9 @@ const Projects = () => {
         <div className="container py-5">
             <div className="d-flex justify-content-between align-items-center mb-3">
                 <h2>Project Management</h2>
-                <Button variant="primary" onClick={handleShow}>Add New Project</Button>
+                {canCreate && (
+                    <Button variant="primary" onClick={handleShow}>Add New Project</Button>
+                )}
             </div>
             <Table bordered hover responsive className="custom-table">
                 <thead>
@@ -148,8 +153,12 @@ const Projects = () => {
                             <td style={{ width: '100px' }}>{project.link}</td>
                             <td>{new Date(project.date).toLocaleDateString()}</td>
                             <td>
-                                <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(project)}><FaEdit /></Button>
-                                <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(project._id)}><FaTrash /></Button>
+                                {canEdit && (
+                                    <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(project)}><FaEdit /></Button>
+                                )}
+                                {canDelete && (
+                                    <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(project._id)}><FaTrash /></Button>
+                                )}
                             </td>
                         </tr>
                     ))}
