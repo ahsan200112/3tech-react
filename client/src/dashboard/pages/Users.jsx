@@ -116,7 +116,6 @@ const Users = () => {
             <th>First Name</th>
             <th>Last Name</th>
             <th>Phone No</th>
-            <th>User Name</th>
             <th>Email</th>
             <th>Role</th>
             <th>Date</th>
@@ -132,7 +131,6 @@ const Users = () => {
               <td style={{ width: "100px" }}>{user.firstName}</td>
               <td style={{ width: "100px" }}>{user.lastName}</td>
               <td style={{ width: "140px" }}>{user.phoneNo}</td>
-              <td style={{ width: "100px" }}>{user.userName}</td>
               <td>{user.email}</td>
               <td>{user.role ? user.role.name : 'No role assigned'}</td> {/* Displaying role name */}
               {/*<td>{new Date(faq.date).toLocaleDateString()}</td>*/}
@@ -141,7 +139,7 @@ const Users = () => {
                 <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(user)}><FaEdit /></Button>
                 <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(user._id)}><FaTrash /></Button>
               </td> */}
-              {user.role?.name !== 'Super Admin' && (
+              {user.role?.name !== 'Super Admin' ? (
                 <td>
                   <>
                     {canEdit && (
@@ -152,7 +150,20 @@ const Users = () => {
                     )}
                   </>
                 </td>
-              )}
+              ) :
+                (
+                  <td>
+                    <>
+                      <Button variant="outline-primary" size="sm" className="mx-1 my-1" disabled>
+                        <FaEdit />
+                      </Button>
+                      <Button variant="outline-danger" size="sm" className="mx-1 my-1" disabled>
+                        <FaTrash />
+                      </Button>
+                    </>
+                  </td>
+                )
+              }
             </tr>
           ))}
         </tbody>

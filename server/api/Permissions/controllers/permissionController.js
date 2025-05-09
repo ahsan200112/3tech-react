@@ -10,7 +10,7 @@ exports.getRolePermissions = async (req, res) => {
 
     const modules = [
       'Blogs', 'Services', 'ContactForm', 'Faqs', 'Testimonials',
-      'Users', 'Projects', 'Roles'
+      'Users', 'Projects', 'Roles','seoMeta'
     ];
 
     const actions = ['create', 'edit', 'view', 'delete'];

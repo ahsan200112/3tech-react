@@ -23,7 +23,8 @@ const permissionSchema = new mongoose.Schema({
           'Testimonials',
           'Users',
           'Projects',
-          'Roles'
+          'Roles',
+          'seoMeta'
         ],
         required: true
       },

@@ -20,6 +20,7 @@ const Sidebar = () => {
   const testimonialsPermission = usePermission('Testimonials');
   const usersPermission = usePermission('Users');
   const rolesPermission = usePermission('Roles');
+  const seoMetaPermission = usePermission('SeoMeta');
 
   // Toggle sidebar visibility for mobile
   const toggleSidebar = () => {
@@ -94,6 +95,11 @@ const Sidebar = () => {
           {rolesPermission.canView && (
             <NavLink to="/dashboard/roles-permissions" className="nav-link text-white">
               <FaBullhorn className={isRtl ? 'ms-2' : 'me-2'} /> Roles and Permission
+            </NavLink>
+          )}
+          {seoMetaPermission.canView && (
+            <NavLink to="/dashboard/roles-permissions" className="nav-link text-white">
+              <FaBullhorn className={isRtl ? 'ms-2' : 'me-2'} /> Seo Meta Page
             </NavLink>
           )}
             <NavLink to="/dashboard/settings" className="nav-link text-white">

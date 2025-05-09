@@ -45,6 +45,31 @@ app.use('/api/permissions', PermissionRoutes);
 const AuthRoutes = require('./api/Auth/routes/authRoutes')
 app.use('/api/auth', AuthRoutes);
 
+const SeoMetaRoutes = require('./api/SeoMeta/routes/seoMetaRoutes');
+app.use('/api/seo-meta', SeoMetaRoutes);
+
+const SeoMeta = require('./api/SeoMeta/models/seoMetaModel');
+app.get('*', async (req, res) => {
+  const indexPath = path.join(__dirname, 'client/build', 'index.html');
+  fs.readFile(indexPath, 'utf8', async (err, htmlData) => {
+    if (err) return res.status(500).send("Error loading index.html");
+
+    const foundMeta = await SeoMeta.findOne({ path: req.path });
+    const title = foundMeta?.title || "3tech | اطلق متجرك مع منصة ثري تك";
+    const description = foundMeta?.description || "!اهلا بك في عالم التجارة الالكترونية مع منصة ثري تك، اطلق متجرك الالكتروني";
+
+    const updatedHtml = htmlData
+      .replace(/<title>(.*?)<\/title>/, `<title>${title}</title>`)
+      .replace(
+        /<meta name="description" content="(.*?)" \/>/,
+        `<meta name="description" content="${description}" />`
+      );
+
+    res.send(updatedHtml);
+  });
+});
+
+
 app.use((err, req, res, next) => {
   res.status(err.status || 500).json({
     error: err.message || "Server Error",

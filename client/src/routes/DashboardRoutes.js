@@ -15,6 +15,7 @@ import Roles from '../dashboard/pages/Roles';
 import Setting from '../dashboard/pages/Setting';
 import NotFound from '../components/404NotFound';
 import Permissions from '../dashboard/pages/Permissions';
+import SeoMeta from '../dashboard/pages/SeoMeta';
 
 const DashboardRoutes = () => {
   return (
@@ -33,6 +34,7 @@ const DashboardRoutes = () => {
           <Route path="testimonials" element={<Testimonial />} />
           <Route path="roles-permissions" element={<Roles />} />
           <Route path="roles-permissions/:id" element={<Permissions />} />
+          <Route path="seo-meta" element={<SeoMeta />} />
           <Route path="settings" element={<Setting />} />
           <Route path="*" element={<NotFound />} />
           {/* Add more pages as needed */}

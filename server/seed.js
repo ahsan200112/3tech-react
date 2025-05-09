@@ -16,7 +16,8 @@ const modules = [
   'Testimonials',
   'Users',
   'Projects',
-  'Roles'
+  'Roles',
+  'seoMeta'
 ];
 
 // Create Super Admin role (just name)

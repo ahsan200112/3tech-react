@@ -21,6 +21,7 @@ exports.createRole = async (req, res) => {
       'Users',
       'Projects',
       'Roles',
+      'SeoMeta',
     ];
 
     const permissionsArray = modules.map((mod) => ({
