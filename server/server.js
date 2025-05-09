@@ -48,25 +48,46 @@ app.use('/api/auth', AuthRoutes);
 const SeoMetaRoutes = require('./api/SeoMeta/routes/seoMetaRoutes');
 app.use('/api/seo-meta', SeoMetaRoutes);
 
+// ye different route ke liye hain title or description rakhta hai for seo
 const fs = require("fs");
 const SeoMeta = require('./api/SeoMeta/models/seoMetaModel');
+
 app.get('*', async (req, res) => {
   const indexPath = path.join(__dirname, 'client/build', 'index.html');
   fs.readFile(indexPath, 'utf8', async (err, htmlData) => {
     if (err) return res.status(500).send("Error loading index.html");
 
-    const foundMeta = await SeoMeta.findOne({ path: req.path });
-    const title = foundMeta?.title || "3tech | اطلق متجرك مع منصة ثري تك";
-    const description = foundMeta?.description || "!اهلا بك في عالم التجارة الالكترونية مع منصة ثري تك، اطلق متجرك الالكتروني";
+    try {
+      // Match by page field in DB (e.g. "/about", "/product/xyz")
+      const foundMeta = await SeoMeta.findOne({ page: req.path });
 
-    const updatedHtml = htmlData
-      .replace(/<title>(.*?)<\/title>/, `<title>${title}</title>`)
-      .replace(
-        /<meta name="description" content="(.*?)" \/>/,
-        `<meta name="description" content="${description}" />`
-      );
+      const title = foundMeta?.title || "3tech | اطلق متجرك مع منصة ثري تك";
+      const description = foundMeta?.description || "!اهلا بك في عالم التجارة الالكترونية مع منصة ثري تك، اطلق متجرك الالكتروني";
+      const url = `https://3tech.sa${req.path}`;
 
-    res.send(updatedHtml);
+      const updatedHtml = htmlData
+        .replace(/<title>(.*?)<\/title>/, `<title>${title}</title>`)
+        .replace(
+          /<meta name="description" content="(.*?)" \/>/,
+          `<meta name="description" content="${description}" />`
+        )
+        .replace(
+          /<meta property="og:title" content="(.*?)" \/>/,
+          `<meta property="og:title" content="${title}" />`
+        )
+        .replace(
+          /<meta property="og:description" content="(.*?)" \/>/,
+          `<meta property="og:description" content="${description}" />`
+        )
+        .replace(
+          /<meta property="og:url" content="(.*?)" \/>/,
+          `<meta property="og:url" content="${url}" />`
+        );
+
+      res.send(updatedHtml);
+    } catch (e) {
+      res.status(500).send("Error injecting SEO metadata");
+    }
   });
 });
 

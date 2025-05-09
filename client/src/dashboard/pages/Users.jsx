@@ -119,7 +119,7 @@ const Users = () => {
             <th>Email</th>
             <th>Role</th>
             <th>Date</th>
-            {/* <th>Actions</th> */}
+            <th>Actions</th>
             {users.some(user => user.role?.name !== 'Super Admin') && (
               <th>Actions</th>
             )}
