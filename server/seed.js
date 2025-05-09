@@ -73,7 +73,6 @@ const createSuperAdminUser = async (role) => {
   const user = new User({
     firstName: 'Admin',
     lastName: 'User',
-    userName: 'adminuser',
     phoneNo: 1234567890,
     email: 'admin@admin.com',
     password: 'adminpassword', // Plaintext (bcrypt removed)

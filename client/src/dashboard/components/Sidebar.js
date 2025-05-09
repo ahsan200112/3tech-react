@@ -15,11 +15,11 @@ const Sidebar = () => {
   const servicesPermission = usePermission('Services');
   const projectsPermission = usePermission('Projects');
   const packagesPermission = usePermission('Packages');
-  const contactFormsPermission = usePermission('ContactForms');
+  const contactFormsPermission = usePermission('ContactForm');
   const faqsPermission = usePermission('Faqs');
   const testimonialsPermission = usePermission('Testimonials');
   const usersPermission = usePermission('Users');
-  const rolesPermission = usePermission('RolesPermissions');
+  const rolesPermission = usePermission('Roles');
 
   // Toggle sidebar visibility for mobile
   const toggleSidebar = () => {

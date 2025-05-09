@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 // ✅ Create User
 exports.createUser = async (req, res) => {
     try {
-        const { firstName, lastName, userName, email, password, role, phoneNo } = req.body;
+        const { firstName, lastName, email, password, role, phoneNo } = req.body;
 
         const userExists = await User.findOne({ $or: [{ email }, { userName }] });
         if (userExists) return res.status(400).json({ message: 'Email or Username already exists' });
@@ -12,7 +12,6 @@ exports.createUser = async (req, res) => {
         const user = new User({
             firstName,
             lastName,
-            userName,
             phoneNo,
             email,
             password: password,
@@ -91,7 +90,6 @@ exports.updateCurrentUser = async (req, res) => {
 
         user.firstName = firstName || user.firstName;
         user.lastName = lastName || user.lastName;
-        user.userName = userName || user.userName;
         user.email = email || user.email;
         user.phoneNo = phoneNo || user.phoneNo;
 
@@ -124,7 +122,6 @@ exports.updateUserByAdmin = async (req, res) => {
         // Update fields
         user.firstName = firstName || user.firstName;
         user.lastName = lastName || user.lastName;
-        user.userName = userName || user.userName;
         user.email = email || user.email;
         user.phoneNo = phoneNo || user.phoneNo;
         user.role = role || user.role;
@@ -163,8 +160,6 @@ exports.deleteUser = async (req, res) => {
 
 exports.updatePassword = async (req, res) => {
     const { oldPassword, newPassword } = req.body;
-    console.log('Old Password:', oldPassword);         // Optional
-    console.log('New Plain Password:', newPassword);   // 👈 YEH LINE
     const user = await User.findById(req.user.id);
 
     if (!user) return res.status(404).json({ message: 'User not found' });

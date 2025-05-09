@@ -14,7 +14,6 @@ const Users = () => {
     firstName: '',
     lastName: '',
     phoneNo: '',
-    userName: '',
     email: '',
     password: '',
     confirmPassword: '',
@@ -54,7 +53,6 @@ const Users = () => {
       firstName: '',
       lastName: '',
       phoneNo: '',
-      userName: '',
       email: '',
       password: '',
       confirmPassword: '',
@@ -88,7 +86,6 @@ const Users = () => {
       firstName: user.firstName || '',
       lastName: user.lastName || '',
       phoneNo: user.phoneNo || '',
-      userName: user.userName || '',
       email: user.email || '',
       password: user.password || '', // ⚠️ only if backend provides hashed/plain password
       confirmPassword: user.password || '',
@@ -194,16 +191,6 @@ const Users = () => {
                 type="number"
                 value={userData.phoneNo}
                 onChange={(e) => setUserData({ ...userData, phoneNo: e.target.value })}
-                required
-              />
-            </Form.Group>
-
-            <Form.Group className="mb-3">
-              <Form.Label>User Name</Form.Label>
-              <Form.Control
-                type="text"
-                value={userData.userName}
-                onChange={(e) => setUserData({ ...userData, userName: e.target.value })}
                 required
               />
             </Form.Group>

@@ -11,7 +11,6 @@ const Setting = () => {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
-        userName: '',
         email: '',
         phoneNo: '',
     });
@@ -31,7 +30,6 @@ const Setting = () => {
             setFormData({
                 firstName: user.firstName || '',
                 lastName: user.lastName || '',
-                userName: user.userName || '',
                 email: user.email || '',
                 phoneNo: user.phoneNo || '',
             });
@@ -127,7 +125,7 @@ const Setting = () => {
                     {/* User Info Form */}
                     <Form onSubmit={handleSubmit}>
                         <h4 className="mb-3">User Information</h4>
-                        {['firstName', 'lastName', 'userName', 'email', 'phoneNo'].map((field) => (
+                        {['firstName', 'lastName', 'email', 'phoneNo'].map((field) => (
                             <Form.Group className="mb-3" key={field}>
                                 <Form.Label>{field.replace(/([A-Z])/g, ' $1')}</Form.Label>
                                 <Form.Control
