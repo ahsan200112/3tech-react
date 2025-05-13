@@ -212,8 +212,8 @@ const Packages = () => {
 
 
   return (
-    <div className="container py-5">
-      <div className="d-flex justify-content-between align-items-center mb-3">
+    <div className="container py-4">
+      <div className="d-flex justify-content-between align-items-center mb-4">
         <h2>Packages Management</h2>
         {canCreate && (
           <Button variant="primary" onClick={handleShow}>Add New Package</Button>
@@ -235,26 +235,25 @@ const Packages = () => {
           />
         </Modal.Body>
       </Modal>
-      <div className="table-responsive-wrapper">
-        <Table striped bordered hover responsive className="custom-table">
-          <thead>
-            <tr>
-              <th>{t("Title")}</th>
-              <th>{t("Description")}</th>
-              <th>{t("Monthly Price")}</th>
-              {/*<th>{t("Yearly Price (Per Month)")}</th> */}
-              <th>{t("Features")}</th>
-              <th>{t("Actions")}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {pricingPlans.map((plan) => (
-              <tr key={plan._id}>
-                <td style={{ width: '150px' }}>{plan.title}</td>
-                <td style={{ width: '360px' }}>
-                  {plan.description}
-                </td>
-                {/*   <td style={{ width: '400px', position: 'relative' }}>
+      <Table striped bordered hover responsive className="custom-table">
+        <thead>
+          <tr>
+            <th>{t("Title")}</th>
+            <th>{t("Description")}</th>
+            <th>{t("Monthly Price")}</th>
+            {/*<th>{t("Yearly Price (Per Month)")}</th> */}
+            <th>{t("Features")}</th>
+            <th>{t("Actions")}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {pricingPlans.map((plan) => (
+            <tr key={plan._id}>
+              <td style={{ width: '150px' }}>{plan.title}</td>
+              <td style={{ width: '360px' }}>
+                {plan.description}
+              </td>
+              {/*   <td style={{ width: '400px', position: 'relative' }}>
                   <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: plan.description }}></div>
                   <FaEye
                     style={{
@@ -271,39 +270,39 @@ const Packages = () => {
                     title="View full description"
                   />
                 </td> */}
-                <td style={{ width: '115px' }}>{plan.monthlyPrice}</td>
-                {/*<td style={{ width: '100px' }}>{plan.yearlyPrice}</td> */}
-                <td>
-                  <ul>
-                    {plan.features.map((feature, index) => (
-                      <li key={index}>
-                        {feature.text} - {feature.available ? "Yes" : "No"}
-                      </li>
-                    ))}
-                  </ul>
-                </td>
-                <td>
-                  {canEdit && (
-                    <Button variant="outline-primary" size="sm" className="mx-1 my-1"
-                      onClick={() => handleEdit(plan)}
-                    >
-                      <FaEdit />
-                    </Button>
-                  )}
-                  {canDelete && (
-                    <Button variant="outline-danger" size="sm" className="mx-1 my-1"
-                      onClick={() => handleDelete(plan._id)}
-                    >
-                      <FaTrash />
-                    </Button>
-                  )}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-        {/* View Full Description Modal */}
-        {/*  <Modal show={showDescription} onHide={() => setShowDescription(false)} centered>
+              <td style={{ width: '115px' }}>{plan.monthlyPrice}</td>
+              {/*<td style={{ width: '100px' }}>{plan.yearlyPrice}</td> */}
+              <td>
+                <ul>
+                  {plan.features.map((feature, index) => (
+                    <li key={index}>
+                      {feature.text} - {feature.available ? "Yes" : "No"}
+                    </li>
+                  ))}
+                </ul>
+              </td>
+              <td>
+                {canEdit && (
+                  <Button variant="outline-primary" size="sm" className="mx-1 my-1"
+                    onClick={() => handleEdit(plan)}
+                  >
+                    <FaEdit />
+                  </Button>
+                )}
+                {canDelete && (
+                  <Button variant="outline-danger" size="sm" className="mx-1 my-1"
+                    onClick={() => handleDelete(plan._id)}
+                  >
+                    <FaTrash />
+                  </Button>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+      {/* View Full Description Modal */}
+      {/*  <Modal show={showDescription} onHide={() => setShowDescription(false)} centered>
           <Modal.Header closeButton>
             <Modal.Title>Full Description</Modal.Title>
           </Modal.Header>
@@ -314,7 +313,6 @@ const Packages = () => {
             <Button variant="secondary" onClick={() => setShowDescription(false)}>Close</Button>
           </Modal.Footer>
         </Modal> */}
-      </div>
     </div>
   );
 };

@@ -112,8 +112,8 @@ const Setting = () => {
     };
 
     return (
-        <Container className="mt-5">
-            <h2>Settings</h2>
+        <Container className="py-4">
+            <h2 className='mb-4'>Settings</h2>
             {loading ? (
                 <div className="text-center my-3">
                     <Spinner animation="border" />

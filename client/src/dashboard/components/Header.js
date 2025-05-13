@@ -23,7 +23,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-3">
+    <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-2">
       <div className="container-fluid">
         <div className="collapse navbar-collapse justify-content-end">
           <LanguageToggleDashboard />

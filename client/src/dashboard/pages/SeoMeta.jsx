@@ -67,8 +67,8 @@ const SeoMeta = () => {
     };
 
     return (
-        <div className="container py-5">
-            <div className="d-flex justify-content-between align-items-center mb-3">
+        <div className="container py-4">
+            <div className="d-flex justify-content-between align-items-center mb-4">
                 <h2>SEO Meta Management</h2>
                 {canCreate && (
                     <Button variant="primary" onClick={handleShow}>
@@ -76,41 +76,39 @@ const SeoMeta = () => {
                     </Button>
                 )}
             </div>
-            <div className="table-responsive-wrapper">
-                <Table bordered hover responsive className="custom-table">
-                    <thead>
-                        <tr>
-                            <th>Page Link</th>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Date</th>
-                            <th>Actions</th>
+            <Table bordered hover responsive className="custom-table">
+                <thead>
+                    <tr>
+                        <th>Page Link</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {seoMetas.map(meta => (
+                        <tr key={meta._id}>
+                            <td>{meta.page}</td>
+                            <td>{meta.title}</td>
+                            <td>{meta.description}</td>
+                            <td>{new Date(meta.createdAt).toLocaleDateString()}</td>
+                            <td>
+                                {canEdit && (
+                                    <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(meta)}>
+                                        <FaEdit />
+                                    </Button>
+                                )}
+                                {canDelete && (
+                                    <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(meta._id)}>
+                                        <FaTrash />
+                                    </Button>
+                                )}
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        {seoMetas.map(meta => (
-                            <tr key={meta._id}>
-                                <td>{meta.page}</td>
-                                <td>{meta.title}</td>
-                                <td>{meta.description}</td>
-                                <td>{new Date(meta.createdAt).toLocaleDateString()}</td>
-                                <td>
-                                    {canEdit && (
-                                        <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(meta)}>
-                                            <FaEdit />
-                                        </Button>
-                                    )}
-                                    {canDelete && (
-                                        <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(meta._id)}>
-                                            <FaTrash />
-                                        </Button>
-                                    )}
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </Table>
-            </div>
+                    ))}
+                </tbody>
+            </Table>
 
             {/* Modal for Create/Edit SEO Meta */}
             <Modal show={show} onHide={handleClose} size="lg">

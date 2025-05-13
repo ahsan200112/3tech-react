@@ -73,44 +73,42 @@ const Permissions = () => {
 
   return (
     <div className="border rounded p-4 shadow-sm bg-light">
-      <h4 className="mb-3">Permissions for: <strong>{role.name}</strong></h4>
+      <h4 className="mb-4">Permissions for: <strong>{role.name}</strong></h4>
 
       {error && <div className="alert alert-danger">{error}</div>}
 
       {loading ? (
         <div>Loading permissions...</div>
       ) : (
-        <div className="table-responsive-wrapper">
-          <table className="table table-bordered">
-            <thead className="table-light">
-              <tr>
-                <th>Module</th>
+        <table className="table table-bordered">
+          <thead className="table-light">
+            <tr>
+              <th>Module</th>
+              {actions.map((action) => (
+                <th key={action} className="text-center text-capitalize">
+                  {action === 'all' ? 'Allow All' : action}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {modules.map((module) => (
+              <tr key={module}>
+                <td>{module}</td>
                 {actions.map((action) => (
-                  <th key={action} className="text-center text-capitalize">
-                    {action === 'all' ? 'Allow All' : action}
-                  </th>
+                  <td key={action} className="text-center">
+                    <input
+                      type="checkbox"
+                      checked={permissions[module]?.[action] || false}
+                      onChange={() => handleToggle(module, action)}
+                      disabled={role.name === 'Super Admin'}
+                    />
+                  </td>
                 ))}
               </tr>
-            </thead>
-            <tbody>
-              {modules.map((module) => (
-                <tr key={module}>
-                  <td>{module}</td>
-                  {actions.map((action) => (
-                    <td key={action} className="text-center">
-                      <input
-                        type="checkbox"
-                        checked={permissions[module]?.[action] || false}
-                        onChange={() => handleToggle(module, action)}
-                        disabled={role.name === 'Super Admin'}
-                      />
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+            ))}
+          </tbody>
+        </table>
       )}
 
       <div className="d-flex justify-content-end mt-3">

@@ -103,73 +103,71 @@ const Users = () => {
   };
 
   return (
-    <div className="container py-5">
-      <div className="d-flex justify-content-between align-items-center mb-3">
+    <div className="container py-4">
+      <div className="d-flex justify-content-between align-items-center mb-4">
         <h2>User Management</h2>
         {canCreate && (
           <Button variant="primary" onClick={handleShow}>Add New User</Button>
         )}
       </div>
-      <div className="table-responsive-wrapper">
-        <Table bordered hover responsive className="custom-table">
-          <thead>
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Phone No</th>
-              <th>Email</th>
-              <th>Role</th>
-              <th>Date</th>
+      <Table bordered hover responsive className="custom-table">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone No</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Date</th>
+            <th>Actions</th>
+            {users.some(user => user.role?.name !== 'Super Admin') && (
               <th>Actions</th>
-              {users.some(user => user.role?.name !== 'Super Admin') && (
-                <th>Actions</th>
-              )}
-            </tr>
-          </thead>
-          <tbody>
-            {users.map(user => (
-              <tr key={user._id}>
-                <td style={{ width: "100px" }}>{user.firstName}</td>
-                <td style={{ width: "100px" }}>{user.lastName}</td>
-                <td style={{ width: "140px" }}>{user.phoneNo}</td>
-                <td>{user.email}</td>
-                <td>{user.role ? user.role.name : 'No role assigned'}</td> {/* Displaying role name */}
-                {/*<td>{new Date(faq.date).toLocaleDateString()}</td>*/}
-                <td>{new Date(user.createdAt).toLocaleDateString()}</td>
-                {/* <td>
+            )}
+          </tr>
+        </thead>
+        <tbody>
+          {users.map(user => (
+            <tr key={user._id}>
+              <td style={{ width: "100px" }}>{user.firstName}</td>
+              <td style={{ width: "100px" }}>{user.lastName}</td>
+              <td style={{ width: "140px" }}>{user.phoneNo}</td>
+              <td>{user.email}</td>
+              <td>{user.role ? user.role.name : 'No role assigned'}</td> {/* Displaying role name */}
+              {/*<td>{new Date(faq.date).toLocaleDateString()}</td>*/}
+              <td>{new Date(user.createdAt).toLocaleDateString()}</td>
+              {/* <td>
                 <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(user)}><FaEdit /></Button>
                 <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(user._id)}><FaTrash /></Button>
               </td> */}
-                {user.role?.name !== 'Super Admin' ? (
+              {user.role?.name !== 'Super Admin' ? (
+                <td>
+                  <>
+                    {canEdit && (
+                      <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(user)}><FaEdit /></Button>
+                    )}
+                    {canDelete && (
+                      <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(user._id)}><FaTrash /></Button>
+                    )}
+                  </>
+                </td>
+              ) :
+                (
                   <td>
                     <>
-                      {canEdit && (
-                        <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(user)}><FaEdit /></Button>
-                      )}
-                      {canDelete && (
-                        <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(user._id)}><FaTrash /></Button>
-                      )}
+                      <Button variant="outline-primary" size="sm" className="mx-1 my-1" disabled>
+                        <FaEdit />
+                      </Button>
+                      <Button variant="outline-danger" size="sm" className="mx-1 my-1" disabled>
+                        <FaTrash />
+                      </Button>
                     </>
                   </td>
-                ) :
-                  (
-                    <td>
-                      <>
-                        <Button variant="outline-primary" size="sm" className="mx-1 my-1" disabled>
-                          <FaEdit />
-                        </Button>
-                        <Button variant="outline-danger" size="sm" className="mx-1 my-1" disabled>
-                          <FaTrash />
-                        </Button>
-                      </>
-                    </td>
-                  )
-                }
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-      </div>
+                )
+              }
+            </tr>
+          ))}
+        </tbody>
+      </Table>
 
       {/* Create/Edit Faq Modal */}
       <Modal show={show} onHide={handleClose} size="lg">

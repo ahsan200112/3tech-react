@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Button, Table, Modal, Form } from 'react-bootstrap';
 import api from '../../api/api';
 import { getTestimonials, createTestimonial, updateTestimonial, deleteTestimonial } from '../../api/apiEndpoints';
-import { FaEdit, FaTrash } from 'react-icons/fa';
+import { FaEdit, FaTrash, FaEye } from 'react-icons/fa';
 import usePermission from '../../hooks/usePermission';
 
 const Testimonial = () => {
     const [testimonials, setTestimonials] = useState([]);
     const [show, setShow] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
+    const [showFullModal, setShowFullModal] = useState(false);
     const [testimonialData, setTestimonialData] = useState({
         message: { en: '', ar: '' },
         name: { en: '', ar: '' },
@@ -73,51 +74,115 @@ const Testimonial = () => {
     };
 
     return (
-        <div className="container py-5">
-            <div className="d-flex justify-content-between align-items-center mb-3">
+        <div className="container py-4">
+            <div className="d-flex justify-content-between align-items-center mb-4">
                 <h2>Testimonial Management</h2>
                 {canCreate && (
                     <Button variant="primary" onClick={handleShow}>Add New Testimonial</Button>
                 )}
             </div>
-            <div className="table-responsive-wrapper">
-                <Table bordered hover responsive className="custom-table">
-                    <thead>
-                        <tr>
-                            <th>Message (English)</th>
-                            <th>Message (Arabic)</th>
-                            <th>Name (English)</th>
-                            <th>Name (Arabic)</th>
-                            <th>Position (English)</th>
-                            <th>Position (Arabic)</th>
-                            <th>Date</th>
-                            <th>Actions</th>
+            <Table bordered hover responsive className="custom-table">
+                <thead>
+                    <tr>
+                        {/*  <th>Message (English)</th>
+                        <th>Message (Arabic)</th> 
+                        <th>Name (English)</th> */}
+                        <th>Name (Arabic)</th>
+                        {/*  <th>Position (English)</th> */}
+                        <th>Position (Arabic)</th>
+                        {/*   <th>Date</th> */}
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {testimonials.map(testimonial => (
+                        <tr key={testimonial._id}>
+                            {/* <td>{testimonial.message.en}</td>
+                            <td>{testimonial.message.ar}</td>
+                            <td>{testimonial.name.en}</td> */}
+                            <td>{testimonial.name.ar}</td>
+                            {/*   <td>{testimonial.position.en}</td>  */}
+                            <td>{testimonial.position.ar}</td>
+                            {/*<td>{new Date(faq.date).toLocaleDateString()}</td>*/}
+                            {/*  <td>{new Date(testimonial.createdAt).toLocaleDateString()}</td> */}
+                            <td style={{ width: "150px" }}>
+                                <Button variant="outline-success" size="sm" className="mx-1 my-1"
+                                    onClick={() => {
+                                        setTestimonialData(testimonial);
+                                        setShowFullModal(true);
+                                    }}>
+                                    <FaEye />
+                                </Button>
+                                {canEdit && (
+                                    <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(testimonial)}><FaEdit /></Button>
+                                )}
+                                {canDelete && (
+                                    <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(testimonial._id)}><FaTrash /></Button>
+                                )}
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        {testimonials.map(testimonial => (
-                            <tr key={testimonial._id}>
-                                <td style={{ width: "220px" }}>{testimonial.message.en}</td>
-                                <td style={{ width: "220px" }}>{testimonial.message.ar}</td>
-                                <td style={{ width: "100px" }}>{testimonial.name.en}</td>
-                                <td style={{ width: "100px" }}>{testimonial.name.ar}</td>
-                                <td style={{ width: "110px" }}>{testimonial.position.en}</td>
-                                <td style={{ width: "110px" }}>{testimonial.position.ar}</td>
-                                {/*<td>{new Date(faq.date).toLocaleDateString()}</td>*/}
-                                <td>{new Date(testimonial.createdAt).toLocaleDateString()}</td>
-                                <td>
-                                    {canEdit && (
-                                        <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(testimonial)}><FaEdit /></Button>
-                                    )}
-                                    {canDelete && (
-                                        <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(testimonial._id)}><FaTrash /></Button>
-                                    )}
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </Table>
-            </div>
+                    ))}
+                </tbody>
+            </Table>
+
+            {/* Full view modal for testimonial details */}
+            <Modal
+                show={showFullModal}
+                onHide={() => setShowFullModal(false)}
+                size="lg"
+                centered
+                scrollable
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title>🗣️ Testimonial Details</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <div className="row">
+                        <div className="col-md-6 mb-2">
+                            <strong>👤 Name (EN):</strong> {testimonialData?.name?.en}
+                        </div>
+                        <div className="col-md-6 mb-2">
+                            <strong>👤 Name (AR):</strong> {testimonialData?.name?.ar}
+                        </div>
+
+                        <div className="col-md-6 mb-2">
+                            <strong>💼 Position (EN):</strong> {testimonialData?.position?.en}
+                        </div>
+                        <div className="col-md-6 mb-2">
+                            <strong>💼 Position (AR):</strong> {testimonialData?.position?.ar}
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div className="mb-3">
+                        <strong>📝 Message (EN):</strong>
+                        <div
+                            className="border rounded p-2 mt-1"
+                            style={{ backgroundColor: "#f9f9f9" }}
+                        >
+                            {testimonialData?.message?.en}
+                        </div>
+                    </div>
+
+                    <div className="mb-3">
+                        <strong>📝 Message (AR):</strong>
+                        <div
+                            className="border rounded p-2 mt-1"
+                            style={{ backgroundColor: "#f9f9f9" }}
+                        >
+                            {testimonialData?.message?.ar}
+                        </div>
+                    </div>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={() => setShowFullModal(false)}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+
+
             {/* Create/Edit Faq Modal */}
             <Modal show={show} onHide={handleClose} size="lg">
                 <Modal.Header closeButton>

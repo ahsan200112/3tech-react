@@ -72,8 +72,8 @@ const Roles = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <div className="d-flex justify-content-between align-items-center mb-3">
+    <div className="container py-4">
+      <div className="d-flex justify-content-between align-items-center mb-4">
         <h2>Roles Management</h2>
         {canCreate && (
           <button className="btn btn-primary" onClick={() => setShowModal(true)}>Add Role</button>
@@ -116,40 +116,38 @@ const Roles = () => {
           </div>
         </div>
       )}
-      <div className="table-responsive-wrapper">
-        <table className="table table-bordered">
-          <thead className="table-light">
-            <tr>
-              <th>Role Name</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {roles.map((role) => (
-              <tr key={role._id}>
-                <td>{role.name}</td>
-                <td>
-                  {/* <button className="btn btn-sm btn-danger me-2" onClick={() => handleDeleteRole(role._id)}>Delete</button>
+      <table className="table table-bordered">
+        <thead className="table-light">
+          <tr>
+            <th>Role Name</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {roles.map((role) => (
+            <tr key={role._id}>
+              <td>{role.name}</td>
+              <td>
+                {/* <button className="btn btn-sm btn-danger me-2" onClick={() => handleDeleteRole(role._id)}>Delete</button>
                 <button className="btn btn-sm btn-warning me-2" onClick={() => handleEditRole(role)}>Edit</button> */}
-                  {role.name !== 'Super Admin' && (
-                    <>
-                      {canEdit && (
-                        <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-sm btn-warning`} onClick={() => handleEditRole(role)}>Edit</button>
-                      )}
-                      {canDelete && (
-                        <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-sm btn-danger`} onClick={() => handleDeleteRole(role._id)}>Delete</button>
-                      )}
-                    </>
-                  )}
-                  <button className="btn btn-sm btn-secondary" onClick={() => handlePermissionClick(role)}>
-                    Permissions
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+                {role.name !== 'Super Admin' && (
+                  <>
+                    {canEdit && (
+                      <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-sm btn-warning`} onClick={() => handleEditRole(role)}>Edit</button>
+                    )}
+                    {canDelete && (
+                      <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-sm btn-danger`} onClick={() => handleDeleteRole(role._id)}>Delete</button>
+                    )}
+                  </>
+                )}
+                <button className="btn btn-sm btn-secondary" onClick={() => handlePermissionClick(role)}>
+                  Permissions
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

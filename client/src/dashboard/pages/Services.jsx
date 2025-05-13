@@ -11,8 +11,7 @@ const Services = () => {
     const lang = i18n.language;
     const [services, setServices] = useState([]);
     const [show, setShow] = useState(false);
-    const [showDescription, setShowDescription] = useState(false);
-    const [fullDescription, setFullDescription] = useState('');
+    const [showFullModal, setShowFullModal] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
     const [serviceData, setServiceData] = useState({
         title: { en: '', ar: '' },
@@ -88,94 +87,123 @@ const Services = () => {
     };
 
     return (
-        <div className="container py-5">
-            <div className="d-flex justify-content-between align-items-center mb-3">
+        <div className="container py-4">
+            <div className="d-flex justify-content-between align-items-center mb-4">
                 <h2>Service Management</h2>
                 {canCreate && (
                     <Button variant="primary" onClick={handleShow}>Add New Service</Button>
                 )}
             </div>
-            <div className="table-responsive-wrapper">
-                <Table bordered hover responsive className="custom-table">
-                    <thead>
-                        <tr>
-                            <th>Title (English)</th>
-                            <th>Title (Arabic)</th>
-                            <th>Description (English)</th>
-                            <th>Description (Arabic)</th>
-                            <th>Image</th>
-                            <th>Link</th>
-                            <th>Date</th>
-                            <th>Actions</th>
+            <Table bordered hover responsive className="custom-table">
+                <thead>
+                    <tr>
+                        <th>Title (English)</th>
+                        <th>Title (Arabic)</th>
+                        {/*  <th>Description (English)</th>
+                        <th>Description (Arabic)</th> */}
+                        <th>Image</th>
+                        <th>Link</th>
+                        {/*    <th>Date</th> */}
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {services.map(service => (
+                        <tr key={service._id}>
+                            <td>{service.title.en}</td>
+                            <td>{service.title.ar}</td>
+                            {/* <td>
+                                <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: service.description.en }}></div>
+                            </td>
+                            <td>
+                                <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: service.description.ar }}></div>
+                            </td> */}
+                            <td className="table-image-cell">
+                                <img src={service.image} alt={service.title[lang]} style={{ height: '60px', objectFit: 'cover' }} />
+                            </td>
+                            <td>{service.link}</td>
+                            {/* <td>{new Date(service.date).toLocaleDateString()}</td> */}
+                            <td style={{width:"150px"}}>
+                                <Button variant="outline-success" size="sm" className="mx-1 my-1"
+                                    onClick={() => {
+                                        setServiceData(service);
+                                        setShowFullModal(true);
+                                    }}>
+                                    <FaEye />
+                                </Button>
+                                {canEdit && (
+                                    <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(service)}><FaEdit /></Button>
+                                )}
+                                {canDelete && (
+                                    <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(service._id)}><FaTrash /></Button>
+                                )}
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        {services.map(service => (
-                            <tr key={service._id}>
-                                <td style={{ width: '150px' }}>{service.title.en}</td>
-                                <td style={{ width: '150px' }}>{service.title.ar}</td>
-                                <td style={{ width: '200', position: 'relative' }}>
-                                    <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: service.description.en }}></div>
-                                    <FaEye
-                                        style={{
-                                            position: 'absolute',
-                                            bottom: '50px',
-                                            right: '4px',
-                                            cursor: 'pointer',
-                                            color: '#0d6efd'
-                                        }}
-                                        onClick={() => {
-                                            setFullDescription(service.description.en);
-                                            setShowDescription(true);
-                                        }}
-                                        title="View full description"
-                                    />
-                                </td>
-                                <td style={{ width: '200px', position: 'relative' }}>
-                                    <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: service.description.ar }}></div>
-                                    <FaEye
-                                        style={{
-                                            position: 'absolute',
-                                            bottom: '50px',
-                                            right: '4px',
-                                            cursor: 'pointer',
-                                            color: '#0d6efd'
-                                        }}
-                                        onClick={() => {
-                                            setFullDescription(service.description.ar);
-                                            setShowDescription(true);
-                                        }}
-                                        title="View full description"
-                                    />
-                                </td>
-                                <td>
-                                    <img src={service.image} alt={service.title[lang]} style={{ height: '60px', objectFit: 'cover' }} />
-                                </td>
-                                <td style={{ width: '50px' }}>{service.link}</td>
-                                <td>{new Date(service.date).toLocaleDateString()}</td>
-                                <td>
-                                    {canEdit && (
-                                        <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(service)}><FaEdit /></Button>
-                                    )}
-                                    {canDelete && (
-                                        <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(service._id)}><FaTrash /></Button>
-                                    )}
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </Table>
-            </div>
-            {/* View Full Description Modal */}
-            <Modal show={showDescription} onHide={() => setShowDescription(false)} centered>
+                    ))}
+                </tbody>
+            </Table>
+
+            {/* Full view modal for service details */}
+            <Modal
+                show={showFullModal}
+                onHide={() => setShowFullModal(false)}
+                size="lg"
+                centered
+                scrollable
+            >
                 <Modal.Header closeButton>
-                    <Modal.Title>Full Description</Modal.Title>
+                    <Modal.Title>🛠️ Service Details</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <div dangerouslySetInnerHTML={{ __html: fullDescription }} />
+                    <div className="row">
+                        <div className="col-md-6 mb-2">
+                            <strong>📝 Title (EN):</strong> {serviceData?.title?.en}
+                        </div>
+                        <div className="col-md-6 mb-2">
+                            <strong>📝 Title (AR):</strong> {serviceData?.title?.ar}
+                        </div>
+
+                        <div className="col-md-6 mb-2">
+                            <strong>🔗 Link:</strong> {serviceData?.link}
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div className="mb-3">
+                        <strong>📝 Description (EN):</strong>
+                        <div
+                            className="border rounded p-2 mt-1"
+                            style={{ backgroundColor: "#f9f9f9" }}
+                            dangerouslySetInnerHTML={{ __html: serviceData?.description?.en }}
+                        />
+                    </div>
+
+                    <div className="mb-3">
+                        <strong>📝 Description (AR):</strong>
+                        <div
+                            className="border rounded p-2 mt-1"
+                            style={{ backgroundColor: "#f9f9f9" }}
+                            dangerouslySetInnerHTML={{ __html: serviceData?.description?.ar }}
+                        />
+                    </div>
+
+                    {serviceData.image && (
+                        <div>
+                            <strong>🖼️ Service Image:</strong>
+                            <div className="mt-2">
+                                <img
+                                    src={serviceData.image}
+                                    alt="Service"
+                                />
+                            </div>
+                        </div>
+                    )}
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={() => setShowDescription(false)}>Close</Button>
+                    <Button variant="secondary" onClick={() => setShowFullModal(false)}>
+                        Close
+                    </Button>
                 </Modal.Footer>
             </Modal>
 
