@@ -150,7 +150,7 @@ const Projects = () => {
                             <td>
                                 <img src={project.image} alt={project.title[lang]} style={{ height: '60px', objectFit: 'cover' }} />
                             </td>
-                            <td style={{ width: '100px' }}>{project.link}</td>
+                           {/* <td style={{ width: '100px' }}>{project.link}</td> */}
                             <td>{new Date(project.date).toLocaleDateString()}</td>
                             <td>
                                 {canEdit && (
