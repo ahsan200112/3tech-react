@@ -18,7 +18,7 @@ const Projects = () => {
         title: { en: '', ar: '' },
         image: null,
         description: { en: '', ar: '' },
-      /*  link: '' */
+        /*  link: '' */
     });
 
     const { canCreate, canEdit, canDelete } = usePermission("Projects");
@@ -52,7 +52,7 @@ const Projects = () => {
         formData.append('title[ar]', projectData.title.ar);
         formData.append('description[en]', projectData.description.en);
         formData.append('description[ar]', projectData.description.ar);
-       /* formData.append('link', projectData.link); */
+        /* formData.append('link', projectData.link); */
         formData.append('image', projectData.image); // 👈 file append
 
         if (isEditing) {
@@ -72,7 +72,7 @@ const Projects = () => {
         setProjectData({
             title: { en: project.title.en, ar: project.title.ar },
             description: { en: project.description.en, ar: project.description.ar },
-          /*  link: project.link, */
+            /*  link: project.link, */
             image: project.image,
             _id: project._id
         });
@@ -95,75 +95,77 @@ const Projects = () => {
                     <Button variant="primary" onClick={handleShow}>Add New Project</Button>
                 )}
             </div>
-            <Table bordered hover responsive className="custom-table">
-                <thead>
-                    <tr>
-                        <th>Title (English)</th>
-                        <th>Title (Arabic)</th>
-                        <th>Description (English)</th>
-                        <th>Description (Arabic)</th>
-                        <th>Image</th>
-                      {/*  <th>Link</th> */}
-                        <th>Date</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {projects.map(project => (
-                        <tr key={project._id}>
-                            <td style={{ width: '150px' }}>{project.title.en}</td>
-                            <td style={{ width: '150px' }}>{project.title.ar}</td>
-                            <td style={{ width: '200', position: 'relative' }}>
-                                <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: project.description.en }}></div>
-                                <FaEye
-                                    style={{
-                                        position: 'absolute',
-                                        bottom: '50px',
-                                        right: '4px',
-                                        cursor: 'pointer',
-                                        color: '#0d6efd'
-                                    }}
-                                    onClick={() => {
-                                        setFullDescription(project.description.en);
-                                        setShowDescription(true);
-                                    }}
-                                    title="View full description"
-                                />
-                            </td>
-                            <td style={{ width: '200px', position: 'relative' }}>
-                                <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: project.description.ar }}></div>
-                                <FaEye
-                                    style={{
-                                        position: 'absolute',
-                                        bottom: '50px',
-                                        right: '4px',
-                                        cursor: 'pointer',
-                                        color: '#0d6efd'
-                                    }}
-                                    onClick={() => {
-                                        setFullDescription(project.description.ar);
-                                        setShowDescription(true);
-                                    }}
-                                    title="View full description"
-                                />
-                            </td>
-                            <td>
-                                <img src={project.image} alt={project.title[lang]} style={{ height: '60px', objectFit: 'cover' }} />
-                            </td>
-                           {/* <td style={{ width: '100px' }}>{project.link}</td> */}
-                            <td>{new Date(project.date).toLocaleDateString()}</td>
-                            <td>
-                                {canEdit && (
-                                    <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(project)}><FaEdit /></Button>
-                                )}
-                                {canDelete && (
-                                    <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(project._id)}><FaTrash /></Button>
-                                )}
-                            </td>
+            <div className="table-responsive-wrapper">
+                <Table bordered hover responsive className="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Title (English)</th>
+                            <th>Title (Arabic)</th>
+                            <th>Description (English)</th>
+                            <th>Description (Arabic)</th>
+                            <th>Image</th>
+                            {/*  <th>Link</th> */}
+                            <th>Date</th>
+                            <th>Actions</th>
                         </tr>
-                    ))}
-                </tbody>
-            </Table>
+                    </thead>
+                    <tbody>
+                        {projects.map(project => (
+                            <tr key={project._id}>
+                                <td style={{ width: '150px' }}>{project.title.en}</td>
+                                <td style={{ width: '150px' }}>{project.title.ar}</td>
+                                <td style={{ width: '200', position: 'relative' }}>
+                                    <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: project.description.en }}></div>
+                                    <FaEye
+                                        style={{
+                                            position: 'absolute',
+                                            bottom: '50px',
+                                            right: '4px',
+                                            cursor: 'pointer',
+                                            color: '#0d6efd'
+                                        }}
+                                        onClick={() => {
+                                            setFullDescription(project.description.en);
+                                            setShowDescription(true);
+                                        }}
+                                        title="View full description"
+                                    />
+                                </td>
+                                <td style={{ width: '200px', position: 'relative' }}>
+                                    <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: project.description.ar }}></div>
+                                    <FaEye
+                                        style={{
+                                            position: 'absolute',
+                                            bottom: '50px',
+                                            right: '4px',
+                                            cursor: 'pointer',
+                                            color: '#0d6efd'
+                                        }}
+                                        onClick={() => {
+                                            setFullDescription(project.description.ar);
+                                            setShowDescription(true);
+                                        }}
+                                        title="View full description"
+                                    />
+                                </td>
+                                <td>
+                                    <img src={project.image} alt={project.title[lang]} style={{ height: '60px', objectFit: 'cover' }} />
+                                </td>
+                                {/* <td style={{ width: '100px' }}>{project.link}</td> */}
+                                <td>{new Date(project.date).toLocaleDateString()}</td>
+                                <td>
+                                    {canEdit && (
+                                        <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(project)}><FaEdit /></Button>
+                                    )}
+                                    {canDelete && (
+                                        <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(project._id)}><FaTrash /></Button>
+                                    )}
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </Table>
+            </div>
 
             {/* View Full Description Modal */}
             <Modal show={showDescription} onHide={() => setShowDescription(false)} centered>
@@ -222,7 +224,7 @@ const Projects = () => {
                                 onChange={(e) => setProjectData({ ...projectData, description: { ...projectData.description, ar: e.target.value } })}
                             />
                         </Form.Group>
-{/*
+                        {/*
                         <Form.Group className="mb-3">
                             <Form.Label>Link</Form.Label>
                             <Form.Control

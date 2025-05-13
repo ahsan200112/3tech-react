@@ -95,76 +95,77 @@ const Services = () => {
                     <Button variant="primary" onClick={handleShow}>Add New Service</Button>
                 )}
             </div>
-            <Table bordered hover responsive className="custom-table">
-                <thead>
-                    <tr>
-                        <th>Title (English)</th>
-                        <th>Title (Arabic)</th>
-                        <th>Description (English)</th>
-                        <th>Description (Arabic)</th>
-                        <th>Image</th>
-                        <th>Link</th>
-                        <th>Date</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {services.map(service => (
-                        <tr key={service._id}>
-                            <td style={{ width: '150px' }}>{service.title.en}</td>
-                            <td style={{ width: '150px' }}>{service.title.ar}</td>
-                            <td style={{ width: '200', position: 'relative' }}>
-                                <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: service.description.en }}></div>
-                                <FaEye
-                                    style={{
-                                        position: 'absolute',
-                                        bottom: '50px',
-                                        right: '4px',
-                                        cursor: 'pointer',
-                                        color: '#0d6efd'
-                                    }}
-                                    onClick={() => {
-                                        setFullDescription(service.description.en);
-                                        setShowDescription(true);
-                                    }}
-                                    title="View full description"
-                                />
-                            </td>
-                            <td style={{ width: '200px', position: 'relative' }}>
-                                <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: service.description.ar }}></div>
-                                <FaEye
-                                    style={{
-                                        position: 'absolute',
-                                        bottom: '50px',
-                                        right: '4px',
-                                        cursor: 'pointer',
-                                        color: '#0d6efd'
-                                    }}
-                                    onClick={() => {
-                                        setFullDescription(service.description.ar);
-                                        setShowDescription(true);
-                                    }}
-                                    title="View full description"
-                                />
-                            </td>
-                            <td>
-                                <img src={service.image} alt={service.title[lang]} style={{ height: '60px', objectFit: 'cover' }} />
-                            </td>
-                            <td style={{ width: '50px' }}>{service.link}</td>
-                            <td>{new Date(service.date).toLocaleDateString()}</td>
-                            <td>
-                                {canEdit && (
-                                    <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(service)}><FaEdit /></Button>
-                                )}
-                                {canDelete && (
-                                    <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(service._id)}><FaTrash /></Button>
-                                )}
-                            </td>
+            <div className="table-responsive-wrapper">
+                <Table bordered hover responsive className="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Title (English)</th>
+                            <th>Title (Arabic)</th>
+                            <th>Description (English)</th>
+                            <th>Description (Arabic)</th>
+                            <th>Image</th>
+                            <th>Link</th>
+                            <th>Date</th>
+                            <th>Actions</th>
                         </tr>
-                    ))}
-                </tbody>
-            </Table>
-
+                    </thead>
+                    <tbody>
+                        {services.map(service => (
+                            <tr key={service._id}>
+                                <td style={{ width: '150px' }}>{service.title.en}</td>
+                                <td style={{ width: '150px' }}>{service.title.ar}</td>
+                                <td style={{ width: '200', position: 'relative' }}>
+                                    <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: service.description.en }}></div>
+                                    <FaEye
+                                        style={{
+                                            position: 'absolute',
+                                            bottom: '50px',
+                                            right: '4px',
+                                            cursor: 'pointer',
+                                            color: '#0d6efd'
+                                        }}
+                                        onClick={() => {
+                                            setFullDescription(service.description.en);
+                                            setShowDescription(true);
+                                        }}
+                                        title="View full description"
+                                    />
+                                </td>
+                                <td style={{ width: '200px', position: 'relative' }}>
+                                    <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: service.description.ar }}></div>
+                                    <FaEye
+                                        style={{
+                                            position: 'absolute',
+                                            bottom: '50px',
+                                            right: '4px',
+                                            cursor: 'pointer',
+                                            color: '#0d6efd'
+                                        }}
+                                        onClick={() => {
+                                            setFullDescription(service.description.ar);
+                                            setShowDescription(true);
+                                        }}
+                                        title="View full description"
+                                    />
+                                </td>
+                                <td>
+                                    <img src={service.image} alt={service.title[lang]} style={{ height: '60px', objectFit: 'cover' }} />
+                                </td>
+                                <td style={{ width: '50px' }}>{service.link}</td>
+                                <td>{new Date(service.date).toLocaleDateString()}</td>
+                                <td>
+                                    {canEdit && (
+                                        <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(service)}><FaEdit /></Button>
+                                    )}
+                                    {canDelete && (
+                                        <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(service._id)}><FaTrash /></Button>
+                                    )}
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </Table>
+            </div>
             {/* View Full Description Modal */}
             <Modal show={showDescription} onHide={() => setShowDescription(false)} centered>
                 <Modal.Header closeButton>

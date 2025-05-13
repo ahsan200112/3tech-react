@@ -80,43 +80,44 @@ const Testimonial = () => {
                     <Button variant="primary" onClick={handleShow}>Add New Testimonial</Button>
                 )}
             </div>
-            <Table bordered hover responsive className="custom-table">
-                <thead>
-                    <tr>
-                        <th>Message (English)</th>
-                        <th>Message (Arabic)</th>
-                        <th>Name (English)</th>
-                        <th>Name (Arabic)</th>
-                        <th>Position (English)</th>
-                        <th>Position (Arabic)</th>
-                        <th>Date</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {testimonials.map(testimonial => (
-                        <tr key={testimonial._id}>
-                            <td style={{ width: "220px" }}>{testimonial.message.en}</td>
-                            <td style={{ width: "220px" }}>{testimonial.message.ar}</td>
-                            <td style={{ width: "100px" }}>{testimonial.name.en}</td>
-                            <td style={{ width: "100px" }}>{testimonial.name.ar}</td>
-                            <td style={{ width: "110px" }}>{testimonial.position.en}</td>
-                            <td style={{ width: "110px" }}>{testimonial.position.ar}</td>
-                            {/*<td>{new Date(faq.date).toLocaleDateString()}</td>*/}
-                            <td>{new Date(testimonial.createdAt).toLocaleDateString()}</td>
-                            <td>
-                                {canEdit && (
-                                    <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(testimonial)}><FaEdit /></Button>
-                                )}
-                                {canDelete && (
-                                    <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(testimonial._id)}><FaTrash /></Button>
-                                )}
-                            </td>
+            <div className="table-responsive-wrapper">
+                <Table bordered hover responsive className="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Message (English)</th>
+                            <th>Message (Arabic)</th>
+                            <th>Name (English)</th>
+                            <th>Name (Arabic)</th>
+                            <th>Position (English)</th>
+                            <th>Position (Arabic)</th>
+                            <th>Date</th>
+                            <th>Actions</th>
                         </tr>
-                    ))}
-                </tbody>
-            </Table>
-
+                    </thead>
+                    <tbody>
+                        {testimonials.map(testimonial => (
+                            <tr key={testimonial._id}>
+                                <td style={{ width: "220px" }}>{testimonial.message.en}</td>
+                                <td style={{ width: "220px" }}>{testimonial.message.ar}</td>
+                                <td style={{ width: "100px" }}>{testimonial.name.en}</td>
+                                <td style={{ width: "100px" }}>{testimonial.name.ar}</td>
+                                <td style={{ width: "110px" }}>{testimonial.position.en}</td>
+                                <td style={{ width: "110px" }}>{testimonial.position.ar}</td>
+                                {/*<td>{new Date(faq.date).toLocaleDateString()}</td>*/}
+                                <td>{new Date(testimonial.createdAt).toLocaleDateString()}</td>
+                                <td>
+                                    {canEdit && (
+                                        <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(testimonial)}><FaEdit /></Button>
+                                    )}
+                                    {canDelete && (
+                                        <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(testimonial._id)}><FaTrash /></Button>
+                                    )}
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </Table>
+            </div>
             {/* Create/Edit Faq Modal */}
             <Modal show={show} onHide={handleClose} size="lg">
                 <Modal.Header closeButton>

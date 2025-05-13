@@ -235,7 +235,7 @@ const Packages = () => {
           />
         </Modal.Body>
       </Modal>
-      <div>
+      <div className="table-responsive-wrapper">
         <Table striped bordered hover responsive className="custom-table">
           <thead>
             <tr>

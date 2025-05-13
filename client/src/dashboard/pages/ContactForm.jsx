@@ -9,7 +9,7 @@ const Services = () => {
     const fetchContactForm = async () => {
         try {
             const res = await api.get(getContactForms);
-            console.log('Fetched contactform:', res.data); 
+            console.log('Fetched contactform:', res.data);
             setContactForm(res.data);
         } catch (error) {
             console.error('ERROR', error);
@@ -24,7 +24,7 @@ const Services = () => {
     return (
         <div className="container py-5">
             <h2>Contact Form Submissions</h2>
-            <div className="table-responsive">
+            <div className="table-responsive-wrapper">
                 <Table bordered hover responsive className="custom-table">
                     <thead className="thead-dark">
                         <tr>

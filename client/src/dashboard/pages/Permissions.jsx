@@ -80,35 +80,37 @@ const Permissions = () => {
       {loading ? (
         <div>Loading permissions...</div>
       ) : (
-        <table className="table table-bordered">
-          <thead className="table-light">
-            <tr>
-              <th>Module</th>
-              {actions.map((action) => (
-                <th key={action} className="text-center text-capitalize">
-                  {action === 'all' ? 'Allow All' : action}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {modules.map((module) => (
-              <tr key={module}>
-                <td>{module}</td>
+        <div className="table-responsive-wrapper">
+          <table className="table table-bordered">
+            <thead className="table-light">
+              <tr>
+                <th>Module</th>
                 {actions.map((action) => (
-                  <td key={action} className="text-center">
-                    <input
-                      type="checkbox"
-                      checked={permissions[module]?.[action] || false}
-                      onChange={() => handleToggle(module, action)}
-                      disabled={role.name === 'Super Admin'}
-                    />
-                  </td>
+                  <th key={action} className="text-center text-capitalize">
+                    {action === 'all' ? 'Allow All' : action}
+                  </th>
                 ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {modules.map((module) => (
+                <tr key={module}>
+                  <td>{module}</td>
+                  {actions.map((action) => (
+                    <td key={action} className="text-center">
+                      <input
+                        type="checkbox"
+                        checked={permissions[module]?.[action] || false}
+                        onChange={() => handleToggle(module, action)}
+                        disabled={role.name === 'Super Admin'}
+                      />
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
 
       <div className="d-flex justify-content-end mt-3">

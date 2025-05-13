@@ -76,40 +76,41 @@ const SeoMeta = () => {
                     </Button>
                 )}
             </div>
-
-            <Table bordered hover responsive className="custom-table">
-                <thead>
-                    <tr>
-                        <th>Page Link</th>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Date</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {seoMetas.map(meta => (
-                        <tr key={meta._id}>
-                            <td>{meta.page}</td>
-                            <td>{meta.title}</td>
-                            <td>{meta.description}</td>
-                            <td>{new Date(meta.createdAt).toLocaleDateString()}</td>
-                            <td>
-                                {canEdit && (
-                                    <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(meta)}>
-                                        <FaEdit />
-                                    </Button>
-                                )}
-                                {canDelete && (
-                                    <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(meta._id)}>
-                                        <FaTrash />
-                                    </Button>
-                                )}
-                            </td>
+            <div className="table-responsive-wrapper">
+                <Table bordered hover responsive className="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Page Link</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th>Actions</th>
                         </tr>
-                    ))}
-                </tbody>
-            </Table>
+                    </thead>
+                    <tbody>
+                        {seoMetas.map(meta => (
+                            <tr key={meta._id}>
+                                <td>{meta.page}</td>
+                                <td>{meta.title}</td>
+                                <td>{meta.description}</td>
+                                <td>{new Date(meta.createdAt).toLocaleDateString()}</td>
+                                <td>
+                                    {canEdit && (
+                                        <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(meta)}>
+                                            <FaEdit />
+                                        </Button>
+                                    )}
+                                    {canDelete && (
+                                        <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(meta._id)}>
+                                            <FaTrash />
+                                        </Button>
+                                    )}
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </Table>
+            </div>
 
             {/* Modal for Create/Edit SEO Meta */}
             <Modal show={show} onHide={handleClose} size="lg">

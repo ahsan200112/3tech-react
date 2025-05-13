@@ -123,40 +123,41 @@ const FAQ = () => {
                     </Button>
                 ))}
             </div>
-
-            <Table bordered hover responsive className="custom-table">
-                <thead>
-                    <tr>
-                        <th>Question (English)</th>
-                        <th>Question ( Arabic)</th>
-                        <th>Answer (English)</th>
-                        <th>Answer (Arabic)</th>
-                        <th>Category</th>
-                        <th>Date</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {filteredFaqs.map(faq => (
-                        <tr key={faq._id}>
-                            <td style={{ width: "200px" }}> {faq.question.en}</td>
-                            <td style={{ width: "200px" }}> {faq.question.ar}</td>
-                            <td style={{ width: "200px" }}> {faq.answer.en}</td>
-                            <td style={{ width: "200px" }}> {faq.answer.ar}</td>
-                            <td>{faq.category}</td>
-                            <td>{new Date(faq.createdAt).toLocaleDateString()}</td>
-                            <td>
-                                {canEdit && (
-                                    <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(faq)}><FaEdit /></Button>
-                                )}
-                                {canDelete && (
-                                    <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(faq._id)}><FaTrash /></Button>
-                                )}
-                            </td>
+            <div className="table-responsive-wrapper">
+                <Table bordered hover responsive className="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Question (English)</th>
+                            <th>Question ( Arabic)</th>
+                            <th>Answer (English)</th>
+                            <th>Answer (Arabic)</th>
+                            <th>Category</th>
+                            <th>Date</th>
+                            <th>Actions</th>
                         </tr>
-                    ))}
-                </tbody>
-            </Table>
+                    </thead>
+                    <tbody>
+                        {filteredFaqs.map(faq => (
+                            <tr key={faq._id}>
+                                <td style={{ width: "200px" }}> {faq.question.en}</td>
+                                <td style={{ width: "200px" }}> {faq.question.ar}</td>
+                                <td style={{ width: "200px" }}> {faq.answer.en}</td>
+                                <td style={{ width: "200px" }}> {faq.answer.ar}</td>
+                                <td>{faq.category}</td>
+                                <td>{new Date(faq.createdAt).toLocaleDateString()}</td>
+                                <td>
+                                    {canEdit && (
+                                        <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(faq)}><FaEdit /></Button>
+                                    )}
+                                    {canDelete && (
+                                        <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(faq._id)}><FaTrash /></Button>
+                                    )}
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </Table>
+            </div>
 
             {/* Create/Edit Faq Modal */}
             <Modal show={show} onHide={handleClose} size="lg">

@@ -102,84 +102,87 @@ const Blogs = () => {
           <Button variant="primary" onClick={handleShow}>Add New Blog</Button>
         )}
       </div>
-      <Table bordered hover responsive className="custom-table">
-        <thead>
-          <tr>
-            <th>Title (English)</th>
-            <th>Title (Arabic)</th>
-            <th>Description (English)</th>
-            <th>Description (Arabic)</th>
-            <th>Image</th>
-            <th>Author (English)</th>
-            <th>Author (Arabic)</th>
-            <th>Category (English)</th>
-            <th>Category (Arabic)</th>
-            <th>Date</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {blogs.map(blog => (
-            <tr key={blog._id}>
-              <td style={{ width: '100px' }}>{blog.title.en}</td>
-              <td style={{ width: '100px' }}>{blog.title.ar}</td>
-              {/*<td style={{ width: '400px' }}
-                dangerouslySetInnerHTML={{ __html: blog.description }}></td> */}
-              <td style={{ width: '200px', position: 'relative' }}>
-                <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: blog.description.en }}></div>
-                <FaEye
-                  style={{
-                    position: 'absolute',
-                    bottom: '50px',
-                    right: '4px',
-                    cursor: 'pointer',
-                    color: '#0d6efd'
-                  }}
-                  onClick={() => {
-                    setFullDescription(blog.description.en);
-                    setShowDescription(true);
-                  }}
-                  title="View full description"
-                />
-              </td>
-              <td style={{ width: '200px', position: 'relative' }}>
-                <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: blog.description.ar }}></div>
-                <FaEye
-                  style={{
-                    position: 'absolute',
-                    bottom: '50px',
-                    right: '4px',
-                    cursor: 'pointer',
-                    color: '#0d6efd'
-                  }}
-                  onClick={() => {
-                    setFullDescription(blog.description.ar);
-                    setShowDescription(true);
-                  }}
-                  title="View full description"
-                />
-              </td>
-              <td>
-                <img src={blog.image} alt={blog.title.ar} style={{ height: '60px', objectFit: 'cover' }} />
-              </td>
-              <td style={{ width: '50px' }}>{blog.author.en}</td>
-              <td style={{ width: '50px' }}>{blog.author.ar}</td>
-              <td style={{ width: '50px' }}>{blog.category.en}</td>
-              <td style={{ width: '50px' }}>{blog.category.ar}</td>
-              <td>{blog.date ? new Date(blog.date).toLocaleDateString() : '-'}</td>
-
-              <td>
-                {canEdit && (
-                  <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(blog)}><FaEdit /></Button>
-                )}
-                {canDelete && (
-                  <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(blog._id)}><FaTrash /></Button>
-                )}
-              </td>
+      <div className="table-responsive-wrapper">
+        <Table bordered hover responsive className="custom-table">
+          <thead>
+            <tr>
+              <th>Title (English)</th>
+              <th>Title (Arabic)</th>
+              <th>Description (English)</th>
+              <th>Description (Arabic)</th>
+              <th>Image</th>
+              <th>Author (English)</th>
+              <th>Author (Arabic)</th>
+              <th>Category (English)</th>
+              <th>Category (Arabic)</th>
+              <th>Date</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {blogs.map(blog => (
+              <tr key={blog._id}>
+                <td style={{ width: '100px' }}>{blog.title.en}</td>
+                <td style={{ width: '100px' }}>{blog.title.ar}</td>
+                {/*<td style={{ width: '400px' }}
+                dangerouslySetInnerHTML={{ __html: blog.description }}></td> */}
+                <td style={{ width: '200px', position: 'relative' }}>
+                  <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: blog.description.en }}></div>
+                  <FaEye
+                    style={{
+                      position: 'absolute',
+                      bottom: '50px',
+                      right: '4px',
+                      cursor: 'pointer',
+                      color: '#0d6efd'
+                    }}
+                    onClick={() => {
+                      setFullDescription(blog.description.en);
+                      setShowDescription(true);
+                    }}
+                    title="View full description"
+                  />
+                </td>
+                <td style={{ width: '200px', position: 'relative' }}>
+                  <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: blog.description.ar }}></div>
+                  <FaEye
+                    style={{
+                      position: 'absolute',
+                      bottom: '50px',
+                      right: '4px',
+                      cursor: 'pointer',
+                      color: '#0d6efd'
+                    }}
+                    onClick={() => {
+                      setFullDescription(blog.description.ar);
+                      setShowDescription(true);
+                    }}
+                    title="View full description"
+                  />
+                </td>
+                <td>
+                  <img src={blog.image} alt={blog.title.ar} style={{ height: '60px', objectFit: 'cover' }} />
+                </td>
+                <td style={{ width: '50px' }}>{blog.author.en}</td>
+                <td style={{ width: '50px' }}>{blog.author.ar}</td>
+                <td style={{ width: '50px' }}>{blog.category.en}</td>
+                <td style={{ width: '50px' }}>{blog.category.ar}</td>
+                <td>{blog.date ? new Date(blog.date).toLocaleDateString() : '-'}</td>
+
+                <td>
+                  {canEdit && (
+                    <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(blog)}><FaEdit /></Button>
+                  )}
+                  {canDelete && (
+                    <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(blog._id)}><FaTrash /></Button>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </div>
+
       <Modal show={showDescription} onHide={() => setShowDescription(false)} centered>
         <Modal.Header closeButton>
           <Modal.Title>Full Description</Modal.Title>
