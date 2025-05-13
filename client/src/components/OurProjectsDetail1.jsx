@@ -65,9 +65,9 @@ const OurProjectsDetail1 = () => {
                         {projects.map((project, index) => (
                             <div className="col-md-6" key={project.id} data-aos={index % 2 === 0 ? "fade-up" : "fade-down"} data-aos-delay="500">
                                 <div className="card project-card position-relative">
-                                    <Link to={project.link} className="text-decoration-none"
+                                  {/*  <Link to={project.link} className="text-decoration-none"
                                         onClick={() => trackEvent('click on projects link', 'Navigation', 'Click', `${project.title.en} Page Link`)}
-                                    >
+                                    > */}
                                         <img
                                             src={project.image}
                                             className="card-img-top"
@@ -81,7 +81,7 @@ const OurProjectsDetail1 = () => {
                                             </div>
                                             <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{project.description[lang]}</p>
                                         </div>
-                                    </Link>
+                                 {/*   </Link> */}
                                 </div>
                             </div>
                         ))}

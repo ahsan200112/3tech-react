@@ -2,7 +2,7 @@ const Project = require('../models/projectModel');
 
 exports.createProject = async (req, res) => {
     try {
-        const { title, description, link, image } = req.body;
+        const { title, description } = req.body;
         const imageUrl = req.imageUrl || '';
 
         const newProject = new Project({
@@ -14,7 +14,7 @@ exports.createProject = async (req, res) => {
                 en: description.en,
                 ar: description.ar,
             },
-            link,
+          /*  link, */
             image: imageUrl || '',
         });
 

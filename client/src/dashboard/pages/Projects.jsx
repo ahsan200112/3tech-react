@@ -18,7 +18,7 @@ const Projects = () => {
         title: { en: '', ar: '' },
         image: null,
         description: { en: '', ar: '' },
-        link: ''
+      /*  link: '' */
     });
 
     const { canCreate, canEdit, canDelete } = usePermission("Projects");
@@ -40,7 +40,7 @@ const Projects = () => {
     const handleClose = () => {
         setShow(false);
         setIsEditing(false);
-        setProjectData({ title: { en: '', ar: '' }, image: '', description: { en: '', ar: '' }, link: '' });
+        setProjectData({ title: { en: '', ar: '' }, image: '', description: { en: '', ar: '' }, /*link: ''*/ });
     };
 
     const handleShow = () => setShow(true);
@@ -52,7 +52,7 @@ const Projects = () => {
         formData.append('title[ar]', projectData.title.ar);
         formData.append('description[en]', projectData.description.en);
         formData.append('description[ar]', projectData.description.ar);
-        formData.append('link', projectData.link);
+       /* formData.append('link', projectData.link); */
         formData.append('image', projectData.image); // 👈 file append
 
         if (isEditing) {
@@ -72,7 +72,7 @@ const Projects = () => {
         setProjectData({
             title: { en: project.title.en, ar: project.title.ar },
             description: { en: project.description.en, ar: project.description.ar },
-            link: project.link,
+          /*  link: project.link, */
             image: project.image,
             _id: project._id
         });
@@ -103,7 +103,7 @@ const Projects = () => {
                         <th>Description (English)</th>
                         <th>Description (Arabic)</th>
                         <th>Image</th>
-                        <th>Link</th>
+                      {/*  <th>Link</th> */}
                         <th>Date</th>
                         <th>Actions</th>
                     </tr>
@@ -222,7 +222,7 @@ const Projects = () => {
                                 onChange={(e) => setProjectData({ ...projectData, description: { ...projectData.description, ar: e.target.value } })}
                             />
                         </Form.Group>
-
+{/*
                         <Form.Group className="mb-3">
                             <Form.Label>Link</Form.Label>
                             <Form.Control
@@ -230,7 +230,7 @@ const Projects = () => {
                                 value={projectData.link}
                                 onChange={(e) => setProjectData({ ...projectData, link: e.target.value })}
                             />
-                        </Form.Group>
+                        </Form.Group> */}
 
                         <Form.Group className="mb-3">
                             <Form.Label className='mx-2'>Upload Image (1064 * 1160 recommended webp format)</Form.Label>
