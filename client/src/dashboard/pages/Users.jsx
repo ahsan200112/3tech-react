@@ -122,9 +122,6 @@ const Users = () => {
             <th>{t("Role")}</th>
             <th>{t("Date")}</th>
             <th>{t("Actions")}</th>
-            {users.some(user => user.role?.name !== 'Super Admin') && (
-              <th>{t("Actions")}</th>
-            )}
           </tr>
         </thead>
         <tbody>

@@ -86,7 +86,7 @@ exports.updateCurrentUser = async (req, res) => {
             return res.status(404).json({ message: 'User not found' });
         }
 
-        const { firstName, lastName, userName, email, password, phoneNo } = req.body;
+        const { firstName, lastName, email, password, phoneNo } = req.body;
 
         user.firstName = firstName || user.firstName;
         user.lastName = lastName || user.lastName;
@@ -109,15 +109,16 @@ exports.updateCurrentUser = async (req, res) => {
 // ✏️ Update User (Admin)
 exports.updateUserByAdmin = async (req, res) => {
     try {
-        const { firstName, lastName, userName, email, password, role, phoneNo } = req.body;
+        const { firstName, lastName, email, password, role, phoneNo } = req.body;
 
         const user = await User.findById(req.params.id).populate('role');
         if (!user) return res.status(404).json({ message: 'User not found' });
-        console.log("user",req.user.role?.name);
+        //console.log("user",req.user.role?.name);
         // Check if the logged-in user is a Super Admin
+        /* 
         if (req.user.role?.name !== 'Super Admin') {
             return res.status(403).json({ message: 'Access denied. Admins only' });
-        }
+        } */
 
         // Update fields
         user.firstName = firstName || user.firstName;

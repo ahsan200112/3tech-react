@@ -4,12 +4,14 @@ const blogController = require('../controllers/blogController');
 
 const upload = require('../../../middleware/upload');
 const cloudinary = require('../../../middleware/cloudinary');
+const checkAccess = require('../../../middleware/checkAccess');
 
 // Create Blog
 router.post(
     '/',
     upload.single('image'),
     cloudinary,
+    checkAccess('Blogs', 'create'),
     blogController.createBlog
 );
 
@@ -18,6 +20,7 @@ router.put(
     '/:id',
     upload.single('image'),
     cloudinary,
+    checkAccess('Blogs', 'edit'),
     blogController.updateBlog
 );
 
@@ -31,6 +34,6 @@ router.get('/:id', blogController.getBlogById);
 //router.put('/:id', blogController.updateBlog);
 
 // Delete
-router.delete('/:id', blogController.deleteBlog);
+router.delete('/:id', checkAccess('Blogs', 'delete'), blogController.deleteBlog);
 
 module.exports = router;

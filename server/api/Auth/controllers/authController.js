@@ -10,7 +10,12 @@ exports.loginUser = async (req, res) => {
       return res.status(400).json({ message: 'Please provide both email and password' });
     }
 
-    const user = await User.findOne({ email }).populate('role');
+    const user = await User.findOne({ email }).populate({
+            path: 'role',
+            populate: {
+                path: 'permissions', // This assumes `role.permissions` is an array of Permission ObjectIds
+            },
+        });
     if (!user) {
       return res.status(401).json({ message: 'Invalid credentials (user not found)' });
     }
@@ -20,8 +25,15 @@ exports.loginUser = async (req, res) => {
       return res.status(401).json({ message: 'Invalid credentials (password mismatch)' });
     }
 
+    const rawPermissions = user.role?.permissions?.permissions || [];
+
+    const formattedPermissions = rawPermissions.map(p => ({
+      module: p.module,
+      actions: p.actions
+    }));
+
     const token = jwt.sign(
-      { userId: user._id, role: user.role?.name },
+      { userId: user._id, role: user.role?.name, permissions: formattedPermissions },
       process.env.JWT_SECRET,
       { expiresIn: '24h' }
     );
