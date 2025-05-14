@@ -3,8 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCurrentUser, updateCurrentUser, updatePassword } from '../../redux/features/users/usersSlice';
 import { Button, Form, Container, Spinner, Alert } from 'react-bootstrap';
 import Swal from 'sweetalert2';
+import { useTranslation } from 'react-i18next';
 
 const Setting = () => {
+    const { t } = useTranslation();
     const dispatch = useDispatch();
     const { user, loading, error } = useSelector((state) => state.user);
 
@@ -113,7 +115,7 @@ const Setting = () => {
 
     return (
         <Container className="py-4">
-            <h2 className='mb-4'>Settings</h2>
+            <h2 className='mb-4'>{t("Settings")}</h2>
             {loading ? (
                 <div className="text-center my-3">
                     <Spinner animation="border" />
@@ -124,8 +126,8 @@ const Setting = () => {
                 <>
                     {/* User Info Form */}
                     <Form onSubmit={handleSubmit}>
-                        <h4 className="mb-3">User Information</h4>
-                        {['firstName', 'lastName', 'email', 'phoneNo'].map((field) => (
+                        <h4 className="mb-3">{t("User Information")}</h4>
+                        {[t('firstName'), t('lastName'), t('email'), t('phoneNo')].map((field) => (
                             <Form.Group className="mb-3" key={field}>
                                 <Form.Label>{field.replace(/([A-Z])/g, ' $1')}</Form.Label>
                                 <Form.Control
@@ -137,15 +139,15 @@ const Setting = () => {
                             </Form.Group>
                         ))}
                         <Button type="submit" disabled={loading}>
-                            {loading ? 'Updating...' : 'Save Changes'}
+                            {loading ? t('Updating...') : t('Save Changes')}
                         </Button>
                     </Form>
 
                     {/* Password Change Form */}
                     <Form onSubmit={handlePasswordSubmit} className="mt-5">
-                        <h4 className="mb-3">Change Password</h4>
+                        <h4 className="mb-3">{t("Change Password")}</h4>
                         <Form.Group className="mb-3">
-                            <Form.Label>Old Password</Form.Label>
+                            <Form.Label>{t("Old Password")}</Form.Label>
                             <Form.Control
                                 type="password"
                                 name="oldPassword"
@@ -154,7 +156,7 @@ const Setting = () => {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>New Password</Form.Label>
+                            <Form.Label>{t("New Password")}</Form.Label>
                             <Form.Control
                                 type="password"
                                 name="newPassword"
@@ -163,7 +165,7 @@ const Setting = () => {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Confirm New Password</Form.Label>
+                            <Form.Label>{t("Confirm New Password")}</Form.Label>
                             <Form.Control
                                 type="password"
                                 name="confirmPassword"
@@ -172,7 +174,7 @@ const Setting = () => {
                             />
                         </Form.Group>
                         <Button type="submit" variant="warning" disabled={loading}>
-                            {loading ? 'Updating...' : 'Change Password'}
+                            {loading ? t('Updating...') : t('Change Password')}
                         </Button>
                     </Form>
                 </>

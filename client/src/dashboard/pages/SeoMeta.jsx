@@ -4,8 +4,10 @@ import { FaEdit, FaTrash } from 'react-icons/fa';
 import api from '../../api/api';
 import { getSEOMetas, createSEOMeta, updateSEOMeta, deleteSEOMeta } from '../../api/apiEndpoints';
 import usePermission from '../../hooks/usePermission';
+import { useTranslation } from 'react-i18next';
 
 const SeoMeta = () => {
+    const { t } = useTranslation();
     const [seoMetas, setSeoMetas] = useState([]);
     const [show, setShow] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
@@ -69,21 +71,21 @@ const SeoMeta = () => {
     return (
         <div className="container py-4">
             <div className="d-flex justify-content-between align-items-center mb-4">
-                <h2>SEO Meta Management</h2>
+                <h2>{t("SEO Meta Management")}</h2>
                 {canCreate && (
                     <Button variant="primary" onClick={handleShow}>
-                        Add New SEO Meta
+                        {t("Add New SEO Meta")}
                     </Button>
                 )}
             </div>
             <Table bordered hover responsive className="custom-table">
                 <thead>
                     <tr>
-                        <th>Page Link</th>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Date</th>
-                        <th>Actions</th>
+                        <th>{t("Page Link")}</th>
+                        <th>{t("Title")}</th>
+                        <th>{t("Description")}</th>
+                        <th>{t("Date")}</th>
+                        <th>{t("Actions")}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -113,12 +115,12 @@ const SeoMeta = () => {
             {/* Modal for Create/Edit SEO Meta */}
             <Modal show={show} onHide={handleClose} size="lg">
                 <Modal.Header closeButton>
-                    <Modal.Title>{isEditing ? 'Edit SEO Meta' : 'Create SEO Meta'}</Modal.Title>
+                    <Modal.Title>{isEditing ? t('Edit SEO Meta') : t('Create SEO Meta')}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Page Link</Form.Label>
+                            <Form.Label>{t("Page Link")}</Form.Label>
                             <Form.Control
                                 type="text"
                                 value={seoData.page}
@@ -126,12 +128,12 @@ const SeoMeta = () => {
                                 required
                             />
                             <Form.Text className="text-muted">
-                                Example: <code>/</code>,<code>/ecommercesolutions</code>, <code>/services</code>, <code>/mobileapplications</code>
+                                {t("Example")}: <code>/</code>,<code>/ecommercesolutions</code>, <code>/services</code>, <code>/mobileapplications</code>
                             </Form.Text>
                         </Form.Group>
 
                         <Form.Group className="mb-3">
-                            <Form.Label>Title</Form.Label>
+                            <Form.Label>{t("Title")}</Form.Label>
                             <Form.Control
                                 type="text"
                                 value={seoData.title}
@@ -141,7 +143,7 @@ const SeoMeta = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3">
-                            <Form.Label>Description</Form.Label>
+                            <Form.Label>{t("Description")}</Form.Label>
                             <Form.Control
                                 as="textarea"
                                 rows={3}
@@ -152,7 +154,7 @@ const SeoMeta = () => {
                         </Form.Group>
 
                         <Button type="submit" variant="success">
-                            {isEditing ? 'Update' : 'Create'}
+                            {isEditing ? t('Update') : t('Create')}
                         </Button>
                     </Form>
                 </Modal.Body>

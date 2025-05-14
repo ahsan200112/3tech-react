@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import usePermission from '../../hooks/usePermission';
 
 const FAQ = () => {
-    const { i18n } = useTranslation();
+    const { t, i18n } = useTranslation();
     const RTL = i18n.dir() === "rtl";
     const [filteredFaqs, setFilteredFaqs] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('All');
@@ -98,9 +98,9 @@ const FAQ = () => {
     return (
         <div className="container py-4">
             <div className="d-flex justify-content-between align-items-center mb-4">
-                <h2>FAQ Management</h2>
+                <h2>{t("FAQ Management")}</h2>
                 {canCreate && (
-                    <Button variant="primary" onClick={handleShow}>Add New FAQ</Button>
+                    <Button variant="primary" onClick={handleShow}>{t("Add New FAQ")}</Button>
                 )}
             </div>
 
@@ -111,7 +111,7 @@ const FAQ = () => {
                     className={`${RTL ? 'ms-2' : 'me-2'} mb-2`}
                     onClick={() => handleCategoryFilter('All')}
                 >
-                    All
+                    {t("All")}
                 </Button>
                 {categoryOptions.map((cat, idx) => (
                     <Button
@@ -128,12 +128,12 @@ const FAQ = () => {
                 <thead>
                     <tr>
                         {/* <th>Question (English)</th>*/}
-                        <th>Question ( Arabic)</th>
+                        <th>{t("Question (Arabic)")}</th>
                         {/*  <th>Answer (English)</th> */}
-                        <th>Answer (Arabic)</th>
+                        <th>{t("Answer (Arabic)")}</th>
                         {/*}  <th>Category</th>
                         <th>Date</th> */}
-                        <th>Actions</th>
+                        <th>{t("Actions")}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -174,16 +174,16 @@ const FAQ = () => {
                 scrollable
             >
                 <Modal.Header closeButton>
-                    <Modal.Title>❓ FAQ Details</Modal.Title>
+                    <Modal.Title>❓ {t("FAQ Details")}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <div className="row">
                         <div className="col-md-6 mb-2">
-                            <strong>📁 Category:</strong> {faqData?.category}
+                            <strong>📁 {t("Category")}:</strong> {faqData?.category}
                         </div>
                     </div>
                     <div className="mb-3">
-                        <strong>📝 Question (EN):</strong>
+                        <strong>📝 {t("Question (English)")}:</strong>
                         <div
                             className="border rounded p-2 mt-1"
                             style={{ backgroundColor: "#f9f9f9" }}
@@ -191,7 +191,7 @@ const FAQ = () => {
                         />
                     </div>
                     <div className="mb-3">
-                        <strong>📝 Question (AR):</strong>
+                        <strong>📝 {t("Question (Arabic)")}:</strong>
                         <div
                             className="border rounded p-2 mt-1"
                             style={{ backgroundColor: "#f9f9f9" }}
@@ -200,7 +200,7 @@ const FAQ = () => {
                     </div>
 
                     <div className="mb-3">
-                        <strong>📝 Answer (EN):</strong>
+                        <strong>📝 {t("Answer (English)")}:</strong>
                         <div
                             className="border rounded p-2 mt-1"
                             style={{ backgroundColor: "#f9f9f9" }}
@@ -209,7 +209,7 @@ const FAQ = () => {
                     </div>
 
                     <div className="mb-3">
-                        <strong>📝 Answer (AR):</strong>
+                        <strong>📝 {t("Answer (Arabic)")}:</strong>
                         <div
                             className="border rounded p-2 mt-1"
                             style={{ backgroundColor: "#f9f9f9" }}
@@ -219,7 +219,7 @@ const FAQ = () => {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={() => setShowFullModal(false)}>
-                        Close
+                        {t("Close")}
                     </Button>
                 </Modal.Footer>
             </Modal>
@@ -228,12 +228,12 @@ const FAQ = () => {
             {/* Create/Edit Faq Modal */}
             <Modal show={show} onHide={handleClose} size="lg">
                 <Modal.Header closeButton>
-                    <Modal.Title>{isEditing ? 'Edit FAQ' : 'Create FAQ'}</Modal.Title>
+                    <Modal.Title>{isEditing ? t('Edit FAQ') : t('Create FAQ')}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Question (English)</Form.Label>
+                            <Form.Label>{t("Question (English)")}</Form.Label>
                             <Form.Control
                                 type="text"
                                 value={faqData.question.en}
@@ -248,7 +248,7 @@ const FAQ = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3">
-                            <Form.Label>Question (Arabic)</Form.Label>
+                            <Form.Label>{t("Question (Arabic)")}</Form.Label>
                             <Form.Control
                                 type="text"
                                 value={faqData.question.ar}
@@ -263,7 +263,7 @@ const FAQ = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3">
-                            <Form.Label>Answer (English)</Form.Label>
+                            <Form.Label>{t("Answer (English)")}</Form.Label>
                             <Form.Control
                                 as="textarea"
                                 rows={3}
@@ -279,7 +279,7 @@ const FAQ = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3">
-                            <Form.Label>Answer (Arabic)</Form.Label>
+                            <Form.Label>{t("Answer (Arabic)")}</Form.Label>
                             <Form.Control
                                 as="textarea"
                                 rows={3}
@@ -295,7 +295,7 @@ const FAQ = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3">
-                            <Form.Label>Category</Form.Label>
+                            <Form.Label>{t("Category")}</Form.Label>
                             <Form.Select
                                 value={faqData.category}
                                 onChange={(e) =>
@@ -303,7 +303,7 @@ const FAQ = () => {
                                 }
                                 required
                             >
-                                <option value="">Select Category</option>
+                                <option value="">{t("Select Category")}</option>
                                 {categoryOptions.map((cat, idx) => (
                                     <option key={idx} value={cat}>
                                         {cat}
@@ -312,7 +312,7 @@ const FAQ = () => {
                             </Form.Select>
                         </Form.Group>
 
-                        <Button type="submit" variant="success">{isEditing ? 'Update' : 'Create'}</Button>
+                        <Button type="submit" variant="success">{isEditing ? t('Update') : t('Create')}</Button>
                     </Form>
                 </Modal.Body>
             </Modal>

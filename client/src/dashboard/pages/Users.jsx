@@ -4,8 +4,10 @@ import api from '../../api/api';
 import { getUsers, createUser, updateUser, deleteUser, getRoles } from '../../api/apiEndpoints';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import usePermission from '../../hooks/usePermission';
+import { useTranslation } from 'react-i18next';
 
 const Users = () => {
+  const { t } = useTranslation();
   const [users, setUsers] = useState([]);
   const [roles, setRoles] = useState([]);
   const [show, setShow] = useState(false);
@@ -105,32 +107,32 @@ const Users = () => {
   return (
     <div className="container py-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h2>User Management</h2>
+        <h2>{t("User Management")}</h2>
         {canCreate && (
-          <Button variant="primary" onClick={handleShow}>Add New User</Button>
+          <Button variant="primary" onClick={handleShow}>{t("Add New User")}</Button>
         )}
       </div>
       <Table bordered hover responsive className="custom-table">
         <thead>
           <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Phone No</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Date</th>
-            <th>Actions</th>
+            <th>{t("First Name")}</th>
+            <th>{t("Last Name")}</th>
+            <th>{t("Phone No")}</th>
+            <th>{t("Email")}</th>
+            <th>{t("Role")}</th>
+            <th>{t("Date")}</th>
+            <th>{t("Actions")}</th>
             {users.some(user => user.role?.name !== 'Super Admin') && (
-              <th>Actions</th>
+              <th>{t("Actions")}</th>
             )}
           </tr>
         </thead>
         <tbody>
           {users.map(user => (
             <tr key={user._id}>
-              <td style={{ width: "100px" }}>{user.firstName}</td>
-              <td style={{ width: "100px" }}>{user.lastName}</td>
-              <td style={{ width: "140px" }}>{user.phoneNo}</td>
+              <td>{user.firstName}</td>
+              <td>{user.lastName}</td>
+              <td>{user.phoneNo}</td>
               <td>{user.email}</td>
               <td>{user.role ? user.role.name : 'No role assigned'}</td> {/* Displaying role name */}
               {/*<td>{new Date(faq.date).toLocaleDateString()}</td>*/}
@@ -172,12 +174,12 @@ const Users = () => {
       {/* Create/Edit Faq Modal */}
       <Modal show={show} onHide={handleClose} size="lg">
         <Modal.Header closeButton>
-          <Modal.Title>{isEditing ? 'Edit User' : 'Create User'}</Modal.Title>
+          <Modal.Title>{isEditing ? t('Edit User') : t('Create User')}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3">
-              <Form.Label>First Name</Form.Label>
+              <Form.Label>{t("First Name")}</Form.Label>
               <Form.Control
                 type="text"
                 value={userData.firstName}
@@ -187,7 +189,7 @@ const Users = () => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Last Name</Form.Label>
+              <Form.Label>{t("Last Name")}</Form.Label>
               <Form.Control
                 type="text"
                 value={userData.lastName}
@@ -197,7 +199,7 @@ const Users = () => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Phone Number</Form.Label>
+              <Form.Label>{t("Phone Number")}</Form.Label>
               <Form.Control
                 type="number"
                 value={userData.phoneNo}
@@ -207,7 +209,7 @@ const Users = () => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Email</Form.Label>
+              <Form.Label>{t("Email")}</Form.Label>
               <Form.Control
                 type="email"
                 value={userData.email}
@@ -217,7 +219,7 @@ const Users = () => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>{t("Password")}</Form.Label>
               <Form.Control
                 type="password"
                 value={userData.password}
@@ -227,7 +229,7 @@ const Users = () => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Confirm Password</Form.Label>
+              <Form.Label>{t("Confirm Password")}</Form.Label>
               <Form.Control
                 type="password"
                 value={userData.confirmPassword}
@@ -240,18 +242,18 @@ const Users = () => {
                 }
               />
               <Form.Control.Feedback type="invalid">
-                Passwords do not match
+                {t("Passwords do not match")}
               </Form.Control.Feedback>
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Role</Form.Label>
+              <Form.Label>{t("Role")}</Form.Label>
               <Form.Select
                 value={userData.role}
                 onChange={(e) => setUserData({ ...userData, role: e.target.value })}
                 required
               >
-                <option value="">Select Role</option>
+                <option value="">{t("Select Role")}</option>
                 {/* {roles.map((role) => (
                   <option key={role._id} value={role._id}> 
                     {role.name} 
@@ -267,7 +269,7 @@ const Users = () => {
               </Form.Select>
             </Form.Group>
 
-            <Button type="submit" variant="success">{isEditing ? 'Update' : 'Create'}</Button>
+            <Button type="submit" variant="success">{isEditing ? t('Update') : t('Create')}</Button>
           </Form>
         </Modal.Body>
       </Modal>

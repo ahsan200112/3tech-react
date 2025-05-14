@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 import { useTranslation } from 'react-i18next';
 
 const Permissions = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const RTL = i18n.dir() === "rtl";
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -73,20 +73,20 @@ const Permissions = () => {
 
   return (
     <div className="border rounded p-4 shadow-sm bg-light">
-      <h4 className="mb-4">Permissions for: <strong>{role.name}</strong></h4>
+      <h4 className="mb-4">{t("Permissions for")}: <strong>{role.name}</strong></h4>
 
       {error && <div className="alert alert-danger">{error}</div>}
 
       {loading ? (
-        <div>Loading permissions...</div>
+        <div>{t("Loading permissions")}...</div>
       ) : (
         <table className="table table-bordered">
           <thead className="table-light">
             <tr>
-              <th>Module</th>
+              <th>{("Module")}</th>
               {actions.map((action) => (
                 <th key={action} className="text-center text-capitalize">
-                  {action === 'all' ? 'Allow All' : action}
+                  {action === 'all' ? t('Allow All') : action}
                 </th>
               ))}
             </tr>
@@ -112,10 +112,10 @@ const Permissions = () => {
       )}
 
       <div className="d-flex justify-content-end mt-3">
-        <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-secondary `} onClick={() => navigate('/dashboard/roles-permissions')}>Back</button>
-        <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-secondary`} onClick={() => navigate('/dashboard/roles-permissions')}>Cancel</button>
+        <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-secondary `} onClick={() => navigate('/dashboard/roles-permissions')}>{t("Back")}</button>
+        <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-secondary`} onClick={() => navigate('/dashboard/roles-permissions')}>{t("Cancel")}</button>
         {role.name !== 'Super Admin' && (
-          <button className="btn btn-primary" onClick={handleUpdate}>Update Permissions</button>
+          <button className="btn btn-primary" onClick={handleUpdate}>{t("Update Permissions")}</button>
         )}
       </div>
     </div>

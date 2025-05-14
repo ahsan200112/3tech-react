@@ -4,8 +4,10 @@ import LanguageToggleDashboard from './LanguageToggleDashboard';
 import UserImage from '../../assets/images/girl2.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCurrentUser } from '../../redux/features/users/usersSlice';
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate(); // Hook to navigate
   const dispatch = useDispatch(); // Dispatch hook to trigger actions
 
@@ -46,7 +48,7 @@ const Header = () => {
               className="btn btn-danger btn-sm"
               onClick={handleLogout} // Handle the logout
             >
-              Logout
+              {t("Logout")}
             </button>
           </div>
         </div>

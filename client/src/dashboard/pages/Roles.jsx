@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 import usePermission from '../../hooks/usePermission';
 
 const Roles = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const RTL = i18n.dir() === "rtl";
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -74,9 +74,9 @@ const Roles = () => {
   return (
     <div className="container py-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h2>Roles Management</h2>
+        <h2>{t("Roles Management")}</h2>
         {canCreate && (
-          <button className="btn btn-primary" onClick={() => setShowModal(true)}>Add Role</button>
+          <button className="btn btn-primary" onClick={() => setShowModal(true)}>{t("Add Role")}</button>
         )}
       </div>
 
@@ -86,19 +86,19 @@ const Roles = () => {
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title">{isEditing ? 'Edit Role' : 'Create Role'}</h5>
+                <h5 className="modal-title">{isEditing ? t('Edit Role') : t('Create Role')}</h5>
                 <button type="button" className="btn-close" onClick={() => setShowModal(false)}></button>
               </div>
               <div className="modal-body">
                 <div className="form-group">
-                  <label htmlFor="roleName">Role Name</label>
+                  <label htmlFor="roleName">{t("Role Name")}</label>
                   <input
                     type="text"
                     className="form-control"
                     id="roleName"
                     value={roleName}
                     onChange={(e) => setRoleName(e.target.value)}
-                    placeholder="Enter role name"
+                    placeholder={t("Enter role name")}
                   />
                 </div>
               </div>
@@ -109,7 +109,7 @@ const Roles = () => {
                   className="btn btn-primary"
                   onClick={isEditing ? handleUpdateRole : handleCreateRole}
                 >
-                  {isEditing ? 'Update Role' : 'Create Role'}
+                  {isEditing ? t('Update Role') : t('Create Role')}
                 </button>
               </div>
             </div>
@@ -119,8 +119,8 @@ const Roles = () => {
       <table className="table table-bordered">
         <thead className="table-light">
           <tr>
-            <th>Role Name</th>
-            <th>Actions</th>
+            <th>{t("Role Name")}</th>
+            <th>{t("Actions")}</th>
           </tr>
         </thead>
         <tbody>
@@ -133,15 +133,15 @@ const Roles = () => {
                 {role.name !== 'Super Admin' && (
                   <>
                     {canEdit && (
-                      <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-sm btn-warning`} onClick={() => handleEditRole(role)}>Edit</button>
+                      <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-sm btn-warning`} onClick={() => handleEditRole(role)}>{t("Edit")}</button>
                     )}
                     {canDelete && (
-                      <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-sm btn-danger`} onClick={() => handleDeleteRole(role._id)}>Delete</button>
+                      <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-sm btn-danger`} onClick={() => handleDeleteRole(role._id)}>{t("Delete")}</button>
                     )}
                   </>
                 )}
                 <button className="btn btn-sm btn-secondary" onClick={() => handlePermissionClick(role)}>
-                  Permissions
+                  {t("Permissions")}
                 </button>
               </td>
             </tr>

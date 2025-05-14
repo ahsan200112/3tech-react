@@ -6,7 +6,7 @@ import { FaHome, FaRegNewspaper, FaUsers, FaGift, FaConciergeBell, FaProjectDiag
 import usePermission from '../../hooks/usePermission';
 
 const Sidebar = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const isRtl = i18n.dir() === 'rtl'; // Check the current direction (RTL or LTR)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State to handle sidebar toggle
 
@@ -50,60 +50,60 @@ const Sidebar = () => {
         </div>
         <nav className="nav flex-column">
           <NavLink to="/dashboard" className="nav-link text-white">
-            <FaHome className={isRtl ? 'ms-2' : 'me-2'} /> Home
+            <FaHome className={isRtl ? 'ms-2' : 'me-2'} /> {t("Home")}
           </NavLink>
           {blogsPermission.canView && (
             <NavLink to="/dashboard/blogs" className="nav-link text-white">
-              <FaRegNewspaper className={isRtl ? 'ms-2' : 'me-2'} /> Blogs
+              <FaRegNewspaper className={isRtl ? 'ms-2' : 'me-2'} /> {t("Blogs")}
             </NavLink>
           )}
           {servicesPermission.canView && (
             <NavLink to="/dashboard/services" className="nav-link text-white">
-              <FaConciergeBell className={isRtl ? 'ms-2' : 'me-2'} /> Services
+              <FaConciergeBell className={isRtl ? 'ms-2' : 'me-2'} /> {t("Services")}
             </NavLink>
           )}
           {projectsPermission.canView && (
             <NavLink to="/dashboard/projects" className="nav-link text-white">
-              <FaProjectDiagram className={isRtl ? 'ms-2' : 'me-2'} /> Projects
+              <FaProjectDiagram className={isRtl ? 'ms-2' : 'me-2'} /> {t("Projects")}
             </NavLink>
           )}
           {packagesPermission.canView && (
             <NavLink to="/dashboard/packages" className="nav-link text-white">
-              <FaGift className={isRtl ? 'ms-2' : 'me-2'} /> Packages
+              <FaGift className={isRtl ? 'ms-2' : 'me-2'} /> {t("Packages")}
             </NavLink>
           )}
           {contactFormsPermission.canView && (
             <NavLink to="/dashboard/contactforms" className="nav-link text-white">
-              <FaEnvelope className={isRtl ? 'ms-2' : 'me-2'} /> Contact Forms
+              <FaEnvelope className={isRtl ? 'ms-2' : 'me-2'} /> {t("Contact Forms")}
             </NavLink>
           )}
           {faqsPermission.canView && (
             <NavLink to="/dashboard/faqs" className="nav-link text-white">
-              <FaQuestionCircle className={isRtl ? 'ms-2' : 'me-2'} /> FAQS
+              <FaQuestionCircle className={isRtl ? 'ms-2' : 'me-2'} /> {t("FAQS")}
             </NavLink>
           )}
           {testimonialsPermission.canView && (
             <NavLink to="/dashboard/testimonials" className="nav-link text-white">
-              <FaQuoteLeft className={isRtl ? 'ms-2' : 'me-2'} /> Testimonials
+              <FaQuoteLeft className={isRtl ? 'ms-2' : 'me-2'} /> {t("Testimonials")}
             </NavLink>
           )}
           {usersPermission.canView && (
             <NavLink to="/dashboard/users" className="nav-link text-white">
-              <FaUsers className={isRtl ? 'ms-2' : 'me-2'} /> Users
+              <FaUsers className={isRtl ? 'ms-2' : 'me-2'} /> {t("Users")}
             </NavLink>
           )}
           {rolesPermission.canView && (
             <NavLink to="/dashboard/roles-permissions" className="nav-link text-white">
-              <FaUserShield className={isRtl ? 'ms-2' : 'me-2'} /> Roles and Permission
+              <FaUserShield className={isRtl ? 'ms-2' : 'me-2'} /> {t("Roles and Permission")}
             </NavLink>
           )}
           {seoMetaPermission.canView && (
             <NavLink to="/dashboard/seo-meta" className="nav-link text-white">
-              <FaSearch className={isRtl ? 'ms-2' : 'me-2'} /> Seo Meta Page
+              <FaSearch className={isRtl ? 'ms-2' : 'me-2'} /> {t("Seo Meta Page")}
             </NavLink>
           )}
             <NavLink to="/dashboard/settings" className="nav-link text-white">
-              <FaCogs className={isRtl ? 'ms-2' : 'me-2'} /> Setting
+              <FaCogs className={isRtl ? 'ms-2' : 'me-2'} /> {t("Setting")}
             </NavLink>
         </nav>
       </div>

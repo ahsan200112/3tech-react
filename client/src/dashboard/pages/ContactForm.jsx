@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import api from '../../api/api';
 import { getContactForms } from '../../api/apiEndpoints';
+import { useTranslation } from 'react-i18next';
 
 const Services = () => {
+    const { t } = useTranslation();
     const [contactForm, setContactForm] = useState([]);
 
     const fetchContactForm = async () => {
@@ -24,18 +26,18 @@ const Services = () => {
     return (
         <div className="container py-4">
             <div className="d-flex justify-content-between align-items-center mb-4">
-                <h2>Contact Form Submissions</h2>
+                <h2>{t("Contact Form Submissions")}</h2>
             </div>
             <Table bordered hover responsive className="custom-table">
                 <thead className="thead-dark">
                     <tr>
                         <th>#</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Subject</th>
-                        <th>Message</th>
-                        <th>Submitted At</th>
+                        <th>{t("Name")}</th>
+                        <th>{t("Email")}</th>
+                        <th>{t("Phone")}</th>
+                        <th>{t("Subject")}</th>
+                        <th>{t("Message")}</th>
+                        <th>{t("Submitted At")}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -53,7 +55,7 @@ const Services = () => {
                         ))
                     ) : (
                         <tr>
-                            <td colSpan="7" className="text-center">No contacts found</td>
+                            <td colSpan="7" className="text-center">{t("No contacts found")}</td>
                         </tr>
                     )}
                 </tbody>

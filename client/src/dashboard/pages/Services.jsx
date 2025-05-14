@@ -7,7 +7,7 @@ import { FaEdit, FaTrash, FaEye } from 'react-icons/fa';
 import usePermission from '../../hooks/usePermission';
 
 const Services = () => {
-    const { i18n } = useTranslation();
+    const { t, i18n } = useTranslation();
     const lang = i18n.language;
     const [services, setServices] = useState([]);
     const [show, setShow] = useState(false);
@@ -89,22 +89,22 @@ const Services = () => {
     return (
         <div className="container py-4">
             <div className="d-flex justify-content-between align-items-center mb-4">
-                <h2>Service Management</h2>
+                <h2>{t("Service Management")}</h2>
                 {canCreate && (
-                    <Button variant="primary" onClick={handleShow}>Add New Service</Button>
+                    <Button variant="primary" onClick={handleShow}>{t("Add New Service")}</Button>
                 )}
             </div>
             <Table bordered hover responsive className="custom-table">
                 <thead>
                     <tr>
-                        <th>Title (English)</th>
-                        <th>Title (Arabic)</th>
+                        <th>{t("Title (English)")}</th>
+                        <th>{t("Title (Arabic)")}</th>
                         {/*  <th>Description (English)</th>
                         <th>Description (Arabic)</th> */}
-                        <th>Image</th>
-                        <th>Link</th>
+                        <th>{t("Image")}</th>
+                        <th>{t("Link")}</th>
                         {/*    <th>Date</th> */}
-                        <th>Actions</th>
+                        <th>{t("Actions")}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -152,26 +152,26 @@ const Services = () => {
                 scrollable
             >
                 <Modal.Header closeButton>
-                    <Modal.Title>🛠️ Service Details</Modal.Title>
+                    <Modal.Title>🛠️ {t("Service Details")}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <div className="row">
                         <div className="col-md-6 mb-2">
-                            <strong>📝 Title (EN):</strong> {serviceData?.title?.en}
+                            <strong>📝 {t("Title (English)")}:</strong> {serviceData?.title?.en}
                         </div>
                         <div className="col-md-6 mb-2">
-                            <strong>📝 Title (AR):</strong> {serviceData?.title?.ar}
+                            <strong>📝 {t("Title (Arabic)")}:</strong> {serviceData?.title?.ar}
                         </div>
 
                         <div className="col-md-6 mb-2">
-                            <strong>🔗 Link:</strong> {serviceData?.link}
+                            <strong>🔗 {t("Link")}:</strong> {serviceData?.link}
                         </div>
                     </div>
 
                     <hr />
 
                     <div className="mb-3">
-                        <strong>📝 Description (EN):</strong>
+                        <strong>📝 {t("Description (English)")}:</strong>
                         <div
                             className="border rounded p-2 mt-1"
                             style={{ backgroundColor: "#f9f9f9" }}
@@ -180,7 +180,7 @@ const Services = () => {
                     </div>
 
                     <div className="mb-3">
-                        <strong>📝 Description (AR):</strong>
+                        <strong>📝 {t("Description (Arabic)")}:</strong>
                         <div
                             className="border rounded p-2 mt-1"
                             style={{ backgroundColor: "#f9f9f9" }}
@@ -190,7 +190,7 @@ const Services = () => {
 
                     {serviceData.image && (
                         <div>
-                            <strong>🖼️ Service Image:</strong>
+                            <strong>🖼️ {t("Service Image")}:</strong>
                             <div className="mt-2">
                                 <img
                                     src={serviceData.image}
@@ -202,7 +202,7 @@ const Services = () => {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={() => setShowFullModal(false)}>
-                        Close
+                        {t("Close")}
                     </Button>
                 </Modal.Footer>
             </Modal>
@@ -210,12 +210,12 @@ const Services = () => {
             {/* Create/Edit Service Modal */}
             <Modal show={show} onHide={handleClose} size="lg">
                 <Modal.Header closeButton>
-                    <Modal.Title>{isEditing ? 'Edit Service' : 'Create Service'}</Modal.Title>
+                    <Modal.Title>{isEditing ? t('Edit Service') : t('Create Service')}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Title (English)</Form.Label>
+                            <Form.Label>{t("Title (English)")}</Form.Label>
                             <Form.Control
                                 type="text"
                                 value={serviceData.title.en}
@@ -225,7 +225,7 @@ const Services = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3">
-                            <Form.Label>Title (Arabic)</Form.Label>
+                            <Form.Label>{t("Title (Arabic)")}</Form.Label>
                             <Form.Control
                                 type="text"
                                 value={serviceData.title.ar}
@@ -235,7 +235,7 @@ const Services = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3">
-                            <Form.Label>Description (English)</Form.Label>
+                            <Form.Label>{t("Description (English)")}</Form.Label>
                             <Form.Control
                                 type="text"
                                 value={serviceData.description.en}
@@ -244,7 +244,7 @@ const Services = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3">
-                            <Form.Label>Description (Arabic)</Form.Label>
+                            <Form.Label>{t("Description (Arabic)")}</Form.Label>
                             <Form.Control
                                 type="text"
                                 value={serviceData.description.ar}
@@ -254,7 +254,7 @@ const Services = () => {
 
 
                         <Form.Group className="mb-3">
-                            <Form.Label>Link</Form.Label>
+                            <Form.Label>{t("Link")}</Form.Label>
                             <Form.Control
                                 type="text"
                                 value={serviceData.link}
@@ -263,7 +263,7 @@ const Services = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3">
-                            <Form.Label className='mx-2'>Upload Image (60 * 60 recommended webp format)</Form.Label>
+                            <Form.Label className='mx-2'>{t("Upload Image (60 * 60 recommended webp format)")}</Form.Label>
                             <Form.Control
                                 type="file"
                                 accept="image/*"
@@ -271,7 +271,7 @@ const Services = () => {
                             />
                         </Form.Group>
 
-                        <Button type="submit" variant="success">{isEditing ? 'Update' : 'Create'}</Button>
+                        <Button type="submit" variant="success">{isEditing ? t('Update') : t('Create')}</Button>
                     </Form>
                 </Modal.Body>
             </Modal>

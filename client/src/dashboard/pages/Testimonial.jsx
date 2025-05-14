@@ -4,8 +4,10 @@ import api from '../../api/api';
 import { getTestimonials, createTestimonial, updateTestimonial, deleteTestimonial } from '../../api/apiEndpoints';
 import { FaEdit, FaTrash, FaEye } from 'react-icons/fa';
 import usePermission from '../../hooks/usePermission';
+import { useTranslation } from 'react-i18next';
 
 const Testimonial = () => {
+    const { t } = useTranslation();
     const [testimonials, setTestimonials] = useState([]);
     const [show, setShow] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
@@ -76,9 +78,9 @@ const Testimonial = () => {
     return (
         <div className="container py-4">
             <div className="d-flex justify-content-between align-items-center mb-4">
-                <h2>Testimonial Management</h2>
+                <h2>{t("Testimonial Management")}</h2>
                 {canCreate && (
-                    <Button variant="primary" onClick={handleShow}>Add New Testimonial</Button>
+                    <Button variant="primary" onClick={handleShow}>{t("Add New Testimonial")}</Button>
                 )}
             </div>
             <Table bordered hover responsive className="custom-table">
@@ -87,11 +89,11 @@ const Testimonial = () => {
                         {/*  <th>Message (English)</th>
                         <th>Message (Arabic)</th> 
                         <th>Name (English)</th> */}
-                        <th>Name (Arabic)</th>
+                        <th>{t("Name (Arabic)")}</th>
                         {/*  <th>Position (English)</th> */}
-                        <th>Position (Arabic)</th>
+                        <th>{t("Position (Arabic)")}</th>
                         {/*   <th>Date</th> */}
-                        <th>Actions</th>
+                        <th>{t("Actions")}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -134,29 +136,29 @@ const Testimonial = () => {
                 scrollable
             >
                 <Modal.Header closeButton>
-                    <Modal.Title>🗣️ Testimonial Details</Modal.Title>
+                    <Modal.Title>🗣️ {t("Testimonial Details")}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <div className="row">
                         <div className="col-md-6 mb-2">
-                            <strong>👤 Name (EN):</strong> {testimonialData?.name?.en}
+                            <strong>👤 {t("Name (English)")}:</strong> {testimonialData?.name?.en}
                         </div>
                         <div className="col-md-6 mb-2">
-                            <strong>👤 Name (AR):</strong> {testimonialData?.name?.ar}
+                            <strong>👤 {t("Name (Arabic)")}:</strong> {testimonialData?.name?.ar}
                         </div>
 
                         <div className="col-md-6 mb-2">
-                            <strong>💼 Position (EN):</strong> {testimonialData?.position?.en}
+                            <strong>💼 {t("Position (English)")}:</strong> {testimonialData?.position?.en}
                         </div>
                         <div className="col-md-6 mb-2">
-                            <strong>💼 Position (AR):</strong> {testimonialData?.position?.ar}
+                            <strong>💼 {t("Position (Arabic)")}:</strong> {testimonialData?.position?.ar}
                         </div>
                     </div>
 
                     <hr />
 
                     <div className="mb-3">
-                        <strong>📝 Message (EN):</strong>
+                        <strong>📝 {t("Message (English)")}:</strong>
                         <div
                             className="border rounded p-2 mt-1"
                             style={{ backgroundColor: "#f9f9f9" }}
@@ -166,7 +168,7 @@ const Testimonial = () => {
                     </div>
 
                     <div className="mb-3">
-                        <strong>📝 Message (AR):</strong>
+                        <strong>📝 {t("Message (Arabic)")}:</strong>
                         <div
                             className="border rounded p-2 mt-1"
                             style={{ backgroundColor: "#f9f9f9" }}
@@ -177,7 +179,7 @@ const Testimonial = () => {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={() => setShowFullModal(false)}>
-                        Close
+                        {t("Close")}
                     </Button>
                 </Modal.Footer>
             </Modal>
@@ -186,12 +188,12 @@ const Testimonial = () => {
             {/* Create/Edit Faq Modal */}
             <Modal show={show} onHide={handleClose} size="lg">
                 <Modal.Header closeButton>
-                    <Modal.Title>{isEditing ? 'Edit Testimonial' : 'Create Testimonial'}</Modal.Title>
+                    <Modal.Title>{isEditing ? t('Edit Testimonial') : t('Create Testimonial')}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Message (English)</Form.Label>
+                            <Form.Label>{t("Message (English)")}</Form.Label>
                             <Form.Control
                                 as="textarea" rows={4}
                                 type="text"
@@ -201,7 +203,7 @@ const Testimonial = () => {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Message (Arabic)</Form.Label>
+                            <Form.Label>{t("Message (Arabic)")}</Form.Label>
                             <Form.Control
                                 as="textarea" rows={4}
                                 type="text"
@@ -211,7 +213,7 @@ const Testimonial = () => {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Name (English)</Form.Label>
+                            <Form.Label>{t("Name (English)")}</Form.Label>
                             <Form.Control
                                 type="text"
                                 value={testimonialData.name.en}
@@ -220,7 +222,7 @@ const Testimonial = () => {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Name (Arabic)</Form.Label>
+                            <Form.Label>{t("Name (Arabic)")}</Form.Label>
                             <Form.Control
                                 type="text"
                                 value={testimonialData.name.ar}
@@ -229,7 +231,7 @@ const Testimonial = () => {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Position (English)</Form.Label>
+                            <Form.Label>{t("Position (English)")}</Form.Label>
                             <Form.Control
                                 type="text"
                                 value={testimonialData.position.en}
@@ -238,7 +240,7 @@ const Testimonial = () => {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Position (Arabic)</Form.Label>
+                            <Form.Label>{t("Position (Arabic)")}</Form.Label>
                             <Form.Control
                                 type="text"
                                 value={testimonialData.position.ar}
@@ -247,7 +249,7 @@ const Testimonial = () => {
                             />
                         </Form.Group>
 
-                        <Button type="submit" variant="success">{isEditing ? 'Update' : 'Create'}</Button>
+                        <Button type="submit" variant="success">{isEditing ? t('Update') : t('Create')}</Button>
                     </Form>
                 </Modal.Body>
             </Modal>

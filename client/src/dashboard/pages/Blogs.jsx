@@ -4,8 +4,10 @@ import api from '../../api/api';
 import { getBlogs, createBlog, updateBlog, deleteBlog } from '../../api/apiEndpoints';
 import { FaEdit, FaTrash, FaEye } from 'react-icons/fa';
 import usePermission from '../../hooks/usePermission';
+import { useTranslation } from 'react-i18next';
 
 const Blogs = () => {
+  const { t } = useTranslation();
   const [blogs, setBlogs] = useState([]);
   const [show, setShow] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
@@ -93,26 +95,26 @@ const Blogs = () => {
   return (
     <div className="container py-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h2>Blog Management</h2>
+        <h2>{t("Blog Management")}</h2>
         {canCreate && (
-          <Button variant="primary" onClick={handleShow}>Add New Blog</Button>
+          <Button variant="primary" onClick={handleShow}>{t("Add New Blog")}</Button>
         )}
       </div>
 
       <Table bordered hover responsive className="custom-table">
         <thead>
           <tr>
-            <th>Title (English)</th>
-            <th>Title (Arabic)</th>
+            <th>{t("Title (English)")}</th>
+            <th>{t("Title (Arabic)")}</th>
             {/*  <th>Description (English)</th>
             <th>Description (Arabic)</th> */}
-            <th>Image</th>
+            <th>{t("Image")}</th>
             {/*  <th>Author (English)</th>
             <th>Author (Arabic)</th> 
             <th>Category (English)</th> */}
-            <th>Category (Arabic)</th>
+            <th>{t("Category (Arabic)")}</th>
            {/* <th>Date</th> */}
-            <th>Actions</th>
+            <th>{t("Actions")}</th>
           </tr>
         </thead>
         <tbody>
@@ -165,41 +167,41 @@ const Blogs = () => {
         scrollable
       >
         <Modal.Header closeButton>
-          <Modal.Title>📰 Blog Details</Modal.Title>
+          <Modal.Title>📰 {t("Blog Details")}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="mb-3">
-            <strong className="text-primary">📅 Date:</strong>{' '}
+            <strong className="text-primary">📅 {t("Date")}:</strong>{' '}
             {blogData?.date ? new Date(blogData.date).toLocaleDateString() : '—'}
           </div>
 
           <div className="row">
             <div className="col-md-6 mb-2">
-              <strong>📝 Title (EN):</strong> {blogData?.title?.en}
+              <strong>📝 {t("Title (English)")}:</strong> {blogData?.title?.en}
             </div>
             <div className="col-md-6 mb-2">
-              <strong>📝 Title (AR):</strong> {blogData?.title?.ar}
-            </div>
-
-            <div className="col-md-6 mb-2">
-              <strong>👤 Author (EN):</strong> {blogData?.author?.en}
-            </div>
-            <div className="col-md-6 mb-2">
-              <strong>👤 Author (AR):</strong> {blogData?.author?.ar}
+              <strong>📝 {t("Title (Arabic)")}:</strong> {blogData?.title?.ar}
             </div>
 
             <div className="col-md-6 mb-2">
-              <strong>📂 Category (EN):</strong> {blogData?.category?.en}
+              <strong>👤 {t("Author (English)")}:</strong> {blogData?.author?.en}
             </div>
             <div className="col-md-6 mb-2">
-              <strong>📂 Category (AR):</strong> {blogData?.category?.ar}
+              <strong>👤 {t("Author (Arabic)")}:</strong> {blogData?.author?.ar}
+            </div>
+
+            <div className="col-md-6 mb-2">
+              <strong>📂 {t("Category (English)")}:</strong> {blogData?.category?.en}
+            </div>
+            <div className="col-md-6 mb-2">
+              <strong>📂 {t("Category (Arabic)")}:</strong> {blogData?.category?.ar}
             </div>
           </div>
 
           <hr />
 
           <div className="mb-3">
-            <strong>📝 Description (EN):</strong>
+            <strong>📝 {t("Description (English)")}:</strong>
             <div
               className="border rounded p-2 mt-1"
               style={{ backgroundColor: "#f9f9f9" }}
@@ -208,7 +210,7 @@ const Blogs = () => {
           </div>
 
           <div className="mb-3">
-            <strong>📝 Description (AR):</strong>
+            <strong>📝 {t("Description (Arabic)")}:</strong>
             <div
               className="border rounded p-2 mt-1"
               style={{ backgroundColor: "#f9f9f9" }}
@@ -218,7 +220,7 @@ const Blogs = () => {
 
           {blogData.image && (
             <div>
-              <strong>🖼️ Blog Image:</strong>
+              <strong>🖼️ {t("Blog Image")}:</strong>
               <div className="mt-2">
                 <img
                   src={blogData.image}
@@ -230,7 +232,7 @@ const Blogs = () => {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => setShowFullModal(false)}>
-            Close
+            {t("Close")}
           </Button>
         </Modal.Footer>
       </Modal>
@@ -238,12 +240,12 @@ const Blogs = () => {
       {/* Modal */}
       <Modal show={show} onHide={handleClose} size="lg">
         <Modal.Header closeButton>
-          <Modal.Title>{isEditing ? 'Edit Blog' : 'Create Blog'}</Modal.Title>
+          <Modal.Title>{isEditing ? t('Edit Blog') : t('Create Blog')}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3">
-              <Form.Label>Title (English)</Form.Label>
+              <Form.Label>{t("Title (English)")}</Form.Label>
               <Form.Control
                 type="text"
                 value={blogData.title.en}
@@ -252,7 +254,7 @@ const Blogs = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>Title (Arabic)</Form.Label>
+              <Form.Label>{t("Title (Arabic)")}</Form.Label>
               <Form.Control
                 type="text"
                 value={blogData.title.ar}
@@ -262,7 +264,7 @@ const Blogs = () => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Description (English)</Form.Label>
+              <Form.Label>{t("Description (English)")}</Form.Label>
               <Form.Control
                 type="text"
                 value={blogData.description.en}
@@ -271,7 +273,7 @@ const Blogs = () => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Description (Arabic)</Form.Label>
+              <Form.Label>{t("Description (Arabic)")}</Form.Label>
               <Form.Control
                 type="text"
                 value={blogData.description.ar}
@@ -280,7 +282,7 @@ const Blogs = () => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label className='mx-2'>Upload Image (792 * 450 recommended webp format)</Form.Label>
+              <Form.Label className='mx-2'>{t("Upload Image (792 * 450 recommended webp format)")}</Form.Label>
               <Form.Control
                 type="file"
                 accept="image/*"
@@ -289,7 +291,7 @@ const Blogs = () => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Author Name (English)</Form.Label>
+              <Form.Label>{t("Author Name (English)")}</Form.Label>
               <Form.Control
                 type="text"
                 value={blogData.author.en}
@@ -297,7 +299,7 @@ const Blogs = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>Author Name (Arabic)</Form.Label>
+              <Form.Label>{t("Author Name (Arabic)")}</Form.Label>
               <Form.Control
                 type="text"
                 value={blogData.author.ar}
@@ -306,7 +308,7 @@ const Blogs = () => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Category (English)</Form.Label>
+              <Form.Label>{t("Category (English)")}</Form.Label>
               <Form.Control
                 type="text"
                 value={blogData.category.en}
@@ -314,7 +316,7 @@ const Blogs = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>Category (Arabic)</Form.Label>
+              <Form.Label>{t("Category (Arabic)")}</Form.Label>
               <Form.Control
                 type="text"
                 value={blogData.category.ar}
@@ -322,7 +324,7 @@ const Blogs = () => {
               />
             </Form.Group>
 
-            <Button type="submit" variant="success">{isEditing ? 'Update' : 'Create'}</Button>
+            <Button type="submit" variant="success">{isEditing ? t('Update') : t('Create')}</Button>
           </Form>
         </Modal.Body>
       </Modal>
