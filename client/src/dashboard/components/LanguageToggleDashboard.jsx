@@ -29,6 +29,8 @@ const LanguageToggleDashboard = () => {
           minWidth: "50px", // Ensures it doesn't get too small
           padding: "5px 10px", // Padding for better spacing
           textAlign: "center",
+          border:"1px solid grey",
+          borderRadius:"10px"
         }}
       >
         <i className="bi bi-globe"></i> {i18n.language === "ar" ? "عربي" : "En"}

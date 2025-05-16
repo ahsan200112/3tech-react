@@ -210,7 +210,7 @@ const FAQ = () => {
                         className={`${RTL ? 'ms-2' : 'me-2'} mb-2 ${selectedCategory === cat ? 'active-button' : ''}`}
                         onClick={() => handleCategoryFilter(cat)}
                     >
-                        {cat}
+                        {t(cat)}
                     </Button>
                 ))}
             </div>

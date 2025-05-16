@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCurrentUser } from '../../redux/features/users/usersSlice';
 import { useTranslation } from 'react-i18next';
 
-const Header = () => {
+const Header = ({ onToggleSidebar }) => {
   const { t } = useTranslation();
   const navigate = useNavigate(); // Hook to navigate
   const dispatch = useDispatch(); // Dispatch hook to trigger actions
@@ -27,9 +27,24 @@ const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-2">
       <div className="container-fluid">
-        <div className="collapse navbar-collapse justify-content-end">
+        <div>
+        {/* Sidebar Toggle Button */}
+          <button
+            className="btn btn-outline-primary d-none d-lg-block"
+            onClick={onToggleSidebar}
+          >
+            ☰
+          </button>
+      </div>
+        <div className="collapse navbar-collapse justify-content-end gap-4">
           <LanguageToggleDashboard />
-          <div className="d-flex align-items-center gap-3">
+          <div className="d-flex align-items-center gap-2">
+            <img
+              src={UserImage}
+              alt="User"
+              className="rounded-circle"
+              style={{ width: '35px', height: '35px' }}
+            />
             <div className="d-flex flex-column text-end">
               <span className="fw-bold">
                 {user ? `${user.firstName} ${user.lastName}` : 'Guest'}
@@ -38,19 +53,13 @@ const Header = () => {
                 {user?.role?.name || 'No Role'}
               </span>
             </div>
-            <img
-              src={UserImage}
-              alt="User"
-              className="rounded-circle"
-              style={{ width: '35px', height: '35px' }}
-            />
-            <button
+          </div>
+          <button
               className="btn btn-danger btn-sm"
               onClick={handleLogout} // Handle the logout
             >
               {t("Logout")}
             </button>
-          </div>
         </div>
       </div>
     </nav>
