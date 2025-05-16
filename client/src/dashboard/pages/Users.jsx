@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Table, Modal, Form } from 'react-bootstrap';
 import api from '../../api/api';
 import { getUsers, createUser, updateUser, deleteUser, getRoles } from '../../api/apiEndpoints';
-import { FaEdit, FaTrash } from 'react-icons/fa';
+import { Button, Table, Modal, Form, Input, Select, message } from 'antd';
+import { EditOutlined, DeleteOutlined, PlusOutlined } from '@ant-design/icons';
 import usePermission from '../../hooks/usePermission';
 import { useTranslation } from 'react-i18next';
+
+const { Option } = Select;
 
 const Users = () => {
   const { t } = useTranslation();
   const [users, setUsers] = useState([]);
   const [roles, setRoles] = useState([]);
-  const [show, setShow] = useState(false);
+  const [visible, setVisible] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [selectedDeleteId, setSelectedDeleteId] = useState(null);
   const [userData, setUserData] = useState({
     firstName: '',
     lastName: '',
@@ -27,7 +31,7 @@ const Users = () => {
   const fetchUser = async () => {
     try {
       const res = await api.get(getUsers);
-      console.log('Fetched Users:', res.data); // 👈 Add this
+      //console.log('Fetched Users:', res.data); // 👈 Add this
       setUsers(res.data);
     } catch (error) {
       console.error('ERROR', error);
@@ -48,9 +52,7 @@ const Users = () => {
     fetchRoles();
   }, []);
 
-  const handleClose = () => {
-    setShow(false);
-    setIsEditing(false);
+  const resetForm = () => {
     setUserData({
       firstName: '',
       lastName: '',
@@ -60,26 +62,36 @@ const Users = () => {
       confirmPassword: '',
       role: '',
     });
+    setIsEditing(false);
   };
 
-  const handleShow = () => setShow(true);
+  const openModal = () => setVisible(true);
+  const closeModal = () => {
+    setVisible(false);
+    resetForm();
+  };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const handleSubmit = async () => {
     if (userData.password !== userData.confirmPassword) {
-      alert("Passwords do not match");
+      message.error(t("Passwords do not match"));
       return;
     }
 
-    if (isEditing) {
-      await api.put(updateUser(userData._id), userData);
-    } else {
-      const { confirmPassword, ...submitData } = userData;
-      await api.post(createUser, submitData);
+    try {
+      if (isEditing) {
+        await api.put(updateUser(userData._id), userData);
+        message.success(t('User updated successfully'));
+      } else {
+        const { confirmPassword, ...submitData } = userData;
+        await api.post(createUser, submitData);
+        message.success(t('User created successfully'));
+      }
+      closeModal();
+      fetchUser();
+    } catch (error) {
+      message.error(t('Something went wrong'));
+      console.error(error);
     }
-    handleClose();
-    fetchUser();
   };
 
   const handleEdit = (user) => {
@@ -94,182 +106,238 @@ const Users = () => {
       role: user.role?._id || '', // ✅ ensure role is an ID
     });
     setIsEditing(true);
-    handleShow();
+    openModal();
   };
 
-  const handleDelete = async (id) => {
-    if (window.confirm('Are you sure you want to delete this user?')) {
-      await api.delete(deleteUser(id));
+  // Delete handler
+  const handleDelete = (id) => {
+    setSelectedDeleteId(id);
+    setIsDeleteModalOpen(true);
+  };
+
+  const confirmDelete = async () => {
+    try {
+      await api.delete(deleteUser(selectedDeleteId));
+      message.success(t("User deleted successfully"));
       fetchUser();
+    } catch (error) {
+      message.error(t("Failed to delete user"));
+      console.error(error);
+    } finally {
+      setIsDeleteModalOpen(false);
+      setSelectedDeleteId(null);
     }
   };
+
+  const cancelDelete = () => {
+    setIsDeleteModalOpen(false);
+    setSelectedDeleteId(null);
+  };
+
+  // Columns for Ant Design Table
+  const columns = [
+    {
+      title: t('First Name'),
+      dataIndex: 'firstName',
+      key: 'firstName',
+    },
+    {
+      title: t('Last Name'),
+      dataIndex: 'lastName',
+      key: 'lastName',
+    },
+    {
+      title: t('Phone No'),
+      dataIndex: 'phoneNo',
+      key: 'phoneNo',
+    },
+    {
+      title: t('Email'),
+      dataIndex: 'email',
+      key: 'email',
+    },
+    {
+      title: t('Role'),
+      dataIndex: ['role', 'name'],
+      key: 'role',
+      render: (text) => text || t('No role assigned'),
+    },
+    {
+      title: t('Date'),
+      dataIndex: 'createdAt',
+      key: 'createdAt',
+      render: (date) => new Date(date).toLocaleDateString(),
+    },
+    {
+      title: t('Actions'),
+      key: 'actions',
+      render: (_, record) =>
+        record.role?.name !== 'Super Admin' ? (
+          <>
+            {canEdit && (
+              <Button
+                style={{ marginRight: 4, marginLeft: 4 }}
+                icon={<EditOutlined />}
+                onClick={() => handleEdit(record)}
+              />
+            )}
+            {canDelete && (
+              <Button
+                style={{ marginRight: 4, marginLeft: 4 }}
+                danger
+                icon={<DeleteOutlined />}
+                onClick={() => handleDelete(record._id)}
+              />
+            )}
+          </>
+        ) : (
+          <>
+            <Button style={{ marginRight: 4, marginLeft: 4 }} icon={<EditOutlined />} disabled />
+            <Button style={{ marginRight: 4, marginLeft: 4 }} danger icon={<DeleteOutlined />} disabled />
+          </>
+        ),
+    },
+  ];
 
   return (
     <div className="container py-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2>{t("User Management")}</h2>
         {canCreate && (
-          <Button variant="primary" onClick={handleShow}>{t("Add New User")}</Button>
+          <Button type="primary" onClick={openModal} icon={<PlusOutlined />}>
+            {t("Add New User")}
+          </Button>
         )}
       </div>
-      <Table bordered hover responsive className="custom-table">
-        <thead>
-          <tr>
-            <th>{t("First Name")}</th>
-            <th>{t("Last Name")}</th>
-            <th>{t("Phone No")}</th>
-            <th>{t("Email")}</th>
-            <th>{t("Role")}</th>
-            <th>{t("Date")}</th>
-            <th>{t("Actions")}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map(user => (
-            <tr key={user._id}>
-              <td>{user.firstName}</td>
-              <td>{user.lastName}</td>
-              <td>{user.phoneNo}</td>
-              <td>{user.email}</td>
-              <td>{user.role ? user.role.name : 'No role assigned'}</td> {/* Displaying role name */}
-              {/*<td>{new Date(faq.date).toLocaleDateString()}</td>*/}
-              <td>{new Date(user.createdAt).toLocaleDateString()}</td>
-              {/* <td>
-                <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(user)}><FaEdit /></Button>
-                <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(user._id)}><FaTrash /></Button>
-              </td> */}
-              {user.role?.name !== 'Super Admin' ? (
-                <td>
-                  <>
-                    {canEdit && (
-                      <Button variant="outline-primary" size="sm" className="mx-1 my-1" onClick={() => handleEdit(user)}><FaEdit /></Button>
-                    )}
-                    {canDelete && (
-                      <Button variant="outline-danger" size="sm" className="mx-1 my-1" onClick={() => handleDelete(user._id)}><FaTrash /></Button>
-                    )}
-                  </>
-                </td>
-              ) :
-                (
-                  <td>
-                    <>
-                      <Button variant="outline-primary" size="sm" className="mx-1 my-1" disabled>
-                        <FaEdit />
-                      </Button>
-                      <Button variant="outline-danger" size="sm" className="mx-1 my-1" disabled>
-                        <FaTrash />
-                      </Button>
-                    </>
-                  </td>
-                )
-              }
-            </tr>
-          ))}
-        </tbody>
-      </Table>
 
-      {/* Create/Edit Faq Modal */}
-      <Modal show={show} onHide={handleClose} size="lg">
-        <Modal.Header closeButton>
-          <Modal.Title>{isEditing ? t('Edit User') : t('Create User')}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3">
-              <Form.Label>{t("First Name")}</Form.Label>
-              <Form.Control
-                type="text"
-                value={userData.firstName}
-                onChange={(e) => setUserData({ ...userData, firstName: e.target.value })}
-                required
-              />
-            </Form.Group>
+      <div className="ant-table-wrapper custom-ant-table">
+        <Table
+          columns={columns}
+          dataSource={users}
+          rowKey={(record) => record._id}
+          pagination={false}
+        />
+      </div>
 
-            <Form.Group className="mb-3">
-              <Form.Label>{t("Last Name")}</Form.Label>
-              <Form.Control
-                type="text"
-                value={userData.lastName}
-                onChange={(e) => setUserData({ ...userData, lastName: e.target.value })}
-                required
-              />
-            </Form.Group>
+      {/* modal for delete */}
+      <div>
+        <Modal
+          title={t("Confirm Delete")}
+          open={isDeleteModalOpen}
+          onOk={confirmDelete}
+          onCancel={cancelDelete}
+          okText={t("Yes, Delete")}
+          cancelText={t("Cancel")}
+          centered
+          okButtonProps={{ danger: true }}
+        >
+          <p>{t("Are you sure you want to delete this user?")}</p>
+        </Modal>
+      </div>
 
-            <Form.Group className="mb-3">
-              <Form.Label>{t("Phone Number")}</Form.Label>
-              <Form.Control
-                type="number"
-                value={userData.phoneNo}
-                onChange={(e) => setUserData({ ...userData, phoneNo: e.target.value })}
-                required
-              />
-            </Form.Group>
+      <div>
+        <Modal
+          title={isEditing ? t('Edit User') : t('Create User')}
+          open={visible}
+          onOk={handleSubmit}
+          onCancel={closeModal}
+          okText={isEditing ? t('Update') : t('Create')}
+          destroyOnHidden
+          width={800}
+          centered
+        >
+          <div style={{ marginBottom: "20px" }}>
+          </div>
+          <Form
+            layout="vertical"
+            initialValues={userData}
+            onFinish={handleSubmit}
+            onValuesChange={(changedValues) =>
+              setUserData(prev => ({ ...prev, ...changedValues }))
+            }
+          >
+            <Form.Item
+              label={t("First Name")}
+              name="firstName"
+              rules={[{ required: true, message: t('Please input first name') }]}
+            >
+              <Input />
+            </Form.Item>
 
-            <Form.Group className="mb-3">
-              <Form.Label>{t("Email")}</Form.Label>
-              <Form.Control
-                type="email"
-                value={userData.email}
-                onChange={(e) => setUserData({ ...userData, email: e.target.value })}
-                required
-              />
-            </Form.Group>
+            <Form.Item
+              label={t("Last Name")}
+              name="lastName"
+              rules={[{ required: true, message: t('Please input last name') }]}
+            >
+              <Input />
+            </Form.Item>
 
-            <Form.Group className="mb-3">
-              <Form.Label>{t("Password")}</Form.Label>
-              <Form.Control
-                type="password"
-                value={userData.password}
-                onChange={(e) => setUserData({ ...userData, password: e.target.value })}
-                required={!isEditing}
-              />
-            </Form.Group>
+            <Form.Item
+              label={t("Phone Number")}
+              name="phoneNo"
+              rules={[{ required: true, message: t('Please input phone number') }]}
+            >
+              <Input type="tel" />
+            </Form.Item>
 
-            <Form.Group className="mb-3">
-              <Form.Label>{t("Confirm Password")}</Form.Label>
-              <Form.Control
-                type="password"
-                value={userData.confirmPassword}
-                onChange={(e) =>
-                  setUserData({ ...userData, confirmPassword: e.target.value })
-                }
-                required={!isEditing}
-                isInvalid={
-                  userData.confirmPassword && userData.password !== userData.confirmPassword
-                }
-              />
-              <Form.Control.Feedback type="invalid">
-                {t("Passwords do not match")}
-              </Form.Control.Feedback>
-            </Form.Group>
+            <Form.Item
+              label={t("Email")}
+              name="email"
+              rules={[
+                { required: true, message: t('Please input email') },
+                { type: 'email', message: t('Please enter a valid email') },
+              ]}
+            >
+              <Input />
+            </Form.Item>
 
-            <Form.Group className="mb-3">
-              <Form.Label>{t("Role")}</Form.Label>
-              <Form.Select
-                value={userData.role}
-                onChange={(e) => setUserData({ ...userData, role: e.target.value })}
-                required
-              >
-                <option value="">{t("Select Role")}</option>
-                {/* {roles.map((role) => (
-                  <option key={role._id} value={role._id}> 
-                    {role.name} 
-                  </option>
-                ))} */}
+            <Form.Item
+              label={t("Password")}
+              name="password"
+              rules={isEditing ? [] : [{ required: true, message: t('Please input password') }]}
+              hasFeedback
+            >
+              <Input.Password />
+            </Form.Item>
+
+            <Form.Item
+              label={t("Confirm Password")}
+              name="confirmPassword"
+              dependencies={['password']}
+              hasFeedback
+              rules={[
+                { required: !isEditing, message: t('Please confirm password') },
+                ({ getFieldValue }) => ({
+                  validator(_, value) {
+                    if (!value || getFieldValue('password') === value) {
+                      return Promise.resolve();
+                    }
+                    return Promise.reject(new Error(t('Passwords do not match')));
+                  },
+                }),
+              ]}
+            >
+              <Input.Password />
+            </Form.Item>
+
+            <Form.Item
+              label={t("Role")}
+              name="role"
+              rules={[{ required: true, message: t('Please select a role') }]}
+            >
+              <Select placeholder={t("Select Role")}>
                 {roles
-                  .filter(role => role.name !== 'Super Admin') // 👈 Filter out Super Admin
-                  .map((role) => (
-                    <option key={role._id} value={role._id}>
+                  .filter(role => role.name !== 'Super Admin')
+                  .map(role => (
+                    <Option key={role._id} value={role._id}>
                       {role.name}
-                    </option>
+                    </Option>
                   ))}
-              </Form.Select>
-            </Form.Group>
-
-            <Button type="submit" variant="success">{isEditing ? t('Update') : t('Create')}</Button>
+              </Select>
+            </Form.Item>
           </Form>
-        </Modal.Body>
-      </Modal>
+        </Modal>
+      </div>
     </div>
   );
 };

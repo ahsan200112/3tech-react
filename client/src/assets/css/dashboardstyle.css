@@ -1,35 +1,76 @@
-.custom-table th,
-.custom-table td {
-  text-align: center;
-  vertical-align: middle;
-  border-right: 1px solid #dee2e6; /* half-line look */
+/* 1. Center text in all cells */
+.custom-ant-table th,
+.custom-ant-table td {
+  text-align: center !important;
+  vertical-align: middle !important;
 }
 
-.custom-table {
-  border-collapse: collapse;
+.custom-ant-table th {
+  background-color: white;
 }
 
-.custom-table thead {
-  background-color: #007bff;
-  color: white;
+.custom-ant-table td {
+  background-color: rgb(240, 238, 238);
 }
 
-.custom-table thead th {
-  background-color: #efeded;
-}
-
-.custom-table tbody tr:nth-child(even) {
-  background-color: #f8f9fa;
-}
-
-.custom-table tbody tr:hover {
-  background-color: #e9f0ff;
-}
-
-.custom-table img {
+/* Images inside table */
+.custom-ant-table img {
   border-radius: 5px;
   border: 1px solid #dee2e6;
 }
+
+/* Wrapper: full border + border radius on all sides */
+.ant-table-wrapper.custom-ant-table {
+  border: 1px solid #f0f0f0;
+  overflow: hidden;
+  border-radius: 0 !important;
+}
+
+/* Remove default AntD table border */
+.custom-ant-table .ant-table {
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+/* Remove all column borders from tbody (body rows) */
+.custom-ant-table .ant-table-tbody>tr>td {
+  border-right: none !important;
+  border-left: none !important;
+  border-bottom: none !important;
+}
+
+/* Header (thead): Only vertical column separator with light line */
+.custom-ant-table .ant-table-thead>tr>th {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  font-weight: 600;
+  border-radius: 0 !important;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ant-table-wrapper .ant-table.ant-table-bordered>.ant-table-container>.ant-table-content>table>thead>tr>th::before {
+  background-color: #f0f0f0 !important;
+}
+
+/* Remove right border on last header cell */
+.custom-ant-table .ant-table-thead>tr>th:last-child {
+  border-right: none !important;
+}
+
+.custom-ant-table .ant-table-container,
+.custom-ant-table .ant-table-content,
+.custom-ant-table table {
+  border-radius: 0 !important;
+  /* ✅ removes leftover rounded corners */
+}
+
+.active-button {
+  background-color: #0d6efd !important; /* Bootstrap primary blue */
+  color: white !important;
+  border-color: #0d6efd !important;
+}
+
 
 .truncate-2-lines {
   display: -webkit-box;
@@ -69,7 +110,7 @@
   margin-left: 5px;
 }
 
-.dashboard-language-color{
+.dashboard-language-color {
   padding: 0 10px;
   color: black !important;
 }
@@ -84,7 +125,8 @@
 
 .table-image-cell {
   display: flex;
-  justify-content: center;  /* Horizontal center */
+  justify-content: center;
+  /* Horizontal center */
 }
 
 @media (max-width: 767px) {
@@ -92,4 +134,3 @@
     font-size: 12px !important;
   }
 }
-

@@ -28,7 +28,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div>
+    <div className='vh-100'>
       {/* Mobile toggle button */}
       <button
         className="btn btn-primary d-lg-none position-fixed top-0 start-0 z-index-1000 m-3"
@@ -40,8 +40,8 @@ const Sidebar = () => {
 
       {/* Sidebar */}
       <div
-        className={`text-white p-3 vh-100 ${isSidebarOpen ? 'd-block' : 'd-none'} d-lg-block`}
-        style={{ backgroundColor: "rgb(26,55,121)", width: '240px', transition: 'all 0.3s ease-in-out' }}
+        className={`text-white vh-100 p-3 ${isSidebarOpen ? 'd-block' : 'd-none'} d-lg-block`}
+        style={{ backgroundColor: "rgb(26,55,121)", width: '245px', transition: 'all 0.3s ease-in-out' }}
       >
         <div className="d-flex align-items-center">
           <Link to="/dashboard">
@@ -49,62 +49,62 @@ const Sidebar = () => {
           </Link>
         </div>
         <nav className="nav flex-column">
-          <NavLink to="/dashboard" className="nav-link text-white">
-            <FaHome className={isRtl ? 'ms-2' : 'me-2'} /> {t("Home")}
+          <NavLink to="/dashboard" className="nav-link d-flex align-items-center px-3 py-2 mb-1 rounded text-white">
+            <FaHome className={isRtl ? 'ms-2' : 'me-2'} size={18} /> {t("Home")}
           </NavLink>
           {blogsPermission.canView && (
-            <NavLink to="/dashboard/blogs" className="nav-link text-white">
-              <FaRegNewspaper className={isRtl ? 'ms-2' : 'me-2'} /> {t("Blogs")}
+            <NavLink to="/dashboard/blogs" className="nav-link d-flex align-items-center px-3 py-2 mb-1 rounded text-white">
+              <FaRegNewspaper className={isRtl ? 'ms-2' : 'me-2'} size={18} /> {t("Blogs")}
             </NavLink>
           )}
           {servicesPermission.canView && (
-            <NavLink to="/dashboard/services" className="nav-link text-white">
-              <FaConciergeBell className={isRtl ? 'ms-2' : 'me-2'} /> {t("Services")}
+            <NavLink to="/dashboard/services" className="nav-link d-flex align-items-center px-3 py-2 mb-1 rounded text-white">
+              <FaConciergeBell className={isRtl ? 'ms-2' : 'me-2'} size={18} /> {t("Services")}
             </NavLink>
           )}
           {projectsPermission.canView && (
-            <NavLink to="/dashboard/projects" className="nav-link text-white">
-              <FaProjectDiagram className={isRtl ? 'ms-2' : 'me-2'} /> {t("Projects")}
+            <NavLink to="/dashboard/projects" className="nav-link d-flex align-items-center px-3 py-2 mb-1 rounded text-white">
+              <FaProjectDiagram className={isRtl ? 'ms-2' : 'me-2'} size={18} /> {t("Projects")}
             </NavLink>
           )}
           {packagesPermission.canView && (
-            <NavLink to="/dashboard/packages" className="nav-link text-white">
-              <FaGift className={isRtl ? 'ms-2' : 'me-2'} /> {t("Packages")}
+            <NavLink to="/dashboard/packages" className="nav-link d-flex align-items-center px-3 py-2 mb-1 rounded text-white">
+              <FaGift className={isRtl ? 'ms-2' : 'me-2'} size={18} /> {t("Packages")}
             </NavLink>
           )}
           {contactFormsPermission.canView && (
-            <NavLink to="/dashboard/contactforms" className="nav-link text-white">
-              <FaEnvelope className={isRtl ? 'ms-2' : 'me-2'} /> {t("Contact Forms")}
+            <NavLink to="/dashboard/contactforms" className="nav-link d-flex align-items-center px-3 py-2 mb-1 rounded text-white">
+              <FaEnvelope className={isRtl ? 'ms-2' : 'me-2'} size={18} /> {t("Contact Forms")}
             </NavLink>
           )}
           {faqsPermission.canView && (
-            <NavLink to="/dashboard/faqs" className="nav-link text-white">
-              <FaQuestionCircle className={isRtl ? 'ms-2' : 'me-2'} /> {t("FAQS")}
+            <NavLink to="/dashboard/faqs" className="nav-link d-flex align-items-center px-3 py-2 mb-1 rounded text-white">
+              <FaQuestionCircle className={isRtl ? 'ms-2' : 'me-2'} size={18} /> {t("FAQS")}
             </NavLink>
           )}
           {testimonialsPermission.canView && (
-            <NavLink to="/dashboard/testimonials" className="nav-link text-white">
-              <FaQuoteLeft className={isRtl ? 'ms-2' : 'me-2'} /> {t("Testimonials")}
+            <NavLink to="/dashboard/testimonials" className="nav-link d-flex align-items-center px-3 py-2 mb-1 rounded text-white">
+              <FaQuoteLeft className={isRtl ? 'ms-2' : 'me-2'} size={18} /> {t("Testimonials")}
             </NavLink>
           )}
           {usersPermission.canView && (
-            <NavLink to="/dashboard/users" className="nav-link text-white">
-              <FaUsers className={isRtl ? 'ms-2' : 'me-2'} /> {t("Users")}
+            <NavLink to="/dashboard/users" className="nav-link d-flex align-items-center px-3 py-2 mb-1 rounded text-white">
+              <FaUsers className={isRtl ? 'ms-2' : 'me-2'} size={18} /> {t("Users")}
             </NavLink>
           )}
           {rolesPermission.canView && (
-            <NavLink to="/dashboard/roles-permissions" className="nav-link text-white">
-              <FaUserShield className={isRtl ? 'ms-2' : 'me-2'} /> {t("Roles and Permission")}
+            <NavLink to="/dashboard/roles-permissions" className="nav-link d-flex align-items-center px-3 py-2 mb-1 rounded text-white">
+              <FaUserShield className={isRtl ? 'ms-2' : 'me-2'} size={18} /> {t("Roles and Permission")}
             </NavLink>
           )}
           {seoMetaPermission.canView && (
-            <NavLink to="/dashboard/seo-meta" className="nav-link text-white">
-              <FaSearch className={isRtl ? 'ms-2' : 'me-2'} /> {t("Seo Meta Page")}
+            <NavLink to="/dashboard/seo-meta" className="nav-link d-flex align-items-center px-3 py-2 mb-1 rounded text-white">
+              <FaSearch className={isRtl ? 'ms-2' : 'me-2'} size={18} /> {t("Seo Meta Page")}
             </NavLink>
           )}
-            <NavLink to="/dashboard/settings" className="nav-link text-white">
-              <FaCogs className={isRtl ? 'ms-2' : 'me-2'} /> {t("Setting")}
-            </NavLink>
+          <NavLink to="/dashboard/settings" className="nav-link d-flex align-items-center px-3 py-2 mb-1 rounded text-white">
+            <FaCogs className={isRtl ? 'ms-2' : 'me-2'} size={18} /> {t("Setting")}
+          </NavLink>
         </nav>
       </div>
     </div>

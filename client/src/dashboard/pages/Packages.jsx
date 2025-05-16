@@ -253,23 +253,6 @@ const Packages = () => {
               <td style={{ width: '360px' }}>
                 {plan.description}
               </td>
-              {/*   <td style={{ width: '400px', position: 'relative' }}>
-                  <div className="truncate-2-lines" dangerouslySetInnerHTML={{ __html: plan.description }}></div>
-                  <FaEye
-                    style={{
-                      position: 'absolute',
-                      bottom: '50px',
-                      right: '4px',
-                      cursor: 'pointer',
-                      color: '#0d6efd'
-                    }}
-                    onClick={() => {
-                      setFullDescription(plan.description);
-                      setShowDescription(true);
-                    }}
-                    title="View full description"
-                  />
-                </td> */}
               <td style={{ width: '115px' }}>{plan.monthlyPrice}</td>
               {/*<td style={{ width: '100px' }}>{plan.yearlyPrice}</td> */}
               <td>
@@ -301,18 +284,6 @@ const Packages = () => {
           ))}
         </tbody>
       </Table>
-      {/* View Full Description Modal */}
-      {/*  <Modal show={showDescription} onHide={() => setShowDescription(false)} centered>
-          <Modal.Header closeButton>
-            <Modal.Title>Full Description</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <div dangerouslySetInnerHTML={{ __html: fullDescription }} />
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={() => setShowDescription(false)}>Close</Button>
-          </Modal.Footer>
-        </Modal> */}
     </div>
   );
 };

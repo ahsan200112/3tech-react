@@ -125,61 +125,110 @@ const Setting = () => {
             ) : (
                 <>
                     {/* User Info Form */}
-                    <Form onSubmit={handleSubmit}>
-                        <h4 className="mb-3">{t("User Information")}</h4>
-                        {[t('firstName'), t('lastName'), t('email'), t('phoneNo')].map((field) => (
-                            <Form.Group className="mb-3" key={field}>
-                                <Form.Label>{field.replace(/([A-Z])/g, ' $1')}</Form.Label>
-                                <Form.Control
-                                    type={field === 'email' ? 'email' : 'text'}
-                                    name={field}
-                                    value={formData[field]}
-                                    onChange={handleInputChange}
-                                />
+                    <div style={{ border: '1px solid #ccc', borderRadius: '10px', padding: '20px' }}>
+                        <Form onSubmit={handleSubmit}>
+                            <h4 className="mb-3">{t("User Information")}</h4>
+
+                            <Form.Group as={Form.Row} className="mb-3">
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <Form.Label>{t("First Name")}</Form.Label>
+                                        <Form.Control
+                                            type="text"
+                                            name="firstName"
+                                            value={formData.firstName}
+                                            onChange={handleInputChange}
+                                        />
+                                    </div>
+                                    <div className="col-md-6">
+                                        <Form.Label>{t("Last Name")}</Form.Label>
+                                        <Form.Control
+                                            type="text"
+                                            name="lastName"
+                                            value={formData.lastName}
+                                            onChange={handleInputChange}
+                                        />
+                                    </div>
+                                </div>
                             </Form.Group>
-                        ))}
-                        <Button type="submit" disabled={loading}>
-                            {loading ? t('Updating...') : t('Save Changes')}
-                        </Button>
-                    </Form>
+
+                            <Form.Group as={Form.Row} className="mb-3">
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <Form.Label>{t("Email")}</Form.Label>
+                                        <Form.Control
+                                            type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleInputChange}
+                                        />
+                                    </div>
+                                    <div className="col-md-6">
+                                        <Form.Label>{t("Phone No")}</Form.Label>
+                                        <Form.Control
+                                            type="text"
+                                            name="phoneNo"
+                                            value={formData.phoneNo}
+                                            onChange={handleInputChange}
+                                        />
+                                    </div>
+                                </div>
+                            </Form.Group>
+
+                            <Button type="submit" disabled={loading}>
+                                {loading ? t('Updating...') : t('Save Changes')}
+                            </Button>
+                        </Form>
+                    </div>
+
 
                     {/* Password Change Form */}
-                    <Form onSubmit={handlePasswordSubmit} className="mt-5">
-                        <h4 className="mb-3">{t("Change Password")}</h4>
-                        <Form.Group className="mb-3">
-                            <Form.Label>{t("Old Password")}</Form.Label>
-                            <Form.Control
-                                type="password"
-                                name="oldPassword"
-                                value={passwordData.oldPassword}
-                                onChange={handlePasswordChange}
-                            />
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label>{t("New Password")}</Form.Label>
-                            <Form.Control
-                                type="password"
-                                name="newPassword"
-                                value={passwordData.newPassword}
-                                onChange={handlePasswordChange}
-                            />
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label>{t("Confirm New Password")}</Form.Label>
-                            <Form.Control
-                                type="password"
-                                name="confirmPassword"
-                                value={passwordData.confirmPassword}
-                                onChange={handlePasswordChange}
-                            />
-                        </Form.Group>
-                        <Button type="submit" variant="warning" disabled={loading}>
-                            {loading ? t('Updating...') : t('Change Password')}
-                        </Button>
-                    </Form>
+                    <div className="mt-3" style={{ border: '1px solid #ccc', borderRadius: '10px', padding: '20px' }}>
+                        <Form onSubmit={handlePasswordSubmit}>
+                            <h4 className="mb-3">{t("Change Password")}</h4>
+                            <Form.Group className="mb-3">
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <Form.Label>{t("Old Password")}</Form.Label>
+                                        <Form.Control
+                                            type="password"
+                                            name="oldPassword"
+                                            value={passwordData.oldPassword}
+                                            onChange={handlePasswordChange}
+                                        />
+                                    </div>
+                                    <div className="col-md-6">
+                                        <Form.Label>{t("New Password")}</Form.Label>
+                                        <Form.Control
+                                            type="password"
+                                            name="newPassword"
+                                            value={passwordData.newPassword}
+                                            onChange={handlePasswordChange}
+                                        />
+                                    </div>
+                                </div>
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <Form.Label>{t("Confirm New Password")}</Form.Label>
+                                        <Form.Control
+                                            type="password"
+                                            name="confirmPassword"
+                                            value={passwordData.confirmPassword}
+                                            onChange={handlePasswordChange}
+                                        />
+                                    </div>
+                                </div>
+                            </Form.Group>
+                            <Button type="submit" variant="warning" disabled={loading}>
+                                {loading ? t('Updating...') : t('Change Password')}
+                            </Button>
+                        </Form>
+                    </div >
                 </>
             )}
-        </Container>
+        </Container >
     );
 };
 

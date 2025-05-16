@@ -10,10 +10,11 @@ import {
 } from '../../redux/features/roles/rolesSlice';
 import { useTranslation } from 'react-i18next';
 import usePermission from '../../hooks/usePermission';
+import { Table, Button, Modal, Input, Popconfirm, message } from "antd";
+import { PlusOutlined } from '@ant-design/icons';
 
 const Roles = () => {
-  const { t, i18n } = useTranslation();
-  const RTL = i18n.dir() === "rtl";
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { roles } = useSelector((state) => state.roles);
@@ -31,7 +32,10 @@ const Roles = () => {
 
 
   const handleCreateRole = () => {
-    if (!roleName.trim()) return alert('Please enter a role name');
+    if (!roleName.trim()) {
+      message.warning(t("Please enter a role name"));
+      return;
+    };
     dispatch(addRole({ name: roleName })).then(() => {
       setShowModal(false);
       setRoleName('');
@@ -40,7 +44,10 @@ const Roles = () => {
   };
 
   const handleUpdateRole = () => {
-    if (!roleName.trim()) return alert('Please enter a role name');
+    if (!roleName.trim()) {
+      message.warning(t("Please enter a role name"));
+      return;
+    }
     dispatch(editRole({ id: roleIdToEdit, name: roleName })).then(() => {
       setShowModal(false);
       setRoleName('');
@@ -56,9 +63,9 @@ const Roles = () => {
         setSelectedRole(null);
       }
       dispatch(fetchRoles());
+      message.success(t("Role deleted successfully"));
     });
   };
-
 
   const handleEditRole = (role) => {
     setRoleName(role.name);
@@ -71,83 +78,109 @@ const Roles = () => {
     navigate(`/dashboard/roles-permissions/${role._id}`, { state: { role } });
   };
 
+  const columns = [
+    {
+      title: t("Role Name"),
+      dataIndex: "name",
+      key: "name",
+      render: (text) => <span>{text}</span>,
+    },
+    {
+      title: t("Created At"),
+      dataIndex: "createdAt",
+      key: "createdAt",
+      render: (date) => <span>{new Date(date).toLocaleDateString()}</span>,
+    },
+    {
+      title: t("Actions"),
+      key: "actions",
+      render: (_, role) => (
+        <>
+          {role.name !== "Super Admin" && (
+            <>
+              {canEdit && (
+                <Button
+                  type="primary"
+                  size="medium"
+                  onClick={() => handleEditRole(role)}
+                  style={{ marginRight: 4, marginLeft: 4 }}
+                  icon={<i className="fa fa-edit" />}
+                >
+                  {t("Edit")}
+                </Button>
+              )}
+              {canDelete && (
+                <Popconfirm
+                  title={t("Are you sure you want to delete this role?")}
+                  onConfirm={() => handleDeleteRole(role._id)}
+                  okText={t("Yes")}
+                  cancelText={t("No")}
+                >
+                  <Button
+                    type="primary"
+                    danger
+                    size="medium"
+                    style={{ marginRight: 4, marginLeft: 4 }}
+                    icon={<i className="fa fa-trash" />}
+                  >
+                    {t("Delete")}
+                  </Button>
+                </Popconfirm>
+              )}
+            </>
+          )}
+          <Button
+            type="primary"
+            size="medium"
+            style={{ marginRight: 4, marginLeft: 4 }}
+            onClick={() => handlePermissionClick(role)}
+            icon={<i className="fa fa-shield" />}
+          >
+            {t("Permissions")}
+          </Button>
+        </>
+      ),
+    },
+  ];
+
   return (
     <div className="container py-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2>{t("Roles Management")}</h2>
         {canCreate && (
-          <button className="btn btn-primary" onClick={() => setShowModal(true)}>{t("Add Role")}</button>
+          <Button type="primary"
+            icon={<PlusOutlined />}
+            onClick={() => setShowModal(true)}>{t("Add Role")}</Button>
         )}
       </div>
 
-      {/* Role Creation or Update Modal */}
-      {showModal && (
-        <div className="modal fade show" style={{ display: 'block' }} aria-modal="true" role="dialog">
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">{isEditing ? t('Edit Role') : t('Create Role')}</h5>
-                <button type="button" className="btn-close" onClick={() => setShowModal(false)}></button>
-              </div>
-              <div className="modal-body">
-                <div className="form-group">
-                  <label htmlFor="roleName">{t("Role Name")}</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="roleName"
-                    value={roleName}
-                    onChange={(e) => setRoleName(e.target.value)}
-                    placeholder={t("Enter role name")}
-                  />
-                </div>
-              </div>
-              <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" onClick={() => setShowModal(false)}>Close</button>
-                <button
-                  type="button"
-                  className="btn btn-primary"
-                  onClick={isEditing ? handleUpdateRole : handleCreateRole}
-                >
-                  {isEditing ? t('Update Role') : t('Create Role')}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-      <table className="table table-bordered">
-        <thead className="table-light">
-          <tr>
-            <th>{t("Role Name")}</th>
-            <th>{t("Actions")}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {roles.map((role) => (
-            <tr key={role._id}>
-              <td>{role.name}</td>
-              <td>
-                {/* <button className="btn btn-sm btn-danger me-2" onClick={() => handleDeleteRole(role._id)}>Delete</button>
-                <button className="btn btn-sm btn-warning me-2" onClick={() => handleEditRole(role)}>Edit</button> */}
-                {role.name !== 'Super Admin' && (
-                  <>
-                    {canEdit && (
-                      <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-sm btn-warning`} onClick={() => handleEditRole(role)}>{t("Edit")}</button>
-                    )}
-                    {canDelete && (
-                      <button className={`${RTL ? 'ms-2' : 'me-2'} btn btn-sm btn-danger`} onClick={() => handleDeleteRole(role._id)}>{t("Delete")}</button>
-                    )}
-                  </>
-                )}
-                <button className="btn btn-sm btn-secondary" onClick={() => handlePermissionClick(role)}>
-                  {t("Permissions")}
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="ant-table-wrapper custom-ant-table">
+        <Table
+          columns={columns}
+          dataSource={roles.map((role) => ({ ...role, key: role._id }))}
+          pagination={false}
+        />
+      </div>
+
+      <Modal
+        title={isEditing ? t("Edit Role") : t("Create Role")}
+        open={showModal}
+        onCancel={() => {
+          setShowModal(false);
+          setRoleName("");
+          setIsEditing(false);
+          setRoleIdToEdit("");
+        }}
+        onOk={isEditing ? handleUpdateRole : handleCreateRole}
+        okText={isEditing ? t("Update Role") : t("Create Role")}
+        cancelText={t("Cancel")}
+      >
+        <Input
+          placeholder={t("Enter role name")}
+          value={roleName}
+          onChange={(e) => setRoleName(e.target.value)}
+        />
+      </Modal>
     </div>
   );
 };
