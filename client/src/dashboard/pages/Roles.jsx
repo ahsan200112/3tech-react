@@ -145,11 +145,12 @@ const Roles = () => {
 
   return (
     <div className="container py-4">
-      <div className="d-flex justify-content-between align-items-center mb-4">
-        <h2>{t("Roles Management")}</h2>
+      <div className="d-flex justify-content-between align-items-sm-center mb-4 flex-column flex-sm-row align-items-start">
+        <h2 className="mb-2 mb-sm-0">{t("Roles Management")}</h2>
         {canCreate && (
           <Button type="primary"
             icon={<PlusOutlined />}
+            className="w-sm-auto"
             onClick={() => setShowModal(true)}>{t("Add Role")}</Button>
         )}
       </div>
@@ -159,6 +160,7 @@ const Roles = () => {
           columns={columns}
           dataSource={roles.map((role) => ({ ...role, key: role._id }))}
           pagination={false}
+          scroll={{ x: 'max-content' }}
         />
       </div>
 

@@ -180,11 +180,12 @@ const FAQ = () => {
 
     return (
         <div className="container py-4">
-            <div className="d-flex justify-content-between align-items-center mb-4">
-                <h2>{t("FAQ Management")}</h2>
+            <div className="d-flex justify-content-between align-items-sm-center mb-4 flex-column flex-sm-row align-items-start">
+                <h2 className="mb-2 mb-sm-0">{t("FAQ Management")}</h2>
                 {canCreate && (
                     <Button type="primary"
                         icon={<PlusOutlined />}
+                        className="w-sm-auto"
                         onClick={() => {
                             setIsEditing(false);
                             setFaqData({ question: { en: '', ar: '' }, answer: { en: '', ar: '' }, category: '' });
@@ -221,6 +222,7 @@ const FAQ = () => {
                     dataSource={filteredFaqs}
                     rowKey={record => record._id}
                     pagination={false}
+                    scroll={{ x: 'max-content' }}
                 />
             </div>
 

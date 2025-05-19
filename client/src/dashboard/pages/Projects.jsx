@@ -146,10 +146,10 @@ const Projects = () => {
     return (
         <>
             <div className="container py-4">
-                <div className="d-flex justify-content-between align-items-center mb-4">
-                    <h2>{t("Project Management")}</h2>
+                <div className="d-flex justify-content-between align-items-sm-center mb-4 flex-column flex-sm-row align-items-start">
+                    <h2 className="mb-2 mb-sm-0">{t("Project Management")}</h2>
                     {canCreate && (
-                        <Button type="primary" icon={<PlusOutlined />} onClick={() => setShowModal(true)}>
+                        <Button type="primary" icon={<PlusOutlined />} className="w-sm-auto" onClick={() => setShowModal(true)}>
                             {t('Add New Project')}
                         </Button>
                     )}
@@ -161,6 +161,7 @@ const Projects = () => {
                         columns={columns}
                         dataSource={projects}
                         pagination={false}
+                        scroll={{ x: 'max-content' }}
                     />
                 </div>
 
@@ -207,7 +208,7 @@ const Projects = () => {
                                 name="title_ar"
                                 rules={[{ required: true }]}
                             >
-                                <Input  style={{ direction: 'rtl' }}/>
+                                <Input style={{ direction: 'rtl' }} />
                             </Form.Item>
                             <Form.Item
                                 label={t("Description (English)")}

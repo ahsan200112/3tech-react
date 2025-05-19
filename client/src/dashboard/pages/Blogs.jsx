@@ -207,11 +207,12 @@ const Blogs = () => {
 
   return (
     <div className="container py-4">
-      <div className="d-flex justify-content-between align-items-center mb-4">
-        <h2>{t("Blog Management")}</h2>
+      <div className="d-flex justify-content-between align-items-sm-center mb-4 flex-column flex-sm-row align-items-start">
+        <h2 className="mb-2 mb-sm-0">{t("Blog Management")}</h2>
         {canCreate && (
           <Button type="primary"
             icon={<PlusOutlined />}
+            className="w-sm-auto"
             onClick={() => setModalVisible(true)}>{t("Add New Blog")}</Button>
         )}
       </div>
@@ -221,6 +222,7 @@ const Blogs = () => {
           dataSource={blogs}
           rowKey={record => record._id}
           pagination={false}
+          scroll={{ x: 'max-content' }}
         />
       </div>
 

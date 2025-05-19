@@ -66,7 +66,8 @@
 }
 
 .active-button {
-  background-color: #0d6efd !important; /* Bootstrap primary blue */
+  background-color: #0d6efd !important;
+  /* Bootstrap primary blue */
   color: white !important;
   border-color: #0d6efd !important;
 }
@@ -129,8 +130,78 @@
   /* Horizontal center */
 }
 
+.custom-gap {
+  gap: 1.5rem !important;
+  /* gap-2 is 0.5rem in Bootstrap */
+}
+
+.user-name {
+  font-size: 1rem;
+}
+
+.user-role {
+  font-size: 0.85rem;
+}
+
+.user-image img {
+  width: 35px;
+  height: 35px;
+}
+
+/* MobileSidebar.css */
+
+.mobile-sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  z-index: 1050;
+  overflow-x: hidden;
+  transition: width 0.3s ease-in-out;
+}
+
+.mobile-sidebar-overlay.open {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.mobile-sidebar {
+  width: 245px;
+  height: 100%;
+  background-color: rgb(26,55,121);
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+}
+
+.mobile-sidebar-overlay.open .mobile-sidebar {
+  transform: translateX(0);
+}
+
 @media (max-width: 767px) {
   .language-button-vise {
     font-size: 12px !important;
+  }
+}
+
+@media (max-width: 475px) {
+  .custom-gap {
+    gap: 0.5rem !important;
+  }
+
+  .user-name {
+    font-size: 0.85rem;
+  }
+
+  .user-role {
+    font-size: 0.75rem;
+  }
+
+  .user-image img {
+    width: 28px;
+    height: 28px;
   }
 }

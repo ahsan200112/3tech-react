@@ -201,10 +201,10 @@ const Users = () => {
 
   return (
     <div className="container py-4">
-      <div className="d-flex justify-content-between align-items-center mb-4">
-        <h2>{t("User Management")}</h2>
+      <div className="d-flex justify-content-between align-items-sm-center mb-4 flex-column flex-sm-row align-items-start">
+        <h2 className="mb-2 mb-sm-0">{t("User Management")}</h2>
         {canCreate && (
-          <Button type="primary" onClick={openModal} icon={<PlusOutlined />}>
+          <Button type="primary" onClick={openModal} icon={<PlusOutlined />} className="w-sm-auto">
             {t("Add New User")}
           </Button>
         )}
@@ -216,6 +216,7 @@ const Users = () => {
           dataSource={users}
           rowKey={(record) => record._id}
           pagination={false}
+          scroll={{ x: 'max-content' }}
         />
       </div>
 

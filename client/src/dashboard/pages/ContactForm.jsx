@@ -68,8 +68,8 @@ const ContactForm = () => {
 
     return (
         <div className="container py-4">
-            <div className="d-flex justify-content-between align-items-center mb-4">
-                <h2>{t("Contact Form Submissions")}</h2>
+            <div className="d-flex justify-content-between align-items-sm-center mb-4 flex-column flex-sm-row align-items-start">
+                <h2 className="mb-2 mb-sm-0">{t("Contact Form Submissions")}</h2>
             </div>
             <div className="ant-table-wrapper custom-ant-table">
                 <Table
@@ -80,6 +80,7 @@ const ContactForm = () => {
                     bordered
                     pagination={false}
                     locale={{ emptyText: t("No contacts found") }}
+                    scroll={{ x: 'max-content' }}
                 />
             </div>
         </div>
