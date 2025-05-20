@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import AppRoutes from './routes';
-import { useTranslation } from 'react-i18next';
 import './i18n';
 import MetaTags from './components/MetaTagsAll';
 import AOS from 'aos';
@@ -10,12 +9,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'antd/dist/reset.css';
 
 const App = () => {
-    const { i18n } = useTranslation();
 
     useEffect(() => {
-        document.documentElement.lang = i18n.language;  // Language set karein
-        document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';  // Direction update karein
-    }, [i18n.language]);  // Jab language change ho to update karein
+        const savedLang = localStorage.getItem("i18nextLng") || "en";
+        document.documentElement.dir = savedLang === "ar" ? "rtl" : "ltr";
+    }, []);
 
     useEffect(() => {
         // 👇 AOS initialization

@@ -59,9 +59,9 @@ const GetContactNow = () => {
 
     //ye emailjs hai jo frontend se email send krta hai ye 200 free email hai per month baqi ye paid
     const onSubmit = (data) => {
-        const serviceID = "service_bk2mmlr";  // EmailJS se copy karo
-        const templateID = "template_ij5qjqm";  // EmailJS se copy karo
-        const publicKey = "rBuu6w3lR4LQIztjf";  // EmailJS se copy karo
+        const serviceID = "service_28bziqb";  // EmailJS se copy karo
+        const templateID = "template_haolba8";  // EmailJS se copy karo
+        const publicKey = "D2MzbOKPUdAsIn_Wi";  // EmailJS se copy karo
 
         const templateParams = {
             name: data.name,

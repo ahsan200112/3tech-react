@@ -14,16 +14,58 @@ const GetContactNow2 = () => {
     const trackEvent = useGTMEventTracker();
 
     // ye node js backend ke sath hai api already bani hui hai
-   /* const onSubmit = async (data) => {
-        try {
-            const response = await api.post(createContactForm, data, {
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
+    /* const onSubmit = async (data) => {
+         try {
+             const response = await api.post(createContactForm, data, {
+                 headers: {
+                     'Content-Type': 'application/json',
+                 },
+             });
+ 
+             if (response.status === 200 || response.status === 201) {
+                 reset(); // Reset form after successful submission
+                 //navigate('/thankyou');
+                 window.location.href = '/thankyou';
+                 // Push the form submission event to GTM with page path
+                 if (window.dataLayer) {
+                     window.dataLayer.push({
+                         event: 'form_submission',  // Custom event name
+                         form_name: 'ContactUs',  // Form name or identifier
+                         page: window.location.pathname,  // Page URL (path)
+                         form_data: {
+                             name: data.name,
+                             email: data.email,
+                             phone: data.phone,
+                             subject: data.subject,
+                             message: data.message
+                         }
+                     });
+                 }
+             } else {
+                 alert('Something went wrong, please try again.');
+             }
+         } catch (error) {
+             console.error('Error submitting form:', error);
+             alert('Error submitting form, please try again.');
+         }
+     }; */
 
-            if (response.status === 200 || response.status === 201) {
-                reset(); // Reset form after successful submission
+    const onSubmit = (data) => {
+        const serviceID = "service_28bziqb";  // EmailJS se copy karo
+        const templateID = "template_haolba8";  // EmailJS se copy karo
+        const publicKey = "D2MzbOKPUdAsIn_Wi";  // EmailJS se copy karo
+
+        const templateParams = {
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+            subject: data.subject,
+            message: data.message,
+        };
+
+        emailjs.send(serviceID, templateID, templateParams, publicKey)
+            .then((response) => {
+                reset();
                 //navigate('/thankyou');
                 window.location.href = '/thankyou';
                 // Push the form submission event to GTM with page path
@@ -41,54 +83,12 @@ const GetContactNow2 = () => {
                         }
                     });
                 }
-            } else {
-                alert('Something went wrong, please try again.');
-            }
-        } catch (error) {
-            console.error('Error submitting form:', error);
-            alert('Error submitting form, please try again.');
-        }
-    }; */
-
-      const onSubmit = (data) => {
-          const serviceID = "service_bk2mmlr";  // EmailJS se copy karo
-          const templateID = "template_ij5qjqm";  // EmailJS se copy karo
-          const publicKey = "rBuu6w3lR4LQIztjf";  // EmailJS se copy karo
-  
-          const templateParams = {
-              name: data.name,
-              email: data.email,
-              phone: data.phone,
-              subject: data.subject,
-              message: data.message,
-          };
-  
-          emailjs.send(serviceID, templateID, templateParams, publicKey)
-              .then((response) => {
-      reset();
-      //navigate('/thankyou');
-      window.location.href = '/thankyou';
-      // Push the form submission event to GTM with page path
-      if (window.dataLayer) {
-          window.dataLayer.push({
-              event: 'form_submission',  // Custom event name
-              form_name: 'ContactUs',  // Form name or identifier
-              page: window.location.pathname,  // Page URL (path)
-              form_data: {
-                  name: data.name,
-                  email: data.email,
-                  phone: data.phone,
-                  subject: data.subject,
-                  message: data.message
-              }
-          });
-      }
-  })
-  .catch((error) => {
-      console.error("Error sending email:", error);
-      alert("Failed to send email, please try again.");
-  });
-}; 
+            })
+            .catch((error) => {
+                console.error("Error sending email:", error);
+                alert("Failed to send email, please try again.");
+            });
+    };
 
     return (
         <section className='u-section'>
