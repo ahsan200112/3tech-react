@@ -5,7 +5,7 @@ import CallImg from "../assets/images/call.svg";
 import EmailImg from "../assets/images/Email.png";
 import { useForm } from 'react-hook-form';
 import emailjs from "@emailjs/browser";
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';
 //import api from '../api/api';
 //import { createContactForm } from '../api/apiEndpoints';
@@ -15,7 +15,7 @@ const CustomPackageOpinion = () => {
     const { t } = useTranslation();
     const isRTL = document.dir === "rtl"; // Ya kisi global state se lein
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
     const trackEvent = useGTMEventTracker();
 
     // ye node js backend ke sath hai api already bani hui hai 
@@ -29,7 +29,8 @@ const CustomPackageOpinion = () => {
 
             if (response.status === 200 || response.status === 201) {
                 reset(); // Reset form after successful submission
-                navigate('/thankyou');
+                //navigate('/thankyou');
+                window.location.href = '/thankyou';
                 // Push the form submission event to GTM with page path
                 if (window.dataLayer) {
                     window.dataLayer.push({
@@ -56,44 +57,46 @@ const CustomPackageOpinion = () => {
 
 
     //ye sirf frontend se contactform bhejhna ka tariq agar node use na ho rahi ho
-     const onSubmit = (data) => {
-         const serviceID = "service_bk2mmlr";  // EmailJS se copy karo
-         const templateID = "template_ij5qjqm";  // EmailJS se copy karo
-         const publicKey = "rBuu6w3lR4LQIztjf";  // EmailJS se copy karo
- 
-         const templateParams = {
-             name: data.name,
-             email: data.email,
-             phone: data.phone,
-             subject: data.subject,
-             message: data.message,
-         };
- 
-         emailjs.send(serviceID, templateID, templateParams, publicKey)
-             .then((response) => {
-                 reset();
-                 navigate('/thankyou');
-                 // Push the form submission event to GTM with page path
-                 if (window.dataLayer) {
-                     window.dataLayer.push({
-                         event: 'form_submission',  // Custom event name
-                         form_name: 'CustomPackageOpinion',  // Form name or identifier
-                         page: window.location.pathname,  // Page URL (path)
-                         form_data: {
-                             name: data.name,
-                             email: data.email,
-                             phone: data.phone,
-                             subject: data.subject,
-                             message: data.message
-                         }
-                     });
-                 }
-             })
-             .catch((error) => {
-                 console.error("Error sending email:", error);
-                 alert("Failed to send email, please try again.");
-             }); 
-     }; 
+    const onSubmit = (data) => {
+        const serviceID = "service_bk2mmlr";  // EmailJS se copy karo
+        const templateID = "template_ij5qjqm";  // EmailJS se copy karo
+        const publicKey = "rBuu6w3lR4LQIztjf";  // EmailJS se copy karo
+
+        const templateParams = {
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+            subject: data.subject,
+            message: data.message,
+        };
+
+        emailjs.send(serviceID, templateID, templateParams, publicKey)
+            .then((response) => {
+                reset();
+                //navigate('/thankyou');
+                // Redirect with reload
+                window.location.href = '/thankyou';
+                // Push the form submission event to GTM with page path
+                if (window.dataLayer) {
+                    window.dataLayer.push({
+                        event: 'form_submission',  // Custom event name
+                        form_name: 'CustomPackageOpinion',  // Form name or identifier
+                        page: window.location.pathname,  // Page URL (path)
+                        form_data: {
+                            name: data.name,
+                            email: data.email,
+                            phone: data.phone,
+                            subject: data.subject,
+                            message: data.message
+                        }
+                    });
+                }
+            })
+            .catch((error) => {
+                console.error("Error sending email:", error);
+                alert("Failed to send email, please try again.");
+            });
+    };
 
     return (
         <section className='u-section'>

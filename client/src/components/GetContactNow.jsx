@@ -5,7 +5,7 @@ import CallImg from "../assets/images/call.svg";
 import EmailImg from "../assets/images/Email.png";
 import { useForm } from 'react-hook-form';
 import emailjs from "@emailjs/browser";
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';
 //import api from '../api/api';
 //import { createContactForm } from '../api/apiEndpoints';
@@ -16,7 +16,7 @@ const GetContactNow = () => {
     const isRTL = document.dir === "rtl"; // Ya kisi global state se lein
     //const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
     const trackEvent = useGTMEventTracker();
 
     // ye node js backend ke sath hai api already bani hui hai
@@ -31,7 +31,8 @@ const GetContactNow = () => {
 
             if (response.status === 200 || response.status === 201) {
                 reset(); // Reset form after successful submission
-                navigate('/thankyou');
+                //navigate('/thankyou');
+                window.location.href = '/thankyou';
                 // Push the form submission event to GTM with page path
                 if (window.dataLayer) {
                     window.dataLayer.push({
@@ -73,7 +74,8 @@ const GetContactNow = () => {
         emailjs.send(serviceID, templateID, templateParams, publicKey)
             .then((response) => {
                 reset();
-                navigate('/thankyou');
+                //navigate('/thankyou');
+                window.location.href = '/thankyou';
                 // Push the form submission event to GTM with page path
                 if (window.dataLayer) {
                     window.dataLayer.push({

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import Frame41Img from "../assets/images/Frame 41.png";
 import { useTheme } from "../context/ThemeContext";
 import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
@@ -36,9 +36,9 @@ const ExpertiseYouCanTrust = () => {
                                     {t("3Tech was born from a desire to bridge creativity and technology. We’ve built a team of experts who don’t just develop apps or design stores—they craft experiences that inspire, connect, and drive results. Every line of code, every design choice, and every campaign is created with your success in mind.")}
                                 </p>
                                 <div className='d-flex contact-btn-full'>
-                                    <Link className="contact-btn text-decoration-none" to="/contact"
+                                    <a className="contact-btn text-decoration-none" href="/contact"
                                         onClick={() => trackEvent('click on contact us button', 'Navigation', 'Click', 'ContactUs Button')}
-                                    >{t("Contact Us")}</Link>
+                                    >{t("Contact Us")}</a>
                                 </div>
                             </div>
                             <div className="row text-white mt-3 flex-nowrap text-center mb-3">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+/*import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
@@ -65,8 +65,8 @@ const FrequentlyAskedQuestions = () => {
     );
 };
 
-export default FrequentlyAskedQuestions; 
-/*
+export default FrequentlyAskedQuestions; */
+
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
@@ -136,4 +136,4 @@ const FrequentlyAskedQuestions = () => {
     );
 };
 
-export default FrequentlyAskedQuestions; */
+export default FrequentlyAskedQuestions; 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import BlackImg from "../assets/images/Black.png";
 import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
@@ -18,11 +18,11 @@ const AboutFirstComponent = () => {
                             <h2 className="o-hlo" style={{ borderBottom: "2px solid" }}>{t("About Us")}</h2>
                             <h4 className="o-a d-flex align-items-center" style={{ gap: "8px" }}>
                                 <i className="bi bi-house-door"></i>
-                                <Link to="/" style={{ textDecoration: "none", color: "inherit" }}
+                                <a href="/" style={{ textDecoration: "none", color: "inherit" }}
                                     onClick={() => trackEvent('click on link', 'Navigation', 'Click', 'Home Page Link')}  // Track event
                                 >
                                     {t("Home")}
-                                </Link> / {t("About Us")}
+                                </a> / {t("About Us")}
                             </h4>
                         </div>
                         <div className="text-end">

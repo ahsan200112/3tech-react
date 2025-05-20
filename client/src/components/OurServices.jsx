@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+/*import React, { useState, useEffect } from 'react';
 import api from '../api/api';
 import { getServices } from '../api/apiEndpoints'
 import { useTranslation } from 'react-i18next';
 import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 const OurServices = () => {
     const { t, i18n } = useTranslation();
@@ -38,7 +38,7 @@ const OurServices = () => {
                     </div>
                     {services.map(service => (
                         <div key={service._id} className="col-md-4" data-aos="flip-left" data-aos-delay="300">
-                            <Link to={service.link} className="text-decoration-none"
+                            <a href={service.link} className="text-decoration-none"
                                 onClick={() => trackEvent('click on services link', 'Navigation', 'Click', `${service.title.en} Page Link`)}
                             >
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
@@ -51,7 +51,7 @@ const OurServices = () => {
                                         <p className="u-help">{t("Explore")} {service.title[lang]}</p>
                                     </div>
                                 </div>
-                            </Link>
+                            </a>
                         </div>
                     ))}
                 </div>
@@ -60,11 +60,11 @@ const OurServices = () => {
     );
 };
 
-export default OurServices;
+export default OurServices; */
 
-/*import React from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import SocialMediaMarketingImg from '../assets/images/social-media-marketing 1.png';
 import Group2Img from "../assets/images/Group (2).png";
 import YGPImg from "../assets/images/ygb.png";
@@ -91,7 +91,7 @@ const OurServices = () => {
                             </div>
                         </div>
                         <div className="col-md-4" data-aos="flip-left" data-aos-delay="300">
-                            <Link className="text-decoration-none" to="/ecommercesolutions"
+                            <a className="text-decoration-none" href="/ecommercesolutions"
                                 onClick={() => trackEvent('click on services link', 'Navigation', 'Click', 'E-commerce Solutions Page Link')}
                             >
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
@@ -106,10 +106,10 @@ const OurServices = () => {
                                         </p>
                                     </div>
                                 </div>
-                            </Link>
+                            </a>
                         </div>
                         <div className="col-md-4" data-aos="flip-left" data-aos-delay="300">
-                            <Link className="text-decoration-none" to="/mobileapplications"
+                            <a className="text-decoration-none" href="/mobileapplications"
                                 onClick={() => trackEvent('click on services link', 'Navigation', 'Click', 'Mobile Applications Page Link')}
                             >
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
@@ -124,12 +124,12 @@ const OurServices = () => {
                                         </p>
                                     </div>
                                 </div>
-                            </Link>
+                            </a>
                         </div>
                     </div>
                     <div className="row g-3 mt-3">
                         <div className="col-md-4" data-aos="flip-left" data-aos-delay="300">
-                            <Link className="text-decoration-none" to="/marketingsolutions"
+                            <a className="text-decoration-none" href="/marketingsolutions"
                                 onClick={() => trackEvent('click on services link', 'Navigation', 'Click', 'Marketing Soltions Page Link')}
                             >
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
@@ -144,10 +144,10 @@ const OurServices = () => {
                                         </p>
                                     </div>
                                 </div>
-                            </Link>
+                            </a>
                         </div>
                         <div className="col-md-4" data-aos="flip-left" data-aos-delay="300">
-                            <Link className="text-decoration-none" to="/creativedesign"
+                            <a className="text-decoration-none" href="/creativedesign"
                                 onClick={() => trackEvent('click on services link', 'Navigation', 'Click', 'Creative Design Page Link')}
                             >
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
@@ -162,10 +162,10 @@ const OurServices = () => {
                                         </p>
                                     </div>
                                 </div>
-                            </Link>
+                            </a>
                         </div>
                         <div className="col-md-4" data-aos="flip-left" data-aos-delay="300">
-                            <Link to="/digitaloptimization" className="text-decoration-none"
+                            <a className="text-decoration-none" href="/digitaloptimization"
                                 onClick={() => trackEvent('click on services link', 'Navigation', 'Click', 'Digital Optimization Page Link')}
                             >
                                 <div className="card h-100 card-border-color color-effect-card custom-transition" style={{ borderRadius: "14px" }}>
@@ -180,7 +180,7 @@ const OurServices = () => {
                                         </p>
                                     </div>
                                 </div>
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -189,4 +189,4 @@ const OurServices = () => {
     );
 };
 
-export default OurServices; */
+export default OurServices; 

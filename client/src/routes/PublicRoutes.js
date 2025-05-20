@@ -5,7 +5,7 @@ import AboutUs from '../pages/AboutUs';
 import Services from '../pages/Services';
 import Projects from '../pages/Projects';
 import Packages from '../pages/Packages';
-import Blogs from '../pages/Blogs';
+//import Blogs from '../pages/Blogs';
 import ContactUs from '../pages/ContactUs';
 import CreativeDesign from '../pages/CreativeDesign';
 import DigitalOptimization from '../pages/DigitalOptimization';
@@ -18,7 +18,7 @@ import ScrollToTop from "../components/ScrollToTop";
 import ThankYou from '../pages/ThankYou';
 import GTMPageViewTracker from '../components/GoogleTagManager/GTMPageViewTracker';
 import GTMPageReloadTracker from '../components/GoogleTagManager/GTMPageReloadTracker';
-import Login from '../pages/Login/Login';
+//import Login from '../pages/Login/Login';
 import ChatBot from '../components/ChatBot';
 //import Signup from '../pages/Signup/Signup';
 import NotFound from '../components/404NotFound';
@@ -52,14 +52,14 @@ const PublicRoutes = () => {
       <GTMPageReloadTracker />
       <ScrollToTop />
       <Routes>
-        <Route path="/dashboard-login" element={<Login />} />
+        {/*<Route path="/dashboard-login" element={<Login />} /> */}
         {/* <Route path="/signup" element={<Signup />} />  */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/packages" element={<Packages />} />
-        <Route path="/blogs" element={<Blogs />} />
+       {/* <Route path="/blogs" element={<Blogs />} /> */}
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/creativedesign" element={<CreativeDesign />} />
         <Route path="/digitaloptimization" element={<DigitalOptimization />} />

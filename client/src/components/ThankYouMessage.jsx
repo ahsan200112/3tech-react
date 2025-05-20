@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CheckIcon from '../assets/images/CheckIconImg.png';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';
 
 const ThankYouMessage = () => {
@@ -39,13 +39,13 @@ const ThankYouMessage = () => {
                         {t("Thank you for reaching out to 3Tech! Your message has been received and our team is already reviewing it. We typically respond within 5–15 minutes during working hours. We’ll be in touch shortly")}
                     </p>
                     <div className="text-center">
-                        <Link to="/" className="text-decoration-none">
+                        <a href="/" className="text-decoration-none">
                             <button className="btn-well"
                                 onClick={() => { trackEvent('click on button','Navigation', 'Click', 'Back to Home') }}
                             >
                                 {t("Back to Home")}
                             </button>
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </div>

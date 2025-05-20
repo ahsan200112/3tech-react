@@ -4,7 +4,8 @@ import Footer from '../components/Footer';
 import MobileApplicationsFirstComponent from '../components/MobileApplicaionsFirstComponent';
 import MobileApplicationsHeroSection from '../components/MobileApplicationsHeroComponent';
 import OurClientSays from '../components/OurClientsSay';
-import MobileApplicationsFaqs from '../components/MobileApplicationsFaqs';
+//import MobileApplicationsFaqs from '../components/MobileApplicationsFaqs';
+import FrequentlyAskedQuestions from '../components/FrequentlyAskedQuestions';
 
 function MobileApplications() {
     return (
@@ -13,7 +14,8 @@ function MobileApplications() {
             <MobileApplicationsFirstComponent />
             <MobileApplicationsHeroSection />
             <OurClientSays />
-            <MobileApplicationsFaqs />
+            {/*<MobileApplicationsFaqs />*/}
+            <FrequentlyAskedQuestions/>
             <Footer />
         </>
     );

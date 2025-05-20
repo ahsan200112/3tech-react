@@ -55,11 +55,11 @@ const Navbar = () => {
 
             {/* Left: Logo */}
             <div className="d-flex align-items-center">
-              <Link to="/">
+              <a href="/">
                 <img src={theme === "light" ? LogoLightMode : LogoDarkMode} alt="Logo" className="img-fluid logo-img"
                   onClick={() => trackEvent('click on navbar Company logo', 'Navigation', 'Click', 'Company Logo')}
                 />
-              </Link>
+              </a>
             </div>
             {/* Center: Language Toggle (for Mobile View) */}
             <div className={`text-center d-lg-none language-toggle-container ${isRTL ? 'rtl' : 'ltr'}`}>
@@ -83,35 +83,35 @@ const Navbar = () => {
             {/* Navbar Links (Collapsible on Mobile) */}
             <div className={`navbar-collapse ${isNavOpen ? "show text-center" : "collapse"}`}>
               <ul className="navbar-nav mx-auto" style={{ paddingRight: "0" }}>
-                <li className="nav-item"><Link className="nav-link n-vise" to="/" onClick={() => {
+                <li className="nav-item"><a className="nav-link n-vise" href="/" onClick={() => {
                   setIsNavOpen(false);
                   trackEvent('click on navbar page link', 'Navigation', 'Click', 'Home Page Link');
                 }} >
-                  {t("Home")}</Link></li>
-                <li className="nav-item"><Link className="nav-link n-vise" to="/about" onClick={() => {
+                  {t("Home")}</a></li>
+                <li className="nav-item"><a className="nav-link n-vise" href="/about" onClick={() => {
                   setIsNavOpen(false);
                   trackEvent('click on navbar page link', 'Navigation', 'Click', 'About Page Link');
-                }}>{t("About Us")}</Link></li>
-                <li className="nav-item"><Link className="nav-link n-vise" to="/services" onClick={() => {
+                }}>{t("About Us")}</a></li>
+                <li className="nav-item"><a className="nav-link n-vise" href="/services" onClick={() => {
                   setIsNavOpen(false);
                   trackEvent('click on navbar page link', 'Navigation', 'Click', 'Services Page Link');
-                }}>{t("Services")}</Link></li>
-                <li className="nav-item"><Link className="nav-link n-vise" to="/projects" onClick={() => {
+                }}>{t("Services")}</a></li>
+                <li className="nav-item"><a className="nav-link n-vise" href="/projects" onClick={() => {
                   setIsNavOpen(false);
                   trackEvent('click on navbar page link', 'Navigation', 'Click', 'Project Page Link');
-                }}>{t("Projects")}</Link></li>
-                <li className="nav-item"><Link className="nav-link n-vise" to="/packages" onClick={() => {
+                }}>{t("Projects")}</a></li>
+                <li className="nav-item"><a className="nav-link n-vise" href="/packages" onClick={() => {
                   setIsNavOpen(false);
                   trackEvent('click on navbar page link', 'Navigation', 'Click', 'Packages Page Link');
-                }}>{t("Packages")}</Link></li>
-                 <li className="nav-item"><Link className="nav-link v-vise" to="/blogs" onClick={() => {
+                }}>{t("Packages")}</a></li>
+                {/* <li className="nav-item"><a className="nav-link v-vise" href="/blogs" onClick={() => {
                   setIsNavOpen(false);
                   trackEvent('click on navbar page link', 'Navigation', 'Click', 'Blogs Page Link');
-                }}>{t("Blogs")}</Link></li>
-                <li className="nav-item"><Link className="nav-link n-vise" to="/contact" onClick={() => {
+                }}>{t("Blogs")}</a></li> */}
+                <li className="nav-item"><a className="nav-link n-vise" href="/contact" onClick={() => {
                   setIsNavOpen(false);
                   trackEvent('click on navbar page link', 'Navigation', 'Click', 'Contact Page Link');
-                }}>{t("Contact Us")}</Link></li>
+                }}>{t("Contact Us")}</a></li>
               </ul>
 
               {/* Mobile View: Button (Hidden by Default) */}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import YTImg from "../assets/images/yt.png";
 import { useTheme } from "../context/ThemeContext";
 import PartnerImgDark from '../assets/images/partner dark mode.png';
@@ -46,9 +46,9 @@ const YourSuccessOurPriority = () => {
                                 <span>{t("Cost-Effective Solutions")}</span>
                             </li>
                         </ul>
-                        <Link className="btn-contact text-decoration-none mb-2" to="/contact"
+                        <a className="btn-contact text-decoration-none mb-2" href="/contact"
                             onClick={() => trackEvent('click on button','Navigation', 'Click', 'ContactUs Button')}
-                        >{t("Contact Us")}</Link>
+                        >{t("Contact Us")}</a>
                     </div>
                     <div className="col-md-6">
                         <div className="d-flex justify-content-between align-items-center">

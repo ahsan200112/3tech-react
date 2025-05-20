@@ -4,7 +4,8 @@ import Footer from '../components/Footer';
 import DigitalOptimizationFirstComponent from '../components/DigitalOptimizationFirstComponent';
 import OurClientsSay from '../components/OurClientsSay';
 import DigitalOptimizationHeroSection from '../components/DigitalOptimizationHeroSection';
-import DigitalOptimizationFaqs from '../components/DigitalOptimizationFaqs';
+//import DigitalOptimizationFaqs from '../components/DigitalOptimizationFaqs';
+import FrequentlyAskedQuestions from '../components/FrequentlyAskedQuestions';
 
 function DigitalOptimization() {
   return (
@@ -13,7 +14,8 @@ function DigitalOptimization() {
       <DigitalOptimizationFirstComponent />
       <DigitalOptimizationHeroSection />
       <OurClientsSay />
-      <DigitalOptimizationFaqs />
+      {/*<DigitalOptimizationFaqs /> */}
+      <FrequentlyAskedQuestions/>
       <Footer />
     </>
   );
