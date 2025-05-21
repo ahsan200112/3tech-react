@@ -12,8 +12,8 @@ import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
 const GetContactNow = () => {
-    const { t } = useTranslation();
-    const isRTL = document.dir === "rtl"; // Ya kisi global state se lein
+    const { t, i18n } = useTranslation();
+    const isRTL = i18n.dir() === "rtl"; // Ya kisi global state se lein
     //const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     //const navigate = useNavigate();
