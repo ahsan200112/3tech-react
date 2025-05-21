@@ -61,33 +61,33 @@ const OurProjectsDetail = () => {
                 <div className="container">
                     <div className="row g-4">
                         {projects.map((project, index) => (
-                            <div className="col-md-6" key={project.id} data-aos={index % 2 === 0 ? "fade-up" : "fade-down"} data-aos-delay="500">
+                            <div className="col-md-6" key={project.id} data-aos={index % 2 === 0 ? "fade-up" : "fade-down"} data-aos-delay="200">
                                 <div className="card project-card position-relative"> */
-                                  /*  <Link to={project.link} className="text-decoration-none"
+/*  <Link to={project.link} className="text-decoration-none"
                                         onClick={() => trackEvent('click on projects link', 'Navigation', 'Click', `${project.title.en} Page Link`)}
                                     > */
-                                     /*   <img
-                                            src={project.image}
-                                            className="card-img-top"
-                                            alt="Project"
-                                            onClick={() => handleProjectClick(project.title[lang])}
-                                        />
-                                        <div className="card-content">
-                                            <div className="d-flex justify-content-between align-items-center">
-                                                <h5 className="card-title n-r mb-0">{project.title[lang]}</h5>
-                                                <i className="bi bi-arrow-up-right n-r"></i>
-                                            </div>
-                                            <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{project.description[lang]}</p>
-                                        </div>
-                                 /*   </Link> */
-                              /*  </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+/*   <img
+       src={project.image}
+       className="card-img-top"
+       alt="Project"
+       onClick={() => handleProjectClick(project.title[lang])}
+   />
+   <div className="card-content">
+       <div className="d-flex justify-content-between align-items-center">
+           <h5 className="card-title n-r mb-0">{project.title[lang]}</h5>
+           <i className="bi bi-arrow-up-right n-r"></i>
+       </div>
+       <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{project.description[lang]}</p>
+   </div>
+   {/*   </Link> */
+/*   </div>
+</div>
+))}
+</div>
+</div>
+</div>
+</section>
+);
 };
 
 export default OurProjectsDetail; */
@@ -143,7 +143,7 @@ const OurProjectsDetail = () => {
                     </div>
                 </div>
                 <div className="row g-4">
-                    <div className="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div className="col-md-6" data-aos="fade-up" data-aos-delay="200">
                         <div className="card project-card position-relative">
                             {/* <div><Link className="tag text-decoration-none" to="/ecommercesolutions">{t("E-Commerce Solutions")}</Link></div> */}
                             <img src={Project1} className="card-img-top" alt="Project"
@@ -154,17 +154,17 @@ const OurProjectsDetail = () => {
                                     <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
                                     <i className="bi bi-arrow-up-right n-r"></i>
                                 </div>
-                                <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p> */
-                               { /*  <div className="tags n-y">
-                                    <span>{t("UI & UX Design")}</span>
-                                    <span>{t("Web Design")}</span>
-                                    <span>{t("Graphic Design")}</span>
-                                </div> */}
+                                <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
+                                {/*  <div className="tags n-y">
+                                   <span>{t("UI & UX Design")}</span>
+                                   <span>{t("Web Design")}</span>
+                                   <span>{t("Graphic Design")}</span>
+                               </div> */}
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-6" data-aos="fade-down" data-aos-delay="500">
-                        <div className="card project-card position-relative"> */
+                    <div className="col-md-6" data-aos="fade-down" data-aos-delay="200">
+                        <div className="card project-card position-relative">
                             {/*   <div><Link className="tag text-decoration-none" to="/creativedesign">{t("Creative Design")}</Link></div> */}
                             <img src={Project2} className="card-img-top" alt="Project"
                                 onClick={() => handleProjectClick("Web Design & Development")}  // Track project image click
@@ -174,7 +174,7 @@ const OurProjectsDetail = () => {
                                     <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
                                     <i className="bi bi-arrow-up-right n-r"></i>
                                 </div>
-                                <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p> */
+                                <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
                             </div>
                         </div>
                     </div>
@@ -182,7 +182,7 @@ const OurProjectsDetail = () => {
             </div>
             <div className="container mb-5">
                 <div className="row g-4">
-                    <div className="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div className="col-md-6" data-aos="fade-up" data-aos-delay="200">
                         <div className="card project-card position-relative"> */
                             {/*  <div><Link className="tag text-decoration-none" to="/mobileapplications">{t("Mobile Applications")}</Link></div> */}
                             <img src={Project3} className="card-img-top" alt="Project"
@@ -193,11 +193,11 @@ const OurProjectsDetail = () => {
                                     <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
                                     <i className="bi bi-arrow-up-right n-r"></i>
                                 </div>
-                                <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p> 
-                           </div>
+                                <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
+                            </div>
                         </div>
                     </div>
-                    <div className="col-md-6" data-aos="fade-down" data-aos-delay="500">
+                    <div className="col-md-6" data-aos="fade-down" data-aos-delay="200">
                         <div className="card project-card position-relative">
                             {/*  <div><Link className="tag text-decoration-none" to="/digitaloptimization">{t("Digital Optimization")}</Link></div> */}
                             <img src={Project4} className="card-img-top" alt="Project"
@@ -208,16 +208,16 @@ const OurProjectsDetail = () => {
                                     <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
                                     <i className="bi bi-arrow-up-right n-r"></i>
                                 </div>
-                                <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p> 
-                          </div>
+                                <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="container">
                 <div className="row g-4">
-                    <div className="col-md-6" data-aos="fade-up" data-aos-delay="500">
-                        <div className="card project-card position-relative"> 
+                    <div className="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div className="card project-card position-relative">
                             {/*  <div><Link className="tag text-decoration-none" to="/marketingsolutions">{t("Marketing Solutions")}</Link></div> */}
                             <img src={Project5} className="card-img-top" alt="Project"
                                 onClick={() => handleProjectClick("Web Design & Development")}  // Track project image click
@@ -227,12 +227,12 @@ const OurProjectsDetail = () => {
                                     <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
                                     <i className="bi bi-arrow-up-right n-r"></i>
                                 </div>
-                                <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p> 
+                                <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-6" data-aos="fade-down" data-aos-delay="500">
-                        <div className="card project-card position-relative"> 
+                    <div className="col-md-6" data-aos="fade-down" data-aos-delay="200">
+                        <div className="card project-card position-relative">
                             {/*  <div><Link className="tag text-decoration-none" to="/ecommercesolutions">{t("E-Commerce Solutions")}</Link></div> */}
                             <img src={Project6} className="card-img-top" alt="Project"
                                 onClick={() => handleProjectClick("Web Design & Development")}  // Track project image click
@@ -242,17 +242,17 @@ const OurProjectsDetail = () => {
                                     <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
                                     <i className="bi bi-arrow-up-right n-r"></i>
                                 </div>
-                                <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p> 
-                           </div>
+                                <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="container py-5">
                 <div className="row g-4">
-                    <div className="col-md-6" data-aos="fade-down" data-aos-delay="500">
-                        <div className="card project-card position-relative"> 
-                           {/*  <div><Link className="tag text-decoration-none" to="/marketingsolutions">{t("Marketing Solutions")}</Link></div> */}
+                    <div className="col-md-6" data-aos="fade-down" data-aos-delay="200">
+                        <div className="card project-card position-relative">
+                            {/*  <div><Link className="tag text-decoration-none" to="/marketingsolutions">{t("Marketing Solutions")}</Link></div> */}
                             <img src={Project7} className="card-img-top" alt="Project"
                                 onClick={() => handleProjectClick("Web Design & Development")}  // Track project image click
                             />
@@ -260,9 +260,9 @@ const OurProjectsDetail = () => {
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title n-r mb-0">{t("Web Design & Development")}</h5>
                                     <i className="bi bi-arrow-up-right n-r"></i>
-                                </div> 
+                                </div>
                                 <p className="card-text n-t" style={{ maxWidth: "600px", wordBreak: "break-word" }}>{t("Explore modern, responsive websites crafted for diverse industries.")}</p>
-                           </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -271,5 +271,5 @@ const OurProjectsDetail = () => {
     );
 };
 
-export default OurProjectsDetail; 
+export default OurProjectsDetail;
 

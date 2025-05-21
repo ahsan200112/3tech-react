@@ -35,7 +35,7 @@ const FrequentlyAskedQuestions = () => {
 
     return (
         <section id="faq" className="py-5 u-section">
-            <div className="container" data-aos="fade-up" data-aos-delay="500">
+            <div className="container" data-aos="fade-up" data-aos-delay="200">
                 <h3 className="u-easy mb-2" style={{ width: "155px" }}>{t("(FAQs)")}</h3>
                 <h2 className="v-value">{t("Frequently Asked Questions (FAQs)")}</h2>
                 <p className="mb-4 v-auto">
@@ -43,7 +43,7 @@ const FrequentlyAskedQuestions = () => {
                 </p>
                 <div className="accordion border-0" id="faqAccordion">
                     {faqData.map((faq, index) => (
-                        <div key={index} className="mb-2" data-aos="flip-right" data-aos-delay="300">
+                        <div key={index} className="mb-2" data-aos="flip-right" data-aos-delay="100">
                             <div
                                 className="d-flex justify-content-between align-items-center py-3 px-3 border border-secondary rounded"
                                 onClick={() => toggleFAQ(index)}
@@ -106,7 +106,7 @@ const FrequentlyAskedQuestions = () => {
 
     return (
         <section id="faq" className="py-5 u-section">
-            <div className="container" data-aos="fade-up" data-aos-delay="500">
+            <div className="container" data-aos="fade-up" data-aos-delay="200">
                 <h3 className="u-easy mb-2" style={{ width: "155px" }}>{t("(FAQs)")}</h3>
                 <h2 className="v-value">{t("Frequently Asked Questions (FAQs)")}</h2>
                 <p className="mb-4 v-auto">
@@ -114,7 +114,7 @@ const FrequentlyAskedQuestions = () => {
                 </p>
                 <div className="accordion border-0" id="faqAccordion">
                     {faqData.map((faq, index) => (
-                        <div key={index} className="mb-2" data-aos="flip-right" data-aos-delay="300">
+                        <div key={index} className="mb-2" data-aos="flip-right" data-aos-delay="100">
                             <div
                                 className="d-flex justify-content-between align-items-center py-3 px-3 border border-secondary rounded"
                                 onClick={() => toggleFAQ(index)}

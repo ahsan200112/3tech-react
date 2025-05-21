@@ -13,7 +13,7 @@ const AppRoutes = () => {
         <Route path="/*" element={<PublicRoutes />} />
 
         {/* Dashboard Routes */}
-       {/* <Route path="/dashboard/*" element={<PrivateRoute> <DashboardRoutes /> </PrivateRoute>} />  */}
+        {/*<Route path="/dashboard/*" element={<PrivateRoute> <DashboardRoutes /> </PrivateRoute>} />   */}
       </Routes>
     </>
   );

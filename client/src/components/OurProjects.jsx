@@ -58,14 +58,14 @@ const OurProjects = () => {
     return (
         <section className="v-section">
             <div className="container py-5">
-                <div className="py-5" data-aos="fade-up"data-aos-delay="300">
+                <div className="py-5" data-aos="fade-up"data-aos-delay="100">
                     <h3 className="v-viral" style={{ width: "150px" }}>{t("Our Projects")}</h3>
                     <div className="d-flex justify-content-between align-items-center btn-nextline">
                         <h2 className="v-visit">{t("Our Work Speaks For Itself")}</h2>
                     </div>
                     <p className="v-info mt-2" style={{ maxWidth: "800px", wordBreak: "break-word" }}>{t("Explore our success stories in e-commerce, app development, and creative marketing. See how we've helped businesses like yours thrive.")}</p>
                     {/* ✅ Image Slider */}
-                    <div data-aos="flip-left"data-aos-delay="300">
+                    <div data-aos="flip-left"data-aos-delay="100">
                         <Slider {...settings} className="mt-4"
                         //    afterChange={handleSlideChange}  // Event on slide change
                         >

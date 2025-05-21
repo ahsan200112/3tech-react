@@ -52,13 +52,13 @@ const PublicRoutes = () => {
       <GTMPageReloadTracker />
       <ScrollToTop />
       <Routes>
-        {/*<Route path="/dashboard-login" element={<Login />} /> */}
+       {/* <Route path="/dashboard-login" element={<Login />} /> */}
         {/* <Route path="/signup" element={<Signup />} />  */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
         <Route path="/projects" element={<Projects />} />
-        <Route path="/packages" element={<Packages />} />
+        <Route path="/packages" element={<Packages />} /> 
        {/* <Route path="/blogs" element={<Blogs />} /> */}
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/creativedesign" element={<CreativeDesign />} />

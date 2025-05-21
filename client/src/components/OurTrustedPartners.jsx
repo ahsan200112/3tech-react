@@ -84,14 +84,14 @@ const OurTrustedPartners = () => {
 
   return (
     <section className="trusted-partners py-5">
-      <div className="container" data-aos="fade-down" data-aos-delay="300">
+      <div className="container" data-aos="fade-down" data-aos-delay="100">
         <h3 className="v-were" style={{ width: "205px" }}>{t("Be Part of Our Journey")}</h3>
         <h2 className="v-value">{t("Our Trusted Partners")}</h2>
         <p className="v-auto">
           {t("We collaborate with exceptional partners who help us deliver luxury and unforgettable experiences. Together, we craft excellence, from premium services to world-class hospitality, ensuring every visit is extraordinary.")}
         </p>
       </div>
-      <div className="container mt-4 py-4" data-aos="flip-left" data-aos-delay="500">
+      <div className="container mt-4 py-4" data-aos="flip-left" data-aos-delay="200">
         <Slider {...settings}
         // afterChange={handleSlideChange}  // Event on slide change
         >

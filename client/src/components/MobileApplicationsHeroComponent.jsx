@@ -84,7 +84,7 @@ function MobileApplicationsHeroSection() {
                 </div>
 
 
-                <div className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="500">
+                <div className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="200">
                     <h2 className="f-g">{t("Why Choose Us for Mobile App Development?")}</h2>
                     <div
                         className="card-body mt-3"
@@ -114,7 +114,7 @@ function MobileApplicationsHeroSection() {
                     { num: "003", title: t("User-Centric Design"), description: t("Our solutions prioritize usability and intuitive design, creating smooth, engaging, and accessible experiences that enhance user satisfaction and drive higher engagement.") },
                     { num: "004", title: t("Ongoing Updates & Support"), description: t("We provide continuous updates, security patches, and dedicated support to keep your software running smoothly. Our commitment ensures long-term reliability, performance, and scalability.") },
                 ].map((item, index) => (
-                    <div key={index} className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="300">
+                    <div key={index} className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="100">
                         <div className="row" style={{ borderBottom: "1px solid var(--text-primary)", cursor: "pointer" }}
                             onClick={() => toggleSection(index, item.title)}>
                             <div className="col-4 f-z">
@@ -148,7 +148,7 @@ function MobileApplicationsHeroSection() {
                             { step: t("Step 5"), title: t("Launch & Monitoring"), desc: t("We launch the app and monitor its performance closely.") },
                             { step: t("Step 6"), title: t("Ongoing Support & Maintenance"), desc: t("Regular updates and bug fixes to ensure your app remains fresh and functional.") },
                         ].map((item, index) => (
-                            <div key={index} className="col-md-4 mb-2" data-aos="fade-up" data-aos-delay="300">
+                            <div key={index} className="col-md-4 mb-2" data-aos="fade-up" data-aos-delay="100">
                                 <div className="step">
                                     <div className="custom-row">
                                         <button className="text-start btn-sm n-j">{item.step}</button>

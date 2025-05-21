@@ -104,10 +104,10 @@ const Navbar = () => {
                   setIsNavOpen(false);
                   trackEvent('click on navbar page link', 'Navigation', 'Click', 'Packages Page Link');
                 }}>{t("Packages")}</a></li>
-                {/* <li className="nav-item"><a className="nav-link v-vise" href="/blogs" onClick={() => {
+                <li className="nav-item"><a className="nav-link v-vise" href="/blogs" onClick={() => {
                   setIsNavOpen(false);
                   trackEvent('click on navbar page link', 'Navigation', 'Click', 'Blogs Page Link');
-                }}>{t("Blogs")}</a></li> */}
+                }}>{t("Blogs")}</a></li>
                 <li className="nav-item"><a className="nav-link n-vise" href="/contact" onClick={() => {
                   setIsNavOpen(false);
                   trackEvent('click on navbar page link', 'Navigation', 'Click', 'Contact Page Link');

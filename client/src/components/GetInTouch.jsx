@@ -10,7 +10,7 @@ const GetInTouch = () => {
 
     return (
         <section className="v-section py-5">
-            <div className="container py-5" data-aos="fade-up" data-aos-delay="500">
+            <div className="container py-5" data-aos="fade-up" data-aos-delay="200">
                 <div>
                     <h3 className="u-vise mb-2" style={{ width: "165px" }}>{t("Get in Touch")}</h3>
                     <h2 className="b-b">{t("Need Further Assistance?")}</h2>

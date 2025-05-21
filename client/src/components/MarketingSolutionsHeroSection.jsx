@@ -90,7 +90,7 @@ function MarketingSolutionsHeroSection() {
                 </div>
 
 
-                <div className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="500">
+                <div className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="200">
                     <h2 className="f-g">{t("Why Choose Us for Marketing Solutions?")}</h2>
                     <div
                         className="card-body mt-3"
@@ -120,7 +120,7 @@ function MarketingSolutionsHeroSection() {
                     { num: "003", title: t("Creative Content"), description: t("We craft engaging and impactful content that resonates with your audience. Our innovative approach ensures your brand stands out, delivering compelling digital experiences.") },
                     { num: "004", title: t("Multi-Channel Expertise"), description: t("From web and mobile to social media and beyond, we ensure a seamless and consistent presence across all platforms. Our expertise helps you reach and engage your audience wherever they are.") },
                 ].map((item, index) => (
-                    <div key={index} className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="300">
+                    <div key={index} className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="100">
                         <div className="row" style={{ borderBottom: "1px solid var(--text-primary)", cursor: "pointer" }}
                             onClick={() => toggleSection(index, item.title)}>
                             <div className="col-4 f-z">
@@ -143,7 +143,7 @@ function MarketingSolutionsHeroSection() {
                     </div>
                 ))}
 
-                <div className="container mt-5 pt-5 custom-padding-h" data-aos="fade-up" data-aos-delay="300">
+                <div className="container mt-5 pt-5 custom-padding-h" data-aos="fade-up" data-aos-delay="100">
                     <h2 className="g-r mt-2">{t("Our Path to E-Commerce Success")}</h2>
                     <div className="row text-center">
                         {[
@@ -154,7 +154,7 @@ function MarketingSolutionsHeroSection() {
                             { step: t("Step 5"), title: t("Reporting & Analysis"), desc: t("Provide detailed reports to track the success of campaigns.") },
                             { step: t("Step 6"), title: t("Continuous Optimization"), desc: t("Use data insights to refine and improve campaigns over time.") },
                         ].map((item, index) => (
-                            <div key={index} className="col-md-4 mb-2" data-aos="fade-up" data-aos-delay="300">
+                            <div key={index} className="col-md-4 mb-2" data-aos="fade-up" data-aos-delay="100">
                                 <div className="step">
                                     <div className="custom-row">
                                         <button className="text-start btn-sm n-j">{item.step}</button>

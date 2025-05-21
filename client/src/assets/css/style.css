@@ -1149,6 +1149,7 @@ body {
   border-radius: 10px;
   border: 1px 1px 1px 1px;
   border: 1px solid #1B1264;
+  text-align: center;
 }
 
 .v-idea {
@@ -2698,3 +2699,9 @@ img {
   }
 }
 
+.equal-height-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

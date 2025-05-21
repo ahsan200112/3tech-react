@@ -7,7 +7,7 @@ const OurWorkingProcess = () => {
     // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     return (
         <section className='u-section'>
-            <div className="container py-5" data-aos="fade-up" data-aos-delay="500">
+            <div className="container py-5" data-aos="fade-up" data-aos-delay="200">
                 <h3 className="f-vise" style={{ width: "190px" }}>{t("Our Working Process")}</h3>
                 <h2 className="g-r mt-2 mb-4">{t("Our Process: Turning Ideas Into Digital Reality")}</h2>
 

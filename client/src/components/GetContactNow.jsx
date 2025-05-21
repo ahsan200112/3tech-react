@@ -100,7 +100,7 @@ const GetContactNow = () => {
 
     return (
         <section className='u-section'>
-            <div className="container py-5" data-aos="fade-up" data-aos-delay="500">
+            <div className="container py-5" data-aos="fade-up" data-aos-delay="200">
                 <div className="mb-4">
                     <h3 className="u-vise" style={{ width: "170px" }}>{t("Get Contact Now")}</h3>
                     <h2 className="v-r mt-3">{t("Let’s Create Something Remarkable Together.")}</h2>

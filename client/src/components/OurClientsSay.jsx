@@ -61,14 +61,14 @@ const OurClientsSay = () => {
 
   return (
     <section className="client-testimonials py-5" style={{ direction: isRTL ? "rtl" : "ltr" }} >
-      <div className="container" data-aos="fade-up" data-aos-delay="500">
+      <div className="container" data-aos="fade-up" data-aos-delay="200">
         <div className="mb-4">
           <h3 className="v-hi" style={{ width: "230px" }}>
             {t("Real Stories, Real Impact")}
           </h3>
           <h2 className="v-hence">{t("What Our Clients Say About Us")}</h2>
         </div>
-        <div data-aos="flip-left" data-aos-delay="500">
+        <div data-aos="flip-left" data-aos-delay="200">
           <Slider {...settings} className="slick-slider"
           >
             {testimonials.map((testimonial, index) => (
@@ -78,7 +78,7 @@ const OurClientsSay = () => {
                     backgroundColor: "var(--bg-secondary)",
                     borderRadius: "20px",
                     textAlign: isRTL ? "right" : "left",
-                    minHeight: "300px", 
+                    minHeight: "300px",
                   }}
                   onClick={() => handleImageClick(testimonial.name ? testimonial.name[lang] : "Unknown Name")}
                 >
@@ -107,7 +107,7 @@ const OurClientsSay = () => {
   );
 };
 
-export default OurClientsSay;  */
+export default OurClientsSay; */
 
 import React from "react";
 import Slider from "react-slick";
@@ -182,18 +182,18 @@ const OurClientsSay = () => {
   // Handle project image click event tracking
   const handleImageClick = (personName) => {
     trackEvent('Clients Comments', 'Click', personName);
-  }; 
+  };
 
   return (
     <section className="client-testimonials py-5" style={{ direction: isRTL ? "rtl" : "ltr" }} >
-      <div className="container" data-aos="fade-up"data-aos-delay="500">
+      <div className="container" data-aos="fade-up" data-aos-delay="200">
         <div className="mb-4">
           <h3 className="v-hi" style={{ width: "230px" }}>
             {t("Real Stories, Real Impact")}
           </h3>
           <h2 className="v-hence">{t("What Our Clients Say About Us")}</h2>
         </div>
-        <div data-aos="flip-left"data-aos-delay="500">
+        <div data-aos="flip-left" data-aos-delay="200">
           <Slider {...settings} className="slick-slider"
           >
             {testimonials.map((testimonial) => (

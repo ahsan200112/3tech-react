@@ -12,8 +12,8 @@ import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
 const CustomPackageOpinion = () => {
-    const { t } = useTranslation();
-    const isRTL = document.dir === "rtl"; // Ya kisi global state se lein
+    const { t, i18n } = useTranslation();
+    const isRTL = i18n.dir() === "rtl"; // Ya kisi global state se lein
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     //const navigate = useNavigate();
     const trackEvent = useGTMEventTracker();

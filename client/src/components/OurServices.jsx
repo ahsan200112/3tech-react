@@ -28,7 +28,7 @@ const OurServices = () => {
         <section className="u-section">
             <div className="container py-5">
                 <div className="row g-3">
-                    <div className="col-md-4" data-aos="flip-left" data-aos-delay="300">
+                    <div className="col-md-4" data-aos="flip-left" data-aos-delay="100">
                         <div className="card h-100 custom-transition" style={{ cursor: "default" }}>
                             <div className="card-body">
                                 <h3 className="u-vise" style={{ width: "134px" }}>{t("Our Services")}</h3>
@@ -37,7 +37,7 @@ const OurServices = () => {
                         </div>
                     </div>
                     {services.map(service => (
-                        <div key={service._id} className="col-md-4" data-aos="flip-left" data-aos-delay="300">
+                        <div key={service._id} className="col-md-4" data-aos="flip-left" data-aos-delay="100">
                             <a href={service.link} className="text-decoration-none"
                                 onClick={() => trackEvent('click on services link', 'Navigation', 'Click', `${service.title.en} Page Link`)}
                             >
@@ -82,7 +82,7 @@ const OurServices = () => {
             <div className="container py-5">
                 <div className="container">
                     <div className="row g-3">
-                        <div className="col-md-4" data-aos="flip-left" data-aos-delay="300">
+                        <div className="col-md-4" data-aos="flip-left" data-aos-delay="100">
                             <div className="card h-100 custom-transition" style={{ cursor: "default" }}>
                                 <div className="card-body">
                                     <h3 className="u-vise" style={{ width: "134px" }}>{t("Our Services")}</h3>
@@ -90,7 +90,7 @@ const OurServices = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-4" data-aos="flip-left" data-aos-delay="300">
+                        <div className="col-md-4" data-aos="flip-left" data-aos-delay="100">
                             <a className="text-decoration-none" href="/ecommercesolutions"
                                 onClick={() => trackEvent('click on services link', 'Navigation', 'Click', 'E-commerce Solutions Page Link')}
                             >
@@ -108,7 +108,7 @@ const OurServices = () => {
                                 </div>
                             </a>
                         </div>
-                        <div className="col-md-4" data-aos="flip-left" data-aos-delay="300">
+                        <div className="col-md-4" data-aos="flip-left" data-aos-delay="100">
                             <a className="text-decoration-none" href="/mobileapplications"
                                 onClick={() => trackEvent('click on services link', 'Navigation', 'Click', 'Mobile Applications Page Link')}
                             >
@@ -128,7 +128,7 @@ const OurServices = () => {
                         </div>
                     </div>
                     <div className="row g-3 mt-3">
-                        <div className="col-md-4" data-aos="flip-left" data-aos-delay="300">
+                        <div className="col-md-4" data-aos="flip-left" data-aos-delay="100">
                             <a className="text-decoration-none" href="/marketingsolutions"
                                 onClick={() => trackEvent('click on services link', 'Navigation', 'Click', 'Marketing Soltions Page Link')}
                             >
@@ -146,7 +146,7 @@ const OurServices = () => {
                                 </div>
                             </a>
                         </div>
-                        <div className="col-md-4" data-aos="flip-left" data-aos-delay="300">
+                        <div className="col-md-4" data-aos="flip-left" data-aos-delay="100">
                             <a className="text-decoration-none" href="/creativedesign"
                                 onClick={() => trackEvent('click on services link', 'Navigation', 'Click', 'Creative Design Page Link')}
                             >
@@ -164,7 +164,7 @@ const OurServices = () => {
                                 </div>
                             </a>
                         </div>
-                        <div className="col-md-4" data-aos="flip-left" data-aos-delay="300">
+                        <div className="col-md-4" data-aos="flip-left" data-aos-delay="100">
                             <a className="text-decoration-none" href="/digitaloptimization"
                                 onClick={() => trackEvent('click on services link', 'Navigation', 'Click', 'Digital Optimization Page Link')}
                             >
@@ -189,4 +189,4 @@ const OurServices = () => {
     );
 };
 
-export default OurServices; 
+export default OurServices;  

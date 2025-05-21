@@ -42,7 +42,7 @@ const BlogsSection = () => {
                     </p>
                 </div>
                 <div className="row">
-                    <div className="col-lg-8 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div className="col-lg-8 mb-4" data-aos="fade-up" data-aos-delay="100">
                         {blogs.map(blog => (
                             <div key={blog._id} className="card custom-card mb-4"
                                 onClick={() => handleBlogClick(blog.title[lang])}
@@ -168,7 +168,7 @@ const BlogsSection = () => {
                     <p className="v-p" style={{ maxWidth: "670px", wordBreak: "break-word" }}>{t("Stay updated with expert insights, actionable tips, and industry trends that help you grow your business in the ever-evolving digital world.")}</p>
                 </div>
                 <div className="row">
-                    <div className="col-lg-8 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div className="col-lg-8 mb-4" data-aos="fade-up" data-aos-delay="100">
                         <div className="card custom-card"
                             onClick={() => handleBlogClick('Best SEO Techniques For Ecommerce')}
                         >
@@ -257,7 +257,7 @@ const BlogsSection = () => {
             </div>
             <div className="container pb-5">
                 <div className="row">
-                    <div className="col-lg-8 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div className="col-lg-8 mb-4" data-aos="fade-up" data-aos-delay="100">
                         <div className="card custom-card"
                             onClick={() => handleBlogClick('Best SEO Techniques For Ecommerce')}
                         >
@@ -280,7 +280,7 @@ const BlogsSection = () => {
                     </div>
                     <div className="container my-5">
                         <div className="row">
-                            <div className="col-lg-8 mb-4" data-aos="fade-up" data-aos-delay="300">
+                            <div className="col-lg-8 mb-4" data-aos="fade-up" data-aos-delay="100">
                                 <div className="card custom-card"
                                     onClick={() => handleBlogClick('Best SEO Techniques For Ecommerce')}
                                 >
@@ -305,7 +305,7 @@ const BlogsSection = () => {
                             </div>
                             <div className="container my-5">
                                 <div className="row">
-                                    <div className="col-lg-8 mb-4" data-aos="fade-up" data-aos-delay="300">
+                                    <div className="col-lg-8 mb-4" data-aos="fade-up" data-aos-delay="100">
                                         <div className="card custom-card"
                                             onClick={() => handleBlogClick('Best SEO Techniques For Ecommerce')}
                                         >
