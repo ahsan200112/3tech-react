@@ -2705,3 +2705,11 @@ img {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.no-hover:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: inherit !important;
+    transition: none !important;
+    cursor: default !important;
+}

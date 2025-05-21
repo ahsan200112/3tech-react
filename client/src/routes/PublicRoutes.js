@@ -22,6 +22,7 @@ import GTMPageReloadTracker from '../components/GoogleTagManager/GTMPageReloadTr
 import ChatBot from '../components/ChatBot';
 //import Signup from '../pages/Signup/Signup';
 import NotFound from '../components/404NotFound';
+import PackagesForm from '../pages/PackagesForm';
 
 const PublicRoutes = () => {
   const location = useLocation();
@@ -29,7 +30,7 @@ const PublicRoutes = () => {
     "/", "/about", "/services", "/projects",
     "/packages", "/contact", "/blogs",
     "/creativedesign", "/digitaloptimization", "/ecommercesolutions",
-    "/marketingsolutions", "/mobileapplications", "/privacypolicy", "/termsandconditions", "/thankyou"
+    "/marketingsolutions", "/mobileapplications", "/privacypolicy", "/termsandconditions", "/thankyou", "/packagesform"
   ];
 
   const shouldShowChatBot = allowedPaths.includes(location.pathname);
@@ -69,6 +70,7 @@ const PublicRoutes = () => {
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
         <Route path="/termsandconditions" element={<TermsAndConditions />} />
         <Route path="/thankyou" element={<ThankYou />} />
+        <Route path="/packagesform" element={<PackagesForm />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

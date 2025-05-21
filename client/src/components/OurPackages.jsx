@@ -112,15 +112,18 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import YTImg from "../assets/images/yt.png";
 import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
+import { useNavigate } from 'react-router-dom';
 
 const OurPackages = () => {
     const { t } = useTranslation();
+    const navigate = useNavigate();
     // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start"; // Check language direction
     const trackEvent = useGTMEventTracker();  // Use the custom hook
 
     // Function to track button click event
     const handleConsultationClick = (packageName) => {
         trackEvent(`click on ${packageName} pakage button`, 'Package', 'Click', `Get Free Consultation: ${packageName}`);
+        navigate('/packagesform', { state: { packageName } });
     };
 
     return (
@@ -164,7 +167,7 @@ const OurPackages = () => {
                                 </ul>
                                 {/* <p className="i-world">{t("Support : Email Support")}</p> */}
                                 <button className="btn-get responsive-btn mt-auto"
-                                    onClick={() => handleConsultationClick("Business Branding Package")} // Track the event when button is clicked
+                                    onClick={() => handleConsultationClick("Al Ezz")} // Track the event when button is clicked
                                 >{t("Get a Free Consultation")}</button>
                             </div>
                         </div>
@@ -201,7 +204,7 @@ const OurPackages = () => {
                                 </ul>
                                 {/*<p className="i-world">{t("Support : Email Support")}</p> */}
                                 <button className="btn-get responsive-btn mt-auto"
-                                    onClick={() => handleConsultationClick("Business Branding Package")} // Track the event when button is clicked
+                                    onClick={() => handleConsultationClick("Tamkeen")} // Track the event when button is clicked
                                 >{t("Get a Free Consultation")}</button>
                             </div>
                         </div>
@@ -246,7 +249,7 @@ const OurPackages = () => {
                                 </ul>
                                 {/*<p className="i-world">{t("Support : Email Support")}</p>*/}
                                 <button className="btn-get responsive-btn mt-auto"
-                                    onClick={() => handleConsultationClick("Business Branding Package")} // Track the event when button is clicked
+                                    onClick={() => handleConsultationClick("Launch")} // Track the event when button is clicked
                                 >{t("Get a Free Consultation")}</button>
                             </div>
                         </div>

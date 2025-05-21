@@ -83,7 +83,7 @@ const OurServices = () => {
                 <div className="container">
                     <div className="row g-3">
                         <div className="col-md-4" data-aos="flip-left" data-aos-delay="100">
-                            <div className="card h-100 custom-transition" style={{ cursor: "default" }}>
+                            <div className="card h-100 no-hover">
                                 <div className="card-body">
                                     <h3 className="u-vise" style={{ width: "134px" }}>{t("Our Services")}</h3>
                                     <h5 className="card-title u-item mt-3 mb-3">{t("Solutions That Redefine Excellence")}</h5>
