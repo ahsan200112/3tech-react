@@ -1,12 +1,12 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-//import Slider from "react-slick";
-//import "slick-carousel/slick/slick.css";
-//import "slick-carousel/slick/slick-theme.css";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCards } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/effect-cards';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+//import { Swiper, SwiperSlide } from 'swiper/react';
+//import { EffectCards } from 'swiper/modules';
+//import 'swiper/css';
+//import 'swiper/css/effect-cards';
 import Project1 from "../assets/images/1Project.webp";
 import Project2 from "../assets/images/2Project.webp";
 import Project3 from "../assets/images/3Project.webp";
@@ -19,7 +19,7 @@ import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Impo
 const OurProjects = () => {
     const { t } = useTranslation();
     const trackEvent = useGTMEventTracker();  // Get the event tracker
-    /*
+    
     const settings = {
         dots: true,
         infinite: true,
@@ -44,7 +44,7 @@ const OurProjects = () => {
                 }
             }
         ]
-    }; */
+    }; 
 
     // Handle project image click event tracking
     const handleImageClick = (projectName) => {
@@ -71,7 +71,7 @@ const OurProjects = () => {
                     </div>
                     <p className="v-info mt-2" style={{ maxWidth: "800px", wordBreak: "break-word" }}>{t("Explore our success stories in e-commerce, app development, and creative marketing. See how we've helped businesses like yours thrive.")}</p>
                     {/* ✅ Image Slider */}
-                    {/* <div data-aos="flip-left"data-aos-delay="100">
+                     <div data-aos="flip-left"data-aos-delay="100">
                         <Slider {...settings} className="mt-4"
                         >
                             {projects.map((item, index) => (
@@ -84,9 +84,9 @@ const OurProjects = () => {
                                 </div>
                             ))}
                         </Slider>
-                    </div> */}
+                    </div> 
                     {/* ✅ Swiper Card Effect Slider */}
-                    <div className="mt-5 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                    {/*<div className="mt-5 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
                         <Swiper
                             effect={'cards'}
                             grabCursor={true}
@@ -109,7 +109,7 @@ const OurProjects = () => {
                                 </SwiperSlide>
                             ))}
                         </Swiper>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>
