@@ -91,8 +91,7 @@ const OurProjects = () => {
                             effect={'cards'}
                             grabCursor={true}
                             modules={[EffectCards]}
-                            className="mySwiper"
-                            style={{ width: '350px', height: '400px' }}
+                            className="mySwiper project-card-size"
                         >
                             {projects.map((item, index) => (
                                 <SwiperSlide key={index}>

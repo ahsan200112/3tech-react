@@ -913,6 +913,32 @@ body {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.project-card-size {
+  height: 450px;
+  width: 400px;
+}
+
+@media (max-width: 768px) {
+  .project-card-size {
+    height: 350px;
+    width: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-card-size {
+    height: 300px;
+    width: 250px;
+  }
+}
+
+@media (max-width: 500px) {
+  .project-card-size {
+    height: 250px;
+    width: 200px;
+  }
+}
+
 .card {
   background-color: var(--bg-primary) !important;
   border-radius: 15px;
@@ -2730,5 +2756,5 @@ img {
 }
 
 .packages-card {
- background-color: var(--bg-secondary) !important;
+  background-color: var(--bg-secondary) !important;
 }
