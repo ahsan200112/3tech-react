@@ -209,10 +209,10 @@ const GetContactNow = () => {
                                     {errors.message && <span className="text-danger">Message is required</span>}
                                 </div>
                                 <div className="col-lg-12 mt-3 custom-text-center">
-                                    <button type="submit" className="btn-while px-4 py-2"
+                                    <button type="submit" className="button-48 btn-while"
                                         onClick={() => trackEvent('click on submit button', 'Submit Form', 'Click', 'contact us form button')}
                                     >
-                                        {t("Send Now")}
+                                        <span className="text">{t("Send Now")}</span>
                                     </button>
                                 </div>
                             </div>

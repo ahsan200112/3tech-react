@@ -46,9 +46,9 @@ const YourSuccessOurPriority = () => {
                                 <span>{t("Cost-Effective Solutions")}</span>
                             </li>
                         </ul>
-                        <a className="btn-contact text-decoration-none mb-2" href="/contact"
-                            onClick={() => trackEvent('click on button','Navigation', 'Click', 'ContactUs Button')}
-                        >{t("Contact Us")}</a>
+                        <a className="button-48 btn-contact text-decoration-none mb-2" href="/contact"
+                            onClick={() => trackEvent('click on button', 'Navigation', 'Click', 'ContactUs Button')}
+                        ><span className="text">{t("Contact Us")}</span></a>
                     </div>
                     <div className="col-md-6">
                         <div className="d-flex justify-content-between align-items-center">
@@ -57,7 +57,7 @@ const YourSuccessOurPriority = () => {
                                 <i className="bi bi-star-fill"></i> 4.8
                             </p>
                         </div>
-                        <div className="card border-0">
+                        <div className="card border-0 no-hover">
                             <img src={theme === "light" ? PartnerImgLight : PartnerImgDark} className="card-img img-fluid w-100" alt="Customer Reviews" />
                         </div>
                         <div className="d-flex align-items-start">

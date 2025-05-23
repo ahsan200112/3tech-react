@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useTranslation } from 'react-i18next';
 //import { Link } from "react-router-dom";
 import Vector5Img from '../assets/images/Vector (5).png';
@@ -10,11 +10,9 @@ import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Impo
 function MarketingSolutionsHeroSection() {
     const { t, i18n } = useTranslation();
     const textAlignmentArrow = i18n.dir() === "ltr" ? "text-end" : "text-start"; // Check language direction
-    const [activeIndex, setActiveIndex] = useState(null);
     const trackEvent = useGTMEventTracker();  // Initialize the GTM event tracker
 
-    const toggleSection = (index, title) => {
-        setActiveIndex(activeIndex === index ? null : index); // Toggle open/close
+    const toggleSection = (title) => {
         trackEvent('click on toggle section', 'Marketing Solutions Page', 'Toggle Section', title);  // Track event on section toggle
     };
 
@@ -26,23 +24,6 @@ function MarketingSolutionsHeroSection() {
                         <div className="col-md-8">
                             <h2 className="z-x">{t("Here’s What We Provide")}</h2>
                         </div>
-                        {/*  <div className="col-md-4">
-                            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", textAlign: "center" }}>
-                                <p
-                                    className="z-c"
-                                    style={{
-                                        marginInlineEnd: "20px", // Adjusts automatically for RTL
-                                        borderInlineEnd: "1px solid", // Works for both LTR & RTL
-                                        paddingInlineEnd: "10px", // Maintains spacing on the correct side
-                                    }}
-                                >
-                                    {t("Development")}<br />{t("WordPress")}<br />{t("Cloud Migration")}
-                                </p>
-                                <p className="z-c">
-                                    {t("Front End Development")}<br />{t("JavaScript")}<br />{t("Flutter Framework")}
-                                </p>
-                            </div>
-                        </div> */}
                     </div>
 
                     <div className="mt-3">
@@ -89,59 +70,59 @@ function MarketingSolutionsHeroSection() {
                     </div>
                 </div>
 
-
-                <div className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="200">
-                    <h2 className="f-g">{t("Why Choose Us for Marketing Solutions?")}</h2>
-                    <div
-                        className="card-body mt-3"
-                        style={{
-                            border: "1px solid var(--text-primary)",
-                            borderRadius: "30px",
-                            padding: "15px",
-                        }}
-                    >
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-md-6 mt-3">
-                                    <p className="f-k mb-0">(001)</p>
-                                    <h2 className="f-h">{t("Targeted Campaigns")}</h2>
-                                </div>
-                                <div className="col-md-6 mt-3">
-                                    <p className="f-l">
-                                        {t("We create tailored campaigns that reach your specific audience and achieve your goals.")}
-                                    </p>
+                <div className="container mt-5 mb-5 custom-padding-h" data-aos="fade-down" data-aos-delay="200">
+                    <h2 className="mb-5 f-g">{t("Why Choose Us for Marketing Solutions?")}</h2>
+                    <div>
+                        {[
+                            { num: "001", title: t("Targeted Campaigns"), description: t("We create tailored campaigns that reach your specific audience and achieve your goals.") },
+                            { num: "002", title: t("Data-Driven Results"), description: t("We leverage advanced analytics and insights to optimize performance, ensuring every decision is backed by data. Our solutions help maximize efficiency, boost ROI, and drive measurable success.") },
+                            { num: "003", title: t("Creative Content"), description: t("We craft engaging and impactful content that resonates with your audience. Our innovative approach ensures your brand stands out, delivering compelling digital experiences.") },
+                            { num: "004", title: t("Multi-Channel Expertise"), description: t("From web and mobile to social media and beyond, we ensure a seamless and consistent presence across all platforms. Our expertise helps you reach and engage your audience wherever they are.") },
+                        ].map((item, index) => (
+                            <div key={index} className="card-wrapper">
+                                <div className="container my-5 custom-padding-h hover-cards " data-aos="fade-down" data-aos-delay="100"
+                                    style={{ cursor: "pointer" }}>
+                                    <div className="summary-card border-bottom-1 py3" style={{ height: "70px" }}>
+                                        <div className="row"
+                                            onClick={() => toggleSection(item.title)}>
+                                            <div className="col-4 f-z">
+                                                <p className="mb-0">{item.num}</p>
+                                            </div>
+                                            <div className="col-4 text-center">
+                                                <h2 className="f-z mb-0">{item.title}</h2>
+                                            </div>
+                                            <div className={`col-4 f-z ${textAlignmentArrow}`}>
+                                                <i className="bi bi-arrow-right mb-0"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        className="card-body hover-slide py-3"
+                                        style={{
+                                            border: "1px solid var(--text-primary)",
+                                            borderRadius: "30px",
+                                            padding: "15px",
+                                        }}
+                                    >
+                                        <div className="container">
+                                            <div className="row">
+                                                <div className="col-md-6 mt-3">
+                                                    <p className="f-k mb-0">{item.num}</p>
+                                                    <h2 className="f-h">{item.title}</h2>
+                                                </div>
+                                                <div className="col-md-6 mt-3">
+                                                    <p className="f-l">
+                                                        {item.description}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
-                {[
-                    { num: "002", title: t("Data-Driven Results"), description: t("We leverage advanced analytics and insights to optimize performance, ensuring every decision is backed by data. Our solutions help maximize efficiency, boost ROI, and drive measurable success.") },
-                    { num: "003", title: t("Creative Content"), description: t("We craft engaging and impactful content that resonates with your audience. Our innovative approach ensures your brand stands out, delivering compelling digital experiences.") },
-                    { num: "004", title: t("Multi-Channel Expertise"), description: t("From web and mobile to social media and beyond, we ensure a seamless and consistent presence across all platforms. Our expertise helps you reach and engage your audience wherever they are.") },
-                ].map((item, index) => (
-                    <div key={index} className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="100">
-                        <div className="row" style={{ borderBottom: "1px solid var(--text-primary)", cursor: "pointer" }}
-                            onClick={() => toggleSection(index, item.title)}>
-                            <div className="col-4 f-z">
-                                <p>{item.num}</p>
-                            </div>
-                            <div className="col-4 text-center">
-                                <h2 className="f-z mb-5">{item.title}</h2>
-                            </div>
-                            <div className={`col-4 f-z ${textAlignmentArrow}`}>
-                                <i className="bi bi-arrow-right"></i>
-                            </div>
-                        </div>
-                        {activeIndex === index && (
-                            <div className="row mt-3 custom-border">
-                                <div className="col-12">
-                                    <p className="l-k">{t(item.description)}</p>
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                ))}
 
                 <div className="container mt-5 pt-5 custom-padding-h" data-aos="fade-up" data-aos-delay="100">
                     <h2 className="g-r mt-2">{t("Our Path to E-Commerce Success")}</h2>
@@ -158,7 +139,7 @@ function MarketingSolutionsHeroSection() {
                                 <div className="step">
                                     <div className="custom-row">
                                         <button className="text-start btn-sm n-j">{item.step}</button>
-                                       {/* <img src={PinImg} alt="Company Logo" className="img-fluid custom-size-img" /> */}
+                                        {/* <img src={PinImg} alt="Company Logo" className="img-fluid custom-size-img" /> */}
                                     </div>
                                     <h5 className="h-klm">{item.title}</h5>
                                     <p className="h-ul">{item.desc}</p>

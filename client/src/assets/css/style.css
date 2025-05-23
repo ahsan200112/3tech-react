@@ -917,7 +917,10 @@ body {
   background-color: var(--bg-primary) !important;
   border-radius: 15px;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background 0.4s ease-in-out 0.3s,
+    transform 0.4s ease-in-out,
+    box-shadow 0.4s ease;
 }
 
 .card-body {
@@ -926,11 +929,8 @@ body {
 
 .card:hover {
   background: linear-gradient(106.11deg, rgba(193, 64, 193, 0.1) 7.4%, rgba(127, 148, 230, 0.1) 100%);
+  transform: scale(1.02);
 }
-
-/*.card:hover {
-  transform: translateY(-10px);
-} */
 
 .card ul {
   padding: 0;
@@ -1201,6 +1201,7 @@ body {
   letter-spacing: 0px;
   line-height: 140%;
   color: var(--text-primary);
+  text-align: center;
 }
 
 .i-value {
@@ -1373,6 +1374,10 @@ body {
 
 .text-primary-color {
   color: var(--text-primary) !important;
+}
+
+.primary-text-color {
+  color: var(--text-primary);
 }
 
 .hero-well {
@@ -2272,6 +2277,12 @@ img {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1200px) {
+  .n-vise {
+    font-size: 14px !important;
+  }
+}
+
 /* Mobile (Small screens: <768px) */
 @media (max-width: 767px) {
   .v-vise {
@@ -2578,12 +2589,12 @@ img {
 }
 
 .rotate-image {
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.4s ease-in-out;
   /* Smooth effect ke liye */
 }
 
 .rotate-image:hover {
-  transform: rotate(360deg);
+  transform: rotate(70deg);
   /* 360-degree rotation on hover */
 }
 
@@ -2707,9 +2718,17 @@ img {
 }
 
 .no-hover:hover {
-    transform: none !important;
-    box-shadow: none !important;
-    background: inherit !important;
-    transition: none !important;
-    cursor: default !important;
+  transform: none !important;
+  box-shadow: none !important;
+  background: inherit !important;
+  transition: none !important;
+  cursor: default !important;
+}
+
+.border-bottom-1 {
+  border-bottom: 1px solid var(--text-primary);
+}
+
+.packages-card {
+ background-color: var(--bg-secondary) !important;
 }

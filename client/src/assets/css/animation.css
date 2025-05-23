@@ -1,0 +1,206 @@
+/*
+<button class="button-48"><span class="text">Button 48</span></button>
+*/
+/* CSS */
+.button-48 {
+  font-family: 'Reddit Sans', sans-serif !important;
+  appearance: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 0;
+  line-height: 3.4px;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 1.5em !important;
+  position: relative;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  transition: opacity 1s cubic-bezier(.694, 0, 0.335, 1), background-color 600ms cubic-bezier(.694, 0, 0.335, 1), color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.button-48:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  border-radius: 30px;
+  backface-visibility: hidden;
+  background-color: white;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path 1s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path 1s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.button-48:hover:before {
+  animation: opacityFallbackIn 2s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.button-48:after {
+  background-color: white;
+}
+
+.button-48 span {
+  z-index: 1;
+  position: relative;
+}
+
+.fade-slide-enter {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-10px);
+}
+
+.fade-slide-enter-active {
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: max-height 800ms ease-in-out, opacity 800ms ease-in-out, transform 800ms ease-in-out;
+}
+
+.fade-slide-exit {
+  max-height: 500px;
+  opacity: 1;
+  overflow: hidden;
+  transform: translateY(0);
+}
+
+.fade-slide-exit-active {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: max-height 800ms ease-in-out, opacity 800ms ease-in-out, transform 800ms ease-in-out;
+}
+
+.slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider-content {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Smooth transition for both content blocks */
+.single-content,
+.repeated-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Initially hide repeated content */
+.repeated-content {
+  opacity: 0;
+  visibility: hidden;
+  justify-content: flex-start;
+  gap: 5rem;
+  animation: none;
+}
+
+/* Repeated items in a row */
+.repeat-item {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* Hover effect - smooth fade out/in */
+.review-value:hover .single-content {
+  opacity: 0;
+  visibility: hidden;
+  transition-delay: 0s;
+}
+
+.review-value:hover .repeated-content {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.3s;
+  animation: slide-left 12s linear infinite;
+}
+
+[dir="rtl"] .review-value:hover .repeated-content {
+  animation: slide-right 12s linear infinite;
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.hover-slide {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 800ms ease-in-out, opacity 800ms ease-in-out, transform 800ms ease-in-out;
+  position: relative;
+  /* for smooth transition */
+  transform: translateY(-60px);
+}
+
+.hover-cards:hover .hover-slide {
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(-40px);
+}
+
+/* Summary card ko target karna hai */
+.hover-cards .summary-card {
+  transition: opacity 0.8s ease-in-out;
+}
+
+.hover-cards:hover .summary-card {
+  opacity: 0;
+  pointer-events: none;
+  /* taake wo clickable na rahe hover mein */
+  height: 0;
+  /* layout space thoda kam ho, optional */
+  overflow: hidden;
+}
+
+.hover-cards:hover .border-bottom-1 {
+  border-bottom: 0px;
+}
+
+.card-wrapper {
+  margin-bottom: 40px;
+}

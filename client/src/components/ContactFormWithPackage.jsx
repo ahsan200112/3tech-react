@@ -69,7 +69,7 @@ const ContactFormWithPackage = () => {
     //ye emailjs hai jo frontend se email send krta hai ye 200 free email hai per month baqi ye paid
     const onSubmit = (data) => {
         const serviceID = "service_28bziqb";  // EmailJS se copy karo
-        const templateID = "template_haolba8";  // EmailJS se copy karo
+        const templateID = "template_y2weshd";  // EmailJS se copy karo
         const publicKey = "D2MzbOKPUdAsIn_Wi";  // EmailJS se copy karo
 
         const templateParams = {
@@ -78,7 +78,7 @@ const ContactFormWithPackage = () => {
             phone: data.phone,
             subject: data.subject,
             message: data.message,
-            package: packageName,
+            packageName: packageName,
         };
 
         emailjs.send(serviceID, templateID, templateParams, publicKey)
@@ -98,7 +98,7 @@ const ContactFormWithPackage = () => {
                             phone: data.phone,
                             subject: data.subject,
                             message: data.message,
-                            package: packageName,
+                            packageName: packageName,
                         }
                     });
                 }

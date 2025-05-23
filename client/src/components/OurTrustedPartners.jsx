@@ -43,16 +43,14 @@ const OurTrustedPartners = () => {
   ];
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1500,
     arrows: false, // Disable side arrows
-    /*  nextArrow: <NextArrow theme={theme} />,
-      prevArrow: <PrevArrow theme={theme} />, */
     responsive: [
       {
         breakpoint: 1024, // For tablets
@@ -71,12 +69,6 @@ const OurTrustedPartners = () => {
     ],
   };
 
-  // Handle slide change event tracking
-  /* const handleSlideChange = (current) => {
-     trackEvent('Our Partners Carousel', 'Slide Change', `From Slide ${previousSlide.current} to Slide ${current}`);
-     previousSlide.current = current;
-   }; */
-
   // Handle project image click event tracking
   const handleImageClick = (ImgName) => {
     trackEvent('Our Partners', 'Click', ImgName);
@@ -93,7 +85,6 @@ const OurTrustedPartners = () => {
       </div>
       <div className="container mt-4 py-4" data-aos="flip-left" data-aos-delay="200">
         <Slider {...settings}
-        // afterChange={handleSlideChange}  // Event on slide change
         >
           {images.map((img, index) => (
             <div key={index} className="text-center">
@@ -101,7 +92,7 @@ const OurTrustedPartners = () => {
                 src={theme === "light" ? img.light : img.dark}
                 alt="Partner Logo"
                 className="img-fluid"
-                style={{ height: "152px", width: "282px", margin: "auto" }}
+                style={{ height: "152px", width: "250px", margin: "auto" }}
                 onClick={() => handleImageClick(img)}
               />
             </div>

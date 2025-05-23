@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useTranslation } from 'react-i18next';
 //import { Link } from "react-router-dom";
 import ToImg from '../assets/images/to.png';
@@ -10,12 +10,10 @@ import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Impo
 function EcommerceSolutionsHeroSection() {
     const { t, i18n } = useTranslation();
     const textAlignmentArrow = i18n.dir() === "ltr" ? "text-end" : "text-start"; // Check language direction
-    const [activeIndex, setActiveIndex] = useState(null);
     const trackEvent = useGTMEventTracker();  // Initialize the GTM event tracker
 
-    const toggleSection = (index, title) => {
-        setActiveIndex(activeIndex === index ? null : index); // Toggle open/close
-        trackEvent('click on toggle section','E-commerce Solutuon Page', 'Toggle Section', title);  // Track event on section toggle
+    const toggleSection = (title) => {
+        trackEvent('click on toggle section', 'E-commerce Solutuon Page', 'Toggle Section', title);  // Track event on section toggle
     };
 
     return (
@@ -26,23 +24,6 @@ function EcommerceSolutionsHeroSection() {
                         <div className="col-md-8">
                             <h2 className="z-x">{t('Here’s What We Provide')}</h2>
                         </div>
-                        {/*  <div className="col-md-4">
-                            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", textAlign: "center" }}>
-                                <p
-                                    className="z-c"
-                                    style={{
-                                        marginInlineEnd: "20px", // Adjusts automatically for RTL
-                                        borderInlineEnd: "1px solid", // Works for both LTR & RTL
-                                        paddingInlineEnd: "10px", // Maintains spacing on the correct side
-                                    }}
-                                >
-                                    {t("Development")}<br />{t("WordPress")}<br />{t("Cloud Migration")}
-                                </p>
-                                <p className="z-c">
-                                    {t("Front End Development")}<br />{t("JavaScript")}<br />{t("Flutter Framework")}
-                                </p>
-                            </div>
-                        </div> */}
                     </div>
 
                     <div className="mt-3">
@@ -90,60 +71,60 @@ function EcommerceSolutionsHeroSection() {
                 </div>
 
 
-                <div className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="200">
-                    <h2 className="f-g">{t("Why 3Tech is Your Perfect E-Commerce Partner?")}</h2>
-                    <div
-                        className="card-body mt-3"
-                        style={{
-                            border: "1px solid var(--text-primary)",
-                            borderRadius: "30px",
-                            padding: "15px",
-                        }}
-                    >
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-md-6 mt-3">
-                                    <p className="f-k mb-0">(001)</p>
-                                    <h2 className="f-h">{t("Tailored Store Development")}</h2>
-                                </div>
-                                <div className="col-md-6 mt-3">
-                                    <p className="f-l">
-                                        {t("We don’t just build stores; we craft experiences uniquely designed to meet your business needs.")}
-                                    </p>
+                <div className="container mt-5 mb-5 custom-padding-h" data-aos="fade-down" data-aos-delay="200">
+                    <h2 className="mb-5 f-g">{t("Why 3Tech is Your Perfect E-Commerce Partner?")}</h2>
+                    <div>
+                        {[
+                            { num: "001", title: t("Tailored Store Development"), description: t("We don’t just build stores; we craft experiences uniquely designed to meet your business needs.") },
+                            { num: "002", title: t("End-to-End Integration"), description: t("We deliver fully integrated software solutions that seamlessly connect all aspects of your business. From development to deployment, we ensure smooth interoperability, reducing complexities and maximizing efficiency.") },
+                            { num: "003", title: t("Cutting-Edge Technology"), description: t("Our software solutions are built on the latest technologies, ensuring scalability, security, and high performance. Stay ahead of the competition with future-ready IT solutions tailored to your business needs.") },
+                            { num: "004", title: t("Ownership with No Hidden Fees"), description: t("We provide complete transparency—your software, your ownership. With clear pricing and no hidden charges, you get full control over your IT solutions without unexpected costs.") },
+                            { num: "005", title: t("Dedicated Support"), description: t("Our expert team is available around the clock to provide proactive and responsive support. Whether it's troubleshooting, updates, or enhancements, we ensure your software runs flawlessly at all times.") },
+                        ].map((item, index) => (
+                            <div key={index} className="card-wrapper">
+                                <div className="container my-5 custom-padding-h hover-cards " data-aos="fade-down" data-aos-delay="100"
+                                    style={{ cursor: "pointer" }}>
+                                    <div className="summary-card border-bottom-1 py3" style={{ height: "70px" }}>
+                                        <div className="row"
+                                            onClick={() => toggleSection(item.title)}>
+                                            <div className="col-4 f-z">
+                                                <p className="mb-0">{item.num}</p>
+                                            </div>
+                                            <div className="col-4 text-center">
+                                                <h2 className="f-z mb-0">{item.title}</h2>
+                                            </div>
+                                            <div className={`col-4 f-z ${textAlignmentArrow}`}>
+                                                <i className="bi bi-arrow-right mb-0"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        className="card-body hover-slide py-3"
+                                        style={{
+                                            border: "1px solid var(--text-primary)",
+                                            borderRadius: "30px",
+                                            padding: "15px",
+                                        }}
+                                    >
+                                        <div className="container">
+                                            <div className="row">
+                                                <div className="col-md-6 mt-3">
+                                                    <p className="f-k mb-0">{item.num}</p>
+                                                    <h2 className="f-h">{item.title}</h2>
+                                                </div>
+                                                <div className="col-md-6 mt-3">
+                                                    <p className="f-l">
+                                                        {item.description}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
-
-                {[
-                    { num: "002", title: t("End-to-End Integration"), description: t("We deliver fully integrated software solutions that seamlessly connect all aspects of your business. From development to deployment, we ensure smooth interoperability, reducing complexities and maximizing efficiency.") },
-                    { num: "003", title: t("Cutting-Edge Technology"), description: t("Our software solutions are built on the latest technologies, ensuring scalability, security, and high performance. Stay ahead of the competition with future-ready IT solutions tailored to your business needs.") },
-                    { num: "004", title: t("Ownership with No Hidden Fees"), description: t("We provide complete transparency—your software, your ownership. With clear pricing and no hidden charges, you get full control over your IT solutions without unexpected costs.") },
-                    { num: "005", title: t("Dedicated Support"), description: t("Our expert team is available around the clock to provide proactive and responsive support. Whether it's troubleshooting, updates, or enhancements, we ensure your software runs flawlessly at all times.") },
-                ].map((item, index) => (
-                    <div key={index} className="container mt-5 custom-padding-h" data-aos="fade-down" data-aos-delay="100">
-                        <div className="row" style={{ borderBottom: "1px solid var(--text-primary)", cursor: "pointer" }}
-                            onClick={() => toggleSection(index, item.title)}>
-                            <div className="col-4 f-z">
-                                <p>{item.num}</p>
-                            </div>
-                            <div className="col-4 text-center">
-                                <h2 className="f-z mb-5">{item.title}</h2>
-                            </div>
-                            <div className={`col-4 f-z ${textAlignmentArrow}`}>
-                                <i className="bi bi-arrow-right"></i>
-                            </div>
-                        </div>
-                        {activeIndex === index && (
-                            <div className="row mt-3 custom-border">
-                                <div className="col-12">
-                                    <p className="l-k">{t(item.description)}</p>
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                ))}
 
                 <div className="container mt-5 pt-5 custom-padding-h">
                     <h2 className="g-r mt-2">{t("Our Path to E-Commerce Success")}</h2>
@@ -160,7 +141,7 @@ function EcommerceSolutionsHeroSection() {
                                 <div className="step">
                                     <div className="custom-row">
                                         <button className="text-start btn-sm n-j">{item.step}</button>
-                                     {/*   <img src={PinImg} alt="Company Logo" className="img-fluid custom-size-img" /> */}
+                                        {/*   <img src={PinImg} alt="Company Logo" className="img-fluid custom-size-img" /> */}
                                     </div>
                                     <h5 className="h-klm">{item.title}</h5>
                                     <p className="h-ul">{item.desc}</p>

@@ -117,11 +117,11 @@ const Navbar = () => {
               {/* Mobile View: Button (Hidden by Default) */}
               <div className="d-lg-none text-center mt-3">
                 <Link to="/contact" className="text-decoration-none">
-                  <button className="btn-well" onClick={() => {
+                  <button className="button-48 btn-well" onClick={() => {
                     setIsNavOpen(false);
                     trackEvent('click on navbar button', 'Navigation', 'Click', 'Get a Free Consultation Button');
                   }}>
-                    {t("Get a Free Consultation")}
+                    <span className="text">{t("Request Free Audit")}</span>
                   </button>
                 </Link>
               </div>
@@ -130,10 +130,10 @@ const Navbar = () => {
               <div className="d-none d-lg-flex align-items-center">
                 <LanguageToggle className=".nav-language-color v-vise" />  {/* Language Button Pehle Hoga */}
                 <Link to="/contact" className="text-decoration-none">
-                  <button className="btn-well ms-3"
+                  <button className="button-48 btn-well ms-3"
                     onClick={() => trackEvent('click on navbar button', 'Navigation', 'Click', 'Get a Free Consultation Button')}
                   >
-                    {t("Get a Free Consultation")}
+                    <span className="text">{t("Request Free Audit")}</span>
                   </button>
                 </Link>
               </div>

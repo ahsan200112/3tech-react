@@ -33,12 +33,12 @@ const HeroSection = () => {
                                 <a href="/services" className="text-decoration-none"
                                     onClick={() => trackEvent('click on button', 'Navigation', 'Click', 'Discover Our Solutions Button')}
                                 >
-                                    <button className="btn-under">{t("Discover Our Solutions")}</button>
+                                    <button className="button-48 btn-under"><span className="text">{t("Discover Our Solutions")}</span></button>
                                 </a>
                                 <a href="/services" className="text-decoration-none"
                                     onClick={() => trackEvent('click on button', 'Navigation', 'Click', 'Get a Free Consultation Button')}
                                 >
-                                    <button className="btn-while">{t("Get a Free Consultation")}</button>
+                                    <button className="button-48 btn-while"><span className="text">{t("Get a Free Consultation")}</span></button>
                                 </a>
                             </div>
                         </div>

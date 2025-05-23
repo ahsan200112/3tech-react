@@ -22,10 +22,10 @@ const WhoWeAre = () => {
                         <p className="u-here mb-4">
                             {t("In a world where creativity meets technology, 3Tech delivers exceptional experiences in building online stores, apps, and digital marketing. We’re here to tell your story and connect you with your audience through unique and impactful approaches. Every project with us becomes a memorable journey to success.")}
                         </p>
-                        <a href="/about" className="btn-our d-block w-100 text-decoration-none mb-4"
+                        <a href="/about" className="button-48 btn-our d-block w-100 text-decoration-none mb-4"
                             onClick={() => trackEvent('click on button', 'Navigation', 'Click', 'Discover Our Story Button')}
                         >
-                            {t("Discover Our Story")}
+                           <span className="text"> {t("Discover Our Story")} </span>
                         </a>
                         <div className="row text-white mt-3 flex-nowrap text-center mb-4">
                             <div className="col-4 px-2" style={{

@@ -67,16 +67,25 @@ const FrequentlyAskedQuestions = () => {
 
 export default FrequentlyAskedQuestions; */
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
+import { CSSTransition } from 'react-transition-group';
 
 const FrequentlyAskedQuestions = () => {
     const { t } = useTranslation();
     // const textAlignment = i18n.dir() === "rtl" ? "text-end" : "text-start";
     const [openIndex, setOpenIndex] = useState(0);
     const trackEvent = useGTMEventTracker();  // Use the custom hook
+    const nodeRefs = useRef([]);
+
+    const getNodeRef = (index) => {
+        if (!nodeRefs.current[index]) {
+            nodeRefs.current[index] = React.createRef();
+        }
+        return nodeRefs.current[index];
+    };
 
     const toggleFAQ = (index) => {
         setOpenIndex(openIndex === index ? null : index);
@@ -116,18 +125,32 @@ const FrequentlyAskedQuestions = () => {
                     {faqData.map((faq, index) => (
                         <div key={index} className="mb-2" data-aos="flip-right" data-aos-delay="100">
                             <div
-                                className="d-flex justify-content-between align-items-center py-3 px-3 border border-secondary rounded"
+                                className="d-flex flex-column py-3 px-3 border border-secondary rounded"
                                 onClick={() => toggleFAQ(index)}
                                 style={{ cursor: "pointer" }}
                             >
+                                <div className="d-flex justify-content-between align-items-center">
                                 <span className="v-clean">{faq.question}</span>
-                                {openIndex === index ? <FaAngleUp size={20} /> : <FaAngleDown size={20} />}
+                                {openIndex === index ? <FaAngleUp size={20} color="var(--text-primary)" /> : <FaAngleDown size={20} color="var(--text-primary)" />}
                             </div>
+                            {/*
                             {openIndex === index && (
                                 <div className="px-3 py-2 border border-secondary rounded mt-2" style={{ color: "var(--text-secondary)" }}>
                                     {faq.answer}
                                 </div>
-                            )}
+                            )} */}
+                            <CSSTransition
+                                in={openIndex === index}
+                                timeout={800}
+                                classNames="fade-slide"
+                                unmountOnExit
+                                nodeRef={getNodeRef(index)}
+                            >
+                                <div ref={getNodeRef(index)} className="mt-2" style={{ color: "var(--text-secondary)" }}>
+                                    {faq.answer}
+                                </div>
+                            </CSSTransition>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -136,4 +159,6 @@ const FrequentlyAskedQuestions = () => {
     );
 };
 
-export default FrequentlyAskedQuestions; 
+export default FrequentlyAskedQuestions;
+
+

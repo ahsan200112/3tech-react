@@ -130,17 +130,17 @@ const OurPackages = () => {
         <section className="packages u-section">
             <div className="container py-5" data-aos="fade-down" data-aos-delay="200">
                 <div className="py-5">
-                    <h3 className="i-idea mb-2" style={{ width: "130px" }}>{t("Our Packages")}</h3>
+                    <h3 className="i-idea mb-2" style={{ width: "110px" }}>{t("Packages")}</h3>
                     <div className="d-flex align-items-center custom-content-center">
-                        <h2 className="i-visit mb-2">{t("Flexible Packages For Every Need")}</h2>
+                        <h2 className="i-visit mb-2">{t("On the occasion of the founding of 3tech")}</h2>
                     </div>
                     <p className="i-were">
-                        {t("Explore our custom packages offering top-notch solutions at great prices.")}
+                        {t("Each package provides you with the tools and solutions your project needs.")}
                     </p>
                 </div>
                 <div className="row g-4 align-items-stretch">
                     <div className="col-md-4">
-                        <div className="card shadow border-0 h-100">
+                        <div className="card shadow border-0 h-100 packages-card" style={{ borderRadius: "14px" }}>
                             <div className="card-body d-flex flex-column">
                                 <h5 className="i-has">{t("Al Ezz")}</h5>
                                 <h3 className="i-value">{t("499 SAR including tax")}</h3>
@@ -166,14 +166,14 @@ const OurPackages = () => {
                                     </li>
                                 </ul>
                                 {/* <p className="i-world">{t("Support : Email Support")}</p> */}
-                                <button className="btn-get responsive-btn mt-auto"
+                                <button className="button-48 btn-get responsive-btn mt-auto"
                                     onClick={() => handleConsultationClick("Al Ezz")} // Track the event when button is clicked
-                                >{t("Get a Free Consultation")}</button>
+                                ><span className="text">{t("Get a Free Consultation")}</span></button>
                             </div>
                         </div>
                     </div>
                     <div className="col-md-4">
-                        <div className="card shadow border-0 h-100">
+                        <div className="card shadow border-0 h-100 packages-card" style={{ borderRadius: "14px" }}>
                             <div className="card-body d-flex flex-column">
                                 <h5 className="i-has">{t("Tamkeen")}</h5>
                                 <h3 className="i-value">{t("1499 SAR including tax")}</h3>
@@ -203,14 +203,14 @@ const OurPackages = () => {
                                     </li>
                                 </ul>
                                 {/*<p className="i-world">{t("Support : Email Support")}</p> */}
-                                <button className="btn-get responsive-btn mt-auto"
+                                <button className="button-48 btn-get responsive-btn mt-auto"
                                     onClick={() => handleConsultationClick("Tamkeen")} // Track the event when button is clicked
-                                >{t("Get a Free Consultation")}</button>
+                                ><span className="text">{t("Get a Free Consultation")}</span></button>
                             </div>
                         </div>
                     </div>
                     <div className="col-md-4">
-                        <div className="card shadow border-0 h-100">
+                        <div className="card shadow border-0 h-100 packages-card" style={{ borderRadius: "14px" }}>
                             <div className="card-body d-flex flex-column">
                                 <h5 className="i-has">{t("Launch")}</h5>
                                 <h3 className="i-value">{t("2699 SAR including tax")}</h3>
@@ -248,9 +248,9 @@ const OurPackages = () => {
                                     </li>
                                 </ul>
                                 {/*<p className="i-world">{t("Support : Email Support")}</p>*/}
-                                <button className="btn-get responsive-btn mt-auto"
+                                <button className="button-48 btn-get responsive-btn mt-auto"
                                     onClick={() => handleConsultationClick("Launch")} // Track the event when button is clicked
-                                >{t("Get a Free Consultation")}</button>
+                                ><span className="text">{t("Get a Free Consultation")}</span></button>
                             </div>
                         </div>
                     </div>

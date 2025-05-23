@@ -209,10 +209,10 @@ const CustomPackageOpinion = () => {
                                     {errors.message && <span className="text-danger">Message is required</span>}
                                 </div>
                                 <div className="col-lg-12 mt-3 custom-text-center">
-                                    <button type="submit" className="btn-while py-2" style={{ width: "260px" }}
+                                    <button type="submit" className="button-48 btn-while" style={{ width: "260px" }}
                                         onClick={() => trackEvent('click on submit button', 'Submit Form', 'Click', 'Request custom package button')}
                                     >
-                                        {t('Request a Custom Package')}
+                                        <span className="text">{t('Request a Custom Package')}</span>
                                     </button>
                                 </div>
                             </div>

@@ -6,6 +6,7 @@ import ArrowImg from "../assets/images/arrow.png";
 import { useTranslation } from 'react-i18next';
 //import { Link } from "react-router-dom"; // Import Link from React Router
 import CertificateLogo from '../assets/images/certificateLogo.png';
+import TaxImg from "../assets/images/tax.webp";
 import useGTMEventTracker from './GoogleTagManager/useGTMEventTracker';  // Import the custom hook
 
 const Footer = () => {
@@ -16,7 +17,7 @@ const Footer = () => {
 
   return (
     <>
-      <section className="review-value py-4" style={{ borderTop: " 1px solid #1B1264", borderBottom: " 1px solid #1B1264" }}>
+      {/* <section className="review-value py-4">
         <div className="container">
           <div className="d-flex justify-content-between align-items-center">
             <h1 className="mb-0 me-2 text-primary-color custom-padding-h">{t("Let’s Start to Work")}</h1>
@@ -27,7 +28,46 @@ const Footer = () => {
             </a>
           </div>
         </div>
+      </section> */}
+      <section className="review-value py-4">
+        <div className="container overflow-hidden">
+          <div className="slider-wrapper">
+            <a href="/contact" className="text-decoration-none">
+              <div
+                className="slider-content"
+                onClick={() =>
+                  trackEvent('click on footer arrow', 'Arrow Click', 'Click', 'Contact Page Link in footer')
+                }
+              >
+                <div className="single-content">
+                  <h1 className="mb-0 text-primary-color">{t("Let’s Start to Work")}</h1>
+                  <img
+                    src={ArrowImg}
+                    alt="Icon"
+                    className="img-fluid"
+                    style={{ width: "60px", height: "60px" }}
+                  />
+                </div>
+
+                <div className="repeated-content">
+                  {[...Array(10), ...Array(10)].map((_, index) => (
+                    <div key={index} className="repeat-item">
+                      <h1 className="mb-0 primary-text-color">{t("Let’s Start to Work")}</h1>
+                      <img
+                        src={ArrowImg}
+                        alt="Icon"
+                        className="img-fluid mx-2"
+                        style={{ width: "60px", height: "60px" }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
       </section>
+
       <footer className="text-light py-4 review-value" style={{ marginBottom: "-30px" }}>
         <div className="container">
           <div className="row">
@@ -43,9 +83,9 @@ const Footer = () => {
                 {t("At 3Tech, we specialize in delivering innovative solutions to empower businesses in the digital age. From website development to branding, we turn your vision into reality.")}
               </p>
               <a href="/contact" className="text-decoration-none">
-                <button className="btn-free responsive-btn mb-3"
+                <button className="button-48 btn-free responsive-btn mb-3"
                   onClick={() => trackEvent('click on footer button', 'Navigation', 'Click', 'Request Free Audit button')}
-                >{t("Request Free Audit")}</button>
+                ><span className="text">{t("Request Free Audit")}</span></button>
               </a>
             </div>
             <div className="col-md-4 custom-text-center text-center">
@@ -114,11 +154,31 @@ const Footer = () => {
                 <a href="https://www.instagram.com/3tech.sa?igsh=aW14cDY0cmtvZW9p" target='blank' className={`${isRTL ? "ms-4" : "me-4"} margin`}
                   onClick={() => trackEvent('click on footer social media link', 'Social Media', 'Click', 'Instagram Link')}
                 ><i className="bi bi-instagram text-primary-color"></i></a>
+                <a href="https://www.tiktok.com/@3tech.sa?_t=ZS-8wb5FdF0PQI&_r=1" target='blank' className={`${isRTL ? "ms-4" : "me-4"} margin`}
+                  onClick={() => trackEvent('click on footer social media link', 'Social Media', 'Click', 'Tiktok Link')}
+                ><i className="bi bi-tiktok text-primary-color"></i></a>
+              </div>
+              <div className="d-flex mt-3 custom-list-padding custom-text-center custom-content-center">
                 <a href="https://eauthenticate.saudibusiness.gov.sa/certificate-details/0000112765" target='blank' className={`${isRTL ? "ms-4" : "me-4"} margin`}
                   onClick={() => trackEvent('click on footer social media link', 'Social Media', 'Click', 'Certificate Details Link')}
                 >
-                  <img src={CertificateLogo} alt="Icon" className="img-fluid" style={{ width: "26px", height: "26px" }}></img>
+                  <img src={CertificateLogo} alt="Certificate Icon" className={`img-fluid ${isRTL ? "ms-2" : "me-2"} margin`} style={{ width: "25px", height: "25px" }}></img>
                 </a>
+                <button
+                  style={{
+                    background: "none",
+                    border: "none",
+                    padding: 0,
+                    cursor: "default"
+                  }}>
+                  <img
+                    src={TaxImg} // Replace with your image variable or path
+                    alt="Tax Icon"
+                    className={`img-fluid ${isRTL ? "ms-2" : "me-2"}`}
+                    style={{ width: "25px", height: "25px" }}
+                  />
+                </button>
+                <span className={`text-primary-color ${isRTL ? "ms-4" : "me-4"} margin`}>302139673100003</span>
               </div>
             </div>
           </div>
