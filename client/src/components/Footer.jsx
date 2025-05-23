@@ -159,10 +159,10 @@ const Footer = () => {
                 ><i className="bi bi-tiktok text-primary-color"></i></a>
               </div>
               <div className="d-flex mt-3 custom-list-padding custom-text-center custom-content-center">
-                <a href="https://eauthenticate.saudibusiness.gov.sa/certificate-details/0000112765" target='blank' className={`${isRTL ? "ms-4" : "me-4"} margin`}
+                <a href="https://eauthenticate.saudibusiness.gov.sa/certificate-details/0000112765" target='blank' className={`${isRTL ? "ms-3" : "me-3"} margin`}
                   onClick={() => trackEvent('click on footer social media link', 'Social Media', 'Click', 'Certificate Details Link')}
                 >
-                  <img src={CertificateLogo} alt="Certificate Icon" className={`img-fluid ${isRTL ? "ms-2" : "me-2"} margin`} style={{ width: "25px", height: "25px" }}></img>
+                  <img src={CertificateLogo} alt="Certificate Icon" className="footer-img"></img>
                 </a>
                 <button
                   style={{
@@ -174,11 +174,10 @@ const Footer = () => {
                   <img
                     src={TaxImg} // Replace with your image variable or path
                     alt="Tax Icon"
-                    className={`img-fluid ${isRTL ? "ms-2" : "me-2"}`}
-                    style={{ width: "25px", height: "25px" }}
+                    className={`footer-img ${isRTL ? "ms-2" : "me-2"}`}
                   />
                 </button>
-                <span className={`text-primary-color ${isRTL ? "ms-4" : "me-4"} margin`}>302139673100003</span>
+                <span className={`text-primary-color ${isRTL ? "ms-1" : "me-1"}`}>302139673100003</span>
               </div>
             </div>
           </div>

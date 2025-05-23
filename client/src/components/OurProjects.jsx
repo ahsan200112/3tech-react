@@ -86,7 +86,7 @@ const OurProjects = () => {
                         </Slider>
                     </div> */}
                     {/* ✅ Swiper Card Effect Slider */}
-                    <div className="mt-5 d-flex justify-content-center" data-aos="flip-left" data-aos-delay="100">
+                    <div className="mt-5 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
                         <Swiper
                             effect={'cards'}
                             grabCursor={true}
